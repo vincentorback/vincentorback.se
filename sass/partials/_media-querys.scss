@@ -1,0 +1,402 @@
+@media only screen and (min-width: 1500px) {
+	.work img {
+		max-width: 1400px;
+	}
+	#recommend {
+		max-width: 1600px;
+		margin: 10em auto 5em auto;
+		
+	}
+	#recommend .col {
+		margin-right: 4% !important;
+	}
+	#recommend .col.websites {
+		margin-right: 2% !important;
+	}
+	#recommend .websites, .inspiration {
+		width: 14% !important;
+		float: left;
+		white-space: nowrap;
+	}
+	#recommend .inspiration {
+		position: relative;
+		left: 3%;
+	}
+}
+
+@media only screen and (min-width: 1140px) {
+	#top {
+		.logo {
+			left: 50px;
+		}
+		#nav {
+			right: 35px;
+		}
+	}
+	.work {
+		padding: 14em 0;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	#ommig img:hover {
+		@include scale(1);
+	}
+}
+
+@media only screen and (max-width: 870px) {
+	.home #top, .page-en #top {
+		height: 400px;
+		h2 {
+			font-size: 1.5em;
+			font-weight: 100;
+			top: 90px;
+		}
+	}
+	#top {
+		.logo {
+			width: 100%;
+			display: block;
+			left: auto;
+			float: none;
+			position: relative;
+			h1 {
+				text-align: center;
+				left: auto;
+			}
+		}
+		#nav {
+			text-align: center;
+			top: 50px;
+			ul {
+				text-align: center;
+				float: none;
+			}
+		}
+		h2 {
+			top: 40px;
+		}
+	}
+	.work {
+		h1 {
+			font-size: 2.3em;
+		}
+		.info {
+			width: 100%;
+			text-align: center;
+			margin: 2.5em 0 1em 0 ;
+			p {
+				margin: 0 1em;
+			}
+			a {
+				float: none;
+				position: static;
+				margin: 2em auto 0 auto;
+				display: inline-block;
+				width: auto;
+			}
+		}
+	}
+}
+
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio: 1)  {
+	#top h2 {
+		top: 225px !important;
+		font-size: 1.8em;
+	}
+}
+
+
+@media only screen and (max-width: 800px) {
+	.work {
+		padding: 6em 0 5em 0;
+	}
+	#recommend {
+		font-size: .9em;
+		.col {
+			width: 47%;
+			article {
+				margin: 0 0 2em 0;
+			}
+			&.podcasts {
+				float: right;
+				margin: 0;
+			}
+			/*
+			.half {
+				width: 50%;
+				float: left;
+			}
+			&.websites {
+				width: 100%;
+				float: none;
+				margin: 0;
+			}
+			*/
+			&.websites {
+				width: 50%;
+			}
+		}
+		.inspiration {
+			width: 40%;
+			float: right;
+			a {
+				display: block;
+				margin: 1em 0;
+			}
+		}
+	}	
+}
+
+
+
+
+@media only screen and (max-width: 680px) {
+	#contact-form, #en-contact-form {
+		label {
+			display: block;
+			width: 100%;
+			line-height: 1;
+			margin-bottom: -5px;
+		}
+		input {
+			width: 100% !important;
+			margin: 0 0 1em 0 !important;
+		}
+		#email {
+			margin: 0 !important;
+		}
+		#submit {
+			width: 50% !important;
+			min-width: 200px;
+			margin: 20px 5px 0 !important;
+			&:active {
+				margin: 20px 5px -2px 0 !important;
+			}
+		}
+		#message {
+			padding: 10px;
+		}
+	}
+}
+@media only screen and(max-width: 600px ) {
+	#top {
+		height: 280px;
+		h2 {
+			top: 55px;
+			font-size: 2em;
+		}
+	}
+	.home #top, .page-en #top {
+		h2 {
+			font-size: 1.2em;
+		}
+	}
+	#ommig {
+		h3 {
+			font-size: 1.5em;
+		}
+		img {
+			width: 90%;
+			margin: 10px auto -40px auto;
+			display: block;
+			float: none;
+			@include rotate(0deg);
+		}
+		p {
+			font-size: 1.2em;
+		}
+	}
+	#contact {
+		margin: 3em 0;
+		h3 {
+			font-size: 1.5em;
+		}
+		.sent {
+			font-size: 1.8em;
+		}
+		form {
+			font-size: 1.4em;
+			input {
+				text-indent: 0px;
+			}
+			textarea {
+				height: 120px !important;
+			}
+		}
+	}
+	#recommend {
+		margin: 10em 0 5em 0;
+		h3 {
+			font-size: 1.6em;
+		}
+		h4 {
+			margin-top: 1em;
+		}
+		.col {
+			width: 100%;
+			float: none;
+			p {
+				font-size: 1.2em;
+			}
+			&.websites {
+				width: 45%;
+				float: left;
+			}
+		}
+		.inspiration {
+			width: 45%;
+			float: right;
+		}
+	}
+	#footer {
+		div {
+			display: block;
+			line-height: 1.4;
+			margin: 0;
+		}
+		.adress {
+			margin-top: .8em;
+			display: block;
+			div {
+				display: inline;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	#top {
+		.logo h1 {
+			white-space: normal;
+		}
+		#nav ul li a {
+			padding: 0 15px;
+		}
+	}
+	.home #top, .page-en #top {
+		h2 {
+			top: 50px;
+		}
+	}
+	.work {
+		padding: 1px 0 3em 0;
+		h1 {
+			font-size: 2em;
+			white-space: normal;
+		}
+		img {
+			margin: 3.5em 0 2.5em 0;
+			float: none;
+		}
+		.work-info {
+			float: none;
+			p {
+				display: block;
+				margin: 0 0 10px 0;
+			}
+		}
+		
+	}
+	#readmore {
+		margin: 0 1.5em 1em 0;
+	}
+	.cv {
+		float: none !important;
+		clear: both;
+	}
+}
+@media only screen and (max-width: 340px) {	
+	.home #top, .page-en #top {
+		height: 450px;
+		h2 {
+			font-size: 1.2em;
+			top: 60px;
+		}
+	}
+	.work {
+		h1 {
+			font-size: 1.5em;
+		}
+		.info a {
+			width: auto;
+			padding: 0;
+			font-size: 1.1em;
+			padding: .8em;
+		}
+	}
+	#recommend {
+		.websites .half {
+			max-width: 100%;
+			width: 100%;
+			margin: 0;
+			float: none;
+			&:last-child {
+				float: none;
+			}
+		}
+	}
+}
+@media only screen and (max-width: 300px) {
+	.logo h1 {
+		
+	}
+	#top #nav ul li a {
+		display: block;
+		padding: 0 10px;
+	}
+	#top {
+		height: 330px;
+		h2 {
+			top: 45px;
+		}
+	}
+	.home #top, .page-en #top {
+		h2 {
+			font-size: 1em;
+		}
+	}
+	#recommend {
+		.col.websites, .inspiration {
+			width: 100%;
+			float: none;
+		}
+	}
+}
+
+@media print {
+	* {
+		background:none!important;
+		box-shadow:none!important;
+		color:#000!important;
+		text-shadow:none!important;
+		-webkit-filter:grayscale(100%);
+		-ms-filter:grayscale(100%);
+		filter:Gray();
+		filter:url(desaturate.svg#grayscale);
+		filter:grayscale(100%);
+		-o-filter:grayscale(100%);
+	}
+	a {
+		text-decoration:underline;
+	}
+	.logo {
+		text-decoration: none;
+	}
+	nav, #readmore, .cv, form{
+		display: none;
+	}
+	#ommig {
+		img {
+			@include rotate(none);
+		}
+	}
+	#recommend span {
+		display: none;
+	}
+}

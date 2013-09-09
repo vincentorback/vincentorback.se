@@ -1,0 +1,117 @@
+@-webkit-keyframes headerbg {
+	0% {background: $blue;}
+	15% {background: $blue;}
+	20% {background: $green;}
+	35% {background: $green;}
+	40% {background: $yellow;}
+	55% {background: $yellow;}
+	60% {background: $red;}
+	75% {background: $red;}
+	80% {background: $orange;}
+	95% {background: $orange;}
+	100%{background: $blue;}	
+}
+@keyframes headerbg {
+	0% {background: $blue;}
+	15% {background: $blue;}
+	20% {background: $green;}
+	35% {background: $green;}
+	40% {background: $yellow;}
+	45% {background: $yellow;}
+	60% {background: $orange;}
+	65% {background: $orange;}
+	80% {background: $red;}
+	85% {background: $red;}
+	100%{background: $blue;}
+}
+
+#top {
+	height: 250px;
+	background: $blue;
+	-webkit-animation: headerbg 20s 0 linear infinite normal;
+	animation: headerbg 20s linear infinite normal;
+	color: #fff;
+	@extend %clearfix;
+	@include transition(all .7s ease-in-out);
+	.home &, .page-en & {
+		height: 100%;
+		h2 {
+			font-size: 2em;
+			top: 37%;
+			letter-spacing: 1px;
+			font-weight: 700;
+		}
+	}
+	.logo {
+		text-align: left;
+		float: left;
+		position: absolute;
+		top: 35px;
+		left: 30px;
+		@include transition(all .8s ease-in-out);
+		white-space: nowrap;
+		h1 {
+			font-size: 2.5em;
+			@include transition(all .2s linear);
+			color: #fff;
+			font-weight: 100;
+			position: relative;
+			font-weight: 700;
+			line-height: 1.1;
+		}
+		&:hover h1 {
+			color: #fafafa;
+			color: rgba(255,255,255,.85);
+		}
+	}
+	h2 {
+		top: 100px;
+		text-transform: uppercase;
+		font-size: 4em;
+		text-align: center;
+		width: 90%;
+		max-width: 1100px;
+		display: block;
+		position: relative;
+		margin: 0 auto;
+		padding-top: 40px;
+		font-weight: 700;
+		letter-spacing: 4px;
+	}
+}
+
+
+
+
+#nav {
+	top: 45px;
+	position: relative;
+	@include transition(all 1.2s ease);
+	width: 100%;
+	ul {
+		float: right;
+	}
+	li {
+		display: inline-block;
+		&.current_menu_item, &.scroll {
+			a {
+				color: #fff;
+				text-shadow: rgba(0,0,0,0.1) 0 1px 4px;
+			}
+		}		
+	}
+	a {
+		color: #f5f5f5;
+		color: rgba(255,255,255,0.95);
+		text-transform: uppercase;
+		position: relative;
+		line-height: 2;
+		padding: 1.5em;
+		letter-spacing: 3px;
+		&:hover {
+			color: #fff;
+			text-shadow: rgba(0,0,0,0.1) 0 1px 4px;
+		}
+		
+	}
+}

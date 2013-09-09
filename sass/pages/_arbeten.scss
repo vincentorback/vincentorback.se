@@ -1,0 +1,132 @@
+.intro {
+	text-align: center;
+	height: 15%;
+	position: relative;
+	z-index: 9999;
+	h3 {
+		text-transform: uppercase;
+		font-size: 1em;
+		font-weight: 700;
+		letter-spacing: 1px;
+		top: 40%;
+		position: relative;
+	}
+}
+
+
+.no-js .work .webp {
+	display: none !important;
+}
+
+.work {
+	padding: 8em 0 6em 0;
+	@extend %clearfix;
+	background: #167ea3;
+	color: #fff;
+	img {
+		display: block;
+		margin: 0 auto;
+		max-width: 1140px;
+		width: 100%;
+	}
+	.work-info {
+		width: 95%;
+		margin: 0 auto;
+		max-width: 1040px;
+	}
+	h1 {
+		font-size: 2em;
+		margin: 1em 0 .5em 0;
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-weight: 700;
+	}
+	p {
+		text-align: left;
+		font-size: 1.2em;
+	}
+	.info {
+		width: 100%;
+		margin: 4em auto 0 auto;
+		p{
+			margin: 0 0 0 1.5em;
+			display: inline;
+			text-align: center;
+			&:first-child {
+				margin: 0;
+			}
+		}
+		a {
+			text-align: center;
+			display: inline-block;
+			float: right;
+			position: relative;
+			top: -16px;
+			padding: 1em 1.5em;
+			font-size: 1.2em;
+			border-radius: 5px;
+			letter-spacing: 1px;
+			color: #fff;
+			&:hover {
+				box-shadow: rgba(0,0,0,.2) 0 1px 2px;
+			}
+			&:active {
+				box-shadow:inset rgba(0,0,0,.2) 0 1px 3px;
+			}
+		}
+	}
+}
+//#167ea3
+.nordiska {
+	background: #106c8d;
+	@include background-image(linear-gradient(#1889b2 10%,#106c8d 65%));
+	a {
+		background: #1889b2;
+	}
+}
+
+.comai {
+	background: #f68428;
+	@include background-image(linear-gradient(#f68428, #f4651e));
+	a {
+		background: #ffb031;
+	}
+}
+
+
+.brf {
+	background: #1abee3;
+	@include background-image(linear-gradient(#1abee3, #0eaccf));
+	a {
+		background: #3acdee;
+	}
+}
+
+
+
+.bar {
+	background: #5cccff;
+	@include background-image(linear-gradient(#8edbff 10%, #5cccff 85%));
+	a {
+		background: #f8713c;
+	}
+}
+
+.manscentrum {
+	background: #d50b0b;
+	@include background-image(linear-gradient(#f00, #d50b0b));
+	.info a {
+		color: #d50b0b;
+		background: #fff;
+	}
+}
+
+.artonglass {
+	color: #333;
+	background: #eee;
+	@include background(linear-gradient(bottom, #d5d7db 10%, #dfe2e5 98%, #d5d7db 100%) no-repeat);
+	a {
+		background: #222;
+	}
+}

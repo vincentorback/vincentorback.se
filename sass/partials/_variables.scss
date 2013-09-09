@@ -1,0 +1,33 @@
+%clearfix {
+  &:after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+}
+
+/* Colors */
+$blue: #4cd2da;
+$red: #ef4b44;
+$green: #2ecc71;
+$yellow: #f1c40f;
+$darkblue: #34495e;
+$orange: #f39c12;
+
+/* Fonts */
+$helvetica: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+
+
+/* Mixins */
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;
+}
+
+@mixin keyframes($name) {
+	@-webkit-keyframes $name { @content; }
+	@-moz-keyframes $name { @content; }
+	@-ms-keyframes $name { @content; }
+	@keyframes $name { @content; }
+}
