@@ -128,7 +128,18 @@ input:focus {
 	
 }
 
-
+.no-svg {
+	.arkdes {
+		.app-store {
+			background: url(images/app-store.png) no-repeat center center;
+			background-size: 135px;
+		}
+		.google-play {
+			background: url(images/google-play.png) no-repeat center center;
+			background-size: 135px;
+		}
+	}
+}
 .error404 #top{
 	-webkit-animation: error 5s 0s linear infinite normal;
 	animation: headerbg 5s 0s linear infinite normal;

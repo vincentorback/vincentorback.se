@@ -65,16 +65,16 @@
 				left: auto;
 			}
 		}
-		#nav {
-			text-align: center;
-			top: 50px;
-			ul {
-				text-align: center;
-				float: none;
-			}
-		}
 		h2 {
 			top: 40px;
+		}
+	}
+	#nav {
+		text-align: center;
+		top: 50px;
+		ul {
+			text-align: center;
+			float: none;
 		}
 	}
 	.work {
@@ -88,12 +88,19 @@
 			p {
 				margin: 0 1em;
 			}
-			a {
+			.visit {
 				float: none;
 				position: static;
 				margin: 2em auto 0 auto;
 				display: inline-block;
 				width: auto;
+			}
+		}
+		.app-links {
+			float: none;
+			text-align: center;
+			a {
+				margin: 10px 20px;
 			}
 		}
 	}
@@ -275,9 +282,9 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 		.logo h1 {
 			white-space: normal;
 		}
-		#nav ul li a {
-			padding: 0 15px;
-		}
+	}
+	#nav a {
+		padding: 0 15px;
 	}
 	.home #top, .page-en #top {
 		h2 {
@@ -301,6 +308,13 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 				margin: 0 0 10px 0;
 			}
 		}
+		.app-links {
+			float: none;
+			text-align: center;
+			a {
+				margin: 10px 0;
+			}
+		}
 		
 	}
 	#readmore {
@@ -319,18 +333,32 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 			top: 60px;
 		}
 	}
+	#nav {
+		top: 60px;
+		a {
+			padding: 3px 15px;
+			display: block;
+		}
+	}
 	.work {
 		h1 {
 			font-size: 1.5em;
 		}
-		.info a {
+		.info .visit {
 			width: auto;
 			padding: 0;
 			font-size: 1.1em;
 			padding: .8em;
 		}
 	}
+	#ommig {
+		margin: 2.5em auto 0 auto;
+	}
 	#recommend {
+		margin: 5em auto;
+		.container {
+			margin: 1em auto;
+		}
 		.websites .half {
 			max-width: 100%;
 			width: 100%;
@@ -346,9 +374,9 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 	.logo h1 {
 		
 	}
-	#top #nav ul li a {
+	#nav a {
 		display: block;
-		padding: 0 10px;
+		padding: 10px;
 	}
 	#top {
 		height: 330px;
