@@ -26,17 +26,6 @@
 <meta name="twitter:creator" content="@vorback">
 <meta name="twitter:image:src" content="http://vincentorback.se/images/twitter-card.png">
 <meta name="twitter:domain" content="http://vincentorback.se/">
-<script>
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-31135100-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
 </head>
 
 <body class="ommig">
@@ -62,7 +51,7 @@
 	<img src="/images/ommig/vincentorback.jpg" alt="Vincent Orback" width="300" height="300" />
 	<h3>Hi there!</h3>
 	 <p>I'm Vincent. A designer and developer living in Stockholm.<!-- I work at the digital agency <a href="http://www.daytona.se/" target="_blank">Daytona</a> where i do front-end development.--> I love building responsive, responsible websites and designing things smarter and easier. When I'm not doing client work i usually tinker with side projects.</p>
-	 </div><a href="/cv-en.pdf" target="_blank" class="cv">Download resume</a>
+	 <!--<a href="/cv-en.pdf" target="_blank" class="cv">Download resume</a>-->
 </section>
 
 <section id="recommend">
@@ -142,5 +131,13 @@
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <script src="/js/main-min.js"></script>
+<script>
+(function(o,r,b,a,c,k){o.GoogleAnalyticsObject=a;o[a]||(o[a]=
+function(){(o[a].q=o[a].q||[]).push(arguments)});o[a].a=+new Date;
+c=r.createElement(b);k=r.getElementsByTagName(b)[0];
+c.src='//www.google-analytics.com/analytics.js';
+k.parentNode.insertBefore(c,k)}(window,document,'script','ga'));
+ga('create','UA-31135100-1');ga('send','pageview');
+</script>
 </body>
 </html>

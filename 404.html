@@ -7,25 +7,32 @@
 <link href="http://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
 <style>
-.home #top {
+.fourofour #top {
 	height: 100%;
+}
+.fourofour #top h2{
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+}
+body {
+	overflow: hidden;
+}
+#SvgjsSvg1000 {
+	position: absolute !important;
+}
+#SvgjsRect1002 {
+	cursor: pointer;
+}
+#SvgjsText1003 {
+	margin-top: 200px !important;
 }
 </style>
 <link rel="icon" href="/images/icons/favicon.png">
 <!--[if IE]><link rel="shortcut icon" href="images/icons/favicon.ico"><![endif]-->
 <title>404 - Vincent Orback</title>
 <link rel="author" href="https://plus.google.com/105789918295897205990/posts/">
-<script>
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-31135100-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
 </head>
 
 <body class="home fourofour">
@@ -48,5 +55,44 @@
 		<h2>404</h2>
 	</div>
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="/js/main-min.js"></script>
+<script src="/js/svg.min.js"></script>
+<script>
+$(document).ready(function() {
+	if(modernizr.touch) {
+		var winwidth = $(document).width();
+		var winheight = $(document).height();
+		var draw = SVG('top');
+		var rect = draw.rect(60,60).move((winwidth / 2) - 30, winheight / 2 + 60).fill('#fff');
+
+		rect.mouseover(function() {
+		    this.animate(1000, SVG.easing.elastic)
+		        .move(winwidth * Math.random(), winheight * Math.random())
+		        .rotate(-45 + 90 * Math.random());
+		});
+
+		draw.text("This page does'nt exist but... Catch the square!")
+		    .back()
+		    .fill('#fff')
+		    .move('50%', '50%')
+		    .font({
+		        family: 'Josefin Sans'
+		      , size: 18
+		      , anchor: 'middle'
+		    });
+		rect.click(function() {
+			alert('Great job! \nNow get back to work!');
+		});
+	}
+});
+</script>
+<script>
+(function(o,r,b,a,c,k){o.GoogleAnalyticsObject=a;o[a]||(o[a]=
+function(){(o[a].q=o[a].q||[]).push(arguments)});o[a].a=+new Date;
+c=r.createElement(b);k=r.getElementsByTagName(b)[0];
+c.src='//www.google-analytics.com/analytics.js';
+k.parentNode.insertBefore(c,k)}(window,document,'script','ga'));
+ga('create','UA-31135100-1');ga('send','pageview');
+</script>
 </body>
 </html>

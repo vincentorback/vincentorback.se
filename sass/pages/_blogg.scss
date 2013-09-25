@@ -1,0 +1,81 @@
+body.blogg {
+	#top {
+		background: url(images/blogg2.jpg) no-repeat center bottom;
+		background-size: cover;
+		background-attachment: fixed;
+		-webkit-animation: none;
+		animation: none;
+		height: 70%;
+		text-shadow: rgba(0,0,0,.2) 0 1px 2px;
+		h2 {
+			top: 28%;
+		}
+	}
+	main {
+		max-width: 800px;
+		margin: -90px auto 0 auto;
+	}
+	.entry {
+		box-shadow: rgba(0,0,0,.2) 0 0 2px;
+		margin-bottom: 75px;
+		position: relative;
+		padding-bottom: 30px;
+		header {
+			padding: 30px 40px 0 40px;
+			background: #fff;
+			@extend %clearfix;
+			display: block;
+			position: relative;
+		}
+		h3 {
+			float: left;
+			font-weight: 600;
+			max-width: calc(100% - 60px);
+		}
+		.date {
+			float: right;
+			background: $green;
+			display: block;
+			color: #fff;
+			width: 65px;
+			height: 65px;
+			text-align: center;
+			border-radius: 50%;
+			font-size: 23px;
+			line-height: 1;
+			position: absolute;
+			padding-top: 10px;
+			top: 25px;
+			right: 25px;
+		}
+		.entry-content {
+			padding: 30px 40px;
+			font-size: 22px;
+			line-height: 1.6;
+			img {
+				margin: 20px 0;
+			}
+			a {
+				border-bottom: 1px solid #222;
+			}
+		}
+		.more {
+			padding: 20px 40px;
+			font-size: 18px;
+			font-weight: 600;
+			letter-spacing: 2px;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			&:after {
+				content: "→";
+				position: relative;
+				top: 3px;
+				left: 6px;
+			}
+			&:hover:after {
+				left: 12px;
+			}
+		}
+	}
+}

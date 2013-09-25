@@ -149,7 +149,7 @@
 .manscentrum {
 	background: #d50b0b;
 	@include background-image(linear-gradient(#f00, #d50b0b));
-	.info a {
+	.info .visit {
 		color: #d50b0b;
 		background: #fff;
 	}
