@@ -61,7 +61,7 @@
 			display: inline-block;
 			float: right;
 			position: relative;
-			top: -16px;
+			top: -15px;
 			padding: 1em 1.5em;
 			font-size: 1.2em;
 			border-radius: 5px;
@@ -116,7 +116,7 @@
 	background: #1789b2;
 	@include background-image(linear-gradient(#1d91bb 10%,#1789b2 65%));
 	a {
-		background: #1889b2;
+		background: #17435d;
 	}
 }
 

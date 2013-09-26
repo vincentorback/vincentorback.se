@@ -59,32 +59,40 @@ body {
 <script src="/js/svg.min.js"></script>
 <script>
 $(document).ready(function() {
-	if(modernizr.touch) {
-		var winwidth = $(document).width();
-		var winheight = $(document).height();
-		var draw = SVG('top');
-		var rect = draw.rect(60,60).move((winwidth / 2) - 30, winheight / 2 + 60).fill('#fff');
-
-		rect.mouseover(function() {
-		    this.animate(1000, SVG.easing.elastic)
-		        .move(winwidth * Math.random(), winheight * Math.random())
-		        .rotate(-45 + 90 * Math.random());
-		});
-
-		draw.text("This page does'nt exist but... Catch the square!")
-		    .back()
-		    .fill('#fff')
-		    .move('50%', '50%')
-		    .font({
-		        family: 'Josefin Sans'
-		      , size: 18
-		      , anchor: 'middle'
-		    });
-		rect.click(function() {
-			alert('Great job! \nNow get back to work!');
-		});
+	function fourofour() {
+		if(!Modernizr.touch) {
+			var winwidth = $(document).width();
+			var winheight = $(document).height();
+			var draw = SVG('top');
+			var rect = draw.rect(60,60).move((winwidth / 2) - 30, winheight / 2 + 60).fill('#fff');
+	
+			rect.mouseover(function() {
+			    this.animate(1000, SVG.easing.elastic)
+			        .move(winwidth * Math.random(), winheight * Math.random())
+			        .rotate(-45 + 90 * Math.random());
+			});
+	
+			draw.text("This page does'nt exist but... Catch the square!")
+			    .back()
+			    .fill('#fff')
+			    .move('50%', '50%')
+			    .font({
+			        family: 'Josefin Sans'
+			      , size: 18
+			      , anchor: 'middle'
+			    });
+			rect.click(function() {
+				alert('Great job! \nNow get back to work!');
+			});
+		}
 	}
+	fourofour();
+	$(window).resize(function() {
+		location.reload();
+	});
 });
+
+
 </script>
 <script>
 (function(o,r,b,a,c,k){o.GoogleAnalyticsObject=a;o[a]||(o[a]=
