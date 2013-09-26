@@ -40,7 +40,7 @@ img {
 a {
 	color: #222;
 	text-decoration:none;
-	@include transition(all .2s linear);
+	@include transition(color .2s linear);
 	cursor: pointer;
 	&:hover {
 		color: #000;

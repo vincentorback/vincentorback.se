@@ -21,6 +21,9 @@
 	#recommend .inspiration {
 		position: relative;
 		left: 3%;
+		h4 {
+			margin-top: 0px;
+		}
 	}
 }
 
@@ -85,8 +88,8 @@
 			width: 100%;
 			text-align: center;
 			margin: 2.5em 0 1em 0 ;
-			p {
-				margin: 0 1em;
+			p, p:first-child {
+				margin: 0 1em 0 0;
 			}
 			.visit {
 				float: none;
@@ -155,6 +158,9 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 			a {
 				display: block;
 				margin: 1em 0;
+			}
+			h4 {
+				margin-top: 0px;
 			}
 		}
 	}	
