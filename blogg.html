@@ -97,12 +97,14 @@
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <script src="/js/main-min.js"></script>
 <script>
-(function(o,r,b,a,c,k){o.GoogleAnalyticsObject=a;o[a]||(o[a]=
-function(){(o[a].q=o[a].q||[]).push(arguments)});o[a].a=+new Date;
-c=r.createElement(b);k=r.getElementsByTagName(b)[0];
-c.src='//www.google-analytics.com/analytics.js';
-k.parentNode.insertBefore(c,k)}(window,document,'script','ga'));
-ga('create','UA-31135100-1');ga('send','pageview');
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-31135100-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
 </script>
 </body>
 </html>

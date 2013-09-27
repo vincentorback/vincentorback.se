@@ -1,6 +1,6 @@
 body.blogg {
 	#top {
-		background: url(images/blogg2.jpg) no-repeat center bottom;
+		background: url(images/blogg/1.jpg) no-repeat center bottom;
 		background-size: cover;
 		background-attachment: fixed;
 		-webkit-animation: none;
@@ -72,6 +72,7 @@ body.blogg {
 				position: relative;
 				top: 3px;
 				left: 6px;
+				@include transition(all .1s ease);
 			}
 			&:hover:after {
 				left: 12px;
