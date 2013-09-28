@@ -1,6 +1,6 @@
 body.blogg {
 	#top {
-		background: url(images/blogg/1.jpg) no-repeat center bottom;
+		background: url(images/blogg/1.jpg) no-repeat center center;
 		background-size: cover;
 		background-attachment: fixed;
 		-webkit-animation: none;
@@ -41,7 +41,8 @@ body.blogg {
 			height: 65px;
 			text-align: center;
 			border-radius: 50%;
-			font-size: 23px;
+			word-spacing: 65px;
+			font-size: 22px;
 			line-height: 1;
 			position: absolute;
 			padding-top: 10px;
@@ -58,6 +59,12 @@ body.blogg {
 			a {
 				border-bottom: 1px solid #222;
 			}
+			b,strong,h1,h2,h3,h4,h5,h6 {
+				font-weight: bold;
+			}
+			i,em {
+				font-style: italic;
+			}
 		}
 		.more {
 			padding: 20px 40px;
@@ -66,7 +73,7 @@ body.blogg {
 			letter-spacing: 2px;
 			position: absolute;
 			right: 0;
-			bottom: 0;
+			bottom: 5px;
 			&:after {
 				content: "→";
 				position: relative;

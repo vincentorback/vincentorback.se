@@ -77,6 +77,18 @@
 	}
 }
 
+
+.coop {
+	background: #18be37;
+	@include background-image(linear-gradient(#18be37 10%,#14ab30 65%));
+	.info {
+		
+		.visit {
+			background: #fff;
+			color: #14ab30;
+		}
+	}
+}
 .arkdes {
 	background: $yellow;
 	@include background-image(linear-gradient(#f7cd25 10%,#f1c40f 65%));
@@ -116,7 +128,7 @@
 	background: #1789b2;
 	@include background-image(linear-gradient(#1d91bb 10%,#1789b2 65%));
 	a {
-		background: #17435d;
+		background: #1a587c;
 	}
 }
 
@@ -142,7 +154,7 @@
 	background: #72caf2;
 	@include background-image(linear-gradient(#8edbff 10%, #5cccff 85%));
 	a {
-		background: #f8713c;
+		background: #f2652c;
 	}
 }
 
