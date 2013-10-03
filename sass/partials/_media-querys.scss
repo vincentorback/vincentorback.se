@@ -32,7 +32,7 @@
 		.logo {
 			left: 50px;
 		}
-		#nav {
+		.main-nav {
 			right: 35px;
 		}
 	}
@@ -72,7 +72,7 @@
 			top: 40px;
 		}
 	}
-	#nav {
+	.main-nav {
 		text-align: center;
 		top: 50px;
 		ul {
@@ -283,7 +283,7 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 			white-space: normal;
 		}
 	}
-	#nav a {
+	.main-nav a {
 		padding: 0 15px;
 	}
 	.home #top, .page-en #top {
@@ -333,7 +333,7 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 			top: 60px;
 		}
 	}
-	#nav {
+	.main-nav {
 		top: 60px;
 		a {
 			padding: 3px 15px;
@@ -374,7 +374,7 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 	.logo h1 {
 		
 	}
-	#nav a {
+	.main-nav a {
 		display: block;
 		padding: 10px;
 	}

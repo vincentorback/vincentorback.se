@@ -1,6 +1,11 @@
 {
   "name": "vincent-orback",
   "version": "0.1.0",
+  "description": "My personal portfolio",
+  "author": {
+	  "name": "Vincent Orback",
+	  "email": "vorback@gmail.com"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-watch": "~0.5.3",
