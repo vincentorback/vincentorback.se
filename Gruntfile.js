@@ -17,6 +17,9 @@ module.exports = function(grunt) {
 				mangle: true
 			},
 			my_target: {
+				options: {
+					sourceMap: 'js/main-min.map.js'
+				},
 				files: {
 					'js/main-min.js': ['js/jquery-1.9.1.min.js', 'js/modernizr.js', 'js/resize.js', 'js/main.js']
 				}
