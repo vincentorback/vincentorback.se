@@ -6,11 +6,10 @@ module.exports = function(grunt) {
 
 		watch: {
 			js: {
-				files: ["js/*.js"],
-				tasks: "uglify"
+				files: ['js/*.js'],
+				tasks: 'uglify'
 			}
 		},
-
 		uglify: {
 			options: {
 				banner: '/*! Vincent Orback <%= grunt.template.today("yyyy-mm-dd") %> */\n',
@@ -21,11 +20,10 @@ module.exports = function(grunt) {
 					sourceMap: 'js/main-min.map.js'
 				},
 				files: {
-					'js/main-min.js': ['js/jquery-1.9.1.min.js', 'js/modernizr.js', 'js/resize.js', 'js/main.js']
+					'js/main-min.js': ['js/vendor/jquery-1.9.1.min.js', 'js/vendor/modernizr.js', 'js/vendor/resize.js', 'js/main.js']
 				}
 			}
 		}
-
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
