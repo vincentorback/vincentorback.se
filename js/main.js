@@ -8,7 +8,6 @@ var vincent = {
 		}
 		if ($('#contact').is('section')) {
 			vincent.contactForm();
-			vincent.inputGrow();
 		}
 	},
 	smoothScroll: function () {
@@ -27,13 +26,13 @@ var vincent = {
 			e.preventDefault();
 		});
 	},
+
 	contactForm: function () {
-		$('#contact-form').on('submit', function (e) {
+
+		$('#contact-form').submit(function (e) {
 			e.preventDefault();
 
 			var form = $(this),
-				post_url = form.attr('action'),
-				post_data = form.serialize(),
 				name = $('#name'),
 				email = $('#email'),
 				message = $('#message'),
@@ -41,12 +40,10 @@ var vincent = {
 				emptyEmail = "Fyll i en riktigt e-post!",
 				emptyMessage = "Vad var det du ville säga?";
 			if (form.hasClass('english')) {
-				emptyName = "What's your name?";
-				emptyEmail = "Please enter a valid e-mail!";
-				emptyMessage = "What did you come here to say";
+				var emptyName = "What's your name?",
+					emptyEmail = "Please enter a valid e-mail!",
+					emptyMessage = "What did you come here to say";
 			}
-
-			$('body, html').animate({scrollTop: 330}, 300);
 
 			if (name.val() === "") {
 				name.addClass("needsfilled");
@@ -60,26 +57,16 @@ var vincent = {
 				message.addClass("needsfilled");
 				message.attr("placeholder", emptyMessage);
 			}
-			if ($(":input").hasClass("needsfilled")) {
+
+			if ($("input, textarea").hasClass("needsfilled")) {
+				$("input.needsfilled").focus();
 				return false;
 			} else {
-				return true;
+				vincent.sendMessage();
 			}
-
-			$.ajax({
-				type: 'POST',
-				url: post_url,
-				data: post_data,
-				success: function (msg) {
-					form.fadeOut(1000, function () {
-						form.html(msg).fadeIn("slow");
-					});
-				}
-			});
-
 		});
 
-		$(":input").focus(function(){
+		$(":input").focus(function (){
 			if ($(this).hasClass("needsfilled") ) {
 				$(this).val("");
 				$(this).removeClass("needsfilled");
@@ -95,6 +82,23 @@ var vincent = {
 			minHeight: 300,
 			maxHeight: 1000,
 			animate: false
+		});
+	},
+
+	sendMessage: function () {
+		var form = $('#contact-form'),
+			post_url = form.attr('action'),
+			post_data = form.serialize();
+
+		$.ajax({
+			type: 'POST',
+			url: post_url,
+			data: post_data,
+			success: function (msg) {
+				form.fadeOut(300, function () {
+					form.html(msg).fadeIn("slow");
+				});
+			}
 		});
 	}
 };

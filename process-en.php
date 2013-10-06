@@ -12,8 +12,8 @@ $message = "Meddelande från vincentorback.se\n\n".
 
 
 if(mail($toemail, 'Meddelande från vincentorback.se', $message, 'From: ' . $email)) {
-echo '<div class="sent">Thank you for your message!.</div>';
+echo '<div class="sent">Thank you for your message!</div>';
 } else {
-echo '<div class="sent">Something went wrong. Try sending and email to <a href="mailto:vorback@gmail.com>vorback@gmail.com</a> instead.</div>';
+echo '<div class="sent">Something went wrong. Try sending and email to <a href="mailto:vorback@gmail.com">vorback@gmail.com</a> instead.</div>';
 }
 ?>
