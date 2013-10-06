@@ -12,13 +12,10 @@ module.exports = function(grunt) {
 		},
 		uglify: {
 			options: {
-				banner: '/*! Vincent Orback <%= grunt.template.today("yyyy-mm-dd") %> */\n',
+				banner: '/*!\n* Vincent Orback <%= grunt.template.today("yyyy-mm-dd") %>\n* See the not so ugly version at https://github.com/vincentorback/Vincent-Orback \n*/\n',
 				mangle: true
 			},
 			my_target: {
-				options: {
-					sourceMap: 'js/main-min.map.js'
-				},
 				files: {
 					'js/main-min.js': ['js/vendor/jquery-1.9.1.min.js', 'js/vendor/modernizr.js', 'js/vendor/resize.js', 'js/main.js']
 				}
