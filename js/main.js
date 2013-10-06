@@ -45,6 +45,10 @@ var vincent = {
 					emptyMessage = "What did you come here to say";
 			}
 
+			$("html, body").animate({
+				scrollTop: 330
+			}, 300);
+
 			if (name.val() === "") {
 				name.addClass("needsfilled");
 				name.attr("placeholder", emptyName);
