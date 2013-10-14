@@ -43,6 +43,9 @@
 			line-height: 1.2;
 			min-height: 320px;
 		}
+		label {
+			cursor: pointer;
+		}
 		input {
 			text-align: left;
 			border-bottom: 3px solid #222;
