@@ -30,7 +30,6 @@
 <!--[if lt IE 8]>
     <p class="chromeframe">Du använder en <strong>utdaterad</strong> webbläsare. Jag rekommenderar att du <a href="http://browsehappy.com/">uppgraderar din webbläsare</a> för att förbättra din upplevelse av hela internet.</p>
 <![endif]-->
-
 <header id="top" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 	<a class="logo">
 	    <h1 itemprop="headline">Vincent Orback</h1>
@@ -47,7 +46,7 @@
 </header>
 
 <main id="portfolio" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/CreativeWork">
-<!--
+
 	<article class="work arkdes" itemscope itemtype="http://schema.org/CreativeWork">
 		<img src="/images/arkdes.png" alt="Arkitektur Nu / Stockholm" width="1140" height="725" itemprop="image">
 		<div class="work-info">
@@ -56,17 +55,17 @@
 			<div class="info">
 				<p itemprop="datePublished">År: 2013</p>
 				<p>Byrå: Queensbridge</p>
-				<p>Role: Utvecklare</p>
+				<p>Roll: Utvecklare</p>
 				<a class="visit" href="http://arkitekturnustockholm.arkdes.se/sv" target="_blank">arkitekturnustockholm.arkdes.se</a>
 			</div>
 			<div class="app-links">
-				<a href="#" class="app-store">Tillgänglig på App Store</a>
-				<a href="#" class="google-play">Ladda ner på Google Play</a>
+				<a href="https://itunes.apple.com/se/app/arkitektur-nu-stockholm/id705853039?mt=8&uo=4" class="app-store">Tillgänglig på App Store</a>
+				<a href="https://play.google.com/store/apps/details?id=se.queensbridge.lighthouses" class="google-play">Ladda ner på Google Play</a>
 			</div>
 			
 		</div>
 	</article>
--->
+
 	<article class="work comai" itemscope itemtype="http://schema.org/CreativeWork">
 		<img src="images/comai.png" alt="" width="1140" height="725" itemprop="image">
 		<div class="work-info">
@@ -161,9 +160,18 @@
 </footer>
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-<script src="js/main-min.js"></script>
 <script>
-var _gaq = _gaq || [];
+function downloadJSAtOnload() {
+var element = document.createElement("script"), _gaq = _gaq || [];
+element.src = "/js/main-min.js";
+document.body.appendChild(element);
+}
+if (window.addEventListener)
+window.addEventListener("load", downloadJSAtOnload, false);
+else if (window.attachEvent)
+window.attachEvent("onload", downloadJSAtOnload);
+else window.onload = downloadJSAtOnload;
+
 _gaq.push(['_setAccount', 'UA-31135100-1']);
 _gaq.push(['_trackPageview']);
 (function() {

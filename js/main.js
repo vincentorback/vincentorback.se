@@ -40,8 +40,8 @@ var vincent = {
 				emptyEmail = "Fyll i en riktigt e-post!",
 				emptyMessage = "Vad var det du ville säga?";
 			if (form.hasClass('english')) {
-				var emptyName = "What's your name?",
-					emptyEmail = "Please enter a valid e-mail!",
+					emptyName = "What's your name?";
+					emptyEmail = "Please enter a valid e-mail!";
 					emptyMessage = "What did you come here to say";
 			}
 
