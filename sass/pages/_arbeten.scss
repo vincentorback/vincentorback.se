@@ -29,6 +29,7 @@
 	.info {
 		width: 100%;
 		margin: 4em auto 0 auto;
+		@extend %clearfix;
 		p{
 			margin: 0 0 0 1.5em;
 			display: inline;
@@ -58,24 +59,12 @@
 	}
 }
 
-
-.coop {
-	background: #18be37;
-	@include background-image(linear-gradient(#18be37 10%,#14ab30 65%));
-	.info {
-		
-		.visit {
-			background: #fff;
-			color: #14ab30;
-		}
-	}
-}
 .arkdes {
 	background: $yellow;
 	@include background-image(linear-gradient(#f7cd25 10%,#f1c40f 65%));
 	.info {
 		height: auto;
-		margin-bottom: 2em;
+		margin-bottom: 10px;
 		.visit {
 			background: #fafafa;
 			color: #333;
