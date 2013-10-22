@@ -78,7 +78,7 @@
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <script>
 function downloadJSAtOnload() {
-var element = document.createElement("script"), _gaq = _gaq || [];
+var element = document.createElement("script");
 element.src = "/js/main-min.js";
 document.body.appendChild(element);
 }
@@ -88,8 +88,10 @@ else if (window.attachEvent)
 window.attachEvent("onload", downloadJSAtOnload);
 else window.onload = downloadJSAtOnload;
 
+var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-31135100-1']);
 _gaq.push(['_trackPageview']);
+
 (function() {
 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
