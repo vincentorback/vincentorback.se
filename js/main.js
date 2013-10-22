@@ -1,3 +1,5 @@
+/* jshint browser: true, strict: false, eqeqeq: true, indent: 2, newcap: true, plusplus: true, unused: true, trailing: true, loopfunc: false, nomen: true, onevar: true, white: true, undef: true, latedef: true */
+
 var winWidth = $(window).width();
 
 var vincent = {
@@ -40,9 +42,9 @@ var vincent = {
 				emptyEmail = "Fyll i en riktigt e-post!",
 				emptyMessage = "Vad var det du ville säga?";
 			if (form.hasClass('english')) {
-					emptyName = "What's your name?";
-					emptyEmail = "Please enter a valid e-mail!";
-					emptyMessage = "What did you come here to say";
+				emptyName = "What's your name?";
+				emptyEmail = "Please enter a valid e-mail!";
+				emptyMessage = "What did you come here to say";
 			}
 
 			$("html, body").animate({
@@ -63,15 +65,15 @@ var vincent = {
 			}
 
 			if ($("input, textarea").hasClass("needsfilled")) {
-				$("input.needsfilled").focus();
+				$("input.needsfilled:first").focus();
 				return false;
 			} else {
 				vincent.sendMessage();
 			}
 		});
 
-		$(":input").focus(function (){
-			if ($(this).hasClass("needsfilled") ) {
+		$(":input").focus(function () {
+			if ($(this).hasClass("needsfilled")) {
 				$(this).val("");
 				$(this).removeClass("needsfilled");
 			}

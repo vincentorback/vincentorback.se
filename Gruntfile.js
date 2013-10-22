@@ -4,12 +4,32 @@ module.exports = function(grunt) {
 
 		pkg: grunt.file.readJSON('package.json'),
 
-		watch: {
-			js: {
-				files: ['js/*.js'],
-				tasks: 'uglify'
-			}
-		},
+		jshint: {
+      options: {
+        ignores: [
+          'js/vendor/*.js',
+          'js/*-min.js',
+        ],
+        browser: true,
+        strict: false,
+        eqeqeq: true,
+        indent: 2,
+        newcap: true,
+        plusplus: true,
+        unused: true,
+        trailing: true,
+        loopfunc: false,
+        nomen: true,
+        onevar: true,
+        white: true,
+        undef: true,
+        latedef: true,
+        globals: {
+          jQuery: true,
+          $: true
+        }
+      }
+    },
 		uglify: {
 			options: {
 				banner: '/*!\n* Vincent Orback <%= grunt.template.today("yyyy-mm-dd") %>\n* See the not so ugly version at https://github.com/vincentorback/Vincent-Orback \n*/\n',
@@ -23,8 +43,8 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 
-	grunt.registerTask('default', ['uglify', 'watch']);
+	grunt.registerTask('default', ['jshint', 'uglify']);
 };
