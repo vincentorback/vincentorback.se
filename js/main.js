@@ -1,20 +1,20 @@
 /* jshint browser: true, strict: false, eqeqeq: true, indent: 2, newcap: true, plusplus: true, unused: true, trailing: true, loopfunc: false, nomen: true, onevar: true, white: true, undef: true, latedef: true */
 
-var winWidth = $(window).width();
+var winWidth = window.innerWidth;
 
 var vincent = {
-	
+
 	init : function () {
-		if ($('#portfolio').is('main')) {
+		if (document.getElementById('portfolio') !== null) {
 			vincent.smoothScroll();
+			vincent.lazyLoad();
 		}
-		if ($('#contact').is('section')) {
+		if (document.getElementById('contact') !== null) {
 			vincent.contactForm();
 		}
 	},
 	smoothScroll: function () {
 		var scrollDistance;
-
 		if (winWidth > 1140) {
 			scrollDistance = 235;
 		}
@@ -28,27 +28,31 @@ var vincent = {
 			e.preventDefault();
 		});
 	},
-
+	lazyLoad: function () {
+		$("img.lazy").lazyload({
+			effect: "fadeIn",
+			threshold: 500,
+			failure_limit: 10
+		});
+	},
 	contactForm: function () {
+		var form = $('#contact-form'),
+			name = $('#name'),
+			email = $('#email'),
+			message = $('#message'),
+			emptyName = "Vad heter du?",
+			emptyEmail = "Fyll i en riktigt e-post!",
+			emptyMessage = "Vad var det du ville säga?";
+		if (form.hasClass('english')) {
+			emptyName = "What's your name?";
+			emptyEmail = "Please enter a valid e-mail!";
+			emptyMessage = "What did you come here to say";
+		}
 
 		$('#contact-form').submit(function (e) {
-			e.preventDefault();
-
-			var form = $(this),
-				name = $('#name'),
-				email = $('#email'),
-				message = $('#message'),
-				emptyName = "Vad heter du?",
-				emptyEmail = "Fyll i en riktigt e-post!",
-				emptyMessage = "Vad var det du ville säga?";
-			if (form.hasClass('english')) {
-				emptyName = "What's your name?";
-				emptyEmail = "Please enter a valid e-mail!";
-				emptyMessage = "What did you come here to say";
-			}
 
 			$("html, body").animate({
-				scrollTop: 330
+				scrollTop: 350
 			}, 300);
 
 			if (name.val() === "") {
@@ -70,6 +74,8 @@ var vincent = {
 			} else {
 				vincent.sendMessage();
 			}
+
+			e.preventDefault();
 		});
 
 		$(":input").focus(function () {
@@ -108,7 +114,6 @@ var vincent = {
 		});
 	}
 };
-
 
 $(document).ready(function () {
 	vincent.init();
