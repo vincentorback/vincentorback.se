@@ -1,14 +1,30 @@
-.lazy-load, .lazy-loaded {
-  @include transition(opacity 300ms ease);
-  opacity: 0;
+
+/**
+ * Responsive Video
+ */
+.embed-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px;	
+	height: 0;
+	overflow:
+	hidden; max-width: 100%;
+	height: auto;
+	margin: 1em 0;
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
 }
-.lazy-loaded {
-	opacity: 1;
-}
 
 
-
-.chromeframe {
+/**
+ * Warning that appears for browsers using IE 7 and older.
+ */
+.iewarning {
 	padding: 5px  10px;
 	color: #fff;
 	a {
@@ -18,6 +34,35 @@
 		font-weight: 700;
 	}
 }
+
+/**
+ * 404 page
+ */
+.fourofour {
+	overflow: hidden;
+	#top {
+		height: 100%;
+		h2 {
+			display: block;
+			margin: 0 auto;
+			width: 100%;
+			text-align: center;
+		}
+	}
+	.logo, .main-nav {
+		z-index: 999;
+	}
+}
+#SvgjsSvg1000 {
+	position: absolute !important;
+}
+#SvgjsRect1002 {
+	cursor: pointer;
+}
+#SvgjsText1003 {
+	margin-top: 200px !important;
+}
+
 
 .no-svg {
 	.arkdes {
@@ -29,15 +74,6 @@
 			background: url(images/google-play.png) no-repeat center center;
 			background-size: 135px;
 		}
-	}
-}
-.error404 #top{
-	-webkit-animation: error 5s 0s linear infinite normal;
-	animation: headerbg 5s 0s linear infinite normal;
-	height: 100%;
-	h2 {
-		font-size: 6em;
-		top: 35%;
 	}
 }
 .lte-ie9 {

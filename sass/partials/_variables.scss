@@ -31,3 +31,49 @@ $helvetica: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvet
 	@-ms-keyframes $name { @content; }
 	@keyframes $name { @content; }
 }
+
+
+@mixin selection {
+  ::selection {
+    @content;
+  }
+  ::-moz-selection {
+    @content;
+  }
+}
+
+
+@mixin placeholder {
+    ::-webkit-input-placeholder {
+        @content;
+    }
+
+    :-moz-placeholder { /* Firefox 18- */
+        @content;
+    }
+
+    ::-moz-placeholder {  /* Firefox 19+ */
+        @content;
+    }
+
+    :-ms-input-placeholder {
+        @content;
+    }
+    input:focus {
+      ::-webkit-input-placeholder {
+          @content;
+      }
+
+      :-moz-placeholder { /* Firefox 18- */
+          @content;
+      }
+
+      ::-moz-placeholder {  /* Firefox 19+ */
+          @content;
+      }
+
+      :-ms-input-placeholder {
+          @content;
+      }
+    }
+}

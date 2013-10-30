@@ -79,7 +79,7 @@
 		}
 		h4 {
 			font-weight: 700;
-			margin-bottom: .5em;
+			font-size: 2em;
 		}
 		h5 {
 			font-size: 1.5em;
@@ -108,13 +108,10 @@
 	}
 	.websites, .inspiration {
 		width: 23%;
-		h4 {
-			margin-bottom: .7em;
-		}
 		a {
 			display: block;
 			font-size: 1.5em;
-			padding: 10px 0;
+			padding: 5px 0;
 			@include transition(padding .1s linear);
 			&:hover {
 				padding-left: 10px;
@@ -126,6 +123,7 @@
 		h4 {
 			margin-top: 1em;
 			font-weight: 700;
+			font-size: 2em;
 		}
 	}
 	.recommend-info {

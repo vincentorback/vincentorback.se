@@ -44,11 +44,12 @@
 			float: right;
 			position: relative;
 			top: -15px;
-			padding: 1em 1.5em;
+			padding: .8em 1.6em;
 			font-size: 1.2em;
 			border-radius: 5px;
 			letter-spacing: 1px;
 			color: #fff;
+			@include transition(box-shadow .3s ease);
 			&:hover {
 				box-shadow: rgba(0,0,0,.2) 0 1px 2px;
 			}
@@ -59,6 +60,15 @@
 	}
 }
 
+.coop {
+	background: #14ab30;
+	padding: 6.5em 0 8em 0 !important;
+	.info {
+		.visit {
+			background: #1bcc36;
+		}
+	}
+}
 .arkdes {
 	background: $yellow;
 	@include background-image(linear-gradient(#f7cd25 10%,#f1c40f 65%));

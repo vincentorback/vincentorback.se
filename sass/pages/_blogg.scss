@@ -1,12 +1,14 @@
 body.blogg {
+	background: #f5f2f0;
 	#top {
-		background: url(images/blogg/1.jpg) no-repeat center center;
-		background-size: cover;
+		background: url(/images/blogg/2.jpg) no-repeat;
+		background-size: 100%;
 		background-attachment: fixed;
 		-webkit-animation: none;
 		animation: none;
-		height: 70%;
 		text-shadow: rgba(0,0,0,.2) 0 1px 2px;
+		height: 0px;
+		padding-bottom: 30%;
 		h2 {
 			top: 28%;
 		}
@@ -15,82 +17,124 @@ body.blogg {
 		max-width: 800px;
 		margin: -90px auto 0 auto;
 	}
+}
+
+@media all and (max-width: 840px) {
+	body.blogg #top {
+		height: 380px;
+		padding: 0;
+		background-size: cover;
+		h2 {
+			top: 60px;
+		}
+	}
+}
+
+#blog {
 	.entry {
 		box-shadow: rgba(0,0,0,.2) 0 0 2px;
 		margin-bottom: 75px;
 		position: relative;
-		padding-bottom: 30px;
+		background: #fff;
+		font-family: $helvetica;
 		header {
 			padding: 30px 40px 0 40px;
 			background: #fff;
 			@extend %clearfix;
 			display: block;
 			position: relative;
-		}
-		h3 {
-			float: left;
-			font-weight: 600;
-			max-width: calc(100% - 60px);
-		}
-		.date {
-			float: right;
-			background: $green;
-			display: block;
-			color: #fff;
-			width: 65px;
-			height: 65px;
-			text-align: center;
-			border-radius: 50%;
-			word-spacing: 65px;
-			font-size: 22px;
-			line-height: 1;
-			position: absolute;
-			padding-top: 10px;
-			top: 25px;
-			right: 25px;
-		}
-		.entry-content {
-			padding: 30px 40px;
-			font-size: 22px;
-			line-height: 1.6;
-			img {
-				margin: 20px 0;
+			.entry-title {
+				color: $green;
+				float: left;
+				font-weight: 600;
+				max-width: calc(100% - 60px);
+				font-size: 2.5em;
 			}
-			a {
-				border-bottom: 1px solid #222;
-			}
-			b,strong,h1,h2,h3,h4,h5,h6 {
-				font-weight: bold;
-			}
-			h4 {
-				font-size: 28px;
-			}
-			i,em {
-				font-style: italic;
-			}
-		}
-		.more {
-			padding: 20px 40px;
-			font-size: 18px;
-			font-weight: 600;
-			letter-spacing: 2px;
-			position: absolute;
-			right: 0;
-			bottom: 5px;
-			&:after {
-				content: "→";
-				position: relative;
-				top: 3px;
-				left: 6px;
-				@include transition(all .1s ease);
-			}
-			&:hover:after {
-				left: 12px;
+			.date {
+				float: right;
+				background: $green;
+				display: block;
+				color: #fff;
+				width: 65px;
+				height: 65px;
+				text-align: center;
+				border-radius: 50%;
+				word-spacing: 65px;
+				font-size: 22px;
+				line-height: 1;
+				position: absolute;
+				padding-top: 12px;
+				top: 25px;
+				right: 25px;
+				font-family: 'Josefin Sans', georiga;
+				@include transition(all .2s ease);
+				cursor: default;
+				&:hover {
+					@include scale(1.2);
+				}
 			}
 		}
 	}
+	.entry-content {
+		padding: 30px 40px;
+		font-size: 22px;
+		letter-spacing: 1px;
+		color: #343434;
+		p {
+			margin-bottom: 1em;
+			a {
+				border-bottom: 1px solid #222;
+			}
+		}
+		img {
+			margin: 20px 0;
+			box-shadow: rgba(0,0,0,0.2) 0 1px 3px;
+		}
+		b,strong,h1,h2,h3,h4,h5,h6 {
+			font-weight: bold;
+		}
+		h1 {
+			font-size: 1.5em;
+		}
+		h2 {
+			font-size: 1.4em;
+		}
+		h3 {
+			font-size: 1.3em;
+		}
+		h4 {
+			font-size: 1.3em;
+		}
+		i,em {
+			font-style: italic;
+		}
+	}
+	.more {
+		padding: 20px 40px;
+		font-size: 18px;
+		font-weight: 600;
+		letter-spacing: 2px;
+		position: absolute;
+		right: 0;
+		bottom: 5px;
+		&:after {
+			content: "→";
+			position: relative;
+			top: 3px;
+			left: 6px;
+			@include transition(all .1s ease);
+		}
+		&:hover:after {
+			left: 12px;
+		}
+	}
+	.share {
+		padding: 30px;
+		a {
+			color: #999;
+		}
+	}
 }
-
 
 
 
@@ -109,7 +153,6 @@ pre[class*="language-"] {
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
-
 	-moz-tab-size: 4;
 	-o-tab-size: 4;
 	tab-size: 4;
@@ -118,26 +161,17 @@ pre[class*="language-"] {
 	-moz-hyphens: none;
 	-ms-hyphens: none;
 	hyphens: none;
-}
-
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-	text-shadow: none;
-	background: #b3d4fc;
-}
-
-pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-code[class*="language-"]::selection, code[class*="language-"] ::selection {
-	text-shadow: none;
-	background: #b3d4fc;
-}
-
-@media print {
-	code[class*="language-"],
-	pre[class*="language-"] {
+	@include selection {
+		text-shadow: none;
+		background: #b3d4fc;
+	}
+	@media print {
 		text-shadow: none;
 	}
 }
+
+
+
 
 /* Code blocks */
 pre[class*="language-"] {

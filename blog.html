@@ -5,26 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="http://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <link rel="icon" href="/images/icons/favicon.png">
 <!--[if IE]><link rel="shortcut icon" href="images/icons/favicon.ico"><![endif]-->
 <title>Blog - Vincent Orback</title>
-<meta name="description" content="">
-
-<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW"> 
-
+<meta name="description" content="Catch up on my latest adventures through the cyberspace!">
 <link rel="canonical" href="http://vincentorback.se/blog/">
 <link rel="author" href="https://plus.google.com/105789918295897205990/posts/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Blog - Vincent Orback">
-<meta property="og:description" content="">
+<meta property="og:description" content="Catch up on my latest adventures through the cyberspace!">
 <meta property="og:url" content="http://vincentorback.se/blog/">
 <meta property="og:site_name" content="Vincent Orback">
 <meta property="og:image" content="http://vincentorback.se/images/twitter-card.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@vorback">
 <meta name="twitter:title" content="Vincent Orbacks Portfolio">
-<meta name="twitter:description" content="Web designer and front-end developer based in Stockholm, Sweden. I live for design, typography, mobile- and web development. Check out my portfolio!">
+<meta name="twitter:description" content="Catch up on my latest adventures through the cyberspace!">
 <meta name="twitter:creator" content="@vorback">
 <meta name="twitter:image:src" content="http://vincentorback.se/images/twitter-card.png">
 <meta name="twitter:domain" content="http://vincentorback.se/">
@@ -32,16 +30,15 @@
 
 <body class="blogg">
 <!--[if lt IE 8]>
-    <p class="chromeframe">You are using an <strong>outdated</strong> browser. I recommend you <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience of the web.</p>
+    <p class="iewarning">You are using an <strong>outdated</strong> browser. I recommend you <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience of the web.</p>
 <![endif]-->
-
 <div id="top">
 	<a href="/en" class="logo">
 	    <h1>Vincent Orback</h1>
 	</a>
 	<nav class="main-nav" role="navigation">
 		<ul>
-			<li><a href="/">Work</a></li>
+			<li><a href="/en">Work</a></li>
 			<li><a href="/about-me">About me</a></li>
 			<li><a href="/blog">Blog</a></li>
 			<li><a href="/contact">Contact</a></li>
@@ -50,22 +47,39 @@
 	<h2>Blog</h2>
 </div>
 
-<main role="main">
+<main id="blog" role="main">
+
 	<article class="entry">
 		<header>
-			<a href="#"><h3>This blog is not really live yet :)</h3></a>
-			<p class="date">6 okt</p>
+			<h3 class="entry-title">I commit from my heart!</h3>
+			<p class="date">28 okt</p>
 		</header>
 		<div class="entry-content">
-			<p>See ya soon!</p>
+			<div class="embed-container"><iframe src="http://www.youtube.com/embed/qT90jZP58jM" frameborder="0" allowfullscreen></iframe></div>
 		</div>
 	</article>
+
+	<article class="entry">
+		<header>
+			<h3 class="entry-title">Just don't do it!</h3>
+			<p class="date">26 okt</p>
+		</header>
+		<div class="entry-content">
+			<p>When starting out as a young designer/developer, it can be hard to evalutate your own work. So much that it sometimes feels right to work for free. It's something I've felt alot of times when I started and it can be because of the small size of the work or because the employer is a relative, a friend or most often a friend of a friends friend.</p>
+			<p>Even if you after the hundreds of hours you've spent learning your craft feel like the tasks is simple, remeber that they don't and that's why they need your help. Most of the times it's a buisness that needs help and if that buisness makes money, they have money.</p>
+			<p>Now of course there are times when working for free can really benefit you. Here's a lovely chart made by the lovely <a href="http://jessicahische.is/awesome" target="_blank">Jessica Hische</a> giving you guidance for when to work for free and when to just say no.</p>
+
+			<p><a href="http://www.shouldiworkforfree.com/" target="_blank" title="Should i work for free?">www.shouldiworkforfree.com</a></p>
+		</div>
+	</article>
+
+<!--
 	<article class="entry">
 		<header>
 			<a href="#"><h3>WordPress-snippets</h3></a>
 			<p class="date">29 Sep</p>
 		</header>
-		
+
 		<div class="entry-content">
 			<p>Here's some fun WordPress code-snippets i've collected through the year. Small additions to make the web nicer!</p>
 <br /><br />	
@@ -94,6 +108,7 @@ add_filter('admin_footer_text', 'my_custom_admin_footer');
 
 		</div>
 	</article>
+	-->
 </main>
 
 <footer id="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
@@ -108,10 +123,18 @@ add_filter('admin_footer_text', 'my_custom_admin_footer');
 	</div>
 </footer>
 
-<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-<script src="/js/main-min.js"></script>
-<script src="/js/vendor/prism.js"></script>
 <script>
+function downloadJSAtOnload() {
+var element = document.createElement("script");
+element.src = "/js/main-min.js";
+document.body.appendChild(element);
+}
+if (window.addEventListener)
+window.addEventListener("load", downloadJSAtOnload, false);
+else if (window.attachEvent)
+window.attachEvent("onload", downloadJSAtOnload);
+else window.onload = downloadJSAtOnload;
+
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-31135100-1']);
 _gaq.push(['_trackPageview']);
