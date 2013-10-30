@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="http://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <link rel="icon" href="/images/icons/favicon.png">
 <!--[if IE]><link rel="shortcut icon" href="images/icons/favicon.ico"><![endif]-->
 <title>Vincent Orback - Web designer in Stockholm</title>
@@ -28,7 +29,7 @@
 </head>
 <body class="home">
 <!--[if lt IE 8]>
-    <p class="chromeframe">You are using an <strong>outdated</strong> browser. I recommend you <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience of the web.</p>
+    <p class="iewarning">You are using an <strong>outdated</strong> browser. I recommend you <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience of the web.</p>
 <![endif]-->
 
 <div id="top">
@@ -47,7 +48,21 @@
 </div>
 
 <main id="portfolio" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/CreativeWork">
-
+<!--
+	<article class="work coop" itemscope itemtype="http://schema.org/CreativeWork">
+			<img src="/images/coop.png" alt="Coop" width="1140" height="725" itemprop="image">
+		<div class="work-info">
+			<h1 itemprop="name">Coop</h1>
+			<p itemprop="description">At the moment I'm working with developing and improving the current website for Coop. The website was launched in 2012 and was one of the first websites using good responsive techniques. I came into the project in the fall of 2013. Coop.se is an ongoing project with being 50% regular website with info and 50% web-application with lots of services and functions for all of Coops visitors and customers.</p>
+			<div class="info">
+				<p itemprop="datePublished">Year: 2012</p>
+				<p>Agency: Daytona</p>
+				<p>Role: Developer</p>
+				<a class="visit" href="http://www.coop.se" target="_blank">www.coop.se</a>
+			</div>
+		</div>
+	</article>
+-->
 	<article class="work arkdes" itemscope itemtype="http://schema.org/CreativeWork">
 		<img src="/images/arkdes.png" alt="Arkitektur Nu / Stockholm" width="1140" height="725" itemprop="image">
 		<div class="work-info">
@@ -158,8 +173,6 @@
 		<div class="telefon" itemprop="telephone">+46 725 309 222</div>
 	</div>
 </footer>
-
-<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
 <script>
 function downloadJSAtOnload() {
