@@ -4,11 +4,14 @@
 
 @import "partials/reset";
 
+@import "partials/animations";
+
 @import "partials/basics";
 
 @import "partials/header";
 
 @import "partials/main";
+
 
 @import "pages/arbeten";
 
@@ -16,9 +19,11 @@
 
 @import "pages/kontakt";
 
+@import "pages/blogg";
+
+
 @import "partials/footer";
 
 @import "partials/media-querys";
 
 
-@import "pages/blogg";

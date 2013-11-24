@@ -1,9 +1,3 @@
-@include keyframes(cv){
-	0%,100%{left:0px}
-	50%{left:24px}
-}
-
-
 #ommig {
 	max-width: 1000px;
 	width: 90%;
@@ -33,6 +27,7 @@
 			box-shadow: rgba(0,0,0,0.3) 0 1px 5px;
 		}
 	}
+	/*
 	.cv {
 		display: inline-block;
 		font-weight: 700;
@@ -41,7 +36,7 @@
 		font-size: 1.3em;
 		margin: 2em 0 0 0;
 		&:after {
-			content: "→";
+			content: "\8594";
 			position: relative;
 			top: 3px;
 			margin-left: 8px;
@@ -51,11 +46,12 @@
 			animation: cv .8s linear infinite normal;
 		}
 	}
+	*/
 }
 
 
 #recommend {
-	margin: 15em 0 5em 0;
+	margin: 13em 0 5em 0;
 	h3 {
 		width: 90%;
 		margin: 0 auto;
@@ -152,21 +148,21 @@
 
 
 .thebigwebshow {
-	background: url(images/ommig/the-big-web-show.jpg) no-repeat;
-	height: 78px;
-	margin: 5px 8px 0 0;
+	background: url(images/ommig/zeldman.png) no-repeat;
+	height: 100px;
+	margin: 3px 10px 0 0;
 }
 .thewebahead {
 	background: url(images/ommig/the-web-ahead.jpg) no-repeat;
 	height: 79px;
-	margin: 5px 8px 0 0;
+	margin: 15px 10px 0 0;
 }
 
 .shoptalk {
-	background: url(images/ommig/shoptalkshow.png) no-repeat;
+	background: url(images/ommig/shoptalkshow.jpg) no-repeat;
 	background-position: center center;
 	height: 100px;
-	margin: -4px 8px 0 0;
+	margin: 3px 10px 0 0;
 	box-shadow: none !important;
 }
 

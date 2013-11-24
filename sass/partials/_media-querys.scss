@@ -5,16 +5,15 @@
 	#recommend {
 		max-width: 1600px;
 		margin: 10em auto 5em auto;
-		
 	}
 	#recommend .col {
-		margin-right: 4% !important;
+		margin-right: 4%;
 	}
 	#recommend .col.websites {
-		margin-right: 2% !important;
+		margin-right: 2%;
 	}
 	#recommend .websites, .inspiration {
-		width: 14% !important;
+		width: 14%;
 		float: left;
 		white-space: nowrap;
 	}
@@ -117,7 +116,7 @@ and (max-device-width : 1024px)
 and (orientation : landscape)
 and (-webkit-min-device-pixel-ratio: 1)  {
 	#top h2 {
-		top: 225px !important;
+		top: 225px;
 		font-size: 1.8em;
 	}
 }
@@ -173,18 +172,17 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 			margin-bottom: -5px;
 		}
 		input {
-			width: 100% !important;
-			margin: 0 0 1em 0 !important;
+			width: 100%;
+			margin: 0 0 1em 0;
 		}
 		#email {
-			margin: 0 !important;
+			margin: 0;
 		}
 		#submit {
-			width: 50% !important;
-			min-width: 200px;
-			margin: 20px 5px 0 !important;
+			width: 200px;
+			margin: 20px 5px 0;
 			&:active {
-				margin: 20px 5px -2px 0 !important;
+				margin: 20px 5px -2px 0;
 			}
 		}
 		#message {
@@ -231,7 +229,7 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 				text-indent: 0px;
 			}
 			textarea {
-				height: 120px !important;
+				height: 120px;
 			}
 		}
 	}
@@ -316,14 +314,6 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 				margin: 10px 0;
 			}
 		}
-		
-	}
-	#readmore {
-		margin: 0 1.5em 1em 0;
-	}
-	.cv {
-		float: none !important;
-		clear: both;
 	}
 }
 @media only screen and (max-width: 340px) {	
@@ -370,6 +360,11 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 			}
 		}
 	}
+	#contact-form {
+		input {
+			width: 100% !important;
+		}
+	}
 }
 @media only screen and (max-width: 300px) {
 	.logo h1 {
@@ -400,10 +395,10 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 
 @media print {
 	* {
-		background:none!important;
-		box-shadow:none!important;
-		color:#000!important;
-		text-shadow:none!important;
+		background: none;
+		box-shadow: none;
+		color: #000;
+		text-shadow: none;
 		-webkit-filter:grayscale(100%);
 		-ms-filter:grayscale(100%);
 		filter:Gray();

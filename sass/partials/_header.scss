@@ -1,37 +1,10 @@
-@-webkit-keyframes headerbg {
-	0% {background: $blue;}
-	15% {background: $blue;}
-	20% {background: $green;}
-	35% {background: $green;}
-	40% {background: $yellow;}
-	55% {background: $yellow;}
-	60% {background: $red;}
-	75% {background: $red;}
-	80% {background: $orange;}
-	95% {background: $orange;}
-	100%{background: $blue;}	
-}
-@keyframes headerbg {
-	0% {background: $blue;}
-	15% {background: $blue;}
-	20% {background: $green;}
-	35% {background: $green;}
-	40% {background: $yellow;}
-	45% {background: $yellow;}
-	60% {background: $orange;}
-	65% {background: $orange;}
-	80% {background: $red;}
-	85% {background: $red;}
-	100%{background: $blue;}
-}
-
 #top {
+	position: relative;
 	height: 250px;
 	background: $blue;
-	-webkit-animation: headerbg 20s 0 linear infinite normal;
-	animation: headerbg 20s linear infinite normal;
 	color: #fff;
 	@extend %clearfix;
+	@extend %animated-bg;
 	.home &, .page-en & {
 		height: 100%;
 		h2 {
@@ -70,6 +43,13 @@
 		padding-top: 40px;
 		font-weight: 700;
 		letter-spacing: 4px;
+	}
+	@include selection {
+		color: #fff;
+		background: transparent;
+		-webkit-text-fill-color: #fff;
+		-webkit-text-stroke-color: #fff;
+		-webkit-text-stroke-width: 3px;
 	}
 }
 

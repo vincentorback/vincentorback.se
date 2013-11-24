@@ -1,7 +1,3 @@
-/* jshint browser: true, strict: false, eqeqeq: true, indent: 2, newcap: true, plusplus: true, unused: true, trailing: true, loopfunc: false, nomen: true, onevar: true, white: true, undef: true, latedef: true */
-
-var winWidth = window.innerWidth;
-
 var vincent = {
 
 	init : function () {
@@ -14,14 +10,16 @@ var vincent = {
 		}
 	},
 	smoothScroll: function () {
-		var scrollDistance;
+		var scrollDistance,
+			winWidth = window.innerWidth;
+
 		if (winWidth > 1140) {
 			scrollDistance = 235;
 		}
 		else {
 			scrollDistance = 30;
 		}
-		$(".scroll a").bind("click", function (e) {
+		$("li.scroll a").bind("click", function (e) {
 			$("html, body").stop().animate({
 				scrollTop: $($(this).attr("href")).offset().top + scrollDistance
 			}, 900);
@@ -30,55 +28,68 @@ var vincent = {
 	},
 	lazyLoad: function () {
 		$("img.lazy").lazyload({
-			effect: "fadeIn",
-			threshold: 500,
+			threshold: 1000,
 			failure_limit: 10
 		});
 	},
 	contactForm: function () {
-		var form = $('#contact-form'),
+		var $form = $('#contact-form'),
+			//form = document.getElementById('contact-form'),
+			//post_url = form.getAttribute('action'),
+			//post_data = serialize(form),
+			post_url = $form.attr('action'),
+			post_data = $form.serialize(),
+			$inputs = $form.find('input, textarea'),
 			name = $('#name'),
 			email = $('#email'),
 			message = $('#message'),
-			emptyName = "Vad heter du?",
-			emptyEmail = "Fyll i en riktigt e-post!",
-			emptyMessage = "Vad var det du ville säga?";
-		if (form.hasClass('english')) {
-			emptyName = "What's your name?";
-			emptyEmail = "Please enter a valid e-mail!";
-			emptyMessage = "What did you come here to say";
+			nameError = "Vad heter du?",
+			emailError = "Fyll i en riktigt e-post!",
+			messageError = "Vad var det du ville säga?";
+		if ($form.hasClass('english')) {
+			nameError = "What's your name?";
+			emailError = "Please enter a valid e-mail!";
+			messageError = "What did you come here to say";
 		}
 
-		$('#contact-form').submit(function (e) {
-
-			$("html, body").animate({
-				scrollTop: 350
-			}, 300);
-
+		$form.submit(function () {
 			if (name.val() === "") {
 				name.addClass("needsfilled");
-				name.attr("placeholder", emptyName);
+				name.attr("placeholder", nameError);
 			}
 			if (!/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email.val())) {
 				email.addClass("needsfilled");
-				email.attr("placeholder", emptyEmail);
+				email.attr("placeholder", emailError);
 			}
 			if (message.val() === "") {
 				message.addClass("needsfilled");
-				message.attr("placeholder", emptyMessage);
+				message.attr("placeholder", messageError);
 			}
 
-			if ($("input, textarea").hasClass("needsfilled")) {
-				$("input.needsfilled:first").focus();
+			$("html, body").animate({
+				scrollTop: 330
+			}, 300);
+
+			if ($inputs.hasClass("needsfilled")) {
+				$('input.needsfilled:first').focus();
 				return false;
 			} else {
-				vincent.sendMessage();
+				$.ajax({
+					type: 'POST',
+					url: post_url,
+					data: post_data,
+					success: function (msg) {
+						$form.fadeOut(300, function () {
+							$form.html(msg).fadeIn("slow");
+						});
+					}
+				});
 			}
 
-			e.preventDefault();
+			return false;
 		});
 
-		$(":input").focus(function () {
+		$inputs.focus(function () {
 			if ($(this).hasClass("needsfilled")) {
 				$(this).val("");
 				$(this).removeClass("needsfilled");
@@ -95,26 +106,9 @@ var vincent = {
 			maxHeight: 1000,
 			animate: false
 		});
-	},
-
-	sendMessage: function () {
-		var form = $('#contact-form'),
-			post_url = form.attr('action'),
-			post_data = form.serialize();
-
-		$.ajax({
-			type: 'POST',
-			url: post_url,
-			data: post_data,
-			success: function (msg) {
-				form.fadeOut(300, function () {
-					form.html(msg).fadeIn("slow");
-				});
-			}
-		});
 	}
 };
 
-$(document).ready(function () {
+$(function () {
 	vincent.init();
 });

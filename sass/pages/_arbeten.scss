@@ -1,5 +1,5 @@
 .work {
-	padding: 8em 0 6em 0;
+	padding: 7em 0 4.5em 0;
 	@extend %clearfix;
 	background: #167ea3;
 	color: #fff;
@@ -44,7 +44,8 @@
 			float: right;
 			position: relative;
 			top: -15px;
-			padding: .8em 1.6em;
+			padding: 1.1em 1.6em;
+			line-height: 1;
 			font-size: 1.2em;
 			border-radius: 5px;
 			letter-spacing: 1px;
@@ -62,16 +63,14 @@
 
 .coop {
 	background: #14ab30;
-	padding: 6.5em 0 8em 0 !important;
-	.info {
-		.visit {
-			background: #1bcc36;
-		}
+	a {
+		background: #1bcc36;
 	}
 }
+
 .arkdes {
 	background: $yellow;
-	@include background-image(linear-gradient(#f7cd25 10%,#f1c40f 65%));
+	@include background(linear-gradient(#f7cd25 10%,#f1c40f 65%));
 	.info {
 		height: auto;
 		margin-bottom: 10px;
@@ -104,14 +103,6 @@
 	}
 }
 
-.nordiska {
-	background: #1789b2;
-	@include background-image(linear-gradient(#1d91bb 10%,#1789b2 65%));
-	a {
-		background: #1a587c;
-	}
-}
-
 .comai {
 	background: #e87325;
 	@include background-image(linear-gradient(#f68428, #e87325));
@@ -128,7 +119,13 @@
 	}
 }
 
-
+.nordiska {
+	background: #1789b2;
+	@include background-image(linear-gradient(#1d91bb 10%,#1789b2 65%));
+	a {
+		background: #1a587c;
+	}
+}
 
 .bar {
 	background: #72caf2;

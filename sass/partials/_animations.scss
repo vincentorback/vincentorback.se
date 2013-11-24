@@ -1,0 +1,34 @@
+@include keyframes(animated-bg) {
+	0% {background: $blue;}
+	15% {background: $blue;}
+	20% {background: $green;}
+	35% {background: $green;}
+	40% {background: $yellow;}
+	55% {background: $yellow;}
+	60% {background: $red;}
+	75% {background: $red;}
+	80% {background: $orange;}
+	95% {background: $orange;}
+	100%{background: $blue;}	
+}
+
+%animated-bg {
+	@include animation(animated-bg 20000ms linear infinite normal);
+}
+
+
+/*
+@include keyframes(rotate){
+	from {
+		@include rotate(0deg);
+	}
+	to {
+		@include rotate(359deg);
+	}
+}
+
+%animated-bg {
+	-webkit-animation: rotate 1.5s linear infinite;
+	animation: rotate 1.5s linear infinite;
+}
+*/

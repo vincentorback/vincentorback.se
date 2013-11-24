@@ -1,3 +1,15 @@
+/**
+ * Lazy loading images
+#portfolio img.lazy {
+	width: 70px;
+	height: 70px;
+	margin-bottom: 10em;
+	background: url(images/loader.svg) no-repeat center center;
+	background-size: 70px;
+	-webkit-animation: rotate 1.5s linear infinite;
+	animation: rotate 1.5s linear infinite;
+}
+ */
 
 /**
  * Responsive Video
@@ -20,16 +32,16 @@
 	}
 }
 
-
 /**
  * Warning that appears for browsers using IE 7 and older.
  */
 .iewarning {
-	padding: 5px  10px;
+	background: $red;
+	padding: 20px 30px;
 	color: #fff;
 	a {
-		color: $red;
-		border-bottom: 2px solid $red;
+		color: #fff;
+		border-bottom: 2px solid #fff;
 		padding-bottom: 1px;
 		font-weight: 700;
 	}

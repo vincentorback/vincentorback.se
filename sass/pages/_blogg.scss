@@ -1,22 +1,6 @@
+
 body.blogg {
-	background: #f5f2f0;
-	#top {
-		background: url(/images/blogg/2.jpg) no-repeat;
-		background-size: 100%;
-		background-attachment: fixed;
-		-webkit-animation: none;
-		animation: none;
-		text-shadow: rgba(0,0,0,.2) 0 1px 2px;
-		height: 0px;
-		padding-bottom: 30%;
-		h2 {
-			top: 28%;
-		}
-	}
-	main {
-		max-width: 800px;
-		margin: -90px auto 0 auto;
-	}
+	background: #fff;
 }
 
 @media all and (max-width: 840px) {
@@ -31,8 +15,9 @@ body.blogg {
 }
 
 #blog {
+	max-width: 800px;
+	margin: 3em auto;
 	.entry {
-		box-shadow: rgba(0,0,0,.2) 0 0 2px;
 		margin-bottom: 75px;
 		position: relative;
 		background: #fff;
@@ -76,12 +61,14 @@ body.blogg {
 		}
 	}
 	.entry-content {
-		padding: 30px 40px;
-		font-size: 22px;
+		padding: 10px 40px;
 		letter-spacing: 1px;
-		color: #343434;
+		color: #3a4145;
+		font-size: 18px;
+		font-family: 'Droid Serif';
 		p {
 			margin-bottom: 1em;
+			line-height: 1.6;
 			a {
 				border-bottom: 1px solid #222;
 			}
@@ -118,7 +105,7 @@ body.blogg {
 		right: 0;
 		bottom: 5px;
 		&:after {
-			content: "→";
+			content: "\8594";
 			position: relative;
 			top: 3px;
 			left: 6px;

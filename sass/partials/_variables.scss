@@ -15,8 +15,7 @@ $darkblue: #34495e;
 $orange: #f39c12;
 
 /* Fonts */
-$helvetica: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
-
+$helvetica: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 /* Mixins */
 @mixin box-sizing($box-model) {
@@ -26,12 +25,15 @@ $helvetica: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvet
 }
 
 @mixin keyframes($name) {
-	@-webkit-keyframes $name { @content; }
-	@-moz-keyframes $name { @content; }
-	@-ms-keyframes $name { @content; }
-	@keyframes $name { @content; }
+	@-webkit-keyframes #{$name} { @content; }
+	@-moz-keyframes #{$name} { @content; }
+	@keyframes #{$name} { @content; }
 }
 
+@mixin animation($animation) {
+  -webkit-animation: $animation;
+  animation: $animation;
+}
 
 @mixin selection {
   ::selection {
@@ -42,20 +44,16 @@ $helvetica: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvet
   }
 }
 
-
 @mixin placeholder {
     ::-webkit-input-placeholder {
         @content;
     }
-
     :-moz-placeholder { /* Firefox 18- */
         @content;
     }
-
     ::-moz-placeholder {  /* Firefox 19+ */
         @content;
     }
-
     :-ms-input-placeholder {
         @content;
     }
@@ -63,15 +61,12 @@ $helvetica: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvet
       ::-webkit-input-placeholder {
           @content;
       }
-
       :-moz-placeholder { /* Firefox 18- */
           @content;
       }
-
       ::-moz-placeholder {  /* Firefox 19+ */
           @content;
       }
-
       :-ms-input-placeholder {
           @content;
       }
