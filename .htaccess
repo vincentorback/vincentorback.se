@@ -19,18 +19,19 @@
 
 # Removes file extension .html
 <IfModule mod_rewrite.c>
-	Options +FollowSymLinks
-	RewriteEngine On
-	RewriteBase /
-	RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/|#(.*))$
-	RewriteRule ^(.*)$ $1/ [R=301,L]
-	RewriteCond %{REQUEST_FILENAME} !-d
-	RewriteCond %{REQUEST_FILENAME}\.html -f
-	RewriteRule ^([^\.]+)/$ $1.html 
+  Options +FollowSymLinks
+  RewriteEngine On
+  RewriteBase /
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/|#(.*))$
+  RewriteRule ^(.*)$ $1/ [R=301,L]
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}\.html -f
+  RewriteRule ^([^\.]+)/$ $1.html 
 </IfModule>
 
 Redirect /cv http://vincentorback.se/cv.pdf
+Redirect /cv-en http://vincentorback.se/cv-en.pdf
 
 ErrorDocument 404 /404.html
 
@@ -59,7 +60,7 @@ RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 	AddType application/vnd.ms-fontobject               eot
 	AddType application/x-font-ttf                      ttc ttf
 	AddType font/opentype                               otf
-	AddType     image/svg+xml                           svg svgz
+	AddType image/svg+xml                     		      svg svgz
 	AddEncoding gzip                                    svgz
 	AddType application/octet-stream                    safariextz
 	AddType application/x-chrome-extension              crx
