@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="http://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="/style.css">
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <link rel="icon" href="/images/icons/favicon.png">
@@ -29,8 +30,10 @@
 </head>
 
 <body class="blogg">
-<!--[if lt IE 8]>
-    <p class="iewarning">You are using an <strong>outdated</strong> browser. I recommend you <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience of the web.</p>
+<!--[if lte IE 9]>
+<div class="iewarning">
+	<p>You are using an <strong>outdated</strong> browser. I recommend you <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience of this website but more importantly, the whole web.</p>
+</div>
 <![endif]-->
 <div id="top">
 	<a href="/en" class="logo">
@@ -49,22 +52,22 @@
 
 <main id="blog" role="main">
 
-	<article class="entry">
+	<article class="entry" itemscope itemtype="http://schema.org/Article">
 		<header>
-			<h3 class="entry-title">I commit from my heart!</h3>
-			<p class="date">28 okt</p>
+			<h3 class="entry-title" itemprop="name">I commit from my heart!</h3>
+			<p class="date" itemprop="datePublished">28 okt</p>
 		</header>
-		<div class="entry-content">
-			<div class="embed-container"><iframe src="http://www.youtube.com/embed/qT90jZP58jM" frameborder="0" allowfullscreen></iframe></div>
+		<div class="entry-content" itemprop="articleBody">
+			<div class="embed-container"><iframe src="http://www.youtube.com/embed/qT90jZP58jM" frameborder="0" allowfullscreen itemprop="video" itemscope itemtype="http://schema.org/VideoObject">></iframe></div>
 		</div>
 	</article>
 
-	<article class="entry">
+	<article class="entry" itemscope itemtype="http://schema.org/Article">
 		<header>
-			<h3 class="entry-title">Just don't do it!</h3>
-			<p class="date">26 okt</p>
+			<h3 class="entry-title" itemprop="name">Just don't do it!</h3>
+			<p class="date" itemprop="datePublished">26 okt</p>
 		</header>
-		<div class="entry-content">
+		<div class="entry-content" itemprop="articleBody">
 			<p>When starting out as a young designer/developer, it can be hard to evalutate your own work. So much that it sometimes feels right to work for free. It's something I've felt alot of times when I started and it can be because of the small size of the work or because the employer is a relative, a friend or most often a friend of a friends friend.</p>
 			<p>Even if you after the hundreds of hours you've spent learning your craft feel like the tasks is simple, remeber that they don't and that's why they need your help. Most of the times it's a buisness that needs help and if that buisness makes money, they have money.</p>
 			<p>Now of course there are times when working for free can really benefit you. Here's a lovely chart made by the lovely <a href="http://jessicahische.is/awesome" target="_blank">Jessica Hische</a> giving you guidance for when to work for free and when to just say no.</p>
