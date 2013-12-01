@@ -12,7 +12,7 @@
 <link rel="author" href="https://plus.google.com/105789918295897205990/posts/">
 </head>
 
-<body class="home fourofour">
+<body class="fourofour">
 <!--[if lte IE 9]>
 <div class="iewarning">
 	<p>You are using an <strong>outdated</strong> browser. I recommend you <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience of this website but more importantly, the whole web.</p>
@@ -36,41 +36,42 @@
 <script src="/js/main-min.js"></script>
 <script src="/js/vendor/svg.min.js"></script>
 <script>
-$(document).ready(function() {
-	function fourofour() {
-		if(!Modernizr.touch) {
-			var winwidth = $(document).width();
-			var winheight = $(document).height();
-			var draw = SVG('top');
-			var rect = draw.rect(60,60).move((winwidth / 2) - 30, winheight / 2 + 60).fill('#fff');
-	
-			rect.mouseover(function() {
-			    this.animate(1000, SVG.easing.elastic)
-			        .move(winwidth * Math.random(), winheight * Math.random())
-			        .rotate(-45 + 90 * Math.random());
-			});
-	
-			draw.text("This page does'nt exist but... Catch the square!")
-			    .back()
-			    .fill('#fff')
-			    .move('50%', '50%')
-			    .font({
-			        family: 'Josefin Sans'
-			      , size: 18
-			      , anchor: 'middle'
-			    });
-			rect.click(function() {
-				alert('Great job! \nNow get back to work!');
-			});
-		}
+
+(function () {
+	if(!Modernizr.touch && window.innerWidth > 400) {
+		var winwidth = window.innerWidth,
+			winheight = window.innerHeight,
+			draw = SVG('top'),
+			rect = draw.rect(60,60).move((winwidth / 2) - 30, winheight / 2 + 60).fill('#fff');
+
+		rect.mouseover(function() {
+		    this.animate(1000, SVG.easing.elastic)
+		        .move(winwidth * Math.random(), winheight * Math.random())
+		        .rotate(-45 + 90 * Math.random());
+		});
+
+		draw.text("This page does'nt exist but... Catch the square!")
+		    .back()
+		    .fill('#fff')
+		    .move('50%', '50%')
+		    .font({
+		        family: 'Josefin Sans'
+		      , size: 18
+		      , anchor: 'middle'
+		    });
+
+		rect.click(function() {
+			draw.node.firstChild.innerHTML = 'Great job! Now get back to work!';
+			rect.node.outerHTML = '';
+		});
 	}
-	fourofour();
-	$(window).resize(function() {
-		location.reload();
-	});
-});
-</script>
-<script>
+
+})();
+
+window.addEventListener('resize', function () {
+	location.reload();
+}, false);
+
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-31135100-1']);
 _gaq.push(['_trackPageview']);
