@@ -62,20 +62,31 @@ module.exports = function(grunt) {
     },
 		uglify: {
 			options: {
-				banner: '/*!\n* Vincent Orback <%= grunt.template.today("yyyy-mm-dd") %>\n* See the not so ugly version at https://github.com/vincentorback/Vincent-Orback \n*/\n',
+				banner: '/*!\n* Vincent Orback <%= grunt.template.today("yyyy-mm-dd") %>\n*/\n',
 				mangle: true
 			},
 			my_target: {
 				files: {
-					'js/main-min.js': ['js/vendor/jquery-1.9.1.min.js', 'js/vendor/modernizr.js', 'js/vendor/jquery.lazyload.js', 'js/vendor/resize.js', 'js/main.js']
+          'js/main-min.js': ['js/vendor/modernizr.js', 'js/main2.js']
 				}
 			}
-		}
+		},
+    watch: {
+      scripts: {
+        files: ['js/**/*.js'],
+        tasks: ['jshint'],
+        options: {
+          spawn: false,
+          livereload: true
+        }
+      }
+    }
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
 	grunt.registerTask('default', ['jshint', 'uglify']);
 };
