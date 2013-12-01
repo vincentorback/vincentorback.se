@@ -63,11 +63,12 @@ module.exports = function(grunt) {
 		uglify: {
 			options: {
 				banner: '/*!\n* Vincent Orback <%= grunt.template.today("yyyy-mm-dd") %>\n*/\n',
-				mangle: true
+				mangle: false,
+        report: 'gzip'
 			},
 			my_target: {
 				files: {
-          'js/main-min.js': ['js/vendor/modernizr.js', 'js/main2.js']
+          'js/main-min.js': ['js/vendor/modernizr.js', 'js/vendor/lazyload.js', 'js/main2.js']
 				}
 			}
 		},
