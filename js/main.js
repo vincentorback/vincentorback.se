@@ -1,3 +1,7 @@
+/* jshint browser: true, strict: true, eqeqeq: true, indent: 4, newcap: true, plusplus: true, unused: true, trailing: true, loopfunc: false, nomen: true, onevar: true, white: true, undef: true, latedef: true */
+
+/* global define */
+
 var vincent = {
 
 	init : function () {
@@ -19,7 +23,7 @@ var vincent = {
 		else {
 			scrollDistance = 30;
 		}
-		$("li.scroll a").bind("click", function (e) {
+		$("a.scroll").on("click", function (e) {
 			$("html, body").stop().animate({
 				scrollTop: $($(this).attr("href")).offset().top + scrollDistance
 			}, 900);
