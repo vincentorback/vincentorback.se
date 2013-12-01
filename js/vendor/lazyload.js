@@ -7,12 +7,13 @@
  */
 
 (function() {
-  var addEventListener =  window.addEventListener || function(n,f) { window.attachEvent('on'+n, f); },
-      removeEventListener = window.removeEventListener || function(n,f) { window.detachEvent('on'+n, f); },
+  "use strict";
 
-  lazyLoader = {
+  var addEventListener =  window.addEventListener || function(n,f) { window.attachEvent('on'+n, f); },
+      removeEventListener = window.removeEventListener || function(n,f) { window.detachEvent('on'+n, f); };
+
+  var lazyLoader = {
     cache: [],
-    mobileScreenSize: 500,
 
     addObservers: function() {
       addEventListener('scroll', lazyLoader.throttledLoad);
@@ -28,7 +29,6 @@
 
     throttledLoad: function() {
       var now = new Date().getTime();
-
       if ((now - lazyLoader.throttleTimer) >= 200) {
         lazyLoader.throttleTimer = now;
         lazyLoader.loadVisibleImages();
@@ -44,31 +44,20 @@
         },
         i = 0;
 
-      function onLoads(obj) {
-        //obj.className = this.className.replace(new RegExp('(^|\s+)lazy-load(\s+|$)'), '$1lazy-loaded$2');
-        obj.className = obj.className.replace('lazy-load', 'lazy-loaded');
-      }
-
       while (i < lazyLoader.cache.length) {
         var image = lazyLoader.cache[i],
           imagePosition = getOffsetTop(image),
-          imageHeight = image.height || 0,
-          mobileSrc;
+          imageHeight = image.height || 0;
 
         if ((imagePosition >= range.min - imageHeight) && (imagePosition <= range.max)) {
-          mobileSrc = image.getAttribute('data-src-mobile');
-          
-          onLoads(image);
 
-          if (mobileSrc && screen.width <= lazyLoader.mobileScreenSize) {
-            image.src = mobileSrc;
-          }
-          else {
-            image.src = image.getAttribute('data-src');
-          }
+          image.onload = function() {
+            this.className = this.className.replace(new RegExp('(^|\s+)lazy-load(\s+|$)'), '$1lazy-loaded$2');
+          };
+
+          image.src = image.getAttribute('data-src');
 
           image.removeAttribute('data-src');
-          image.removeAttribute('data-src-mobile');
 
           lazyLoader.cache.splice(i, 1);
           continue;
@@ -83,14 +72,12 @@
     },
 
     init: function() {
-
       // Patch IE7- (querySelectorAll)
       if (!document.querySelectorAll) {
         document.querySelectorAll = function(selector) {
           var doc = document,
-            head = doc.documentElement.firstChild,
-            styleTag = doc.createElement('STYLE');
-
+              head = doc.documentElement.firstChild,
+              styleTag = doc.createElement('STYLE');
           head.appendChild(styleTag);
           doc.__qsaels = [];
           styleTag.styleSheet.cssText = selector + "{x:expression(document.__qsaels.push(this))}";
@@ -123,12 +110,10 @@
     if (el.offsetParent) {
       do {
         val += el.offsetTop;
-      } while ((el = el.offsetParent) !== null);
-
+      } while (el = el.offsetParent);
       return val;
     }
   }
 
   lazyLoader.init();
-
 })();

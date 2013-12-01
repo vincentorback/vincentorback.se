@@ -1,3 +1,8 @@
+.disable-hover,
+.disable-hover * {
+  pointer-events: none !important;
+}
+
 /**
  * Lazyloading images
  */
@@ -5,6 +10,8 @@ img.lazy-load {
 	@extend %rotate;
 	width: 150px;
 	height: 150px;
+	@include transition (opacity 300ms ease);
+	margin-bottom: 5em !important;
 }
 img.lazy-loaded {
 	opacity: 1;

@@ -1,0 +1,56 @@
+@import "compass/css3";
+
+@import "partials/variables";
+
+@import "partials/reset";
+
+@import "partials/basics";
+
+body {
+	background: $green;
+	@include selection {
+		background: $green;
+	}
+}
+
+.content {
+	width: 95%;
+	max-width: 540px;
+	margin: 50px auto;
+	background: #fff;
+	box-shadow: inset rgba(0,0,0,.1) 0 0 2px;
+}
+
+thead th {
+	padding: 15px 20px 20px 20px;
+	font-size: 18px;
+}
+th, td {
+	width: 100%;
+	text-align: left;
+	padding: 0 20px;
+}
+th {
+	font-weight: bold;
+}
+td {
+	padding-bottom: 15px;
+}
+
+a {
+	color: $green;
+	&:hover {
+		color: $green;
+	}
+}
+
+
+/**
+ * Apple email fallback
+ * http://blog.fogcreek.com/responsive-html-emails-a-different-strategy/
+ */
+@media only screen and (min-device-width: 541px) {
+  .content {
+    width: 540px !important;
+  }
+}
