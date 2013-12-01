@@ -6,14 +6,18 @@ $formmessage = $_POST['message'];
 
 $message = "Meddelande från vincentorback.se\n\n".
 "Namn: " . "$name\n".
-"Telefon: " . "$telephone\n".
 "E-post: " . "$email\n".
 "Meddelande: " . "$formmessage";
 
-
-if(mail($toemail, 'Meddelande från vincentorback.se', $message, 'From: ' . $email)) {
-echo '<div class="sent">Tack för ditt meddelande.</div>';
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	if (mail($toemail, 'Meddelande från vincentorback.se', $message, 'From: ' . $email)) {
+		mail($toemail, 'Meddelande från vincentorback.se', $message, 'From: ' . $email);
+		echo "Tack för det " . $name .".<br />Jag återkommer fort jag bara kan!";
+	}
+	else {
+		echo 'Det blev något fel på ditt meddelande. Försök att skicka ett mail till <a href="mailto:vorback@gmail.com&subject=Message from vincentorback.se&body='.$message.'">vorback@gmail.com</a> istället.';
+	}
 } else {
-echo '<div class="sent">Det blev något fel på ditt meddelande. Försök att skicka ett mail till <a href="mailto:vorback@gmail.com">vorback@gmail.com</a> istället.</div>';
+	echo 'Det blev något fel på ditt meddelande. Försök att skicka ett mail till <a href="mailto:vorback@gmail.com&subject=Message from vincentorback.se&body='.$message.'">vorback@gmail.com</a> istället.';
 }
 ?>

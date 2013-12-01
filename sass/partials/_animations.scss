@@ -17,8 +17,8 @@
 }
 
 
-/*
-@include keyframes(rotate){
+
+@include keyframes(rotate) {
 	from {
 		@include rotate(0deg);
 	}
@@ -27,8 +27,7 @@
 	}
 }
 
-%animated-bg {
+%rotate {
 	-webkit-animation: rotate 1.5s linear infinite;
 	animation: rotate 1.5s linear infinite;
 }
-*/

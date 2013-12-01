@@ -1,15 +1,14 @@
 /**
- * Lazy loading images
-#portfolio img.lazy {
-	width: 70px;
-	height: 70px;
-	margin-bottom: 10em;
-	background: url(images/loader.svg) no-repeat center center;
-	background-size: 70px;
-	-webkit-animation: rotate 1.5s linear infinite;
-	animation: rotate 1.5s linear infinite;
-}
+ * Lazyloading images
  */
+img.lazy-load {
+	@extend %rotate;
+	width: 150px;
+	height: 150px;
+}
+img.lazy-loaded {
+	opacity: 1;
+}
 
 /**
  * Responsive Video

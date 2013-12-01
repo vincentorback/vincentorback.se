@@ -51,16 +51,18 @@
 
 <section id="contact" role="main" itemscope itemprop="http://schema.org/ContactPage">
 	<div class="wrapper">
-		<h3>Contact me about anything!</h3>
+		<h3 id="response">Contact me about anything!</h3>
 		<div class="social">
 			<a href="mailto:vorback@gmail.com" target="_blank" class="email">vorback@gmail.com</span></a>
 			<a href="https://twitter.com/vorback" target="_blank" class="twitter">@vorback</a>
 			<a href="https://github.com/vincentorback" target="_blank" class="github">vincentorback</a>
 		</div>
 		<form id="contact-form" action="/process-en.php" method="post" role="form" class="english">
-			<label for="name">Name: </label><input type="text" id="name" name="name"><br>
-			<label for="email">Email: </label><input type="email" id="email" name="email"><br>
-			<textarea id="message" name="message" placeholder=" "></textarea>
+			<label for="name">Name: </label>
+			<input type="text" id="name" name="name"><br>
+			<label for="email">Email: </label>
+			<input type="email" id="email" name="email"><br>
+			<textarea id="message" name="message"></textarea>
 			<input type="submit" value="Send!" id="submit">
 		</form>
 	</div>

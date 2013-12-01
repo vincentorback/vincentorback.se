@@ -137,17 +137,6 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 				float: right;
 				margin: 0;
 			}
-			/*
-			.half {
-				width: 50%;
-				float: left;
-			}
-			&.websites {
-				width: 100%;
-				float: none;
-				margin: 0;
-			}
-			*/
 			&.websites {
 				width: 50%;
 			}
@@ -161,35 +150,6 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 }
 
 
-
-
-@media only screen and (max-width: 680px) {
-	#contact-form {
-		label {
-			display: block;
-			width: 100%;
-			line-height: 1;
-			margin-bottom: -5px;
-		}
-		input {
-			width: 100%;
-			margin: 0 0 1em 0;
-		}
-		#email {
-			margin: 0;
-		}
-		#submit {
-			width: 200px;
-			margin: 20px 5px 0;
-			&:active {
-				margin: 20px 5px -2px 0;
-			}
-		}
-		#message {
-			padding: 10px;
-		}
-	}
-}
 @media only screen and(max-width: 600px ) {
 	#top {
 		height: 280px;
@@ -225,11 +185,26 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 		}
 		form {
 			font-size: 1.4em;
+			label {
+				display: block;
+				width: 100%;
+				line-height: 1;
+				margin-bottom: -5px;
+			}
 			input {
 				text-indent: 0px;
+				width: 100%;
+				margin: 0 0 1em 0;
 			}
 			textarea {
 				height: 120px;
+			}
+		}
+		#submit {
+			max-width: 200px;
+			margin: 20px 5px 0;
+			&:active {
+				margin: 20px 5px 0 0;
 			}
 		}
 	}
