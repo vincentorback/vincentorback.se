@@ -48,8 +48,7 @@
 	<h2>Kontakt</h2>
 </div>
 
-<section id="contact" role="main" itemscope itemprop="http://schema.org/ContactPage">
-	<div class="wrapper">
+<section class="contact" role="main" itemscope itemprop="http://schema.org/ContactPage">
 		<h3 id="response">Kontakta mig om vad som helst!</h3>
 		<div class="social">
 			<a href="mailto:vorback@gmail.com" target="_blank" class="email">vorback@gmail.com</span></a>
@@ -64,10 +63,9 @@
 			<textarea id="message" name="message"></textarea>
 			<input type="submit" value="Skicka!" id="submit">
 		</form>
-	</div>
 </section>
 
-<footer id="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 	<div itemscope itemtype="http://schema.org/Person">
 		<a itemprop="url" href="http://vincentorback.se"><div itemprop="name"><strong>Vincent Orback</strong></div></a>
 		<div class="jobtitle" itemprop="jobtitle">Webbdesigner & Webbutvecklare</div>
@@ -81,22 +79,14 @@
 
 <script src="/js/main-min.js"></script>
 <script>
-function downloadJSAtOnload() {
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-31135100-1']);
 _gaq.push(['_trackPageview']);
 (function() {
-var s, ga = document.createElement('script'); ga.async = true,
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-s = document.getElementsByTagName('script')[0];
-s.parentNode.insertBefore(ga, s);
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
-}
-if (window.addEventListener)
-window.addEventListener("load", downloadJSAtOnload, false);
-else if (window.attachEvent)
-window.attachEvent("onload", downloadJSAtOnload);
-else window.onload = downloadJSAtOnload;
 </script>
 </body>
 </html>

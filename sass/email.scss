@@ -7,7 +7,6 @@
 @import "partials/basics";
 
 body {
-	background: $green;
 	@include selection {
 		background: $green;
 	}

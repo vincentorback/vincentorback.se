@@ -18,13 +18,8 @@ body {
 	position: relative;
 	height: 100%;
 }
-.wrapper {
-	max-width: 2000px;
-	width: 90%;
-	margin: 0 auto;
-}
 img {
-	max-width:100%;
+	max-width: 100%;
 	height: auto;
 }
 a {
@@ -41,15 +36,15 @@ a {
 	}
 }
 input, textarea{
-	-webkit-appearance:none;
+	-webkit-appearance: none;
 	appearance: none;
 	border: none;
 	outline: none;
 	font-family: 'Josefin Sans', sans-serif;
 	font-size: 1em;
 	border-radius: 0px;
-	&:active {
-		outline:none;
+	&:active, &:focus {
+		border-color: #000;
 	}
 }
 

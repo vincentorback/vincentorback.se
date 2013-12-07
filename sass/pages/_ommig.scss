@@ -1,4 +1,4 @@
-#ommig {
+.ommig {
 	max-width: 1000px;
 	width: 90%;
 	margin: 5em auto;
@@ -27,30 +27,10 @@
 			box-shadow: rgba(0,0,0,0.3) 0 1px 5px;
 		}
 	}
-	/*
-	.cv {
-		display: inline-block;
-		font-weight: 700;
-		padding: 0;
-		line-height: 1;
-		font-size: 1.3em;
-		margin: 2em 0 0 0;
-		&:after {
-			content: "\8594";
-			position: relative;
-			top: 3px;
-			margin-left: 8px;
-		}
-		&:hover:after {
-			-webkit-animation: cv .8s 0 linear infinite normal;
-			animation: cv .8s linear infinite normal;
-		}
-	}
-	*/
 }
 
 
-#recommend {
+.recommend {
 	margin: 13em 0 5em 0;
 	h3 {
 		width: 90%;
@@ -182,7 +162,4 @@
 	margin: 5px 12px 0 0;
 	height: 154px;
 	background: url(images/ommig/design-is-a-job.svg) no-repeat;
-	.no-svg & {
-		background: url(images/ommig/design-is-a-job.jpg) !important;
-	}
 }

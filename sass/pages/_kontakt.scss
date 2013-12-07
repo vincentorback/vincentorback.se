@@ -1,10 +1,12 @@
-#contact {
-	margin: 5em 0;
+.contact {
+	width: 90%;
+	margin: 5em auto;
 	h3 {
 		text-align: center;
 		font-size: 2em;
 	}
 }
+
 .social {
 	text-align: center;
 	margin: 50px 0;
@@ -45,14 +47,8 @@ form {
 	font-size: 1.7em;
 	max-width: 700px;
 	margin: 2em auto;
-	@extend %clearfix;
 	line-height: 2;
-	.sent {
-		text-align: center;
-		font-size: 1.5em;
-		line-height: 1.2;
-		min-height: 320px;
-	}
+	@extend %clearfix;
 	label {
 		cursor: pointer;
 	}
@@ -60,11 +56,13 @@ form {
 		text-align: left;
 		border-bottom: 3px solid #222;
 		font-weight: 700;
-		@include transition(all .1s linear);
 		width: 430px;
-		&:invalid {
-	    box-shadow: none;
-		}
+	}
+	input[type="text"] {
+		margin-left: 8px;
+	}
+	input[type="email"] {
+		margin-left: 9px;
 	}
 	textarea {
 		display: block;
@@ -74,9 +72,9 @@ form {
 		margin-top: 1em;
 		min-height: 300px;
 		vertical-align: top;
-		@include transition(height .2s linear);
 		font-weight: 700;
 		line-height: 1.3;
+		resize: vertical;
 		&::-webkit-scrollbar {
 		  width: 10px;
 		}
@@ -87,63 +85,41 @@ form {
 			background: #333;
 		}
 	}
+
+	input[type="submit"] {
+		position: relative;
+		width: 170px;
+		height: 60px;
+		float: right;
+
+		margin: 20px 0 0 0;
+		padding: 0;
+
+		background: #fff;
+		border: 3px solid #222;
+		box-shadow: #222 4px 4px 0;
+		cursor: pointer;
+
+		text-align: center;
+		text-transform: uppercase;
+		line-height: 2.2;
+
+		@include transition(all .1s ease);
+
+		&:active {
+			box-shadow: none;
+			left: 4px;
+			top: 4px;
+			border: 4px solid #222;
+		}
+	}
 	.needsfilled {
 		color: $red;
 		font-weight: 700;
 	}
-}
-
-#name {
-	margin-left: 8px;
-}
-#phone {
-	margin-left: 0px;
-}
-#email {
-	margin-left: 9px;
-}
-#submit {
-	width: 170px;
-	height: 60px;
-	line-height: 2.1;
-
-	padding: 0;
-
-	margin: 20px 0 0 0;
-	background: #fff;
-	border: 3px solid #222;
-	text-align: center;
-	box-shadow: #222 4px 4px 0;
-	float: right;
-	text-transform: uppercase;
-	cursor: pointer;
-	position: relative;
-	@include transition(all .1s ease);
-	&:active {
-		box-shadow: none;
-		left: 4px;
-		top: 4px;
-		border: 4px solid #222;
-	}
-}
-
-#contact-form.english {
-	#phone {
-		margin-left: 12px;
-	}
-	#email {
-		margin-left: 16px;
-	}
-}
-
-.no-svg #contact .social {
-	.email {
-		background: url(images/ommig/email.png) no-repeat;
-	}
-	.twitter {
-		background: url(images/ommig/twitter.png) no-repeat;
-	}
-	.github {
-		background: url(images/ommig/github.png) no-repeat;
+	&.english {
+		input[type="email"] {
+			margin-left: 16px;
+		}
 	}
 }

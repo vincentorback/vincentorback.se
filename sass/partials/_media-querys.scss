@@ -2,26 +2,26 @@
 	.work img {
 		max-width: 1400px;
 	}
-	#recommend {
+	.recommend {
 		max-width: 1600px;
 		margin: 10em auto 5em auto;
-	}
-	#recommend .col {
-		margin-right: 4%;
-	}
-	#recommend .col.websites {
-		margin-right: 2%;
-	}
-	#recommend .websites, .inspiration {
-		width: 14%;
-		float: left;
-		white-space: nowrap;
-	}
-	#recommend .inspiration {
-		position: relative;
-		left: 3%;
-		h4 {
-			margin-top: 0px;
+		.col {
+			margin-right: 4%;
+			&.websites {
+				margin-right: 2%;
+			}
+			&.inspiration {
+				position: relative;
+				left: 3%;
+				h4 {
+					margin-top: 0px;
+				}
+			}
+			&.websites, &.inspiration {
+				width: 14%;
+				float: left;
+				white-space: nowrap;
+			}
 		}
 	}
 }
@@ -41,7 +41,7 @@
 }
 
 @media only screen and (max-width: 1024px) {
-	#ommig img:hover {
+	.ommig img:hover {
 		@include scale(1);
 	}
 }
@@ -126,7 +126,7 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 	.work {
 		padding: 6em 0 5em 0;
 	}
-	#recommend {
+	.recommend {
 		font-size: .9em;
 		.col {
 			width: 47%;
@@ -163,7 +163,7 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 			font-size: 1.2em;
 		}
 	}
-	#ommig {
+	.ommig {
 		h3 {
 			font-size: 1.5em;
 		}
@@ -178,29 +178,30 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 			font-size: 1.2em;
 		}
 	}
-	#contact {
+	.contact {
 		margin: 3em 0;
 		h3 {
 			font-size: 1.5em;
 		}
-		form {
-			font-size: 1.4em;
-			label {
-				display: block;
-				width: 100%;
-				line-height: 1;
-				margin-bottom: -5px;
-			}
-			input {
-				text-indent: 0px;
-				width: 100%;
-				margin: 0 0 1em 0;
-			}
-			textarea {
-				height: 120px;
-			}
+	}
+	#contact-form {
+		font-size: 1.4em;
+		label {
+			display: block;
+			width: 100%;
+			line-height: 1;
+			margin-bottom: -5px;
 		}
-		#submit {
+		input {
+			text-indent: 0px;
+			width: 100%;
+			margin: 0 0 1em 0;
+		}
+		textarea {
+			height: 120px;
+			padding: 10px;
+		}
+		input[type="submit"] {
 			max-width: 200px;
 			margin: 20px 5px 0;
 			&:active {
@@ -208,7 +209,7 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 			}
 		}
 	}
-	#recommend {
+	.recommend {
 		margin: 10em 0 5em 0;
 		h3 {
 			font-size: 1.6em;
@@ -235,7 +236,7 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 			}
 		}
 	}
-	#footer {
+	.footer {
 		div {
 			display: block;
 			line-height: 1.4;
@@ -317,10 +318,10 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 			padding: .8em;
 		}
 	}
-	#ommig {
+	.ommig {
 		margin: 2.5em auto 0 auto;
 	}
-	#recommend {
+	.recommend {
 		margin: 5em auto;
 		.container {
 			margin: 1em auto;
@@ -360,7 +361,7 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 			font-size: 1em;
 		}
 	}
-	#recommend {
+	.recommend {
 		.col.websites, .inspiration {
 			width: 100%;
 			float: none;
@@ -384,18 +385,12 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 	a {
 		text-decoration:underline;
 	}
-	.logo {
-		text-decoration: none;
-	}
-	nav, #readmore, .cv, form{
-		display: none;
-	}
-	#ommig {
+	.ommig {
 		img {
 			@include rotate(none);
 		}
 	}
-	#recommend span {
+	.recommend span {
 		display: none;
 	}
 }

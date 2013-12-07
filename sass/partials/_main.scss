@@ -93,7 +93,22 @@ img.lazy-loaded {
 			background-size: 135px;
 		}
 	}
+	.social {
+		.email {
+			background: url(images/ommig/email.png) no-repeat;
+		}
+		.twitter {
+			background: url(images/ommig/twitter.png) no-repeat;
+		}
+		.github {
+			background: url(images/ommig/github.png) no-repeat;
+		}
+	}
+	.designisajob {
+		background: url(images/ommig/design-is-a-job.jpg) no-repeat;
+	}
 }
+
 .lte-ie9 {
 	.main-nav li {
 		float: left;

@@ -50,13 +50,17 @@
 	<h2>Om mig</h2>
 </div>
 
-<section id="ommig" role="main" itemscope itemprop="http://schema.org/AboutPage">
-	<img src="/images/ommig/vincentorback.jpg" alt="Vincent Orback" width="300" height="300" />
+<main role="main">
+
+<section class="ommig" role="main" itemscope itemtype="http://schema.org/Person">
+	<img src="/images/ommig/vincentorback.jpg" alt="Vincent Orback" width="300" height="300" itemprop="image" />
 	<h3>Hallå där!</h3>
-	<p>Jag heter Vincent och jobbar som webbutvecklare på den digitala byrån <a href="http://www.daytona.se/" target="_blank">Daytona</a> i Stockholm. Jag älskar att bygga responsiva och användarvänliga hemsidor och designa saker smartare och lättare att använda. När jag inte gör hemsidor för kunder sitter jag ofta och knattrar på olika sidoprojekt.</p>
+	<span itemprop="description">
+	<p>Jag heter <span itemprop="name">Vincent Orback</span> och jobbar som <span itemprop="jobtitle">webbutvecklare</span> på den digitala byrån <a href="http://www.daytona.se/" target="_blank" itemprop="worksFor">Daytona</a> i <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" itemprop="addressLocality" itemprop="workLocation homeLocation">Stockholm</span>. Jag älskar att bygga responsiva och användarvänliga hemsidor och designa saker smartare och lättare att använda. När jag inte gör hemsidor för kunder sitter jag ofta och knattrar på olika sidoprojekt.</p>
+	</span>
 </section>
 
-<section id="recommend">
+<section class="recommend">
 	<h3>Lite länkar till saker jag gillar att läsa och lyssna på för att lära mig mer om webb och design.</h3>
 	<div class="container">
 		<div class="col books">
@@ -114,7 +118,9 @@
 	<p class="recommend-info">Jag letar alltid efter fler böcker, podcasts och hemsidor för att lära mig mer eller för att få inspiration. Om du känner till något du tycker jag borde kika på, tveka inte att maila än länk eller två till <a href="mailto:vorback@gmail.com" target="_blank" rel="nofollow">vorback@gmail.com</a> eller tweeta <a href="http://www.twitter.com/vorback" target="_blank" rel="nofollow">@vorback</a>.</p>
 </section>
 
-<footer id="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+</main>
+
+<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 	<div itemscope itemtype="http://schema.org/Person">
 		<a itemprop="url" href="http://vincentorback.se"><div itemprop="name"><strong>Vincent Orback</strong></div></a>
 		<div class="jobtitle" itemprop="jobtitle">Webbdesigner & Webbutvecklare</div>
@@ -128,22 +134,14 @@
 
 <script src="/js/main-min.js"></script>
 <script>
-function downloadJSAtOnload() {
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-31135100-1']);
 _gaq.push(['_trackPageview']);
 (function() {
-var s, ga = document.createElement('script'); ga.async = true,
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-s = document.getElementsByTagName('script')[0];
-s.parentNode.insertBefore(ga, s);
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
-}
-if (window.addEventListener)
-window.addEventListener("load", downloadJSAtOnload, false);
-else if (window.attachEvent)
-window.attachEvent("onload", downloadJSAtOnload);
-else window.onload = downloadJSAtOnload;
 </script>
 </body>
 </html>

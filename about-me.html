@@ -48,14 +48,14 @@
 	<h2>About me</h2>
 </div>
 
-<section id="ommig" role="main" itemscope itemprop="http://schema.org/AboutPage">
+<section class="ommig" role="main" itemscope itemprop="http://schema.org/AboutPage">
 	<img src="/images/ommig/vincentorback.jpg" alt="Vincent Orback" width="300" height="300" />
 	<h3>Hi there!</h3>
 	 <p>I'm Vincent. A designer and developer living in Stockholm. I work at the digital agency <a href="http://www.daytona.se/" target="_blank">Daytona</a> where i do front-end development. I love building responsive, responsible websites and designing things smarter and easier. When I'm not doing client work i usually tinker with side projects.</p>
 	 <!--<a href="/cv-en.pdf" target="_blank" class="cv">Download resume</a>-->
 </section>
 
-<section id="recommend">
+<section class="recommend">
 	<h3>Here are some things I love to read and listen to in order to learn more about the web.</h3>
 	<div class="container">
 		<div class="col books">
@@ -114,7 +114,7 @@
 		<p class="recommend-info">I'm always looking for more books, podcasts or websites to learn more or for inspiration. If you know something that you think I should check out, please send and email to <a href="mailto:vorback@gmail.com" target="_blank" rel="nofollow">vorback@gmail.com</a> or tweet me at <a href="http://www.twitter.com/vorback" target="_blank" rel="nofollow">@vorback</a>.</p>
 </section>
 
-<footer id="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 	<div itemscope itemtype="http://schema.org/Person">
 		<a itemprop="url" href="http://vincentorback.se"><div itemprop="name"><strong>Vincent Orback</strong></div></a>
 		<div class="jobtitle" itemprop="jobtitle">Web Designer & Web Developer</div>
@@ -128,22 +128,14 @@
 
 <script src="/js/main-min.js"></script>
 <script>
-function downloadJSAtOnload() {
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-31135100-1']);
 _gaq.push(['_trackPageview']);
 (function() {
-var s, ga = document.createElement('script'); ga.async = true,
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-s = document.getElementsByTagName('script')[0];
-s.parentNode.insertBefore(ga, s);
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
-}
-if (window.addEventListener)
-window.addEventListener("load", downloadJSAtOnload, false);
-else if (window.attachEvent)
-window.attachEvent("onload", downloadJSAtOnload);
-else window.onload = downloadJSAtOnload;
 </script>
 </body>
 </html>

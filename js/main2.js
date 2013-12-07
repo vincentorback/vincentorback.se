@@ -9,7 +9,7 @@
 			if (document.getElementById('portfolio') !== null) {
 				vincent.smoothScroll();
 			}
-			if (document.getElementById('contact') !== null) {
+			if (document.getElementById('contact-form') !== null) {
 				vincent.contactForm();
 			}
 		},
@@ -33,7 +33,7 @@
 
 		},
 		contactForm: function () {
-			var i, j,
+			var i, j, firstError,
 				form = document.getElementById('contact-form'),
 				submitButton = document.getElementById('submit'),
 				inputs = document.getElementsByTagName('input'),
@@ -51,7 +51,7 @@
 
 			submitButton.addEventListener("click", function (event) {
 
-				if (name.value === "") {
+				if (name.value.length === 0) {
 					name.className += " needsfilled";
 					name.placeholder = nameError;
 					name.value = nameError;
@@ -61,19 +61,18 @@
 					email.placeholder = emailError;
 					email.value = emailError;
 				}
-				if (message.value === "") {
+				if (message.value.length === 0) {
 					message.className += " needsfilled";
 					message.placeholder = messageError;
 					message.value = messageError;
 				}
 
 				// If any input needs filled, focus and stop posting.
-				for (i = 0; i < inputs.length; i += 1) {
-					if (hasClass(inputs[i], 'needsfilled')) {
-						inputs[0].focus();
-						event.preventDefault();
-						return false;
-					}
+				firstError = document.getElementsByClassName('needsfilled');
+				if (firstError.length > 0) {
+					firstError[0].focus();
+					event.preventDefault();
+					return false;
 				}
 
 				// Submit with AJAX

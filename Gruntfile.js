@@ -1,9 +1,30 @@
 module.exports = function(grunt) {
 
+  function renderBanner() {
+    return ('/*                 \n' +
+        ' *  ___    ___  __   ____   __    _____   _____   ___    __   _________   \n' +
+        ' *  \  \  /  / |  | |    \ |  |  /   __| |  ___| |    \ |  | |         |  \n' +
+        ' *   \  \/  /  |  | |     \|  | |   /    |  |__  |     \|  | |___   ___|  \n' +
+        ' *    \    /   |  | |  |\  \  | |  |     |   __| |  |\  \  |    |   |     \n' +
+        ' *     \  /    |  | |  | \  \ | |   \__  |  |___ |  | \  \ |    |   |     \n' +
+        ' *      \/     |__| |__|  \___|  \_____| |_____| |__|  \___|    |___|     \n' +  
+        ' * \n' +
+        ' * ' + new Date() + ' */');
+  }
+
 	grunt.initConfig({
 
 		pkg: grunt.file.readJSON('package.json'),
-
+    
+    compass: {
+      dist: {
+        options: {
+          config: 'config.rb',
+          specify: 'sass/style.scss',
+          banner: renderBanner()
+        }
+      },
+    },
 		jshint: {
       options: {
         ignores: [
@@ -75,19 +96,23 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         files: ['js/**/*.js'],
-        tasks: ['jshint'],
-        options: {
-          spawn: false,
-          livereload: true
-        }
+        tasks: ['jshint', 'uglify']
+      },
+      css: {
+        files: ['sass/**/*.scss'],
+        tasks: ['compass']
+      },
+      html: {
+        files: ['*.html']
       }
     }
 	});
-
+  
+  grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-	grunt.registerTask('default', ['jshint', 'uglify']);
+	grunt.registerTask('default', ['compass', 'jshint', 'uglify']);
 };
