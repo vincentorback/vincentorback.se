@@ -1,29 +1,35 @@
 module.exports = function(grunt) {
 
-  function renderBanner() {
-    return ('/*                 \n' +
-        ' *  ___    ___  __   ____   __    _____   _____   ___    __   _________   \n' +
-        ' *  \  \  /  / |  | |    \ |  |  /   __| |  ___| |    \ |  | |         |  \n' +
-        ' *   \  \/  /  |  | |     \|  | |   /    |  |__  |     \|  | |___   ___|  \n' +
-        ' *    \    /   |  | |  |\  \  | |  |     |   __| |  |\  \  |    |   |     \n' +
-        ' *     \  /    |  | |  | \  \ | |   \__  |  |___ |  | \  \ |    |   |     \n' +
-        ' *      \/     |__| |__|  \___|  \_____| |_____| |__|  \___|    |___|     \n' +  
+  function creditsBanner() {
+    var d = new Date(),
+      local = d.toLocaleDateString();
+
+    return ('/* \n' +
+        ' * Vincent Orback \n' +
         ' * \n' +
-        ' * ' + new Date() + ' */');
+        ' * http://vincentorback.se/ \n' +
+        ' * https://github.com/vincentorback/Vincent-Orback \n' +
+        ' * \n' +
+        ' * Latest build: ' + local + '\n' +
+        '*/ ');
   }
 
 	grunt.initConfig({
 
 		pkg: grunt.file.readJSON('package.json'),
-    
-    compass: {
+
+    sass: {
       dist: {
         options: {
-          config: 'config.rb',
-          specify: 'sass/style.scss',
-          banner: renderBanner()
+          style: 'compressed',
+          compass: 'true',
+          noCache: true,
+          banner: creditsBanner()
+        },
+        files: {
+          'style.css': 'sass/style.scss'
         }
-      },
+      }
     },
 		jshint: {
       options: {
@@ -49,7 +55,8 @@ module.exports = function(grunt) {
           jQuery: true,
           $: true
         }
-      }
+      },
+      src: ['js/main2.js', 'js/xmas.js']
     },
     imagemin: {
       png: {
@@ -81,15 +88,29 @@ module.exports = function(grunt) {
         ]
       }
     },
+    svgmin: {
+      options: {
+        plugins: [{
+          removeViewBox: false
+        }]
+      },
+      dist: {                     // Target
+        files: [{               // Dictionary of files
+          expand: true,       // Enable dynamic expansion.
+          cwd: 'images/',     // Src matches are relative to this path.
+          src: ['**/*.svg'],  // Actual pattern(s) to match.
+          dest: 'images/',       // Destination path prefix.
+        }]
+      }
+    },
 		uglify: {
 			options: {
-				banner: '/*!\n* Vincent Orback <%= grunt.template.today("yyyy-mm-dd") %>\n*/\n',
-				mangle: false,
+				banner: creditsBanner(),
         report: 'gzip'
 			},
 			my_target: {
 				files: {
-          'js/main-min.js': ['js/vendor/modernizr.js', 'js/vendor/lazyload.js', 'js/main2.js']
+          'js/main-min.js': ['js/vendor/modernizr.js', 'js/vendor/lazyload.js', 'js/main2.js', 'js/xmas.js']
 				}
 			}
 		},
@@ -100,19 +121,15 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['sass/**/*.scss'],
-        tasks: ['compass']
+        tasks: ['sass']
       },
       html: {
         files: ['*.html']
       }
     }
 	});
-  
-  grunt.loadNpmTasks('grunt-contrib-compass');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
-  grunt.loadNpmTasks('grunt-contrib-watch');
 
-	grunt.registerTask('default', ['compass', 'jshint', 'uglify']);
+  require('load-grunt-tasks')(grunt, {scope: ['devDependencies']});
+
+	grunt.registerTask('default', ['sass', 'jshint', 'uglify']);
 };

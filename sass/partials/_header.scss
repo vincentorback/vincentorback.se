@@ -1,10 +1,10 @@
 #top {
 	position: relative;
 	height: 250px;
-	background: $blue;
+	background: $red;
 	color: #fff;
 	@extend %clearfix;
-	@extend %animated-bg;
+	//@extend %animated-bg;
 	.home &, .page-en & {
 		height: 100%;
 		h2 {
@@ -69,7 +69,7 @@
 		&.active a {
 			color: #fff;
 			text-shadow: rgba(0,0,0,0.15) 0 1px 3px;
-		}		
+		}
 	}
 	a {
 		color: #fff;
@@ -82,6 +82,6 @@
 		&:hover {
 			text-shadow: rgba(0,0,0,0.15) 0 1px 3px;
 		}
-		
+
 	}
 }

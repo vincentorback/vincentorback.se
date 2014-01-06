@@ -1,4 +1,5 @@
 /* jshint browser: true, strict: true, eqeqeq: true, indent: 2, newcap: true, plusplus: true, unused: true, trailing: true, loopfunc: false, nomen: true, onevar: true, white: true, undef: true, latedef: true */
+/* global ActiveXObject */
 
 (function () {
 	'use strict';
@@ -6,15 +7,18 @@
 	var vincent = {
 
 		init : function () {
+
 			if (document.getElementById('portfolio') !== null) {
 				vincent.smoothScroll();
 			}
 			if (document.getElementById('contact-form') !== null) {
 				vincent.contactForm();
 			}
+
 		},
 		smoothScroll: function () {
-			var extra,
+			var extra, timer,
+        body = document.body,
 				winWidth = window.innerWidth,
 				link = document.getElementsByClassName('scroll')[0],
 				workOffset = document.getElementById('portfolio').offsetTop;
@@ -31,12 +35,25 @@
 				event.preventDefault();
 			}, false);
 
+
+      /**
+       * Disable hover on scroll
+      */
+      window.addEventListener('scroll', function () {
+        clearTimeout(timer);
+        if (!body.classList.contains('disable-hover')) {
+          body.classList.add('disable-hover');
+        }
+        timer = setTimeout(function () {
+          body.classList.remove('disable-hover');
+        }, 100);
+      }, false);
+
 		},
 		contactForm: function () {
-			var i, j, firstError,
+			var firstError,
 				form = document.getElementById('contact-form'),
 				submitButton = document.getElementById('submit'),
-				inputs = document.getElementsByTagName('input'),
 				name = document.getElementById('name'),
 				email = document.getElementById('email'),
 				message = document.getElementById('message'),
@@ -49,22 +66,36 @@
 				messageError = "What did you come here to say";
 			}
 
-			submitButton.addEventListener("click", function (event) {
+			submitButton.addEventListener('click', function (event) {
 
 				if (name.value.length === 0) {
-					name.className += " needsfilled";
+					name.className += ' needsfilled';
 					name.placeholder = nameError;
 					name.value = nameError;
+					name.setAttribute("aria-invalid", "true");
+				} else {
+          removeClass(name, 'needsfilled');
+					name.setAttribute("aria-invalid", "false");
 				}
 				if (!/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email.value)) {
 					email.className += ' needsfilled';
 					email.placeholder = emailError;
 					email.value = emailError;
+					email.setAttribute("aria-invalid", "true");
+				} else {
+          removeClass(email, 'needsfilled');
+          email.placeholder = '';
+					email.setAttribute("aria-invalid", "false");
 				}
 				if (message.value.length === 0) {
 					message.className += " needsfilled";
 					message.placeholder = messageError;
 					message.value = messageError;
+					message.setAttribute("aria-invalid", "true");
+				} else {
+          removeClass(message, 'needsfilled');
+          message.placeholder = '';
+					message.setAttribute("aria-invalid", "false");
 				}
 
 				// If any input needs filled, focus and stop posting.
@@ -82,21 +113,28 @@
 
 			}, false);
 
-			for (j = 0; j < inputs.length; j += 1) {
-				inputs[j].addEventListener('focus', function () {
-					clearField(this);
-				}, false);
-			}
+
+      name.addEventListener('focus', function () {
+        clearField(this);
+      }, false);
+      email.addEventListener('focus', function () {
+        clearField(this);
+      }, false);
 			message.addEventListener('focus', function () {
 				clearField(this);
 			}, false);
 
 		}
 	};
-
-	// Bring me back some jQuery plz!
-	function hasClass(elem, className) {
-		return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+		// helper functions
+	function trim(str) {
+		return str.trim ? str.trim() : str.replace(/^\s+|\s+$/g, '');
+	}
+	function hasClass(el, cn) {
+		return (' ' + el.className + ' ').indexOf(' ' + cn + ' ') !== -1;
+	}
+	function removeClass(el, cn) {
+		el.className = trim((' ' + el.className + ' ').replace(' ' + cn + ' ', ' '));
 	}
 
 	function clearField(field) {
@@ -127,7 +165,6 @@
 	}
 
 	function sendXMLDoc(form) {
-
     var name = form.name.value,
 			email = form.email.value,
 			message = form.message.value,
@@ -171,18 +208,6 @@
 		xmlhttp.send(data);
 	}
 
-	var body = document.body,
-		timer;
-
-	window.addEventListener('scroll', function () {
-		clearTimeout(timer);
-		if (!body.classList.contains('disable-hover')) {
-			body.classList.add('disable-hover');
-		}
-		timer = setTimeout(function () {
-			body.classList.remove('disable-hover');
-		}, 100);
-	}, false);
 
 	vincent.init();
 

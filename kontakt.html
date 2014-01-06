@@ -57,10 +57,10 @@
 		</div>
 		<form id="contact-form" name="contact-form" action="/process.php" method="post" role="form">
 			<label for="name">Namn: </label>
-			<input type="text" id="name" name="name"><br>
+			<input type="text" id="name" name="name" aria-required="true"><br>
 			<label for="email">E-post: </label>
-			<input type="email" id="email" name="email"><br>
-			<textarea id="message" name="message"></textarea>
+			<input type="email" id="email" name="email" aria-required="true"><br>
+			<textarea id="message" name="message" aria-required="true"></textarea>
 			<input type="submit" value="Skicka!" id="submit">
 		</form>
 </section>
@@ -76,6 +76,8 @@
 		<div class="telefon" itemprop="telephone">+46 725 309 222</div>
 	</div>
 </footer>
+
+<canvas id="canvas"></canvas>
 
 <script src="/js/main-min.js"></script>
 <script>

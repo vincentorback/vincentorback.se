@@ -45,7 +45,7 @@
 				<li><a href="/kontakt">Svenska</a></li>
 			</ul>
 		</nav>
-	
+
 	<h2>Contact</h2>
 </div>
 
@@ -58,10 +58,10 @@
 	</div>
 	<form id="contact-form" action="/process-en.php" method="post" role="form" class="english">
 		<label for="name">Name: </label>
-		<input type="text" id="name" name="name"><br>
+    <input type="text" id="name" name="name" aria-required="true"><br>
 		<label for="email">Email: </label>
-		<input type="email" id="email" name="email"><br>
-		<textarea id="message" name="message"></textarea>
+		<input type="email" id="email" name="email" aria-required="true"><br>
+		<textarea id="message" name="message" aria-required="true"></textarea>
 		<input type="submit" value="Send!" id="submit">
 	</form>
 </section>
@@ -77,6 +77,8 @@
 		<div class="telefon" itemprop="telephone">+46 725 309 222</div>
 	</div>
 </footer>
+
+<canvas id="canvas"></canvas>
 
 <script src="/js/main-min.js"></script>
 <script>

@@ -10,7 +10,7 @@ $message = "Meddelande från vincentorback.se/en\n\n".
 "Meddelande: " . "$formmessage";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	if (mail($toemail, 'Meddelande från vincentorback.se/en', $message, 'From: ' . $email)) {
+  if ($toemail && $message && $email) {
 		mail($toemail, 'Meddelande från vincentorback.se/en', $message, 'From: ' . $email);
 		echo "Thank you for your message ". $name .".<br />I'll get back to you ASAP!";
 	}
