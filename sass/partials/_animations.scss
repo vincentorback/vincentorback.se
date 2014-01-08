@@ -16,8 +16,6 @@
 	@include animation(animated-bg 20000ms linear infinite normal);
 }
 
-
-
 @include keyframes(rotate) {
 	from {
 		@include rotate(0deg);

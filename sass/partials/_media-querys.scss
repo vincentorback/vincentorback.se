@@ -27,14 +27,12 @@
 }
 
 @media only screen and (min-width: 1140px) {
-	#top {
-		.logo {
-			left: 60px;
-		}
-		.main-nav {
-			right: 35px;
-		}
-	}
+	.logo {
+    left: 60px;
+  }
+  .main-nav {
+    right: 35px;
+  }
 	.work {
 		padding: 14em 0 13.5em 0;
 	}
@@ -56,21 +54,21 @@
 		}
 	}
 	#top {
-		.logo {
-			width: 100%;
-			display: block;
-			left: auto;
-			float: none;
-			position: relative;
-			h1 {
-				text-align: center;
-				left: auto;
-			}
-		}
 		h2 {
 			top: 40px;
 		}
 	}
+  .logo {
+    width: 100%;
+    display: block;
+    left: auto;
+    float: none;
+    position: relative;
+    h1 {
+      text-align: center;
+      left: auto;
+    }
+  }
 	.main-nav {
 		right: auto;
 		text-align: center;
@@ -110,9 +108,9 @@
 }
 
 
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
 and (orientation : landscape)
 and (-webkit-min-device-pixel-ratio: 1)  {
 	#top h2 {
@@ -146,7 +144,7 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 				margin-top: 0px;
 			}
 		}
-	}	
+	}
 }
 
 
@@ -253,10 +251,8 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 }
 
 @media only screen and (max-width: 500px) {
-	#top {
-		.logo h1 {
-			white-space: normal;
-		}
+	.logo h1 {
+		white-space: normal;
 	}
 	.main-nav a {
 		padding: 0 15px;
@@ -292,7 +288,7 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 		}
 	}
 }
-@media only screen and (max-width: 340px) {	
+@media only screen and (max-width: 340px) {
 	.home #top, .page-en #top {
 		height: 450px;
 		h2 {
@@ -343,9 +339,6 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 	}
 }
 @media only screen and (max-width: 300px) {
-	.logo h1 {
-		
-	}
 	.main-nav a {
 		display: block;
 		padding: 10px;
@@ -383,7 +376,7 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 		-o-filter:grayscale(100%);
 	}
 	a {
-		text-decoration:underline;
+		text-decoration: underline;
 	}
 	.ommig {
 		img {

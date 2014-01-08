@@ -23,7 +23,7 @@ img.lazy-loaded {
 .embed-container {
 	position: relative;
 	padding-bottom: 56.25%;
-	padding-top: 30px;	
+	padding-top: 30px;
 	height: 0;
 	overflow:
 	hidden; max-width: 100%;
@@ -39,7 +39,7 @@ img.lazy-loaded {
 }
 
 /**
- * Warning that appears for browsers using IE 7 and older.
+ * Warning that appears for browsers using IE 8 and older.
  */
 .iewarning {
 	background: $red;

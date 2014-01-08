@@ -25,10 +25,8 @@ img {
 a {
 	color: #222;
 	text-decoration:none;
-	@include transition(color .2s linear);
 	cursor: pointer;
 	&:hover {
-		color: #000;
 		text-decoration:none;
 	}
 	&:active {
@@ -48,6 +46,9 @@ input, textarea{
 	}
 }
 
+@include placeholder {
+  color: $red;
+}
 
 @include selection {
 	background: $red;

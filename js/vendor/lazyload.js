@@ -39,8 +39,8 @@
       var scrollY = window.pageYOffset || document.documentElement.scrollTop,
         pageHeight = window.innerHeight || document.documentElement.clientHeight,
         range = {
-          min: scrollY - 1000,
-          max: scrollY + pageHeight + 1000
+          min: scrollY - 1500,
+          max: scrollY + pageHeight + 1500
         },
         i = 0;
 

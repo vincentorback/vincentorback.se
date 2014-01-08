@@ -1,128 +1,127 @@
-
-body.blogg {
+.blog {
 	background: #fff;
+  main {
+    max-width: 800px;
+    margin: 3em auto;
+  }
+  @media all and (max-width: 840px) {
+    #top {
+      height: 380px;
+      padding: 0;
+      background-size: cover;
+      h2 {
+        top: 60px;
+      }
+    }
+  }
 }
 
-@media all and (max-width: 840px) {
-	body.blogg #top {
-		height: 380px;
-		padding: 0;
-		background-size: cover;
-		h2 {
-			top: 60px;
-		}
-	}
-}
-
-#blog {
-	max-width: 800px;
-	margin: 3em auto;
-	.entry {
-		margin-bottom: 75px;
-		position: relative;
+.entry {
+	margin-bottom: 75px;
+	position: relative;
+	background: #fff;
+	font-family: $helvetica;
+	header {
+		padding: 30px 40px 0 40px;
 		background: #fff;
-		font-family: $helvetica;
-		header {
-			padding: 30px 40px 0 40px;
-			background: #fff;
-			@extend %clearfix;
+		@extend %clearfix;
+		display: block;
+		position: relative;
+		.entry-title {
+			color: $green;
+			float: left;
+			font-weight: 600;
+			max-width: calc(100% - 60px);
+			font-size: 2.5em;
+		}
+		.date {
+			float: right;
+			background: $green;
 			display: block;
-			position: relative;
-			.entry-title {
-				color: $green;
-				float: left;
-				font-weight: 600;
-				max-width: calc(100% - 60px);
-				font-size: 2.5em;
+			color: #fff;
+			width: 65px;
+			height: 65px;
+			text-align: center;
+			border-radius: 50%;
+			word-spacing: 65px;
+			font-size: 22px;
+			line-height: 1;
+			position: absolute;
+			padding-top: 12px;
+			top: 25px;
+			right: 25px;
+			font-family: 'Josefin Sans', georiga;
+			@include transition(all .2s ease);
+			cursor: default;
+			&:hover {
+				@include scale(1.2);
 			}
-			.date {
-				float: right;
-				background: $green;
-				display: block;
-				color: #fff;
-				width: 65px;
-				height: 65px;
-				text-align: center;
-				border-radius: 50%;
-				word-spacing: 65px;
-				font-size: 22px;
-				line-height: 1;
-				position: absolute;
-				padding-top: 12px;
-				top: 25px;
-				right: 25px;
-				font-family: 'Josefin Sans', georiga;
-				@include transition(all .2s ease);
-				cursor: default;
-				&:hover {
-					@include scale(1.2);
-				}
-			}
-		}
-	}
-	.entry-content {
-		padding: 10px 40px;
-		letter-spacing: 1px;
-		color: #3a4145;
-		font-size: 18px;
-		font-family: 'Droid Serif';
-		p {
-			margin-bottom: 1em;
-			line-height: 1.6;
-			a {
-				border-bottom: 1px solid #222;
-			}
-		}
-		img {
-			margin: 20px 0;
-			box-shadow: rgba(0,0,0,0.2) 0 1px 3px;
-		}
-		b,strong,h1,h2,h3,h4,h5,h6 {
-			font-weight: bold;
-		}
-		h1 {
-			font-size: 1.5em;
-		}
-		h2 {
-			font-size: 1.4em;
-		}
-		h3 {
-			font-size: 1.3em;
-		}
-		h4 {
-			font-size: 1.3em;
-		}
-		i,em {
-			font-style: italic;
-		}
-	}
-	.more {
-		padding: 20px 40px;
-		font-size: 18px;
-		font-weight: 600;
-		letter-spacing: 2px;
-		position: absolute;
-		right: 0;
-		bottom: 5px;
-		&:after {
-			content: "\8594";
-			position: relative;
-			top: 3px;
-			left: 6px;
-			@include transition(all .1s ease);
-		}
-		&:hover:after {
-			left: 12px;
-		}
-	}
-	.share {
-		padding: 30px;
-		a {
-			color: #999;
 		}
 	}
 }
-
+.entry-content {
+	padding: 10px 40px;
+	letter-spacing: 1px;
+	color: #3a4145;
+	font-size: 18px;
+	font-family: 'Droid Serif';
+	p {
+		margin-bottom: 1em;
+		line-height: 1.6;
+		a {
+			border-bottom: 1px solid #222;
+		}
+	}
+	img {
+		margin: 20px 0;
+		box-shadow: rgba(0,0,0,0.2) 0 1px 3px;
+	}
+	b,strong,h1,h2,h3,h4,h5,h6 {
+		font-weight: bold;
+	}
+	h1 {
+		font-size: 1.5em;
+	}
+	h2 {
+		font-size: 1.4em;
+	}
+	h3 {
+		font-size: 1.3em;
+	}
+	h4 {
+		font-size: 1.3em;
+	}
+	i,em {
+		font-style: italic;
+	}
+}
+/*
+.readmore {
+	padding: 20px 40px;
+	font-size: 18px;
+	font-weight: 600;
+	letter-spacing: 2px;
+	position: absolute;
+	right: 0;
+	bottom: 5px;
+	&:after {
+		content: "\8594";
+		position: relative;
+		top: 3px;
+		left: 6px;
+		@include transition(all .1s ease);
+	}
+	&:hover:after {
+		left: 12px;
+	}
+}
+.sharepost {
+	padding: 30px;
+	a {
+		color: #999;
+	}
+}
+*/
 
 
 /**

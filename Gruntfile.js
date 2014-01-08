@@ -36,6 +36,7 @@ module.exports = function(grunt) {
         ignores: [
           'js/vendor/*.js',
           'js/*-min.js',
+          'js/xmas.js'
         ],
         browser: true,
         strict: false,
@@ -51,6 +52,7 @@ module.exports = function(grunt) {
         white: true,
         undef: true,
         latedef: true,
+        "-W002": false, // Value of 'event' may be overwritten in IE 8 and earlier.
         globals: {
           jQuery: true,
           $: true
@@ -114,6 +116,13 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+    uncss: {
+      dist: {
+        files: {
+          'style.css': '*.html'
+        }
+      }
+    },
     watch: {
       scripts: {
         files: ['js/**/*.js'],

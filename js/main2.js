@@ -174,11 +174,11 @@
 			xmlhttp;
 
     try {
-			// Opera 8.0+, Firefox, Safari
+      // Opera 8.0+, Firefox, Safari
 			xmlhttp = new XMLHttpRequest();
 		} catch (event) {
-			// Internet Explorer Browsers
 			try {
+        // Internet Explorer
 				xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
 			} catch (event) {
 				try {
@@ -207,7 +207,6 @@
 		xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 		xmlhttp.send(data);
 	}
-
 
 	vincent.init();
 
