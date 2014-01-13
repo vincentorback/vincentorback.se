@@ -58,7 +58,9 @@ module.exports = function(grunt) {
           $: true
         }
       },
-      src: ['js/main2.js', 'js/xmas.js']
+      all: {
+        src: ['js/main2.js', 'js/xmas.js']
+      }
     },
     imagemin: {
       png: {
@@ -110,7 +112,7 @@ module.exports = function(grunt) {
 				banner: creditsBanner(),
         report: 'gzip'
 			},
-			my_target: {
+			all: {
 				files: {
           'js/main-min.js': ['js/vendor/modernizr.js', 'js/vendor/lazyload.js', 'js/main2.js', 'js/xmas.js']
 				}
@@ -123,22 +125,30 @@ module.exports = function(grunt) {
         }
       }
     },
+    devUpdate: {
+      main: {
+        options: {
+          reportUpdated: true,
+          updateType: "report"
+        }
+      }
+    },
     watch: {
       scripts: {
         files: ['js/**/*.js'],
-        tasks: ['jshint', 'uglify']
+        tasks: ['newer:jshint:all', 'newer:uglify:all']
       },
       css: {
         files: ['sass/**/*.scss'],
         tasks: ['sass']
-      },
-      html: {
-        files: ['*.html']
       }
     }
 	});
 
-  require('load-grunt-tasks')(grunt, {scope: ['devDependencies']});
+  require('load-grunt-tasks')(grunt);
 
 	grunt.registerTask('default', ['sass', 'jshint', 'uglify']);
+
+  grunt.registerTask('deploy', ['devUpdate', 'imagemin', 'svgmin', 'sass', 'jshint', 'uglify', 'uncss']);
+
 };
