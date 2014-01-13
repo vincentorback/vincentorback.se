@@ -32,6 +32,7 @@ $helvetica: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Hel
 
 @mixin animation($animation) {
   -webkit-animation: $animation;
+  -moz-animation: $animation;
   animation: $animation;
 }
 

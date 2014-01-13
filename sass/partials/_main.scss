@@ -1,3 +1,7 @@
+main {
+  overflow: hidden;
+}
+
 .disable-hover,
 .disable-hover * {
   pointer-events: none !important;
@@ -16,6 +20,10 @@ img.lazy-load {
 img.lazy-loaded {
 	opacity: 1;
 }
+/*
+  Loader image uri code.
+  <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxhZ2VyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSIxMDAwcHgiIGhlaWdodD0iMTAwMHB4IiB2aWV3Qm94PSIwIDAgMTAwMCAxMDAwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMDAwIDEwMDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMTUwLDUwMEgwYzAtNjcuNDY2LDEzLjIyOS0xMzIuOTU1LDM5LjMyMy0xOTQuNjQ1YzI1LjE4Ny01OS41NDksNjEuMjI5LTExMy4wMTMsMTA3LjEyMS0xNTguOTA4CgljNDUuODk2LTQ1Ljg5NSw5OS4zNTktODEuOTM3LDE1OC45MDgtMTA3LjEyNEMzNjcuMDQ1LDEzLjIzLDQzMi41MzEsMCw1MDAsMHYxNTBDMzA3LjAwOSwxNTAsMTUwLDMwNy4wMDksMTUwLDUwMEwxNTAsNTAweiIvPgo8L3N2Zz4=" />
+ */
 
 /**
  * Responsive Video

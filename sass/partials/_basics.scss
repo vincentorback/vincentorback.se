@@ -9,7 +9,8 @@ html {
 	height: 100%;
 }
 body {
-	background:#fff;
+  background-color: $red;
+  background-image: linear-gradient(to bottom, #fff 0%, #fff 100%); /* for the body */
 	font-family: 'Josefin Sans', sans-serif;
 	font-weight: 400;
 	font-size: 100%;
