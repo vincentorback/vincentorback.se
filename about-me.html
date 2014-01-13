@@ -18,7 +18,7 @@
 <meta property="og:description" content="As a front-end developer i work with the things you see and interact with on a website. Right now I'm working at the digital agency Daytona in Stockholm, Sweden.">
 <meta property="og:url" content="http://vincentorback.se/about-me/">
 <meta property="og:site_name" content="Vincent Orback">
-<meta property="og:image" content="http://vincentorback.se/images/twitter-card.png">
+<meta property="og:image" content="http://vincentorback.se/images/screenshot.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@vorback">
 <meta name="twitter:title" content="Vincent Orbacks Portfolio">
@@ -34,25 +34,28 @@
 	<p>You are using an <strong>outdated</strong> browser. I recommend you <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience of this website but more importantly, the whole web.</p>
 </div>
 <![endif]-->
-<div id="top">
-	<a class="logo" href="/en"><h1>Vincent Orback</h1></a>
-		<nav class="main-nav" role="navigation">
-			<ul>
-				<li><a href="/en">Work</a></li>
-				<li class="active"><a href="/about-me">About me</a></li>
-				<li><a href="/contact">Contact</a></li>
-				<li><a href="/om-mig">Svenska</a></li>
-			</ul>
-		</nav>
 
-	<h2>About me</h2>
-</div>
+<header id="top" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+	<a href="/en" class="logo">
+    <h1>Vincent Orback</h1>
+  </a>
+	<nav class="main-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		<ul>
+			<li><a href="/en" itemprop="name">Work</a></li>
+			<li class="active"><a href="/about-me" itemprop="name">About me</a></li>
+			<li><a href="/contact" itemprop="name">Contact</a></li>
+			<li><a href="/om-mig" itemprop="name">Svenska</a></li>
+		</ul>
+	</nav>
+	<h2 itemprop="headline">About me</h2>
+</header>
 
-<section class="ommig" role="main" itemscope itemprop="http://schema.org/AboutPage">
-	<img src="/images/ommig/vincentorback.jpg" alt="Vincent Orback" width="300" height="300" />
+<main role="main">
+
+<section class="ommig" role="main" itemscope itemtype="http://schema.org/Person">
+	<img src="/images/ommig/vincentorback.jpg" alt="Vincent Orback" width="300" height="300" itemprop="image" />
 	<h3>Hi there!</h3>
-	 <p>I'm Vincent. A designer and developer living in Stockholm. I work at the digital agency <a href="http://www.daytona.se/" target="_blank">Daytona</a> where i do front-end development. I love building responsive, responsible websites and designing things smarter and easier. When I'm not doing client work i usually tinker with side projects.</p>
-	 <!--<a href="/cv-en.pdf" target="_blank" class="cv">Download resume</a>-->
+  <p itemprop="description">I'm <span itemprop="name">Vincent Orback</span>. A <span itemprop="jobtitle">web designer</span> and developer living in <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="workLocation addressLocality homeLocation">Stockholm</span></span>. I work at the digital agency <a href="http://www.daytona.se/" target="_blank" itemprop="worksFor">Daytona</a> where i do front-end development. I love building responsive, responsible websites and designing things smarter and easier. When I'm not doing client work i usually tinker with side projects.</p>
 </section>
 
 <section class="recommend">
@@ -113,6 +116,8 @@
 
 		<p class="recommend-info">I'm always looking for more books, podcasts or websites to learn more or for inspiration. If you know something that you think I should check out, please send and email to <a href="mailto:vorback@gmail.com" target="_blank" rel="nofollow">vorback@gmail.com</a> or tweet me at <a href="http://www.twitter.com/vorback" target="_blank" rel="nofollow">@vorback</a>.</p>
 </section>
+
+</main>
 
 <footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 	<div itemscope itemtype="http://schema.org/Person">

@@ -3,8 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!--
 <link href="http://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+-->
 <link rel="stylesheet" href="/style.css">
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <link rel="icon" href="/images/icons/favicon.png">
@@ -19,7 +21,7 @@
 <meta property="og:description" content="Catch up on my latest adventures through the cyberspace!">
 <meta property="og:url" content="http://vincentorback.se/blog/">
 <meta property="og:site_name" content="Vincent Orback">
-<meta property="og:image" content="http://vincentorback.se/images/twitter-card.png">
+<meta property="og:image" content="http://vincentorback.se/images/screenshot.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@vorback">
 <meta name="twitter:title" content="Vincent Orbacks Portfolio">
@@ -35,22 +37,34 @@
 	<p>You are using an <strong>outdated</strong> browser. I recommend you <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience of this website but more importantly, the whole web.</p>
 </div>
 <![endif]-->
-<div id="top">
+<header id="top" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 	<a href="/en" class="logo">
-	    <h1>Vincent Orback</h1>
+    <h1>Vincent Orback</h1>
 	</a>
-	<nav class="main-nav" role="navigation">
+	<nav class="main-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 		<ul>
-			<li><a href="/en">Work</a></li>
-			<li><a href="/about-me">About me</a></li>
-			<li><a href="/blog">Blog</a></li>
-			<li><a href="/contact">Contact</a></li>
+			<li><a href="/en" itemprop="name">Work</a></li>
+			<li><a href="/about-me" itemprop="name">About me</a></li>
+			<li><a href="/blog" itemprop="name">Blog</a></li>
+			<li><a href="/contact" itemprop="name">Contact</a></li>
 		</ul>
 	</nav>
-	<h2>Blog</h2>
-</div>
+	<h2 itemprop="headline">Blog</h2>
+</header>
 
 <main role="main">
+
+  <article class="entry" itemscope itemtype="http://schema.org/Article">
+    <header>
+      <h3 class="entry-title" itemprop="name">Grunt is the here and now</h3>
+      <p class="date" itemprop="datePublished">13 jan</p>
+    </header>
+    <div class="entry-content" itemprop="articleBody">
+      <p>Every developer is talking Grunt these days. I'm personally using it every day and loving every second of it.</p>
+      <p>If you're not familiar with grunt yet I recommend your <a href="http://24ways.org/2013/grunt-is-not-weird-and-hard/">read up on it</a> now or watch this <a href="http://css-tricks.com/video-screencasts/130-first-moments-grunt/">introduction screencast</a>. You won't be disappointed!</p>
+      <p>You can check out my Grunt setup for this site here <a href="https://github.com/vincentorback/Vincent-Orback/">here</a>.</p>
+    </div>
+  </article>
 
 	<article class="entry" itemscope itemtype="http://schema.org/Article">
 		<header>
@@ -58,7 +72,9 @@
 			<p class="date" itemprop="datePublished">28 okt</p>
 		</header>
 		<div class="entry-content" itemprop="articleBody">
-			<div class="embed-container"><iframe src="http://www.youtube.com/embed/qT90jZP58jM" frameborder="0" allowfullscreen itemprop="video" itemscope itemtype="http://schema.org/VideoObject">></iframe></div>
+    <!--
+			<div class="embed-container"><iframe src="http://www.youtube.com/embed/qT90jZP58jM" allowfullscreen itemprop="video" itemscope itemtype="http://schema.org/VideoObject">></iframe></div>
+    -->
 		</div>
 	</article>
 
@@ -68,8 +84,8 @@
 			<p class="date" itemprop="datePublished">26 okt</p>
 		</header>
 		<div class="entry-content" itemprop="articleBody">
-			<p>When starting out as a young designer/developer, it can be hard to evalutate your own work. So much that it sometimes feels right to work for free. It's something I've felt alot of times when I started and it can be because of the small size of the work or because the employer is a relative, a friend or most often a friend of a friends friend.</p>
-			<p>Even if you after the hundreds of hours you've spent learning your craft feel like the tasks is simple, remeber that they don't and that's why they need your help. Most of the times it's a buisness that needs help and if that buisness makes money, they have money.</p>
+			<p>When starting out as a young designer/developer, it can be hard to evaluate your own work. So much that it sometimes feels right to work for free. It's something I've felt a lot of times when I started and it can be because of the small size of the work or because the employer is a relative, a friend or most often a friend of a friends friend.</p>
+			<p>Even if you after the hundreds of hours you've spent learning your craft feel like the tasks is simple, remember that they don't and that's why they need your help. Most of the times it's a business that needs help and if that business makes money, they have money.</p>
 			<p>Now of course there are times when working for free can really benefit you. Here's a lovely chart made by the lovely <a href="http://jessicahische.is/awesome" target="_blank">Jessica Hische</a> giving you guidance for when to work for free and when to just say no.</p>
 
 			<p><a href="http://www.shouldiworkforfree.com/" target="_blank" title="Should i work for free?">www.shouldiworkforfree.com</a></p>
@@ -84,13 +100,13 @@
 		</header>
 
 		<div class="entry-content">
-			<p>Here's some fun WordPress code-snippets i've collected through the year. Small additions to make the web nicer!</p>
+			<p>Here's some fun WordPress code-snippets I've collected through the year. Small additions to make the web nicer!</p>
 <br /><br />
 <h4>Custom WordPress admin-footer</h4>
 <pre><code class="language-php">function my_custom_admin_footer() {
 	echo '<span id="footer-thankyou">Website made by <a href="http://www.yourdomain.se" target="_blank">Your name!</a></span>';
 }
-add_filter('admin_footer_text', 'my_custom_admin_footer');
+adt_filter('admin_footer_text', 'my_custom_admin_footer');
 </code></pre>
 
 <br /><br />
@@ -98,7 +114,7 @@ add_filter('admin_footer_text', 'my_custom_admin_footer');
 <pre><code class="language-php">function my_custom_admin_footer() {
 	echo '<span id="footer-thankyou">Website made by <a href="http://www.yourdomain.se" target="_blank">Your name!</a></span>';
 }
-add_filter('admin_footer_text', 'my_custom_admin_footer');
+adt_filter('admin_footer_text', 'my_custom_admin_footer');
 </code></pre>
 
 <br /><br />
@@ -106,7 +122,7 @@ add_filter('admin_footer_text', 'my_custom_admin_footer');
 <pre><code class="language-php">function my_custom_admin_footer() {
 	echo '<span id="footer-thankyou">Website made by <a href="http://www.yourdomain.se" target="_blank">Your name!</a></span>';
 }
-add_filter('admin_footer_text', 'my_custom_admin_footer');
+adt_filter('admin_footer_text', 'my_custom_admin_footer');
 </code></pre>
 
 		</div>
@@ -118,16 +134,18 @@ add_filter('admin_footer_text', 'my_custom_admin_footer');
 	<div itemscope itemtype="http://schema.org/Person">
 		<a itemprop="url" href="http://vincentorback.se"><div itemprop="name"><strong>Vincent Orback</strong></div></a>
 		<div class="jobtitle" itemprop="jobtitle">Web Designer & Web Developer</div>
-		<div class="adress" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-			<div><span itemprop="addressLocality">Stockholm</span></div>, <div itemprop="addressCountry"> Sweden</div>
+		<div class="adress" itemprop="adtress" itemscope itemtype="http://schema.org/PostalAdtress">
+			<div><span itemprop="adtressLocality">Stockholm</span></div>, <div itemprop="adtressCountry"> Sweden</div>
 		</div>
 		<div class="epost" itemprop="email"><a href="mailto:vorback@gmail.com" target="_blank" rel="nofollow">vorback@gmail.com</a></div>
 		<div class="telefon" itemprop="telephone">+46 725 309 222</div>
 	</div>
 </footer>
 
+<canvas id="canvas"></canvas>
 
 <script src="/js/main-min.js"></script>
+<script src="/js/vendor/prism.js"></script>
 <script>
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-31135100-1']);

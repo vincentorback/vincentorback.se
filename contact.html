@@ -18,7 +18,7 @@
 <meta property="og:description" content="Freelancing web designer and developer helping companies and people to be seen on the web without getting embarrassed. Visit my portfolio.">
 <meta property="og:url" content="http://vincentorback.se/contact/">
 <meta property="og:site_name" content="Vincent Orback">
-<meta property="og:image" content="http://vincentorback.se/images/twitter-card.png">
+<meta property="og:image" content="http://vincentorback.se/images/screenshot.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@vorback">
 <meta name="twitter:title" content="Vincent Orbacks Portfolio">
@@ -35,28 +35,29 @@
 </div>
 <![endif]-->
 
-<div id="top">
-	<a class="logo" href="/en"><h1>Vincent Orback</h1></a>
-		<nav class="main-nav" role="navigation">
-			<ul>
-				<li><a href="/en">Work</a></li>
-				<li><a href="/about-me">About me</a></li>
-				<li class="active"><a href="/contact">Contact</a></li>
-				<li><a href="/kontakt">Svenska</a></li>
-			</ul>
-		</nav>
+<header id="top" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+	<a href="/en" class="logo">
+    <h1>Vincent Orback</h1>
+  </a>
+	<nav class="main-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		<ul>
+			<li><a href="/en" itemprop="name">Work</a></li>
+			<li><a href="/about-me" itemprop="name">About me</a></li>
+			<li class="active"><a href="/contact" itemprop="name">Contact</a></li>
+			<li><a href="/kontakt" itemprop="name">Svenska</a></li>
+		</ul>
+	</nav>
+	<h2 itemprop="headline">Contact</h2>
+</header>
 
-	<h2>Contact</h2>
-</div>
-
-<section class="contact" role="main" itemscope itemprop="http://schema.org/ContactPage">
+<main class="contact" role="main" itemscope itemtype="http://schema.org/ContactPage">
 	<h3 id="response">Contact me about anything!</h3>
 	<div class="social">
-		<a href="mailto:vorback@gmail.com" target="_blank" class="email">vorback@gmail.com</span></a>
+		<a href="mailto:vorback@gmail.com" target="_blank" class="email">vorback@gmail.com></a>
 		<a href="https://twitter.com/vorback" target="_blank" class="twitter">@vorback</a>
 		<a href="https://github.com/vincentorback" target="_blank" class="github">vincentorback</a>
 	</div>
-	<form id="contact-form" action="/process-en.php" method="post" role="form" class="english">
+	<form id="contact-form" action="/process-en.php" method="post" role="form" name="contact-form" class="english">
 		<label for="name">Name: </label>
     <input type="text" id="name" name="name" aria-required="true"><br>
 		<label for="email">Email: </label>
@@ -64,7 +65,7 @@
 		<textarea id="message" name="message" aria-required="true"></textarea>
 		<input type="submit" value="Send!" id="submit">
 	</form>
-</section>
+</main>
 
 <footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 	<div itemscope itemtype="http://schema.org/Person">

@@ -18,7 +18,7 @@
 <meta property="og:description" content="Web designer and front-end developer based in Stockholm, Sweden. I live for design, typography, mobile- and web development. Welcome to my portfolio.">
 <meta property="og:url" content="http://vincentorback.se/en/">
 <meta property="og:site_name" content="Vincent Orback">
-<meta property="og:image" content="http://vincentorback.se/images/twitter-card.png">
+<meta property="og:image" content="http://vincentorback.se/images/screenshot.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@vorback">
 <meta name="twitter:title" content="Vincent Orbacks Portfolio">
@@ -34,38 +34,38 @@
 </div>
 <![endif]-->
 
-<div id="top">
-	<a href="/en" class="logo">
-	    <h1>Vincent Orback</h1>
+<header id="top" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+	<a class="logo">
+    <h1 itemprop="headline">Vincent Orback</h1>
 	</a>
-	<nav class="main-nav" role="navigation">
+	<nav class="main-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 		<ul>
-			<li class="active scroll"><a href="#portfolio">Work</a></li>
-			<li><a href="/about-me">About me</a></li>
-			<li><a href="/contact">Contact</a></li>
-			<li><a href="/">Svenska</a></li>
+			<li class="active"><a href="#portfolio" class="scroll" itemprop="name">Work</a></li>
+			<li><a href="/about-me" itemprop="name">About me</a></li>
+			<li><a href="/contact" itemprop="name">Contact</a></li>
+			<li><a href="/" itemprop="name">Svenska</a></li>
 		</ul>
 	</nav>
 	<h2>Web designer & web developer in Stockholm, Sweden with a great passion for web and graphic design</h2>
-</div>
+</header>
 
-<main id="portfolio" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/CreativeWork">
+<main id="portfolio" role="main" itemscope itemtype="http://schema.org/CreativeWork">
 <!--
 	<article class="work coop" itemscope itemtype="http://schema.org/CreativeWork">
-			<img src="/images/coop.png" alt="Coop" width="1140" height="725" itemprop="image">
+			<img src="/images/coop.png" alt="Coop" width="1140" height="725" itemprop="image" />
 		<div class="work-info">
 			<h1 itemprop="name">Coop</h1>
 			<p itemprop="description">At the moment I'm working with developing and improving the current website for Coop. The website was launched in 2012 and was one of the first websites using good responsive techniques. I came into the project in the fall of 2013. Coop.se is an ongoing project with being 50% regular website with info and 50% web-application with lots of services and functions for all of Coops visitors and customers.</p>
 			<div class="info">
 				<p>Agency: Daytona</p>
 				<p>Role: Developer</p>
-				<a class="visit" href="http://www.coop.se" target="_blank">www.coop.se</a>
+				<a href="http://www.coop.se" class="visit" target="_blank" itemprop="url">www.coop.se</a>
 			</div>
 		</div>
 	</article>
 -->
 	<article class="work arkdes" itemscope itemtype="http://schema.org/CreativeWork">
-		<img src="/images/arkdes.png" alt="Arkitektur Nu / Stockholm" width="1140" height="725" itemprop="image">
+		<img src="/images/arkdes.png" alt="Arkitektur Nu / Stockholm" width="1140" height="725" itemprop="image" />
 		<div class="work-info">
 			<h1 itemprop="name">Arkitektur Nu / Stockholm</h1>
 			<p itemprop="description">Architecture Now Stockholm is your guide to the latest architecture in Stockholm. By exploring some of the most acclaimed projects in recent years, you’ll get to know a city in the midst of a process of rapid transformation. I helped by developing an app for iOS and Android as well as a responsive website.</p>
@@ -73,18 +73,17 @@
 				<p itemprop="datePublished">Year: 2013</p>
 				<p>Agency: Queensbridge</p>
 				<p>Role: Developer</p>
-				<a class="visit" href="http://arkitekturnustockholm.arkdes.se/en" target="_blank">arkitekturnustockholm.arkdes.se</a>
+				<a href="http://arkitekturnustockholm.arkdes.se/en" class="visit" target="_blank" itemprop="url">arkitekturnustockholm.arkdes.se</a>
 			</div>
 			<div class="app-links">
-				<a href="https://itunes.apple.com/gb/app/architecture-now-stockholm/id705853039?mt=8&uo=4" class="app-store">Available on the App Store</a>
-				<a href="https://play.google.com/store/apps/details?id=se.queensbridge.lighthouses&hl=en" class="google-play">Get it on Google Play</a>
+				<a href="https://itunes.apple.com/gb/app/architecture-now-stockholm/id705853039?mt=8&amp;uo=4" class="app-store">Available on the App Store</a>
+				<a href="https://play.google.com/store/apps/details?id=se.queensbridge.lighthouses&amp;hl=en" class="google-play">Get it on Google Play</a>
 			</div>
 		</div>
 	</article>
 
 	<article class="work comai" itemscope itemtype="http://schema.org/CreativeWork">
-		<img class="lazy-load" src="/images/loader.svg" data-src="/images/comai.png" alt="Comai" width="1140" height="725" itemprop="image" />
-		<noscript><img src="/images/comai.png" alt="Comai" width="1140" height="725" itemprop="image" /></noscript>
+		<img src="/images/comai.png" alt="Comai" width="1140" height="725" itemprop="image" />
 		<div class="work-info">
 			<h1 itemprop="name">Comai</h1>
 			<p itemprop="description">Comai develops mobile applications for people with different cognitive difficulties. These applications makes it easier to perform various everyday tasks such as keeping track of money, medication, etc.</p>
@@ -92,12 +91,10 @@
 				<p itemprop="datePublished">Year: 2013</p>
 				<p>Agency: Queensbridge</p>
 				<p>Role: Developer</p>
-				<a class="visit" href="http://www.comai.se" target="_blank">www.comai.se</a>
+				<a href="http://www.comai.se" class="visit" target="_blank" itemprop="url">www.comai.se</a>
 			</div>
 		</div>
 	</article>
-
-
 
 	<article class="work nordiska" itemscope itemtype="http://schema.org/CreativeWork">
 		<img class="lazy-load" src="/images/loader.svg" data-src="/images/nordiska.png" alt="Brf Hornsgatan 39" width="1140" height="725" itemprop="image" />
@@ -109,12 +106,12 @@
 				<p itemprop="datePublished">År: 2013</p>
 				<p>Agency: Queensbridge</p>
 				<p>Role: Developer and designer</p>
-				<a class="visit" href="http://publikensval.nordiskamuseet.se" target="_blank">publikensval.nordiskamuseet.se</a>
+				<a href="http://publikensval.nordiskamuseet.se" class="visit" target="_blank" itemprop="url">publikensval.nordiskamuseet.se</a>
 			</div>
 		</div>
 	</article>
 
-	<article class="work bar" itemscope itemtype="http://schema.org/WebPage">
+	<article class="work bar" itemscope itemtype="http://schema.org/CreativeWork">
 		<img class="lazy-load" src="/images/loader.svg" data-src="/images/bar.png" alt="Bilogernas Ämnesråd" width="1140" height="725" itemprop="image" />
 		<noscript><img src="/images/bar.png" alt="Bilogernas Ämnesråd" width="1140" height="725" itemprop="image" /></noscript>
 		<div class="work-info">
@@ -123,12 +120,12 @@
 			<div class="info">
 				<p itemprop="datePublished">Year: 2012</p>
 				<p>Role: Developer and designer</p>
-				<a class="visit" href="http://nvb.utn.se" target="_blank">nvb.utn.se</a>
+				<a href="http://nvb.utn.se" class="visit" target="_blank" itemprop="url">nvb.utn.se</a>
 			</div>
 		</div>
 	</article>
 
-	<article class="work brf" itemscope itemtype="http://schema.org/WebPage">
+	<article class="work brf" itemscope itemtype="http://schema.org/CreativeWork">
 		<img class="lazy-load" src="/images/loader.svg" data-src="/images/brf.png" alt="Brf Hornsgatan 39" width="1140" height="725" itemprop="image" />
 		<noscript><img src="/images/brf.png" alt="Brf Hornsgatan 39" width="1140" height="725" itemprop="image" /></noscript>
 		<div class="work-info">
@@ -137,12 +134,12 @@
 			<div class="info">
 				<p itemprop="datePublished">Year: 2013</p>
 				<p>Role: Developer, designer and photographer</p>
-				<a class="visit" href="http://brfhornsgatan39.se/" target="_blank">www.brfhornsgatan39.se</a>
+				<a href="http://brfhornsgatan39.se/" class="visit" target="_blank" itemprop="url">www.brfhornsgatan39.se</a>
 			</div>
 		</div>
 	</article>
 
-	<article class="work manscentrum" itemscope itemtype="http://schema.org/WebPage">
+	<article class="work manscentrum" itemscope itemtype="http://schema.org/CreativeWork">
 		<img class="lazy-load" src="/images/loader.svg" data-src="/images/manscentrum.png" alt="Manscentrum" width="1140" height="725" itemprop="image" />
 		<noscript><img src="/images/manscentrum.png" alt="Manscentrum" width="1140" height="725" itemprop="image" /></noscript>
 		<div class="work-info">
@@ -151,12 +148,12 @@
 			<div class="info">
 				<p itemprop="datePublished">Year: 2012</p>
 				<p>Role: Developer, designer and photographer</p>
-				<a class="visit" href="http://www.manscentrum.se" target="_blank">www.manscentrum.se</a>
+				<a href="http://www.manscentrum.se" class="visit" target="_blank" itemprop="url">www.manscentrum.se</a>
 			</div>
 		</div>
 	</article>
 
-	<article class="work artonglass" itemscope itemtype="http://schema.org/WebPage">
+	<article class="work artonglass" itemscope itemtype="http://schema.org/CreativeWork">
 		<img class="lazy-load" src="/images/loader.svg" data-src="/images/artonglass.png" alt="Art On Glass" width="1140" height="725" itemprop="image" />
 		<noscript><img src="/images/artonglass.png" alt="Art On Glass" width="1140" height="725" itemprop="image" /></noscript>
 		<div class="work-info">
@@ -165,7 +162,7 @@
 			<div class="info">
 				<p itemprop="datePublished">Year: 2012</p>
 				<p>Role: Developer and designer</p>
-				<a class="visit" href="http://www.artonglass.se/eng/" target="_blank">www.artonglass.se</a>
+				<a href="http://www.artonglass.se/eng/" class="visit" target="_blank" itemprop="url">www.artonglass.se</a>
 			</div>
 		</div>
 	</article>

@@ -18,7 +18,7 @@
 <meta property="og:description" content="Som front-end utvecklare jobbar jag med det du ser och interagerar med på webben. Just nu jobbar jag på den digitala byrån Daytona i Stockholm.">
 <meta property="og:url" content="http://vincentorback.se/om-mig/">
 <meta property="og:site_name" content="Vincent Orback">
-<meta property="og:image" content="http://vincentorback.se/images/twitter-card.png">
+<meta property="og:image" content="http://vincentorback.se/images/screenshot.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@vorback">
 <meta name="twitter:title" content="Vincent Orbacks Portfolio">
@@ -35,29 +35,27 @@
 </div>
 <![endif]-->
 
-<div id="top">
+<header id="top" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 	<a href="/" class="logo">
 	    <h1>Vincent Orback</h1>
 	</a>
-	<nav class="main-nav" role="navigation">
+	<nav class="main-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 		<ul>
-			<li><a href="/">Arbeten</a></li>
-			<li class="active"><a href="/om-mig">Om mig</a></li>
-			<li><a href="/kontakt">Kontakt</a></li>
-			<li><a href="/about-me">English</a></li>
+			<li><a href="/" itemprop="name">Arbeten</a></li>
+			<li class="active"><a href="/om-mig" itemprop="name">Om mig</a></li>
+			<li><a href="/kontakt" itemprop="name">Kontakt</a></li>
+			<li><a href="/about-me" itemprop="name">English</a></li>
 		</ul>
 	</nav>
-	<h2>Om mig</h2>
-</div>
+	<h2 itemprop="headline">Om mig</h2>
+</header>
 
 <main role="main">
 
 <section class="ommig" role="main" itemscope itemtype="http://schema.org/Person">
 	<img src="/images/ommig/vincentorback.jpg" alt="Vincent Orback" width="300" height="300" itemprop="image" />
 	<h3>Hallå där!</h3>
-	<span itemprop="description">
-	<p>Jag heter <span itemprop="name">Vincent Orback</span> och jobbar som <span itemprop="jobtitle">webbutvecklare</span> på den digitala byrån <a href="http://www.daytona.se/" target="_blank" itemprop="worksFor">Daytona</a> i <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" itemprop="addressLocality" itemprop="workLocation homeLocation">Stockholm</span>. Jag älskar att bygga responsiva och användarvänliga hemsidor och designa saker smartare och lättare att använda. När jag inte gör hemsidor för kunder sitter jag ofta och knattrar på olika sidoprojekt.</p>
-	</span>
+	<p itemprop="description">Jag heter <span itemprop="name">Vincent Orback</span> och jobbar som <span itemprop="jobtitle">webbutvecklare</span> på den digitala byrån <a href="http://www.daytona.se/" target="_blank" itemprop="worksFor">Daytona</a> i <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="workLocation addressLocality homeLocation">Stockholm</span></span>. Jag älskar att bygga responsiva och användarvänliga hemsidor och designa saker smartare och lättare att använda. När jag inte gör hemsidor för kunder sitter jag ofta och knattrar på olika sidoprojekt.</p>
 </section>
 
 <section class="recommend">
