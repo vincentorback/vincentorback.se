@@ -37,34 +37,33 @@
 <script>
 
 (function () {
-	if(!Modernizr.touch && window.innerWidth > 400) {
+	if (window.innerWidth > 800) {
 		var winwidth = window.innerWidth,
 			winheight = window.innerHeight,
 			draw = SVG('top'),
 			rect = draw.rect(60,60).move((winwidth / 2) - 30, winheight / 2 + 60).fill('#fff');
 
 		rect.mouseover(function() {
-		    this.animate(1000, SVG.easing.elastic)
-		        .move(winwidth * Math.random(), winheight * Math.random())
-		        .rotate(-45 + 90 * Math.random());
+	    this.animate(1000, SVG.easing.elastic)
+        .move(winwidth * Math.random(), winheight * Math.random())
+        .rotate(-45 + 90 * Math.random());
 		});
 
 		draw.text("This page does'nt exist but... Catch the square!")
-		    .back()
-		    .fill('#fff')
-		    .move('50%', '50%')
-		    .font({
-		        family: 'Josefin Sans'
-		      , size: 18
-		      , anchor: 'middle'
-		    });
+      .back()
+      .fill('#fff')
+      .move('50%', '50%')
+      .font({
+        family: 'Josefin Sans',
+        size: 18,
+        anchor: 'middle'
+      });
 
 		rect.click(function() {
 			draw.node.firstChild.innerHTML = 'Great job! Now get back to work!';
 			rect.node.outerHTML = '';
 		});
 	}
-
 })();
 
 window.addEventListener('resize', function () {
