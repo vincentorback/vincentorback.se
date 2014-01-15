@@ -1,10 +1,10 @@
 #top {
 	position: relative;
 	height: 250px;
-	background: $red;
+	background: $blue;
 	color: #fff;
 	@extend %clearfix;
-	//@extend %animated-bg;
+	@extend %animated-bg;
 	.home &, .page-en & {
 		height: 100%;
 		h2 {

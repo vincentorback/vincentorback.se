@@ -35,8 +35,7 @@ module.exports = function(grunt) {
       options: {
         ignores: [
           'js/vendor/*.js',
-          'js/*-min.js',
-          'js/xmas.js'
+          'js/*-min.js'
         ],
         browser: true,
         strict: false,
@@ -59,7 +58,7 @@ module.exports = function(grunt) {
         }
       },
       all: {
-        src: ['js/main.js', 'js/xmas.js']
+        src: ['js/main.js']
       }
     },
     imagemin: {
@@ -114,7 +113,7 @@ module.exports = function(grunt) {
 			},
 			all: {
 				files: {
-          'js/main-min.js': ['js/vendor/modernizr.js', 'js/vendor/lazyload.js', 'js/main.js', 'js/xmas.js']
+          'js/main-min.js': ['js/vendor/modernizr.js', 'js/vendor/lazyload.js', 'js/main.js']
 				}
 			}
 		},
