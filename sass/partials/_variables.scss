@@ -19,9 +19,9 @@ $helvetica: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Hel
 
 /* Mixins */
 @mixin box-sizing($box-model) {
-  -webkit-box-sizing: $box-model; // Safari <= 5
-     -moz-box-sizing: $box-model; // Firefox <= 19
-          box-sizing: $box-model;
+  -webkit-box-sizing: $box-model;
+  -moz-box-sizing: $box-model;
+  box-sizing: $box-model;
 }
 
 @mixin keyframes($name) {
@@ -72,4 +72,37 @@ $helvetica: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Hel
           @content;
       }
     }
+}
+
+
+/**
+ * Media Queries with flattened fallback
+ */
+
+@mixin respond-min($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin respond-max($width) {
+  @if $width == 480px {
+    $width: 479px
+  }
+  @if $width == 768px {
+    $width: 767px
+  }
+  @if $width == 940px {
+    $width: 939px
+  }
+
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin respond-min-max($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
 }

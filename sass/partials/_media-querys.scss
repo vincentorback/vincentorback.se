@@ -45,39 +45,32 @@
 }
 
 @media only screen and (max-width: 870px) {
-	.home #top, .page-en #top {
-		height: 400px;
-		h2 {
-			font-size: 1.5em;
-			font-weight: 100;
-			top: 90px;
-		}
-	}
-	#top {
-		h2 {
-			top: 40px;
-		}
-	}
-  .logo {
-    width: 100%;
-    display: block;
-    left: auto;
-    float: none;
-    position: relative;
-    h1 {
-      text-align: center;
-      left: auto;
+  .home #top, #top {
+    height: auto;
+    text-align: center;
+    h2 {
+      position: static;
+      padding: .2em 0;
     }
   }
-	.main-nav {
-		right: auto;
-		text-align: center;
-		top: 50px;
-		ul {
-			text-align: center;
-			float: none;
-		}
-	}
+  .home #top h2 {
+    font-size: 1.5em;
+    font-weight: 300;
+    padding: 4em 0 5em 0;
+  }
+  .logo {
+    position: static;
+    float: none;
+    display: block;
+    padding: 1.5em 0;
+    white-space: normal;
+  }
+  .main-nav {
+    position: static;
+    ul {
+      float: none;
+    }
+  }
 	.work {
 		h1 {
 			font-size: 2.3em;
@@ -104,18 +97,6 @@
 				margin: 10px 20px;
 			}
 		}
-	}
-}
-
-
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px)
-and (orientation : landscape)
-and (-webkit-min-device-pixel-ratio: 1)  {
-	#top h2 {
-		top: 225px;
-		font-size: 1.8em;
 	}
 }
 
@@ -149,18 +130,14 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 
 
 @media only screen and(max-width: 600px ) {
-	#top {
-		height: 280px;
-		h2 {
-			top: 55px;
-			font-size: 2em;
-		}
+	#top h2 {
+		font-size: 2em;
+    padding: 1em 0;
 	}
-	.home #top, .page-en #top {
-		h2 {
-			font-size: 1.2em;
-		}
-	}
+  .home #top h2 {
+    padding: 2em 0 3em 0;
+    font-size: 1.1em;
+  }
 	.ommig {
 		h3 {
 			font-size: 1.5em;
@@ -251,17 +228,6 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 }
 
 @media only screen and (max-width: 500px) {
-	.logo h1 {
-		white-space: normal;
-	}
-	.main-nav a {
-		padding: 0 15px;
-	}
-	.home #top, .page-en #top {
-		h2 {
-			top: 50px;
-		}
-	}
 	.work {
 		padding: 1px 0 3em 0;
 		h1 {
@@ -289,20 +255,6 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 	}
 }
 @media only screen and (max-width: 340px) {
-	.home #top, .page-en #top {
-		height: 450px;
-		h2 {
-			font-size: 1.2em;
-			top: 60px;
-		}
-	}
-	.main-nav {
-		top: 60px;
-		a {
-			padding: 3px 15px;
-			display: block;
-		}
-	}
 	.work {
 		h1 {
 			font-size: 1.5em;
@@ -313,6 +265,9 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 			font-size: 1.1em;
 			padding: .8em;
 		}
+    .app-links a {
+      margin: 0;
+    }
 	}
 	.ommig {
 		margin: 2.5em auto 0 auto;
@@ -338,22 +293,8 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 		}
 	}
 }
-@media only screen and (max-width: 300px) {
-	.main-nav a {
-		display: block;
-		padding: 10px;
-	}
-	#top {
-		height: 330px;
-		h2 {
-			top: 45px;
-		}
-	}
-	.home #top, .page-en #top {
-		h2 {
-			font-size: 1em;
-		}
-	}
+
+@include respond-max(300px) {
 	.recommend {
 		.col.websites, .inspiration {
 			width: 100%;
@@ -380,7 +321,7 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 	}
 	.ommig {
 		img {
-			@include rotate(none);
+			@include rotate(0);
 		}
 	}
 	.recommend span {

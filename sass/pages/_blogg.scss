@@ -1,84 +1,102 @@
 .blog {
 	background: #fff;
   main {
-    max-width: 800px;
     margin: 3em auto;
+    max-width: 700px;
+    width: 95%;
+    overflow: visible;
   }
-  @media all and (max-width: 840px) {
+  @include respond-max(840px) {
     #top {
-      height: 380px;
       padding: 0;
       background-size: cover;
-      h2 {
-        top: 60px;
-      }
     }
   }
 }
 
 .entry {
-	margin-bottom: 75px;
+	margin-bottom: 10em;
+  padding-bottom: 10em;
+  border-bottom: 1px solid #eee;
 	position: relative;
 	background: #fff;
 	font-family: $helvetica;
+  &:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
 	header {
-		padding: 30px 40px 0 40px;
 		background: #fff;
 		@extend %clearfix;
-		display: block;
 		position: relative;
+    padding-top: 1em;
 		.entry-title {
 			color: $green;
-			float: left;
 			font-weight: 600;
-			max-width: calc(100% - 60px);
-			font-size: 2.5em;
+			font-size: 3em;
+      line-height: 1.2;
+      display: block;
 		}
-		.date {
-			float: right;
-			background: $green;
-			display: block;
-			color: #fff;
-			width: 65px;
-			height: 65px;
-			text-align: center;
-			border-radius: 50%;
-			word-spacing: 65px;
-			font-size: 22px;
-			line-height: 1;
-			position: absolute;
-			padding-top: 12px;
-			top: 25px;
-			right: 25px;
-			font-family: 'Josefin Sans', georiga;
-			@include transition(all .2s ease);
-			cursor: default;
-			&:hover {
-				@include scale(1.2);
-			}
-		}
+    h2 {
+      font-size: 1.4em;
+      color: #555;
+      display: block;
+      margin-top: .5em;
+    }
+   .date {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #999;
+    font-size: .7em;
+    text-align: right;
+   }
 	}
+  @include respond-max(767px) {
+    margin-bottom: 5em;
+    padding-bottom: 5em;
+    font-size: .85em;
+  }
 }
 .entry-content {
-	padding: 10px 40px;
+  margin-top: 2em;
 	letter-spacing: 1px;
-	color: #3a4145;
-	font-size: 18px;
-	font-family: 'Droid Serif';
+	color: #0e0e0e;
+	font-size: 1.2em;
+  line-height: 1.6;
+  font-family: 'Droid Serif', Georiga, serif;
 	p {
 		margin-bottom: 1em;
-		line-height: 1.6;
 		a {
-			border-bottom: 1px solid #222;
+      color: #222;
+			border-bottom: 2px solid #222;
+      &:hover {
+        color: #555;
+        border-color: #555;
+      }
 		}
 	}
+  figure {
+    margin: 20px 0;
+  }
 	img {
-		margin: 20px 0;
+    display: block;
 		box-shadow: rgba(0,0,0,0.2) 0 1px 3px;
 	}
+  figcaption {
+    text-align: center;
+  }
 	b,strong,h1,h2,h3,h4,h5,h6 {
 		font-weight: bold;
 	}
+  small {
+    font-size: .8em;
+  }
+  h1,h2,h3,h4,h5,h6 {
+    font-weight: 300;
+    margin: 1em 0 .2em 0;
+
+  }
 	h1 {
 		font-size: 1.5em;
 	}
@@ -97,7 +115,44 @@
   li {
     margin-bottom: .5em;
   }
+  @include respond-max(767px) {
+    font-size: 1.1em;
+  }
 }
+
+
+
+
+/**
+ * Special posts
+ */
+.two-col {
+  @extend %clearfix;
+  .col {
+    width: 50%;
+    float: left;
+    display: block;
+  }
+}
+
+.turn img {
+  @include scaleX(-1);
+}
+
+
+.no-webp .only-webp {
+  display: none;
+}
+
+.no-webp-message {
+  display: none;
+  color: $red;
+  margin: 4em 0;
+  .no-webp & {
+    display: block;
+  }
+}
+
 /*
 .readmore {
 	padding: 20px 40px;
@@ -125,7 +180,6 @@
 	}
 }
 */
-
 
 /**
  * prism.js default theme for JavaScript, CSS and HTML

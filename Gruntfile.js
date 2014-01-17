@@ -97,13 +97,24 @@ module.exports = function(grunt) {
           removeViewBox: false
         }]
       },
-      dist: {                     // Target
-        files: [{               // Dictionary of files
-          expand: true,       // Enable dynamic expansion.
-          cwd: 'images/',     // Src matches are relative to this path.
-          src: ['**/*.svg'],  // Actual pattern(s) to match.
-          dest: 'images/',       // Destination path prefix.
+      dist: {
+        files: [{
+          expand: true,
+          cwd: 'images/',
+          src: ['**/*.svg'],
+          dest: 'images/'
         }]
+      }
+    },
+    webp: {
+      files: {
+        expand: true,
+        cwd: 'images/',
+        src: ['**/*.png', '**/*.jpg'],
+        dest: 'webp/'
+      },
+      options: {
+        binpath: require('webp-bin').path
       }
     },
 		uglify: {

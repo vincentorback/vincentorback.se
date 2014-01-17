@@ -17,10 +17,10 @@
 }
 
 @include keyframes(rotate) {
-	from {
+	0% {
 		@include rotate(0deg);
 	}
-	to {
+	100% {
 		@include rotate(359deg);
 	}
 }

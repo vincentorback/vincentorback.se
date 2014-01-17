@@ -36,38 +36,107 @@
 </div>
 <![endif]-->
 <header id="top" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-	<a href="/en" class="logo">
+	<a href="/en/" class="logo">
     <h1>Vincent Orback</h1>
 	</a>
 	<nav class="main-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 		<ul>
-			<li><a href="/en" itemprop="name">Work</a></li>
-			<li><a href="/about-me" itemprop="name">About me</a></li>
-			<li><a href="/blog" itemprop="name">Blog</a></li>
-			<li><a href="/contact" itemprop="name">Contact</a></li>
+			<li><a href="/en/" itemprop="name">Work</a></li>
+			<li><a href="/about-me/" itemprop="name">About me</a></li>
+			<li><a href="/blog/" itemprop="name">Blog</a></li>
+			<li><a href="/contact/" itemprop="name">Contact</a></li>
 		</ul>
 	</nav>
 	<h2 itemprop="headline">Blog</h2>
 </header>
 
 <main role="main">
-
-  <article class="entry" itemscope itemtype="http://schema.org/Article">
+  <article class="entry" itemscope itemtype="http://schema.org/TechArticle">
     <header>
-      <h3 class="entry-title" itemprop="name">Grunt is the here and now</h3>
-      <p class="date" itemprop="datePublished">13 jan</p>
+      <h1 class="entry-title" itemprop="name">Optimizing images and WebP</h1>
+      <time datetime="2014-01-17" class="date" itemprop="datePublished">16 jan 2014</time>
+      <h2>Are you optimizing your images? You better be! But if not, here are some tips to get you started. Plus some easy guidelines on how to get started with using them and what they are and what not.</h2>
     </header>
     <div class="entry-content" itemprop="articleBody">
-      <p>Every developer is talking Grunt these days. I'm personally using it every day and loving every second of it.</p>
-      <p>If you're not familiar with grunt yet I recommend your <a href="http://24ways.org/2013/grunt-is-not-weird-and-hard/">read up on it</a> now or watch this <a href="http://css-tricks.com/video-screencasts/130-first-moments-grunt/">introduction screencast</a>. You won't be disappointed!</p>
+      <p>If you care anything at all about performance on the web as a developer, you might be working really hard on reducing your CSS or JS files by writing more compact functions and smushing the files together super hard. But if you look at the bytes you are saving, it doesn't compare to the size of just on image on your page.</p>
+
+      <p>If you're not already optimizing your images I recommend you start doing it right now! Like now! Go! Run! Do it! Skip this post! Just fix your images! Download <a href="http://imageoptim.com/" target="_blank">imageoptim</a> and drag and drop your images into it and voilà! Your images reduce in size without any visual impairment.</p>
+
+      <p>If you're using Grunt, here are two great Grunt tasks, <a href="https://github.com/gruntjs/grunt-contrib-imagemin">imagemin</a> and for svg files there is <a href="https://github.com/sindresorhus/grunt-svgmin">svgmin</a>. I use both of these are they have saved me many mega bytes over a big span of projects.</p>
+
+      <br />
+
+      <h2>What's a WebP image?</h2>
+      <p>You might have already heard about them when <a href="https://developers.google.com/speed/webp/">Google introduced it</a> last year (2013). Unfortunately the mainstream use of them didn't take of as one could have presumed.</p>
+      <p>WebP is a new open image format that uses both lossless and lossy compression. It was designed by Google to reduce image file size to speed up web page loading: its principal purpose is to supersede JPEG as the primary format for photographs on the web. WebP now supports animated images and alpha channel (transparency) in lossy images so they can also supersede PNG images.</p>
+
+      <div class="no-webp-message">
+        <p>If you use Chrome, Opera 11+ or Android Ice Cream Sandwich you can see a demo comparison of a WebP and a PNG image here.<br />Switch browser for a while?</p>
+      </div>
+
+      <div class="two-col only-webp">
+      <p>Here are to images. Can you tell them apart?</p>
+        <figure class="col">
+          <img src="/images/ommig/vincentorback.jpg" alt="Vincent Orback JPG" width="600" height="600" itemprop="image" />
+          <figcaption>54 kb</figcaption>
+        </figure>
+        <figure class="col turn">
+          <img src="/images/blog/vincentorback.webp" alt="Vincent Orback WebP" width="600" height="600" itemprop="image" />
+          <figcaption>27 kb</figcaption>
+        </figure>
+        <p>The picture on the left is a PNG saved for the web in Photoshop and then optimized with imagemin. Still the WebP one is half the size. Now, does this mean that we can reduce website page weight by almost half their sizes? Yes!</p>
+        <p>But only in Chrome, Opera 11+ and Android Ice Cream Sandwich.</p>
+      </div>
+
+      <p>The traffic on my site is 61% Chrome so using WebP is an obvious choice to make. All images on my site are in WebP format and some of them are a fourth in size of their corresponding PNG and JPG images for other browsers. If you feel that the use of WebP images could be helpful for your site, here are some way to go forth!</p>
+
+      <br />
+
+      <h2>How do I start?</h2>
+      <p>First of all you need to make some Webp images. I use this Grunt task <a href="https://github.com/somerandomdude/grunt-webp">grunt-webp</a>. It's a super easy way to automate the workflow. You can also download more tools like plugins for Photoshop and Gimp over at <a href="https://developers.google.com/speed/webp/docs/using">Google</a>.</p>
+      <br />
+      <p>To render your images on your page there are some different approaches. The easiest way, I feel, is to use the .htaccess technique. Just paste this code below into your .htaccess and when your server is requesting an image, it will first see if there's and WebP images in the same search path with the same name and use it if the users browser supports it.</p>
+
+<pre><code class="language-clike">
+&lt;IfModule mod_rewrite.c&gt;
+  RewriteEngine On
+  RewriteCond %{HTTP_ACCEPT} image/webp
+  RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
+  RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
+&lt;/IfModule&gt;
+
+&lt;IfModule mod_headers.c&gt;
+  Header append Vary Accept env=REDIRECT_accept
+&lt;/IfModule&gt;
+
+AddType image/webp .webp
+</code></pre>
+<p>Here is a <a href="https://github.com/vincentorback/WebP-images-with-htaccess">GitHub repository</a> for the code with a small demo.</p>
+<p>If you can't access your .htaccess file, don't have one or feel like using javascript, <a href="https://github.com/vincentorback/WebP-images-with-Modernizr">here's another way</a> using Modernizr.</p>
+
+<br /><br />
+
+<p>So get going with your new awesome web performance wisdom. Challenge your friends on who can make the best looking images that weigh less and complain on your co-workers slow projects. Share the technique and the gospel och WebP!</p>
+
+    </div>
+  </article>
+
+  <article class="entry" itemscope itemtype="http://schema.org/TechArticle">
+    <header>
+      <h1 class="entry-title" itemprop="name">Grunt is the here and now</h1>
+      <time datetime="2014-01-13" class="date" itemprop="datePublished">13 jan 2014</time>
+    </header>
+    <div class="entry-content" itemprop="articleBody">
+      <p>Every developer is talking Grunt these days. I’m personally using it every day and loving every second of it.</p>
+      <p>If you’re not familiar with grunt yet I recommend your <a href="http://24ways.org/2013/grunt-is-not-weird-and-hard/">read up on it</a> now or watch this <a href="http://css-tricks.com/video-screencasts/130-first-moments-grunt/">introduction screencast</a>. You won’t be disappointed!</p>
       <p>You can check out my Grunt setup for this site <a href="https://github.com/vincentorback/Vincent-Orback/">here</a>.</p>
     </div>
   </article>
 
 	<article class="entry" itemscope itemtype="http://schema.org/Article">
 		<header>
-			<h3 class="entry-title" itemprop="name">I commit from my heart!</h3>
-			<p class="date" itemprop="datePublished">28 okt</p>
+			<h1 class="entry-title" itemprop="name">I commit from my heart!</h1>
+			<time datetime="2014-10-28" class="date" itemprop="datePublished">28 okt 2014</time>
 		</header>
 		<div class="entry-content" itemprop="articleBody">
 			<div class="embed-container"><iframe src="http://www.youtube.com/embed/qT90jZP58jM" allowfullscreen itemprop="video" itemscope itemtype="http://schema.org/VideoObject">></iframe></div>
@@ -76,27 +145,27 @@
 
 	<article class="entry" itemscope itemtype="http://schema.org/Article">
 		<header>
-			<h3 class="entry-title" itemprop="name">Just don't do it!</h3>
-			<p class="date" itemprop="datePublished">26 okt</p>
+			<h1 class="entry-title" itemprop="name">Just don’t do it!</h1>
+			<time datetime="2013-10-26" class="date" itemprop="datePublished">26 okt 2014</time>
 		</header>
 		<div class="entry-content" itemprop="articleBody">
-			<p>When starting out as a young designer/developer, it can be hard to evaluate your own work. So much that it sometimes feels right to work for free. It's something I've felt a lot of times when I started and it can be because of the small size of the work or because the employer is a relative, a friend or most often a friend of a friends friend.</p>
-			<p>Even if you after the hundreds of hours you've spent learning your craft feel like the tasks is simple, remember that they don't and that's why they need your help. Most of the times it's a business that needs help and if that business makes money, they have money.</p>
-			<p>Now of course there are times when working for free can really benefit you. Here's a lovely chart made by the lovely <a href="http://jessicahische.is/awesome" target="_blank">Jessica Hische</a> giving you guidance for when to work for free and when to just say no.</p>
+			<p>When starting out as a young designer/developer, it can be hard to evaluate your own work. So much that it sometimes feels right to work for free. It’s something I’ve felt a lot of times when I started and it can be because of the small size of the work or because the employer is a relative, a friend or most often a friend of a friends friend.</p>
+			<p>Even if you after the hundreds of hours you’ve spent learning your craft feel like the tasks is simple, remember that they don’t and that’s why they need your help. Most of the times it’s a business that needs help and if that business makes money, they have money.</p>
+			<p>Now of course there are times when working for free can really benefit you. Here’s a lovely chart made by the lovely <a href="http://jessicahische.is/awesome" target="_blank">Jessica Hische</a> giving you guidance for when to work for free and when to just say no.</p>
 
-			<p><a href="http://www.shouldiworkforfree.com/" target="_blank" title="Should i work for free?">www.shouldiworkforfree.com</a></p>
+			<p><a href="http://www.shouldiworkforfree.com/" target="_blank" title="Should I work for free?">www.shouldiworkforfree.com</a></p>
 		</div>
 	</article>
 
 <!--
 	<article class="entry">
 		<header>
-			<a href="#"><h3>WordPress-snippets</h3></a>
+			<a href="#"><h1>WordPress-snippets</h1></a>
 			<p class="date">29 Sep</p>
 		</header>
 
 		<div class="entry-content">
-			<p>Here's some fun WordPress code-snippets I've collected through the year. Small additions to make the web nicer!</p>
+			<p>Here are some fun WordPress code-snippets I’ve collected through the year. Small additions to make the web nicer!</p>
 <br /><br />
 <h4>Custom WordPress admin-footer</h4>
 <pre><code class="language-php">function my_custom_admin_footer() {
@@ -140,6 +209,14 @@ adt_filter('admin_footer_text', 'my_custom_admin_footer');
 
 
 <script src="/js/main-min.js"></script>
+<script src="/js/vendor/prism.js"></script>
+<script>
+/*
+* Modernizr.on() prollyfill
+* https://github.com/stucox/modernizr-on
+*/
+var Modernizr=function(n,o){var r=[];n._version.split(".")[0]>2&&window.console&&console.warn("Modernizr.on prolly isn't needed from v3 onwards!");var e=function(){for(var i,t=r.length;t--;)i=r[t][0],n[i]!==o&&(r[t][1](n[i]),r.splice(t,1));r.length&&setTimeout(e,100)};return n.on=function(n,o){r.push([n,o]),setTimeout(e,0)},n}(Modernizr);
+</script>
 <script>
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-31135100-1']);

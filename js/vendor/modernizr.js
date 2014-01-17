@@ -1,5 +1,5 @@
 /* Modernizr 2.7.1 (Custom Build) | MIT & BSD
- * Build: http://modernizr.com/download/#-input-inputtypes-svg-cssclasses-teststyles-prefixes-forms_placeholder
+ * Build: http://modernizr.com/download/#-input-inputtypes-svg-cssclasses-teststyles-prefixes-forms_placeholder-img_webp
  */
 ;
 
@@ -283,4 +283,3 @@ Modernizr.addTest('placeholder', function(){
            );
 
 });
-;

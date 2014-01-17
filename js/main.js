@@ -199,7 +199,6 @@
 
 		}
 	};
-		// helper functions
 
 
 

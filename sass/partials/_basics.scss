@@ -9,15 +9,14 @@ html {
 	height: 100%;
 }
 body {
-  background-color: $red;
-  background-image: linear-gradient(to bottom, #fff 0%, #fff 100%); /* for the body */
+  position: relative;
+  height: 100%;
+  background: #fff;
 	font-family: 'Josefin Sans', sans-serif;
 	font-weight: 400;
 	font-size: 100%;
 	line-height: 1.5;
 	color: #181818;
-	position: relative;
-	height: 100%;
 }
 img {
 	max-width: 100%;
@@ -52,6 +51,6 @@ input, textarea{
 }
 
 @include selection {
-	background: $red;
+	background: $blue;
 	color: #fff;
 }
