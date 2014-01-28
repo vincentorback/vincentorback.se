@@ -14,9 +14,9 @@ module.exports = function(grunt) {
         '*/ ');
   }
 
-	grunt.initConfig({
+  grunt.initConfig({
 
-		pkg: grunt.file.readJSON('package.json'),
+    pkg: grunt.file.readJSON('package.json'),
 
     sass: {
       dist: {
@@ -31,10 +31,13 @@ module.exports = function(grunt) {
         }
       }
     },
-		jshint: {
+    jshint: {
       options: {
         ignores: [
-          'js/vendor/*.js',
+          'js/vendor/prism.js',
+          'js/vendor/svg.min.js',
+          'js/vendor/modernizr.js',
+          'js/vendor/lazyload.js',
           'js/*-min.js'
         ],
         browser: true,
@@ -57,9 +60,7 @@ module.exports = function(grunt) {
           $: true
         }
       },
-      all: {
-        src: ['js/main.js']
-      }
+      files: ['js/**/*.js']
     },
     imagemin: {
       png: {
@@ -117,17 +118,26 @@ module.exports = function(grunt) {
         binpath: require('webp-bin').path
       }
     },
-		uglify: {
-			options: {
-				banner: creditsBanner(),
-        report: 'gzip'
-			},
-			all: {
-				files: {
+    uglify: {
+      dist: {
+        options: {
+          banner: creditsBanner(),
+          report: 'gzip'
+        },
+        files: {
           'js/main-min.js': ['js/vendor/modernizr.js', 'js/vendor/lazyload.js', 'js/main.js']
-				}
-			}
-		},
+        }
+      },
+      dev: {
+        options: {
+          compress: false,
+          beautify: true
+        },
+        files: {
+          'js/main-min.js': ['js/vendor/modernizr.js', 'js/vendor/lazyload.js', 'js/main.js']
+        }
+      }
+    },
     uncss: {
       dist: {
         files: {
@@ -139,25 +149,25 @@ module.exports = function(grunt) {
       main: {
         options: {
           reportUpdated: true,
-          updateType: "report"
+          updateType: "prompt",
         }
       }
     },
     watch: {
       scripts: {
         files: ['js/**/*.js'],
-        tasks: ['newer:jshint:all', 'newer:uglify:all']
+        tasks: ['jshint', 'uglify']
       },
       css: {
         files: ['sass/**/*.scss'],
         tasks: ['sass']
       }
     }
-	});
+  });
 
   require('load-grunt-tasks')(grunt);
 
-	grunt.registerTask('default', ['sass', 'jshint', 'uglify']);
+  grunt.registerTask('default', ['sass', 'jshint', 'uglify']);
 
   grunt.registerTask('deploy', ['devUpdate', 'imagemin', 'svgmin', 'sass', 'jshint', 'uglify', 'uncss']);
 
