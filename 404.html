@@ -1,55 +1,55 @@
 <!DOCTYPE html>
-<html class="no-js" lang="sv" prefix="og: http://ogp.me/ns#">
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="http://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
-<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <link rel="icon" href="/images/icons/favicon.png">
 <!--[if IE]><link rel="shortcut icon" href="images/icons/favicon.ico"><![endif]-->
 <title>404 - Vincent Orback</title>
 <link rel="author" href="https://plus.google.com/105789918295897205990/posts/">
 </head>
-
 <body class="fourofour">
 <!--[if lte IE 9]>
 <div class="iewarning">
-	<p>You are using an <strong>outdated</strong> browser. I recommend you <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience of this website but more importantly, the whole web.</p>
+  <p>You are using an <b>outdated</b> browser. I recommend you <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience of this website but more importantly, the whole web.</p>
 </div>
 <![endif]-->
-  <header id="top" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-		<a href="/" class="logo">
-      <h1>Vincent Orback</h1>
-		</a>
-    <nav class="main-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-			<ul>
-				<li class="active"><a href="/" itemprop="name">Arbeten</a></li>
-				<li><a href="/om-mig" itemprop="name">Om mig</a></li>
-				<li><a href="/kontakt" itemprop="name">Kontakt</a></li>
-				<li><a href="/en" itemprop="name">English</a></li>
-			</ul>
-		</nav>
-		<h2 itemprop="headline">404</h2>
-	</header>
+
+<header id="top" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+  <a href="/en/" class="logo">
+    <h1>Vincent Orback</h1>
+  </a>
+  <nav class="main-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+    <ul>
+      <li><a href="/en/" itemprop="name">Work</a></li>
+      <li><a href="/about-me/" itemprop="name">About me</a></li>
+      <li><a href="/contact/" itemprop="name">Contact</a></li>
+      <li><a href="/blog/" itemprop="name">Blog</a></li>
+      <li><a href="/" itemprop="name">Svenska</a></li>
+    </ul>
+  </nav>
+  <h2 itemprop="headline">404</h2>
+</header>
+
 <script src="/js/main-min.js"></script>
 <script src="/js/vendor/svg.min.js"></script>
 <script>
-
 (function () {
-	if (window.innerWidth > 800) {
-		var winwidth = window.innerWidth,
-			winheight = window.innerHeight,
-			draw = SVG('top'),
-			rect = draw.rect(60,60).move((winwidth / 2) - 30, winheight / 2 + 60).fill('#fff');
+  if (window.innerWidth > 800) {
+    var winwidth = window.innerWidth,
+      winheight = window.innerHeight,
+      draw = SVG('top'),
+      rect = draw.rect(60,60).move((winwidth / 2) - 30, winheight / 2 + 60).fill('#fff');
 
-		rect.mouseover(function() {
-	    this.animate(1000, SVG.easing.elastic)
+    rect.mouseover(function() {
+      this.animate(1000, SVG.easing.elastic)
         .move(winwidth * Math.random(), winheight * Math.random())
         .rotate(-45 + 90 * Math.random());
-		});
+    });
 
-		draw.text("This page does'nt exist but... Catch the square!")
+    draw.text("This page does'nt exist but... Catch the square!")
       .back()
       .fill('#fff')
       .move('50%', '50%')
@@ -59,15 +59,15 @@
         anchor: 'middle'
       });
 
-		rect.click(function() {
-			draw.node.firstChild.innerHTML = 'Great job! Now get back to work!';
-			rect.node.outerHTML = '';
-		});
-	}
+    rect.click(function() {
+      draw.node.firstChild.innerHTML = 'Great job! Now get back to work!';
+      rect.node.outerHTML = '';
+    });
+  }
 })();
 
 window.addEventListener('resize', function () {
-	location.reload();
+  location.reload();
 }, false);
 
 var _gaq = _gaq || [];
