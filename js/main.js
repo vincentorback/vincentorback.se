@@ -2,43 +2,58 @@
 /* global ActiveXObject, Modernizr */
 
 (function () {
-	'use strict';
+  'use strict';
 
-	var vincent = {
+  var vincent = {
 
-		init : function () {
+    init: function () {
 
-			if (document.getElementById('portfolio') !== null) {
-				vincent.smoothScroll();
-			}
-			if (document.getElementById('contact-form') !== null) {
-				vincent.contactForm();
-			}
+      if (document.getElementById('portfolio') !== null) {
+        vincent.cssScroll();
+      }
+      if (document.getElementById('contact-form') !== null) {
+        vincent.contactForm();
+      }
+      if (document.getElementById('blog') !== null) {
+        vincent.blogComments();
+      }
 
-		},
-		smoothScroll: function () {
-			var extra, timer,
+      vincent.smoothScroll();
+
+    },
+    cssScroll: function () {
+      var targetOffset, extra,
         body = document.body,
-				winWidth = window.innerWidth,
-				link = document.getElementsByClassName('scroll')[0],
-				workOffset = document.getElementById('portfolio').offsetTop;
+        button = document.getElementById('scrollButton'),
+        animateTime = 1200;
 
-			if (winWidth > 1140) {
-				extra = 235;
-			}
-			else {
-				extra = 30;
-			}
+      button.addEventListener('click', function (event) {
 
-			link.addEventListener('click', function (event) {
-				animate(document.body, 'scrollTop', '', 0, workOffset + extra, 600, true);
-				event.preventDefault();
-			}, false);
+        if (window.innerWidth > 1140) {
+          extra = 235;
+        } else {
+          extra = 30;
+        }
 
+        targetOffset = document.getElementById(event.target.hash.substr(1)).offsetTop + extra;
 
-      /**
-       * Disable hover on scroll
-      */
+        body.style.transition = "margin-top " + animateTime + "ms ease-in-out";
+
+        body.style.marginTop = "-" + targetOffset + "px";
+
+        window.setTimeout(function () {
+          body.style.cssText = "";
+          window.scrollTo(0, targetOffset);
+        }, animateTime);
+
+        event.preventDefault();
+
+      }, false);
+    },
+    smoothScroll: function () {
+      var timer,
+        body = document.body;
+
       window.addEventListener('scroll', function () {
         clearTimeout(timer);
         if (!body.classList.contains('disable-hover')) {
@@ -48,23 +63,22 @@
           body.classList.remove('disable-hover');
         }, 100);
       }, false);
-
-		},
-		contactForm: function () {
-			var firstError,
-				form = document.getElementById('contact-form'),
-				submitButton = document.getElementById('submit'),
-				name = document.getElementById('name'),
-				email = document.getElementById('email'),
-				message = document.getElementById('message'),
-				nameError = 'Vad heter du?',
-				emailError = 'Fyll i en riktigt e-post!',
-				messageError = 'Vad var det du ville säga?';
-			if (form.className === 'english') {
-				nameError = "What's your name?";
-				emailError = "Please enter a valid e-mail!";
-				messageError = "What did you come here to say";
-			}
+    },
+    contactForm: function () {
+      var firstError,
+        form = document.getElementById('contact-form'),
+        submitButton = document.getElementById('submit'),
+        name = document.getElementById('name'),
+        email = document.getElementById('email'),
+        message = document.getElementById('message'),
+        nameError = 'Vad heter du?',
+        emailError = 'Fyll i en riktigt e-post!',
+        messageError = 'Vad var det du ville säga?';
+      if (form.className === 'english') {
+        nameError = "What's your name?";
+        emailError = "Please enter a valid e-mail!";
+        messageError = "What did you come here to say";
+      }
 
       function hasClass(el, cn) {
         return (' ' + el.className + ' ').indexOf(' ' + cn + ' ') !== -1;
@@ -86,10 +100,10 @@
       }
 
       function sendXMLDoc(form) {
-        var name = form.name.value,
-          email = form.email.value,
-          message = form.message.value,
-          data = "name=" + name + "&email=" + email + "&message=" + message,
+        var nameVal = form.name.value,
+          emailVal = form.email.value,
+          messageVal = form.message.value,
+          data = "name=" + nameVal + "&email=" + emailVal + "&message=" + messageVal,
           post_url = form.getAttribute('action'),
           responseCanvas = document.getElementById('response'),
           xmlhttp;
@@ -119,7 +133,7 @@
             } else {
               responseCanvas.innerHTML = xmlhttp.response;
             }
-            animate(document.body, 'scrollTop', '', 0, 0, 0, true);
+            window.scrollTo(0, 0);
           }
         }
 
@@ -131,31 +145,31 @@
 
 
       function postForm(event) {
-				if (name.value.length === 0) {
-					name.className = 'needsfilled';
+        if (name.value.length === 0) {
+          name.className = 'needsfilled';
           if (Modernizr.placeholder) {
             name.placeholder = nameError;
           } else {
             name.value = nameError;
           }
           name.setAttribute("aria-invalid", "true");
-				} else {
+        } else {
           removeClass(name, 'needsfilled');
-					name.setAttribute("aria-invalid", "false");
-				}
-				if (!/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email.value)) {
-					email.className = 'needsfilled';
+          name.setAttribute("aria-invalid", "false");
+        }
+        if (!/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email.value)) {
+          email.className = 'needsfilled';
           if (Modernizr.placeholder) {
             email.placeholder = emailError;
           } else {
             email.value = emailError;
           }
-					email.setAttribute("aria-invalid", "true");
-				} else {
+          email.setAttribute("aria-invalid", "true");
+        } else {
           removeClass(email, 'needsfilled');
           email.placeholder = '';
-					email.setAttribute("aria-invalid", "false");
-				}
+          email.setAttribute("aria-invalid", "false");
+        }
         if (message.value.length === 0) {
           message.className = 'needsfilled';
           if (Modernizr.placeholder) {
@@ -169,17 +183,17 @@
           message.setAttribute("aria-invalid", "false");
         }
 
-				// If any input needs filled, focus and stop posting.
-				firstError = document.getElementsByClassName('needsfilled');
-				if (firstError.length > 0) {
-					firstError[0].focus();
+        // If any input needs filled, focus and stop posting.
+        firstError = document.getElementsByClassName('needsfilled');
+        if (firstError.length > 0) {
+          firstError[0].focus();
 
           event.preventDefault();
-					return false;
-				}
+          return false;
+        }
 
-				// Submit with AJAX
-				sendXMLDoc(form);
+        // Submit with AJAX
+        sendXMLDoc(form);
 
         event.preventDefault();
         return false;
@@ -193,36 +207,21 @@
       email.addEventListener('focus', function () {
         clearField(this);
       }, false);
-			message.addEventListener('focus', function () {
-				clearField(this);
-			}, false);
+      message.addEventListener('focus', function () {
+        clearField(this);
+      }, false);
 
-		}
-	};
+    },
+    blogComments: function () {
+      var dsq = document.createElement('script');
 
+      dsq.async = true;
+      dsq.src = '//vincentorback.disqus.com/embed.js';
 
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }
+  };
 
+  vincent.init();
 
-	// And some animations!
-	function animate(elem, style, unit, from, to, time, prop) {
-		var start = new Date().getTime(),
-			timer = setInterval(function () {
-				var step = Math.min(1, (new Date().getTime() - start) / time);
-
-				if (prop) {
-					elem[style] = (from + step * (to - from)) + unit;
-				} else {
-					elem.style[style] = (from + step * (to - from)) + unit;
-				}
-
-				if (step === 1) {
-					clearInterval(timer);
-				}
-
-			}, 8);
-		elem.style[style] = from + unit;
-	}
-
-	vincent.init();
-
-})();
+}());
