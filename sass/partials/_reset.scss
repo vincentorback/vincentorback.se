@@ -9,9 +9,8 @@ h1, h2, h3, h4, h5, h6, p, blockquote,
 a, img, small, strike, strong, b, u, i,
 dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas,
-figure, footer, header,
-nav, section, audio, video {
+article, aside, canvas, main, figure, footer, header,
+nav, section, audio, video, time {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -20,7 +19,7 @@ nav, section, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, footer, header, nav, section {
+article, aside, footer, header, nav, section, main, figure {
 	display: block;
 }
 body {

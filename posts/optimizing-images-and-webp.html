@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<link rel="icon" href="/images/icons/favicon.png">
+<!--[if IE]><link rel="shortcut icon" href="images/icons/favicon.ico"><![endif]-->
+<title>Optimizing images and WebP - Vincent Orback</title>
+<meta name="description" content="Smooth scrolling with CSS - Catch up on my latest adventures throughout the cyberspace!">
+<link rel="canonical" href="http://vincentorback.se/posts/optimizing-images-and-webp/">
+<link rel="author" href="https://plus.google.com/105789918295897205990/posts/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Optimizing images and WebP - Vincent Orback">
+<meta property="og:description" content="Optimizing images and WebP - Catch up on my latest adventures through the cyberspace!">
+<meta property="og:url" content="http://vincentorback.se/blog/">
+<meta property="og:site_name" content="Vincent Orback">
+<meta property="og:image" content="http://vincentorback.se/images/screenshot.png">
+</head>
+
+<body class="blog single">
+<!--[if lte IE 9]>
+<div class="iewarning">
+  <p>You are using an <b>outdated</b> browser. I recommend you <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience of this website but more importantly, the whole web.</p>
+</div>
+<![endif]-->
+<header id="top" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+  <a href="/en/" class="logo">
+    <h1>Vincent Orback</h1>
+  </a>
+  <nav class="main-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+    <ul>
+      <li><a href="/en/" itemprop="name">Work</a></li>
+      <li><a href="/about-me/" itemprop="name">About me</a></li>
+      <li class="active"><a href="/blog/" itemprop="name">Blog</a></li>
+      <li><a href="/contact/" itemprop="name">Contact</a></li>
+    </ul>
+  </nav>
+  <h2 itemprop="headline">Blog</h2>
+</header>
+
+<main id="blog" role="main">
+
+  <article class="entry no-wrap" itemscope itemtype="http://schema.org/TechArticle">
+<div class="wrapper">
+    <header>
+      <h1 class="entry-title" itemprop="name headline">Optimizing images and WebP</h1>
+      <time datetime="2014-01-17" class="date" itemprop="datePublished">17 jan 2014</time>
+      <h2>Are you optimizing your images? You better be! But if not, here are some tips to get you started. Plus some easy guidelines on how to get started with using them and what they are and what not.</h2>
+    </header>
+</div>
+    <div class="entry-content" itemprop="articleBody">
+<div class="wrapper">
+      <p>If you care anything at all about performance on the web as a developer, you might be working really hard on reducing your CSS or JS files by writing more compact functions and smushing the files together super hard. But if you look at the bytes you are saving, it doesn’t compare to the size of just on image on your page.</p>
+
+      <p>If you’re not already optimizing your images I recommend you start doing it right now! Like now! Go! Run! Do it! Skip this post! Just fix your images! Download <a href="http://imageoptim.com/" target="_blank">imageoptim</a> and drag and drop your images into it and voilà! Your images reduce in size without any visual impairment.</p>
+
+      <p>If you’re using Grunt, here are two great Grunt tasks, <a href="https://github.com/gruntjs/grunt-contrib-imagemin">imagemin</a> and for svg files there is <a href="https://github.com/sindresorhus/grunt-svgmin">svgmin</a>. I use both of these are they have saved me many mega bytes over a big span of projects.</p>
+
+      <br />
+
+      <h2>What’s a WebP image?</h2>
+      <p>You might have already heard about them when <a href="https://developers.google.com/speed/webp/">Google introduced it</a> last year (2013). Unfortunately the mainstream use of them didn’t take of as one could have presumed.</p>
+      <p>WebP is a new open image format that uses both lossless and lossy compression. It was designed by Google to reduce image file size to speed up web page loading: its principal purpose is to supersede JPEG as the primary format for photographs on the web. WebP now supports animated images and alpha channel (transparency) in lossy images so they can also supersede PNG images.</p>
+
+      <div class="no-webp-message">
+        <p>If you use Chrome, Opera 11+ or Android Ice Cream Sandwich you can see a demo comparison of a WebP and a JPG image here.<br />Switch browser for a while?</p>
+      </div>
+</div>
+      <div class="two-col only-webp">
+<div class="wrapper">
+      <p>Here are to images. Can you tell them apart?</p>
+</div>
+        <figure class="col">
+          <a href="/images/blog/kittyjpg.jpg">
+            <img src="/images/blog/kittyjpg.jpg" alt="Kitty Cat JPG" width="1280" height="853" itemprop="image" />
+          </a>
+          <figcaption>614 kb</figcaption>
+        </figure>
+        <figure class="col turn">
+          <a href="/images/blog/kittywebp.webp">
+            <img src="/images/blog/kittywebp.webp" alt="Kitty Cat Orback WebP" width="1280" height="853" itemprop="image" />
+          </a>
+          <figcaption>97 kb</figcaption>
+        </figure>
+<div class="wrapper">
+        <p>The picture on the left is a JPG saved for the web in Photoshop and then optimized with imagemin. Still the WebP one is less than a sixth of the size. Now, does this mean that we can reduce website page weight by almost a sixth of their original sizes? Yes!</p>
+        <p>But only in Chrome, Opera 11+ and Android Ice Cream Sandwich.</p>
+</div>
+      </div>
+<div class="wrapper">
+      <p>The traffic on my site is 61% Chrome so using WebP is an obvious choice to make. All images on my site are in WebP format and some of them are a fourth in size of their corresponding PNG and JPG images for other browsers. If you feel that the use of WebP images could be helpful for your site, here are some way to go forth!</p>
+
+      <br />
+
+      <h2>How do I start?</h2>
+      <p>First of all you need to make some Webp images. I use this Grunt task <a href="https://github.com/somerandomdude/grunt-webp">grunt-webp</a>. It’s a super easy way to automate the workflow. You can also download more tools like plugins for Photoshop and Gimp over at <a href="https://developers.google.com/speed/webp/docs/using">Google</a>.</p>
+      <br />
+      <p>To render your images on your page there are some different approaches. The easiest way, I feel, is to use the .htaccess technique. Just paste this code below into your .htaccess and when your server is requesting an image, it will first see if there’s and WebP images in the same search path with the same name and use it if the users browser supports it.</p>
+
+<pre><code class="language-clike">&lt;IfModule mod_rewrite.c&gt;
+  RewriteEngine On
+  RewriteCond %{HTTP_ACCEPT} image/webp
+  RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
+  RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
+&lt;/IfModule&gt;
+
+&lt;IfModule mod_headers.c&gt;
+  Header append Vary Accept env=REDIRECT_accept
+&lt;/IfModule&gt;
+
+AddType image/webp .webp</code></pre>
+<p>Here is a <a href="https://github.com/vincentorback/WebP-images-with-htaccess">GitHub repository</a> for the code with a small demo.</p>
+<p>If you can’t access your .htaccess file, don’t have one or feel like using javascript, <a href="https://github.com/vincentorback/WebP-images-with-Modernizr">here’s another way</a> using Modernizr.</p>
+
+<br /><br />
+
+    <p>So get going with your new awesome web performance wisdom. Challenge your friends on who can make the best looking images that weigh less and complain on your co-workers slow projects. Share the technique and the gospel of WebP!</p>
+
+    <p>Also, if you have any other ides on how to optimize performance, responsive images or anything, please leave a comment below!</p>
+</div>
+    </div>
+  </article>
+
+  <section class="comments">
+    <div id="disqus_thread"></div>
+
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments.</a></noscript>
+  </section>
+
+</main>
+
+<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+  <div itemscope itemtype="http://schema.org/Person">
+    <a itemprop="url" href="http://vincentorback.se"><div itemprop="name"><strong>Vincent Orback</strong></div></a>
+    <div class="jobtitle" itemprop="jobtitle">Web Designer and Web Developer</div>
+    <div class="adress" itemprop="adtress" itemscope itemtype="http://schema.org/PostalAdtress">
+      <div><span itemprop="adtressLocality">Stockholm</span></div>, <div itemprop="adtressCountry"> Sweden</div>
+    </div>
+    <div class="epost" itemprop="email"><a href="mailto:vorback@gmail.com" target="_blank" rel="nofollow">vorback@gmail.com</a></div>
+    <div class="telefon" itemprop="telephone">+46 725 309 222</div>
+  </div>
+</footer>
+
+
+<script src="/js/main-min.js"></script>
+<script src="/js/vendor/prism.js"></script>
+<script>
+/*
+* Modernizr.on() prollyfill
+* https://github.com/stucox/modernizr-on
+*/
+var Modernizr=function(n,o){var r=[];n._version.split(".")[0]>2&&window.console&&console.warn("Modernizr.on prolly isn't needed from v3 onwards!");var e=function(){for(var i,t=r.length;t--;)i=r[t][0],n[i]!==o&&(r[t][1](n[i]),r.splice(t,1));r.length&&setTimeout(e,100)};return n.on=function(n,o){r.push([n,o]),setTimeout(e,0)},n}(Modernizr);
+
+
+/**
+ * Disqus comments.
+ */
+(function() {
+var disqus_shortname = 'vincentorback';
+
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+
+/**
+ * Google Analytics
+ */
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-31135100-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+</body>
+</html>
