@@ -44,7 +44,7 @@
 	}
 }
 
-@media only screen and (max-width: 870px) {
+@media only screen and (max-width: 1000px) {
   .home #top, #top {
     height: auto;
     text-align: center;
@@ -138,12 +138,18 @@
     padding: 2em 0 3em 0;
     font-size: 1.1em;
   }
+  .main-nav a {
+    display: block;
+    padding: 0.5em 1em
+  }
 	.ommig {
+    margin: 3em auto;
 		h3 {
 			font-size: 1.5em;
 		}
 		img {
-			width: 90%;
+			width: auto;
+      max-height: 225px;
 			margin: 10px auto -40px auto;
 			display: block;
 			float: none;

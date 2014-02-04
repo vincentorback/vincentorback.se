@@ -17,6 +17,12 @@ body {
 	font-size: 100%;
 	line-height: 1.5;
 	color: #181818;
+  @media only screen and (max-width: 600px) and (orientation : landscape) {
+    font-size: 85%;
+  }
+}
+.clearfix {
+  @extend %clearfix;
 }
 img {
 	max-width: 100%;
@@ -35,7 +41,7 @@ a {
 }
 input, textarea{
 	-webkit-appearance: none;
-	appearance: none;
+  -moz-appearance: none;
 	border: none;
 	outline: none;
 	font-family: 'Josefin Sans', sans-serif;

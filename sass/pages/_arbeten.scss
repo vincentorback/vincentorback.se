@@ -1,3 +1,7 @@
+#portfolio {
+  overflow: hidden;
+}
+
 .work {
 	padding: 7em 0 4.5em 0;
 	@extend %clearfix;
@@ -50,7 +54,7 @@
 			border-radius: 5px;
 			letter-spacing: 1px;
 			color: #fff;
-			@include transition(box-shadow .3s ease);
+			@include transition(box-shadow 300ms ease);
 			&:hover {
 				box-shadow: rgba(0,0,0,.2) 0 1px 2px;
 			}

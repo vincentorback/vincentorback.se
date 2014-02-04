@@ -18,7 +18,7 @@
 		width: 300px;
 		@include rotate(2deg);
 		border-radius: 50%;
-		@include transition(all .3s ease);
+		@include transition(all 300ms ease);
 		margin: 20px 0 5px 15px;
 		box-shadow: rgba(0,0,0,0.3) 0 1px 2px;
 		&:hover {
@@ -74,7 +74,7 @@
 			display: inline-block;
 			padding-bottom: 1px;
 			line-height: 1;
-			@include transition (all .08s linear);
+			@include transition(all 80ms linear);
 			&:hover {
 				padding-bottom: 4px;
 				margin-bottom: -2px;
@@ -88,7 +88,7 @@
 			display: block;
 			font-size: 1.5em;
 			padding: 5px 0;
-			@include transition(padding .1s linear);
+			@include transition(padding 150ms ease);
 			&:hover {
 				padding-left: 10px;
 			}
@@ -111,12 +111,17 @@
 			font-weight: 700;
 			border-bottom: 2px solid #333;
 			padding-bottom: 1px;
-			@include transition(padding .1s linear);
+			@include transition(padding 100ms linear);
 			&:hover {
 				padding-bottom: 4px;
 			}
 		}
 	}
+  img {
+    display: inline;
+    float: left;
+    box-shadow: rgba(0,0,0,0.2) 0 1px 2px;
+  }
 	span {
 		display: inline-block;
 		float: left;
@@ -160,6 +165,5 @@
 
 .designisajob {
 	margin: 5px 12px 0 0;
-	height: 154px;
-	background: url(images/ommig/design-is-a-job.svg) no-repeat;
+	//height: 154px;
 }

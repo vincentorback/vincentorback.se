@@ -5,6 +5,7 @@
 	color: #fff;
 	@extend %clearfix;
 	@extend %animated-bg;
+  margin-top: 0;
 	.home & {
 		height: 100%;
 		h2 {
@@ -75,7 +76,7 @@
 		line-height: 2;
 		padding: 1.5em;
 		letter-spacing: 3px;
-		@include transition(text-shadow .2s ease);
+		@include transition(text-shadow 200ms ease);
 		&:hover {
 			text-shadow: rgba(0,0,0,0.15) 0 1px 3px;
 		}
