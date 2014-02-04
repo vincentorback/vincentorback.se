@@ -127,15 +127,6 @@ module.exports = function(grunt) {
         files: {
           'js/main-min.js': ['js/vendor/modernizr.js', 'js/vendor/lazyload.js', 'js/main.js']
         }
-      },
-      dev: {
-        options: {
-          compress: false,
-          beautify: true
-        },
-        files: {
-          'js/main-min.js': ['js/vendor/modernizr.js', 'js/vendor/lazyload.js', 'js/main.js']
-        }
       }
     },
     uncss: {
