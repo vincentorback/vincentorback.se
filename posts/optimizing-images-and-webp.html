@@ -3,10 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="http://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
-<link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Josefin+Sans:400,700|family=Lora:400,700,400italic" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
-<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <link rel="icon" href="/images/icons/favicon.png">
 <!--[if IE]><link rel="shortcut icon" href="images/icons/favicon.ico"><![endif]-->
 <title>Optimizing images and WebP - Vincent Orback</title>
@@ -57,7 +55,7 @@
 <div class="wrapper">
       <p>If you care anything at all about performance on the web as a developer, you might be working really hard on reducing your CSS or JS files by writing more compact functions and smushing the files together super hard. But if you look at the bytes you are saving, it doesn’t compare to the size of just on image on your page.</p>
 
-      <p>If you’re not already optimizing your images I recommend you start doing it right now! Like now! Go! Run! Do it! Skip this post! Just fix your images! Download <a href="http://imageoptim.com/" target="_blank">imageoptim</a> and drag and drop your images into it and voilà! Your images reduce in size without any visual impairment.</p>
+      <p>If you’re not already optimizing your images I recommend you start doing it right now! Like now! Go! Run! Do it! Skip this post! Just fix your images! Download <a href="http://imageoptim.com/">imageoptim</a> and drag and drop your images into it and voilà! Your images reduce in size without any visual impairment.</p>
 
       <p>If you’re using Grunt, here are two great Grunt tasks, <a href="https://github.com/gruntjs/grunt-contrib-imagemin">imagemin</a> and for svg files there is <a href="https://github.com/sindresorhus/grunt-svgmin">svgmin</a>. I use both of these are they have saved me many mega bytes over a big span of projects.</p>
 
@@ -75,6 +73,7 @@
 <div class="wrapper">
       <p>Here are to images. Can you tell them apart?</p>
 </div>
+  <div class="clearfix">
         <figure class="col">
           <a href="/images/blog/kittyjpg.jpg">
             <img src="/images/blog/kittyjpg.jpg" alt="Kitty Cat JPG" width="1280" height="853" itemprop="image" />
@@ -87,9 +86,10 @@
           </a>
           <figcaption>97 kb</figcaption>
         </figure>
+  </div>
 <div class="wrapper">
         <p>The picture on the left is a JPG saved for the web in Photoshop and then optimized with imagemin. Still the WebP one is less than a sixth of the size. Now, does this mean that we can reduce website page weight by almost a sixth of their original sizes? Yes!</p>
-        <p>But only in Chrome, Opera 11+ and Android Ice Cream Sandwich.</p>
+        <p>But only in Chrome, Opera 11+ and Android Ice Cream Sandwich for now.</p>
 </div>
       </div>
 <div class="wrapper">
@@ -142,7 +142,7 @@ AddType image/webp .webp</code></pre>
       <div><span itemprop="adtressLocality">Stockholm</span></div>, <div itemprop="adtressCountry"> Sweden</div>
     </div>
     <div class="epost" itemprop="email"><a href="mailto:vorback@gmail.com" target="_blank" rel="nofollow">vorback@gmail.com</a></div>
-    <div class="telefon" itemprop="telephone">+46 725 309 222</div>
+    <!--<div class="telefon" itemprop="telephone">+46 725 309 222</div>-->
   </div>
 </footer>
 
