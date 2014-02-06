@@ -315,12 +315,6 @@
 		box-shadow: none;
 		color: #000;
 		text-shadow: none;
-		-webkit-filter:grayscale(100%);
-		-ms-filter:grayscale(100%);
-		filter:Gray();
-		filter:url(desaturate.svg#grayscale);
-		filter:grayscale(100%);
-		-o-filter:grayscale(100%);
 	}
 	a {
 		text-decoration: underline;

@@ -36,7 +36,7 @@ module.exports = function(grunt) {
         ignores: [
           'js/vendor/prism.js',
           'js/vendor/svg.min.js',
-          'js/vendor/modernizr.js',
+          'js/vendor/modernizr-custom.js',
           'js/vendor/lazyload.js',
           'js/*-min.js'
         ],
@@ -57,7 +57,9 @@ module.exports = function(grunt) {
         "-W002": false, // Value of 'event' may be overwritten in IE 8 and earlier.
         globals: {
           jQuery: true,
-          $: true
+          $: true,
+          console: true,
+          alert: true
         }
       },
       files: ['js/**/*.js']
@@ -125,7 +127,7 @@ module.exports = function(grunt) {
           report: 'gzip'
         },
         files: {
-          'js/main-min.js': ['js/vendor/modernizr.js', 'js/vendor/lazyload.js', 'js/main.js']
+          'js/main-min.js': ['js/vendor/modernizr-custom.js', 'js/vendor/lazyload.js', 'js/main.js']
         }
       }
     },

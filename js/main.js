@@ -9,7 +9,11 @@
     init: function () {
 
       if (document.getElementById('portfolio') !== null) {
-        vincent.cssScroll();
+        if (Modernizr.csstransforms3d) {
+          vincent.cssScroll2();
+        } else {
+          vincent.cssScroll();
+        }
       }
       if (document.getElementById('contact-form') !== null) {
         vincent.contactForm();
@@ -20,6 +24,53 @@
 
       vincent.smoothScroll();
 
+    },
+    cssScroll2: function () {
+      var targetOffset, extra, currentPosition,
+        body = document.body,
+        button = document.getElementById('scrollButton'),
+        animateTime = 1200;
+
+      function getPageScroll() {
+        var yScroll;
+
+        if (window.pageYOffset) {
+          yScroll = window.pageYOffset;
+        } else if (document.documentElement && document.documentElement.scrollTop) {
+          yScroll = document.documentElement.scrollTop;
+        } else if (document.body) {
+          yScroll = document.body.scrollTop;
+        }
+        return yScroll;
+      }
+
+      button.addEventListener('click', function (event) {
+
+        if (window.innerWidth > 1140) {
+          extra = 235;
+        } else {
+          extra = 30;
+        }
+
+        targetOffset = document.getElementById(event.target.hash.substr(1)).offsetTop + extra;
+        currentPosition = getPageScroll();
+
+        body.classList.add('in-transition');
+        body.style.WebkitTransform = "translate(0, -" + (targetOffset - currentPosition) + "px)";
+        body.style.MozTransform = "translate(0, -" + (targetOffset - currentPosition) + "px)";
+        body.style.msTransform = "translate(0, -" + (targetOffset - currentPosition) + "px)";
+        body.style.OTransform = "translate(0, -" + (targetOffset - currentPosition) + "px)";
+        body.style.transform = "translate(0, -" + (targetOffset - currentPosition) + "px)";
+
+        window.setTimeout(function () {
+          body.classList.remove('in-transition');
+          body.style.cssText = "";
+          window.scrollTo(0, targetOffset);
+        }, animateTime);
+
+        event.preventDefault();
+
+      }, false);
     },
     cssScroll: function () {
       var targetOffset, extra,
@@ -71,11 +122,14 @@
         name = document.getElementById('name'),
         email = document.getElementById('email'),
         message = document.getElementById('message'),
-        nameError = 'Vad heter du?',
-        emailError = 'Fyll i en riktigt e-post!',
-        messageError = 'Vad var det du ville säga?';
+        nameError = "Vad heter du?",
+        emailEmpty = "Vad har du för e-post?",
+        emailError = "Fyll i en riktigt e-post!",
+        messageError = "Vad var det du ville säga?";
+
       if (form.className === 'english') {
-        nameError = "What's your name?";
+        nameError = "What’s your name?";
+        emailEmpty = "What’s your email?";
         emailError = "Please enter a valid e-mail!";
         messageError = "What did you come here to say";
       }
@@ -119,7 +173,7 @@
             try {
               xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
             } catch (event) {
-              responseCanvas.innerHTML = 'Something went wrong. Try sending and email to <a href="mailto:vorback@gmail.com&subject=Message from vincentorback.se&body=' + message + '">vorback@gmail.com</a> instead.';
+              responseCanvas.innerHTML = 'Something went wrong. Try sending and email to <a href="mailto:vorback@gmail.com&subject=Message from vincentorback.se&body=' + message + '">vorback@gmail.com</a> instead.\n\n\n<p>Luckily i managed to save your message here: \n\n ' + message;
               return false;
             }
           }
@@ -157,12 +211,20 @@
           removeClass(name, 'needsfilled');
           name.setAttribute("aria-invalid", "false");
         }
-        if (!/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email.value)) {
+        if (email.value.length === 0 || !/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email.value)) {
           email.className = 'needsfilled';
-          if (Modernizr.placeholder) {
-            email.placeholder = emailError;
+          if (email.value.length === 0) {
+            if (Modernizr.placeholder) {
+              email.placeholder = emailEmpty;
+            } else {
+              email.value = emailEmpty;
+            }
           } else {
-            email.value = emailError;
+            if (Modernizr.placeholder) {
+              email.placeholder = emailError;
+            } else {
+              email.value = emailError;
+            }
           }
           email.setAttribute("aria-invalid", "true");
         } else {

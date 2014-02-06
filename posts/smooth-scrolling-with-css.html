@@ -59,34 +59,7 @@
 
       <p>Before I "turned vanilla", I also had a smooth scrolling link on the front page. Now animation scroll is easy with jQuery, but with pure javascript it can be alot harder.</p>
 
-      <p>My first idea would be to do something like the code below this. To scroll one pixel down every 4 millisecond until we reach the offset of the targeted element.</p>
-
-<pre><code class="language-javascript">var targetOffset,
-  i = 1,
-  button = document.getElementById('scrollButton');
-
-button.addEventListener('click', function (event) {
-
-  targetOffset = document.getElementById(event.target.hash.substr(1)).offsetTop;
-
-  function myLoop() {
-    setTimeout(function () {
-      window.scrollTo(0, i);
-      i += 1;
-      if (i &lt; targetOffset) {
-        myLoop();
-      }
-    }, 4);
-  }
-
-  myLoop();
-
-  event.preventDefault();
-
-}, false);</code></pre>
-
-    <p>But that means the function would be called every fourth millisecond about 500 times. Now that's just felt kind of insane so I droped that idea pretty fast.</p>
-    <p>My next idea was to somehow animate the scroll with CSS. That sounds cool! The code below pulls the body upwards and out of the viewport with a negative margin-top. Just as you click the scroll button, a transition is added and just after that the negative margin is added making the body move upwards with the chosen transition duration and timing-function (easing). Then after that transition time, the margin is removed setting the body back to it’s original state and a in a blink of an eye, we scroll down to the targeted element.</p>
+      <p>I thought, maby i can do it with CSS? That sounds cool! The code below pulls the body upwards and out of the viewport with a negative margin-top. Just as you click the scroll button, a transition is added and just after that the negative margin is added making the body move upwards with the chosen transition duration and timing-function (easing). Then after that transition time, the margin is removed setting the body back to it’s original state and a in a blink of an eye, we scroll down to the targeted element.</p>
 
 <pre><code class="language-javascript">var targetOffset,
   body = document.body,
@@ -111,7 +84,7 @@ button.addEventListener('click', function (event) {
 }, false);</code></pre>
 
     <br />
-
+    <p>Here’s a <a href="http://cdpn.io/FCpBo">demo</a>.</p>
     <p>If you have any comments on the code, aproach, performance, semantics or what ever, please tell me in the comments below!</p>
     </div>
   </article>
