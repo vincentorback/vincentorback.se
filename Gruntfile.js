@@ -162,6 +162,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['sass', 'jshint', 'uglify']);
 
-  grunt.registerTask('deploy', ['devUpdate', 'imagemin', 'svgmin', 'sass', 'jshint', 'uglify', 'uncss']);
+  grunt.registerTask('deploy', ['devUpdate', 'imagemin', 'svgmin', 'sass', 'jshint', 'uglify']);
 
 };
