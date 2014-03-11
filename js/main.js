@@ -131,7 +131,7 @@
         nameError = "What’s your name?";
         emailEmpty = "What’s your email?";
         emailError = "Please enter a valid e-mail!";
-        messageError = "What did you come here to say";
+        messageError = "What did you come here to say?";
       }
 
       function hasClass(el, cn) {
