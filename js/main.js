@@ -56,15 +56,15 @@
         currentPosition = getPageScroll();
 
         body.classList.add('in-transition');
-        body.style.WebkitTransform = "translate(0, -" + (targetOffset - currentPosition) + "px)";
-        body.style.MozTransform = "translate(0, -" + (targetOffset - currentPosition) + "px)";
-        body.style.msTransform = "translate(0, -" + (targetOffset - currentPosition) + "px)";
-        body.style.OTransform = "translate(0, -" + (targetOffset - currentPosition) + "px)";
-        body.style.transform = "translate(0, -" + (targetOffset - currentPosition) + "px)";
+        body.style.WebkitTransform = 'translate(0, -' + (targetOffset - currentPosition) + 'px)';
+        body.style.MozTransform = 'translate(0, -' + (targetOffset - currentPosition) + 'px)';
+        body.style.msTransform = 'translate(0, -' + (targetOffset - currentPosition) + 'px)';
+        body.style.OTransform = 'translate(0, -' + (targetOffset - currentPosition) + 'px)';
+        body.style.transform = 'translate(0, -' + (targetOffset - currentPosition) + 'px)';
 
         window.setTimeout(function () {
           body.classList.remove('in-transition');
-          body.style.cssText = "";
+          body.style.cssText = '';
           window.scrollTo(0, targetOffset);
         }, animateTime);
 
@@ -88,12 +88,12 @@
 
         targetOffset = document.getElementById(event.target.hash.substr(1)).offsetTop + extra;
 
-        body.style.transition = "margin-top " + animateTime + "ms ease-in-out";
+        body.style.transition = 'margin-top ' + animateTime + 'ms ease-in-out';
 
-        body.style.marginTop = "-" + targetOffset + "px";
+        body.style.marginTop = '-' + targetOffset + 'px';
 
         window.setTimeout(function () {
-          body.style.cssText = "";
+          body.style.cssText = '';
           window.scrollTo(0, targetOffset);
         }, animateTime);
 
@@ -122,16 +122,16 @@
         name = document.getElementById('name'),
         email = document.getElementById('email'),
         message = document.getElementById('message'),
-        nameError = "Vad heter du?",
-        emailEmpty = "Vad har du för e-post?",
-        emailError = "Fyll i en riktigt e-post!",
-        messageError = "Vad var det du ville säga?";
+        nameError = 'Vad heter du?',
+        emailEmpty = 'Vad har du för e-post?',
+        emailError = 'Fyll i en riktigt e-post!',
+        messageError = 'Vad var det du ville säga?';
 
       if (form.className === 'english') {
-        nameError = "What’s your name?";
-        emailEmpty = "What’s your email?";
-        emailError = "Please enter a valid e-mail!";
-        messageError = "What did you come here to say?";
+        nameError = 'What’s your name?';
+        emailEmpty = 'What’s your email?';
+        emailError = 'Please enter a valid e-mail!';
+        messageError = 'What did you come here to say?';
       }
 
       function hasClass(el, cn) {
@@ -157,7 +157,7 @@
         var nameVal = form.name.value,
           emailVal = form.email.value,
           messageVal = form.message.value,
-          data = "name=" + nameVal + "&email=" + emailVal + "&message=" + messageVal,
+          data = 'name=' + nameVal + '&email=' + emailVal + '&message=' + messageVal,
           post_url = form.getAttribute('action'),
           responseCanvas = document.getElementById('response'),
           xmlhttp;
@@ -168,10 +168,10 @@
         } catch (event) {
           try {
             // Internet Explorer
-            xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+            xmlhttp = new ActiveXObject('Msxml2.XMLHTTP');
           } catch (event) {
             try {
-              xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+              xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
             } catch (event) {
               responseCanvas.innerHTML = 'Something went wrong. Try sending and email to <a href="mailto:vorback@gmail.com&subject=Message from vincentorback.se&body=' + message + '">vorback@gmail.com</a> instead.\n\n\n<p>Luckily i managed to save your message here: \n\n ' + message;
               return false;
@@ -183,7 +183,7 @@
           if (xmlhttp.readyState === 4) {
             if (xmlhttp.status === 200) {
               responseCanvas.innerHTML = xmlhttp.response;
-              form.outerHTML = "";
+              form.outerHTML = '';
             } else {
               responseCanvas.innerHTML = xmlhttp.response;
             }
@@ -191,9 +191,9 @@
           }
         }
 
-        xmlhttp.open("POST", post_url, true);
+        xmlhttp.open('POST', post_url, true);
         xmlhttp.onreadystatechange = display_data;
-        xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xmlhttp.send(data);
       }
 
@@ -206,10 +206,10 @@
           } else {
             name.value = nameError;
           }
-          name.setAttribute("aria-invalid", "true");
+          name.setAttribute('aria-invalid', 'true');
         } else {
           removeClass(name, 'needsfilled');
-          name.setAttribute("aria-invalid", "false");
+          name.setAttribute('aria-invalid', 'false');
         }
         if (email.value.length === 0 || !/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email.value)) {
           email.className = 'needsfilled';
@@ -226,11 +226,11 @@
               email.value = emailError;
             }
           }
-          email.setAttribute("aria-invalid", "true");
+          email.setAttribute('aria-invalid', 'true');
         } else {
           removeClass(email, 'needsfilled');
           email.placeholder = '';
-          email.setAttribute("aria-invalid", "false");
+          email.setAttribute('aria-invalid', 'false');
         }
         if (message.value.length === 0) {
           message.className = 'needsfilled';
@@ -239,10 +239,10 @@
           } else {
             message.value = messageError;
           }
-          message.setAttribute("aria-invalid", "true");
+          message.setAttribute('aria-invalid', 'true');
         } else {
           removeClass(message, 'needsfilled');
-          message.setAttribute("aria-invalid", "false");
+          message.setAttribute('aria-invalid', 'false');
         }
 
         // If any input needs filled, focus and stop posting.
