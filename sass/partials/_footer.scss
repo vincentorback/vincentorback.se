@@ -7,13 +7,12 @@
 		display: inline;
 		line-height: 1.8;
 	}
-	strong, .jobtitle {
-		display: block;
-	}
-	strong {
-		font-size: 1.2em;
-	}
+  .name {
+    display: block;
+    font-size: 1.2em;
+  }
 	.jobtitle {
+		display: block;
 		margin-bottom: .2em;
 	}
 	.adress,.epost,.telefon {
