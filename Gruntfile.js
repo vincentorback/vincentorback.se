@@ -17,7 +17,19 @@ module.exports = function(grunt) {
   grunt.initConfig({
 
     pkg: grunt.file.readJSON('package.json'),
-
+    htmlmin: {
+      dist: {
+        options: {
+          removeComments: true,
+          collapseWhitespace: true
+        },
+        files: [{
+          expand: true,
+          src: '**/*.html',
+          dest: 'build/'
+        }]
+      }
+    },
     sass: {
       dist: {
         options: {
