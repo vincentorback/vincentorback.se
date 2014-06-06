@@ -13,7 +13,7 @@
 			&.inspiration {
 				position: relative;
 				left: 3%;
-				h4 {
+				h2 {
 					margin-top: 0px;
 				}
 			}
@@ -144,7 +144,7 @@
   }
 	.ommig {
     margin: 3em auto;
-		h3 {
+		h1 {
 			font-size: 1.5em;
 		}
 		img {
@@ -161,7 +161,7 @@
 	}
 	.contact {
 		margin: 3em auto;
-		h3 {
+		h1 {
 			font-size: 1.5em;
 		}
 	}
@@ -192,10 +192,10 @@
 	}
 	.recommend {
 		margin: 10em 0 5em 0;
-		h3 {
+		.section-title {
 			font-size: 1.6em;
 		}
-		h4 {
+		h2 {
 			margin-top: 1em;
 		}
 		.col {
@@ -212,7 +212,7 @@
 		.inspiration {
 			width: 45%;
 			float: right;
-			h4 {
+			h2 {
 				margin-top: 1em;
 			}
 		}

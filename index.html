@@ -7,20 +7,20 @@
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="images/icons/favicon.png">
 <!--[if IE]><link rel="shortcut icon" href="images/icons/favicon.ico"><![endif]-->
-<title>Vincent Orback - Webbdesigner och utvecklare</title>
-<meta name="description" content="Webbdesigner och front-end utvecklare i Stockholm. Jag älskar design, typografi, WordPress, mobil- och webbutveckling. Välkommen till min portfolio.">
-<meta name="keywords" content="webbdesigner, stockholm, webbutvecklare, wordpress, portfolio">
+<title>Vincent Orback - Webbdesigner och webbutvecklare</title>
+<meta name="description" content="Webbdesigner och webbutvecklare i Stockholm. Jag älskar design, typografi, WordPress, mobil- och webbutveckling. Välkommen till min portfolio.">
+<meta name="keywords" content="webbdesigner, webbutvecklare, wordpress, portfolio">
 <link rel="canonical" href="http://vincentorback.se/">
 <link rel="author" href="https://plus.google.com/105789918295897205990/posts/">
 <meta property="og:locale" content="sv_SE">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Vincent Orback - Webbdesigner och Webbutvecklare i Stockholm">
-<meta property="og:description" content="Webbdesigner och front-end utvecklare i Stockholm. Jag älskar design, typografi, WordPress, mobil- och webbutveckling. Välkommen till min portfolio.">
+<meta property="og:description" content="Webbdesigner och webbutvecklare i Stockholm. Jag älskar design, typografi, WordPress, mobil- och webbutveckling. Välkommen till min portfolio.">
 <meta property="og:url" content="http://vincentorback.se/">
 <meta property="og:site_name" content="Vincent Orback">
 <meta property="og:image" content="http://vincentorback.se/images/screenshot.png">
 </head>
-<body class="home">
+<body class="home" itemscope itemtype="http://schema.org/WebPage">
 <!--[if lte IE 9]>
 <div class="iewarning">
   <p>Du använder en <b>utdaterad</b> webbläsare. Jag rekommenderar att du <a href="http://browsehappy.com/">uppgraderar din webbläsare</a> för att förbättra din upplevelse av den här sidan men framför allt för hela internet.</p>
@@ -33,16 +33,16 @@
   </a>
   <nav class="main-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
     <ul>
-      <li class="active"><a href="#portfolio" id="scrollButton" itemprop="name">Arbeten</a></li>
-      <li><a href="om-mig/" itemprop="name">Om mig</a></li>
-      <li><a href="kontakt/" itemprop="name">Kontakt</a></li>
-      <li><a href="en/" itemprop="name">English</a></li>
+      <li class="active" itemprop="name"><a href="#portfolio" id="scrollButton" itemprop="url">Arbeten</a></li>
+      <li itemprop="name"><a href="om-mig/" itemprop="url">Om mig</a></li>
+      <li itemprop="name"><a href="kontakt/" itemprop="url">Kontakt</a></li>
+      <li itemprop="name"><a href="en/" itemprop="url">English</a></li>
     </ul>
   </nav>
   <h2>Webbdesigner och webbutvecklare i Stockholm med en stor passion för webb och grafisk design</h2>
 </header>
 
-<main id="portfolio" role="main" itemscope itemtype="http://schema.org/CreativeWork">
+<main id="portfolio" role="main" itemprop="mainContentOfPage">
 <!--
   <article class="work coop" itemscope itemtype="http://schema.org/CreativeWork">
     <img src="/images/coop.png" alt="Coop" width="1140" height="725" itemprop="image" />
@@ -56,6 +56,18 @@
       </div>
     </div>
   </article>
+
+  <article class="work arcini" itemscope itemtype="http://schema.org/CreativeWork">
+    <img src="/images/arcini.png" alt="Arcini" width="1140" height="725" itemprop="image" />
+    <div class="work-info">
+      <h1 itemprop="name">Arcini</h1>
+      <p itemprop="description">Nikolina Arcini är en utmärkt fotograf som tar otroliga bilder på framförallt hästar. Jag utvecklade hennes personliga portfolio för att visa upp bilder och information om vernissager och för fösäljning av fotografier.</p>
+      <div class="info">
+        <p>Roll: Designer och utveckling</p>
+        <a href="http://www.arcini.com/" class="visit" target="_blank" itemprop="url">www.arcini.com</a>
+      </div>
+    </div>
+  </article>
 -->
   <article class="work arkdes" itemscope itemtype="http://schema.org/CreativeWork">
     <img src="/images/arkdes.png" alt="Arkitektur Nu / Stockholm" width="1140" height="725" itemprop="image" />
@@ -65,7 +77,7 @@
       <div class="info">
         <p itemprop="datePublished">År: 2013</p>
         <p>Byrå: Queensbridge</p>
-        <p>Roll: Utvecklare</p>
+        <p>Roll: Utveckling</p>
         <a href="http://arkitekturnustockholm.arkdes.se/sv" class="visit" target="_blank" itemprop="url">arkitekturnustockholm.arkdes.se</a>
       </div>
       <div class="app-links">
@@ -79,7 +91,7 @@
     <img src="/images/comai.png" alt="Comai" width="1140" height="725" itemprop="image" />
     <div class="work-info">
       <h1 itemprop="name">Comai</h1>
-      <p itemprop="description">Comai utvecklare mobila applikationer för människor med olika kognitiva svårigheter. Dessa applikationer gör det lättare att i vardagen utföra diverse uppgifter såsom att hålla koll på pengar, medicinering mm.</p>
+      <p itemprop="description">Comai utvecklar mobila applikationer för människor med olika kognitiva svårigheter. Dessa applikationer gör det lättare att i vardagen utföra diverse uppgifter såsom att hålla koll på pengar, medicinering mm.</p>
       <div class="info">
         <p itemprop="datePublished">År: 2013</p>
         <p>Byrå: Queensbridge</p>

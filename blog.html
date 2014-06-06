@@ -9,7 +9,7 @@
 <!--[if IE]><link rel="shortcut icon" href="images/icons/favicon.ico"><![endif]-->
 <title>Blog - Vincent Orback</title>
 <meta name="description" content="Catch up on my latest adventures throughout the cyberspace!">
-<meta name="keywords" content="web designer, designer, stockholm, developer, wordpress, portfolio">
+<meta name="keywords" content="web designer, designer, developer, wordpress, portfolio">
 <link rel="canonical" href="http://vincentorback.se/blog/">
 <link rel="author" href="https://plus.google.com/105789918295897205990/posts/">
 <meta property="og:locale" content="en_US">
@@ -33,10 +33,10 @@
   </a>
   <nav class="main-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
     <ul>
-      <li><a href="/en/" itemprop="name">Work</a></li>
-      <li><a href="/about-me/" itemprop="name">About me</a></li>
-      <li class="active"><a href="/blog/" itemprop="name">Blog</a></li>
-      <li><a href="/contact/" itemprop="name">Contact</a></li>
+      <li itemprop="name"><a href="/en/" itemprop="url">Work</a></li>
+      <li itemprop="name"><a href="/about-me/" itemprop="url">About me</a></li>
+      <li class="active" itemprop="name"><a href="/blog/" itemprop="url">Blog</a></li>
+      <li itemprop="name"><a href="/contact/" itemprop="url">Contact</a></li>
     </ul>
   </nav>
   <h2 itemprop="headline">Blog</h2>
@@ -44,7 +44,15 @@
 
 <main id="blog" role="main">
 
-  <article class="entry" itemscope itemtype="http://schema.org/TechArticle">
+  <article class="entry" itemscope itemtype="http://schema.org/Article">
+    <header>
+      <h1 class="entry-title" itemprop="name headline"><a href="/posts/take-10-and-learn-typography/">Take 10 and learn typography</a></h1>
+      <h2>Just taking 10 minutes to read this short intro of a book gives you a big understanding of typography in web. Read the whole book and become a master!</h2>
+      <time datetime="2014-02-20" class="date" itemprop="datePublished">20 feb 2014</time>
+    </header>
+  </article>
+
+  <article class="entry" itemscope itemtype="http://schema.org/Article">
     <header>
       <h1 class="entry-title" itemprop="name headline"><a href="/posts/dont-work-for-free/">Don’t work for free!</a></h1>
       <h2>When starting out as a young designer/developer it’s easy to start doing work for free. But be aware! It’s a dangerous spiral of destruction!</h2>
@@ -68,7 +76,7 @@
     </header>
   </article>
 
-  <article class="entry" itemscope itemtype="http://schema.org/TechArticle">
+  <article class="entry" itemscope itemtype="http://schema.org/Article">
     <header>
       <h1 class="entry-title" itemprop="name headline"><a href="/posts/i-commit-from-my-heart/">I commit from my heart</a></h1>
       <time datetime="2013-10-28" class="date" itemprop="datePublished">28 okt 2013</time>
@@ -101,7 +109,6 @@
       <div><span itemprop="adtressLocality">Stockholm</span></div>, <div itemprop="adtressCountry"> Sweden</div>
     </div>
     <div class="epost" itemprop="email"><a href="mailto:vorback@gmail.com" target="_blank" rel="nofollow">vorback@gmail.com</a></div>
-    <!--<div class="telefon" itemprop="telephone">+46 725 309 222</div>-->
   </div>
 </footer>
 

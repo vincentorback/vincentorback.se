@@ -8,14 +8,14 @@
 <link rel="icon" href="/images/icons/favicon.png">
 <!--[if IE]><link rel="shortcut icon" href="images/icons/favicon.ico"><![endif]-->
 <title>Smooth scrolling with CSS - Vincent Orback</title>
-<meta name="description" content="A new way of smooth scrolling without jQuery.">
-<meta name="keywords" content="web designer, designer, stockholm, developer, wordpress, portfolio">
+<meta name="description" content="An alternative way to do smooth scrolling with CSS and without jQuery.">
+<meta name="keywords" content="web designer, designer, developer, wordpress, portfolio">
 <link rel="canonical" href="http://vincentorback.se/posts/smooth-scrolling-with-css/">
 <link rel="author" href="https://plus.google.com/105789918295897205990/posts/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Smooth scrolling with CSS - Vincent Orback">
-<meta property="og:description" content="A new way of smooth scrolling without jQuery.">
+<meta property="og:description" content="An alternative way to do smooth scrolling with CSS and without jQuery.">
 <meta property="og:url" content="http://vincentorback.se/blog/">
 <meta property="og:site_name" content="Vincent Orback">
 <meta property="og:image" content="http://vincentorback.se/images/screenshot.png">
@@ -33,10 +33,10 @@
   </a>
   <nav class="main-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
     <ul>
-      <li><a href="/en/" itemprop="name">Work</a></li>
-      <li><a href="/about-me/" itemprop="name">About me</a></li>
-      <li class="active"><a href="/blog/" itemprop="name">Blog</a></li>
-      <li><a href="/contact/" itemprop="name">Contact</a></li>
+      <li itemprop="name"><a href="/en/" itemprop="url">Work</a></li>
+      <li itemprop="name"><a href="/about-me/" itemprop="url">About me</a></li>
+      <li class="active" itemprop="name"><a href="/blog/" itemprop="url">Blog</a></li>
+      <li itemprop="name"><a href="/contact/" itemprop="url">Contact</a></li>
     </ul>
   </nav>
   <h2 itemprop="headline">Blog</h2>
@@ -106,7 +106,6 @@ button.addEventListener('click', function (event) {
       <div><span itemprop="adtressLocality">Stockholm</span></div>, <div itemprop="adtressCountry"> Sweden</div>
     </div>
     <div class="epost" itemprop="email"><a href="mailto:vorback@gmail.com" target="_blank" rel="nofollow">vorback@gmail.com</a></div>
-    <!--<div class="telefon" itemprop="telephone">+46 725 309 222</div>-->
   </div>
 </footer>
 
@@ -114,16 +113,6 @@ button.addEventListener('click', function (event) {
 <script src="/js/main-min.js"></script>
 <script src="/js/vendor/prism.js"></script>
 <script>
-/*
-* Modernizr.on() prollyfill
-* https://github.com/stucox/modernizr-on
-*/
-var Modernizr=function(n,o){var r=[];n._version.split(".")[0]>2&&window.console&&console.warn("Modernizr.on prolly isn't needed from v3 onwards!");var e=function(){for(var i,t=r.length;t--;)i=r[t][0],n[i]!==o&&(r[t][1](n[i]),r.splice(t,1));r.length&&setTimeout(e,100)};return n.on=function(n,o){r.push([n,o]),setTimeout(e,0)},n}(Modernizr);
-
-
-/**
- * Disqus comments.
- */
 (function() {
 var disqus_shortname = 'vincentorback';
 
@@ -132,9 +121,6 @@ var disqus_shortname = 'vincentorback';
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 })();
 
-/**
- * Google Analytics
- */
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-31135100-1']);
 _gaq.push(['_trackPageview']);

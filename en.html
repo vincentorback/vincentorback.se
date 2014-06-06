@@ -9,7 +9,7 @@
 <!--[if IE]><link rel="shortcut icon" href="images/icons/favicon.ico"><![endif]-->
 <title>Vincent Orback - Web designer in Stockholm</title>
 <meta name="description" content="Web designer and front-end developer in Stockholm, Sweden. I live for design, typography, mobile- and web development. Welcome to my portfolio.">
-<meta name="keywords" content="web designer, designer, stockholm, developer, wordpress, portfolio">
+<meta name="keywords" content="web designer, designer, developer, wordpress, portfolio">
 <link rel="canonical" href="http://vincentorback.se/en/">
 <link rel="author" href="https://plus.google.com/105789918295897205990/posts/">
 <meta property="og:locale" content="en_US">
@@ -19,8 +19,11 @@
 <meta property="og:url" content="http://vincentorback.se/en/">
 <meta property="og:site_name" content="Vincent Orback">
 <meta property="og:image" content="http://vincentorback.se/images/screenshot.png">
+<style id="crucial-css">
+*,::after,::before{box-sizing:border-box}html,body,div,span,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,a,img,small,strike,strong,b,u,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,main,figure,footer,header,nav,section,audio,video,time{border:0;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;font-weight:inherit;line-height:inherit;vertical-align:baseline;margin:0;padding:0}body{line-height:1.5;position:relative;height:100%;font-family:'Josefin Sans', Futura, HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight:400;font-size:100%;color:#181818;background:#fff}article,aside,footer,header,nav,section,main,figure{display:block}#top{position:relative;height:250px;color:#fff;margin-top:0;background:#4cd2da}a{color:#222;text-decoration-line:none;cursor:pointer}.logo{float:left;position:absolute;top:35px;left:60px;white-space:nowrap}.logo h1{font-size:2.5em;color:#fff;position:relative;font-weight:700;line-height:1.1}.main-nav{right:35px;top:47px;position:relative;width:100%}ol,ul{list-style:none}.main-nav ul{float:right}.main-nav li{display:inline-block}.main-nav a{color:#fff;text-transform:uppercase;position:relative;line-height:2;letter-spacing:3px;transition:text-shadow 200ms ease;-webkit-transition:text-shadow 200ms ease;padding:1.5em}.main-nav li.active a{color:#fff;text-shadow:rgba(0,0,0,0.14902) 0 1px 3px}#top h2{top:100px;text-transform:uppercase;font-size:4em;text-align:center;width:90%;max-width:1100px;display:block;position:relative;padding-top:40px;font-weight:700;letter-spacing:4px;margin:0 auto}.home #top h2{font-size:2em;top:37%;letter-spacing:1px;font-weight:700}html,.home #top{height:100%}@media only screen and (max-width:1000px){#top,.home #top{height:auto;text-align:center}.home #top h2{font-size:1.5em;font-weight:400;padding:1em 0 2em}.logo{position:static;float:none;display:block;padding:1.5em 0;white-space:normal}.main-nav{position:static}.main-nav ul{float:none}.main-nav a{line-height:1}}img{max-width:100%;height:auto}a{display:block;padding:5px 0;}
+</style>
 </head>
-<body class="home">
+<body class="home" itemscope itemtype="http://schema.org/WebPage">
 <!--[if lte IE 9]>
 <div class="iewarning">
   <p>You are using an <b>outdated</b> browser. I recommend you <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience of this website but more importantly, the whole web.</p>
@@ -33,16 +36,17 @@
   </a>
   <nav class="main-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
     <ul>
-      <li class="active"><a href="#portfolio" id="scrollButton" itemprop="name">Work</a></li>
-      <li><a href="/about-me/" itemprop="name">About me</a></li>
-      <li><a href="/contact/" itemprop="name">Contact</a></li>
-      <li><a href="/" itemprop="name">Svenska</a></li>
+      <li class="active" itemprop="name"><a href="#portfolio" id="scrollButton" itemprop="url">Work</a></li>
+      <li itemprop="name"><a href="/about-me/" itemprop="url">About me</a></li>
+      <li itemprop="name"><a href="/blog/" itemprop="url">Blog</a></li>
+      <li itemprop="name"><a href="/contact/" itemprop="url">Contact</a></li>
+      <li itemprop="name"><a href="/" itemprop="url">Svenska</a></li>
     </ul>
   </nav>
   <h2>Web designer and web developer in Stockholm, Sweden with a great passion for web and graphic design</h2>
 </header>
 
-<main id="portfolio" role="main" itemscope itemtype="http://schema.org/CreativeWork">
+<main id="portfolio" role="main" itemprop="mainContentOfPage">
 <!--
   <article class="work coop" itemscope itemtype="http://schema.org/CreativeWork">
       <img src="/images/coop.png" alt="Coop" width="1140" height="725" itemprop="image" />

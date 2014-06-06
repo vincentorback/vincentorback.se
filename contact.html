@@ -9,7 +9,7 @@
 <!--[if IE]><link rel="shortcut icon" href="images/icons/favicon.ico"><![endif]-->
 <title>Contact - Vincent Orback</title>
 <meta name="description" content="Freelancing web designer and developer helping companies and people to be seen on the web without getting embarrassed. Visit my portfolio.">
-<meta name="keywords" content="web designer, designer, stockholm, developer, wordpress, portfolio">
+<meta name="keywords" content="web designer, designer, developer, wordpress, portfolio">
 <link rel="canonical" href="http://vincentorback.se/contact/">
 <link rel="author" href="https://plus.google.com/105789918295897205990/posts/">
 <meta property="og:locale" content="en_US">
@@ -33,22 +33,25 @@
   </a>
   <nav class="main-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
     <ul>
-      <li><a href="/en/" itemprop="name">Work</a></li>
-      <li><a href="/about-me/" itemprop="name">About me</a></li>
-      <li class="active"><a href="/contact/" itemprop="name">Contact</a></li>
-      <li><a href="/kontakt/" itemprop="name">Svenska</a></li>
+      <li itemprop="name"><a href="/en/" itemprop="url">Work</a></li>
+      <li itemprop="name"><a href="/about-me/" itemprop="url">About me</a></li>
+      <li itemprop="name"><a href="/blog/" itemprop="url">Blog</a></li>
+      <li class="active" itemprop="name"><a href="/contact/" itemprop="url">Contact</a></li>
+      <li itemprop="name"><a href="/kontakt/" itemprop="url">Svenska</a></li>
     </ul>
   </nav>
   <h2 itemprop="headline">Contact</h2>
 </header>
 
 <main class="contact" role="main">
-  <h3 id="response">Contact me about anything!</h3>
-  <div class="social">
-    <a href="mailto:vorback@gmail.com" target="_blank" class="email">vorback@gmail.com</a>
-    <a href="https://twitter.com/vorback" target="_blank" class="twitter">@vorback</a>
-    <a href="https://github.com/vincentorback" target="_blank" class="github">vincentorback</a>
-  </div>
+  <article>
+    <h1 id="response">Contact me about anything!</h1>
+    <div class="social">
+      <a href="mailto:vorback@gmail.com" target="_blank" class="email">vorback@gmail.com</a>
+      <a href="https://twitter.com/vorback" target="_blank" class="twitter" rel="me">@vorback</a>
+      <a href="https://github.com/vincentorback" target="_blank" class="github" rel="me">vincentorback</a>
+    </div>
+  </article>
   <form id="contact-form" action="/process-en.php" method="post" role="form" name="contact-form" class="english">
     <label for="name">Name: </label>
     <input type="text" id="name" name="name" aria-required="true"><br />
@@ -67,7 +70,6 @@
       <div><span itemprop="addressLocality">Stockholm</span></div>, <div itemprop="addressCountry"> Sweden</div>
     </div>
     <div class="epost" itemprop="email"><a href="mailto:vorback@gmail.com" target="_blank" rel="nofollow">vorback@gmail.com</a></div>
-    <!--<div class="telefon" itemprop="telephone">+46 725 309 222</div>-->
   </div>
 </footer>
 

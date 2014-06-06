@@ -8,8 +8,8 @@
 <link rel="icon" href="/images/icons/favicon.png">
 <!--[if IE]><link rel="shortcut icon" href="images/icons/favicon.ico"><![endif]-->
 <title>I commit from my heart - Vincent Orback</title>
-<meta name="description" content="Watch GitHubs new music video!">
-<meta name="keywords" content="web designer, designer, stockholm, developer, wordpress, portfolio">
+<meta name="description" content="Watch GitHubs new music video. I commit from my heart!">
+<meta name="keywords" content="web designer, designer, developer, wordpress, portfolio">
 <link rel="canonical" href="http://vincentorback.se/posts/i-commit-from-my-heart/">
 <link rel="author" href="https://plus.google.com/105789918295897205990/posts/">
 <meta property="og:locale" content="en_US">
@@ -33,10 +33,10 @@
   </a>
   <nav class="main-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
     <ul>
-      <li><a href="/en/" itemprop="name">Work</a></li>
-      <li><a href="/about-me/" itemprop="name">About me</a></li>
-      <li class="active"><a href="/blog/" itemprop="name">Blog</a></li>
-      <li><a href="/contact/" itemprop="name">Contact</a></li>
+      <li itemprop="name"><a href="/en/" itemprop="url">Work</a></li>
+      <li itemprop="name"><a href="/about-me/" itemprop="url">About me</a></li>
+      <li class="active" itemprop="name"><a href="/blog/" itemprop="url">Blog</a></li>
+      <li itemprop="name"><a href="/contact/" itemprop="url">Contact</a></li>
     </ul>
   </nav>
   <h2 itemprop="headline">Blog</h2>
@@ -70,24 +70,12 @@
       <div><span itemprop="adtressLocality">Stockholm</span></div>, <div itemprop="adtressCountry"> Sweden</div>
     </div>
     <div class="epost" itemprop="email"><a href="mailto:vorback@gmail.com" target="_blank" rel="nofollow">vorback@gmail.com</a></div>
-    <!--<div class="telefon" itemprop="telephone">+46 725 309 222</div>-->
   </div>
 </footer>
-
 
 <script src="/js/main-min.js"></script>
 <script src="/js/vendor/prism.js"></script>
 <script>
-/*
-* Modernizr.on() prollyfill
-* https://github.com/stucox/modernizr-on
-*/
-var Modernizr=function(n,o){var r=[];n._version.split(".")[0]>2&&window.console&&console.warn("Modernizr.on prolly isn't needed from v3 onwards!");var e=function(){for(var i,t=r.length;t--;)i=r[t][0],n[i]!==o&&(r[t][1](n[i]),r.splice(t,1));r.length&&setTimeout(e,100)};return n.on=function(n,o){r.push([n,o]),setTimeout(e,0)},n}(Modernizr);
-
-
-/**
- * Disqus comments.
- */
 (function() {
 var disqus_shortname = 'vincentorback';
 
@@ -96,9 +84,6 @@ var disqus_shortname = 'vincentorback';
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 })();
 
-/**
- * Google Analytics
- */
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-31135100-1']);
 _gaq.push(['_trackPageview']);

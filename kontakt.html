@@ -9,7 +9,7 @@
 <!--[if IE]><link rel="shortcut icon" href="images/icons/favicon.ico"><![endif]-->
 <title>Kontakt - Vincent Orback</title>
 <meta name="description" content="Frilansande webbdesigner och webbutvecklare som hjälper dig och ditt företag att synas på webben utan att skämmas. Besök min portfolio.">
-<meta name="keywords" content="webbdesigner, stockholm, webbutvecklare, wordpress, portfolio">
+<meta name="keywords" content="webbdesigner, webbutvecklare, wordpress, portfolio">
 <link rel="canonical" href="http://vincentorback.se/kontakt/">
 <link rel="author" href="https://plus.google.com/105789918295897205990/posts/">
 <meta property="og:locale" content="sv_SE">
@@ -33,22 +33,24 @@
   </a>
   <nav class="main-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
     <ul>
-      <li><a href="/" itemprop="name">Arbeten</a></li>
-      <li><a href="/om-mig/" itemprop="name">Om mig</a></li>
-      <li class="active"><a href="/kontakt/" itemprop="name">Kontakt</a></li>
-      <li><a href="/contact/" itemprop="name">English</a></li>
+      <li itemprop="name"><a href="/" itemprop="url">Arbeten</a></li>
+      <li itemprop="name"><a href="/om-mig/" itemprop="url">Om mig</a></li>
+      <li class="active" itemprop="name"><a href="/kontakt/" itemprop="url">Kontakt</a></li>
+      <li itemprop="name"><a href="/contact/" itemprop="url">English</a></li>
     </ul>
   </nav>
   <h2 itemprop="headline">Kontakt</h2>
 </header>
 
 <main class="contact" role="main">
-  <h3 id="response">Just nu tar jag inte på mig några jobb men det betyder ju inte att man inte får höra av sig!</h3>
-  <div class="social">
-    <a href="mailto:vorback@gmail.com" target="_blank" class="email">vorback@gmail.com></a>
-    <a href="https://twitter.com/vorback" target="_blank" class="twitter">@vorback</a>
-    <a href="https://github.com/vincentorback" target="_blank" class="github">vincentorback</a>
-  </div>
+  <article>
+    <h1 id="response">Just nu tar jag inte på mig några projekt men det betyder ju inte att man inte får höra av sig!</h1>
+    <div class="social">
+      <a href="mailto:vorback@gmail.com" target="_blank" class="email">vorback@gmail.com></a>
+      <a href="https://twitter.com/vorback" target="_blank" class="twitter">@vorback</a>
+      <a href="https://github.com/vincentorback" target="_blank" class="github">vincentorback</a>
+    </div>
+  </article>
   <form id="contact-form" action="/process.php" method="post" role="form" name="contact-form">
     <label for="name">Namn: </label>
     <input type="text" id="name" name="name" aria-required="true"><br />
@@ -67,7 +69,6 @@
       <div><span itemprop="addressLocality">Stockholm</span></div>, <div itemprop="addressCountry"> Sverige</div>
     </div>
     <div class="epost" itemprop="email"><a href="mailto:vorback@gmail.com" target="_blank" rel="nofollow">vorback@gmail.com</a></div>
-    <!--<div class="telefon" itemprop="telephone">+46 725 309 222</div>-->
   </div>
 </footer>
 
