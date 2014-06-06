@@ -39,7 +39,9 @@ module.exports = function(grunt) {
           banner: creditsBanner()
         },
         files: {
-          'style.css': 'sass/style.scss'
+          'style.css': 'sass/style.scss',
+          'easter/apple.css': 'easter/apple.scss',
+          'easter/windows.css': 'easter/windows.scss',
         }
       }
     },
@@ -50,6 +52,7 @@ module.exports = function(grunt) {
           'js/vendor/svg.min.js',
           'js/vendor/modernizr-custom.js',
           'js/vendor/lazyload.js',
+          'js/vendor/konami.js',
           'js/*-min.js'
         ],
         browser: true,
@@ -71,7 +74,8 @@ module.exports = function(grunt) {
           jQuery: true,
           $: true,
           console: true,
-          alert: true
+          alert: true,
+          Konami: true
         }
       },
       files: ['js/**/*.js']
@@ -139,7 +143,7 @@ module.exports = function(grunt) {
           report: 'gzip'
         },
         files: {
-          'js/main-min.js': ['js/vendor/modernizr-custom.js', 'js/vendor/lazyload.js', 'js/main.js']
+          'js/main-min.js': ['js/vendor/modernizr-custom.js', 'js/vendor/lazyload.js', 'js/vendor/konami.js', 'js/main.js']
         }
       }
     },
@@ -164,7 +168,7 @@ module.exports = function(grunt) {
         tasks: ['jshint', 'uglify']
       },
       css: {
-        files: ['sass/**/*.scss'],
+        files: ['sass/**/*.scss', 'easter/*.scss'],
         tasks: ['sass']
       }
     }

@@ -1,0 +1,41 @@
+@import "compass/css3";
+
+* {
+  font-family: 'Josefin Sans', 'Helvetica Neue' !important;
+  font-weight: 100 !important;
+  text-shadow: none !important;
+}
+
+#top {
+  @include background(linear-gradient(#55EFCB, #5BCAFF));
+  -webkit-animation: none !important;
+  animation: none !important;
+}
+
+.arkdes {
+  @include background(linear-gradient(#FF5E3A, #FF2A68));
+}
+.comai {
+  @include background(linear-gradient(#FF9500, #FF5E3A));
+}
+.nordiska {
+  @include background(linear-gradient(#C644FC, #5856D6));
+}
+.bar {
+  @include background(linear-gradient(#1D77EF, #81F3FD));
+}
+.brf {
+  @include background(linear-gradient(#87FC70, #0BD318));
+}
+.manscentrum {
+  @include background(linear-gradient(#FFDB4C, #FFCD02));
+}
+
+form input, form textarea, form input[type="submit"] {
+  border-width: 1px;
+  box-shadow: none;
+}
+
+.google-play {
+  opacity: .3 !important;
+}

@@ -24,6 +24,8 @@
 
       vincent.smoothScroll();
 
+      vincent.easter();
+
     },
     cssScroll2: function () {
       var targetOffset, extra, currentPosition,
@@ -281,6 +283,40 @@
       dsq.src = '//vincentorback.disqus.com/embed.js';
 
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    },
+    easter: function () {
+      function loadScript(url) {
+        var script = document.createElement('script');
+
+        if (script.readyState) {  //IE
+          script.onreadystatechange = function () {
+            if (script.readyState === 'loaded' || script.readyState === 'complete') {
+              script.onreadystatechange = null;
+            }
+          };
+        }
+
+        script.src = url;
+        document.getElementsByTagName('head')[0].appendChild(script);
+      }
+      function loadStyle(url) {
+        var style = document.createElement('link');
+        style.rel = 'stylesheet';
+        style.href = url;
+        document.getElementsByTagName('head')[0].appendChild(style);
+      }
+
+      // Windows
+      document.addEventListener('keyup', Konami.sequence(87, 73, 78, 68, 79, 87, 83, function () {
+        loadScript('/easter/windows.js');
+      }), false);
+
+      // Apple
+      document.addEventListener('keyup', Konami.sequence(65, 80, 80, 76, 69, function () {
+        loadStyle('http://fonts.googleapis.com/css?family=Josefin+Sans:100,300');
+        loadStyle('/easter/apple.css');
+      }), false);
+
     }
   };
 
