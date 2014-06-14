@@ -3,8 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript>
 <link href="http://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+</noscript>
 <link rel="icon" href="images/icons/favicon.png">
 <!--[if IE]><link rel="shortcut icon" href="images/icons/favicon.ico"><![endif]-->
 <title>Vincent Orback - Webbdesigner och webbutvecklare</title>
@@ -19,6 +21,9 @@
 <meta property="og:url" content="http://vincentorback.se/">
 <meta property="og:site_name" content="Vincent Orback">
 <meta property="og:image" content="http://vincentorback.se/images/screenshot.png">
+<style id="crucial-css">
+#top:after{display:block;clear:both;content:""}html,body,div,span,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,a,img,small,strike,strong,b,u,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,main,figure,footer,header,nav,section,audio,video,time{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,footer,header,nav,section,main,figure{display:block}body{line-height:1}ol,ul{list-style:none}*,*:after,*:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}html,body{height:100%}body{position:relative;background:#fff;font-family:"Josefin Sans","Futura",Helvetica,Arial,sans-serif;font-weight:100;line-height:1.5;color:#181818}a{color:#222;text-decoration:none}#top{position:relative;background:#4cd2da;color:#fff;margin-top:0;height:100%}#top h2{font-size:2em;top:37%;letter-spacing:1px;text-transform:uppercase;text-align:center;width:90%;max-width:1100px;display:block;position:relative;margin:0 auto;padding-top:40px;font-weight:100}.logo{float:left;position:absolute;top:35px;left:60px;white-space:nowrap}.logo h1{font-size:2.5em;color:#fff;position:relative;line-height:1.1;font-weight:100}.main-nav{right:35px;top:47px;position:relative;width:100%}.main-nav ul{float:right}.main-nav li{display:inline-block}.main-nav a{color:#fff;text-transform:uppercase;position:relative;line-height:2;padding:1.5em;letter-spacing:3px;}
+</style>
 </head>
 <body class="home" itemscope itemtype="http://schema.org/WebPage">
 <!--[if lte IE 9]>
@@ -183,7 +188,32 @@
     <div class="epost" itemprop="email"><a href="mailto:vorback@gmail.com" target="_blank" rel="nofollow">vorback@gmail.com</a></div>
   </div>
 </footer>
+<script>
+var h = document.head,
+  crucialCss = document.getElementById('crucial-css'),
+  l, font,
+  cb = function () {
+    l = document.createElement('link');
+    font = document.createElement('link');
 
+    l.rel = 'stylesheet';
+    font.rel = 'stylesheet';
+
+    l.href = 'style.css';
+    font.href = 'http://fonts.googleapis.com/css?family=Josefin+Sans:400,700';
+
+    h.appendChild(l, h);
+    h.appendChild(font, h);
+    h.removeChild(crucialCss);
+  },
+  raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
+
+if (raf) {
+  raf(cb);
+} else {
+  window.addEventListener('load', cb);
+}
+</script>
 <script src="/js/main-min.js"></script>
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
