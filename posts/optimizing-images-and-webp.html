@@ -60,14 +60,14 @@
 
       <p>If you’re using Grunt, here are two great Grunt tasks, <a href="https://github.com/gruntjs/grunt-contrib-imagemin">imagemin</a> and for svg files there is <a href="https://github.com/sindresorhus/grunt-svgmin">svgmin</a>. I use both of these are they have saved me many mega bytes over a big span of projects.</p>
 
-      <br />
+      <br >
 
       <h2>What’s a WebP image?</h2>
       <p>You might have already heard about them when <a href="https://developers.google.com/speed/webp/">Google introduced it</a> last year (2013). Unfortunately the mainstream use of them didn’t take of as one could have presumed.</p>
       <p>WebP is a new open image format that uses both lossless and lossy compression. It was designed by Google to reduce image file size to speed up web page loading: its principal purpose is to supersede JPEG as the primary format for photographs on the web. WebP now supports animated images and alpha channel (transparency) in lossy images so they can also supersede PNG images.</p>
 
       <div class="no-webp-message">
-        <p>If you use Chrome, Opera 11+ or Android Ice Cream Sandwich you can see a demo comparison of a WebP and a JPG image here.<br />Switch browser for a while?</p>
+        <p>If you use Chrome, Opera 11+ or Android Ice Cream Sandwich you can see a demo comparison of a WebP and a JPG image here.<br >Switch browser for a while?</p>
       </div>
 </div>
       <div class="two-col only-webp">
@@ -77,13 +77,13 @@
   <div class="clearfix">
         <figure class="col">
           <a href="/images/blog/kittyjpg.jpg">
-            <img src="/images/blog/kittyjpg.jpg" alt="Kitty Cat JPG" width="1280" height="853" itemprop="image" />
+            <img src="/images/blog/kittyjpg.jpg" alt="Kitty Cat JPG" width="1280" height="853" itemprop="image">
           </a>
           <figcaption>614 kb</figcaption>
         </figure>
         <figure class="col turn">
           <a href="/images/blog/kittywebp.webp">
-            <img src="/images/blog/kittywebp.webp" alt="Kitty Cat Orback WebP" width="1280" height="853" itemprop="image" />
+            <img src="/images/blog/kittywebp.webp" alt="Kitty Cat Orback WebP" width="1280" height="853" itemprop="image">
           </a>
           <figcaption>97 kb</figcaption>
         </figure>
@@ -96,11 +96,11 @@
 <div class="wrapper">
       <p>The traffic on my site is 61% Chrome so using WebP is an obvious choice to make. All images on my site are in WebP format and some of them are a fourth in size of their corresponding PNG and JPG images for other browsers. If you feel that the use of WebP images could be helpful for your site, here are some way to go forth!</p>
 
-      <br />
+      <br >
 
       <h2>How do I start?</h2>
       <p>First of all you need to make some Webp images. I use this Grunt task <a href="https://github.com/somerandomdude/grunt-webp">grunt-webp</a>. It’s a super easy way to automate the workflow. You can also download more tools like plugins for Photoshop and Gimp over at <a href="https://developers.google.com/speed/webp/docs/using">Google</a>.</p>
-      <br />
+      <br >
       <p>To render your images on your page there are some different approaches. The easiest way, I feel, is to use the .htaccess technique. Just paste this code below into your .htaccess and when your server is requesting an image, it will first see if there’s and WebP images in the same search path with the same name and use it if the users browser supports it.</p>
 
 <pre><code class="language-clike">&lt;IfModule mod_rewrite.c&gt;
@@ -118,7 +118,7 @@ AddType image/webp .webp</code></pre>
 <p>Here is a <a href="https://github.com/vincentorback/WebP-images-with-htaccess">GitHub repository</a> for the code with a small demo.</p>
 <p>If you can’t access your .htaccess file, don’t have one or feel like using javascript, <a href="https://github.com/vincentorback/WebP-images-with-Modernizr">here’s another way</a> using Modernizr.</p>
 
-<br /><br />
+<br ><br >
 
     <p>So get going with your new awesome web performance wisdom. Challenge your friends on who can make the best looking images that weigh less and complain on your co-workers slow projects. Share the technique and the gospel of WebP!</p>
 
