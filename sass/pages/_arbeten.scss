@@ -65,6 +65,53 @@
 	}
 }
 
+.daytona {
+  background: $daytona;
+  padding: 6em 0 !important;
+  color: #fff;
+  .wrapper {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2em;
+    @extend %clearfix;
+  }
+  .daytona-link {
+    display: block;
+    width: 20%;
+    max-width: 200px;
+    margin: 0 5% 1em 0 !important;
+    float: left;
+    &:hover {
+      padding: 0;
+    }
+  }
+
+  .info, .daytona-link {
+    float: left;
+  }
+
+  .info {
+    width: 75%;
+  }
+
+  p {
+    margin: 0 !important;
+  }
+  a {
+    font-weight: 600;
+    padding-bottom: 1px;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+  @include respond-max(800px) {
+    .info, .daytona-link {
+      float: none;
+      width: 100%;
+    }
+  }
+}
+
 .coop {
 	background: #14ab30;
 	a {
