@@ -5,7 +5,7 @@
 .work {
 	padding: 7em 0 4.5em 0;
 	@extend %clearfix;
-	background: #167ea3;
+	background: #14ab30;
 	color: #fff;
 	img {
 		display: block;
@@ -14,7 +14,7 @@
 		width: 100%;
 	}
 	.work-info {
-		width: 95%;
+		width: 90%;
 		margin: 0 auto;
 		max-width: 1040px;
 	}
@@ -29,12 +29,17 @@
 	p {
 		text-align: left;
 		font-size: 1.2em;
+    margin-bottom: 1em;
 	}
 	.info {
 		width: 100%;
 		margin: 4em auto 0 auto;
 		@extend %clearfix;
-		p{
+    a {
+      color: #fff;
+      font-weight: 700;
+    }
+		p {
 			margin: 0 0 0 1.5em;
 			display: inline;
 			text-align: center;
@@ -65,63 +70,16 @@
 	}
 }
 
-.daytona {
-  background: $daytona;
-  padding: 6em 0 !important;
-  color: #fff;
-  .wrapper {
-    width: 90%;
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.2em;
-    @extend %clearfix;
-  }
-  .daytona-link {
-    display: block;
-    width: 20%;
-    max-width: 200px;
-    margin: 0 5% 1em 0 !important;
-    float: left;
-    &:hover {
-      padding: 0;
-    }
-  }
-
-  .info, .daytona-link {
-    float: left;
-  }
-
-  .info {
-    width: 75%;
-  }
-
-  p {
-    margin: 0 !important;
-  }
-  a {
-    font-weight: 600;
-    padding-bottom: 1px;
-    color: #fff;
-    letter-spacing: 1px;
-  }
-  @include respond-max(800px) {
-    .info, .daytona-link {
-      float: none;
-      width: 100%;
-    }
-  }
-}
-
 .coop {
 	background: #14ab30;
-	a {
+	.visit {
 		background: #1bcc36;
 	}
 }
 
 .arkdes {
 	background: $yellow;
-	@include background(linear-gradient(#f7cd25 10%,#f1c40f 65%));
+  @include background(linear-gradient(#f7cd25 10%,#ffcd02 65%));
 	.info {
 		height: auto;
 		margin-bottom: 10px;
