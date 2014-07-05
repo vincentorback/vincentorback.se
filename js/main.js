@@ -1,5 +1,5 @@
 /* jshint browser: true, strict: true, eqeqeq: true, indent: 2, newcap: true, plusplus: true, unused: true, trailing: true, loopfunc: false, nomen: true, onevar: true, white: true, undef: true, latedef: true */
-/* global ActiveXObject, Modernizr */
+/* global ActiveXObject, Modernizr, Konami */
 
 (function () {
   'use strict';
@@ -309,12 +309,14 @@
       // Windows
       document.addEventListener('keyup', Konami.sequence(87, 73, 78, 68, 79, 87, 83, function () {
         loadScript('/easter/windows.js');
+        loadStyle('/easter/windows.css');
       }), false);
 
       // Apple
       document.addEventListener('keyup', Konami.sequence(65, 80, 80, 76, 69, function () {
         loadStyle('http://fonts.googleapis.com/css?family=Josefin+Sans:100,300');
         loadStyle('/easter/apple.css');
+        loadScript('/easter/apple.js');
       }), false);
 
     }

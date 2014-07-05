@@ -39,3 +39,11 @@ form input, form textarea, form input[type="submit"] {
 .google-play {
   opacity: .3 !important;
 }
+
+.recommend .col .more, .recommend .recommend-info a {
+  border-bottom: 1px solid #999
+}
+
+.footer {
+  @include background(linear-gradient(#F7F7F7, #D7D7D7));
+}
