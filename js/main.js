@@ -26,6 +26,8 @@
 
       vincent.easter();
 
+      //vincent.dateEvents();
+
     },
     cssScroll2: function () {
       var targetOffset, extra, currentPosition,
@@ -318,6 +320,29 @@
         loadStyle('/easter/apple.css');
         loadScript('/easter/apple.js');
       }), false);
+
+    },
+
+    dateEvents: function () {
+
+      function checkDate(startDate, endDate) {
+        var currentDate = new Date(),
+          minDate = new Date(startDate),
+          maxDate = new Date(endDate);
+
+        if (currentDate <= maxDate && currentDate >= minDate) {
+          return true;
+        }
+
+        return false;
+      }
+
+      var header = document.getElementById('top'),
+        pride = checkDate('7-28-2014', '8-2-2014');
+
+      if (pride === true) {
+        header.style.cssText = 'background: -webkit-gradient(linear, left center, right center, from(red), color-stop(14%, orange), color-stop(28%, yellow), color-stop(42%, green), color-stop(56%, blue), color-stop(70%, indigo), to(violet));';
+      }
 
     }
   };

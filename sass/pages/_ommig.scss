@@ -122,44 +122,21 @@
     float: left;
     box-shadow: rgba(0,0,0,0.2) 0 1px 2px;
   }
-	span {
-		display: inline-block;
-		float: left;
-		background-size: 100px;
-		width: 100px;
-		box-shadow: rgba(0,0,0,0.2) 0 1px 2px;
-	}
 }
 
 
-.thebigwebshow {
-	background: url(images/ommig/zeldman.png) no-repeat;
-	height: 100px;
+.thebigwebshow, .shoptalk {
 	margin: 3px 10px 0 0;
 }
 .thewebahead {
-	background: url(images/ommig/the-web-ahead.jpg) no-repeat;
-	height: 79px;
 	margin: 15px 10px 0 0;
 }
 
 .shoptalk {
-	background: url(images/ommig/shoptalkshow.jpg) no-repeat;
-	background-position: center center;
-	height: 100px;
-	margin: 3px 10px 0 0;
 	box-shadow: none !important;
 }
 
-.themanual {
-	background: url(images/ommig/themanual.jpg) no-repeat;
-	height: 65px;
-	margin: 7px 10px 0 0;
-}
-
-.conversations {
-	background: url(images/ommig/conversations.jpg) no-repeat;
-	height: 143px;
+.themanual, .conversations {
 	margin: 7px 10px 0 0;
 }
 

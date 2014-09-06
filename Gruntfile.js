@@ -27,7 +27,7 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          src: '**/*.html',
+          src: ['*.html', 'posts/*.html'],
           dest: 'build/'
         }]
       }
@@ -42,8 +42,19 @@ module.exports = function(grunt) {
         },
         files: {
           'style.css': 'sass/style.scss',
+          'test.css': 'sass/test.scss',
           'easter/apple.css': 'easter/apple.scss',
           'easter/windows.css': 'easter/windows.scss',
+        }
+      }
+    },
+    cssshrink: {
+      options: {
+        log: true
+      },
+      your_target: {
+        files: {
+          'build': ['style.css']
         }
       }
     },

@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <noscript>
 <link href="http://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
 <link rel="stylesheet" href="style.css">
 </noscript>
 <link rel="icon" href="images/icons/favicon.png">
@@ -47,17 +50,20 @@
   <h2>Webbdesigner och webbutvecklare i Stockholm med en stor passion för webb och grafisk design</h2>
 </header>
 
-<main id="portfolio" role="main" itemprop="mainContentOfPage">
+<main id="portfolio" role="main">
 
   <article class="work coop" itemscope itemtype="http://schema.org/CreativeWork">
-    <img src="/images/coop.png" alt="Coop" width="1140" height="725" itemprop="image">
+    <picture>
+      <source media="(min-width:1024px)" srcset="/images/coop.webp" type="image/webp" width="2000" height="1325">
+      <img src="/images/coop.png" width="1140" height="725" alt="Coop" itemprop="image">
+    </picture>
     <div class="work-info">
       <h1 itemprop="name">Coop</h1>
       <p itemprop="description">Coops hemsida lanserades i Augusti 2012 och har efter det varit ett pågåend projekt som hela tiden utvecklas. Den är en av de första riktigt stora responsiva hemsidorna och uppdateras alltid med nyare tekniker och bättre lösningar för att ge Coops kunder och de som använders deras tjänster en så smidig och bra upplevelse som möjligt. Målet är att göra Coops hemsida bättre för drygt tre miljoner medlemmar samt de 6 miljoner som besöker sidan varje månad. Mitt arbete med Coop började hösten 2013.</p>
       <p>Under den tiden har jag varit med i projekt som bestått utav utveckling av "Mitt Coop", Coops banksidor, personliga erbjudanden, och Coops nya medlemsprogram.</p>
       <div class="info">
         <p>Byrå: <a href="http://www.daytona.se/">Daytona</a></p>
-        <p>Roll: Utvecklare</p>
+        <p class="textTruncate">Roll: Utvecklare</p>
         <a href="http://www.coop.se/" class="visit" target="_blank" itemprop="url">www.coop.se</a>
       </div>
     </div>
@@ -70,7 +76,7 @@
       <h1 itemprop="name">Arcini</h1>
       <p itemprop="description">Nikolina Arcini är en utmärkt fotograf som tar otroliga bilder på framförallt hästar. Jag utvecklade hennes personliga portfolio för att visa upp bilder och information om vernissager och för fösäljning av fotografier.</p>
       <div class="info">
-        <p>Roll: Designer och utveckling</p>
+        <p class="textTruncate">Roll: Designer och utveckling</p>
         <a href="http://www.arcini.com/" class="visit" target="_blank" itemprop="url">www.arcini.com</a>
       </div>
     </div>
@@ -83,15 +89,17 @@
     <div class="work-info">
       <h1 itemprop="name">Arkitektur Nu / Stockholm</h1>
       <p itemprop="description">Arkitektur Nu/Stockholm guidar dig till den nyaste arkitekturen i Stockholm. Arkitektur- och designcentrum listar några av de mest uppmärksammade projekten under de senaste åren. Jag utvecklade en app för iOS och Android samt en responsiv hemsida.</p>
-      <div class="info">
-        <p itemprop="datePublished">År: 2013</p>
-        <p>Byrå: Queensbridge</p>
-        <p>Roll: Utveckling</p>
-        <a href="http://arkitekturnustockholm.arkdes.se/sv" class="visit" target="_blank" itemprop="url">arkitekturnustockholm.arkdes.se</a>
-      </div>
-      <div class="app-links">
-        <a href="https://itunes.apple.com/se/app/arkitektur-nu-stockholm/id705853039" class="app-store">Tillgänglig på App Store</a>
-        <a href="https://play.google.com/store/apps/details?id=se.queensbridge.lighthouses" class="google-play">Ladda ner på Google Play</a>
+      <div class="clearfix">
+        <div class="info">
+          <p itemprop="datePublished">År: 2013</p>
+          <p>Byrå: Queensbridge</p>
+          <p class="textTruncate">Roll: Utveckling</p>
+          <a href="http://arkitekturnustockholm.arkdes.se/sv" class="visit" target="_blank" itemprop="url">arkitekturnustockholm.arkdes.se</a>
+        </div>
+        <div class="app-links">
+          <a href="https://itunes.apple.com/se/app/arkitektur-nu-stockholm/id705853039" class="app-store">Tillgänglig på App Store</a>
+          <a href="https://play.google.com/store/apps/details?id=se.queensbridge.lighthouses" class="google-play">Ladda ner på Google Play</a>
+        </div>
       </div>
     </div>
   </article>
@@ -101,11 +109,11 @@
     <noscript><img src="/images/comai.png" alt="Comai" width="1140" height="725" itemprop="image"></noscript>
     <div class="work-info">
       <h1 itemprop="name">Comai</h1>
-      <p itemprop="description">Comai utvecklar mobila applikationer för människor med olika kognitiva svårigheter. Dessa applikationer gör det lättare att i vardagen utföra diverse uppgifter såsom att hålla koll på pengar, medicinering mm.</p>
+      <p itemprop="description">Comai utvecklar mobila applikationer för människor med olika kognitiva svårigheter. Dessa applikationer gör det lättare att i vardagen utföra diverse uppgifter såsom att hålla koll på pengar, <span class="textTruncate">medicinering mm.</span></p>
       <div class="info">
         <p itemprop="datePublished">År: 2013</p>
         <p>Byrå: Queensbridge</p>
-        <p>Roll: Utveckling</p>
+        <p class="textTruncate">Roll: Utveckling</p>
         <a href="http://www.comai.se/" class="visit" target="_blank" itemprop="url">www.comai.se</a>
       </div>
     </div>
@@ -116,11 +124,11 @@
     <noscript><img src="/images/nordiska.png" alt="Nordisa Museet - Publikens Val" width="1140" height="725" itemprop="image"></noscript>
     <div class="work-info">
       <h1 itemprop="name">Nordiska Museet - Publikens Val</h1>
-      <p itemprop="description">Nordiska Museet har valt 55 utställningsföremål och ger besökarna chansen att rösta på vilket som ska ställas ut härnäst. Arbetet består utav tre hemsidor. Två i olika montrar på museet och en webbaserad. Hemsidan fungerar bäst på touchenheter och större skärmar.</p>
+      <p itemprop="description">Nordiska Museet har valt 55 utställningsföremål och ger besökarna chansen att rösta på vilket som ska ställas ut härnäst. Arbetet består utav tre hemsidor. Två i olika montrar på museet och en webbaserad. Hemsidan fungerar bäst på touchenheter och <span class="textTruncate">större skärmar.</span></p>
       <div class="info">
         <p itemprop="datePublished">År: 2013</p>
         <p>Byrå: Queensbridge</p>
-        <p>Roll: Design och utveckling</p>
+        <p class="textTruncate">Roll: Design och utveckling</p>
         <a href="http://publikensval.nordiskamuseet.se" class="visit" target="_blank" itemprop="url">publikensval.nordiskamuseet.se</a>
       </div>
     </div>
@@ -134,7 +142,7 @@
       <p itemprop="description">BÄR - Biologiska Ämnesrådet i Uppsala ville ha en hemsida för att samla information om nyheter och evenemang gällande föreningen. Jag designade och utvecklade en väldigt enkel och lättförståelig hemsida för såväl besökare och administratörer.</p>
       <div class="info">
         <p itemprop="datePublished">År: 2012</p>
-        <p>Roll: Design och utveckling</p>
+        <p class="textTruncate">Roll: Design och utveckling</p>
         <a href="http://nvb.utn.se/" class="visit" target="_blank" itemprop="url">nvb.utn.se</a>
       </div>
     </div>
@@ -148,7 +156,7 @@
       <p itemprop="description">Bostadsrättsförmedlingen på Hornsgatan 39 behövde en ny sida för att samla viktig information gällande trivselregler och andra dokument samt för att uppdatera om kommande händelser.</p>
       <div class="info">
         <p itemprop="datePublished">År: 2013</p>
-        <p>Roll: Design, utveckling och foto</p>
+        <p class="textTruncate">Roll: Design, utveckling och foto</p>
         <a href="http://brfhornsgatan39.se/" class="visit" target="_blank" itemprop="url">www.brfhornsgatan39.se</a>
       </div>
     </div>
@@ -159,10 +167,10 @@
     <noscript><img src="/images/manscentrum.png" alt="Manscentrum" width="1140" height="725" itemprop="image"></noscript>
     <div class="work-info">
       <h1 itemprop="name">Manscentrum</h1>
-      <p itemprop="description">Manscentrum är en politiskt och religiöst obunden stiftelse vars inriktning är att bistå män i kris. Jag hjälpte Manscentrum med en helt ny design och plattform. Hemsidan drivs med hjälp utav WordPress för att Manscentrum lätt ska kunna uppdatera sin information samt texter om arbetet de utför.</p>
+      <p itemprop="description">Manscentrum är en politiskt och religiöst obunden stiftelse vars inriktning är att bistå män i kris. Jag hjälpte Manscentrum med en helt ny design och plattform. Hemsidan drivs med hjälp utav WordPress för att Manscentrum lätt ska kunna uppdatera sin information samt texter om arbetet <span class="textTruncate">de utför.</span></p>
       <div class="info">
         <p itemprop="datePublished">År: 2012</p>
-        <p>Roll: Design, utveckling och foto</p>
+        <p class="textTruncate">Roll: Design, utveckling och foto</p>
         <a href="http://www.manscentrum.se/" class="visit" target="_blank" itemprop="url">www.manscentrum.se</a>
       </div>
     </div>
@@ -176,7 +184,7 @@
       <p itemprop="description">Peter Ahlén och Lutt Jeorell skapar vackra tryck bestående av unika fotografier och mönster som trycks på stora glasväggar. Med inspiration ifrån Peter Ahlén och Lutt Jeorell tidigare projekt byggde jag en stilren hemsida med hjälp utav bilder och filmer.</p>
       <div class="info">
         <p itemprop="datePublished">År: 2012</p>
-        <p>Roll: Design och utveckling</p>
+        <p class="textTruncate">Roll: Design och utveckling</p>
         <a href="http://www.artonglass.se/" class="visit" target="_blank" itemprop="url">www.artonglass.se</a>
       </div>
     </div>
@@ -186,42 +194,63 @@
 
 <footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
   <div itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="telephone" content="0725309222">
+    <meta itemprop="affiliation" content="Daytona">
+    <link itemprop="image" href="//vincentorback.se/images/ommig/vincentorback.jpg">
     <a class="name" itemprop="url" href="http://vincentorback.se"><div itemprop="name">Vincent Orback</div></a>
     <div class="jobtitle"><strong itemprop="jobtitle">Webbdesigner</strong> och <span itemprop="jobtitle">Webbutvecklare</span></div>
     <div class="adress" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-      <p><span itemprop="addressLocality">Stockholm</span>, <span itemprop="addressCountry"> Sverige</span></p>
+      <p><span itemprop="addressLocality">Stockholm</span>, <span itemprop="addressCountry">Sverige</span></p>
     </div>
-    <div class="epost" itemprop="email"><a href="mailto:vorback@gmail.com" target="_blank" rel="nofollow">vorback@gmail.com</a></div>
+    <div class="epost"><a href="mailto:vorback@gmail.com" itemprop="email">vorback@gmail.com</a></div>
   </div>
 </footer>
+
 <script>
-var h = document.head,
-  crucialCss = document.getElementById('crucial-css'),
-  l, font,
-  cb = function () {
-    l = document.createElement('link');
-    font = document.createElement('link');
+(function () {
+  'use strict';
 
-    l.rel = 'stylesheet';
-    font.rel = 'stylesheet';
+  var win = window,
+    doc = document,
+    head = doc.head,
+    crucialCss = doc.getElementById('crucial-css'),
+    link = doc.createElement('link'),
+    font,
+    img,
+    cb = function () {
+      font = doc.createElement('link');
 
-    l.href = 'style.css';
-    font.href = 'http://fonts.googleapis.com/css?family=Josefin+Sans:400,700';
+      link.onload = function () {
+        head.removeChild(crucialCss);
+      };
 
-    h.appendChild(l, h);
-    h.appendChild(font, h);
+      link.rel = 'stylesheet';
+      font.rel = 'stylesheet';
 
-    window.setTimeout(function () {
-      h.removeChild(crucialCss);
-    }, 300);
-  },
-  raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
+      link.href = 'style.css';
+      font.href = 'http://fonts.googleapis.com/css?family=Josefin+Sans:400,700';
 
-if (raf) {
-  raf(cb);
-} else {
-  window.addEventListener('load', cb);
-}
+      head
+        .appendChild(link, head)
+        .appendChild(font, head);
+    },
+    raf = win.requestAnimationFrame || win.mozRequestAnimationFrame || win.webkitRequestAnimationFrame || win.msRequestAnimationFrame;
+
+  if (!(link.hasOwnProperty('onload'))) {
+    img = doc.createElement('img');
+    img.onerror = function () {
+      crucialCss.parentNode.removeChild(crucialCss);
+    };
+    img.src = 'style.css';
+  }
+
+  if (raf) {
+    raf(cb);
+  } else {
+    win.addEventListener('load', cb);
+  }
+
+}());
 </script>
 <script src="/js/main-min.js"></script>
 <script>

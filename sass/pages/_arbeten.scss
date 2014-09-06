@@ -3,7 +3,7 @@
 }
 
 .work {
-	padding: 7em 0 4.5em 0;
+	padding: 7em 0 4.45em 0;
 	@extend %clearfix;
 	background: #14ab30;
 	color: #fff;
@@ -37,7 +37,6 @@
 		@extend %clearfix;
     a {
       color: #fff;
-      font-weight: 700;
     }
 		p {
 			margin: 0 0 0 1.5em;
@@ -75,6 +74,14 @@
 	.visit {
 		background: #1bcc36;
 	}
+}
+
+.arcini {
+  background: #1F1F21;
+  .info .visit {
+    background: #fff;
+    color: #1F1F21;
+  }
 }
 
 .arkdes {

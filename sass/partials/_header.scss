@@ -10,10 +10,14 @@
 		height: 100%;
 		h2 {
 			font-size: 2em;
-			top: 37%;
+			top: 45%;
+      transform: translateY(-50%);
 			letter-spacing: 1px;
-			font-weight: 700;
+			font-weight: 400;
 		}
+    .no-csstransforms3d & h2 {
+      top: 37%;
+    }
 	}
 	h2 {
 		top: 100px;
