@@ -258,12 +258,16 @@
           minFontSize: '40px',
           maxFontSize: ((winWidth > 1600) ? '200px' : '100px')
         });
-      }
-
-      if (doc.getElementById('page-work') || doc.getElementById('page-front')) {
         $body.find('.Sitehead').find('.Sitehead-title').fitText(0.8, {
           minFontSize: '40px',
           maxFontSize: '100px'
+        });
+      }
+
+      if (doc.getElementById('page-work')) {
+        $body.find('.Sitehead').find('.Sitehead-title').fitText(0.8, {
+          minFontSize: '40px',
+          maxFontSize: ((winWidth > 1600) ? '200px' : '100px')
         });
       } else {
         $body.find('.Sitehead').find('.Sitehead-title').fitText(1, {
