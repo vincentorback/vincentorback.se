@@ -805,7 +805,7 @@
       }
 
       $(win).smartscroll(function () {
-        if ($.belowthefold($('.test'), {threshold: 100, container: window}) === false) {
+        if ($.belowthefold($('.js-comments'), {threshold: 100, container: window}) === false) {
           loadComments();
           $(win).unbind('scroll');
         }
