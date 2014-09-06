@@ -1,0 +1,129 @@
+.Page-front {
+  background: $blue;
+
+  .Sitehead {
+    height: 100%;
+    max-height: none;
+    background: $blue;
+  }
+  .Sitehead-inner {
+    top: auto;
+    bottom: 15%;
+    @extend %fadeinBottom;
+  }
+  .Sitehead-title {
+    animation: none !important;
+  }
+  @include respond-max(800px) {
+    .Sitehead {
+      height: auto;
+    }
+    .Sitehead-inner {
+      position: static;
+      padding: 40% 0 20% 0;
+    }
+  }
+}
+
+
+
+
+
+.WorkItem {
+  color: #fff;
+  background-color: $red;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+
+  border-bottom-width: 0;
+  border-bottom-style: solid;
+  border-bottom-color: #fff;
+
+  height: 350px;
+
+  @include respond-max(800px) {
+    //background-position: 50% 50%;
+    background-position: 50% 50% !important;
+    background-size: auto 100% !important;
+    max-height: 400px;
+  }
+}
+
+.WorkItem-title {
+  @include rem(80);
+  line-height: 1;
+  @include respond-max(1100px) {
+    font-size: 64px;
+  }
+  @include respond-max(800px) {
+    text-shadow: rgba(0,0,0,.1) 0 1px 2px;
+  }
+  @include respond-max(600px) {
+    font-size: 40px;
+  }
+}
+
+.WorkItem-inner {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 75%;
+  max-width: 675px;
+  //padding: 17% 0;
+  /*
+  TODO:
+  Padding from % to REM is jaggy. Check velocity.js docs.
+  Or maby set rem values when page is loaded/on resize
+  */
+  //padding: 12rem 0 12rem 0;
+  p {
+    margin: 2em 0 1.5em 0;
+    font-size: 1.2em;
+    max-height: 300px;
+    max-width: 500px;
+
+    opacity: 1;
+    padding: 0;
+  }
+  a {
+    display: inline-block;
+    padding: .65em 1.5em;
+    border: 2px solid #fff;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    color: #fff;
+    max-height: 300px;
+    transition: background 150ms ease, color 300ms ease, transform 200ms;
+    margin: 0 1em 1em 0;
+
+    opacity: 1;
+
+    &:hover {
+      background: #fff;
+      color: $text;
+    }
+
+    .no-touch &:hover {
+      transform: scale(1.08);
+    }
+  }
+
+  @include respond-max(800px) {
+    width: 100%;
+    padding: 20% 0;
+    p {
+      height: 0;
+      overflow: hidden;
+      margin: 0 0 1em 0;
+    }
+    a {
+      margin: 0 .5em 1em 0;
+      font-size: .7em;
+      background: #fff;
+      color: $text;
+      border-width: 1px;
+    }
+  }
+}

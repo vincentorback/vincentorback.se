@@ -1,15 +1,20 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<!doctype html>
+<html class="no-js">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="http://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
-<link rel="stylesheet" href="/style.css">
-<link rel="icon" href="/images/icons/favicon.png">
-<!--[if IE]><link rel="shortcut icon" href="images/icons/favicon.ico"><![endif]-->
-<title>About me - Vincent Orback</title>
+
+<title>About me | Vincent Orback - Web designer och developer in Stockholm</title>
 <meta name="description" content="As a front-end developer I work with the things you see and interact with on a website. Right now I’m working at the digital agency Daytona in Stockholm, Sweden.">
 <meta name="keywords" content="web designer, designer, developer, wordpress, portfolio">
+
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<noscript><link rel="stylesheet" href="/noscript.css"></noscript>
+
+<link rel="icon" href="/images/icons/favicon.png">
+<!--[if IE]><link rel="shortcut icon" href="/images/icons/favicon.ico"><![endif]-->
+
 <link rel="canonical" href="http://vincentorback.se/about-me/">
 <link rel="author" href="https://plus.google.com/105789918295897205990/posts/">
 <meta property="og:locale" content="en_US">
@@ -18,111 +23,248 @@
 <meta property="og:description" content="As a front-end developer I work with the things you see and interact with on a website. Right now I’m working at the digital agency Daytona in Stockholm, Sweden.">
 <meta property="og:url" content="http://vincentorback.se/about-me/">
 <meta property="og:site_name" content="Vincent Orback">
-<meta property="og:image" content="http://vincentorback.se/images/screenshot.png">
-</head>
-<body itemscope itemtype="http://schema.org/AboutPage">
-<!--[if lte IE 9]>
-<div class="iewarning">
-  <p>You are using an <b>outdated</b> browser. I recommend you <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience of this website but more importantly, the whole web.</p>
-</div>
-<![endif]-->
+<meta property="og:image" content="http://vincentorback.se/images/about/portrait.jpg">
 
-<header id="top" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-  <a href="/en/" class="logo">
-    <h1>Vincent Orback</h1>
-  </a>
-  <nav class="main-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-    <ul>
-      <li itemprop="name"><a href="/en/" itemprop="url">Work</a></li>
-      <li class="active" itemprop="name"><a href="/about-me/" itemprop="url">About me</a></li>
-      <li itemprop="name"><a href="/blog/" itemprop="url">Blog</a></li>
-      <li itemprop="name"><a href="/contact/" itemprop="url">Contact</a></li>
-      <li itemprop="name"><a href="/om-mig/" itemprop="url">Svenska</a></li>
-    </ul>
-  </nav>
-  <h2 itemprop="headline">About me</h2>
+</head>
+<body id="page-about" class="Page-about" itemscope itemtype="http://schema.org/AboutPage">
+
+<nav id="navigation" class="Navigation" role="navigation">
+  <ul>
+    <li><a href="/" class="js-transitionFull"><span>Work</span></a></li>
+    <li><a href="#about-me" class="js-scroll is-active"><span>About me</span></a></li>
+    <li><a href="/blog/" class="js-transitionHalf"><span>Blog</span></a></li>
+    <li><a href="/contact/" class="js-transitionHalf"><span>Contact</span></a></li>
+  </ul>
+  <ul class="Navigation-social">
+    <li><a href="https://twitter.com/vorback" class="Social Social--twitter icon icon-twitter" title="@vorback" rel="me"></a></li>
+    <li><a href="https://github.com/vincentorback" class="Social Social--github icon icon-github" title="GitHub" rel="me"></a></li>
+    <li><a href="http://se.linkedin.com/pub/vincent-orback/50/957/457/" class="Social Social--linkedin icon icon-linkedin" title="LinkedIn" rel="me"></a></li>
+  </ul>
+</nav>
+
+<div class="Content">
+
+<header class="Sitehead" role="banner">
+  <div class="Sitehead-wrapper">
+    <a href="/" class="Sitehead-logo js-transitionFull">
+      <h1>Vincent Orback</h1>
+      <h2>Front-end developer & designer</h2>
+    </a>
+    <div class="Sitehead-inner">
+      <p class="Sitehead-title">About me</p>
+    </div>
+  </div>
+  <button class="Navigation-toggle js-navToggle" type="button" role="button" aria-controls="navigation">Menu</button>
+  <div class="Sitehead-cover"></div>
 </header>
 
-<main class="ommig" role="main" itemscope itemtype="http://schema.org/Person" itemprop="mainContentOfPage">
-  <img src="/images/ommig/vincentorback.jpg" alt="Web designer Vincent Orback" width="600" height="600" itemprop="image primaryImageOfPage">
-  <h1>Hi there!</h1>
-  <p itemprop="description">I’m <span itemprop="name">Vincent Orback</span>. A <span itemprop="specialty jobtitle">web designer</span> and developer living in <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="workLocation addressLocality homeLocation">Stockholm</span></span>. I work at the digital agency <a href="http://www.daytona.se/" target="_blank" itemprop="worksFor">Daytona</a> where I do front-end development. I love building responsive, responsible websites and designing things smarter and easier. When I’m not doing client work I usually tinker with side projects.</p>
+<main id="about-me" class="Sitemain" role="main">
+
+  <article class="About Entry" itemprop="mainContentOfPage">
+    <div class="u-wrapper--S">
+      <h1>Hi there!</h1>
+      <p>My name is Vincent and I work as a designer and developer. Right now I live in <span class="u-textTruncate">Stockholm, Sweden</span> and work at the digital agency <a href="http://www.daytona.se/" target="_blank">Daytona</a>.</p>
+      <p>Design and technology has always been my main interests and with both these passions web designer is the best job for me! After studying system development and computer science I’ve been freelancing and worked at different web agencies. Right now I’m working at one of Sweden’s best digital agencies where I work with clients such as Coop and Systembolaget.</p>
+      <p>When I’m not working with clients I like to "kick back" and do some side projects to keep my creativity and code-brain going.</p>
+      <p>You can read more about what I do and have done in my <a class="js-scroll" href="#resume">resume</a>.</p>
+    </div>
+  </article>
+
+  <section class="Library">
+    <header>
+      <div class="u-wrapper--M">
+        <h3>Library</h3>
+        <p>A collection of links to things I like to read and <span class="u-textTruncate">listen to.</span></p>
+      </div>
+    </header>
+    <div class="u-wrapper--M">
+      <div class="Library-inner three-columns">
+
+        <div class="col">
+          <h4>Books</h4>
+          <article>
+            <img src="/images/about/design-is-a-job.jpg" alt="">
+            <h1>Design is a job</h1>
+            <p>Mike Monterio goes deep into the web designer work experience, writing how fun or terrifying it can be when working with customers, both working at an agency or freelancer. He share tips like how important it is to not be an asshole and how you can make sure you get paid for what your doing.</p>
+            <a href="http://www.abookapart.com/" target="_blank">www.abookapart.com</a>
+          </article>
+          <article>
+            <img src="/images/about/the-manual.jpg" alt="">
+            <h1>The Manual</h1>
+            <p>The Manual is a thrice-yearly publication with stories from six people working as designers, developers, etc. Stories that explore what we do and who we are as designers. The book does not contain any code, screenshots or tutorials. It’s just stories from real life that connects to the work design business in the most fascinating ways.</p>
+            <a href="http://buy.alwaysreadthemanual.com/" target="_blank">www.alwaysreadthemanual.com</a>
+          </article>
+          <article>
+            <img src="/images/about/conversations-with-design-entrepreneurs.jpg" alt="">
+            <h1>Conversations with Design Entrepreneurs</h1>
+            <p>This book has it all. Amazing interviews with some of the smartest, most interesting and driven people whom all got their own start-up. The book is filled with beautiful illustrations and it’s just so good looking. Buy it just to touch it, it’s worth it!</p>
+            <a href="http://www.kernandburn.com/" target="_blank">www.kernandburnbook.com</a>
+          </article>
+        </div>
+
+        <div class="col">
+          <h4>Podcasts</h4>
+          <article>
+            <img src="/images/about/shoptalk-show.jpg" alt="">
+            <h1>ShopTalk</h1>
+            <p>Chris Coyier and Dave Rupert has a fun and educating podcast with loads of jokes, sound effects and great guests.</p>
+            <a href="http://shoptalkshow.com/" target="_blank">www.shoptalkshow.com</a>
+          </article>
+          <article>
+            <img src="/images/about/the-web-ahead.jpg" alt="">
+            <h1>The Web Ahead</h1>
+            <p>Jen Simmons interviews guests every week about the future of the web. The subjects are very different each week and it feels like she always gets the most interesting people that are really passionate about their professions.</p>
+            <a href="http://5by5.tv/webahead" target="_blank">www.5by5.tv/webahead</a>
+          </article>
+          <article>
+            <img src="/images/about/the-big-web-show.png" alt="">
+            <h1>The Big Web Show</h1>
+            <p>The king of internet Jeffrey Zeldman interview different people about the web industry about web publication, content strategy, typography, web techniques and much more.</p>
+            <a href="http://www.muleradio.net/thebigwebshow/" target="_blank">muleradio.net/thebigwebshow</a>
+          </article>
+        </div>
+        <div class="Library-websites col">
+          <article class="col">
+            <h4>Web news</h4>
+            <ul>
+              <li><a href="http://alistapart.com/" target="_blank">A List Apart</a></li>
+              <li><a href="http://sidebar.io/" target="_blank">Sidebar.io</a></li>
+              <li><a href="http://www.smashingmagazine.com/" target="_blank">Smashing Magazine</a></li>
+              <li><a href="http://css-tricks.com/" target="_blank">CSS-Tricks</a></li>
+              <li><a href="http://www.webdesignerdepot.com/" target="_blank">Webdesigner Depot</a></li>
+            </ul>
+          </article>
+          <article class="col">
+            <h4>Inspiration</h4>
+            <ul>
+              <li><a href="http://www.awwwards.com/" target="_blank">Awwwards</a></li>
+              <li><a href="http://www.siteinspire.com/" target="_blank">Best Website Gallery</a></li>
+              <li><a href="http://www.siteinspire.com/" target="_blank">Siteinspire</a></li>
+              <li><a href="http://www.admiretheweb.com/" target="_blank">Admire the web</a></li>
+              <li><a href="http://fltdsgn.com/" target="_blank">FlatDesign</a></li>
+              <li><a href="http://abduzeedo.com/tags/sites-week" target="_blank">Abduzeedo</a></li>
+              <li><a href="http://tympanus.net/codrops/" target="_blank">Codrops</a></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+      <footer>
+        <p>I’m always looking for more books, podcasts or websites to learn more or for inspiration. If you know something that you think I should check out, please send and email to <a href="mailto:vorback@gmail.com" target="_blank" rel="nofollow">vorback@gmail.com</a> or <span class="u-textTruncate">tweet me at <a href="http://www.twitter.com/vorback" target="_blank" rel="nofollow">@vorback</a>.</span></p>
+      </footer>
+    </div>
+  </section>
+
+  <section id="resume" class="Resume">
+    <header>
+      <div class="u-wrapper--M">
+        <h3>Resume</h3>
+        <p>The sell talk...</p>
+      </div>
+    </header>
+    <div class="u-wrapper--M">
+      <div class="Resume-inner two-columns">
+        <div class="Resume-left col onethird-columns">
+          <div class="col">
+            <h4>Work</h4>
+          </div>
+          <div class="col third">
+            <ul>
+              <li>
+                <h5>Daytona <span class="date">Sep 2013 - Now</span></h5>
+                <p>Developer</p>
+              </li>
+              <li>
+                <h5>Queensbridge <span class="date">Mar 2013 - Sep 2013</span></h5>
+                <p>Developer</p>
+              </li>
+              <li>
+                <h5>Traffic Light <span class="date">Dec 2012</span></h5>
+                <p>Developer intern</p>
+              </li>
+              <li>
+                <h5>Freelancing <span class="date">2012 - 2013</span></h5>
+                <p>Developer and designer</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col">
+            <h4>Education</h4>
+          </div>
+          <div class="col third">
+            <ul>
+              <li>
+                <h5>Malmö University <span class="date">2011 - 2012</span></h5>
+                <p>Web development 2</p>
+                <p>System development</p>
+                <p>Motion pictures</p>
+                <p>Computer science</p>
+                <p>Web development 1</p>
+              </li>
+              <li>
+                <h5>Södertörn University <span class="date">2011</span></h5>
+                <p>English A</p>
+              </li>
+              <li>
+                <h5>Riddarfjärdens Gymnasium <span class="u-textTruncate">(Upper middle school)</span> <span class="date">2010</span></h5>
+                <p>Majored in graphic design and journalism</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="Resume-right col">
+          <h4>I’m offering</h4>
+          <ol>
+            <li>Development</li>
+            <li>Design</li>
+            <li>UX &amp; Usability-guidance</li>
+            <li>Prototyping</li>
+          </ol>
+
+          <br>
+
+          <h4>Location</h4>
+          <p>Living in Stockholm, Sweden but I’m always looking to see <span class="u-textTruncate">more of the world!</span></p>
+
+          <br>
+
+          <h4>My work method</h4>
+          <p>In general, I’d like to be involved from the start of a project. Taking part of the early stages of a project allows me to be of value immediately to catch issues and chose the right development technique. I find it important to work closely with designers in an iterative manner. This allows us the flexibility to explore ideas more easily and find our way to solutions that work using each others capabilities.</p>
+
+          <br>
+
+          <h4>Some clients I’ve worked with</h4>
+          <ul>
+            <li><a href="https://www.coop.se/" target="_blank">Coop</a></li>
+            <li><a href="http://www.systembolaget.se/" target="_blank">Systembolaget</a></li>
+            <li><a href="http://www.arkdes.se/" target="_blank">Arkitektur- och Designcentrum</a></li>
+            <li><a href="http://www.nordiskamuseet.se/" target="_blank">Nordiska Museet</a></li>
+          </ul>
+        </div>
+      </div>
+      <footer class="Printlink">
+        <a href="/cv.pdf" target="_blank" rel="me">Print / Download resume</a>
+      </footer>
+    </div>
+  </section>
+
 </main>
 
-<section class="recommend">
-  <h1 class="section-title">Here are some things I love to read and listen to in order to learn more <span class="textTruncate">about the web.</span></h1>
-  <div class="container">
-    <div class="col books">
-      <h2>Books</h2>
-        <article itemscope itemtype="http://schema.org/Book">
-          <h1 itemprop="name">Design is a job</h1>
-          <img src="/images/ommig/design-is-a-job.jpg" class="designisajob" alt="" width="100" height="154" itemprop="image">
-          <p itemprop="description">Mike Monterio goes deep into the web designer work experience, writing how fun or terrifying it can be when working with customers, both working at an agency or freelancer. He share tips like how important it is to not be an asshole and how you can make sure you get paid for what your doing. <a href="http://www.abookapart.com/" target="_blank" class="more" itemprop="url">www.abookapart.com</a></p>
-        </article>
-        <article itemscope itemtype="http://schema.org/Book">
-          <h1 itemprop="name">The Manual</h1>
-          <img src="/images/ommig/themanual.jpg" class="themanual" alt="" width="100" height="65" itemprop="image">
-          <p itemprop="description">The Manual is a thrice-yearly publication with stories from six people working as designers, developers, etc. Stories that explore what we do and who we are as designers. The book does not contain any code, screenshots or tutorials. It’s just stories from real life that connects to the work design business in the most fascinating ways.<a href="http://buy.alwaysreadthemanual.com/" target="_blank" class="more" itemprop="url">www.alwaysreadthemanual.com</a></p>
-        </article>
-        <article itemscope itemtype="http://schema.org/Book">
-          <h1 itemprop="name">Conversations with Design Entrepreneurs</h1>
-          <img src="/images/ommig/conversations.jpg" class="conversations" alt="" width="100" height="143" itemprop="image">
-          <p itemprop="description">This book has it all. Amazing interviews with some of the smartest, most interesting and driven people whom all got their own start-up. The book is filled with beautiful illustrations and it’s just so good looking. Buy it just to touch it, it’s worth it! <a href="http://www.kernandburnbook.com/" target="_blank" class="more" itemprop="url">www.kernandburnbook.com</a></p>
-        </article>
+<footer class="Sitefooter" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+  <div class="Sitefooter-info" itemscope itemtype="http://schema.org/Person">
+    <a class="name" href="http://vincentorback.se" itemprop="url"><div itemprop="name">Vincent Orback</div></a>
+    <div class="jobtitle" itemprop="jobtitle">Web designer and developer</div>
+    <div class="address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+      <div><span itemprop="addressLocality">Stockholm</span></div><div itemprop="addressCountry">, Sweden</div>
     </div>
-    <div class="col podcasts">
-      <h2>Podcasts</h2>
-        <article itemscope itemtype="http://schema.org/CreativeWork">
-          <h1 itemprop="name">ShopTalk</h1>
-          <img src="/images/ommig/shoptalkshow.jpg" class="shoptalk" alt="" width="100" height="100" itemprop="image">
-          <p itemprop="description">Chris Coyier and Dave Rupert has a fun and educating podcast with loads of jokes, sound effects and great guests. <a href="http://shoptalkshow.com/" target="_blank" class="more" itemprop="url">www.shoptalkshow.com</a></p>
-        </article>
-        <article itemscope itemtype="http://schema.org/CreativeWork">
-          <h1 itemprop="name">The WebAhead</h1>
-          <img src="/images/ommig/the-web-ahead.jpg" class="thewebahead" alt="" width="100" height="79" itemprop="image">
-          <p itemprop="description">Jen Simmons interviews guests every week about the future of the web. The subjects are very different each week and it feels like she always gets the most interesting people that are really passionate about their professions. <a href="http://5by5.tv/webahead" target="_blank" class="more" rel="nofollow" itemprop="url">www.5by5.tv/webahead</a></p>
-        </article>
-        <article itemscope itemtype="http://schema.org/CreativeWork">
-          <h1 itemprop="name">The Big Web Show</h1>
-          <img src="/images/ommig/zeldman.png" class="thebigwebshow" alt="" width="100" height="100" itemprop="image">
-          <p itemprop="description">The king of internet Jeffrey Zeldman interview different people about the web industry about web publication, content strategy, typography, web techniques and much more. <a href="http://www.muleradio.net/thebigwebshow/" target="_blank" class="more" rel="nofollow" itemprop="url">www.muleradio.net/thebigwebshow</a></p>
-        </article>
-    </div>
-    <div class="col websites">
-      <h2>Websites</h2>
-      <a href="http://alistapart.com/" target="_blank">A List Apart</a>
-      <a href="http://www.sidebar.io/" target="_blank">Sidebar.io</a>
-      <a href="http://www.smashingmagazine.com/" target="_blank">Smashing Magazine</a>
-      <a href="http://css-tricks.com/" target="_blank">CSS-Tricks</a>
-      <a href="http://www.webdesignerdepot.com/" target="_blank">Webdesigner Depot</a>
-      <a href="http://code.tutsplus.com/" target="_blank">Tuts+ Code</a>
-      <a href="http://webdesign.tutsplus.com/" target="_blank">Tuts+ Web Design</a>
-    </div>
-    <div class="inspiration">
-      <h2>Inspiration</h2>
-      <a href="http://www.awwwards.com/" target="_blank">Awwwards</a>
-      <a href="http://bestwebsite.gallery/" target="_blank" rel="nofollow">Best Website Gallery</a>
-      <a href="http://www.admiretheweb.com/" target="_blank" rel="nofollow">Admire the web</a>
-      <a href="http://www.verynicesites.com/" target="_blank" rel="nofollow">Very nice sites</a>
-      <a href="http://fltdsgn.com/" target="_blank" rel="nofollow">FlatDesign</a>
-      <a href="http://abduzeedo.com/tags/sites-week" target="_blank" rel="nofollow">Abduzeedo</a>
-    </div>
+    <div class="email" itemprop="email"><a href="mailto:vorback@gmail.com" target="_blank" rel="nofollow">vorback@gmail.com</a></div>
   </div>
-
-    <p class="recommend-info">I’m always looking for more books, podcasts or websites to learn more or for inspiration. If you know something that you think I should check out, please send and email to <a href="mailto:vorback@gmail.com" target="_blank" rel="nofollow">vorback@gmail.com</a> or tweet me at <a href="http://www.twitter.com/vorback" target="_blank" rel="nofollow">@vorback</a>.</p>
-</section>
-
-<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
-  <div itemscope itemtype="http://schema.org/Person">
-    <a class="name" itemprop="url" href="http://vincentorback.se"><div itemprop="name">Vincent Orback</div></a>
-    <div class="jobtitle"><strong itemprop="jobtitle">Web designer</strong> and <span itemprop="jobtitle">Web developer</span></div>
-    <div class="adress" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-      <p><span itemprop="addressLocality">Stockholm</span>, <span itemprop="addressCountry">Sweden</span></p>
-    </div>
-    <div class="epost" itemprop="email"><a href="mailto:vorback@gmail.com" target="_blank" rel="nofollow">vorback@gmail.com</a></div>
-  </div>
+  <a href="https://github.com/vincentorback/Vincent-Orback" target="_blank" class="Octocat Tooltip Tooltip--top">
+    <span class="Tooltip-inner">This website is available on GitHub!</span>
+  </a>
 </footer>
 
+</div>
 
 <script src="/js/main-min.js"></script>
 <script>

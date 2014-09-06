@@ -1,0 +1,84 @@
+.Pagenav {
+  width: 95%;
+  margin: 10% auto;
+  background: #fff;
+  position: relative;
+  text-align: center;
+  @extend %clearfix;
+}
+
+.Pagenav-item {
+  position: relative;
+  display: inline-block;
+  margin: 0 3em 1em 3em;
+  padding: 1em 2em;
+  border: 2px solid $text;
+  border-radius: 50px;
+  transition: background 200ms ease, padding 200ms ease, color 200ms ease;
+  b {
+    margin: 0 5px;
+  }
+  &:hover {
+    background: $text;
+    color: #fff;
+    &:before, &:after {
+      opacity: 1;
+    }
+  }
+  &:before, &:after {
+    position: absolute;
+    top: 50%;
+    margin: auto;
+    transform: translateY(-50%);
+    width: 4em;
+    height: 1em;
+    display: block;
+    transition: none;
+    @extend %icon;
+  }
+
+  @include respond-max(800px) {
+    margin: .5em 1em;
+    padding: .8em 2em;
+    font-size: .9em;
+    span {
+      display: none;
+    }
+    &:before, &:after {
+      opacity: 1;
+      width: 3.7em;
+    }
+  }
+}
+
+.Pagenav-item--prev {
+  padding-left: 3.2em;
+  &:before {
+    left: 0;
+    content: "\65";
+  }
+  @include respond-max(800px) {
+    padding-left: 3.5em;
+  }
+  @include respond-min(750px) {
+    &:hover {
+      padding-left: 4em;
+    }
+  }
+}
+
+.Pagenav-item--next {
+  padding-right: 3.2em;
+  &:after {
+    right: 0;
+    content: "\63";
+  }
+  @include respond-max(800px) {
+    padding-right: 3.5em;
+  }
+  @include respond-min(750px) {
+    &:hover {
+      padding-right: 4em;
+    }
+  }
+}

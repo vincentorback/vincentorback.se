@@ -1,3 +1,12 @@
+Redirect 301 /en/ http://vincentorback.se/
+Redirect 301 /om-mig/ http://vincentorback.se/about-me/
+Redirect 301 /kontakt/ http://vincentorback.se/contact/
+
+Redirect 301 /posts/dont-work-for-free/ http://vincentorback.se/blog/
+Redirect 301 /posts/optimizing-images-and-webp/ http://vincentorback.se/posts/using-webp-images/
+Redirect 301 /posts/dont-work-for-free/ http://vincentorback.se/blog/
+
+
 <IfModule mod_deflate.c>
     <IfModule mod_headers.c>
         Header append Vary User-Agent env=!dont-vary
@@ -16,6 +25,11 @@
     RewriteRule .* - [E=W3TC_ENC:_gzip]
 </IfModule>
 
+#Gzip
+<ifmodule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript text/javascript
+</ifmodule>
+#End Gzip
 
 # Removes file extension .html
 <IfModule mod_rewrite.c>
@@ -27,11 +41,8 @@
   RewriteRule ^(.*)$ $1/ [R=301,L]
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME}\.html -f
-  RewriteRule ^([^\.]+)/$ $1.html 
+  RewriteRule ^([^\.]+)/$ $1.html
 </IfModule>
-
-Redirect /cv http://vincentorback.se/cv.pdf
-Redirect /cv-en http://vincentorback.se/cv-en.pdf
 
 ErrorDocument 404 /404.html
 
@@ -42,43 +53,43 @@ RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
 <IfModule mod_headers.c>
-	Header set X-UA-Compatible "IE=edge,chrome=1"
-	<FilesMatch "\.(appcache|crx|css|eot|gif|htc|ico|jpe?g|js|m4a|m4v|manifest|mp4|oex|oga|ogg|ogv|otf|pdf|png|safariextz|svg|svgz|ttf|vcf|webapp|webm|webp|woff|xml|xpi)$">
-		Header unset X-UA-Compatible
-	</FilesMatch>
+  Header set X-UA-Compatible "IE=edge,chrome=1"
+  <FilesMatch "\.(appcache|crx|css|eot|gif|htc|ico|jpe?g|js|m4a|m4v|manifest|mp4|oex|oga|ogg|ogv|otf|pdf|png|safariextz|svg|svgz|ttf|vcf|webapp|webm|webp|woff|xml|xpi)$">
+    Header unset X-UA-Compatible
+  </FilesMatch>
 </IfModule>
 
 <IfModule mod_headers.c>
-	<FilesMatch "\.(eot|font.css|otf|ttc|ttf|woff)$">
-		Header set Access-Control-Allow-Origin "*"
-	</FilesMatch>
+  <FilesMatch "\.(eot|font.css|otf|ttc|ttf|woff)$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
 </IfModule>
 
 <IfModule mod_mime.c>
-	AddType application/javascript                      js jsonp
-	AddType application/font-woff                       woff
-	AddType application/vnd.ms-fontobject               eot
-	AddType application/x-font-ttf                      ttc ttf
-	AddType font/opentype                               otf
-	AddType image/svg+xml                     		      svg svgz
-	AddEncoding gzip                                    svgz
-	AddType application/octet-stream                    safariextz
-	AddType application/x-chrome-extension              crx
-	AddType application/x-opera-extension               oex
-	AddType application/x-shockwave-flash               swf
-	AddType application/x-web-app-manifest+json         webapp
-	AddType application/x-xpinstall                     xpi
-	AddType application/xml                             atom rdf rss xml
-	AddType image/webp                                  webp
-	AddType image/x-icon                                ico
-	AddType text/cache-manifest                         appcache manifest
-	AddType text/vtt                                    vtt
-	AddType text/x-component                            htc
-	AddType text/x-vcard                                vcf
+  AddType application/javascript                      js jsonp
+  AddType application/font-woff                       woff
+  AddType application/vnd.ms-fontobject               eot
+  AddType application/x-font-ttf                      ttc ttf
+  AddType font/opentype                               otf
+  AddType image/svg+xml                               svg svgz
+  AddEncoding gzip                                    svgz
+  AddType application/octet-stream                    safariextz
+  AddType application/x-chrome-extension              crx
+  AddType application/x-opera-extension               oex
+  AddType application/x-shockwave-flash               swf
+  AddType application/x-web-app-manifest+json         webapp
+  AddType application/x-xpinstall                     xpi
+  AddType application/xml                             atom rdf rss xml
+  AddType image/webp                                  webp
+  AddType image/x-icon                                ico
+  AddType text/cache-manifest                         appcache manifest
+  AddType text/vtt                                    vtt
+  AddType text/x-component                            htc
+  AddType text/x-vcard                                vcf
 </IfModule>
 
 <IfModule mod_mime.c>
-	AddCharset utf-8 .atom .css .js .json .rss .vtt .webapp .xml
+  AddCharset utf-8 .atom .css .js .json .rss .vtt .webapp .xml
 </IfModule>
 
 <IfModule mod_rewrite.c>
@@ -116,35 +127,36 @@ AddOutputFilterByType DEFLATE application/atom+xml \
 </IfModule>
 
 <IfModule mod_expires.c>
-	ExpiresActive on
-	ExpiresDefault                                      "access plus 1 month"
-	ExpiresByType text/css                              "access plus 1 year"
-	ExpiresByType image/x-icon                          "access plus 1 week"
-	ExpiresByType text/x-component                      "access plus 1 month"
-	ExpiresByType text/html                             "access plus 0 seconds"
-	ExpiresByType application/javascript                "access plus 1 year"
-	ExpiresByType image/jpeg                            "access plus 1 month"
-	ExpiresByType image/png                             "access plus 1 month"
-	ExpiresByType application/font-woff                 "access plus 1 month"
-	ExpiresByType application/vnd.ms-fontobject         "access plus 1 month"
-	ExpiresByType application/x-font-ttf                "access plus 1 month"
-	ExpiresByType font/opentype                         "access plus 1 month"
-	ExpiresByType image/svg+xml                         "access plus 1 month"
+  ExpiresActive on
+  ExpiresDefault                                      "access plus 1 month"
+  ExpiresByType text/css                              "access plus 1 year"
+  ExpiresByType image/x-icon                          "access plus 1 week"
+  ExpiresByType text/x-component                      "access plus 1 month"
+  ExpiresByType text/html                             "access plus 0 seconds"
+  ExpiresByType application/javascript                "access plus 1 year"
+  ExpiresByType image/jpeg                            "access plus 1 month"
+  ExpiresByType image/png                             "access plus 1 month"
+  ExpiresByType application/font-woff                 "access plus 1 month"
+  ExpiresByType application/vnd.ms-fontobject         "access plus 1 month"
+  ExpiresByType application/x-font-ttf                "access plus 1 month"
+  ExpiresByType font/opentype                         "access plus 1 month"
+  ExpiresByType image/svg+xml                         "access plus 1 month"
 </IfModule>
+
 
 
 
 
 # WebP Rewrites
 <IfModule mod_rewrite.c>
-	RewriteEngine On
-	RewriteCond %{HTTP_ACCEPT} image/webp
-	RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
-	RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
+  RewriteEngine On
+  RewriteCond %{HTTP_ACCEPT} image/webp
+  RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
+  RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
 </IfModule>
- 
+
 <IfModule mod_headers.c>
-	Header append Vary Accept env=REDIRECT_accept
+  Header append Vary Accept env=REDIRECT_accept
 </IfModule>
- 
+
 AddType image/webp .webp

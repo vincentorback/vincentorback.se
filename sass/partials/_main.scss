@@ -1,154 +1,170 @@
+.Sitemain {
+  margin: 0 auto;
+  background: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+
+
+/**
+ * Wrappers
+ */
+%wrapper {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.u-wrapper--S {
+  @extend %wrapper;
+  max-width: 730px;
+  @include respond-min(1600px) {
+    max-width: 960px;
+  }
+}
+
+.u-wrapper--M {
+  @extend %wrapper;
+  max-width: 1140px;
+}
+
+.u-wrapper--L {
+  @extend %wrapper;
+  max-width: 1280px;
+  @include respond-min(1600px) {
+    max-width: 1500px;
+  }
+}
+
+.u-wrapper--XL {
+  @extend %wrapper;
+  max-width: 1680px;
+}
+
+
+
+
+
+
+
+
+/**
+ * Place parallax scrolling images above .Sitemain
+ */
+.imageHolder {
+  z-index: 11;
+}
+
+
+
+/**
+ * Lazy loading images
+ */
+.lazy {
+  background: #fff;
+}
+
+
+
+/**
+ * Disabeling hover on scroll
+ */
 .disable-hover,
 .disable-hover * {
   pointer-events: none !important;
 }
 
-.clearfix {
-  @extend %clearfix;
-}
 
 
-/**
- * Text truncation
- *
- * Prevent text from wrapping onto multiple lines, and truncate with an
- * ellipsis.
- *
- * 1. Ensure that the node has a maximum width after which truncation can
- *    occur.
- * 2. Fix for IE 8/9 if `word-wrap: break-word` is in effect on ancestor
- *    nodes.
- */
 
-.textTruncate {
-  max-width: 100%; /* 1 */
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  white-space: nowrap !important;
-  word-wrap: normal !important; /* 2 */
-}
+.Video {
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 45%;
+  height: 0;
+  overflow: hidden;
+  width: 100%;
 
-
-/**
- * Lazyloading images
- */
-img.lazy-load {
-	@extend %rotate;
-	width: 150px;
-	height: 150px;
-	@include transition (opacity 300ms ease);
-	margin-bottom: 5em !important;
-}
-img.lazy-loaded {
-	opacity: 1;
-}
-
-.no-js {
-  .lazy-load {
-    display: none;
+  iframe, video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
   }
 }
 
-/**
- * Responsive Video
- */
-.embed-container {
-	position: relative;
-	padding-bottom: 56.25%;
-	padding-top: 30px;
-	height: 0;
-	overflow:
-	hidden; max-width: 100%;
-	height: auto;
-	margin: 1em 0;
-	iframe {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-	}
-}
-
-/**
- * Warning that appears for browsers using IE 8 and older.
- */
-.iewarning {
-	background: $red;
-	padding: 20px 30px;
-	color: #fff;
-	a {
-		color: #fff;
-		border-bottom: 2px solid #fff;
-		padding-bottom: 1px;
-		font-weight: 700;
-	}
-}
-
-/**
- * 404 page
- */
-.fourofour {
-	overflow: hidden;
-	#top {
-		height: 100%;
-		h2 {
-			display: block;
-			margin: 0 auto;
-			width: 100%;
-			text-align: center;
-		}
-	}
-	.logo, .main-nav {
-		z-index: 999;
-	}
-}
-#SvgjsSvg1000 {
-	position: absolute !important;
-}
-#SvgjsRect1002 {
-	cursor: pointer;
-}
-#SvgjsText1003 {
-	margin-top: 200px !important;
-}
 
 
-
-
-
-.no-svg {
-	.arkdes {
-		.app-store {
-			background: url(images/app-store.png) no-repeat center center;
-			background-size: 135px;
-		}
-		.google-play {
-			background: url(images/google-play.png) no-repeat center center;
-			background-size: 135px;
-		}
-	}
-	.social {
-		.email {
-			background: url(images/ommig/email.png) no-repeat;
-		}
-		.twitter {
-			background: url(images/ommig/twitter.png) no-repeat;
-		}
-		.github {
-			background: url(images/ommig/github.png) no-repeat;
-		}
-	}
-	.designisajob {
-		background: url(images/ommig/design-is-a-job.jpg) no-repeat;
-	}
+.three-columns {
+  @extend %clearfix;
+  > .col {
+    width: 29%;
+    float: left;
+    margin-right: 6.5%;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  @include respond-max(900px) {
+    > .col {
+      width: 48%;
+      margin-right: 4%;
+      &:nth-child(2) {
+        margin-right: 0;
+      }
+    }
+  }
+  @include respond-max(600px) {
+    > .col {
+      width: 100%;
+      margin: 0;
+      float: none;
+    }
+  }
+}
+.two-columns {
+  @extend %clearfix;
+  > .col {
+    width: 44%;
+    float: left;
+    margin-right: 6%;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  @include respond-max(600px) {
+    .col {
+      width: 100%;
+      float: none;
+      margin: 0 0 5% 0;
+    }
+  }
 }
 
-.lte-ie9 {
-	.main-nav li {
-		float: left;
-	}
-	.needsfilled {
-		border-color: red !important;
-	}
+.onethird-columns {
+  @extend %clearfix;
+  .col {
+    width: 30%;
+    float: left;
+    margin-right: 5%;
+  }
+  .col.third {
+    width: 60%;
+    margin-right: 0;
+  }
+  @include respond-max(800px) {
+    .col, .col.third {
+      width: 100%;
+      float: none;
+      margin: 0 0 5% 0;
+    }
+  }
 }
+
+
+
+
+

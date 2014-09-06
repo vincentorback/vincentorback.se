@@ -1,0 +1,121 @@
+.Sitefooter {
+  position: relative;
+  text-align: center;
+  background: #fff;
+  padding: 3em 0;
+  border-top: 1px solid #eee;
+  overflow: hidden;
+
+  @include respond-max(800px) {
+    font-size: .85em;
+  }
+}
+
+
+.Sitefooter-info {
+  div {
+    display: inline;
+    line-height: 1.8;
+  }
+  strong {
+    font-weight: normal;
+  }
+  .name {
+    font-weight: 600;
+    font-size: 1.1em;
+  }
+  .jobtitle {
+    display: block;
+    margin-bottom: .2em;
+  }
+  .address,.email,.phone {
+    margin: 0 .5em;
+  }
+}
+
+
+
+.Octocat {
+  display: none;
+}
+
+
+/*
+.Octocat {
+  position: absolute;
+  bottom: 0;
+  right: 2.5%;
+  display: block;
+  width: 150px;
+  height: 150px;
+  background-image: url('data:image/png;base64,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');
+  background-repeat: no-repeat;
+  background-size: 33px 19px;
+  background-position: bottom center;
+
+  @include respond-max(700px) {
+    width: 2.7em;
+    height: 2.7em;
+  }
+}
+*/
+
+
+
+.Tooltip {
+  transition: none;
+
+  &:hover .Tooltip-inner {
+    opacity: 1;
+    visibility: visible;
+    transform: translate3d(-50%, 0, 0);
+    transition: all 400ms ease;
+  }
+}
+
+.Tooltip-inner {
+  position: absolute;
+  padding: .5em;
+  border-radius: 3px;
+
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: all 300ms ease;
+
+  background-color: $text;
+  background: rgba(0,0,0,.8);
+
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+
+  &:after {
+    content: " ";
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    width: 0;
+  }
+
+  @include respond-max(700px) {
+    display: none;
+  }
+
+}
+
+.Tooltip--top .Tooltip-inner {
+  bottom: 40px;
+  left: 50%;
+  transform: translate3d(-50%, 100%, 0);
+  width: 175px;
+
+  &:after {
+    border-top: 5px solid $text;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    bottom: -5px;
+    left: 50%;
+    margin-left: -5px;
+  }
+}

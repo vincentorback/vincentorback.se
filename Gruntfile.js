@@ -1,3 +1,5 @@
+var path = require( 'path' );
+
 module.exports = function(grunt) {
 
   function creditsBanner() {
@@ -27,100 +29,9 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          src: ['*.html', 'posts/*.html'],
+          src: ['*.html', 'work/*.html', 'posts/*.html'],
           dest: 'build/'
         }]
-      }
-    },
-    sass: {
-      dist: {
-        options: {
-          style: 'compressed',
-          compass: 'true',
-          noCache: true,
-          banner: creditsBanner()
-        },
-        files: {
-          'style.css': 'sass/style.scss',
-          'test.css': 'sass/test.scss',
-          'easter/apple.css': 'easter/apple.scss',
-          'easter/windows.css': 'easter/windows.scss',
-        }
-      }
-    },
-    cssshrink: {
-      options: {
-        log: true
-      },
-      your_target: {
-        files: {
-          'build': ['style.css']
-        }
-      }
-    },
-    jshint: {
-      options: {
-        ignores: [
-          'js/vendor/prism.js',
-          'js/vendor/svg.min.js',
-          'js/vendor/modernizr-custom.js',
-          'js/vendor/lazyload.js',
-          'js/vendor/konami.js',
-          'js/*-min.js'
-        ],
-        browser: true,
-        strict: false,
-        eqeqeq: true,
-        indent: 2,
-        newcap: true,
-        plusplus: true,
-        unused: true,
-        trailing: true,
-        loopfunc: false,
-        nomen: true,
-        onevar: true,
-        white: true,
-        undef: true,
-        latedef: true,
-        "-W002": false, // Value of 'event' may be overwritten in IE 8 and earlier.
-        globals: {
-          jQuery: true,
-          $: true,
-          console: true,
-          alert: true,
-          Konami: true
-        }
-      },
-      files: ['js/**/*.js']
-    },
-    imagemin: {
-      png: {
-        options: {
-          optimizationLevel: 7
-        },
-        files: [
-          {
-            expand: true,
-            cwd: 'images/',
-            src: ['**/*.png'],
-            dest: 'images/',
-            ext: '.png'
-          }
-        ]
-      },
-      jpg: {
-        options: {
-            progressive: true
-        },
-        files: [
-            {
-              expand: true,
-              cwd: 'images/',
-              src: ['**/*.jpg'],
-              dest: 'images/',
-              ext: '.jpg'
-            }
-        ]
       }
     },
     svgmin: {
@@ -146,25 +57,9 @@ module.exports = function(grunt) {
         dest: 'webp/'
       },
       options: {
-        binpath: require('webp-bin').path
-      }
-    },
-    uglify: {
-      dist: {
-        options: {
-          banner: creditsBanner(),
-          report: 'gzip'
-        },
-        files: {
-          'js/main-min.js': ['js/vendor/modernizr-custom.js', 'js/vendor/lazyload.js', 'js/vendor/konami.js', 'js/main.js']
-        }
-      }
-    },
-    uncss: {
-      dist: {
-        files: {
-          'style.css': '*.html'
-        }
+        binpath: require('webp-bin').path,
+        quality: 90,
+        alphaQuality: 90
       }
     },
     devUpdate: {
@@ -175,22 +70,38 @@ module.exports = function(grunt) {
         }
       }
     },
-    watch: {
-      scripts: {
-        files: ['js/**/*.js'],
-        tasks: ['jshint', 'uglify']
+    criticalcss: {
+      custom_options: {
+        options: {
+          url: '/index.php',
+          width: 1200,
+          height: 900,
+          outputfile: "critical.css"
+        }
+      }
+    },
+    imageoptim: {
+      myPngs: {
+        options: {
+          jpegMini: false,
+          imageAlpha: true,
+          quitAfter: true
+        },
+        src: ['images/**/*.png']
       },
-      css: {
-        files: ['sass/**/*.scss', 'easter/*.scss'],
-        tasks: ['sass']
+      myJpgs: {
+        options: {
+          jpegMini: false,
+          imageAlpha: false,
+          quitAfter: true
+        },
+        src: ['images']
       }
     }
   });
 
   require('load-grunt-tasks')(grunt);
 
-  grunt.registerTask('default', ['sass', 'jshint', 'uglify']);
-
-  grunt.registerTask('deploy', ['devUpdate', 'imagemin', 'svgmin', 'sass', 'jshint', 'uglify']);
+  grunt.registerTask('default', ['htmlmin', 'svgmin', 'webp']);
 
 };

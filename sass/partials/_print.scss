@@ -1,0 +1,49 @@
+@media print {
+
+  * {
+    background: none;
+    box-shadow: none;
+    color: #000;
+    text-shadow: none;
+  }
+
+  a {
+    text-decoration: underline;
+    border: 0 !important;
+    font-size: 1em;
+  }
+
+  .Page-front .Sitehead,
+  .Page-about .Sitehead,
+  .About-library footer,
+  .Printlink,
+  .About-theBoringStuff header p,
+  .Sitehead-logo,
+  .Worklist-itemInner a,
+  .Pagenav,
+  .Octocat {
+    display: none;
+  }
+
+  .Canvas {
+    overflow: visible !important;
+  }
+
+  .Worklist-item {
+    text-align: left;
+    h1 {
+      font-size: 24px;
+    }
+  }
+
+  section {
+    page-break-before: always;
+  }
+
+
+  // TODO: Remove when resume is printable
+  .About-library {
+    display: none;
+  }
+
+}

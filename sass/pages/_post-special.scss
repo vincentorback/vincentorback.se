@@ -1,0 +1,122 @@
+
+
+
+
+
+
+$post-names: ("i-commit-from-my-heart", "smooth-scrolling-with-css", "take-10-and-learn-typography", "using-webp-images");
+
+@for $i from 1 through length($post-names) {
+  .Post--#{nth($post-names, $i)} .Sitehead-cover {
+    background-image: url("#{$images}/posts/#{nth($post-names, $i)}.jpg");
+  }
+}
+
+
+
+
+.Post--take-10 {
+  .Sitehead {
+    text-shadow: rgba(0,0,0,.1) 0 1px 2px;
+  }
+}
+
+
+
+.Post--hyperakt {
+  .Sitemain {
+    padding-bottom: 0;
+  }
+  .Sitehead {
+    height: 90%;
+  }
+  .Sitehead-inner {
+    transform: none;
+    top: auto;
+    bottom: 5%;
+  }
+  .Sitehead-inner,
+  .Sitehead-title {
+    animation: none !important;
+  }
+  .Sitehead-cover {
+    background-image: url("#{$images}/about/header.jpg");
+  }
+  .u-marginN {
+    margin-top: 2em;
+    margin-bottom: .5em;
+  }
+  .Entry {
+    ol {
+      font-size: .8em;
+      list-style-position: outside;
+      margin-bottom: 4em;
+    }
+    li {
+      margin-bottom: .75em;
+    }
+  }
+}
+
+.Map {
+  height: 200px;
+  @include respond-min(1000px) {
+    height: 500px;
+  }
+}
+
+
+
+.Post--using-webp-images {
+
+  // No WebP support
+  .no-webp &, .no-js & {
+    .no-webp-info {
+      color: $red;
+      text-align: center;
+      font-size: 1.2em;
+    }
+    .webp-images {
+      display: none;
+    }
+  }
+
+  // WebP support
+  .webp & {
+    .no-webp-info {
+      display: none;
+    }
+    .webp-images {
+      @extend %clearfix;
+      text-align: center;
+    }
+    .col {
+      width: 50%;
+      float: left;
+      margin: 5% 0;
+
+      color: #999;
+      font-style: italic;
+      font-family: $serif;
+      a {
+        display: block;
+      }
+      img {
+        margin: 0;
+      }
+    }
+    .turn img {
+      transform: scaleX(-1);
+    }
+
+
+
+    @include respond-max(900px) {
+      .col {
+        float: none;
+        width: 100%;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,66 @@
+//$images: "//d3dx0f1ge67l9j.cloudfront.net/images";
+//$images: "//d3dx0f1ge67l9j.cloudfront.net/webp";
+//$fonts: "//d3dx0f1ge67l9j.cloudfront.net/fonts";
+
+$images: "../images";
+$webp: "../webp";
+$fonts: "../fonts";
+
+
+
+
+$section-spacing: 100px;
+$section-spacing-mobile: 50px;
+
+
+
+
+
+/* Colors */
+$red: #ff7d6f;
+$red2: #eb506c;
+$pink: #ff7fa5;
+$blue: #1eb0e9;
+$blue2: #00a2e0;
+$teal: #c3e3e7;
+$text: #222;
+$paper: #fefef6;
+
+$green: #2ecc71;
+$yellow: #f1c40f;
+$orange: #f39c12;
+
+
+/* Client colors */
+$coop: #14ab30;
+$coop2: #c6d75d;
+$coop3: #f26f81;
+$arcini: #000;
+$arkdes: #f1c40f;
+$nordiska: #143649;
+$prophet: #6dbea7;
+$prophet2: #f8b447;
+$prophet3: linear-gradient(left, #6dbea7, #f8b447);
+$comai: #ec7f29;
+$jensostberg: #4486f7;
+$joy: #000;
+
+
+
+/* Fonts */
+$sansserif: "Source Sans Pro", "Helvetica Neue", Helvetica, sans-serif;
+$serif: "Charter", "Cambria", Georgia, serif;
+
+
+/* Clients */
+$work-names: ('coop', 'prophet', 'arkdes', 'arcini', 'nordiska', 'comai', 'joy', 'jensostberg', 'test');
+$work-colors: ($coop, $prophet, $arkdes, $arcini, $nordiska, $comai, $joy, $jensostberg, $red);
+
+
+/* Social networks */
+$social-names: ('twitter', 'github', 'linkedin', 'gmail', 'dribbble');
+$social-colors: ('#00aced', '#222', '#007bb6', '#dd4b39', '#ea4c89');
+
+
+/* Pages */
+$page-names: ('front', 'about', 'blog', 'post', 'contact');

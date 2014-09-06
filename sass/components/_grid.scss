@@ -1,0 +1,46 @@
+.Grid {
+  display: flex;
+}
+
+
+.Grid--half .Grid-cell {
+  flex: 0 0 50%;
+}
+
+.Grid--third .Grid-cell {
+  flex: 0 0 33.333%;
+}
+
+.Grid--quarter .Grid-cell {
+  flex: 0 0 25%;
+}
+
+.Grid--fifth .Grid-cell {
+  flex: 0 0 20%;
+}
+
+
+
+
+
+
+
+.Grid-cell {
+  flex: 1;
+}
+
+.Grid-cell--half {
+  flex: 0 0 50%;
+}
+
+.Grid-cell--third {
+  flex: 0 0 33.333%;
+}
+
+.Grid-cell--quarter {
+  flex: 0 0 25%;
+}
+
+.Grid-cell--fifth {
+  flex: 0 0 20%;
+}

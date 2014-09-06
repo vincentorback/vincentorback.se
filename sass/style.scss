@@ -1,27 +1,101 @@
-@import "compass/css3";
+@import "variables";
 
-@import "partials/variables";
+@import "mixins";
 
-@import "partials/reset";
+@import "functions";
+
+
+/** Utlilities */
+@import "utilities/color";
+
+@import "utilities/display";
+
+@import "utilities/layout";
+
+@import "utilities/position";
+
+@import "utilities/text";
+
+@import "utilities/size";
+
+@import "utilities/states";
+
+
+
+/** Partials */
+@import "partials/normalize";
 
 @import "partials/animations";
 
-@import "partials/basics";
+@import "partials/fonts";
 
-@import "partials/header";
+@import "partials/base";
+
+@import "partials/typography";
 
 @import "partials/main";
 
+@import "partials/print";
 
-@import "pages/arbeten";
-
-@import "pages/ommig";
-
-@import "pages/kontakt";
-
-@import "pages/blogg";
+@import "partials/prism";
 
 
-@import "partials/footer";
 
-@import "partials/media-querys";
+/** Components */
+@import "components/pageNavigation";
+
+@import "components/sitehead";
+
+@import "components/navigation";
+
+@import "components/comments";
+
+@import "components/sitefooter";
+
+@import "components/alert";
+
+
+
+/** Pages */
+@import "pages/front-page";
+
+@import "pages/work";
+
+@import "pages/about";
+
+@import "pages/contact";
+
+@import "pages/blog";
+
+@import "pages/post";
+
+@import "pages/post-special";
+
+//@import "pages/search";
+
+@import "pages/fourofour";
+
+
+
+
+.is-easter {
+  // show easter eggs?
+}
+
+.is-christmas {
+  // make it snow!
+}
+
+// Rainbow header
+.is-pride {
+  &.Page-front .Sitehead {
+    background: linear-gradient(90deg, $red 0, $red 12.5%, $orange 12.5%, $orange 25%, $yellow 25%, $yellow 37.5%, $green 37.5%, $green 50%, #1972dd 50%, #1972dd 62.5%, #8000FF 62.5%, #8000FF 75%, $red 75%, $red 87.5%, $orange 87.5%, $orange 100%);
+  }
+}
+
+
+
+
+
+
+

@@ -1,0 +1,77 @@
+@import "variables";
+
+@import "mixins";
+
+@import "functions";
+
+
+@for $i from 1 through length($page-names) {
+  @if index("about" "blog" "contact", #{nth($work-names, $i)}) {
+    .Page--#{nth($page-names), $i} .Sitehead-cover {
+      background-image: url("#{$images}/#{nth($page-names, $i)}/header.jpg");
+    }
+  }
+}
+
+
+
+
+
+// Can’t see if WebP is supportetd.
+@for $i from 1 through length($work-names) {
+  .Work--#{nth($work-names, $i)} .Sitehead-cover, .Worklist-item--#{nth($work-names, $i)} {
+    background-image: url("#{$images}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb.jpg");
+  }
+}
+
+
+
+
+// Comments wont load
+.no-js-warning {
+  text-align: center;
+  color: #999;
+}
+
+
+
+
+
+// Alternative without off-canvas navigation
+@include respond-max(800px) {
+  .Sitehead-logo {
+    width: 100%;
+    text-align: center;
+    float: none;
+  }
+  .Navigation {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    transform: none;
+    visibility: visible;
+    background: transparent;
+    z-index: 12;
+
+    ul {
+      position: static;
+      transform: none;
+    }
+
+    li {
+      display: inline-block;
+      width: 50%;
+    }
+
+    a {
+      font-size: 1em;
+      padding: .5em 0;
+    }
+  }
+}
+
+.Navigation-toggle {
+  display: none !important;
+}

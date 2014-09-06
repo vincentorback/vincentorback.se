@@ -1,0 +1,180 @@
+
+
+$canvasWidth: 300px;
+$canvasWidth-mobile: 240px;
+$canvasTransition: transform 500ms ease, visibility 500ms linear;
+$threshold: 800px;
+
+
+
+
+.Navigation {
+  position: absolute;
+  top: 2em;
+  right: 7%;
+  right: calc(5% - 1.75em);
+  z-index: 9;
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    display: block;
+    padding: 1em 2.25em;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+
+  .is-active {
+
+  }
+
+  @include respond-max($threshold) {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    width: $canvasWidth;
+    height: 100%;
+
+    background: #fff;
+
+    visibility: hidden;
+    opacity: 1;
+
+    transform: translate3d(#{$canvasWidth - 60px},0,0);
+    transition: $canvasTransition;
+
+    ul {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      transform: translateY(-50%);
+    }
+
+    li {
+      display: block;
+      &:last-child a {
+        padding-right: 0;
+      }
+    }
+
+    a {
+      display: block;
+      color: $blue;
+      padding: .5em 0 0 1em;
+      font-size: 1.75em;
+
+      &.is-active span {
+        border-bottom: 3px solid $blue;
+      }
+      &:hover {
+        opacity: .7;
+      }
+    }
+
+    .nav-isOpen & {
+      transform: translate3d(0, 0, 0);
+      transition: $canvasTransition;
+      visibility: visible;
+    }
+  }
+  @include respond-max($canvasWidth + 100px) {
+    width: $canvasWidth-mobile;
+    transform: translate3d(#{$canvasWidth-mobile - 60px},0,0);
+  }
+}
+
+
+
+
+.Navigation .Navigation-social {
+  position: absolute;
+  top: auto;
+  left: 0;
+  bottom: 0;
+  transform: none;
+  text-align: right;
+
+  display: none;
+
+  li {
+    display: inline-block;
+  }
+  a {
+    padding: .55em .55em .55em 0 !important;
+  }
+
+  @include respond-max($threshold) {
+    display: block;
+  }
+}
+
+
+
+
+.Canvas, .Content {
+  position: relative;
+  height: 100%;
+}
+@include respond-max($threshold) {
+  body {
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+  .Canvas {
+    //overflow-x: hidden;
+    //overflow-y: visible;
+  }
+
+  .Content {
+    position: relative;
+    left: 0;
+    height: 100%;
+    transition: $canvasTransition;
+    z-index: 10;
+
+    .nav-isOpen & {
+      transform: translate3d(-#{$canvasWidth}, 0, 0);
+    }
+  }
+}
+@include respond-max($canvasWidth + 100px) {
+  .nav-isOpen .Content {
+    transform: translate3d(-#{$canvasWidth-mobile}, 0, 0);
+  }
+}
+
+
+
+
+
+.Navigation-toggle {
+  position: absolute;
+  top: .75em;
+  right: 5.5%;
+  z-index: 10;
+
+  padding: .65em 1em;
+
+  border: 1px solid #fff;
+  border-radius: 4px;
+
+  background: transparent;
+  font-size: .85em;
+  color: #fff;
+
+  display: block;
+
+  .no-touch &:hover {
+    background: #fff;
+    color: $blue;
+  }
+
+  @include respond-min($threshold) {
+    display: none;
+  }
+
+}

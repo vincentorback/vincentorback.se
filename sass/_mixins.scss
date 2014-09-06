@@ -1,0 +1,26 @@
+@mixin respond-min($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin respond-max($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin respond-min-max($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+
+
+
+
+@mixin rem($target) {
+  font-size: ($target) + 0px;
+  font-size: ($target / 16) + 0rem;
+}

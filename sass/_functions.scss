@@ -1,0 +1,23 @@
+%clearfix {
+  &:after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+}
+
+
+%center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+@function em($target, $context: 16) {
+  @return ($target / $context) + 0em;
+}
+
+@function rem($target) {
+  @return ($target / 16) + 0rem;
+}
