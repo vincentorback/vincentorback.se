@@ -15,12 +15,13 @@
     animation: none !important;
   }
   @include respond-max(800px) {
-    .Sitehead {
-      height: auto;
-    }
     .Sitehead-inner {
-      position: static;
-      padding: 40% 0 20% 0;
+      position: absolute;
+      top: 40%;
+      text-align: center;
+    }
+    .Sitehead-subtitle {
+      max-width: none;
     }
   }
 }
