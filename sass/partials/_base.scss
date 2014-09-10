@@ -5,7 +5,6 @@
 }
 
 html {
-	text-size-adjust: none;
 	height: 100%;
 }
 
@@ -32,15 +31,9 @@ input, textarea, button {
   -ms-appearance: none;
 	border: none;
 	outline: none;
-	font-family: $sansserif;
 	font-size: 1rem;
 	border-radius: 0;
   background: transparent;
-  color: $text;
-}
-
-button {
-  cursor: pointer;
 }
 
 ::placeholder {
