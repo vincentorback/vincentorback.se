@@ -1,3 +1,4 @@
+/*
 @keyframes animated-bg {
   0% {background: $blue;}
   20% {background: $blue;}
@@ -9,9 +10,7 @@
   95% {background: $red;}
   100%{background: $blue;}
 }
-
-
-
+*/
 @keyframes fadeinTop {
   0% {
     opacity: 0;
@@ -44,7 +43,7 @@
 }
 
 
-
+/*
 @keyframes fadeoutBottom {
   0% {
     opacity: 1;
@@ -93,7 +92,7 @@
 %moveinBottom {
   animation: moveinBottom 700ms ease 1;
 }
-
+*/
 
 
 @keyframes fadein {
@@ -110,7 +109,7 @@
 }
 
 
-
+/*
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
@@ -125,7 +124,6 @@
 }
 
 
-
 @keyframes moveToRight {
   80% { transform: translateX(250%); }
   81% { opacity: 1; transform: translateX(250%); }
@@ -135,7 +133,7 @@
   100% { transform: translateX(0%); }
 }
 
-
+*/
 @keyframes shake {
   0% {transform: translateX(0);}
   12.5% {transform: translateX(-6px) rotateY(-5deg)}
@@ -147,4 +145,31 @@
 
 %shake {
   animation: shake 400ms ease-in-out;
+}
+
+
+
+
+
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+%bounce {
+  animation: bounce 2000ms ease-in-out infinite;
 }
