@@ -110,6 +110,9 @@
     font-size: .845em;
   }
 
+  @include respond-min(1600px) {
+    font-size: 1.2em;
+  }
   @include respond-max(850px) {
     font-size: .8em;
     padding-top: 2em;

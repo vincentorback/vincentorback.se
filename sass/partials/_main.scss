@@ -27,6 +27,9 @@
 .u-wrapper--M {
   @extend %wrapper;
   max-width: 1140px;
+  @include respond-min(1600px) {
+    max-width: 1300px;
+  }
 }
 
 .u-wrapper--L {

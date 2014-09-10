@@ -30,6 +30,9 @@ $threshold: 800px;
 
   }
 
+  @include respond-min(1600px) {
+    font-size: 1.2em;
+  }
   @include respond-max($threshold) {
     position: fixed;
     top: 0;

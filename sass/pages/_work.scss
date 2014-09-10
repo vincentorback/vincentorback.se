@@ -88,7 +88,6 @@
   blockquote {
     margin: 3rem 0;
   }
-
   @include respond-max(800px) {
     .u-wrapper {
       max-width: 550px;
@@ -161,6 +160,13 @@
     }
     span {
       display: none;
+    }
+  }
+  @include respond-max (400px) {
+    > a {
+      padding: .6em .8em;
+      letter-spacing: 0;
+      border-radius: 20px;
     }
   }
 }
@@ -358,11 +364,6 @@
           text-shadow: rgba(0,0,0,.3) 0 1px 2px;
         }
       }
-      @include respond-max(600px) {
-        .Sitehead-title {
-          text-shadow: rgba(0,0,0,.4) 0 1px 1px;
-        }
-      }
     }
   }
 
@@ -419,6 +420,12 @@
         @include respond-min(800px) {
           border-color: $text;
         }
+      }
+    }
+    @if index("nordiska" "asd", #{nth($work-names, $i)}) {
+      @include respond-max(800px) {
+        background-size: cover !important;
+        background-position: 100% 50%;
       }
     }
   }

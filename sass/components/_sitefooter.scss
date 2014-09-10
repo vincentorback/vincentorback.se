@@ -6,6 +6,9 @@
   border-top: 1px solid #eee;
   overflow: hidden;
 
+  @include respond-min(1600px) {
+    font-size: 1.4em;
+  }
   @include respond-max(800px) {
     font-size: .85em;
   }
