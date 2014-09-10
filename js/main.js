@@ -27,6 +27,7 @@
     body = doc.body || doc.getElementsByTagName('body')[0],
     $body = $(body),
     winWidth = getViewport().width,
+    winHeight = getViewport().height,
     vincent;
 
   vincent = {
@@ -119,18 +120,23 @@
     },
 
     workHeight: function () {
-      var minHeight = 380,
-        winHeight,
-        workHeight;
+      var workHeight;
 
       function setHeight() {
         winHeight = getViewport().height;
         winWidth = getViewport().width;
-        workHeight = (winHeight > minHeight) ? window.innerHeight : minHeight;
+        workHeight = 900;
 
-        if (winHeight > winWidth) {
-          workHeight = (workHeight < 200) ? 200 : window.innerHeight * 0.8;
+        if (winHeight > winWidth || winHeight < 900) {
+          workHeight = winHeight * 0.95;
         }
+
+        if (winHeight < 600 && winWidth > 800) {
+          workHeight = 600;
+        }
+
+
+        console.log(workHeight, winHeight);
 
         $body.find('.WorkItem').height(workHeight);
       }
@@ -217,7 +223,7 @@
         }
 
         targetHeight = $target.height();
-        windowHeight = win.innerHeight;
+        windowHeight = getViewport().height;
 
         if (windowHeight > targetHeight) {
           scrollOffset = ((windowHeight - targetHeight) / 2) - targetHeight;
@@ -258,13 +264,15 @@
           minFontSize: '40px',
           maxFontSize: ((winWidth > 1600) ? '200px' : '100px')
         });
-        $body.find('.Sitehead').find('.Sitehead-title').fitText(0.8, {
-          minFontSize: '40px',
-          maxFontSize: '100px'
+        $body.find('.Sitehead').find('.Sitehead-title').fitText(1, {
+          minFontSize: '30px',
+          maxFontSize: ((winWidth > 1600) ? '200px' : '100px')
         });
-      }
-
-      if (doc.getElementById('page-work')) {
+        $body.find('.Sitehead').find('.Sitehead-subtitle').fitText(1, {
+          minFontSize: '30px',
+          maxFontSize: '70px'
+        });
+      } else if (doc.getElementById('page-work')) {
         $body.find('.Sitehead').find('.Sitehead-title').fitText(0.8, {
           minFontSize: '40px',
           maxFontSize: ((winWidth > 1600) ? '200px' : '100px')
@@ -304,7 +312,6 @@
 
     pageTransitionHalf: function () {
       var href,
-        winHeight = win.innerHeight,
         $header = $body.find('.Sitehead'),
         $main = $body.find('.Sitemain'),
         $cover = $header.find('.Sitehead-cover'),
@@ -316,8 +323,7 @@
         transDone = false,
         bgCover,
         cover,
-        page,
-        imageFormat = (Modernizr.webp) ? 'webp' : 'jpg';
+        page;
 
       $body.find('.js-transitionHalf').on('click', function (e) {
 
@@ -333,14 +339,14 @@
 
         if (href.indexOf('post') > -1) {
           page = e.currentTarget.getAttribute('data-slug');
-          cover = vincent.amazon + '/images/posts/' + page + '.' + imageFormat;
+          cover = vincent.amazon + '/images/posts/' + page + '.jpg';
         } else {
           page = href.replace('/', '');
           page = page.replace('/', '');
           if (page === 'about-me') {
             page = 'about';
           }
-          cover = vincent.amazon + '/images/' + page + '/header.' + imageFormat;
+          cover = vincent.amazon + '/images/' + page + '/header.jpg';
         }
 
 
@@ -361,11 +367,13 @@
           easing: 'ease'
         });
 
+
+
         $header
           .velocity({
             height: '65%',
-            minHeight: '400px',
-            maxHeight: '800px',
+            //minHeight: '400px',
+            //maxHeight: '800px',
             backgroundColor: vincent.colors.black
           }, {
             duration: 400,
@@ -434,7 +442,6 @@
 
     pageTransitionFull: function () {
       var href,
-        winHeight = win.innerHeight,
         $header = $body.find('.Sitehead'),
         $main = $body.find('.Sitemain'),
         $cover = $header.find('.Sitehead-cover'),
@@ -462,7 +469,7 @@
         });
 
         $body.find('#navigation a').velocity({
-          color: vincent.colors.white
+          color: vincent.colors.blue
         }, {
           duration: 500,
           easing: 'ease'
@@ -471,7 +478,7 @@
         $header.velocity({
           height: winHeight,
           maxHeight: '100%',
-          backgroundColor: vincent.colors.blue
+          backgroundColor: vincent.colors.white
         }, {
           duration: 500,
           easing: 'ease',
@@ -557,7 +564,7 @@
         });
 
         $target.velocity({
-          height: (window.innerHeight * 0.65) + 'px'
+          height: (getViewport().height * 0.65) + 'px'
         }, {
           duration: 500,
           easing: 'ease',
@@ -596,7 +603,7 @@
         });
 
         $footer.velocity({
-          paddingBottom: win.innerHeight + 'px',
+          paddingBottom: getViewport().height + 'px',
           opacity: 0
         }, {
           duration: 50,
@@ -880,7 +887,7 @@
 */
     lazyLoad: function () {
       $body.find('.Sitemain').find('.lazy').lazyload({
-        threshold: win.innerHeight
+        threshold: winHeight
       });
     },
 
