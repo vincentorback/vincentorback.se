@@ -1,9 +1,6 @@
 .Page-blog {
   .Sitemain {
-    padding: $section-spacing 0;
-    @include respond-min(1600px) {
-      padding: $section-spacing-large;
-    }
+    padding: $section-spacing-large 0;
     @include respond-max(800px) {
       padding: $section-spacing-mobile 0;
     }
@@ -14,7 +11,7 @@
 
 
 .Excerpt {
-  margin-bottom: $section-spacing;
+  margin-bottom: $section-spacing-large;
 
   &:last-child {
     margin-bottom: 0;
@@ -29,9 +26,6 @@
     }
   }
 
-  @include respond-min(1600px) {
-    margin-bottom: $section-spacing-large;
-  }
   @include respond-max(800px) {
     margin-bottom: $section-spacing-mobile;
   }
