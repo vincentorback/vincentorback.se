@@ -1,27 +1,55 @@
 .Page-front {
-  background: $blue;
+
+  .Navigation a, .Navigation-toggle {
+    color: $blue;
+    border-color: $blue;
+  }
 
   .Sitehead {
     height: 100%;
     max-height: none;
-    background: $blue;
+    background: #fff;
   }
   .Sitehead-inner {
     top: auto;
-    bottom: 15%;
+    bottom: 10%;
+
+    color: $blue;
+
     @extend %fadeinBottom;
+  }
+  .Sitehead-title,
+  .Sitehead-subtitle {
+    margin: 0;
+    font-weight: 600;
+    line-height: 1.2;
   }
   .Sitehead-title {
     animation: none !important;
   }
+  .Sitehead-subtitle {
+    max-width: none;
+    a {
+      font-size: .5em;
+      margin-top: 1em;
+      display: block;
+      color: $blue;
+      &:hover i {
+        @extend %bounce;
+      }
+    }
+    i {
+      display: inline-block;
+      &:before {
+        top: 0;
+        left: 5px;
+        font-size: .7em;
+      }
+    }
+  }
   @include respond-max(800px) {
     .Sitehead-inner {
-      position: absolute;
-      top: 40%;
-      text-align: center;
-    }
-    .Sitehead-subtitle {
-      max-width: none;
+      top: 35%;
     }
   }
 }
