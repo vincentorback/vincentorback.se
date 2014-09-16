@@ -4,23 +4,20 @@
 
 @import "functions";
 
-
-
-
 @font-face {
   font-family: 'Charter';
-  src: url('/#{$fonts}/charter_regular-webfont.eot');
-  src: url('/#{$fonts}/charter_regular-webfont.eot?#iefix') format('embedded-opentype'),
-    url('/#{$fonts}/charter_regular-webfont.woff') format('woff');
+  src: url('#{$fonts}/charter_regular-webfont.eot');
+  src: url('#{$fonts}/charter_regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('#{$fonts}/charter_regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'vincent';
-  src: url('/#{$fonts}/vincent.eot');
-  src: url('/#{$fonts}/vincent.eot?#iefix') format('embedded-opentype'),
-    url('/#{$fonts}/vincent.woff') format('woff');
+  src: url('#{$fonts}/vincent.eot');
+  src: url('#{$fonts}/vincent.eot?#iefix') format('embedded-opentype'),
+    url('#{$fonts}/vincent.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -39,6 +36,10 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon {
+  visibility: visible;
 }
 
 .icon, .icon:before  {
