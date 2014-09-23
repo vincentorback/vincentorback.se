@@ -14,19 +14,21 @@
 
 body {
   position: relative;
-  background: $blue;
+  background: $red;
   font-family: $sansserif;
-  font-weight: 400;
-  font-size: 110%;
+  font-size: 100%;
   line-height: 1.5;
   color: #fff;
   margin: 0;
 }
 
+h1, h2, strong {
+  font-weight: 500;
+}
+
 a {
   color: #fff;
   display: block;
-  padding: 1.5em 2.25em;
   text-decoration: none;
   letter-spacing: 1px;
 }
@@ -54,12 +56,17 @@ body,
 .Sitehead-inner {
   position: absolute;
   top: auto;
-  bottom: 15%;
+  bottom: 20%;
 }
+
+.Sitehead-inner a {
+  font-size: .5em;
+  margin-top: 1em;
+}
+
 .Sitehead-title {
-  font-size: 125px;
+  font-size: 120px;
   line-height: 1;
-  font-weight: 600;
   margin: 0;
 }
 .Sitehead-subtitle {
@@ -68,7 +75,6 @@ body,
   letter-spacing: 1px;
   line-height: 1.2;
   font-size: 1.75em;
-  max-width: 675px;
 }
 
 .Navigation {
@@ -78,10 +84,26 @@ body,
   right: calc(5% - 1.75em);
   font-size: 1.05em;
 }
+
+.Navigation a {
+  padding: 1.5em 2.25em;
+}
+
 .Navigation-toggle {
   display: none;
 }
 
 .Sitemain {
   background: $coop;
+}
+
+
+@include respond-max($threshold) {
+  .Sitehead-inner {
+    top: 50%;
+    bottom: auto;
+  }
+  .Navigation {
+    display: none;
+  }
 }

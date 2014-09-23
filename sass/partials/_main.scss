@@ -19,9 +19,6 @@
 .u-wrapper--S {
   @extend %wrapper;
   max-width: 730px;
-  @include respond-min(1600px) {
-    max-width: 960px;
-  }
 }
 
 .u-wrapper--M {
@@ -75,7 +72,7 @@
  */
 .disable-hover,
 .disable-hover * {
-  pointer-events: none !important;
+  pointer-events: none;
 }
 
 

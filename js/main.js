@@ -11,15 +11,6 @@
     };
   }
 
-  // Browser sniffing for iOS versions. Supports iOS 2.0 and later
-  function iOSversion() {
-    if (/iP(hone|od|ad)/.test(navigator.platform)) {
-      var version = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
-      return [parseInt(version[1], 10), parseInt(version[2], 10), parseInt(version[3] || 0, 10)];
-    }
-    return false;
-  }
-
   var win = window,
     doc = win.document,
     docElem = doc.documentElement,
@@ -47,7 +38,7 @@
       }());
 
       vincent.colors = {
-        blue: '#1eb0e9',
+        red: '#ff4e00',
         white: '#fff',
         black: '#000'
 /*
@@ -65,11 +56,11 @@
 */
       };
 
-      vincent.fitText();
+      //vincent.fitText();
 
       vincent.navToggle();
 
-      if ((Modernizr.touch === false || iOSversion()[0] > 7) && Modernizr.csstransforms3d) {
+      if ((Modernizr.touch === false) && Modernizr.csstransforms3d) {
         vincent.parallaxHead();
       }
 
@@ -134,9 +125,6 @@
         if (winHeight < 600 && winWidth > 800) {
           workHeight = 600;
         }
-
-
-        console.log(workHeight, winHeight);
 
         $body.find('.WorkItem').height(workHeight);
       }
@@ -257,7 +245,7 @@
         win.requestAnimFrame(disableScroll);
       }, false);
     },
-
+/*
     fitText: function () {
       if (doc.getElementById('page-front')) {
         $body.find('.WorkItem-title').fitText(0.8, {
@@ -266,11 +254,7 @@
         });
         $body.find('.Sitehead').find('.Sitehead-title').fitText(1, {
           minFontSize: '30px',
-          maxFontSize: ((winWidth > 1600) ? '200px' : '100px')
-        });
-        $body.find('.Sitehead').find('.Sitehead-subtitle').fitText(1, {
-          minFontSize: '30px',
-          maxFontSize: '70px'
+          maxFontSize: ((winWidth > 1600) ? '120px' : '80px')
         });
       } else if (doc.getElementById('page-work')) {
         $body.find('.Sitehead').find('.Sitehead-title').fitText(0.8, {
@@ -284,7 +268,7 @@
         });
       }
     },
-
+*/
     pageTransition: function () {
       var href;
 
@@ -469,7 +453,7 @@
         });
 
         $body.find('#navigation a').velocity({
-          color: vincent.colors.blue
+          color: vincent.colors.white
         }, {
           duration: 500,
           easing: 'ease'
@@ -478,7 +462,7 @@
         $header.velocity({
           height: winHeight,
           maxHeight: '100%',
-          backgroundColor: vincent.colors.white
+          backgroundColor: vincent.colors.red
         }, {
           duration: 500,
           easing: 'ease',
@@ -835,8 +819,8 @@
         //mediaHeight: 900,
         speed: 0.4,
         coverRatio: 0.85,
-        parallax: true,
-        touch: (Modernizr.touch === true || iOSversion()[0] < 8)
+        parallax: (Modernizr.csstransforms3d === true),
+        touch: Modernizr.touch === true
       });
     },
 /*

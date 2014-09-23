@@ -1,24 +1,31 @@
 //$images: "//d3dx0f1ge67l9j.cloudfront.net/images";
 //$webp: "//d3dx0f1ge67l9j.cloudfront.net/webp";
-//$fonts: "//d3dx0f1ge67l9j.cloudfront.net/fonts";
+$fonts: "//d3dx0f1ge67l9j.cloudfront.net/fonts";
 
 $images: "../images";
 $webp: "../webp";
-$fonts: "../fonts";
+//$fonts: "../fonts";
 
 
 
 
 $section-spacing: 100px;
 $section-spacing-large: 150px;
-$section-spacing-mobile: 75px;
+$section-spacing-mobile: 60px;
 
+
+
+
+$canvasWidth: 300px;
+$canvasWidth-mobile: 240px;
+$canvasTransition: transform 500ms ease, visibility 500ms linear;
+$threshold: 800px;
 
 
 
 
 /* Colors */
-$red: #ff7d6f;
+$red: #ff4e00;
 $red2: #eb506c;
 $pink: #ff7fa5;
 $blue: #1eb0e9;

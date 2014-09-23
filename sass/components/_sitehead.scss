@@ -16,8 +16,15 @@
     height: 100%;
   }
 
+  a {
+    color: #fff;
+  }
+
   @include respond-min(1200px) {
     min-height: 400px;
+  }
+  @include respond-max(600px) {
+    height: 50%;
   }
 }
 
@@ -44,7 +51,7 @@
 }
 
 @for $i from 1 through length($page-names) {
-  @if index("about" "blog" "contact", #{nth($page-names, $i)}) {
+  @if index("front" "about" "blog" "contact", #{nth($page-names, $i)}) {
     .Page-#{nth($page-names, $i)} .Sitehead-cover {
       background-image: url("#{$images}/#{nth($page-names, $i)}/header.jpg");
     }
@@ -110,9 +117,6 @@
     font-size: .845em;
   }
 
-  @include respond-min(1600px) {
-    font-size: 1.2em;
-  }
   @include respond-max(850px) {
     font-size: .8em;
     padding-top: 2em;

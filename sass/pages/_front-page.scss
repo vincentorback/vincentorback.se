@@ -1,20 +1,19 @@
+
 .Page-front {
 
-  .Navigation a, .Navigation-toggle {
-    color: $blue;
-    border-color: $blue;
+  .Sitehead-cover {
+    display: none;
   }
 
   .Sitehead {
     height: 100%;
     max-height: none;
     background: #fff;
+    background: $red;
   }
   .Sitehead-inner {
     top: auto;
-    bottom: 15%;
-
-    color: $blue;
+    bottom: 20%;
 
     @extend %fadeinBottom;
   }
@@ -29,11 +28,11 @@
   }
   .Sitehead-subtitle {
     max-width: none;
+    font-size: 2em;
     a {
-      font-size: .5em;
+      font-size: .6em;
       margin-top: 1em;
       display: block;
-      color: $blue;
       &:hover i {
         @extend %bounce;
       }
@@ -49,6 +48,7 @@
   }
   @include respond-max(800px) {
     .Sitehead-inner {
+      font-size: .8em;
       top: 35%;
     }
   }
@@ -60,7 +60,7 @@
 
 .WorkItem {
   color: #fff;
-  background-color: $red;
+  //background-color: $red;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 0;
@@ -72,11 +72,15 @@
   height: 400px;
 
   @include respond-max(800px) {
-    //background-position: 50% 50%;
     background-position: 50% 50% !important;
     background-size: auto 100% !important;
     max-height: 400px;
   }
+
+  @include respond-max(500px) {
+    max-height: 350px;
+  }
+
 }
 
 .WorkItem-title {
@@ -137,6 +141,9 @@
     .no-touch &:hover {
       transform: scale(1.08);
     }
+    .no-csstransforms3d & {
+      top: 20%;
+    }
   }
 
   @include respond-min(1600px) {
@@ -148,6 +155,7 @@
   }
 
   @include respond-max(800px) {
+    text-shadow: rgba(0,0,0,.1) 0 1px 2px;
     width: 100%;
     padding: 20% 0;
     p {
@@ -158,9 +166,10 @@
     a {
       margin: 0 .5em 1em 0;
       font-size: .7em;
-      background: #fff;
-      color: $text;
-      border-width: 1px;
+      font-weight: 600;
+      //background: #fff;
+      //color: $text;
+      //border-width: 1px;
     }
   }
 }

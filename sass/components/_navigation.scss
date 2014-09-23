@@ -1,9 +1,6 @@
 
 
-$canvasWidth: 300px;
-$canvasWidth-mobile: 240px;
-$canvasTransition: transform 500ms ease, visibility 500ms linear;
-$threshold: 800px;
+
 
 
 
@@ -12,16 +9,18 @@ $threshold: 800px;
   position: absolute;
   top: 2em;
   right: 7%;
-  right: calc(5% - 1.75em);
+  right: calc(5% - 1.9em);
   z-index: 9;
 
   li {
+    position: relative;
     display: inline-block;
+    margin: 0 .25em;
   }
 
   a {
     display: block;
-    padding: 1em 2.25em;
+    padding: 1em 2em;
     color: #fff;
     letter-spacing: 1px;
   }
@@ -30,9 +29,36 @@ $threshold: 800px;
 
   }
 
-  @include respond-min(1600px) {
-    font-size: 1.2em;
+  @include respond-min($threshold) {
+    a {
+      &:after {
+        content: "";
+        position: absolute;
+        width: 70%;
+        height: 2px;
+        bottom: .5em;
+        left: 0;
+        right: 0;
+        margin: auto;
+
+        background-color: #fff;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 200ms ease 0s;
+        border-radius: 2px;
+      }
+      &:hover:after {
+        visibility: visible;
+        transform: scaleX(1);
+      }
+    }
   }
+
+  @include respond-max(850px) {
+    font-size: .9em;
+    top: 1.5em;
+  }
+
   @include respond-max($threshold) {
     position: fixed;
     top: 0;
@@ -66,12 +92,12 @@ $threshold: 800px;
 
     a {
       display: block;
-      color: $blue;
+      color: $red;
       padding: .5em 0 0 1em;
       font-size: 1.75em;
 
       &.is-active span {
-        border-bottom: 3px solid $blue;
+        border-bottom: 3px solid $red;
       }
       &:hover {
         opacity: .7;
@@ -108,6 +134,10 @@ $threshold: 800px;
   }
   a {
     padding: .55em .55em .55em 0 !important;
+  }
+
+  .no-js & {
+    display: none;
   }
 
   @include respond-max($threshold) {
@@ -173,7 +203,7 @@ $threshold: 800px;
 
   .no-touch &:hover {
     background: #fff;
-    color: $blue;
+    color: $red;
   }
 
   @include respond-min($threshold) {
