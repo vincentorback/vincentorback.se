@@ -25,8 +25,8 @@
 
     init: function () {
 
-      vincent.amazon = '';
-      //vincent.amazon = '//d3dx0f1ge67l9j.cloudfront.net';
+      //vincent.amazon = '';
+      vincent.amazon = '//d3dx0f1ge67l9j.cloudfront.net';
 
       win.requestAnimFrame = (function () {
         return win.requestAnimationFrame  ||
@@ -169,10 +169,10 @@
     },
 
     smoothScroll: function () {
-      var scrollOffset = -5,
-        $target,
-        targetHeight,
-        windowHeight;
+      var $target;
+        //scrollOffset = -5,
+        //targetHeight,
+        //windowHeight;
 
       $body.find('.js-scroll').on('click', function (e) {
 
@@ -199,6 +199,7 @@
         e.preventDefault();
       });
 
+      /*
       $body.find('.js-scrollCenter').on('click', function (e) {
         if (e.metaKey || e.ctrlKey) {
           return;
@@ -231,6 +232,7 @@
 
         e.preventDefault();
       });
+      */
     },
 
     disableHover: function () {
@@ -761,7 +763,7 @@
           }
         });
     },
-
+    /*
     expandable: function () {
       var $target,
         state = true;
@@ -780,7 +782,7 @@
       });
 
     },
-
+    */
     /**
      * Lazy load Disqus comments
      */
@@ -969,8 +971,8 @@
 
         matching = false;
       });
-    },
-
+    }
+    /*
     dateEvents: function () {
       function checkDate(currentDate, startDate, endDate) {
         var minDate = new Date(startDate),
@@ -1018,11 +1020,12 @@
       }
 
     },
+    */
 
 
     /**
      * Replace favicon with page specific icons.
-     */
+
     faviconFun: function () {
       var work = body.className.match(/([\-\-]+[\-A-Z])\w+/g)[0].replace('--', '');
 
@@ -1031,15 +1034,16 @@
         $(head).append('<link href="/images/' + work + '/favicon.png" rel="shortcut icon">');
       });
     }
+    */
 
   };
 
   vincent.init();
 
   FastClick.attach(body);
-
+  /*
   $(win).on('load', function () {
     $body.addClass('is-loaded');
   });
-
+  */
 }(this));
