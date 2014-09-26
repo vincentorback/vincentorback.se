@@ -12,7 +12,8 @@
 <link rel="stylesheet" href="/css/style.css">
 <noscript><link rel="stylesheet" href="/css/noscript.css"></noscript>
 
-<link rel="icon" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
 <!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
 
 <link rel="canonical" href="http://vincentorback.se/blog/">
@@ -23,7 +24,7 @@
 <meta property="og:description" content="Catch up on my latest adventures through the cyberspace!">
 <meta property="og:url" content="http://vincentorback.se/blog/">
 <meta property="og:site_name" content="Vincent Orback">
-<meta property="og:image" content="http://vincentorback.se/images/screenshot.png">
+<meta property="og:image" content="http://d3dx0f1ge67l9j.cloudfront.net/images/screenshot.png">
 
 </head>
 <body id="page-blog" class="Page-blog" onunload="">
@@ -36,9 +37,9 @@
     <li><a href="/contact/" class="js-transitionHalf"><span>Contact</span></a></li>
   </ul>
   <ul class="Navigation-social">
-    <li><a href="https://twitter.com/vorback" class="Social Social--twitter icon icon-twitter" title="@vorback" rel="me"></a></li>
-    <li><a href="https://github.com/vincentorback" class="Social Social--github icon icon-github" title="GitHub" rel="me"></a></li>
-    <li><a href="http://se.linkedin.com/pub/vincent-orback/50/957/457/" class="Social Social--linkedin icon icon-linkedin" title="LinkedIn" rel="me"></a></li>
+    <li><a href="https://twitter.com/vorback" class="Social Social--twitter icon icon-twitter js-track" title="@vorback" rel="me" data-value="menu-twitter"></a></li>
+    <li><a href="https://github.com/vincentorback" class="Social Social--github icon icon-github js-track" title="GitHub" rel="me" data-value="menu-github"></a></li>
+    <li><a href="http://se.linkedin.com/pub/vincent-orback/50/957/457/" class="Social Social--linkedin icon icon-linkedin js-track" title="LinkedIn" rel="me" data-value="menu-linkedin"></a></li>
   </ul>
 </nav>
 
@@ -59,18 +60,6 @@
 </header>
 
 <main id="blog" class="Blog Sitemain" role="main">
-
-  <!--<article class="Excerpt Entry"><a href="/posts/test-post/" class="u-wrapper-S js-transitionHalf" data-slug="test-post">
-    <header class="Excerpt-header">
-      <h1 class="Excerpt-title">Test post</h1>
-      <div class="Excerpt-meta">
-        <p class="Excerpt-metaDate">January 1, 2020</p>
-      </div>
-    </header>
-    <div class="Excerpt-entry">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum illo molestiae quibusdam quod excepturi, rem consectetur earum praesentium, in aliquid.</p>
-    </div>
-  </a></article>-->
 
   <article class="Excerpt Entry"><a href="/posts/using-webp-images/" class="u-wrapper--S js-transitionHalf" data-slug="using-webp-images">
     <header class="Excerpt-header">
@@ -131,7 +120,7 @@
     </div>
     <div class="email" itemprop="email"><a href="mailto:vorback@gmail.com" target="_blank" rel="nofollow">vorback@gmail.com</a></div>
   </div>
-  <a href="https://github.com/vincentorback/Vincent-Orback" target="_blank" class="Octocat Tooltip Tooltip--top">
+  <a href="https://github.com/vincentorback/Vincent-Orback" target="_blank" class="Octocat Tooltip Tooltip--top js-track" data-value="github-footerLink">
     <span class="Tooltip-inner">This website is available on GitHub!</span>
   </a>
 </footer>

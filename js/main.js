@@ -1,5 +1,5 @@
 /* jslint browser: true, indent: 2 */
-/* global $, Modernizr, FastClick */
+/* global $, Modernizr, FastClick, ga */
 
 (function (window) {
   'use strict';
@@ -88,6 +88,8 @@
       vincent.disableHover();
 
       vincent.easterEggs();
+
+      vincent.tracking();
 
       //vincent.resizeAlert();
 
@@ -933,6 +935,19 @@
 
         matching = false;
       });
+    },
+
+    tracking: function () {
+      var value;
+
+      win.setTimeout(function () {
+        $body.find('.js-track').on('click', function () {
+          if (ga) {
+            value = $(this).attr('data-value');
+            ga('send', 'event', 'link', 'click', value);
+          }
+        });
+      }, 300);
     }
     /*
     dateEvents: function () {
