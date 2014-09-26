@@ -29,7 +29,7 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          src: ['*.html', 'work/*.html', 'posts/*.html'],
+          src: ['*.html', 'work/*.html', 'posts/*.html', 'easter/*.html'],
           dest: 'build/'
         }]
       }

@@ -864,7 +864,7 @@
           {
             code: [87, 73, 78, 68, 79, 87, 83], // windows
             magic: function () {
-              $.get(vincent.amazon + '/easter/windows.js', function (response) {
+              $.get(vincent.amazon + '/easter/windows-min.js', function (response) {
                 $('<script>').html(response).appendTo(head).addClass('windowsStyle');
               });
               $.get(vincent.amazon + '/easter/windows.css', function (css) {
@@ -894,7 +894,7 @@
           {
             code: [65, 83, 84, 69, 82, 79, 73, 68, 83], // asteroids
             magic: function () {
-              $.get(vincent.amazon + '/easter/asteroids.js', function (response) {
+              $.get(vincent.amazon + '/easter/asteroids-min.js', function (response) {
                 $('<script>').html(response).appendTo(head).addClass('windowsStyle');
               });
             }
@@ -903,6 +903,22 @@
             code: [80, 82, 73, 68, 69], // pride
             magic: function () {
               $body.toggleClass('is-pride');
+            }
+          },
+          {
+            code: [80, 65, 73, 78, 84], // paint
+            magic: function () {
+              $.get(vincent.amazon + '/easter/paint-min.js', function (response) {
+                $('<script>').html(response).appendTo(head).addClass('paintScript').attr('id', 'paint-script');
+              });
+            }
+          },
+          {
+            code: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65], // konami code
+            magic: function () {
+              $.get(vincent.amazon + '/easter/codelist.html', function (response) {
+                $('<article>').html(response).appendTo(body).addClass('EasterEggs');
+              });
             }
           }
         ],

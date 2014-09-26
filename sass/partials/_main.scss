@@ -168,3 +168,21 @@
 
 
 
+.EasterEggs {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 12;
+  background: #fff;
+  padding: 1em;
+  table {
+    text-align: left;
+  }
+  caption {
+    font-weight: 600;
+  }
+  td {
+    padding: 1em;
+  }
+}
