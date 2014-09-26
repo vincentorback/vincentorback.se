@@ -84,16 +84,11 @@
 }
 
 .WorkItem-title {
-  @include rem(80);
+  font-size: 4.55em;
   line-height: 1;
-  @include respond-max(1100px) {
-    font-size: 64px;
-  }
   @include respond-max(800px) {
     text-shadow: rgba(0,0,0,.1) 0 1px 2px;
-  }
-  @include respond-max(600px) {
-    font-size: 40px;
+    font-size: 3em;
   }
 }
 

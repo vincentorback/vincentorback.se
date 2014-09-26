@@ -77,12 +77,12 @@
 
 
 .Sitehead-title {
-  font-size: 80px;
+  font-size: 4.55em;
   line-height: 1;
   font-weight: 600;
   @extend %fadeinTop;
-  @include respond-max(800px) {
-    font-size: 40px;
+  @media (max-width: 800px), (max-height: 480px) {
+    font-size: 3em;
   }
 }
 

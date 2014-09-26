@@ -41,22 +41,7 @@
         red: '#ff4e00',
         white: '#fff',
         black: '#000'
-/*
-        red: '#ff7d6f',
-        text: '#333',
-        coop: '#14ab30',
-        arcini: '#000',
-        arkdes: '#f1c40f',
-        nordiska: '#143649',
-        prophet: '#000',
-        prophet1: '#6dbea7',
-        prophet2: '#f8b447',
-        comai: '#ec7f29',
-        jensostberg: '#4486f7'
-*/
       };
-
-      //vincent.fitText();
 
       vincent.navToggle();
 
@@ -247,30 +232,7 @@
         win.requestAnimFrame(disableScroll);
       }, false);
     },
-/*
-    fitText: function () {
-      if (doc.getElementById('page-front')) {
-        $body.find('.WorkItem-title').fitText(0.8, {
-          minFontSize: '40px',
-          maxFontSize: ((winWidth > 1600) ? '200px' : '100px')
-        });
-        $body.find('.Sitehead').find('.Sitehead-title').fitText(1, {
-          minFontSize: '30px',
-          maxFontSize: ((winWidth > 1600) ? '120px' : '80px')
-        });
-      } else if (doc.getElementById('page-work')) {
-        $body.find('.Sitehead').find('.Sitehead-title').fitText(0.8, {
-          minFontSize: '40px',
-          maxFontSize: ((winWidth > 1600) ? '200px' : '100px')
-        });
-      } else {
-        $body.find('.Sitehead').find('.Sitehead-title').fitText(1, {
-          minFontSize: '40px',
-          maxFontSize: ((winWidth > 1600) ? '200px' : '100px')
-        });
-      }
-    },
-*/
+
     pageTransition: function () {
       var href;
 
