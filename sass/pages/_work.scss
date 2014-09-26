@@ -57,7 +57,6 @@
     .Sitehead-inner {
       width: 100%;
       max-width: none;
-      //text-align: center;
       a {
         font-size: .9em;
         letter-spacing: 1px;
@@ -105,16 +104,11 @@
   img {
     margin: 0 auto;
     width: auto;
-    max-height: 900px;
+    max-height: 95%;
+    max-height: 95vmin;
   }
-
-  @media (max-height: 1000px) {
-    img {
-      max-height: 95%;
-    }
-  }
-
 }
+/*
 .Work-image--cover {
   img {
     max-width: none;
@@ -131,7 +125,7 @@
     max-width: 730px;
   }
 }
-
+*/
 
 
 
@@ -145,7 +139,8 @@
 
 
 .Work-visit {
-  margin: 10% auto;
+  margin: 0 auto;
+  padding-top: 5%;
   text-align: center;
    > a {
     display: inline-block;
@@ -174,7 +169,7 @@
     > a {
       padding: .6em .8em;
       letter-spacing: 0;
-      border-radius: 20px;
+      border-radius: 10px;
     }
   }
 }
@@ -296,13 +291,13 @@
 
   .Work--#{nth($work-names, $i)} .Sitehead-cover, .WorkItem--#{nth($work-names, $i)} {
 
-    @if index("prophet" "joy", #{nth($work-names, $i)}) {
+    @if index("prophet" "asd", #{nth($work-names, $i)}) {
       background-color: #f4f4f4;
       background-position: 50% 50%;
     } @else {
       background-color: #{nth($work-colors, $i)};
     }
-    @if index("prophet" "comai", #{nth($work-names, $i)}) {
+    @if index("prophet" "asd", #{nth($work-names, $i)}) {
       background-size: cover;
       background-position: 50% 50%;
     }
@@ -328,7 +323,7 @@
    */
   .Work--#{nth($work-names, $i)} {
 
-    @if index("prophet" "joy", #{nth($work-names, $i)}) {
+    @if index("prophet" "asd", #{nth($work-names, $i)}) {
       .Navigation-toggle {
         color: $text;
         border-color: $text;
@@ -354,7 +349,7 @@
       }
     }
 
-    @if index("prophet" "joy", #{nth($work-names, $i)}) {
+    @if index("prophet" "asd", #{nth($work-names, $i)}) {
       .Sitehead a,
       .Sitehead-inner {
         color: $text;
@@ -429,7 +424,7 @@
     a:hover {
       color: #{nth($work-colors, $i)};
     }
-    @if index("prophet" "joy", #{nth($work-names, $i)}) {
+    @if index("prophet" "asd", #{nth($work-names, $i)}) {
       color: $text;
       a {
         color: $text;

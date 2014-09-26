@@ -20,7 +20,7 @@
     color: #fff;
   }
 
-  @include respond-min(1200px) {
+  @include respond-min(800px) {
     min-height: 400px;
   }
   @include respond-max(600px) {

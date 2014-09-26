@@ -65,6 +65,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/build\/easter\/codelist.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/build\/easter\/codelist.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/build\/index.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -106,6 +115,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/build\/posts\/lars.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/build\/posts\/questions.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/build\/posts\/questions.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -303,6 +321,15 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/easter\/codelist.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/easter\/codelist.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/easter\/excanvas-min.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -335,6 +362,28 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
+		},
+	"\/easter\/paint-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/easter\/paint-min.js",
+		"outputAbbreviatedPath": "\/easter\/paint-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/easter\/paint.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/easter\/paint.js",
+		"outputAbbreviatedPath": "\/easter\/paint-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
 		},
 	"\/easter\/valentine.png": {
 		"fileType": 32768,
@@ -377,6 +426,15 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
+		},
+	"\/fonts.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/fonts.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
 		},
 	"\/Gruntfile.js": {
 		"fileType": 64,
@@ -554,6 +612,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/arcini\/arcini1-mobile.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 82434,
+		"inputAbbreviatedPath": "\/images\/arcini\/arcini1-mobile.jpg",
+		"outputAbbreviatedPath": "\/images\/arcini\/arcini1-mobile.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/arcini\/arcini1.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -583,6 +652,17 @@
 		"initialSize": 185770,
 		"inputAbbreviatedPath": "\/images\/arcini\/arcini2.jpg",
 		"outputAbbreviatedPath": "\/images\/arcini\/arcini2.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/arcini\/arcini3-mobile.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 94833,
+		"inputAbbreviatedPath": "\/images\/arcini\/arcini3-mobile.jpg",
+		"outputAbbreviatedPath": "\/images\/arcini\/arcini3-mobile.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -972,6 +1052,237 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/favicons\/apple-touch-icon-114x114.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1617,
+		"inputAbbreviatedPath": "\/images\/favicons\/apple-touch-icon-114x114.png",
+		"outputAbbreviatedPath": "\/images\/favicons\/apple-touch-icon-114x114.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/favicons\/apple-touch-icon-120x120.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1762,
+		"inputAbbreviatedPath": "\/images\/favicons\/apple-touch-icon-120x120.png",
+		"outputAbbreviatedPath": "\/images\/favicons\/apple-touch-icon-120x120.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/favicons\/apple-touch-icon-144x144.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2135,
+		"inputAbbreviatedPath": "\/images\/favicons\/apple-touch-icon-144x144.png",
+		"outputAbbreviatedPath": "\/images\/favicons\/apple-touch-icon-144x144.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/favicons\/apple-touch-icon-152x152.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2197,
+		"inputAbbreviatedPath": "\/images\/favicons\/apple-touch-icon-152x152.png",
+		"outputAbbreviatedPath": "\/images\/favicons\/apple-touch-icon-152x152.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/favicons\/apple-touch-icon-180x180.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2633,
+		"inputAbbreviatedPath": "\/images\/favicons\/apple-touch-icon-180x180.png",
+		"outputAbbreviatedPath": "\/images\/favicons\/apple-touch-icon-180x180.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/favicons\/apple-touch-icon-57x57.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 944,
+		"inputAbbreviatedPath": "\/images\/favicons\/apple-touch-icon-57x57.png",
+		"outputAbbreviatedPath": "\/images\/favicons\/apple-touch-icon-57x57.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/favicons\/apple-touch-icon-60x60.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 902,
+		"inputAbbreviatedPath": "\/images\/favicons\/apple-touch-icon-60x60.png",
+		"outputAbbreviatedPath": "\/images\/favicons\/apple-touch-icon-60x60.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/favicons\/apple-touch-icon-72x72.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1136,
+		"inputAbbreviatedPath": "\/images\/favicons\/apple-touch-icon-72x72.png",
+		"outputAbbreviatedPath": "\/images\/favicons\/apple-touch-icon-72x72.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/favicons\/apple-touch-icon-76x76.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1129,
+		"inputAbbreviatedPath": "\/images\/favicons\/apple-touch-icon-76x76.png",
+		"outputAbbreviatedPath": "\/images\/favicons\/apple-touch-icon-76x76.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/favicons\/apple-touch-icon-precomposed.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2240,
+		"inputAbbreviatedPath": "\/images\/favicons\/apple-touch-icon-precomposed.png",
+		"outputAbbreviatedPath": "\/images\/favicons\/apple-touch-icon-precomposed.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/favicons\/apple-touch-icon.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2633,
+		"inputAbbreviatedPath": "\/images\/favicons\/apple-touch-icon.png",
+		"outputAbbreviatedPath": "\/images\/favicons\/apple-touch-icon.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/favicons\/favicon-160x160.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2343,
+		"inputAbbreviatedPath": "\/images\/favicons\/favicon-160x160.png",
+		"outputAbbreviatedPath": "\/images\/favicons\/favicon-160x160.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/favicons\/favicon-16x16.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 444,
+		"inputAbbreviatedPath": "\/images\/favicons\/favicon-16x16.png",
+		"outputAbbreviatedPath": "\/images\/favicons\/favicon-16x16.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/favicons\/favicon-192x192.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3015,
+		"inputAbbreviatedPath": "\/images\/favicons\/favicon-192x192.png",
+		"outputAbbreviatedPath": "\/images\/favicons\/favicon-192x192.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/favicons\/favicon-32x32.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 632,
+		"inputAbbreviatedPath": "\/images\/favicons\/favicon-32x32.png",
+		"outputAbbreviatedPath": "\/images\/favicons\/favicon-32x32.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/favicons\/favicon-96x96.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1388,
+		"inputAbbreviatedPath": "\/images\/favicons\/favicon-96x96.png",
+		"outputAbbreviatedPath": "\/images\/favicons\/favicon-96x96.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/favicons\/mstile-144x144.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2306,
+		"inputAbbreviatedPath": "\/images\/favicons\/mstile-144x144.png",
+		"outputAbbreviatedPath": "\/images\/favicons\/mstile-144x144.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/favicons\/mstile-150x150.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2428,
+		"inputAbbreviatedPath": "\/images\/favicons\/mstile-150x150.png",
+		"outputAbbreviatedPath": "\/images\/favicons\/mstile-150x150.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/favicons\/mstile-310x150.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2645,
+		"inputAbbreviatedPath": "\/images\/favicons\/mstile-310x150.png",
+		"outputAbbreviatedPath": "\/images\/favicons\/mstile-310x150.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/favicons\/mstile-310x310.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5540,
+		"inputAbbreviatedPath": "\/images\/favicons\/mstile-310x310.png",
+		"outputAbbreviatedPath": "\/images\/favicons\/mstile-310x310.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/favicons\/mstile-70x70.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1411,
+		"inputAbbreviatedPath": "\/images\/favicons\/mstile-70x70.png",
+		"outputAbbreviatedPath": "\/images\/favicons\/mstile-70x70.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/front\/header.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -990,17 +1301,6 @@
 		"initialSize": 3236,
 		"inputAbbreviatedPath": "\/images\/google-play.png",
 		"outputAbbreviatedPath": "\/images\/google-play.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/icons\/favicon.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 633,
-		"inputAbbreviatedPath": "\/images\/icons\/favicon.png",
-		"outputAbbreviatedPath": "\/images\/icons\/favicon.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1089,6 +1389,50 @@
 		"initialSize": 46579,
 		"inputAbbreviatedPath": "\/images\/misc\/vincent2.jpg",
 		"outputAbbreviatedPath": "\/images\/misc\/vincent2.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/nordiska\/new\/nordiska1-mobile.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 91599,
+		"inputAbbreviatedPath": "\/images\/nordiska\/new\/nordiska1-mobile.jpg",
+		"outputAbbreviatedPath": "\/images\/nordiska\/new\/nordiska1-mobile.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/nordiska\/new\/nordiska1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 196621,
+		"inputAbbreviatedPath": "\/images\/nordiska\/new\/nordiska1.jpg",
+		"outputAbbreviatedPath": "\/images\/nordiska\/new\/nordiska1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/nordiska\/new\/nordiska2-mobile.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 99880,
+		"inputAbbreviatedPath": "\/images\/nordiska\/new\/nordiska2-mobile.jpg",
+		"outputAbbreviatedPath": "\/images\/nordiska\/new\/nordiska2-mobile.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/nordiska\/new\/nordiska2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 181768,
+		"inputAbbreviatedPath": "\/images\/nordiska\/new\/nordiska2.jpg",
+		"outputAbbreviatedPath": "\/images\/nordiska\/new\/nordiska2.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1324,6 +1668,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/prophet\/prophet1-mobile.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 99073,
+		"inputAbbreviatedPath": "\/images\/prophet\/prophet1-mobile.jpg",
+		"outputAbbreviatedPath": "\/images\/prophet\/prophet1-mobile.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/prophet\/prophet1.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -1335,6 +1690,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/prophet\/prophet2-mobile.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 74055,
+		"inputAbbreviatedPath": "\/images\/prophet\/prophet2-mobile.jpg",
+		"outputAbbreviatedPath": "\/images\/prophet\/prophet2-mobile.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/prophet\/prophet2.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -1342,6 +1708,17 @@
 		"initialSize": 218900,
 		"inputAbbreviatedPath": "\/images\/prophet\/prophet2.jpg",
 		"outputAbbreviatedPath": "\/images\/prophet\/prophet2.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/prophet\/prophet3-mobile.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 38660,
+		"inputAbbreviatedPath": "\/images\/prophet\/prophet3-mobile.jpg",
+		"outputAbbreviatedPath": "\/images\/prophet\/prophet3-mobile.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1482,6 +1859,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/404.js",
 		"outputAbbreviatedPath": "\/js\/404-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/main-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/main-min.js",
+		"outputAbbreviatedPath": "\/js\/main-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -1914,10 +2302,10 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/sass\/fonts.scss",
-		"outputAbbreviatedPath": "\/css\/fonts.css",
+		"outputAbbreviatedPath": "\/fonts.css",
 		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 1,
-		"outputStyle": 3,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 0,
 		"useLibsass": 0
@@ -2372,6 +2760,17 @@
 		"initialSize": 2.76851e+06,
 		"inputAbbreviatedPath": "\/Underlag\/about.jpg",
 		"outputAbbreviatedPath": "\/Underlag\/about.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/Underlag\/favicon.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 15836,
+		"inputAbbreviatedPath": "\/Underlag\/favicon.png",
+		"outputAbbreviatedPath": "\/Underlag\/favicon.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

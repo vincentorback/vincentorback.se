@@ -72,7 +72,7 @@
  */
 .disable-hover,
 .disable-hover * {
-  pointer-events: none;
+  pointer-events: none !important;
 }
 
 
