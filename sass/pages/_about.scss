@@ -1,7 +1,5 @@
-
-
 .About {
-  padding: $section-spacing 0;
+  padding: #{$section-spacing - 20px} 0 $section-spacing 0;
   h1 {
     font-size: 2em;
   }
@@ -12,7 +10,7 @@
     @extend %fadein;
   }
   @include respond-max(800px) {
-    padding: $section-spacing-mobile 0;
+    padding: #{$section-spacing-mobile - 20px} 0 $section-spacing-mobile 0;
   }
 }
 
@@ -21,7 +19,7 @@
 .Resume, .Library {
   header {
     text-align: left;
-    background: $red;
+    background: $blue;
     color: #fff;
     padding: #{$section-spacing / 2} 0;
     p {
@@ -34,26 +32,10 @@
   }
   a {
     position: relative;
-    font-weight: 600;
     color: $text;
     border: 0;
     display: inline-block;
-    &:after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: $text;
-      visibility: hidden;
-      transform: scaleX(0);
-      transition: all 200ms ease 0s;
-    }
-    &:hover:after {
-      visibility: visible;
-      transform: scaleX(1);
-    }
+    @include hoverLink;
   }
   @include respond-min(1600px) {
     font-size: 1.2em;
@@ -81,7 +63,7 @@
   img {
     float: left;
     max-width: 100px;
-    padding: 0 .5em 0 0;
+    margin: 0 .8em 0 0;
   }
   article {
     margin-bottom: 2em;
@@ -133,14 +115,30 @@
     margin-bottom: .5em;
   }
   @include respond-max(900px) {
+    margin-top: 2em;
     width: 100%;
     float: none;
     > .col {
-      width: 48%;
-      margin-right: 4%;
+      width: 29%;
       float: left;
+      margin-right: 6.5%;
       &:last-child {
         margin-right: 0;
+      }
+    }
+  }
+  @include respond-max(600px) {
+    > .col {
+      width: 44%;
+      float: left;
+      margin-right: 0;
+      &:first-child {
+        margin-right: 6%;
+      }
+      &:last-child {
+        width: 100%;
+        float: none;
+        margin: 0;
       }
     }
   }
@@ -165,6 +163,9 @@
   }
   li {
     margin-top: .5em;
+    &:first-child {
+      margin-top: 0;
+    }
   }
   p, li {
     font-family: $serif;
@@ -195,6 +196,16 @@
     margin: 0 0 1.5em 0;
   }
 }
+
+.Resume-right {
+  h4 {
+    margin-bottom: .5em;
+  }
+}
+
+
+
+
 
 .Printlink {
   width: 95%;

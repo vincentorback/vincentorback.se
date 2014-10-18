@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Using WebP images | Vincent Orback - Web designer och developer in Stockholm</title>
+<title>Using WebP images | Vincent Orback - Web designer and developer in Stockholm</title>
 <meta name="description" content="Are you optimizing your images? You better be! But if not, here are some tips to get you started">
 <meta name="keywords" content="web designer, designer, developer, wordpress, portfolio">
 
-<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
+
 <link rel="stylesheet" href="/css/style.css">
 <noscript><link rel="stylesheet" href="/css/noscript.css"></noscript>
 
@@ -16,18 +16,18 @@
 <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
 <!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
 
-<link rel="canonical" href="http://vincentorback.se/posts/optimizing-images-and-webp/">
-<link rel="author" href="https://plus.google.com/105789918295897205990/posts/">
+<link rel="canonical" href="http://vincentorback.se/blog/optimizing-images-and-webp/">
+<link rel="author" href="https://plus.google.com/105789918295897205990/blog/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Optimizing images and WebP - Vincent Orback">
 <meta property="og:description" content="Are you optimizing your images? You better be! But if not, here are some tips to get you started.">
-<meta property="og:url" content="http://vincentorback.se/posts/optimizing-images-and-webp/">
+<meta property="og:url" content="http://vincentorback.se/blog/optimizing-images-and-webp/">
 <meta property="og:site_name" content="Vincent Orback">
-<meta property="og:image" content="http://d3dx0f1ge67l9j.cloudfront.net/images/screenshot.png">
+<meta property="og:image" content="http://d3dx0f1ge67l9j.cloudfront.net/images/screenshot.jpg">
 
 </head>
-<body id="page-post" class="Page-post Page-blog Post--using-webp-images" onunload="">
+<body id="page-post" class="Page-post Page-blog Post--using-webp-images" onunload="" itemscope itemtype="http://schema.org/Article">
 
 <nav id="navigation" class="Navigation" role="navigation">
   <ul>
@@ -48,13 +48,13 @@
 <header class="Sitehead" role="banner">
   <div class="Sitehead-wrapper">
     <a href="/" class="Sitehead-logo">
-      <h1>Vincent Orback</h1>
+      <h1 itemprop="author">Vincent Orback</h1>
       <h2>Front-end developer & designer</h2>
     </a>
 
     <div class="Sitehead-inner">
-      <h3 class="Sitehead-title">Using WebP images</h3>
-      <p>February 21, 2014</p>
+      <h3 class="Sitehead-title" itemprop="name">Using WebP images</h3>
+      <p itemprop="datePublished">February 21, 2014</p>
     </div>
   </div>
   <button class="Navigation-toggle js-navToggle" type="button" role="button" aria-controls="navigation">Menu</button>
@@ -62,9 +62,9 @@
 </header>
 
 <main class="Blog Sitemain" role="main">
-  <article class="Blog-entry Entry">
+  <article class="Blog-entry Entry" itemprop="articleBody">
     <div class="u-wrapper--S">
-      <p>Are you optimizing your images? You better be! But if not, here are some tips to get you started. Plus some easy guidelines on how to get started with using them and what they are and what not.</p>
+      <p>Are you optimizing your images? You better be! But if not, here are some tips to get you started. Plus some easy guidelines on how to get started with using WebP images, a newish image format from Google.</p>
 
       <p>You might be working hard on reducing your CSS or JS files by writing more compact functions and mushing the files together super hard. But if you look at the bytes you are saving, it doesn’t compare to the size of just on image on your page.</p>
 
@@ -75,8 +75,8 @@
       <br>
 
       <h2>What’s a WebP image?</h2>
-      <p>You might have already heard about them when <a href="https://developers.google.com/speed/webp/">Google introduced it</a> last year (2013). Unfortunately the mainstream use of them didn’t take of as one could have presumed.</p>
-      <p>WebP is a new open image format that uses both lossless and lossy compression. It was developed by Google to reduce image file size to speed up web page loading: its principal purpose is to supersede JPEG as the primary format for photographs on the web. WebP now supports animated images and alpha channel (transparency) in lossy images so they can also supersede PNG images.</p>
+      <p>You might have already heard about them when <a href="https://developers.google.com/speed/webp/">Google introduced it</a> 2013. Unfortunately the mainstream use of them didn’t take of as they might have expected.</p>
+      <p>WebP is a new open image format that uses both lossless and lossy compression. It was developed to reduce image file size to speed up web page loading: its principal purpose is to supersede JPEG as the primary format for photographs on the web. WebP now supports animated images and alpha channel (transparency) in lossy images so they can also supersede PNG images.</p>
 
       <div class="no-webp-info">
         <p>If you use Chrome, Chrome for Android, Android Ice Cream Sandwich or Opera 11+ you can see a demo comparison of a WebP and a JPG image here. Switch browser for a while?</p>
@@ -89,14 +89,14 @@
       </div>
       <div class="u-nbfc">
         <figure class="col">
-          <a href="http://d3dx0f1ge67l9j.cloudfront.net/images/posts/kittyjpg.jpg">
-            <img src="http://d3dx0f1ge67l9j.cloudfront.net/images/posts/kittyjpg.jpg" alt="Kitty Cat JPG" width="1280" height="853">
+          <a href="http://d3dx0f1ge67l9j.cloudfront.net/images/blog/kittyjpg.jpg">
+            <img src="http://d3dx0f1ge67l9j.cloudfront.net/images/blog/kittyjpg.jpg" alt="Kitty Cat JPG" width="1280" height="853">
           </a>
           <figcaption>581 kb</figcaption>
         </figure>
         <figure class="col turn">
-          <a href="http://d3dx0f1ge67l9j.cloudfront.net/images/posts/kittywebp.webp">
-            <img src="http://d3dx0f1ge67l9j.cloudfront.net/images/posts/kittywebp.webp" alt="Kitty Cat WebP" width="1280" height="853">
+          <a href="http://d3dx0f1ge67l9j.cloudfront.net/images/blog/kittywebp.webp">
+            <img src="http://d3dx0f1ge67l9j.cloudfront.net/images/blog/kittywebp.webp" alt="Kitty Cat WebP" width="1280" height="853">
           </a>
           <figcaption>97 kb</figcaption>
         </figure>
@@ -106,19 +106,19 @@
     <div class="u-wrapper--S">
 
       <p>The picture on the left is a JPG saved for the web in Photoshop and then optimized with imagemin. Still the WebP one is a sixth of the size. Now, does this mean that we can reduce website page weight by almost a sixth of their original sizes? Yes!</p>
-      <p>But only in Chrome, Chrome for Android, Android Ice Cream Sandwich and Opera 11+ for now.</p>
+      <p>But only in Chrome, Chrome for Android, Android Browser 4 and Opera 11+ for now.</p>
 
-      <p>The traffic on my site is 62% Chrome so using WebP is an obvious choice to make. Most of the images on my site are in WebP format and some of them are a fourth in size of their corresponding PNG and JPG images for other browsers. If you feel that the use of WebP images could be helpful for your site, here are some way to go forth!</p>
+      <p>The traffic on my site is 62% Chrome so using WebP good choice for me. Most of the images on my site are in WebP format and some of them are a fourth in size of their corresponding PNG and JPG images for other browsers. If you feel that the use of WebP images could be helpful for your site, here are some way to go forth!</p>
 
       <br>
 
       <h2>How do I start?</h2>
-      <p>First of all you need to make some Webp images. I use this Grunt task <a href="https://github.com/somerandomdude/grunt-webp">grunt-webp</a>. It’s a super easy way to automate the workflow. You can also download more tools like plugins for Photoshop and Gimp over at <a href="https://developers.google.com/speed/webp/docs/using">Google</a>.</p>
+      <p>First of all you need to convert your old JPGs and PNGS to the Webp format. I use this Grunt task <a href="https://github.com/somerandomdude/grunt-webp">grunt-webp</a>. It’s a super easy way to automate my workflow. You can also download more tools like plugins for Photoshop and Gimp over at <a href="https://developers.google.com/speed/webp/docs/using">Google</a>.</p>
       <br>
       <p>To render your images on your page there are some different approaches. The easiest way, I feel, is to use the .htaccess technique. Just paste this code below into your .htaccess and when your server requests an image, it will first see if there’s a WebP image in the same search path with the same name and use it if the users browser supports it.</p>
     </div>
 
-<pre class="Entry-code language-clike"><code>&lt;IfModule mod_rewrite.c&gt;
+<pre class="Entry-code Code language-clike"><code>&lt;IfModule mod_rewrite.c&gt;
     RewriteEngine On
     RewriteCond %{HTTP_ACCEPT} image/webp
     RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
@@ -133,10 +133,10 @@ AddType image/webp .webp</code></pre>
 
     <div class="u-wrapper--S">
       <p>Here is a <a href="https://github.com/vincentorback/WebP-images-with-htaccess">GitHub repository</a> for the code with a small demo.</p>
-      <p>If you can’t access your .htaccess file, don’t have one or feel like using javascript, <a href="https://github.com/vincentorback/WebP-Images-with-javascript">here’s another way</a>.</p>
+      <p>If you can’t access your .htaccess file or don’t have one, <a href="https://github.com/vincentorback/WebP-Images-with-javascript">here’s another way</a> using Javascript.</p>
       <br><br>
 
-      <p>So get going with your new awesome web performance wisdom. Challenge your friends on who can make the best looking images that weigh less and complain on your co-workers slow projects. Share the technique and the gospel of WebP!</p>
+      <p>So get going with your new awesome web performance wisdom. Challenge your friends on who can make the best looking images that weighs the least and complain on your co-workers slow projects. Share the technique and the gospel of WebP!</p>
 
       <p>Also, if you have any other ides on how to optimize performance, responsive images or anything, please leave a comment below!</p>
     </div>
@@ -149,7 +149,7 @@ AddType image/webp .webp</code></pre>
 </section>
 
 <nav class="Pagenav">
-  <a href="/posts/take-10-and-learn-typography/" class="Pagenav-item Pagenav-item--next js-transition" rel="next"><span>Next post: </span><b>Take 10 and learn typography</b></a>
+  <a href="/blog/take-10-and-learn-typography/" class="Pagenav-item Pagenav-item--next js-transition" rel="next"><span>Next post: </span><b>Take 10 and learn typography</b></a>
 </nav>
 
 <footer class="Sitefooter" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
@@ -169,82 +169,52 @@ AddType image/webp .webp</code></pre>
 </div>
 
 <script src="/js/vendor/prism.js"></script>
-<script src="/js/main-min.js"></script>
+<script src="/js/main-min.js" async></script>
 <script>
 (function () {
-  "use strict";
-  // once cached, the css file is stored on the client forever unless
-  // the URL below is changed. Any change will invalidate the cache
-  var css_href = '/css/fonts.css?cache_break',
-    win = window,
-    doc = document;
+  'use strict';
 
-  // a simple event handler wrapper
-  function on (el, ev, callback) {
-    if (el.addEventListener) {
-      el.addEventListener(ev, callback, false);
-    } else if (el.attachEvent) {
-      el.attachEvent("on" + ev, callback);
+  function addFont(localStoragePath) {
+    var style = document.createElement('style');
+    style.textContent = localStoragePath;
+    style.rel = 'stylesheet';
+    document.head.appendChild(style);
+  }
+
+  try {
+
+    if (localStorage.font_css_cache) {
+      localStorage.removeItem('font_css_cache');
+      localStorage.removeItem('font_css_cache_file');
     }
-  }
 
-  // if we have the fonts in localStorage or if we've cached them using the native browser cache
-  if ((win.localStorage && localStorage.font_css_cache) || doc.cookie.indexOf('vincent_font_cache') > -1) {
-    // just use the cached version
-    injectFontsStylesheet();
-  } else {
-   // otherwise, don't block the loading of the page; wait until it's done.
-    on(win, "load", injectFontsStylesheet);
-  }
-
-  // quick way to determine whether a css file has been cached locally
-  function fileIsCached(href) {
-    return win.localStorage && localStorage.font_css_cache && (localStorage.font_css_cache_file === href);
-  }
-
-  // time to get the actual css file
-  function injectFontsStylesheet() {
-   // if this is an older browser
-    if (!win.localStorage || !win.XMLHttpRequest) {
-      var stylesheet = doc.createElement('link');
-      stylesheet.href = css_href;
-      stylesheet.rel = 'stylesheet';
-      doc.getElementsByTagName('head')[0].appendChild(stylesheet);
-      // just use the native browser cache
-      // this requires a good expires header on the server
-      doc.cookie = "vincent_font_cache";
-
-    // if this isn't an old browser
+    if (localStorage.sourceSansPro) {
+      addFont(localStorage.sourceSansPro);
     } else {
-       // use the cached version if we already have it
-      if (fileIsCached(css_href)) {
-        injectRawStyle(localStorage.font_css_cache);
-      // otherwise, load it with ajax
-      } else {
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", css_href, true);
-        on(xhr, 'load', function () {
-          if (xhr.readyState === 4) {
-            // once we have the content, quickly inject the css rules
-            injectRawStyle(xhr.responseText);
-            // and cache the text content for further use
-            // notice that this overwrites anything that might have already been previously cached
-            localStorage.font_css_cache = xhr.responseText;
-            localStorage.font_css_cache_file = css_href;
-          }
-        });
-        xhr.send();
-      }
+      // We have to first load the font file asynchronously
+      var request = new XMLHttpRequest();
+
+      request.open('GET', '/css/fonts.css', true);
+
+      request.onload = function () {
+        if (request.status >= 200 && request.status < 400) {
+
+          // We save the file in localStorage
+          localStorage.sourceSansPro = request.responseText;
+
+          // ...and load the font
+          addFont();
+        } else {
+          throw new Error('Couldn’t load fonts :/');
+        }
+      };
+
+      request.send();
     }
+  } catch (ex) {
+    // maybe load the font synchronously for woff-capable browsers
+    // to avoid blinking on every request when localStorage is not available
   }
-
-  // this is the simple utitily that injects the cached or loaded css text
-  function injectRawStyle(text) {
-    var style = doc.createElement('style');
-    style.innerHTML = text;
-    doc.getElementsByTagName('head')[0].appendChild(style);
-  }
-
 }());
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

@@ -11,8 +11,8 @@
  * @author Lea Verou
  */
 
-code[class*="language-"],
-pre[class*="language-"] {
+.Code,
+.Code pre {
   color: black;
   text-shadow: 0 1px white;
   font-family: Consolas, Monaco, 'Andale Mono', monospace;
@@ -33,39 +33,35 @@ pre[class*="language-"] {
   hyphens: none;
 }
 
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-  text-shadow: none;
-  background: #b3d4fc;
-}
-
-pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-code[class*="language-"]::selection, code[class*="language-"] ::selection {
+.Code::selection,
+.Code pre ::selection,
+.Code::selection,
+.Code ::selection {
   text-shadow: none;
   background: #b3d4fc;
 }
 
 @media print {
-  code[class*="language-"],
-  pre[class*="language-"] {
+  .Code,
+  .Code pre {
     text-shadow: none;
   }
 }
 
 /* Code blocks */
-pre[class*="language-"] {
+.Code pre {
   padding: 1em;
   margin: .5em 0;
   overflow: auto;
 }
 
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
+:not(pre) > .Code,
+.Code pre {
   background: #f5f2f0;
 }
 
 /* Inline code */
-:not(pre) > code[class*="language-"] {
+:not(pre) > .Code {
   padding: .1em;
   border-radius: .3em;
 }

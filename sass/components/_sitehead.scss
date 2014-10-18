@@ -65,12 +65,17 @@
   margin: auto;
 
   position: absolute;
-  top: 60%;
+  top: 55%;
 
   .Page-about &, .Page-blog &, .Page-post &, .Page-contact & {
     transform: translateY(-50%);
     text-align: center;
   }
+
+  @include respond-min(1600px) {
+    font-size: 1.2em;
+  }
+
 }
 
 
@@ -83,6 +88,9 @@
   @extend %fadeinTop;
   @media (max-width: 800px), (max-height: 480px) {
     font-size: 3em;
+  }
+  @include respond-max(400px) {
+    font-size: 2em;
   }
 }
 

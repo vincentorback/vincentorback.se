@@ -13,7 +13,6 @@
   }
 
   .Sitehead-inner {
-    //padding: 12rem 0 6rem 0;
     width: 75%;
     max-width: 675px;
     animation: none;
@@ -23,13 +22,13 @@
     transform: translateY(-50%);
     a {
       display: inline-block;
-      padding: .65em .5em;
+      padding: .65em 0;
       font-size: 1.1em;
       @extend %fadein;
       letter-spacing: 3px;
     }
 
-    .no-csstransforms3d & {
+    .no-csstransforms & {
       top: 30%;
     }
 
@@ -42,6 +41,13 @@
   .Sitehead-cover {
     background-position: 50% 0;
     opacity: 1;
+  }
+
+  @include respond-min(1600px) {
+    .Sitehead-inner {
+      max-width: 800px;
+      font-size: 1.2em;
+    }
   }
 
   @include respond-max(800px) {

@@ -45,14 +45,16 @@
 
       vincent.navToggle();
 
-      if ((Modernizr.touch === false) && Modernizr.csstransforms3d) {
+      /*
+      if ((Modernizr.touch === false) && Modernizr.csstransforms) {
         vincent.parallaxHead();
       }
+      */
 
       vincent.smoothScroll();
 
 
-      if (winWidth > 800 && Modernizr.csstransforms3d) {
+      if (winWidth > 800 && Modernizr.csstransforms) {
         vincent.pageTransition();
         vincent.pageTransitionHalf();
         vincent.pageTransitionFull();
@@ -63,7 +65,7 @@
       }
 
       if (doc.getElementById('page-front')) {
-        vincent.workHeight();
+        //vincent.workHeight();
       }
 
 
@@ -78,7 +80,7 @@
 */
       if (doc.getElementById('page-contact')) {
         vincent.contactForm();
-        //vincent.expandable();
+        vincent.expandable();
       }
 
       if (doc.getElementById('page-post')) {
@@ -106,7 +108,7 @@
         workHeight = 900;
 
         if (winHeight > winWidth || winHeight < 900) {
-          workHeight = winHeight * 0.95;
+          workHeight = winHeight + 10;
         }
 
         if (winHeight < 600 && winWidth > 800) {
@@ -156,8 +158,8 @@
     },
 
     smoothScroll: function () {
-      var $target;
-        //scrollOffset = -5,
+      var $target,
+        scrollOffset;
         //targetHeight,
         //windowHeight;
 
@@ -167,14 +169,21 @@
           return;
         }
 
-        $target = $(this.getAttribute('href'));
+        $target = this.getAttribute('data-scrollTarget') ? $(this.getAttribute('data-scrollTarget')) : $(this.getAttribute('href'));
 
         if ($target.length === 0) {
           return;
         }
 
+        if (this.getAttribute('data-scrollOffset')) {
+          scrollOffset = parseInt(this.getAttribute('data-scrollOffset'), 10);
+        } else {
+          scrollOffset = 2;
+        }
+
         $target
           .velocity('scroll', {
+            offset: scrollOffset,
             duration: 1200,
             easing: 'easeInOutQuart'
           });
@@ -223,11 +232,16 @@
     },
 
     disableHover: function () {
+      var timer;
+
       function disableScroll() {
+        win.clearTimeout(timer);
         if (!$body.hasClass('disable-hover')) {
           $body.addClass('disable-hover');
         }
-        $body.removeClass('disable-hover');
+        timer = win.setTimeout(function () {
+          $body.removeClass('disable-hover');
+        }, 200);
       }
 
       win.addEventListener('scroll', function () {
@@ -287,9 +301,9 @@
 
         href = this.getAttribute('href');
 
-        if (href.indexOf('post') > -1) {
+        if (href.indexOf('blog') > -1) {
           page = e.currentTarget.getAttribute('data-slug');
-          cover = vincent.amazon + '/images/posts/' + page + '.jpg';
+          cover = vincent.amazon + '/images/blog/' + page + '.jpg';
         } else {
           page = href.replace('/', '');
           page = page.replace('/', '');
@@ -503,7 +517,8 @@
 
         $target.velocity('scroll', {
           duration: scrollSpeed,
-          easing: 'easeInOutQuart'
+          easing: 'easeInOutQuart',
+          offset: 2
         });
 
         $target.next('.WorkItem').velocity({
@@ -652,46 +667,54 @@
           isError = true;
         }
 
-        // Scroll to top of form if you are below the top of it.
-        if (getScroll().top >= $form.offset().top) {
-          $form.velocity('scroll', {
-            duration: 1200,
-            offset: -100,
+
+
+        // Shake form and scroll to the first error found.
+        if (isError === true) {
+          $form.addClass('has-error');
+
+          $form.find('.is-error').first().velocity('scroll', {
+            duration: 900,
+            offset: -80,
             easing: 'easeInOutQuart'
           });
-        }
 
-        // Shake form
-        if (isError === true) {
-          $form.addClass('is-error');
           win.setTimeout(function () {
-            $form.removeClass('is-error');
+            $form.removeClass('has-error');
           }, 500);
           return false;
         }
 
-        /** Post with ajax and display eventual response text. */
+
+
+        // Scroll to top
+        if (getScroll().top >= $form.offset().top) {
+          $form.velocity('scroll', {
+            duration: 1200,
+            offset: -80,
+            easing: 'easeInOutQuart'
+          });
+        }
+
+
+        // Post with ajax and display eventual response text.
         $.ajax({
-          type: 'post',
+          type: 'POST',
           url: $form.attr('action'),
-          data: {
-            name: $name.val(),
-            email: $email.val(),
-            message: $message.val()
-          },
+          data: $form.serialize(),
           success: function () {
             $form.addClass('is-sent');
             $form.find('input').attr('disabled', '');
           },
           error: function () {
-            $form.addClass('is-error');
+            $form.addClass('has-error');
             win.setTimeout(function () {
-              $form.removeClass('is-error');
+              $form.removeClass('has-error');
             }, 500);
           },
           complete: function (data) {
-            if (data.responseJSON) {
-              response = data.responseJSON.response;
+            if (data.responseText) {
+              response = JSON.parse(data.responseText).response;
             } else {
               response = 'Något gick fel!';
             }
@@ -727,7 +750,6 @@
           }
         });
     },
-    /*
     expandable: function () {
       var $target,
         state = true;
@@ -735,18 +757,19 @@
       $body.find('.js-expander').on('click', function (e) {
 
         $target = $('#' + $(this).attr('aria-controls'));
-        state = $(this).attr('aria-controls') === 'true';
+        state = $(this).attr('aria-expanded') === 'false';
 
         $target
           .slideToggle('slow')
           .attr('aria-hidden', !state);
+
+        $(this).attr('aria-expanded', state);
 
         e.preventDefault();
         return false;
       });
 
     },
-    */
     /**
      * Lazy load Disqus comments
      */
@@ -785,7 +808,7 @@
         //mediaHeight: 900,
         speed: 0.4,
         coverRatio: 0.85,
-        parallax: (Modernizr.csstransforms3d === true),
+        parallax: (Modernizr.csstransforms === true),
         touch: Modernizr.touch === true
       });
     },
@@ -914,6 +937,14 @@
             }
           },
           {
+            code: [88, 77, 65, 83], // xmas
+            magic: function () {
+              $.get(vincent.amazon + '/js/vendor/xmas.js', function (response) {
+                $('<script>').html(response).appendTo(head).attr('id', 'xmasScript');
+              });
+            }
+          },
+          {
             code: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65], // konami code
             magic: function () {
               $.get(vincent.amazon + '/easter/codelist.html', function (response) {
@@ -1034,9 +1065,5 @@
   vincent.init();
 
   FastClick.attach(body);
-  /*
-  $(win).on('load', function () {
-    $body.addClass('is-loaded');
-  });
-  */
+
 }(this));

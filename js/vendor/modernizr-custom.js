@@ -1,5 +1,5 @@
 /* Modernizr 2.8.3 (Custom Build) | MIT & BSD
- * Build: http://modernizr.com/download/#-csstransforms3d-svg-touch-cssclasses-teststyles-testprop-testallprops-prefixes-domprefixes-img_webp
+ * Build: http://modernizr.com/download/#-csstransforms-svg-touch-cssclasses-teststyles-testprop-testallprops-prefixes-domprefixes-img_webp
  */
 ;
 
@@ -209,18 +209,14 @@ window.Modernizr = (function( window, document, undefined ) {
 
         return bool;
     };
-    tests['csstransforms3d'] = function() {
 
-        var ret = !!testPropsAll('perspective');
 
-                        if ( ret && 'webkitPerspective' in docElement.style ) {
 
-                      injectElementWithStyles('@media (transform-3d),(-webkit-transform-3d){#modernizr{left:9px;position:absolute;height:3px;}}', function( node, rule ) {
-            ret = node.offsetLeft === 9 && node.offsetHeight === 3;
-          });
-        }
-        return ret;
+    tests['csstransforms'] = function() {
+        return !!testPropsAll('transform');
     };
+
+
     tests['svg'] = function() {
         return !!document.createElementNS && !!document.createElementNS(ns.svg, 'svg').createSVGRect;
     };

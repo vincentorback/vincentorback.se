@@ -60,23 +60,63 @@
 }
 
 
-$form-gray: #dadada;
+
+
+
+
+.Contactform {
+  margin: 1em auto 0 auto;
+  width: 90%;
+  max-width: 600px;
+  @include respond-max(800px) {
+    margin: $section-spacing-mobile auto 0 auto;
+  }
+}
+
+.Contactform-expandText {
+  text-align: center;
+  font-size: .9em;
+  margin-bottom: 1em;
+
+  button {
+    border-bottom: 2px solid $blue;
+    padding: 0 2px;
+    transition: all 200ms ease;
+    &:focus {
+      background: $blue;
+      color: #fff;
+    }
+  }
+
+}
+
+.Contactform-response {
+  display: none;
+  padding: 1em 0 3em 0;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+
+
+
+
+
+
+
+
+
 
 .Form {
   background: #fff;
   height: auto;
-  margin: #{$section-spacing / 2} auto 0 auto;
-  width: 90%;
-  max-width: 600px;
   border-radius: 6px;
-  border: 1px solid $form-gray;
+  border: 1px solid $gray;
+  margin: 0;
 
   transition: opacity 300ms ease;
 
-  @extend %clearfix;
-  //@extend %fadeinBottom;
-
-  &.is-error {
+  &.has-error {
     @extend %shake;
   }
 
@@ -87,15 +127,21 @@ $form-gray: #dadada;
   @include respond-min(1600px) {
     max-width: 800px;
   }
-  @include respond-max(800px) {
-    margin: $section-spacing-mobile auto 0 auto;
-  }
+
+}
+
+.Form-expandText {
+
+}
+
+.Form-row {
+  @extend %clearfix;
 }
 
 .Form-field {
   position: relative;
   width: 100%;
-  border-color: $form-gray;
+  border-color: $gray;
   border-style: solid;
   border-width: 0 0 1px 0;
 
@@ -130,12 +176,20 @@ $form-gray: #dadada;
   &.is-active {
     transform: translate3d(0, -2em, 0);
     color: $blue;
+
+    max-width: 94%;
+    max-width: calc(100% - 2em);
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
+
   &.is-error {
     color: $red;
   }
 
-  .no-csstransforms3d &.is-active {
+  .no-csstransforms &.is-active {
     top: -.9em;
   }
 
@@ -233,30 +287,12 @@ input:-webkit-autofill {
 
 
 
-.Form-response {
-  display: none;
-  padding: 1em 0;
-  text-align: center;
-}
 
 
 
 /**
  * Extended form
  */
-.Form-extended {
-  padding: 1em 1em 0.3em 1em;
-}
-
-.Expander {
-  display: inline-block;
-  color: $blue;
-  border-bottom: 2px solid $blue;
-  padding: 0;
-  margin: 0;
-  font-weight: 600;
-}
-
 .Expandable {
   display: none;
 }

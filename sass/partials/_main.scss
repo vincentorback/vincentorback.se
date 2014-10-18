@@ -110,21 +110,13 @@
   }
   @include respond-max(900px) {
     > .col {
-      width: 48%;
-      margin-right: 4%;
-      &:nth-child(2) {
-        margin-right: 0;
-      }
-    }
-  }
-  @include respond-max(600px) {
-    > .col {
       width: 100%;
       margin: 0;
       float: none;
     }
   }
 }
+
 .two-columns {
   @extend %clearfix;
   > .col {

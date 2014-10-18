@@ -12,9 +12,14 @@ Redirect 301 /cv-en.pdf http://vincentorback.se/cv.pdf
 
 Redirect 301 /en.html http://vincentorback.se/
 
-Redirect 301 /posts/dont-work-for-free/ http://vincentorback.se/blog/
-Redirect 301 /posts/optimizing-images-and-webp/ http://vincentorback.se/posts/using-webp-images/
-Redirect 301 /posts/dont-work-for-free/ http://vincentorback.se/blog/
+Redirect 301 /blog/dont-work-for-free/ http://vincentorback.se/blog/
+Redirect 301 /blog/optimizing-images-and-webp/ http://vincentorback.se/blog/using-webp-images/
+Redirect 301 /blog/dont-work-for-free/ http://vincentorback.se/blog/
+
+Redirect 301 /posts/using-webp-images/ http://vincentorback.se/blog/using-webp-images/
+Redirect 301 /posts/take-10-and-learn-typography/ http://vincentorback.se/blog/take-10-and-learn-typography/
+Redirect 301 /posts/smooth-scrolling-with-css/ http://vincentorback.se/blog/smooth-scrolling-with-css/
+Redirect 301 /posts/i-commit-from-my-heart/ http://vincentorback.se/blog/i-commit-from-my-heart/
 
 
 <IfModule mod_deflate.c>

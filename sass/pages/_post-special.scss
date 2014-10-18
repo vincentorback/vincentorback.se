@@ -8,7 +8,7 @@ $post-names: ("i-commit-from-my-heart", "smooth-scrolling-with-css", "take-10-an
 
 @for $i from 1 through length($post-names) {
   .Post--#{nth($post-names, $i)} .Sitehead-cover {
-    background-image: url("#{$images}/posts/#{nth($post-names, $i)}.jpg");
+    background-image: url("#{$images}/blog/#{nth($post-names, $i)}.jpg");
   }
 }
 
