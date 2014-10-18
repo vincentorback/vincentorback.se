@@ -134,82 +134,52 @@
 
 </div>
 
-<script src="/js/main-min.js"></script>
+<script src="/js/main-min.js" async></script>
 <script>
 (function () {
-  "use strict";
-  // once cached, the css file is stored on the client forever unless
-  // the URL below is changed. Any change will invalidate the cache
-  var css_href = '/css/fonts.css?cache_break',
-    win = window,
-    doc = document;
+  'use strict';
 
-  // a simple event handler wrapper
-  function on (el, ev, callback) {
-    if (el.addEventListener) {
-      el.addEventListener(ev, callback, false);
-    } else if (el.attachEvent) {
-      el.attachEvent("on" + ev, callback);
+  function addFont(localStoragePath) {
+    var style = document.createElement('style');
+    style.textContent = localStoragePath;
+    style.rel = 'stylesheet';
+    document.head.appendChild(style);
+  }
+
+  try {
+
+    if (localStorage.font_css_cache) {
+      localStorage.removeItem('font_css_cache');
+      localStorage.removeItem('font_css_cache_file');
     }
-  }
 
-  // if we have the fonts in localStorage or if we've cached them using the native browser cache
-  if ((win.localStorage && localStorage.font_css_cache) || doc.cookie.indexOf('vincent_font_cache') > -1) {
-    // just use the cached version
-    injectFontsStylesheet();
-  } else {
-   // otherwise, don't block the loading of the page; wait until it's done.
-    on(win, "load", injectFontsStylesheet);
-  }
-
-  // quick way to determine whether a css file has been cached locally
-  function fileIsCached(href) {
-    return win.localStorage && localStorage.font_css_cache && (localStorage.font_css_cache_file === href);
-  }
-
-  // time to get the actual css file
-  function injectFontsStylesheet() {
-   // if this is an older browser
-    if (!win.localStorage || !win.XMLHttpRequest) {
-      var stylesheet = doc.createElement('link');
-      stylesheet.href = css_href;
-      stylesheet.rel = 'stylesheet';
-      doc.getElementsByTagName('head')[0].appendChild(stylesheet);
-      // just use the native browser cache
-      // this requires a good expires header on the server
-      doc.cookie = "vincent_font_cache";
-
-    // if this isn't an old browser
+    if (localStorage.sourceSansPro) {
+      addFont(localStorage.sourceSansPro);
     } else {
-       // use the cached version if we already have it
-      if (fileIsCached(css_href)) {
-        injectRawStyle(localStorage.font_css_cache);
-      // otherwise, load it with ajax
-      } else {
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", css_href, true);
-        on(xhr, 'load', function () {
-          if (xhr.readyState === 4) {
-            // once we have the content, quickly inject the css rules
-            injectRawStyle(xhr.responseText);
-            // and cache the text content for further use
-            // notice that this overwrites anything that might have already been previously cached
-            localStorage.font_css_cache = xhr.responseText;
-            localStorage.font_css_cache_file = css_href;
-          }
-        });
-        xhr.send();
-      }
+      // We have to first load the font file asynchronously
+      var request = new XMLHttpRequest();
+
+      request.open('GET', '/css/fonts.css', true);
+
+      request.onload = function () {
+        if (request.status >= 200 && request.status < 400) {
+
+          // We save the file in localStorage
+          localStorage.sourceSansPro = request.responseText;
+
+          // ...and load the font
+          addFont();
+        } else {
+          throw new Error('Couldn’t load fonts :/');
+        }
+      };
+
+      request.send();
     }
+  } catch (ex) {
+    // maybe load the font synchronously for woff-capable browsers
+    // to avoid blinking on every request when localStorage is not available
   }
-
-  // this is the simple utitily that injects the cached or loaded css text
-  function injectRawStyle(text) {
-    var style = doc.createElement('style');
-    style.innerHTML = text;
-    doc.getElementsByTagName('head')[0].appendChild(style);
-  }
-
 }());
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
