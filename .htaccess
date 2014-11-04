@@ -12,8 +12,10 @@ Redirect 301 /cv-en.pdf http://vincentorback.se/cv.pdf
 
 Redirect 301 /en.html http://vincentorback.se/
 
+#old urls
 Redirect 301 /blog/dont-work-for-free/ http://vincentorback.se/blog/
 Redirect 301 /blog/optimizing-images-and-webp/ http://vincentorback.se/blog/using-webp-images/
+Redirect 301 /posts/optimizing-images-and-webp/ http://vincentorback.se/blog/using-webp-images/
 Redirect 301 /blog/dont-work-for-free/ http://vincentorback.se/blog/
 
 Redirect 301 /posts/using-webp-images/ http://vincentorback.se/blog/using-webp-images/
