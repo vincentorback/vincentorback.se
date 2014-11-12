@@ -1,7 +1,7 @@
 var path = require('path');
 
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
   function htmlBanner() {
     return ('<!-- \n' +
@@ -44,7 +44,7 @@ module.exports = function(grunt) {
           linebreak: true
         },
         files: {
-          src: ['build/*.html']
+          src: ['build/**/*.html']
         }
       }
     },
@@ -91,26 +91,8 @@ module.exports = function(grunt) {
         alphaQuality: 90
       }
     },
-    devUpdate: {
-      main: {
-        options: {
-          reportUpdated: true,
-          updateType: "prompt",
-        }
-      }
-    },
-    criticalcss: {
-      custom_options: {
-        options: {
-          url: '/index.php',
-          width: 1200,
-          height: 900,
-          outputfile: "critical.css"
-        }
-      }
-    },
     imageoptim: {
-      myPngs: {
+      png: {
         options: {
           jpegMini: false,
           imageAlpha: true,
@@ -118,7 +100,7 @@ module.exports = function(grunt) {
         },
         src: ['images/**/*.png']
       },
-      myJpgs: {
+      jpg: {
         options: {
           jpegMini: false,
           imageAlpha: false,

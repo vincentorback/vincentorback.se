@@ -5,9 +5,12 @@
   'use strict';
 
   function getViewport() {
+    var win = window,
+      docElem = document.documentElement;
+
     return {
-      width: Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
-      height: Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+      width: Math.max(docElem.clientWidth, win.innerWidth || 0),
+      height: Math.max(docElem.clientHeight, win.innerHeight || 0)
     };
   }
 
@@ -38,21 +41,28 @@
       }());
 
       vincent.colors = {
+        yellow: '#f1c40f',
+        blue: '#1eb0e9',
         red: '#ff4e00',
+        green: '#2ecc71',
         white: '#fff',
         black: '#000'
       };
 
+      vincent.postColors = {
+        'i-commit-from-my-heart': vincent.colors.yellow,
+        'smooth-scrolling-with-css': vincent.colors.blue,
+        'take-10-and-learn-typography': vincent.colors.red,
+        'using-webp-images': vincent.colors.green
+      };
+
       vincent.navToggle();
 
-      /*
       if ((Modernizr.touch === false) && Modernizr.csstransforms) {
         vincent.parallaxHead();
       }
-      */
 
       vincent.smoothScroll();
-
 
       if (winWidth > 800 && Modernizr.csstransforms) {
         vincent.pageTransition();
@@ -64,14 +74,9 @@
         }
       }
 
-      if (doc.getElementById('page-front')) {
-        //vincent.workHeight();
-      }
-
-
       if (doc.getElementById('page-work') || doc.getElementById('page-about') || doc.getElementById('page-post')) {
         vincent.parallaxImages();
-        vincent.lazyLoad();
+        //vincent.lazyLoad();
       }
 /*
       if (doc.getElementById('page-work')) {
@@ -99,32 +104,6 @@
 
     },
 
-    workHeight: function () {
-      var workHeight;
-
-      function setHeight() {
-        winHeight = getViewport().height;
-        winWidth = getViewport().width;
-        workHeight = 900;
-
-        if (winHeight > winWidth || winHeight < 900) {
-          workHeight = winHeight + 10;
-        }
-
-        if (winHeight < 600 && winWidth > 800) {
-          workHeight = 600;
-        }
-
-        $body.find('.WorkItem').height(workHeight);
-      }
-
-      setHeight();
-
-      $(win).smartresize(function () {
-        setHeight();
-      });
-    },
-
     parallaxHead: function () {
       var $header = $body.find('.Sitehead'),
         $navigation = $body.find('.Navigation'),
@@ -132,11 +111,12 @@
 
       function parallax() {
         if (win.scrollY < $header.height()) {
-          scrollPos = Math.round(win.scrollY / 4);
+          scrollPos = Math.round(win.scrollY / 5);
           $header.css({
             transform: 'translate3d(0,' + scrollPos + 'px, 0)'
           });
         }
+
         if (getViewport().width > 800) {
           $navigation.css({
             transform: 'translate3d(0,' + scrollPos + 'px, 0)'
@@ -169,14 +149,14 @@
           return;
         }
 
-        $target = this.getAttribute('data-scrollTarget') ? $(this.getAttribute('data-scrollTarget')) : $(this.getAttribute('href'));
+        $target = this.getAttribute('data-scrolltarget') ? $(this.getAttribute('data-scrolltarget')) : $(this.getAttribute('href'));
 
         if ($target.length === 0) {
           return;
         }
 
-        if (this.getAttribute('data-scrollOffset')) {
-          scrollOffset = parseInt(this.getAttribute('data-scrollOffset'), 10);
+        if (this.getAttribute('data-scrolloffset')) {
+          scrollOffset = parseInt(this.getAttribute('data-scrolloffset'), 10);
         } else {
           scrollOffset = 2;
         }
@@ -285,6 +265,8 @@
         count = 0,
         transitionInterval,
         transDone = false,
+        color = false,
+        slug = false,
         bgCover,
         cover,
         page;
@@ -300,22 +282,24 @@
         }
 
         href = this.getAttribute('href');
+        slug = e.currentTarget.getAttribute('data-slug');
 
-        if (href.indexOf('blog') > -1) {
-          page = e.currentTarget.getAttribute('data-slug');
-          cover = vincent.amazon + '/images/blog/' + page + '.jpg';
+        if (slug && href.indexOf('/blog/') > -1) {
+          cover = false;
+          color = vincent.postColors[slug];
         } else {
           page = href.replace('/', '');
           page = page.replace('/', '');
           if (page === 'about-me') {
             page = 'about';
           }
-          cover = vincent.amazon + '/images/' + page + '/header.jpg';
+          cover = '/images/' + page + '/header.jpg';
         }
 
-
-        bgCover = doc.createElement('div');
-        bgCover.style.cssText = 'position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url(' + cover + '); background-repeat: no-repeat; background-position: 50% 50%; background-size: cover; opacity: 0; z-index: -1;';
+        if (cover) {
+          bgCover = doc.createElement('div');
+          bgCover.style.cssText = 'position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url(' + cover + '); background-repeat: no-repeat; background-position: 50% 50%; background-size: cover; opacity: 0; z-index: -1;';
+        }
 
         $body
           .css('background', vincent.colors.white)
@@ -336,9 +320,7 @@
         $header
           .velocity({
             height: '65%',
-            //minHeight: '400px',
-            //maxHeight: '800px',
-            backgroundColor: vincent.colors.black
+            backgroundColor: color ? color : vincent.colors.black
           }, {
             duration: 400,
             easing: 'ease',
@@ -383,13 +365,15 @@
           delay: delay
         });
 
-        $(bgCover).velocity({
-          opacity: 1
-        }, {
-          duration: 400,
-          easing: 'ease',
-          delay: delay
-        });
+        if (cover) {
+          $(bgCover).velocity({
+            opacity: 1
+          }, {
+            duration: 400,
+            easing: 'ease',
+            delay: delay
+          });
+        }
 
         /** Wait for transitions and prefetches to comlpete. */
         transitionInterval = win.setInterval(function () {
@@ -802,7 +786,7 @@
         //image: null,
         //imageAttribute: (touch === true) ? 'image-mobile' : 'image',
         //container: $body,
-        //holderMinHeight: 200,
+        holderMinHeight: 300,
         //extraHeight: 0,
         //mediaWidth: 1600,
         //mediaHeight: 900,
@@ -812,58 +796,13 @@
         touch: Modernizr.touch === true
       });
     },
-/*
-    resizeAlert: function () {
-      var counter = 0,
-        back = false;
-
-      function removeAlert() {
-        $body.find('.Alert').velocity({
-          translateY: 500,
-          opacity: 0
-        }, {
-          duration: 500,
-          easing: 'ease',
-          complete: function () {
-            $(this).remove();
-          }
-        });
-      }
-
-      function showBanner() {
-        $body.append('<div class="Alert" role="alert"><div class="u-wrapper"><p>Hey this website is responsive, I swear!</p><p>If you have a problem with that, just make a pull request or something!</p><p><a href="https://github.com/vincentorback/Vincent-Orback">See this site on GitHub</a></p></div><button class="Alert-close" aria-title="Close alert"><span class="icon icon-close"></span></button></div>');
-        $body.find('.Alert-close').one('click', function () {
-          removeAlert();
-        });
-        win.setTimeout(function () {
-          removeAlert();
-        }, 10000);
-      }
-
-      $body.find('.Alert-close').one('click', function () {
-        removeAlert();
-      });
-
-      $(win).smartresize(function () {
-        winWidth = getViewport().width;
-        if (counter === 3) {
-          showBanner();
-          counter = 0;
-        } else if (!back && winWidth < 450) {
-          back = true;
-        } else if (back && winWidth > 700) {
-          back = false;
-        }
-        counter += 1;
-      });
-    },
-*/
+    /*
     lazyLoad: function () {
       $body.find('.Sitemain').find('.lazy').lazyload({
         threshold: winHeight
       });
     },
-
+    */
     easterEggs: function () {
       var secret = [
           {
@@ -888,10 +827,10 @@
             code: [87, 73, 78, 68, 79, 87, 83], // windows
             magic: function () {
               $.get(vincent.amazon + '/easter/windows-min.js', function (response) {
-                $('<script>').html(response).appendTo(head).addClass('windowsStyle');
+                $('<script id="windows-script">').html(response).appendTo(head);
               });
               $.get(vincent.amazon + '/easter/windows.css', function (css) {
-                $('<style>').html(css).appendTo(head).addClass('windowsStyle');
+                $('<style id="window-styles">').html(css).appendTo(head);
               });
 
               $(doc).keydown(function (e) {
@@ -918,7 +857,7 @@
             code: [65, 83, 84, 69, 82, 79, 73, 68, 83], // asteroids
             magic: function () {
               $.get(vincent.amazon + '/easter/asteroids-min.js', function (response) {
-                $('<script>').html(response).appendTo(head).addClass('windowsStyle');
+                $('<script is="asteroids-script">').html(response).appendTo(head);
               });
             }
           },
@@ -932,15 +871,15 @@
             code: [80, 65, 73, 78, 84], // paint
             magic: function () {
               $.get(vincent.amazon + '/easter/paint-min.js', function (response) {
-                $('<script>').html(response).appendTo(head).addClass('paintScript').attr('id', 'paint-script');
+                $('<script id="paint-script">').html(response).appendTo(head);
               });
             }
           },
           {
-            code: [88, 77, 65, 83], // xmas
+            code: [83, 78, 79, 87], // snow
             magic: function () {
               $.get(vincent.amazon + '/js/vendor/xmas.js', function (response) {
-                $('<script>').html(response).appendTo(head).attr('id', 'xmasScript');
+                $('<script id="xmas-script">').html(response).appendTo(head);
               });
             }
           },
@@ -948,7 +887,7 @@
             code: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65], // konami code
             magic: function () {
               $.get(vincent.amazon + '/easter/codelist.html', function (response) {
-                $('<article>').html(response).appendTo(body).addClass('EasterEggs');
+                $('<article class="EasterEggs">').html(response).appendTo(body);
               });
             }
           }
@@ -990,7 +929,7 @@
       win.setTimeout(function () {
         $body.find('.js-track').on('click', function () {
           if (ga) {
-            value = $(this).attr('data-value');
+            value = $(this).attr('data-trackvalue');
             ga('send', 'event', 'link', 'click', value);
           }
         });
