@@ -808,7 +808,7 @@
           {
             code: [65, 80, 80, 76, 69], // apple
             magic: function () {
-              var appleFont = "<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:100,300' rel='stylesheet' type='text/css'>";
+              var appleFont = '<link href="http://fonts.googleapis.com/css?family=Josefin+Sans:100,300" rel="stylesheet" type="text/css">';
 
               $.get(vincent.amazon + '/easter/apple.css', function (css) {
                 $(head).append(appleFont);
@@ -924,16 +924,33 @@
     },
 
     tracking: function () {
-      var value;
+      var href,
+        value,
+        location;
 
-      win.setTimeout(function () {
-        $body.find('.js-track').on('click', function () {
+      $(win).on('load', function () {
+        $body.find('a').on('click', function (event) {
+
           if (ga) {
-            value = $(this).attr('data-trackvalue');
-            ga('send', 'event', 'link', 'click', value);
+            href = $(this).attr('href');
+            value = $(this).attr('data-trackvalue') || href;
+            location = doc.title.substr(0, doc.title.indexOf('|')) || 'Frontpage';
+
+            ga('send', 'event', 'link', 'click', location + ' - ' + value, {
+              'hitCallback': function () {
+                if (href && (href.charAt(0) !== '#') && (href.charAt(0) !== '/')) {
+                  doc.location = href;
+                }
+              }
+            });
+
+            if (href) {
+              event.preventDefault();
+            }
           }
+
         });
-      }, 300);
+      });
     }
     /*
     dateEvents: function () {
