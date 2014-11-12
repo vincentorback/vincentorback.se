@@ -1,11 +1,11 @@
 <!doctype html>
-<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
-<head>
+<html class="no-js" lang="en">
+<head prefix="og: http://ogp.me/ns#">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Contact | Vincent Orback - Web designer and developer in Stockholm</title>
-  <meta name="description" content="Freelancing web designer and developer helping companies and people to be seen on the web without getting embarrassed. Visit my portfolio.">
+  <meta name="description" content="I’m a web designer and developer helping people and companies to be seen on the web without getting embarrassed.">
   <meta name="keywords" content="web designer, designer, developer, wordpress, portfolio">
 
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -22,11 +22,12 @@
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Contact - Vincent Orback">
-  <meta property="og:description" content="Freelancing web designer and developer helping companies and people to be seen on the web without getting embarrassed. Visit my portfolio.">
+  <meta property="og:description" content="I’m a web designer and developer helping people and companies to be seen on the web without getting embarrassed.">
   <meta property="og:url" content="http://vincentorback.se/contact/">
   <meta property="og:site_name" content="Vincent Orback">
   <meta property="og:image" content="http://d3dx0f1ge67l9j.cloudfront.net/images/screenshot.jpg">
 </head>
+
 <body id="page-contact" class="Page-contact" itemscope itemtype="http://schema.org/ContactPage" onunload="">
 
 <nav id="navigation" class="Navigation" role="navigation">
@@ -37,9 +38,9 @@
     <li><a href="#contact" class="is-active js-scroll"><span>Contact</span></a></li>
   </ul>
   <ul class="Navigation-social">
-    <li><a href="https://twitter.com/vorback" class="Social Social--twitter icon icon-twitter js-track" title="@vorback" rel="me" data-value="menu-twitter"></a></li>
-    <li><a href="https://github.com/vincentorback" class="Social Social--github icon icon-github js-track" title="GitHub" rel="me" data-value="menu-github"></a></li>
-    <li><a href="http://se.linkedin.com/pub/vincent-orback/50/957/457/" class="Social Social--linkedin icon icon-linkedin js-track" title="LinkedIn" rel="me" data-value="menu-linkedin"></a></li>
+    <li><a href="https://twitter.com/vorback" class="Social Social--twitter icon icon-twitter js-track" title="@vorback" rel="me" data-trackvalue="menu-twitter"></a></li>
+    <li><a href="https://github.com/vincentorback" class="Social Social--github icon icon-github js-track" title="GitHub" rel="me" data-trackvalue="menu-github"></a></li>
+    <li><a href="http://se.linkedin.com/pub/vincent-orback/50/957/457/" class="Social Social--linkedin icon icon-linkedin js-track" title="LinkedIn" rel="me" data-trackvalue="menu-linkedin"></a></li>
   </ul>
 </nav>
 
@@ -56,7 +57,7 @@
     </div>
   </div>
   <button class="Navigation-toggle js-navToggle" type="button" role="button" aria-controls="navigation">Menu</button>
-  <div class="Sitehead-cover"></div>
+  <figure class="Sitehead-cover"></figure>
 </header>
 
 <main id="contact" class="Sitemain" role="main">
@@ -67,10 +68,10 @@
     </div>
 
     <div class="Contact-social">
-      <a href="https://twitter.com/vorback" class="Social Social--twitter icon icon-twitter js-track" title="@vorback" rel="me" data-value="contact-twitter"></a>
-      <a href="https://github.com/vincentorback" class="Social Social--github icon icon-github js-track" title="GitHub" rel="me" data-value="contact-github"></a>
-      <a href="http://se.linkedin.com/pub/vincent-orback/50/957/457/" class="Social Social--linkedin icon icon-linkedin js-track" title="LinkedIn" rel="me" data-value="contact-linkedin"></a>
-      <a href="mailto:vorback@gmail.com" class="Social Social--gmail icon icon-mail js-track" title="vorback@gmail.com" rel="me" data-value="contact-email"></a>
+      <a href="https://twitter.com/vorback" class="Social Social--twitter icon icon-twitter js-track" title="@vorback" rel="me" data-trackvalue="contact-twitter"></a>
+      <a href="https://github.com/vincentorback" class="Social Social--github icon icon-github js-track" title="GitHub" rel="me" data-trackvalue="contact-github"></a>
+      <a href="http://se.linkedin.com/pub/vincent-orback/50/957/457/" class="Social Social--linkedin icon icon-linkedin js-track" title="LinkedIn" rel="me" data-trackvalue="contact-linkedin"></a>
+      <a href="mailto:vorback@gmail.com" class="Social Social--gmail icon icon-mail js-track" title="vorback@gmail.com" rel="me" data-trackvalue="contact-email"></a>
     </div>
 
   </article>
@@ -78,7 +79,7 @@
   <section class="Contactform">
     <div id="response" class="Contactform-response" aria-hidden="true"></div>
 
-    <p class="Contactform-expandText u-textSmall">Want to start a project? Please <button class="js-expander js-scroll" aria-controls="extended-form" aria-expanded="false" data-scrollTarget="#contact-form" data-scrollOffset="-50">click here</button>.</p>
+    <p class="Contactform-expandText u-textSmall">Want to start a project? Please <button class="js-expander js-scroll js-track" aria-controls="extended-form" aria-expanded="false" data-scrolltarget="#contact-form" data-scrolloffset="-50" data-trackvalue="expand-form">click here</button>.</p>
 
     <form id="contact-form" class="Form" action="/contactform.php" method="post" novalidate role="form">
 
@@ -134,7 +135,7 @@
       </div>
 
       <div class="Form-field Form-field--submit">
-        <input type="submit" class="Form-input Form-input--submit" value="Send">
+        <input type="submit" class="Form-input Form-input--submit js-track" value="Send" data-trackvalue="Send form">
       </div>
     </form>
 
@@ -149,11 +150,12 @@
     <div class="address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
       <div><span itemprop="addressLocality">Stockholm</span></div><div itemprop="addressCountry">, Sweden</div>
     </div>
-    <div class="email" itemprop="email"><a href="mailto:vorback@gmail.com" target="_blank" rel="nofollow">vorback@gmail.com</a></div>
+    <div class="email" itemprop="email"><a href="mailto:vorback@gmail.com" target="_blank" rel="me">vorback@gmail.com</a></div>
   </div>
-  <a href="https://github.com/vincentorback/Vincent-Orback" target="_blank" class="Octocat Tooltip Tooltip--top js-track" data-value="github-footerLink">
-    <span class="Tooltip-inner">This website is available on GitHub!</span>
-  </a>
+<a href="https://github.com/vincentorback/Vincent-Orback" target="_blank" class="Octocat Tooltip Tooltip--top js-track" data-trackvalue="github-footerLink">
+  <span class="Tooltip-inner">This website is available <span class="u-textTruncate">on GitHub!</span></span>
+  <span class="Octocat-image"></span>
+</a>
 </footer>
 
 </div>
@@ -162,27 +164,21 @@
 <script>
 (function () {
   'use strict';
+  var doc = document,
+    request;
 
   function addFont(localStoragePath) {
-    var style = document.createElement('style');
+    var style = doc.createElement('style');
     style.textContent = localStoragePath;
-    style.rel = 'stylesheet';
-    document.head.appendChild(style);
+    doc.head.appendChild(style);
   }
 
   try {
-
-    if (localStorage.font_css_cache) {
-      localStorage.removeItem('font_css_cache');
-      localStorage.removeItem('font_css_cache_file');
-    }
-
     if (localStorage.sourceSansPro) {
       addFont(localStorage.sourceSansPro);
     } else {
       // We have to first load the font file asynchronously
-      var request = new XMLHttpRequest();
-
+      request = new XMLHttpRequest();
       request.open('GET', '/css/fonts.css', true);
 
       request.onload = function () {
@@ -192,7 +188,7 @@
           localStorage.sourceSansPro = request.responseText;
 
           // ...and load the font
-          addFont();
+          addFont(localStorage.sourceSansPro);
         } else {
           throw new Error('Couldn’t load fonts :/');
         }
@@ -200,9 +196,16 @@
 
       request.send();
     }
-  } catch (ex) {
-    // maybe load the font synchronously for woff-capable browsers
-    // to avoid blinking on every request when localStorage is not available
+  } catch (exc) {
+    var styleLink = doc.createElement('link');
+    styleLink.rel = 'stylesheet';
+    styleLink.href = 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600';
+    doc.head.appendChild(styleLink);
+  }
+
+  if (localStorage.font_css_cache || localStorage.font_css_cache_file) {
+    localStorage.removeItem('font_css_cache');
+    localStorage.removeItem('font_css_cache_file');
   }
 }());
 

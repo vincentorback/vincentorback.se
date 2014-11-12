@@ -1,6 +1,6 @@
 <!doctype html>
-<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
-<head>
+<html class="no-js" lang="en">
+<head prefix="og: http://ogp.me/ns#">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -38,9 +38,9 @@
     <li><a href="/contact/" class="js-transitionHalf"><span>Contact</span></a></li>
   </ul>
   <ul class="Navigation-social">
-    <li><a href="https://twitter.com/vorback" class="Social Social--twitter icon icon-twitter js-track" title="@vorback" rel="me" data-value="menu-twitter"></a></li>
-    <li><a href="https://github.com/vincentorback" class="Social Social--github icon icon-github js-track" title="GitHub" rel="me" data-value="menu-github"></a></li>
-    <li><a href="http://se.linkedin.com/pub/vincent-orback/50/957/457/" class="Social Social--linkedin icon icon-linkedin js-track" title="LinkedIn" rel="me" data-value="menu-linkedin"></a></li>
+    <li><a href="https://twitter.com/vorback" class="Social Social--twitter icon icon-twitter js-track" title="@vorback" rel="me" data-trackvalue="menu-twitter"></a></li>
+    <li><a href="https://github.com/vincentorback" class="Social Social--github icon icon-github js-track" title="GitHub" rel="me" data-trackvalue="menu-github"></a></li>
+    <li><a href="http://se.linkedin.com/pub/vincent-orback/50/957/457/" class="Social Social--linkedin icon icon-linkedin js-track" title="LinkedIn" rel="me" data-trackvalue="menu-linkedin"></a></li>
   </ul>
 </nav>
 
@@ -58,7 +58,7 @@
     </div>
   </div>
   <button class="Navigation-toggle js-navToggle" type="button" role="button" aria-controls="navigation">Menu</button>
-  <div class="Sitehead-cover"></div>
+  <figure class="Sitehead-cover"></figure>
 </header>
 
 <main class="Sitemain" role="main">
@@ -80,7 +80,7 @@
       <img src="http://d3dx0f1ge67l9j.cloudfront.net/images/prophet/prophet1.jpg" width="1920" height="1224" alt="Prophet Cruzin'" itemprop="contentUrl">
     </picture>
 
-    <figure class="js-parallax" data-image="http://d3dx0f1ge67l9j.cloudfront.net/images/prophet/prophet-cover.jpg" data-width="2048" data-height="1535"></figure>
+    <figure class="js-parallax" data-image="http://d3dx0f1ge67l9j.cloudfront.net/images/prophet/prophet-cover.jpg" data-width="1920" data-height="1242"></figure>
 
     <picture class="Work-image" itemscope itemtype="http://schema.org/ImageObject">
       <source media="(max-width:800px)" srcset="http://d3dx0f1ge67l9j.cloudfront.net/webp/prophet/prophet2-mobile.webp" type="image/webp">
@@ -103,7 +103,7 @@
     <div class="u-wrapper--S">
       <dl class="Work-credits">
         <dt>Role</dt>
-          <dd>Developer & designer</dd>
+          <dd>Developer and designer</dd>
       </dl>
     </div>
 
@@ -114,8 +114,8 @@
   </article>
 </main>
 
-<nav class="Pagenav">
-  <a href="/work/architecture-now/" class="Pagenav-item Pagenav-item--next Pagenav-item--arkdes js-transition" rel="next"><span>Next work </span><b>Architecture Now</b></a>
+<nav class="PageNav">
+  <a href="/work/architecture-now/" class="PageNav-item PageNav-item--next PageNav-item--arkdes js-transition" rel="next"><span>Next work </span><b>Architecture Now</b></a>
 </nav>
 
 <footer class="Sitefooter" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
@@ -125,10 +125,11 @@
     <div class="address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
       <div><span itemprop="addressLocality">Stockholm</span></div><div itemprop="addressCountry">, Sweden</div>
     </div>
-    <div class="email" itemprop="email"><a href="mailto:vorback@gmail.com" target="_blank" rel="nofollow">vorback@gmail.com</a></div>
+    <div class="email" itemprop="email"><a href="mailto:vorback@gmail.com" target="_blank" rel="me">vorback@gmail.com</a></div>
   </div>
-  <a href="https://github.com/vincentorback/Vincent-Orback" target="_blank" class="Octocat Tooltip Tooltip--top js-track" data-value="github-footerLink">
-    <span class="Tooltip-inner">This entire website is available at GitHub!</span>
+  <a href="https://github.com/vincentorback/Vincent-Orback" target="_blank" class="Octocat Tooltip Tooltip--top js-track" data-trackvalue="github-footerLink">
+    <span class="Tooltip-inner">This website is available <span class="u-textTruncate">on GitHub!</span></span>
+    <span class="Octocat-image"></span>
   </a>
 </footer>
 
@@ -138,27 +139,21 @@
 <script>
 (function () {
   'use strict';
+  var doc = document,
+    request;
 
   function addFont(localStoragePath) {
-    var style = document.createElement('style');
+    var style = doc.createElement('style');
     style.textContent = localStoragePath;
-    style.rel = 'stylesheet';
-    document.head.appendChild(style);
+    doc.head.appendChild(style);
   }
 
   try {
-
-    if (localStorage.font_css_cache) {
-      localStorage.removeItem('font_css_cache');
-      localStorage.removeItem('font_css_cache_file');
-    }
-
     if (localStorage.sourceSansPro) {
       addFont(localStorage.sourceSansPro);
     } else {
       // We have to first load the font file asynchronously
-      var request = new XMLHttpRequest();
-
+      request = new XMLHttpRequest();
       request.open('GET', '/css/fonts.css', true);
 
       request.onload = function () {
@@ -168,7 +163,7 @@
           localStorage.sourceSansPro = request.responseText;
 
           // ...and load the font
-          addFont();
+          addFont(localStorage.sourceSansPro);
         } else {
           throw new Error('Couldn’t load fonts :/');
         }
@@ -176,9 +171,16 @@
 
       request.send();
     }
-  } catch (ex) {
-    // maybe load the font synchronously for woff-capable browsers
-    // to avoid blinking on every request when localStorage is not available
+  } catch (exc) {
+    var styleLink = doc.createElement('link');
+    styleLink.rel = 'stylesheet';
+    styleLink.href = 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600';
+    doc.head.appendChild(styleLink);
+  }
+
+  if (localStorage.font_css_cache || localStorage.font_css_cache_file) {
+    localStorage.removeItem('font_css_cache');
+    localStorage.removeItem('font_css_cache_file');
   }
 }());
 
