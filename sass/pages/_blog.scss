@@ -1,8 +1,8 @@
 .Page-blog {
   .Sitemain {
-    padding: $section-spacing-large 0;
+    padding-top: $section-spacing-large;
     @include respond-max(800px) {
-      padding: $section-spacing-mobile 0;
+      padding-top: $section-spacing-mobile;
     }
   }
 }
@@ -12,10 +12,6 @@
 
 .Excerpt {
   margin-bottom: $section-spacing-large;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
 
   a {
     transition: all 200ms ease;
@@ -28,6 +24,7 @@
 
   @include respond-max(800px) {
     margin-bottom: $section-spacing-mobile;
+    font-size: .9em;
   }
 }
 
@@ -38,7 +35,7 @@
   color: $text;
   margin: 0 !important;
   @include respond-max(800px) {
-    font-size: 1.8em;
+    font-size: 1.5em !important;
   }
 }
 

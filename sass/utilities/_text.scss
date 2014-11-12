@@ -61,27 +61,3 @@
   white-space: nowrap !important;
   word-wrap: normal !important; /* 2 */
 }
-
-
-
-
-
-
-/**
- * Custom font sizes
- */
-.u-text14 {
-  font-size: 14px;
-  font-size: 0.875em;
-}
-
-
-/**
- * Custom font classes
- */
-.u-serif {
-  font-family: $serif;
-}
-.u-sansserif {
-  font-family: $sansserif;
-}

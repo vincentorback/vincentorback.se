@@ -4,7 +4,7 @@
   }
   @include respond-max(800px) {
     .Sitemain {
-      padding: $section-spacing-mobile 0;
+      padding: #{$section-spacing-mobile / 2} 0;
     }
   }
   .Social {
@@ -153,13 +153,6 @@
   }
 }
 
-
-.Form-label, .Form-input {
-  @include respond-min(1600px) {
-    font-size: 1.2em;
-  }
-}
-
 .Form-label {
   position: absolute;
   top: .9em;
@@ -232,9 +225,6 @@ input:-webkit-autofill {
   transition: height 200ms ease;
   z-index: 1;
 
-  @include respond-min(1600px) {
-    min-height: 400px;
-  }
   @include respond-max(600px) {
     min-height: 200px;
   }

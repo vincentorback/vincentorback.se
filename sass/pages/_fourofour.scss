@@ -8,6 +8,18 @@
     width: 100%;
     min-height: 0;
   }
+
+  @include respond-max(800px) {
+    .Navigation {
+      background: #fff;
+      a {
+        color: $red;
+        &.is-active span {
+          border-bottom: 3px solid $red;
+        }
+      }
+    }
+  }
 }
 
 

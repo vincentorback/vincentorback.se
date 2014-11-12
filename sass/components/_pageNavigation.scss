@@ -1,4 +1,4 @@
-.Pagenav {
+.PageNav {
   width: 95%;
   margin: 0 auto;
   padding: 10% 0;
@@ -8,7 +8,7 @@
   @extend %clearfix;
 }
 
-.Pagenav-item {
+.PageNav-item {
   position: relative;
   display: inline-block;
   margin: 0 3em 1em 3em;
@@ -52,7 +52,7 @@
   }
 }
 
-.Pagenav-item--prev {
+.PageNav-item--prev {
   padding-left: 3.2em;
   &:before {
     left: 0;
@@ -68,7 +68,7 @@
   }
 }
 
-.Pagenav-item--next {
+.PageNav-item--next {
   padding-right: 3.2em;
   &:after {
     right: 0;

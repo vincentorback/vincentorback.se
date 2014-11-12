@@ -109,6 +109,11 @@ a {
     p {
       margin-bottom: 1.5rem;
     }
+    p, li {
+      a {
+        border-bottom-width: 1px;
+      }
+    }
   }
   @include respond-min(1600px) {
     font-size: 1.5em;

@@ -1,0 +1,119 @@
+/**
+ * WorkItem, used on the front page.
+**/
+
+.WorkItem {
+  color: #fff;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+
+  border-bottom-width: 0;
+  border-bottom-style: solid;
+  border-bottom-color: #fff;
+
+  height: 800px;
+
+  @include respond-max(800px) {
+    background-position: 50% 50% !important;
+    background-size: auto 100% !important;
+    max-height: 400px;
+  }
+
+  @include respond-max(500px) {
+    max-height: 350px;
+  }
+}
+
+
+.WorkItem-wrapper {
+  position: relative;
+  height: 100%;
+}
+
+
+
+.WorkItem-inner {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 75%;
+  max-width: 675px;
+  div {
+    display: inline-block;
+  }
+  p {
+    margin: 2em 0 1.5em 0;
+    font-size: 1.2em;
+    max-height: 300px;
+    max-width: 500px;
+
+    opacity: 1;
+    padding: 0;
+  }
+  a {
+    display: inline-block;
+    padding: .65em 1.5em;
+    border: 2px solid #fff;
+    letter-spacing: 1px;
+    border-radius: .4em;
+    color: #fff;
+    max-height: 300px;
+    transition: background 150ms ease, color 150ms ease, transform 100ms;
+    margin: 0 1.5em 1em 0;
+
+    transform: scale(1);
+    opacity: 1;
+    &:hover {
+      background: #fff;
+      color: $text;
+    }
+    .no-touch &:hover {
+      transform: scale(1.08);
+    }
+  }
+
+  .no-csstransforms & {
+    top: 20%;
+  }
+
+  @include respond-min(1600px) {
+    max-width: 800px;
+    font-size: 1.2em;
+    p {
+      max-width: 700px;
+    }
+  }
+
+  @include respond-max(800px) {
+    text-shadow: rgba(0,0,0,.1) 0 1px 2px;
+    width: 100%;
+    padding: 20% 0;
+    div {
+      display: block;
+    }
+    p {
+      height: 0;
+      overflow: hidden;
+      margin: 0 0 1em 0;
+    }
+    a {
+      margin: 0 .5em 1em 0;
+      font-size: .7em;
+      border-width: 1px;
+    }
+  }
+}
+
+.WorkItem-title {
+  font-size: 4.55em;
+  line-height: 1;
+  @include respond-max(800px) {
+    text-shadow: rgba(0,0,0,.1) 0 1px 2px;
+    font-size: 3em;
+  }
+  @include respond-max(400px) {
+    font-size: 2em;
+  }
+}

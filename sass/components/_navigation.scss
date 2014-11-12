@@ -59,7 +59,7 @@
     width: $canvasWidth;
     height: 100%;
 
-    background: #fff;
+    background: $red;
 
     visibility: hidden;
     opacity: 1;
@@ -84,12 +84,11 @@
 
     a {
       display: block;
-      color: $red;
       padding: .5em 0 0 1em;
       font-size: 1.75em;
 
       &.is-active span {
-        border-bottom: 3px solid $red;
+        border-bottom: 3px solid #fff;
       }
       &:hover {
         opacity: .7;
@@ -178,7 +177,7 @@
 
 .Navigation-toggle {
   position: absolute;
-  top: .75em;
+  top: 1.2em;
   right: 5.5%;
   z-index: 10;
 

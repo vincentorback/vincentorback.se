@@ -79,6 +79,11 @@
 }
 
 
+
+
+
+
+
 .Work {
   position: relative;
   padding-top: 5%;
@@ -99,6 +104,7 @@
     margin: 3rem 0;
   }
   @include respond-max(800px) {
+    padding-top: $section-spacing-mobile;
     .u-wrapper {
       max-width: 550px;
     }
@@ -106,6 +112,7 @@
 }
 
 .Work-image {
+  display: block;
   padding: 10% 0;
   img {
     margin: 0 auto;
@@ -180,42 +187,34 @@
   }
 }
 
+
+
 .Work-visitApps {
   text-align: center;
-  .app-store, .google-play {
-    display: inline-block;
-    width: 180px;
-    height: 50px;
-    text-indent: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    padding: 0;
-    margin: 0 10px;
-    border: 0;
+}
 
+.Work-visitApps--appStore,
+.Work-visitApps--googlePlay {
+  display: inline-block;
+  width: 180px;
+  height: 50px;
+  text-indent: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0 10px;
+  border: 0;
+
+  background-size: auto 100%;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  &:hover {
     background-size: auto 100%;
     background-color: transparent;
     background-repeat: no-repeat;
     background-position: center center;
-
-    &:hover {
-      background-size: auto 100%;
-      background-color: transparent;
-      background-repeat: no-repeat;
-      background-position: center center;
-    }
-  }
-  .app-store, .app-store:hover {
-    background-image: url("#{$images}/app-store.svg");
-  }
-  .google-play, .google-play:hover {
-    background-image: url("#{$images}/google-play.svg");
-  }
-  .no-svg & .app-store, .no-svg & .app-store:hover {
-    background-image: url("#{$images}/app-store.png");
-  }
-  .no-svg & .google-play, .no-svg & .google-play:hover {
-    background-image: url("#{$images}/google-play.png");
   }
 
   @include respond-max(800px) {
@@ -226,6 +225,23 @@
     }
   }
 }
+
+.Work-visitApps--appStore,
+.Work-visitApps--appStore:hover {
+  background-image: url("#{$images}/app-store.svg");
+  .no-svg & {
+    background-image: url("#{$images}/app-store.png");
+  }
+}
+
+.Work-visitApps--googlePlay
+.Work-visitApps--googlePlay:hover {
+  background-image: url("#{$images}/google-play.svg");
+  .no-svg & {
+    background-image: url("#{$images}/google-play.png");
+  }
+}
+
 
 
 
@@ -264,16 +280,6 @@
 
 
 
-.Parallax-container {
-  position: relative;
-  height: 0;
-  padding: 20% 0;
-  overflow: hidden;
-  margin: 10% auto;
-}
-.Parallax-image {
-  position: absolute;
-}
 
 
 
@@ -293,32 +299,33 @@
 
 
 
+
+
+
 @for $i from 1 through length($work-names) {
 
   .Work--#{nth($work-names, $i)} .Sitehead-cover, .WorkItem--#{nth($work-names, $i)} {
 
-    @if index("prophet" "asd", #{nth($work-names, $i)}) {
+    @if index("prophet", #{nth($work-names, $i)}) {
       background-color: #f4f4f4;
       background-position: 50% 50%;
     } @else {
       background-color: #{nth($work-colors, $i)};
     }
-    @if index("prophet" "asd", #{nth($work-names, $i)}) {
+
+    @if index("prophet", #{nth($work-names, $i)}) {
       background-size: cover;
       background-position: 50% 50%;
     }
-    @if index("arkdes" "asd", #{nth($work-names, $i)}) {
-      //background-position: 50% 0;
-    }
 
-    @if index("comai" "asd", #{nth($work-names, $i)}) {
-      background-image: url("#{$images}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb.svg");
+    @if index("comai", #{nth($work-names, $i)}) {
+      background-image: url("/images/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb.svg");
     } @else {
       .webp & {
-        background-image: url("#{$webp}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb.webp");
+        background-image: url("/webp/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb.webp");
       }
       .no-webp & {
-        background-image: url("#{$images}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb.jpg");
+        background-image: url("/images/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb.jpg");
       }
     }
   }
@@ -329,7 +336,7 @@
    */
   .Work--#{nth($work-names, $i)} {
 
-    @if index("prophet" "asd", #{nth($work-names, $i)}) {
+    @if index("prophet", #{nth($work-names, $i)}) {
       .Navigation-toggle {
         color: $text;
         border-color: $text;
@@ -348,14 +355,14 @@
     }
 
     .Sitehead {
-      @if index("prophet" "asd", #{nth($work-names, $i)}) {
+      @if index("prophet", #{nth($work-names, $i)}) {
         background-color: #f4f4f4;
       } @else {
         background-color: #{nth($work-colors, $i)};
       }
     }
 
-    @if index("prophet" "asd", #{nth($work-names, $i)}) {
+    @if index("prophet", #{nth($work-names, $i)}) {
       .Sitehead a,
       .Sitehead-inner {
         color: $text;
@@ -379,7 +386,7 @@
       }
     }
 
-    @if index("arkdes" "asd", #{nth($work-names, $i)}) {
+    @if index("arkdes", #{nth($work-names, $i)}) {
       @include respond-max(800px) {
         .Sitehead-inner {
           text-shadow: rgba(0,0,0,.3) 0 1px 2px;
@@ -392,8 +399,8 @@
   /**
    * Page navigation
    */
-  .Pagenav-item--#{nth($work-names, $i)} {
-    @if index("prophet" "asd", #{nth($work-names, $i)}) {
+  .PageNav-item--#{nth($work-names, $i)} {
+    @if index("prophet", #{nth($work-names, $i)}) {
       background: #fff;
       color: $prophet;
       border-color: $prophet;
@@ -430,7 +437,7 @@
     a:hover {
       color: #{nth($work-colors, $i)};
     }
-    @if index("prophet" "asd", #{nth($work-names, $i)}) {
+    @if index("prophet", #{nth($work-names, $i)}) {
       color: $text;
       a {
         color: $text;
@@ -444,7 +451,7 @@
         }
       }
     }
-    @if index("nordiska" "asd", #{nth($work-names, $i)}) {
+    @if index("nordiska", #{nth($work-names, $i)}) {
       @include respond-max(800px) {
         background-size: cover !important;
         background-position: 100% 50%;
