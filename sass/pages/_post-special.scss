@@ -11,11 +11,6 @@ $post-colors: ($yellow, $blue, $red, $green);
   .Post--#{nth($post-names, $i)} .Sitehead {
     background: #{nth($post-colors, $i)};
   }
-  /*
-  .Post--#{nth($post-names, $i)} .Sitehead-cover {
-    background-image: url("/images/blog/#{nth($post-names, $i)}.jpg");
-  }
-  */
 }
 
 
@@ -26,8 +21,6 @@ $post-colors: ($yellow, $blue, $red, $green);
     text-shadow: rgba(0,0,0,.1) 0 1px 2px;
   }
 }
-
-
 
 
 .Post--using-webp-images {
@@ -72,8 +65,6 @@ $post-colors: ($yellow, $blue, $red, $green);
       transform: scaleX(-1);
     }
 
-
-
     @include respond-max(900px) {
       .col {
         float: none;
@@ -81,52 +72,4 @@ $post-colors: ($yellow, $blue, $red, $green);
       }
     }
   }
-
 }
-
-
-
-
-/*
-.Post--hyperakt {
-  .Sitemain {
-    padding-bottom: 0;
-  }
-  .Sitehead {
-    height: 90%;
-  }
-  .Sitehead-inner {
-    transform: none;
-    top: auto;
-    bottom: 5%;
-  }
-  .Sitehead-inner,
-  .Sitehead-title {
-    animation: none !important;
-  }
-  .Sitehead-cover {
-    background-image: url("/images/about/header.jpg");
-  }
-  .u-marginN {
-    margin-top: 2em;
-    margin-bottom: .5em;
-  }
-  .Entry {
-    ol {
-      font-size: .8em;
-      list-style-position: outside;
-      margin-bottom: 4em;
-    }
-    li {
-      margin-bottom: .75em;
-    }
-  }
-}
-
-.Map {
-  height: 200px;
-  @include respond-min(1000px) {
-    height: 500px;
-  }
-}
-*/

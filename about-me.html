@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="/css/style.css">
   <noscript><link rel="stylesheet" href="/css/noscript.css"></noscript>
 
+  <meta name="theme-color" content="#ff4e00">
   <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
   <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
   <!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
@@ -85,19 +86,19 @@
         <div class="col">
           <h4>Books</h4>
           <article>
-            <img src="http://d3dx0f1ge67l9j.cloudfront.net/images/about/design-is-a-job.jpg" alt="">
+            <img src="http://d3dx0f1ge67l9j.cloudfront.net/images/about/design-is-a-job.jpg" width="100" height="155" alt="">
             <h1>Design is a job</h1>
             <p>Mike Monterio goes deep into the web designer work experience, writing how fun or terrifying it can be when working with customers, both working at an agency or as a freelancer. He shares tips like how important it is to not be an asshole and how you can make sure you get paid for what your doing.</p>
             <a href="http://www.abookapart.com/" target="_blank">www.abookapart.com</a>
           </article>
           <article>
-            <img src="http://d3dx0f1ge67l9j.cloudfront.net/images/about/the-manual.jpg" alt="">
+            <img src="http://d3dx0f1ge67l9j.cloudfront.net/images/about/the-manual.jpg" width="100" height="66" alt="">
             <h1>The Manual</h1>
             <p>The Manual is a thrice-yearly publication with stories from six people working as designers, developers, etc. Stories that explore what we do and who we are as designers. The book does not contain any code, screenshots or tutorials. It’s just stories from real life that connects to the work design business in the most fascinating ways.</p>
             <a href="http://themanual.org/" target="_blank">www.themanual.org</a>
           </article>
           <article>
-            <img src="http://d3dx0f1ge67l9j.cloudfront.net/images/about/conversations-with-design-entrepreneurs.jpg" alt="">
+            <img src="http://d3dx0f1ge67l9j.cloudfront.net/images/about/conversations-with-design-entrepreneurs.jpg" width="100" height="144" alt="">
             <h1>Conversations with Design Entrepreneurs</h1>
             <p>This book has it all. Amazing interviews with some of the smartest, most interesting and driven people whom all got their own start-up. The book is filled with beautiful illustrations and it’s just so good looking. Buy it just to touch it, it’s worth it!</p>
             <a href="http://www.kernandburn.com/" target="_blank">www.kernandburnbook.com</a>
@@ -107,19 +108,19 @@
         <div class="col">
           <h4>Podcasts</h4>
           <article>
-            <img src="http://d3dx0f1ge67l9j.cloudfront.net/images/about/the-web-ahead.jpg" alt="">
+            <img src="http://d3dx0f1ge67l9j.cloudfront.net/images/about/the-web-ahead.jpg" width="100" height="81" alt="">
             <h1>The Web Ahead</h1>
             <p>Jen Simmons interviews guests every week about the future of the web. The subjects are very different each week and it feels like she always gets the most interesting people that are really passionate about a specific topic or technique.</p>
             <a href="http://5by5.tv/webahead" target="_blank">www.5by5.tv/webahead</a>
           </article>
           <article>
-            <img src="http://d3dx0f1ge67l9j.cloudfront.net/images/about/shoptalk-show.jpg" alt="">
+            <img src="http://d3dx0f1ge67l9j.cloudfront.net/images/about/shoptalk-show.jpg" width="100" height="100" alt="">
             <h1>ShopTalk</h1>
             <p>Chris Coyier and Dave Rupert has a fun and educating podcast with loads of jokes, sound effects and great guests talking about everything front-end development related.</p>
             <a href="http://shoptalkshow.com/" target="_blank">www.shoptalkshow.com</a>
           </article>
           <article>
-            <img src="http://d3dx0f1ge67l9j.cloudfront.net/images/about/the-big-web-show.png" alt="">
+            <img src="http://d3dx0f1ge67l9j.cloudfront.net/images/about/the-big-web-show.png" width="100" height="100" alt="">
             <h1>The Big Web Show</h1>
             <p>The king of internet Jeffrey Zeldman interview different people about the web industry about web publication, content strategy, typography, web techniques and much more.</p>
             <a href="http://www.muleradio.net/thebigwebshow/" target="_blank">muleradio.net/thebigwebshow</a>
@@ -244,15 +245,15 @@
 
           <h4>Some clients I’ve worked with</h4>
           <ul>
-            <li><a href="https://www.coop.se/" target="_blank">Coop</a></li>
-            <li><a href="http://www.systembolaget.se/" target="_blank">Systembolaget</a></li>
-            <li><a href="http://www.arkdes.se/" target="_blank">Arkitektur- och Designcentrum</a></li>
-            <li><a href="http://www.nordiskamuseet.se/" target="_blank">Nordiska Museet</a></li>
+            <li><a href="//www.coop.se/" target="_blank">Coop</a></li>
+            <li><a href="//www.systembolaget.se/" target="_blank">Systembolaget</a></li>
+            <li><a href="//www.arkdes.se/" target="_blank">Arkitektur- och Designcentrum</a></li>
+            <li><a href="//www.nordiskamuseet.se/" target="_blank">Nordiska Museet</a></li>
           </ul>
         </div>
       </div>
       <footer class="Printlink">
-        <a href="http://vincentorback.se/cv.pdf" target="_blank" rel="me" data-trackvalue="print-resume">View resume as PDF</a>
+        <a href="//vincentorback.se/cv.pdf" target="_blank" rel="me" data-trackvalue="print-resume">Download resume as PDF</a>
       </footer>
     </div>
   </section>
@@ -281,10 +282,12 @@
 (function () {
   'use strict';
   var doc = document,
-    request;
+    request,
+    styleLink,
+    DoNotTrack = navigator.doNotTrack === 'yes' || navigator.doNotTrack === '1' || navigator.msDoNotTrack === '1';
 
   function addFont(localStoragePath) {
-    var style = doc.createElement('style');
+    styleLink = doc.createElement('style');
     style.textContent = localStoragePath;
     doc.head.appendChild(style);
   }
@@ -313,7 +316,7 @@
       request.send();
     }
   } catch (exc) {
-    var styleLink = doc.createElement('link');
+    styleLink = doc.createElement('link');
     styleLink.rel = 'stylesheet';
     styleLink.href = 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600';
     doc.head.appendChild(styleLink);
@@ -325,12 +328,18 @@
   }
 }());
 
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-31135100-1', 'vincentorback.se');
-ga('send', 'pageview');
+var DoNotTrack = navigator.doNotTrack === 'yes' || navigator.doNotTrack === '1' || navigator.msDoNotTrack === '1';
+if (!DoNotTrack) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31135100-1', 'vincentorback.se');
+  ga('send', 'pageview');
+
+  trq('account', 't-54652b425a0dabc01e3bf562');
+  (function(d,t){var s=d.createElement(t),c=d.getElementsByTagName(t)[0];s.async=1;s.src="https://cdn.capturly.com/js/track.js";c.parentNode.insertBefore(s,c);}(document,'script'));function trq(){(trq.q=trq.q||[]).push(arguments);}
+}
 </script>
 </body>
 </html>

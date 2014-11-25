@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Vincent Orback - Web designer and developer in Stockholm</title>
-  <meta name="description" content="Web designer and front-end developer in Stockholm, Sweden. I live for design, typography, mobile- and web development. Welcome to my portfolio.">
+  <meta name="description" content="Web designer and front-end developer in Stockholm, Sweden. I live for design, typography, mobile- and web development. Welcome to my portfolio!">
   <meta name="keywords" content="web designer, designer, developer, wordpress, portfolio">
 
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="/css/style.css">
   <noscript><link rel="stylesheet" href="/css/noscript.css"></noscript>
 
+  <meta name="theme-color" content="#ff4e00">
   <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
   <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
   <!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
@@ -22,7 +23,7 @@
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Vincent Orback - Web designer and developer in Stockholm">
-  <meta property="og:description" content="Web designer and front-end developer in Stockholm, Sweden. I live for design, typography, mobile- and web development. Welcome to my portfolio.">
+  <meta property="og:description" content="Web designer and front-end developer in Stockholm, Sweden. I live for design, typography, mobile- and web development. Welcome to my portfolio!">
   <meta property="og:url" content="http://vincentorback.se">
   <meta property="og:site_name" content="Vincent Orback">
   <meta property="og:image" content="http://d3dx0f1ge67l9j.cloudfront.net/images/screenshot.jpg">
@@ -50,7 +51,7 @@
       <div class="Sitehead-wrapper">
         <div class="Sitehead-inner">
           <h1 class="Sitehead-title">Hi, I’m <strong class="u-textTruncate">Vincent Orback</strong></h1>
-          <h2 class="Sitehead-subtitle">I work as a designer and developer in Stockholm, Sweden. <br><a href="#work" class="js-scroll">Welcome to my portfolio <span class="icon icon-arrow-down2"></span></a></h2>
+          <h2 class="Sitehead-subtitle">I work as a designer and developer in Stockholm, Sweden. <br><a href="#work" class="js-scroll" data-trackvalue="Welcome to my portfolio">Welcome to my portfolio <span class="icon icon-arrow-down2"></span></a></h2>
         </div>
       </div>
       <button class="Navigation-toggle js-navToggle" type="button" role="button" aria-controls="navigation">Menu</button>
@@ -141,7 +142,7 @@
     styleLink;
 
   function addFont(localStoragePath) {
-    var style = doc.createElement('style');
+    styleLink = doc.createElement('style');
     style.textContent = localStoragePath;
     doc.head.appendChild(style);
   }
@@ -182,12 +183,20 @@
   }
 }());
 
+
+var DoNotTrack = navigator.doNotTrack === 'yes' || navigator.doNotTrack === '1' || navigator.msDoNotTrack === '1';
+if (!DoNotTrack) {
+  console.log('track!');
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-31135100-1', 'vincentorback.se');
   ga('send', 'pageview');
-  </script>
+
+  trq('account', 't-54652b425a0dabc01e3bf562');
+  (function(d,t){var s=d.createElement(t),c=d.getElementsByTagName(t)[0];s.async=1;s.src="https://cdn.capturly.com/js/track.js";c.parentNode.insertBefore(s,c);}(document,'script'));function trq(){(trq.q=trq.q||[]).push(arguments);}
+}
+</script>
 </body>
 </html>

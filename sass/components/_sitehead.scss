@@ -1,3 +1,14 @@
+/*canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  display: block;
+  vertical-align: bottom;
+}*/
+
+
+
 .Sitehead {
   position: relative;
   @extend %clearfix;

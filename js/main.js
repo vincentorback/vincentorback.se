@@ -71,6 +71,7 @@
 
         if (doc.getElementById('page-front')) {
           vincent.workTransition();
+          //vincent.particleHead();
         }
       }
 
@@ -100,8 +101,7 @@
 
       //vincent.resizeAlert();
 
-      //vincent.dateEvents();
-
+      vincent.dateEvents();
     },
 
     parallaxHead: function () {
@@ -136,6 +136,53 @@
 
       parallax();
     },
+    /*
+    particleHead: function () {
+      var $sitehead = $body.find('#site-head'),
+        date = new Date(),
+        isNight = date.getHours() > 20 && date.getHours < 5;
+
+      if (isNight) {
+        $sitehead.css('background', '#050028');
+      }
+
+      particlesJS('site-head', {
+        particles: {
+          color: '#fff',
+          shape: 'circle',
+          opacity: 1,
+          size: 2.5,
+          size_random: true,
+          nb: 100,
+          line_linked: {
+            enable_auto: true,
+            distance: 250,
+            color: '#fff',
+            opacity: 0.5,
+            width: 1.5,
+            condensed_mode: {
+              enable: false,
+              rotateX: 600,
+              rotateY: 600
+            }
+          },
+          anim: {
+            enable: true,
+            speed: 1
+          }
+        },
+        interactivity: {
+          detect_on: 'window',
+          enable: true,
+          mouse: {
+            distance: 200
+          },
+          mode: 'grab'
+        },
+        retina_detect: true
+      });
+    },
+    */
 
     smoothScroll: function () {
       var $target,
@@ -240,15 +287,30 @@
 
         href = this.getAttribute('href');
 
-        $body.velocity({
-          opacity: 0
-        }, {
-          duration: 400,
-          easing: 'ease',
-          complete: function () {
+        if (!body.animate) {
+          $body.velocity({
+            opacity: 0
+          }, {
+            duration: 400,
+            easing: 'ease',
+            complete: function () {
+              win.location = href;
+            }
+          });
+        } else {
+          var pageAnimation = body.animate([
+            {opacity: 1},
+            {opacity: 0}
+          ], {
+            duration: 400,
+            iterations: 1,
+            easing: 'ease'
+          });
+
+          pageAnimation.onfinish = function () {
             win.location = href;
-          }
-        });
+          };
+        }
 
         e.preventDefault();
       });
@@ -320,7 +382,7 @@
         $header
           .velocity({
             height: '65%',
-            backgroundColor: color ? color : vincent.colors.black
+            backgroundColor: color || vincent.colors.black
           }, {
             duration: 400,
             easing: 'ease',
@@ -480,10 +542,12 @@
         transDone = false;
 
       $body.find('.js-transitionWork').on('click', function (e) {
-
+        console.log(123);
         if (e.metaKey || e.ctrlKey) {
           return;
         }
+
+        e.preventDefault();
 
         target = this.getAttribute('data-target');
         $target = $(target);
@@ -499,65 +563,81 @@
         $body.css('background', vincent.colors.white);
         $main.css('background', vincent.colors.white);
 
-        $target.velocity('scroll', {
-          duration: scrollSpeed,
-          easing: 'easeInOutQuart',
-          offset: 2
-        });
+        if (body.animate) {
+          var pageAnimation = body.animate([
+            {opacity: 1},
+            {opacity: 0}
+          ], {
+            duration: 400,
+            iterations: 1,
+            easing: 'ease'
+          });
 
-        $target.next('.WorkItem').velocity({
-          opacity: 0
-        }, {
-          duration: 500,
-          easing: 'ease'
-        });
-
-        $target.velocity({
-          height: (getViewport().height * 0.65) + 'px'
-        }, {
-          duration: 500,
-          easing: 'ease',
-          complete: function () {
+          pageAnimation.onfinish = function () {
             transDone = true;
-          }
-        });
-        $target.find('.WorkItem-inner').velocity({
-          top: '60%'
-        }, {
-          duration: 400,
-          easing: 'ease'
-        });
-        $target.find('.WorkItem-inner p').velocity({
-          opacity: 0,
-          maxHeight: 0,
-          height: 0,
-          marginTop: 0,
-          marginBottom: 0,
-          paddingTop: 0,
-          paddingBottom: 0
-        }, {
-          duration: 1000,
-          easing: 'ease'
-        });
-        $target.find('.WorkItem-inner a').velocity({
-          opacity: 0,
-          maxHeight: '53px',
-          paddingTop: 0,
-          paddingBottom: '2rem',
-          marginBottom: '0',
-          borderColorAlpha: 0
-        }, {
-          duration: 400,
-          easing: 'ease'
-        });
+          };
+        } else {
 
-        $footer.velocity({
-          paddingBottom: getViewport().height + 'px',
-          opacity: 0
-        }, {
-          duration: 50,
-          easing: 'ease'
-        });
+          $target.velocity('scroll', {
+            duration: scrollSpeed,
+            easing: 'easeInOutQuart',
+            offset: 2
+          });
+
+          $target.next('.WorkItem').velocity({
+            opacity: 0
+          }, {
+            duration: 500,
+            easing: 'ease'
+          });
+
+          $target.velocity({
+            height: (getViewport().height * 0.65) + 'px'
+          }, {
+            duration: 500,
+            easing: 'ease',
+            complete: function () {
+              transDone = true;
+            }
+          });
+          $target.find('.WorkItem-inner').velocity({
+            top: '60%'
+          }, {
+            duration: 400,
+            easing: 'ease'
+          });
+          $target.find('.WorkItem-inner p').velocity({
+            opacity: 0,
+            maxHeight: 0,
+            height: 0,
+            marginTop: 0,
+            marginBottom: 0,
+            paddingTop: 0,
+            paddingBottom: 0
+          }, {
+            duration: 1000,
+            easing: 'ease'
+          });
+          $target.find('.WorkItem-inner a').velocity({
+            opacity: 0,
+            maxHeight: '53px',
+            paddingTop: 0,
+            paddingBottom: '2rem',
+            marginBottom: '0',
+            borderColorAlpha: 0
+          }, {
+            duration: 400,
+            easing: 'ease'
+          });
+
+          $footer.velocity({
+            paddingBottom: getViewport().height + 'px',
+            opacity: 0
+          }, {
+            duration: 50,
+            easing: 'ease'
+          });
+        }
 
         /** Wait for transitions and prefetches to comlpete. */
         transitionInterval = win.setInterval(function () {
@@ -926,12 +1006,16 @@
     tracking: function () {
       var href,
         value,
-        location;
+        location,
+        DoNotTrack = navigator.doNotTrack === 'yes' || navigator.doNotTrack === '1' || navigator.msDoNotTrack === '1';
+
+      if (DoNotTrack) {
+        return;
+      }
 
       $(win).on('load', function () {
-        $body.find('a').on('click', function (event) {
-
-          if (ga) {
+        $body.find('a').on('click', function (e) {
+          if (win.ga) {
             href = $(this).attr('href');
             value = $(this).attr('data-trackvalue') || href;
             location = doc.title.substr(0, doc.title.indexOf('|')) || 'Frontpage';
@@ -939,20 +1023,20 @@
             ga('send', 'event', 'link', 'click', location + ' - ' + value, {
               'hitCallback': function () {
                 if (href && (href.charAt(0) !== '#') && (href.charAt(0) !== '/')) {
+                  if (e.metaKey || e.ctrlKey) {
+                    return;
+                  }
                   doc.location = href;
                 }
               }
             });
-
-            if (href) {
-              event.preventDefault();
-            }
+          } else {
+            throw new Error('ga is not defined...');
           }
-
         });
       });
-    }
-    /*
+    },
+
     dateEvents: function () {
       function checkDate(currentDate, startDate, endDate) {
         var minDate = new Date(startDate),
@@ -984,7 +1068,7 @@
             end: '01-05-' + nextYear,
             magic: function () {
               $.get(vincent.amazon + '/js/vendor/xmas.js', function (response) {
-                $('<script>').html(response).appendTo(head).attr('id', 'xmasScript');
+                $('<script id="xmas-script">').html(response).appendTo(head);
               });
             }
           }
@@ -999,8 +1083,7 @@
         }
       }
 
-    },
-    */
+    }
 
 
     /**

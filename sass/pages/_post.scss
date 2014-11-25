@@ -44,6 +44,9 @@
   max-width: 1000px;
   margin: $section-spacing auto !important;
   font-size: .8em;
+  padding: 1.4em 2em !important;
+  border-radius: 3px;
+  overflow: auto;
   @include respond-min(1600px) {
     margin: $section-spacing-large auto !important;
   }

@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="/css/style.css">
 <noscript><link rel="stylesheet" href="/css/noscript.css"></noscript>
 
+<meta name="theme-color" content="#1eb0e9">
 <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
 <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
 <!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
@@ -129,8 +130,8 @@ button.addEventListener('click', function (event) {
   </section>
 
   <nav class="PageNav">
-    <a href="/blog/take-10-and-learn-typography/" class="PageNav-item PageNav-item--prev js-transition" rel="prev"><span>Previous post: </span><b>Take 10 and learn typography</b></a>
-    <a href="/blog/i-commit-from-my-heart/" class="PageNav-item PageNav-item--next js-transition" rel="next"><span>Next post: </span><b>I commit from my heart</b></a>
+    <a href="/blog/take-10-and-learn-typography/" class="PageNav-item PageNav-item--prev js-transition" rel="prev"><span>Previous post: </span><strong>Take 10 and learn typography</strong></a>
+    <a href="/blog/i-commit-from-my-heart/" class="PageNav-item PageNav-item--next js-transition" rel="next"><span>Next post: </span><strong>I commit from my heart</strong></a>
   </nav>
 
 </main>
@@ -152,16 +153,19 @@ button.addEventListener('click', function (event) {
 
 </div>
 
-<script src="/js/vendor/prism.js" async></script>
+<script src="/js/vendor/prism.js"></script>
 <script src="/js/main-min.js" async></script>
 <script>
 (function () {
   'use strict';
   var doc = document,
-    request;
+    styleLink,
+    request,
+    DoNotTrack = navigator.doNotTrack === 'yes' || navigator.doNotTrack === '1' || navigator.msDoNotTrack === '1';
+
 
   function addFont(localStoragePath) {
-    var style = doc.createElement('style');
+    styleLink = doc.createElement('style');
     style.textContent = localStoragePath;
     doc.head.appendChild(style);
   }
@@ -190,7 +194,7 @@ button.addEventListener('click', function (event) {
       request.send();
     }
   } catch (exc) {
-    var styleLink = doc.createElement('link');
+    styleLink = doc.createElement('link');
     styleLink.rel = 'stylesheet';
     styleLink.href = 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600';
     doc.head.appendChild(styleLink);
@@ -202,12 +206,18 @@ button.addEventListener('click', function (event) {
   }
 }());
 
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-31135100-1', 'vincentorback.se');
-ga('send', 'pageview');
+var DoNotTrack = navigator.doNotTrack === 'yes' || navigator.doNotTrack === '1' || navigator.msDoNotTrack === '1';
+if (!DoNotTrack) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31135100-1', 'vincentorback.se');
+  ga('send', 'pageview');
+
+  trq('account', 't-54652b425a0dabc01e3bf562');
+  (function(d,t){var s=d.createElement(t),c=d.getElementsByTagName(t)[0];s.async=1;s.src="https://cdn.capturly.com/js/track.js";c.parentNode.insertBefore(s,c);}(document,'script'));function trq(){(trq.q=trq.q||[]).push(arguments);}
+}
 </script>
 </body>
 </html>

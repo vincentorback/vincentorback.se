@@ -65,10 +65,12 @@
 
     transform: scale(1);
     opacity: 1;
+
     &:hover {
       background: #fff;
       color: $text;
     }
+
     .no-touch &:hover {
       transform: scale(1.08);
     }

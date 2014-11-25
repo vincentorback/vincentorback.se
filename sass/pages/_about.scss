@@ -217,32 +217,15 @@
   text-align: center;
   a {
     display: inline-block;
-    padding: 1em 2em;
+    padding: .75em 2em;
     font-size: 1em;
     letter-spacing: 2px;
-    border-radius: 40px;
-    transition: border 200ms ease, box-shadow 100ms ease;
     font-weight: 300;
 
-    background: $blue;
-    color: #fff;
-
-    border: 4px solid transparent;
-
+    color: $blue;
     &:after {
-      content: normal;
-    }
-    &:hover, &:target {
-      border: 4px solid darken($blue, 10%);
-    }
-    &:active {
-      box-shadow: inset darken($blue, 20%) 0 0 4px;
-    }
-  }
-  @include respond-max(800px) {
-    a {
-      padding: .6em 1em;
-      letter-spacing: 0;
+      background-color: $blue;
+      width: 75%;
     }
   }
 }

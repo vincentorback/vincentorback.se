@@ -158,11 +158,16 @@
    > a {
     display: inline-block;
     padding: .8em 2em;
-    border: 2px solid $text;
-    letter-spacing: 2px;
-    border-radius: 15px;
+    margin: 0;
+
     color: $text;
+    letter-spacing: 2px;
+
     background: #fff;
+    border: 2px solid $text;
+    border-radius: 15px;
+
+
     transition: background 150ms ease, color 300ms ease, transform 200ms;
 
     &:hover {
