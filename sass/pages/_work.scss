@@ -189,12 +189,10 @@
 
 
 
-.Work-visitApps {
-  text-align: center;
-}
 
-.Work-visitApps--appStore,
-.Work-visitApps--googlePlay {
+
+
+.Work-visitApp {
   display: inline-block;
   width: 180px;
   height: 50px;
@@ -218,24 +216,22 @@
   }
 
   @include respond-max(800px) {
-    .app-store, .google-play {
-      height: 40px;
-      width: 100%;
-      margin: 0;
-    }
+    height: 40px;
+    width: 100%;
+    margin: 0;
   }
 }
 
-.Work-visitApps--appStore,
-.Work-visitApps--appStore:hover {
+.Work-visitApp--appStore,
+.Work-visitApp--appStore:hover {
   background-image: url("#{$images}/app-store.svg");
   .no-svg & {
     background-image: url("#{$images}/app-store.png");
   }
 }
 
-.Work-visitApps--googlePlay
-.Work-visitApps--googlePlay:hover {
+.Work-visitApp--googlePlay
+.Work-visitApp--googlePlay:hover {
   background-image: url("#{$images}/google-play.svg");
   .no-svg & {
     background-image: url("#{$images}/google-play.png");
