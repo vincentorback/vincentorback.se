@@ -22,44 +22,39 @@
   &:hover {
     background: $text;
     color: #fff;
-    &:before, &:after {
-      opacity: 1;
-    }
   }
-  &:before, &:after {
+  svg {
     position: absolute;
-    top: 50%;
-    margin: auto;
-    transform: translateY(-50%);
-    width: 4em;
-    height: 1em;
-    display: block;
-    transition: none;
-    @extend %icon;
+    top: 21px;
+    width: 20px;
+    height: 20px;
   }
 
   @include respond-max(800px) {
     margin: .5em 1em;
-    padding: .8em 2em;
+    padding: .7em 2em;
     font-size: .9em;
     span {
       display: none;
     }
-    &:before, &:after {
-      opacity: 1;
-      width: 3.7em;
+    svg {
+      top: 15px;
+      width: 16px;
+      height: 16px;
     }
   }
 }
 
 .PageNav-item--prev {
   padding-left: 3.2em;
-  &:before {
-    left: 0;
-    content: "\65";
+  svg {
+    left: 22px;
   }
   @include respond-max(800px) {
     padding-left: 3.5em;
+    svg {
+      left: 24px;
+    }
   }
   @include respond-min(750px) {
     &:hover {
@@ -70,12 +65,14 @@
 
 .PageNav-item--next {
   padding-right: 3.2em;
-  &:after {
-    right: 0;
-    content: "\63";
+  svg {
+    right: 22px;
   }
   @include respond-max(800px) {
     padding-right: 3.5em;
+    svg {
+      right: 24px;
+    }
   }
   @include respond-min(750px) {
     &:hover {

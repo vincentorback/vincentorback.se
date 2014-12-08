@@ -1,27 +1,11 @@
-
-
-
-
-
-
-$post-names: ("i-commit-from-my-heart", "smooth-scrolling-with-css", "take-10-and-learn-typography", "using-webp-images");
-$post-colors: ($yellow, $blue, $red, $green);
+$post-names: ("honor-dnt", "using-webp-images", "i-commit-from-my-heart", "smooth-scrolling-with-css", "take-10-and-learn-typography");
+$post-colors: ($pink,  $green, $yellow, $blue, $red);
 
 @for $i from 1 through length($post-names) {
   .Post--#{nth($post-names, $i)} .Sitehead {
     background: #{nth($post-colors, $i)};
   }
 }
-
-
-
-
-.Post--take-10 {
-  .Sitehead {
-    text-shadow: rgba(0,0,0,.1) 0 1px 2px;
-  }
-}
-
 
 .Post--using-webp-images {
 
@@ -60,9 +44,6 @@ $post-colors: ($yellow, $blue, $red, $green);
       img {
         margin: 0;
       }
-    }
-    .turn img {
-      transform: scaleX(-1);
     }
 
     @include respond-max(900px) {

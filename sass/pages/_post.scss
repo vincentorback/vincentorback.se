@@ -6,6 +6,9 @@
   .Sitehead-title {
     margin-bottom: .2em;
   }
+  .Sitehead-subtitle {
+    margin: -.2em 0 1em;
+  }
   .Sitemain {
     padding-top: 0;
   }
@@ -26,10 +29,6 @@
 .Blog-entry {
   padding-top: $section-spacing;
   @extend %fadein;
-  .u-wrapper {
-    max-width: 750px;
-    display: block;
-  }
   @include respond-min(1600px) {
     padding-top: $section-spacing-large;
   }

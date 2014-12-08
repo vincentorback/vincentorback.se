@@ -1,7 +1,6 @@
 .Page-work {
 
   .Sitehead {
-    //height: auto;
     color: #fff;
     a {
       color: #fff;
@@ -24,8 +23,9 @@
       display: inline-block;
       padding: .65em 0;
       font-size: 1.1em;
-      @extend %fadein;
       letter-spacing: 3px;
+
+      @extend %fadein;
     }
 
     .no-csstransforms & {
@@ -54,9 +54,6 @@
     .Sitehead-cover {
       background-position: 50% 50%;
     }
-    .Sitehead-inner {
-      text-shadow: rgba(0,0,0,.2) 0 1px 2px;
-    }
   }
 
   @include respond-max(660px) {
@@ -75,11 +72,7 @@
       width: 100%;
     }
   }
-
 }
-
-
-
 
 
 
@@ -109,6 +102,9 @@
       max-width: 550px;
     }
   }
+  @include respond-max(400px) {
+    padding-top: #{$section-spacing-mobile / 2};
+  }
 }
 
 .Work-image {
@@ -121,24 +117,6 @@
     max-height: 95vmin;
   }
 }
-/*
-.Work-image--cover {
-  img {
-    max-width: none;
-    width: 100%;
-  }
-}
-.Work-image--medium {
-  img {
-    max-width: 1024px;
-  }
-}
-.Work-image--small {
-  img {
-    max-width: 730px;
-  }
-}
-*/
 
 
 
@@ -196,8 +174,7 @@
 
 
 
-
-.Work-visitApp {
+.Work-visit .Work-visitApp {
   display: inline-block;
   width: 180px;
   height: 50px;
@@ -205,13 +182,17 @@
   overflow: hidden;
   white-space: nowrap;
   padding: 0;
-  margin: 0 10px;
   border: 0;
+  margin: 0;
 
   background-size: auto 100%;
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center center;
+
+  &:first-child {
+    margin-top: 1em;
+  }
 
   &:hover {
     background-size: auto 100%;
@@ -223,20 +204,20 @@
   @include respond-max(800px) {
     height: 40px;
     width: 100%;
-    margin: 0;
+    margin-top: 1em;
   }
 }
 
-.Work-visitApp--appStore,
-.Work-visitApp--appStore:hover {
+.Work-visit .Work-visitApp--appStore,
+.Work-visit .Work-visitApp--appStore:hover {
   background-image: url("#{$images}/app-store.svg");
   .no-svg & {
     background-image: url("#{$images}/app-store.png");
   }
 }
 
-.Work-visitApp--googlePlay
-.Work-visitApp--googlePlay:hover {
+.Work-visit .Work-visitApp--googlePlay,
+.Work-visit .Work-visitApp--googlePlay:hover {
   background-image: url("#{$images}/google-play.svg");
   .no-svg & {
     background-image: url("#{$images}/google-play.png");
@@ -384,14 +365,6 @@
       &:hover {
         background: #{nth($work-colors, $i)};
         color: #fff;
-      }
-    }
-
-    @if index("arkdes", #{nth($work-names, $i)}) {
-      @include respond-max(800px) {
-        .Sitehead-inner {
-          text-shadow: rgba(0,0,0,.3) 0 1px 2px;
-        }
       }
     }
   }

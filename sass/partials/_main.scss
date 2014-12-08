@@ -1,4 +1,3 @@
-
 /**
  * Wrappers
  */
@@ -10,7 +9,7 @@
 
 .u-wrapper--S {
   @extend %wrapper;
-  max-width: 730px;
+  max-width: 760px;
 }
 
 .u-wrapper--M {
@@ -29,17 +28,6 @@
   }
 }
 
-.u-wrapper--XL {
-  @extend %wrapper;
-  max-width: 1680px;
-}
-
-
-
-
-
-
-
 
 /**
  * Place parallax scrolling images above .Sitemain
@@ -47,7 +35,6 @@
 .imageHolder {
   z-index: 11;
 }
-
 
 
 /**
@@ -61,13 +48,14 @@
 /**
  * Disabeling hover on scroll
  */
+
+
+
+
 .disable-hover,
 .disable-hover * {
   pointer-events: none !important;
 }
-
-
-
 
 .Video {
   position: relative;

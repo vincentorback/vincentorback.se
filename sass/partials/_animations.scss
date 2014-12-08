@@ -13,16 +13,16 @@
 */
 @keyframes fadeinTop {
   0% {
-    opacity: 0;
+    //opacity: 0;
     transform: translate3d(0,-60%,0);
   }
   100% {
-    opacity: 1;
+    //opacity: 1;
     transform: translate3d(0,0,0);
   }
 }
 %fadeinTop {
-  animation: fadeinTop 700ms ease 1;
+  animation: fadeinTop 1000ms $nice-easing 1;
 }
 
 
@@ -39,7 +39,7 @@
 }
 
 %fadeinBottom {
-  animation: fadeinBottom 700ms ease 1;
+  animation: fadeinBottom 700ms $nice-easing 1;
 }
 
 
@@ -60,7 +60,7 @@
 }
 
 %fadeoutBottom {
-  animation: fadeoutBottom 700ms ease 1;
+  animation: fadeoutBottom 700ms $nice-easing 1;
 }
 
 
@@ -75,7 +75,7 @@
 }
 
 %moveInTop {
-  animation: moveInTop 700ms ease 1;
+  animation: moveInTop 700ms $nice-easing 1;
 }
 
 
@@ -90,7 +90,7 @@
 }
 
 %moveinBottom {
-  animation: moveinBottom 700ms ease 1;
+  animation: moveinBottom 700ms $nice-easing 1;
 }
 */
 
@@ -105,7 +105,7 @@
 }
 
 %fadein {
-  animation: fadein 1000ms ease 1;
+  animation: fadein 1000ms $nice-easing 1;
 }
 
 

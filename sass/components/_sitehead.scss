@@ -1,26 +1,14 @@
-/*canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  display: block;
-  vertical-align: bottom;
-}*/
-
-
-
 .Sitehead {
   position: relative;
-  @extend %clearfix;
-  background-color: #000;
 
-  height: 65%;
+  height: 60%;
   max-height: 800px;
   min-height: 200px;
 
   z-index: 1;
-
   overflow: hidden;
+
+  @extend %clearfix;
 
   a {
     color: #fff;
@@ -29,17 +17,14 @@
   @include respond-min(800px) {
     min-height: 400px;
   }
+
   @include respond-max(600px) {
     height: 50%;
     min-height: 300px;
   }
-}
 
-.Sitehead-wrapper {
-  @extend .u-wrapper--L;
-  height: 100%;
-  @include respond-min(1600px) {
-    max-width: 1500px;
+  @media (max-width: 800px) and (min-height: 800px) {
+    height: 45%;
   }
 }
 
@@ -51,7 +36,6 @@
   left: 0;
   z-index: -1;
 
-  background-color: #000;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -82,17 +66,20 @@
   @include respond-min(1600px) {
     font-size: 1.2em;
   }
-
 }
 
-
-
+.Sitehead-title,
+.Sitehead-subtitle {
+  text-shadow: rgba(0,0,0,.1) 0 1px 2px;
+  line-height: 1.2;
+}
 
 .Sitehead-title {
   font-size: 4.55em;
-  line-height: 1;
   font-weight: 600;
+
   @extend %fadeinTop;
+
   @media (max-width: 800px), (max-height: 480px) {
     font-size: 3em;
   }
@@ -104,9 +91,8 @@
 .Sitehead-subtitle {
   margin-top: .5em;
   letter-spacing: 1px;
-  line-height: 1.2;
   font-size: 1.75em;
-  max-width: 600px;
+
   @include respond-max(800px) {
     font-size: 1.2em;
   }

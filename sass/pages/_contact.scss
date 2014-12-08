@@ -1,21 +1,25 @@
 .Page-contact {
+  .Sitehead-cover {
+    background-position: 50% 0;
+  }
   .Sitemain {
-    padding: $section-spacing 0;
+    padding: #{$section-spacing / 4} 0 #{$section-spacing / 1.5};
   }
   @include respond-max(800px) {
     .Sitemain {
-      padding: #{$section-spacing-mobile / 2} 0;
+      padding: #{$section-spacing-mobile / 4} 0 #{$section-spacing-mobile / 1.5};
     }
   }
   .Social {
-    &:hover {
+    &:hover svg {
       transform: scale(1.15);
     }
-    &:active {
-      transform: scale(0.9);
+    &:active svg {
+      transform: scale(1);
     }
   }
 }
+
 
 .Contact {
   text-align: center;
@@ -26,28 +30,28 @@
 }
 
 
-
-
-
 .Social {
-  font-size: 2.5em;
-  padding: 1em .5em;
+  padding: 2em 1em;
   display: inline-block;
-
-  will-change: transform;
-  transition: transform 200ms ease;
+  svg {
+    width: 50px;
+    height: 50px;
+    transition: transform 200ms ease;
+  }
 
   &:active {
     opacity: .9;
   }
 
-  @include respond-min(1600px) {
-    font-size: 3em;
-  }
   @include respond-max(600px) {
-    padding: .25em;
+    padding: 1em .5em;
+    svg {
+      width: 40px;
+      height: 40px;
+    }
   }
 }
+
 
 @for $i from 1 through length($social-names) {
   .Social--#{nth($social-names, $i)} {
@@ -56,20 +60,30 @@
 }
 
 .Social--gmail {
-  top: -.2rem;
+  position: relative;
+  top: 9px;
+  svg {
+    width: 55px;
+    height: 55px;
+  }
+  @include respond-max(600px) {
+    top: 7px;
+    svg {
+      width: 45px;
+      height: 45px;
+    }
+  }
 }
 
 
 
 
-
-
 .Contactform {
-  margin: 1em auto 0 auto;
+  margin: 1em auto 0;
   width: 90%;
   max-width: 600px;
   @include respond-max(800px) {
-    margin: $section-spacing-mobile auto 0 auto;
+    margin: #{$section-spacing-mobile / 4} auto 0;
   }
 }
 
@@ -77,22 +91,22 @@
   text-align: center;
   font-size: .9em;
   margin-bottom: 1em;
+  color: #666;
 
   button {
-    border-bottom: 2px solid $blue;
+    position: relative;
     padding: 0 2px;
-    transition: all 200ms ease;
-    &:focus {
+    color: #222;
+    @include hoverLink;
+    &:after {
       background: $blue;
-      color: #fff;
     }
   }
-
 }
 
 .Contactform-response {
   display: none;
-  padding: 1em 0 3em 0;
+  padding: 1em 0 3em;
   text-align: center;
   font-size: 1.5em;
 }
@@ -182,8 +196,11 @@
     color: $red;
   }
 
+  .no-js &,
+  .touch &,
   .no-csstransforms &.is-active {
     top: -.9em;
+    color: $blue;
   }
 
 }

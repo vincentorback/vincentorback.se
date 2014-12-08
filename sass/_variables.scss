@@ -14,6 +14,7 @@ $section-spacing-large: 150px;
 $section-spacing-mobile: 60px;
 
 
+$nice-easing: cubic-bezier(.165,.84,.44,1);
 
 
 $canvasWidth: 300px;
@@ -33,6 +34,7 @@ $blue2: #00a2e0;
 $teal: #c3e3e7;
 $text: #222;
 $paper: #fefef6;
+$purple: #9b59b6;
 
 $green: #2ecc71;
 $yellow: #f1c40f;
@@ -58,7 +60,7 @@ $joy: #000;
 
 
 /* Fonts */
-$sansserif: "Source Sans Pro", "Helvetica Neue", Helvetica, sans-serif;
+$sansserif: "Source Sans Pro", Helvetica, sans-serif;
 $serif: "Charter", "Cambria", Georgia, serif;
 
 

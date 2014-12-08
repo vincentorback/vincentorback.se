@@ -1,8 +1,7 @@
 .Navigation {
   position: absolute;
   top: 2em;
-  right: 7%;
-  right: calc(5% - 1.9em);
+  right: -1.9em;
   z-index: 9;
 
   li {
@@ -104,35 +103,6 @@
   @include respond-max($canvasWidth + 100px) {
     width: $canvasWidth-mobile;
     transform: translate3d(#{$canvasWidth-mobile - 60px},0,0);
-  }
-}
-
-
-
-
-.Navigation .Navigation-social {
-  position: absolute;
-  top: auto;
-  left: 0;
-  bottom: 0;
-  transform: none;
-  text-align: right;
-
-  display: none;
-
-  li {
-    display: inline-block;
-  }
-  a {
-    padding: .55em .55em .55em 0 !important;
-  }
-
-  .no-js & {
-    display: none;
-  }
-
-  @include respond-max($threshold) {
-    display: block;
   }
 }
 

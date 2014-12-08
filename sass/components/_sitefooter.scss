@@ -9,6 +9,10 @@
   @include respond-max(800px) {
     font-size: .85em;
   }
+  @include respond-max(400px) {
+    padding: 1.5em 0;
+    font-size: .8em;
+  }
 }
 
 
@@ -30,6 +34,18 @@
   }
   .address,.email,.phone {
     margin: 0 .5em;
+  }
+  .email a {
+    position: relative;
+    @include hoverLink;
+    &:after {
+      bottom: -3px;
+    }
+  }
+  @include respond-max(800px) {
+    div {
+      line-height: 1.5;
+    }
   }
 }
 

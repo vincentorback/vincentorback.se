@@ -3,6 +3,7 @@
 **/
 
 .WorkItem {
+  background: #000;
   color: #fff;
   background-size: cover;
   background-repeat: no-repeat;
@@ -22,6 +23,15 @@
 
   @include respond-max(500px) {
     max-height: 350px;
+  }
+  @include respond-max(400px) {
+    max-height: 250px;
+  }
+  @media (min-height: 100px) {
+    height: 900px;
+  }
+  @media (min-height: 1200px) {
+    height: 1100px;
   }
 }
 
@@ -44,7 +54,7 @@
     display: inline-block;
   }
   p {
-    margin: 2em 0 1.5em 0;
+    margin: 2em 0 1.5em;
     font-size: 1.2em;
     max-height: 300px;
     max-width: 500px;
@@ -89,7 +99,7 @@
   }
 
   @include respond-max(800px) {
-    text-shadow: rgba(0,0,0,.1) 0 1px 2px;
+    text-shadow: rgba(0,0,0,.15) 0 1px 2px;
     width: 100%;
     padding: 20% 0;
     div {
@@ -110,9 +120,9 @@
 
 .WorkItem-title {
   font-size: 4.55em;
-  line-height: 1;
+  line-height: 1.2;
   @include respond-max(800px) {
-    text-shadow: rgba(0,0,0,.1) 0 1px 2px;
+    text-shadow: rgba(0,0,0,.15) 0 1px 2px;
     font-size: 3em;
   }
   @include respond-max(400px) {

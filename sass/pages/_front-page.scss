@@ -4,33 +4,31 @@
 
 .Page-front {
 
-  .Sitehead-cover {
-    display: none;
-  }
-
   .Sitehead {
     height: 100%;
     max-height: none;
     background: #fff;
     background: $red;
   }
+
   .Sitehead-inner {
     top: auto;
     bottom: 25%;
 
     @extend %fadeinBottom;
   }
+
   .Sitehead-title,
   .Sitehead-subtitle {
     margin: 0;
     font-weight: 600;
-    line-height: 1.3;
   }
+
   .Sitehead-title {
     animation: none !important;
   }
+
   .Sitehead-subtitle {
-    max-width: none;
     font-size: 1.8em;
     a {
       position: absolute;
@@ -45,19 +43,20 @@
       animation: fadeinBottom 1000ms ease 1;
       animation-delay: 1500ms;
       animation-fill-mode:forwards;
-      &:hover span {
+      &:hover svg {
         @extend %bounce;
       }
     }
-    span {
+    svg {
       display: inline-block;
-      &:before {
-        top: 0;
-        left: .5em;
-        font-size: .7em;
-      }
+      position: relative;
+      top: 3px;
+      left: 3px;
+      width: 18px;
+      height: 18px;
     }
   }
+
   @include respond-max(800px) {
     .Navigation {
       background: #fff;
@@ -68,15 +67,29 @@
         }
       }
     }
-    .Sitehead-inner {
-      font-size: .8em;
-      top: 35%;
+    .Sitehead {
+      height: 50%;
+    }
+    .Sitehead-title {
+      font-size: 2em;
     }
     .Sitehead-subtitle {
-      a {
-        text-align: center;
-      }
+      font-size: 1.2em;
+    }
+    .Sitehead-subtitle a {
+      display: none;
     }
   }
 
+  @include respond-max(400px) {
+    .Sitehead {
+      height: 250px;
+      min-height: 0;
+    }
+    .Sitehead-inner {
+      position: static;
+      font-size: .8em;
+      margin-top: 100px;
+    }
+  }
 }

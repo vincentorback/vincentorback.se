@@ -1,33 +1,39 @@
-h1,h2,h3,h4,h5,h6 {
-  font-size: 1em;
-  line-height: 1.2;
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol {
+  margin: 0;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1em;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
 ul, ol {
   list-style: none;
   padding: 0;
 }
-h1,h2,h3,h4,h5,h6 {
-  font-weight: 600;
-}
-p,h1,h2,h3,h4,h5,h6,ul,ol {
-  margin: 0;
-}
+
 a {
   color: $text;
-  text-decoration:none;
+  text-decoration: none;
   cursor: pointer;
   &:hover {
     text-decoration: none;
   }
 }
-
-.u-textStrong {
-  font-weight: 600;
-}
-
-
-
-
 
 
 
@@ -83,7 +89,6 @@ a {
   blockquote {
     margin: 10% -2em;
     font-size: 1.4em;
-    line-height: 1.2;
     color: #666;
     font-weight: 600;
   }
@@ -102,6 +107,12 @@ a {
   li {
     font-family: $serif;
   }
+  hr {
+    margin: $section-spacing 0;
+    border: 0;
+    background-color: $gray;
+    height: 1px;
+  }
   @include respond-max(800px) {
     font-size: 1em;
     blockquote {
@@ -114,6 +125,9 @@ a {
       a {
         border-bottom-width: 1px;
       }
+    }
+    hr {
+      margin: $section-spacing-mobile 0;
     }
   }
   @include respond-min(1600px) {

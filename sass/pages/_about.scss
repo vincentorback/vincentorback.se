@@ -1,5 +1,11 @@
+.Page-about {
+  .Sitehead-cover {
+    background-color: #c4ccdf;
+  }
+}
+
 .About {
-  padding: #{$section-spacing - 20px} 0 $section-spacing 0;
+  padding: #{$section-spacing - 20px} 0 $section-spacing;
   h1 {
     font-size: 2em;
     margin-bottom: 1em;
@@ -14,7 +20,7 @@
     h1 {
       margin-bottom: .4em;
     }
-    padding: #{$section-spacing-mobile - 20px} 0 $section-spacing-mobile 0;
+    padding: #{$section-spacing-mobile - 20px} 0 $section-spacing-mobile;
   }
 }
 
@@ -82,8 +88,8 @@
     font-family: $serif;
   }
   footer {
-    max-width: 700px;
-    margin: 0 auto $section-spacing auto;
+    width: 100%;
+    margin-bottom: $section-spacing;
     font-size: .85em;
     text-align: center;
   }
