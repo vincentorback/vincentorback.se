@@ -6,7 +6,7 @@
 
   function getViewport() {
     var win = window,
-      docElem = document.documentElement;
+      docElem = win.document.documentElement;
 
     return {
       width: Math.max(docElem.clientWidth, win.innerWidth || 0),
@@ -20,6 +20,7 @@
     head = doc.head || doc.getElementsByTagName('head')[0],
     body = doc.body || doc.getElementsByTagName('body')[0],
     $body = $(body),
+    $siteHead = $body.find('.Sitehead'),
     winWidth = getViewport().width,
     winHeight = getViewport().height,
     vincent;
@@ -28,8 +29,24 @@
 
     init: function () {
 
-      //vincent.amazon = '';
       vincent.amazon = '//d3dx0f1ge67l9j.cloudfront.net';
+      vincent.colors = {
+        pink: '#ff7fa5',
+        yellow: '#f1c40f',
+        blue: '#1eb0e9',
+        red: '#ff4e00',
+        green: '#2ecc71',
+        white: '#fff',
+        black: '#000'
+      };
+      vincent.postColors = {
+        'honor-dnt': vincent.colors.pink,
+        'i-commit-from-my-heart': vincent.colors.yellow,
+        'smooth-scrolling-with-css': vincent.colors.blue,
+        'take-10-and-learn-typography': vincent.colors.red,
+        'using-webp-images': vincent.colors.green
+      };
+      vincent.scrollEasing = 'easeInOutQuart';
 
       win.requestAnimFrame = (function () {
         return win.requestAnimationFrame  ||
@@ -39,22 +56,6 @@
             win.setTimeout(callback, 1000 / 60);
           };
       }());
-
-      vincent.colors = {
-        yellow: '#f1c40f',
-        blue: '#1eb0e9',
-        red: '#ff4e00',
-        green: '#2ecc71',
-        white: '#fff',
-        black: '#000'
-      };
-
-      vincent.postColors = {
-        'i-commit-from-my-heart': vincent.colors.yellow,
-        'smooth-scrolling-with-css': vincent.colors.blue,
-        'take-10-and-learn-typography': vincent.colors.red,
-        'using-webp-images': vincent.colors.green
-      };
 
       vincent.navToggle();
 
@@ -71,19 +72,13 @@
 
         if (doc.getElementById('page-front')) {
           vincent.workTransition();
-          //vincent.particleHead();
         }
       }
 
       if (doc.getElementById('page-work') || doc.getElementById('page-about') || doc.getElementById('page-post')) {
         vincent.parallaxImages();
-        //vincent.lazyLoad();
       }
-/*
-      if (doc.getElementById('page-work')) {
-        vincent.faviconFun();
-      }
-*/
+
       if (doc.getElementById('page-contact')) {
         vincent.contactForm();
         vincent.expandable();
@@ -99,20 +94,20 @@
 
       vincent.tracking();
 
-      //vincent.resizeAlert();
-
       vincent.dateEvents();
+
+      // Fixes a webkit svg rendering bug in Safari and iOS Safari
+      vincent.svgRefresh();
     },
 
     parallaxHead: function () {
-      var $header = $body.find('.Sitehead'),
-        $navigation = $body.find('.Navigation'),
+      var $navigation = $body.find('.Navigation'),
         scrollPos;
 
       function parallax() {
-        if (win.scrollY < $header.height()) {
+        if (win.scrollY < $siteHead.height()) {
           scrollPos = Math.round(win.scrollY / 5);
-          $header.css({
+          $siteHead.css({
             transform: 'translate3d(0,' + scrollPos + 'px, 0)'
           });
         }
@@ -136,53 +131,6 @@
 
       parallax();
     },
-    /*
-    particleHead: function () {
-      var $sitehead = $body.find('#site-head'),
-        date = new Date(),
-        isNight = date.getHours() > 20 && date.getHours < 5;
-
-      if (isNight) {
-        $sitehead.css('background', '#050028');
-      }
-
-      particlesJS('site-head', {
-        particles: {
-          color: '#fff',
-          shape: 'circle',
-          opacity: 1,
-          size: 2.5,
-          size_random: true,
-          nb: 100,
-          line_linked: {
-            enable_auto: true,
-            distance: 250,
-            color: '#fff',
-            opacity: 0.5,
-            width: 1.5,
-            condensed_mode: {
-              enable: false,
-              rotateX: 600,
-              rotateY: 600
-            }
-          },
-          anim: {
-            enable: true,
-            speed: 1
-          }
-        },
-        interactivity: {
-          detect_on: 'window',
-          enable: true,
-          mouse: {
-            distance: 200
-          },
-          mode: 'grab'
-        },
-        retina_detect: true
-      });
-    },
-    */
 
     smoothScroll: function () {
       var $target,
@@ -212,7 +160,7 @@
           .velocity('scroll', {
             offset: scrollOffset,
             duration: 1200,
-            easing: 'easeInOutQuart'
+            easing: vincent.scrollEasing
           });
 
         win.setTimeout(function () {
@@ -246,7 +194,7 @@
         $target.velocity('scroll', {
           duration: 1200,
           offset: Math.abs(scrollOffset) * -1,
-          easing: 'easeInOutQuart'
+          easing: vincent.scrollEasing
         });
 
         win.setTimeout(function () {
@@ -287,6 +235,23 @@
 
         href = this.getAttribute('href');
 
+        $body
+          .velocity({
+            opacity: 0
+          }, {
+            duration: 400,
+            easing: 'ease',
+            queue: false
+          })
+          .velocity('scroll', {
+            duration: 700,
+            easing: vincent.scrollEasing,
+            complete: function () {
+              win.location = href;
+            }
+          });
+
+        /*
         if (!body.animate) {
           $body.velocity({
             opacity: 0
@@ -298,6 +263,12 @@
             }
           });
         } else {
+
+          $body.velocity('scroll', {
+            duration: 700,
+            easing: vincent.scrollEasing
+          });
+
           var pageAnimation = body.animate([
             {opacity: 1},
             {opacity: 0}
@@ -311,6 +282,7 @@
             win.location = href;
           };
         }
+        */
 
         e.preventDefault();
       });
@@ -318,11 +290,10 @@
 
     pageTransitionHalf: function () {
       var href,
-        $header = $body.find('.Sitehead'),
         $main = $body.find('.Sitemain'),
-        $cover = $header.find('.Sitehead-cover'),
+        $cover = $siteHead.find('.Sitehead-cover'),
         $nav = $body.find('#navigation'),
-        hasCover = ($cover.length > 0) || ($header.height() > winHeight),
+        hasCover = ($cover.length > 0) || ($siteHead.height() > winHeight),
         delay = 0,
         count = 0,
         transitionInterval,
@@ -361,13 +332,18 @@
         if (cover) {
           bgCover = doc.createElement('div');
           bgCover.style.cssText = 'position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url(' + cover + '); background-repeat: no-repeat; background-position: 50% 50%; background-size: cover; opacity: 0; z-index: -1;';
+          if (page === 'contact') {
+            bgCover.style.backgroundPosition = '50% 0';
+          } else if (page === 'blog') {
+            bgCover.style.backgroundPosition = '75% 50%';
+          }
         }
 
         $body
           .css('background', vincent.colors.white)
           .velocity('scroll', {
             duration: 700,
-            easing: 'easeInOutQuart'
+            easing: vincent.scrollEasing
           });
 
         $main.velocity({
@@ -379,9 +355,9 @@
 
 
 
-        $header
+        $siteHead
           .velocity({
-            height: '65%',
+            height: '60%',
             backgroundColor: color || vincent.colors.black
           }, {
             duration: 400,
@@ -404,7 +380,7 @@
 
 
         /** Change header colors */
-        $header.find('a').velocity({
+        $siteHead.find('a').velocity({
           color: vincent.colors.white
         }, {
           duration: 400,
@@ -452,10 +428,9 @@
 
     pageTransitionFull: function () {
       var href,
-        $header = $body.find('.Sitehead'),
         $main = $body.find('.Sitemain'),
-        $cover = $header.find('.Sitehead-cover'),
-        hasCover = ($cover.length > 0) || ($header.css('background-image') !== 'none') || ($header.height() > winHeight),
+        $cover = $siteHead.find('.Sitehead-cover'),
+        hasCover = ($cover.length > 0) || ($siteHead.css('background-image') !== 'none') || ($siteHead.height() > winHeight),
         count = 0,
         transitionInterval,
         transDone = false,
@@ -485,7 +460,7 @@
           easing: 'ease'
         });
 
-        $header.velocity({
+        $siteHead.velocity({
           height: winHeight,
           maxHeight: '100%',
           backgroundColor: vincent.colors.red
@@ -497,14 +472,14 @@
           }
         });
 
-        $header.find('.Sitehead-inner').velocity({
+        $siteHead.find('.Sitehead-inner').velocity({
           translateY: winHeight
         }, {
           duration: 400,
           easing: 'ease'
         });
 
-        $header.find('.Sitehead-logo').velocity({
+        $siteHead.find('.Sitehead-logo').velocity({
           translateY: -200
         }, {
           duration: 400,
@@ -542,7 +517,6 @@
         transDone = false;
 
       $body.find('.js-transitionWork').on('click', function (e) {
-        console.log(123);
         if (e.metaKey || e.ctrlKey) {
           return;
         }
@@ -563,81 +537,65 @@
         $body.css('background', vincent.colors.white);
         $main.css('background', vincent.colors.white);
 
-        if (body.animate) {
-          var pageAnimation = body.animate([
-            {opacity: 1},
-            {opacity: 0}
-          ], {
-            duration: 400,
-            iterations: 1,
-            easing: 'ease'
-          });
+        $target.velocity('scroll', {
+          duration: scrollSpeed,
+          easing: vincent.scrollEasing,
+          offset: 2
+        });
 
-          pageAnimation.onfinish = function () {
+        $target.next('.WorkItem').velocity({
+          opacity: 0
+        }, {
+          duration: 500,
+          easing: 'ease'
+        });
+
+        $target.velocity({
+          height: (getViewport().height * 0.6) + 'px'
+        }, {
+          duration: 500,
+          easing: 'ease',
+          complete: function () {
             transDone = true;
-          };
-        } else {
+          }
+        });
+        $target.find('.WorkItem-inner').velocity({
+          top: '60%'
+        }, {
+          duration: 400,
+          easing: 'ease'
+        });
+        $target.find('.WorkItem-inner p').velocity({
+          opacity: 0,
+          maxHeight: 0,
+          height: 0,
+          marginTop: 0,
+          marginBottom: 0,
+          paddingTop: 0,
+          paddingBottom: 0
+        }, {
+          duration: 1000,
+          easing: 'ease'
+        });
+        $target.find('.WorkItem-inner a').velocity({
+          opacity: 0,
+          maxHeight: '53px',
+          paddingTop: 0,
+          paddingBottom: '2rem',
+          marginBottom: '0',
+          borderColorAlpha: 0
+        }, {
+          duration: 400,
+          easing: 'ease'
+        });
 
-          $target.velocity('scroll', {
-            duration: scrollSpeed,
-            easing: 'easeInOutQuart',
-            offset: 2
-          });
-
-          $target.next('.WorkItem').velocity({
-            opacity: 0
-          }, {
-            duration: 500,
-            easing: 'ease'
-          });
-
-          $target.velocity({
-            height: (getViewport().height * 0.65) + 'px'
-          }, {
-            duration: 500,
-            easing: 'ease',
-            complete: function () {
-              transDone = true;
-            }
-          });
-          $target.find('.WorkItem-inner').velocity({
-            top: '60%'
-          }, {
-            duration: 400,
-            easing: 'ease'
-          });
-          $target.find('.WorkItem-inner p').velocity({
-            opacity: 0,
-            maxHeight: 0,
-            height: 0,
-            marginTop: 0,
-            marginBottom: 0,
-            paddingTop: 0,
-            paddingBottom: 0
-          }, {
-            duration: 1000,
-            easing: 'ease'
-          });
-          $target.find('.WorkItem-inner a').velocity({
-            opacity: 0,
-            maxHeight: '53px',
-            paddingTop: 0,
-            paddingBottom: '2rem',
-            marginBottom: '0',
-            borderColorAlpha: 0
-          }, {
-            duration: 400,
-            easing: 'ease'
-          });
-
-          $footer.velocity({
-            paddingBottom: getViewport().height + 'px',
-            opacity: 0
-          }, {
-            duration: 50,
-            easing: 'ease'
-          });
-        }
+        $footer.velocity({
+          paddingBottom: getViewport().height + 'px',
+          opacity: 0
+        }, {
+          duration: 50,
+          easing: 'ease'
+        });
 
         /** Wait for transitions and prefetches to comlpete. */
         transitionInterval = win.setInterval(function () {
@@ -740,7 +698,10 @@
           $form.find('.is-error').first().velocity('scroll', {
             duration: 900,
             offset: -80,
-            easing: 'easeInOutQuart'
+            easing: vincent.scrollEasing,
+            complete: function () {
+              $(this).prev('input, textarea').focus();
+            }
           });
 
           win.setTimeout(function () {
@@ -756,7 +717,7 @@
           $form.velocity('scroll', {
             duration: 1200,
             offset: -80,
-            easing: 'easeInOutQuart'
+            easing: vincent.scrollEasing
           });
         }
 
@@ -844,7 +805,7 @@
       dsq.type = 'text/javascript';
       dsq.async = true;
       dsq.onerror = function () {
-        doc.getElementById('disqus_thread').innerHTML = '<p class="u-textCenter"><b>Comments failed to load.</b><br>Maybe somethings up with your internet connection or I’ve f*cked up...<br>Sorry!</p>';
+        doc.getElementById('disqus_thread').innerHTML = '<p class="u-textCenter"><b>Comments failed to load.</b><br>Maybe somethings up with your internet connection or maybe it’s my fault ...<br>Sorry!</p>';
       };
       dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 
@@ -863,17 +824,12 @@
 
     parallaxImages: function () {
       $body.find('.js-parallax').imageScroll({
-        //image: null,
-        //imageAttribute: (touch === true) ? 'image-mobile' : 'image',
-        //container: $body,
+        imageAttribute: (winWidth < 800) ? 'mobile' : 'image',
         holderMinHeight: 300,
-        //extraHeight: 0,
-        //mediaWidth: 1600,
-        //mediaHeight: 900,
         speed: 0.4,
         coverRatio: 0.85,
-        parallax: (Modernizr.csstransforms === true),
-        touch: Modernizr.touch === true
+        parallax: Modernizr.csstransforms,
+        touch: Modernizr.touch
       });
     },
     /*
@@ -888,7 +844,7 @@
           {
             code: [65, 80, 80, 76, 69], // apple
             magic: function () {
-              var appleFont = '<link href="http://fonts.googleapis.com/css?family=Josefin+Sans:100,300" rel="stylesheet" type="text/css">';
+              var appleFont = '<link href="http://fonts.googleapis.com/css?family=Josefin+Sans:100,300" rel="stylesheet">';
 
               $.get(vincent.amazon + '/easter/apple.css', function (css) {
                 $(head).append(appleFont);
@@ -1007,7 +963,7 @@
       var href,
         value,
         location,
-        DoNotTrack = navigator.doNotTrack === 'yes' || navigator.doNotTrack === '1' || navigator.msDoNotTrack === '1';
+        DoNotTrack = win.navigator.doNotTrack === 'yes' || win.navigator.doNotTrack === '1' || win.navigator.msDoNotTrack === '1';
 
       if (DoNotTrack) {
         return;
@@ -1083,22 +1039,18 @@
         }
       }
 
+    },
+
+    svgRefresh: function () {
+      var svgElements = $body.find('use'),
+        i = 0,
+        href;
+
+      for (i; svgElements.length > i; i += 1) {
+        href = svgElements[i].getAttribute('xlink:href');
+        svgElements[i].setAttribute('xlink:href', href);
+      }
     }
-
-
-    /**
-     * Replace favicon with page specific icons.
-
-    faviconFun: function () {
-      var work = body.className.match(/([\-\-]+[\-A-Z])\w+/g)[0].replace('--', '');
-
-      $(win).load(function () {
-        $(head).find('#favicon').remove();
-        $(head).append('<link href="/images/' + work + '/favicon.png" rel="shortcut icon">');
-      });
-    }
-    */
-
   };
 
   vincent.init();
