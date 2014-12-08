@@ -3,6 +3,7 @@
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <title>About me | Vincent Orback - Web designer and developer in Stockholm</title>
   <meta name="description" content="As a front-end developer I work with the things you see and interact with on a website. Right now I’m working at the digital agency Daytona in Stockholm.">
@@ -14,6 +15,7 @@
   <noscript><link rel="stylesheet" href="/css/noscript.css"></noscript>
 
   <meta name="theme-color" content="#ff4e00">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
   <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
   <!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
@@ -31,24 +33,21 @@
 
 <body id="page-about" class="Page-about" itemscope itemtype="http://schema.org/AboutPage" onunload="">
 
-<nav id="navigation" class="Navigation" role="navigation">
-  <ul>
-    <li><a href="/" class="js-transitionFull" rel="prev"><span>Work</span></a></li>
-    <li><a href="#about-me" class="js-scroll is-active"><span>About me</span></a></li>
-    <li><a href="/blog/" class="js-transitionHalf" rel="next"><span>Blog</span></a></li>
-    <li><a href="/contact/" class="js-transitionHalf"><span>Contact</span></a></li>
-  </ul>
-  <ul class="Navigation-social">
-    <li><a href="https://twitter.com/vorback" class="Social Social--twitter icon icon-twitter" title="@vorback" rel="me" data-trackvalue="menu-twitter"></a></li>
-    <li><a href="https://github.com/vincentorback" class="Social Social--github icon icon-github" title="GitHub" rel="me" data-trackvalue="menu-github"></a></li>
-    <li><a href="http://se.linkedin.com/pub/vincent-orback/50/957/457/" class="Social Social--linkedin icon icon-linkedin" title="LinkedIn" rel="me" data-trackvalue="menu-linkedin"></a></li>
-  </ul>
-</nav>
+<div class="u-wrapper--L">
+  <nav id="navigation" class="Navigation" role="navigation">
+    <ul>
+      <li><a href="/" class="js-transitionFull" rel="prev"><span>Work</span></a></li>
+      <li><a href="#about-me" class="js-scroll is-active"><span>About me</span></a></li>
+      <li><a href="/blog/" class="js-transitionHalf" rel="next"><span>Blog</span></a></li>
+      <li><a href="/contact/" class="js-transitionHalf"><span>Contact</span></a></li>
+    </ul>
+  </nav>
+</div>
 
-<div class="Content">
+<div id="content" class="Content">
 
 <header class="Sitehead" role="banner">
-  <div class="Sitehead-wrapper">
+  <div class="u-heightFull u-wrapper--L">
     <a href="/" class="Sitehead-logo js-transitionFull">
       <h1>Vincent Orback</h1>
       <h2>Front-end developer & designer</h2>
@@ -75,12 +74,12 @@
 
   <section class="Library">
     <header>
-      <div class="u-wrapper--M">
+      <div class="u-wrapper--L">
         <h3>Library</h3>
         <p>A collection of links to things I like to read and <span class="u-textTruncate">listen to.</span></p>
       </div>
     </header>
-    <div class="u-wrapper--M">
+    <div class="u-wrapper--L">
       <div class="Library-inner three-columns">
 
         <div class="col">
@@ -158,7 +157,7 @@
           </article>
         </div>
       </div>
-      <footer>
+      <footer class="u-wrapper--S">
         <p>I’m always looking for more books, podcasts, websites newsletter or anything else to learn more or to get inspiration. If you know something that you think I should check out, please send and <span class="u-textTruncate">email to <a href="mailto:vorback@gmail.com" target="_blank" rel="me">vorback@gmail.com</a></span> or <span class="u-textTruncate">tweet me at <a href="http://www.twitter.com/vorback" target="_blank" rel="me">@vorback</a>.</span></p>
       </footer>
     </div>
@@ -166,12 +165,12 @@
 
   <section id="resume" class="Resume">
     <header>
-      <div class="u-wrapper--M">
+      <div class="u-wrapper--L">
         <h3>Resume</h3>
         <p>Sell mode - ACTIVATED!</p>
       </div>
     </header>
-    <div class="u-wrapper--M">
+    <div class="u-wrapper--L">
       <div class="Resume-inner two-columns">
         <div class="Resume-left col onethird-columns">
           <div class="col">
@@ -239,7 +238,8 @@
           <br>
 
           <h4>My work method</h4>
-          <p>In general, I’d like to be involved from the start of a project. Taking part of the early stages of a project allows me to be of value immediately to catch issues and chose the right development technique. I find it important to work closely with designers in an iterative manner. This allows us the flexibility to explore ideas more easily and find our way to solutions that work using each others capabilities.</p>
+          <p>In general, I’d like to be involved from the start of a project. Taking part of the early stages of a project allows me to be of value immediately to catch issues and chose the right development technique.</p>
+          <p>I find it important to work closely with designers in an iterative manner. This allows us the flexibility to explore ideas more easily and find our way to solutions that work using each others capabilities.</p>
 
           <br>
 
@@ -277,24 +277,28 @@
 
 </div>
 
+<!--[if lt IE 9]>
+<div class="Alert" role="alert"><p>You are using an <strong>outdated</strong> browser! Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p></div>
+<![endif]-->
+
 <script src="/js/main-min.js" async></script>
 <script>
 (function () {
   'use strict';
   var doc = document,
-    request,
-    styleLink,
-    DoNotTrack = navigator.doNotTrack === 'yes' || navigator.doNotTrack === '1' || navigator.msDoNotTrack === '1';
+    style = doc.createElement('style'),
+    request;
 
-  function addFont(localStoragePath) {
-    styleLink = doc.createElement('style');
-    style.textContent = localStoragePath;
+  function addFont() {
+    style.rel = 'stylesheet';
     doc.head.appendChild(style);
+    style.textContent = localStorage.vincentsFonts;
   }
 
   try {
-    if (localStorage.sourceSansPro) {
-      addFont(localStorage.sourceSansPro);
+    if (localStorage.vincentsFonts) {
+      // The font is in localStorage, we can load it directly
+      addFont();
     } else {
       // We have to first load the font file asynchronously
       request = new XMLHttpRequest();
@@ -302,29 +306,19 @@
 
       request.onload = function () {
         if (request.status >= 200 && request.status < 400) {
-
           // We save the file in localStorage
-          localStorage.sourceSansPro = request.responseText;
+          localStorage.vincentsFonts = request.responseText;
 
-          // ...and load the font
-          addFont(localStorage.sourceSansPro);
-        } else {
-          throw new Error('Couldn’t load fonts :/');
+          // ... and load the font
+          addFont();
         }
       };
 
       request.send();
     }
-  } catch (exc) {
-    styleLink = doc.createElement('link');
-    styleLink.rel = 'stylesheet';
-    styleLink.href = 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600';
-    doc.head.appendChild(styleLink);
-  }
-
-  if (localStorage.font_css_cache || localStorage.font_css_cache_file) {
-    localStorage.removeItem('font_css_cache');
-    localStorage.removeItem('font_css_cache_file');
+  } catch (ignore) {
+    // maybe load the font synchronously for woff-capable browsers
+    // to avoid blinking on every request when localStorage is not available
   }
 }());
 

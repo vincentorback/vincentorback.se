@@ -3,6 +3,7 @@
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <title>The Public’s Choice | Vincent Orback - Web designer and developer in Stockholm</title>
   <meta name="description" content="The Public’s Choice is an initiative form the Nordic Museum in Stockholm that wanted to give visitors the chance to vote for what they should exhibit next.">
@@ -14,6 +15,7 @@
   <noscript><link rel="stylesheet" href="/css/noscript.css"></noscript>
 
   <meta name="theme-color" content="#143649">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
   <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
   <!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
@@ -31,6 +33,7 @@
 
 <body id="page-work" class="Page-work Work--nordiska" itemscope itemtype="http://schema.org/CreativeWork" onunload="">
 
+<div class="u-wrapper--L">
 <nav id="navigation" class="Navigation" role="navigation">
   <ul>
     <li><a href="/" class="js-transitionFull"><span>Work</span></a></li>
@@ -38,17 +41,13 @@
     <li><a href="/blog/" class="js-transitionHalf"><span>Blog</span></a></li>
     <li><a href="/contact/" class="js-transitionHalf"><span>Contact</span></a></li>
   </ul>
-  <ul class="Navigation-social">
-    <li><a href="https://twitter.com/vorback" class="Social Social--twitter icon icon-twitter" title="@vorback" rel="me" data-trackvalue="menu-twitter"></a></li>
-    <li><a href="https://github.com/vincentorback" class="Social Social--github icon icon-github" title="GitHub" rel="me" data-trackvalue="menu-github"></a></li>
-    <li><a href="http://se.linkedin.com/pub/vincent-orback/50/957/457/" class="Social Social--linkedin icon icon-linkedin" title="LinkedIn" rel="me" data-trackvalue="menu-linkedin"></a></li>
-  </ul>
 </nav>
+</div>
 
-<div class="Content">
+<div id="content" class="Content">
 
 <header class="Sitehead" role="banner">
-  <div class="Sitehead-wrapper">
+  <div class="u-heightFull u-wrapper--L">
     <a href="/" class="Sitehead-logo js-transitionFull">
       <h1>Vincent Orback</h1>
       <h2>Front-end developer & designer</h2>
@@ -68,7 +67,7 @@
     <div class="u-wrapper--S">
       <h2>The Public’s Choice is an initiative form the Nordic Museum in Stockholm that wanted to give visitors the chance to vote for what they should exhibit next.</h2>
       <p>The Nordic Museum chose 55 exhibition objects from their collection which were voted for by it’s visitors, both inside the museum and online.</p>
-      <p>The project consisted of three websites. Two were inside the museum on two large touch monitors and one was responsive and web based.</p>
+      <p>The project consisted of three websites. Two were inside the museum on two large touch monitors and one was available online as a responsive site.</p>
     </div>
 
     <picture class="Work-image" itemscope itemtype="http://schema.org/ImageObject">
@@ -77,7 +76,7 @@
       <img src="http://d3dx0f1ge67l9j.cloudfront.net/images/nordiska/nordiska1.jpg" width="1440" height="981" alt="The Public’s choice" itemprop="contentUrl">
     </picture>
 
-    <figure class="js-parallax" data-image="http://d3dx0f1ge67l9j.cloudfront.net/images/nordiska/nordiska-cover.jpg" data-width="1920" data-height="1000"></figure>
+    <figure class="js-parallax" data-image="http://d3dx0f1ge67l9j.cloudfront.net/images/nordiska/nordiska-cover.jpg" data-mobile="http://d3dx0f1ge67l9j.cloudfront.net/images/nordiska/nordiska-cover-mobile.jpg" data-width="1920" data-height="1000"></figure>
 
     <picture class="Work-image" itemscope itemtype="http://schema.org/ImageObject">
       <source media="(max-width:800px)" srcset="http://d3dx0f1ge67l9j.cloudfront.net/images/nordiska/nordiska2-mobile.jpg" type="image/jpg">
@@ -91,11 +90,13 @@
     </div>
 
     <picture class="Work-image" itemscope itemtype="http://schema.org/ImageObject">
+      <source media="(max-width:800px)" srcset="http://d3dx0f1ge67l9j.cloudfront.net/images/nordiska/nordiska3-mobile.jpg" type="image/jpg">
       <source srcset="http://d3dx0f1ge67l9j.cloudfront.net/webp/nordiska/nordiska3.webp" type="image/webp">
       <img src="http://d3dx0f1ge67l9j.cloudfront.net/images/nordiska/nordiska3.jpg" width="1440" height="1097" alt="The Public’s choice" itemprop="contentUrl">
     </picture>
 
     <picture class="Work-image" itemscope itemtype="http://schema.org/ImageObject">
+      <source media="(max-width:800px)" srcset="http://d3dx0f1ge67l9j.cloudfront.net/images/nordiska/nordiska4-mobile.jpg" type="image/jpg">
       <source srcset="http://d3dx0f1ge67l9j.cloudfront.net/webp/nordiska/nordiska4.webp" type="image/webp">
       <img src="http://d3dx0f1ge67l9j.cloudfront.net/images/nordiska/nordiska4.jpg" width="1440" height="908" alt="The Public’s choice" itemprop="contentUrl">
     </picture>
@@ -117,7 +118,7 @@
 </main>
 
 <nav class="PageNav">
-  <a href="/work/arcini/" class="PageNav-item PageNav-item--prev PageNav-item--arcini js-transition" rel="prev"><span>Previous work</span> <strong>Arcini</strong></a>
+  <a href="/work/arcini/" class="PageNav-item PageNav-item--prev PageNav-item--arcini js-transition" rel="prev"><svg role="presentation"><use xlink:href="#arrow-left"></use></svg><span>Previous work</span> <strong>Arcini</strong></a>
 </nav>
 
 <footer class="Sitefooter" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
@@ -137,25 +138,42 @@
 
 </div>
 
+<!--[if gt IE 8]><!-->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+
+  <symbol id="arrow-left" viewBox="0 0 28.375 27.875">
+    <path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-miterlimit="10" d="M3.417 14.353h20.95m-20.95 0l8.47-8.472m-8.47 8.52l8.47 8.473"></path>
+  </symbol>
+
+  <symbol id="arrow-right" viewBox="0 0 28.375 27.875">
+    <path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-miterlimit="10" d="M24.078 14.4h-20.951m20.951 0l-8.471 8.472m8.471-8.519l-8.471-8.472"></path>
+  </symbol>
+
+</svg>
+<!--<![endif]-->
+
+<!--[if lt IE 9]>
+<div class="Alert" role="alert"><p>You are using an <strong>outdated</strong> browser! Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p></div>
+<![endif]-->
+
 <script src="/js/main-min.js" async></script>
 <script>
 (function () {
   'use strict';
   var doc = document,
-    styleLink,
-    request,
-    DoNotTrack = navigator.doNotTrack === 'yes' || navigator.doNotTrack === '1' || navigator.msDoNotTrack === '1';
+    style = doc.createElement('style'),
+    request;
 
-
-  function addFont(localStoragePath) {
-    styleLink = doc.createElement('style');
-    style.textContent = localStoragePath;
+  function addFont() {
+    style.rel = 'stylesheet';
     doc.head.appendChild(style);
+    style.textContent = localStorage.vincentsFonts;
   }
 
   try {
-    if (localStorage.sourceSansPro) {
-      addFont(localStorage.sourceSansPro);
+    if (localStorage.vincentsFonts) {
+      // The font is in localStorage, we can load it directly
+      addFont();
     } else {
       // We have to first load the font file asynchronously
       request = new XMLHttpRequest();
@@ -163,29 +181,19 @@
 
       request.onload = function () {
         if (request.status >= 200 && request.status < 400) {
-
           // We save the file in localStorage
-          localStorage.sourceSansPro = request.responseText;
+          localStorage.vincentsFonts = request.responseText;
 
-          // ...and load the font
-          addFont(localStorage.sourceSansPro);
-        } else {
-          throw new Error('Couldn’t load fonts :/');
+          // ... and load the font
+          addFont();
         }
       };
 
       request.send();
     }
-  } catch (exc) {
-    styleLink = doc.createElement('link');
-    styleLink.rel = 'stylesheet';
-    styleLink.href = 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600';
-    doc.head.appendChild(styleLink);
-  }
-
-  if (localStorage.font_css_cache || localStorage.font_css_cache_file) {
-    localStorage.removeItem('font_css_cache');
-    localStorage.removeItem('font_css_cache_file');
+  } catch (ignore) {
+    // maybe load the font synchronously for woff-capable browsers
+    // to avoid blinking on every request when localStorage is not available
   }
 }());
 

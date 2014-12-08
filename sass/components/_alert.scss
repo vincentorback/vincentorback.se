@@ -1,65 +1,19 @@
-/**
- * Alert message
- */
-
 .Alert {
   position: fixed;
   bottom: 0;
   left: 0;
-  z-index: 99;
-  width: 100%;
-  background: #111;
-  background: rgba(0,0,0,.8);
-  font-size: 1.5em;
-  padding: 1.5em 0 1.5em 0;
-  color: #fff;
-  animation: fadeinBottom 500ms ease 1;
+  z-index: 20;
+  padding: 1em;
+
+  background: $red;
+
+  &,
   a {
     color: #fff;
+  }
+
+  a {
     font-weight: 600;
-    border-bottom: 4px solid #fff;
-    &:hover {
-
-    }
-  }
-  .u-wrapper {
-    width: 80%;
-    max-width: 800px;
-    margin-left: 5%;
-  }
-}
-
-.Alert-close {
-  position: absolute;
-  right: 5%;
-  top: 50%;
-  transform: translateY(-50%);
-  margin: auto;
-  width: 3.75em;
-  height: 3.75em;
-  background: #fff;
-  border-radius: 50%;
-  span {
-    line-height: 3;
-  }
-}
-
-@include respond-max(800px) {
-  .Alert {
-    font-size: .9em;
-    .u-wrapper {
-      margin-left: 3%;
-    }
-    a {
-      border-width: 2px;
-    }
-  }
-  .Alert-close {
-    width: 40px;
-    height: 40px;
-    right: 3%;
-    span {
-      line-height: 2;
-    }
+    text-decoration: underline;
   }
 }

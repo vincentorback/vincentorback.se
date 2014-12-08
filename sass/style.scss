@@ -12,6 +12,9 @@
 
 @import "utilities/text";
 
+@import "utilities/helpers";
+
+
 
 
 /** Partials */
@@ -19,15 +22,11 @@
 
 @import "partials/animations";
 
-@import "partials/fonts";
-
 @import "partials/base";
 
 @import "partials/typography";
 
 @import "partials/main";
-
-@import "partials/print";
 
 @import "partials/prism";
 
@@ -47,6 +46,9 @@
 @import "components/sitefooter";
 
 @import "components/workItem";
+
+@import "components/alert";
+
 
 
 
@@ -70,10 +72,12 @@
 
 
 
-/*
-.is-pride {
+
+@import "partials/print";
+
+
+/*.is-pride {
   &.Page-front .Sitehead {
     background: linear-gradient(90deg, $red 0, $red 12.5%, $orange 12.5%, $orange 25%, $yellow 25%, $yellow 37.5%, $green 37.5%, $green 50%, #1972dd 50%, #1972dd 62.5%, #8000FF 62.5%, #8000FF 75%, $red 75%, $red 87.5%, $orange 87.5%, $orange 100%);
   }
-}
-*/
+}*/

@@ -3,16 +3,19 @@
 <head prefix="og: http://ogp.me/ns#">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <title>Smooth scrolling with CSS | Vincent Orback - Web designer and developer in Stockholm</title>
 <meta name="description" content="An alternative way to do smooth scrolling with CSS and without jQuery.">
 <meta name="keywords" content="web designer, designer, developer, wordpress, portfolio">
 
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
 <link rel="stylesheet" href="/css/style.css">
 <noscript><link rel="stylesheet" href="/css/noscript.css"></noscript>
 
 <meta name="theme-color" content="#1eb0e9">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
 <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
 <!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
@@ -30,24 +33,21 @@
 </head>
 <body id="page-post" class="Page-post Page-blog Post--smooth-scrolling-with-css" onunload="" itemscope itemtype="http://schema.org/Article">
 
-<nav id="navigation" class="Navigation" role="navigation">
-  <ul>
-    <li><a href="/" class="js-transitionFull"><span>Work</span></a></li>
-    <li><a href="/about-me/" class="js-transitionHalf"><span>About me</span></a></li>
-    <li><a href="/blog/" class="is-active js-transitionHalf"><span>Blog</span></a></li>
-    <li><a href="/contact/" class="js-transitionHalf"><span>Contact</span></a></li>
-  </ul>
-  <ul class="Navigation-social">
-    <li><a href="https://twitter.com/vorback" class="Social Social--twitter icon icon-twitter" title="@vorback" rel="me" data-trackvalue="menu-twitter"></a></li>
-    <li><a href="https://github.com/vincentorback" class="Social Social--github icon icon-github" title="GitHub" rel="me" data-trackvalue="menu-github"></a></li>
-    <li><a href="http://se.linkedin.com/pub/vincent-orback/50/957/457/" class="Social Social--linkedin icon icon-linkedin" title="LinkedIn" rel="me" data-trackvalue="menu-linkedin"></a></li>
-  </ul>
-</nav>
+<div class="u-wrapper--L">
+  <nav id="navigation" class="Navigation" role="navigation">
+    <ul>
+      <li><a href="/" class="js-transitionFull"><span>Work</span></a></li>
+      <li><a href="/about-me/" class="js-transitionHalf"><span>About me</span></a></li>
+      <li><a href="/blog/" class="is-active js-transitionHalf"><span>Blog</span></a></li>
+      <li><a href="/contact/" class="js-transitionHalf"><span>Contact</span></a></li>
+    </ul>
+  </nav>
+</div>
 
-<div class="Content">
+<div id="content" class="Content">
 
 <header class="Sitehead" role="banner">
-  <div class="Sitehead-wrapper">
+  <div class="u-heightFull u-wrapper--L">
     <a href="/" class="Sitehead-logo js-transitionFull">
       <h1 itemprop="author">Vincent Orback</h1>
       <h2>Front-end developer & designer</h2>
@@ -130,8 +130,8 @@ button.addEventListener('click', function (event) {
   </section>
 
   <nav class="PageNav">
-    <a href="/blog/take-10-and-learn-typography/" class="PageNav-item PageNav-item--prev js-transition" rel="prev"><span>Previous post: </span><strong>Take 10 and learn typography</strong></a>
-    <a href="/blog/i-commit-from-my-heart/" class="PageNav-item PageNav-item--next js-transition" rel="next"><span>Next post: </span><strong>I commit from my heart</strong></a>
+    <a href="/blog/take-10-and-learn-typography/" class="PageNav-item PageNav-item--prev js-transition" rel="prev"><svg role="presentation"><use xlink:href="#arrow-left"></use></svg><span>Previous post: </span><strong>Take 10 and learn typography</strong></a>
+    <a href="/blog/i-commit-from-my-heart/" class="PageNav-item PageNav-item--next js-transition" rel="next"><span>Next post: </span><strong>I commit from my heart</strong><svg role="presentation"><use xlink:href="#arrow-right"></use></svg></a>
   </nav>
 
 </main>
@@ -153,26 +153,43 @@ button.addEventListener('click', function (event) {
 
 </div>
 
+<!--[if gt IE 8]><!-->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+
+  <symbol id="arrow-left" viewBox="0 0 28.375 27.875">
+    <path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-miterlimit="10" d="M3.417 14.353h20.95m-20.95 0l8.47-8.472m-8.47 8.52l8.47 8.473"></path>
+  </symbol>
+
+  <symbol id="arrow-right" viewBox="0 0 28.375 27.875">
+    <path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-miterlimit="10" d="M24.078 14.4h-20.951m20.951 0l-8.471 8.472m8.471-8.519l-8.471-8.472"></path>
+  </symbol>
+
+</svg>
+<!--<![endif]-->
+
+<!--[if lt IE 9]>
+<div class="Alert" role="alert"><p>You are using an <strong>outdated</strong> browser! Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p></div>
+<![endif]-->
+
 <script src="/js/vendor/prism.js"></script>
 <script src="/js/main-min.js" async></script>
 <script>
 (function () {
   'use strict';
   var doc = document,
-    styleLink,
-    request,
-    DoNotTrack = navigator.doNotTrack === 'yes' || navigator.doNotTrack === '1' || navigator.msDoNotTrack === '1';
+    style = doc.createElement('style'),
+    request;
 
-
-  function addFont(localStoragePath) {
-    styleLink = doc.createElement('style');
-    style.textContent = localStoragePath;
+  function addFont() {
+    style.rel = 'stylesheet';
     doc.head.appendChild(style);
+    style.textContent = localStorage.vincentsFonts;
   }
 
   try {
-    if (localStorage.sourceSansPro) {
-      addFont(localStorage.sourceSansPro);
+    if (localStorage.vincentsFonts) {
+      // The font is in localStorage, we can load it directly
+      addFont();
     } else {
       // We have to first load the font file asynchronously
       request = new XMLHttpRequest();
@@ -180,29 +197,19 @@ button.addEventListener('click', function (event) {
 
       request.onload = function () {
         if (request.status >= 200 && request.status < 400) {
-
           // We save the file in localStorage
-          localStorage.sourceSansPro = request.responseText;
+          localStorage.vincentsFonts = request.responseText;
 
-          // ...and load the font
-          addFont(localStorage.sourceSansPro);
-        } else {
-          throw new Error('Couldn’t load fonts :/');
+          // ... and load the font
+          addFont();
         }
       };
 
       request.send();
     }
-  } catch (exc) {
-    styleLink = doc.createElement('link');
-    styleLink.rel = 'stylesheet';
-    styleLink.href = 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600';
-    doc.head.appendChild(styleLink);
-  }
-
-  if (localStorage.font_css_cache || localStorage.font_css_cache_file) {
-    localStorage.removeItem('font_css_cache');
-    localStorage.removeItem('font_css_cache_file');
+  } catch (ignore) {
+    // maybe load the font synchronously for woff-capable browsers
+    // to avoid blinking on every request when localStorage is not available
   }
 }());
 

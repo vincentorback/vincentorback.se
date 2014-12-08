@@ -3,16 +3,19 @@
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <title>Using WebP images | Vincent Orback - Web designer and developer in Stockholm</title>
   <meta name="description" content="Are you optimizing your images? You better be! But if not, here are some tips to get you started">
   <meta name="keywords" content="web designer, designer, developer, wordpress, portfolio">
 
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
   <link rel="stylesheet" href="/css/style.css">
   <noscript><link rel="stylesheet" href="/css/noscript.css"></noscript>
 
   <meta name="theme-color" content="#2ecc71">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
   <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
   <!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
@@ -29,167 +32,181 @@
 </head>
 <body id="page-post" class="Page-post Page-blog Post--using-webp-images" onunload="" itemscope itemtype="http://schema.org/Article">
 
-  <nav id="navigation" class="Navigation" role="navigation">
-    <ul>
-      <li><a href="/" class="js-transitionFull"><span>Work</span></a></li>
-      <li><a href="/about-me/" class="js-transitionHalf"><span>About me</span></a></li>
-      <li><a href="/blog/" class="is-active js-transitionHalf"><span>Blog</span></a></li>
-      <li><a href="/contact/" class="js-transitionHalf"><span>Contact</span></a></li>
-    </ul>
-    <ul class="Navigation-social">
-      <li><a href="https://twitter.com/vorback" class="Social Social--twitter icon icon-twitter" title="@vorback" rel="me" data-trackvalue="menu-twitter"></a></li>
-      <li><a href="https://github.com/vincentorback" class="Social Social--github icon icon-github" title="GitHub" rel="me" data-trackvalue="menu-github"></a></li>
-      <li><a href="http://se.linkedin.com/pub/vincent-orback/50/957/457/" class="Social Social--linkedin icon icon-linkedin" title="LinkedIn" rel="me" data-trackvalue="menu-linkedin"></a></li>
-    </ul>
+<div class="u-wrapper--L">
+<nav id="navigation" class="Navigation" role="navigation">
+  <ul>
+    <li><a href="/" class="js-transitionFull"><span>Work</span></a></li>
+    <li><a href="/about-me/" class="js-transitionHalf"><span>About me</span></a></li>
+    <li><a href="/blog/" class="is-active js-transitionHalf"><span>Blog</span></a></li>
+    <li><a href="/contact/" class="js-transitionHalf"><span>Contact</span></a></li>
+  </ul>
+</nav>
+</div>
+
+<div id="content" class="Content">
+
+<header class="Sitehead" role="banner">
+  <div class="u-heightFull u-wrapper--L">
+    <a href="/" class="Sitehead-logo js-transitionFull">
+      <h1 itemprop="author">Vincent Orback</h1>
+      <h2>Front-end developer & designer</h2>
+    </a>
+    <div class="Sitehead-inner">
+      <h3 class="Sitehead-title" itemprop="name">Using WebP images</h3>
+      <p itemprop="datePublished">February 21, 2014</p>
+    </div>
+  </div>
+  <button class="Navigation-toggle js-navToggle" type="button" role="button" aria-controls="navigation">Menu</button>
+</header>
+
+<main class="Blog Sitemain" role="main">
+
+  <article class="Blog-entry Entry" itemprop="articleBody mainContentOfPage">
+    <div class="u-wrapper--S">
+      <p>Are you optimizing your images? You better be! But if not, here are some tips to get you started. Plus some easy guidelines on how to get started with using WebP images, a newish image format from Google.</p>
+
+      <p>You might be working hard on reducing your CSS or JS files by writing more compact functions and mushing the files together super hard. But if you look at the bytes you are saving, it doesn’t compare to the size of just on image on your page.</p>
+
+      <p>If you’re not already optimizing your images I recommend you start doing it right now! Like now! Go! Run! Do it! Skip this post! Just fix your images! Download <a href="http://imageoptim.com/">imageoptim</a> and drag and drop your images into it and voilà! Your images reduce in size without any visual impairment.</p>
+
+      <p>If you’re using Grunt, here are two great Grunt tasks, <a href="https://github.com/gruntjs/grunt-contrib-imagemin">imagemin</a> and for svg files there is <a href="https://github.com/sindresorhus/grunt-svgmin">svgmin</a>. I use both of these are they have saved me many mega bytes over a big span of projects.</p>
+
+      <br>
+
+      <h2>What’s a WebP image?</h2>
+      <p>You might have already heard about them when <a href="https://developers.google.com/speed/webp/">Google introduced it</a> 2013. Unfortunately the mainstream use of them didn’t take of as they might have expected.</p>
+      <p>WebP is a new open image format that uses both lossless and lossy compression. It was developed to reduce image file size to speed up web page loading: its principal purpose is to supersede JPEG as the primary format for photographs on the web. WebP now supports animated images and alpha channel (transparency) in lossy images so they can also supersede PNG images.</p>
+
+      <div class="no-webp-info">
+        <p>If you use Chrome, Chrome for Android, Android Ice Cream Sandwich or Opera 11+ you can see a demo comparison of a WebP and a JPG image here. Switch browser for a while?</p>
+      </div>
+    </div>
+
+    <div class="webp-images">
+      <div class="u-wrapper--S">
+        <p>Here are two images. Can you tell them apart?</p>
+      </div>
+      <div class="u-nbfc">
+        <figure class="col">
+          <a href="http://d3dx0f1ge67l9j.cloudfront.net/images/blog/kittyjpg.jpg">
+            <img src="http://d3dx0f1ge67l9j.cloudfront.net/images/blog/kittyjpg.jpg" alt="Kitty Cat JPG" width="1280" height="853">
+          </a>
+          <figcaption>581 kb</figcaption>
+        </figure>
+        <figure class="col">
+          <a href="http://d3dx0f1ge67l9j.cloudfront.net/images/blog/kittywebp.webp">
+            <img class="u-mirror" src="http://d3dx0f1ge67l9j.cloudfront.net/images/blog/kittywebp.webp" alt="Kitty Cat WebP" width="1280" height="853">
+          </a>
+          <figcaption>97 kb</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="u-wrapper--S">
+
+      <p>The picture on the left is a JPG saved for the web in Photoshop and then optimized with imagemin. Still the WebP one is a sixth of the size. Now, does this mean that we can reduce website page weight by almost a sixth of their original sizes? Yes!</p>
+      <p>But only in Chrome, Chrome for Android, Android Browser 4 and Opera 11+ for now.</p>
+
+      <p>The traffic on my site is 62% Chrome so using WebP good choice for me. Most of the images on my site are in WebP format and some of them are a fourth in size of their corresponding PNG and JPG images for other browsers. If you feel that the use of WebP images could be helpful for your site, here are some way to go forth!</p>
+
+      <br>
+
+      <h2>How do I start?</h2>
+      <p>First of all you need to convert your old JPGs and PNGS to the Webp format. I use this Grunt task <a href="https://github.com/somerandomdude/grunt-webp">grunt-webp</a>. It’s a super easy way to automate my workflow. You can also download more tools like plugins for Photoshop and Gimp over at <a href="https://developers.google.com/speed/webp/docs/using">Google</a>.</p>
+      <br>
+      <p>To render your images on your page there are some different approaches. The easiest way, I feel, is to use the .htaccess technique. Just paste this code below into your .htaccess and when your server requests an image, it will first see if there’s a WebP image in the same search path with the same name and use it if the users browser supports it.</p>
+    </div>
+
+<pre class="Entry-code Code language-clike"><code>&lt;IfModule mod_rewrite.c&gt;
+    RewriteEngine On
+    RewriteCond %{HTTP_ACCEPT} image/webp
+    RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
+    RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
+&lt;/IfModule&gt;
+
+&lt;IfModule mod_headers.c&gt;
+    Header append Vary Accept env=REDIRECT_accept
+&lt;/IfModule&gt;
+
+AddType image/webp .webp</code></pre>
+
+    <div class="u-wrapper--S">
+      <p>Here is a <a href="https://github.com/vincentorback/WebP-images-with-htaccess">GitHub repository</a> for the code with a small demo.</p>
+      <p>If you can’t access your .htaccess file or don’t have one, <a href="https://github.com/vincentorback/WebP-Images-with-javascript">here’s another way</a> using Javascript.</p>
+      <br><br>
+
+      <p>So get going with your new awesome web performance wisdom. Challenge your friends on who can make the best looking images that weighs the least and complain on your co-workers slow projects. Share the technique and the gospel of WebP!</p>
+
+      <p>Also, if you have any other ides on how to optimize performance, responsive images or anything, please leave a comment below!</p>
+    </div>
+  </article>
+
+  <section class="Comments js-comments u-wrapper--S test">
+    <div id="disqus_thread"></div>
+    <noscript class="no-js-warning">Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments.</a></noscript>
+  </section>
+
+  <nav class="PageNav">
+    <a href="/blog/how-to-honor-the-dnt-setting/" class="PageNav-item PageNav-item--prev js-transition" rel="prev"><svg role="presentation"><use xlink:href="#arrow-left"></use></svg><span>Previous post: </span><strong>How to honor the DNT setting</strong></a><a href="/blog/take-10-and-learn-typography/" class="PageNav-item PageNav-item--next js-transition" rel="next"><span>Next post: </span><strong>Take 10 and learn typography</strong><svg role="presentation"><use xlink:href="#arrow-right"></use></svg></a>
   </nav>
 
-  <div class="Content">
+</main>
 
-  <header class="Sitehead" role="banner">
-    <div class="Sitehead-wrapper">
-      <a href="/" class="Sitehead-logo js-transitionFull">
-        <h1 itemprop="author">Vincent Orback</h1>
-        <h2>Front-end developer & designer</h2>
-      </a>
-      <div class="Sitehead-inner">
-        <h3 class="Sitehead-title" itemprop="name">Using WebP images</h3>
-        <p itemprop="datePublished">February 21, 2014</p>
-      </div>
+
+<footer class="Sitefooter" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+  <div class="Sitefooter-info" itemscope itemtype="http://schema.org/Person">
+    <a class="name" href="http://vincentorback.se" itemprop="url"><div itemprop="name">Vincent Orback</div></a>
+    <div class="jobtitle" itemprop="jobtitle">Web designer and developer</div>
+    <div class="address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+      <div><span itemprop="addressLocality">Stockholm</span></div><div itemprop="addressCountry">, Sweden</div>
     </div>
-    <button class="Navigation-toggle js-navToggle" type="button" role="button" aria-controls="navigation">Menu</button>
-  </header>
-
-  <main class="Blog Sitemain" role="main">
-
-    <article class="Blog-entry Entry" itemprop="articleBody mainContentOfPage">
-      <div class="u-wrapper--S">
-        <p>Are you optimizing your images? You better be! But if not, here are some tips to get you started. Plus some easy guidelines on how to get started with using WebP images, a newish image format from Google.</p>
-
-        <p>You might be working hard on reducing your CSS or JS files by writing more compact functions and mushing the files together super hard. But if you look at the bytes you are saving, it doesn’t compare to the size of just on image on your page.</p>
-
-        <p>If you’re not already optimizing your images I recommend you start doing it right now! Like now! Go! Run! Do it! Skip this post! Just fix your images! Download <a href="http://imageoptim.com/">imageoptim</a> and drag and drop your images into it and voilà! Your images reduce in size without any visual impairment.</p>
-
-        <p>If you’re using Grunt, here are two great Grunt tasks, <a href="https://github.com/gruntjs/grunt-contrib-imagemin">imagemin</a> and for svg files there is <a href="https://github.com/sindresorhus/grunt-svgmin">svgmin</a>. I use both of these are they have saved me many mega bytes over a big span of projects.</p>
-
-        <br>
-
-        <h2>What’s a WebP image?</h2>
-        <p>You might have already heard about them when <a href="https://developers.google.com/speed/webp/">Google introduced it</a> 2013. Unfortunately the mainstream use of them didn’t take of as they might have expected.</p>
-        <p>WebP is a new open image format that uses both lossless and lossy compression. It was developed to reduce image file size to speed up web page loading: its principal purpose is to supersede JPEG as the primary format for photographs on the web. WebP now supports animated images and alpha channel (transparency) in lossy images so they can also supersede PNG images.</p>
-
-        <div class="no-webp-info">
-          <p>If you use Chrome, Chrome for Android, Android Ice Cream Sandwich or Opera 11+ you can see a demo comparison of a WebP and a JPG image here. Switch browser for a while?</p>
-        </div>
-      </div>
-
-      <div class="webp-images">
-        <div class="u-wrapper--S">
-          <p>Here are two images. Can you tell them apart?</p>
-        </div>
-        <div class="u-nbfc">
-          <figure class="col">
-            <a href="http://d3dx0f1ge67l9j.cloudfront.net/images/blog/kittyjpg.jpg">
-              <img src="http://d3dx0f1ge67l9j.cloudfront.net/images/blog/kittyjpg.jpg" alt="Kitty Cat JPG" width="1280" height="853">
-            </a>
-            <figcaption>581 kb</figcaption>
-          </figure>
-          <figure class="col turn">
-            <a href="http://d3dx0f1ge67l9j.cloudfront.net/images/blog/kittywebp.webp">
-              <img src="http://d3dx0f1ge67l9j.cloudfront.net/images/blog/kittywebp.webp" alt="Kitty Cat WebP" width="1280" height="853">
-            </a>
-            <figcaption>97 kb</figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <div class="u-wrapper--S">
-
-        <p>The picture on the left is a JPG saved for the web in Photoshop and then optimized with imagemin. Still the WebP one is a sixth of the size. Now, does this mean that we can reduce website page weight by almost a sixth of their original sizes? Yes!</p>
-        <p>But only in Chrome, Chrome for Android, Android Browser 4 and Opera 11+ for now.</p>
-
-        <p>The traffic on my site is 62% Chrome so using WebP good choice for me. Most of the images on my site are in WebP format and some of them are a fourth in size of their corresponding PNG and JPG images for other browsers. If you feel that the use of WebP images could be helpful for your site, here are some way to go forth!</p>
-
-        <br>
-
-        <h2>How do I start?</h2>
-        <p>First of all you need to convert your old JPGs and PNGS to the Webp format. I use this Grunt task <a href="https://github.com/somerandomdude/grunt-webp">grunt-webp</a>. It’s a super easy way to automate my workflow. You can also download more tools like plugins for Photoshop and Gimp over at <a href="https://developers.google.com/speed/webp/docs/using">Google</a>.</p>
-        <br>
-        <p>To render your images on your page there are some different approaches. The easiest way, I feel, is to use the .htaccess technique. Just paste this code below into your .htaccess and when your server requests an image, it will first see if there’s a WebP image in the same search path with the same name and use it if the users browser supports it.</p>
-      </div>
-
-  <pre class="Entry-code Code language-clike"><code>&lt;IfModule mod_rewrite.c&gt;
-      RewriteEngine On
-      RewriteCond %{HTTP_ACCEPT} image/webp
-      RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
-      RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
-  &lt;/IfModule&gt;
-
-  &lt;IfModule mod_headers.c&gt;
-      Header append Vary Accept env=REDIRECT_accept
-  &lt;/IfModule&gt;
-
-  AddType image/webp .webp</code></pre>
-
-      <div class="u-wrapper--S">
-        <p>Here is a <a href="https://github.com/vincentorback/WebP-images-with-htaccess">GitHub repository</a> for the code with a small demo.</p>
-        <p>If you can’t access your .htaccess file or don’t have one, <a href="https://github.com/vincentorback/WebP-Images-with-javascript">here’s another way</a> using Javascript.</p>
-        <br><br>
-
-        <p>So get going with your new awesome web performance wisdom. Challenge your friends on who can make the best looking images that weighs the least and complain on your co-workers slow projects. Share the technique and the gospel of WebP!</p>
-
-        <p>Also, if you have any other ides on how to optimize performance, responsive images or anything, please leave a comment below!</p>
-      </div>
-    </article>
-
-    <section class="Comments js-comments u-wrapper--S test">
-      <div id="disqus_thread"></div>
-      <noscript class="no-js-warning">Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments.</a></noscript>
-    </section>
-
-    <nav class="PageNav">
-      <a href="/blog/take-10-and-learn-typography/" class="PageNav-item PageNav-item--next js-transition" rel="next"><span>Next post: </span><strong>Take 10 and learn typography</strong></a>
-    </nav>
-
-  </main>
-
-
-  <footer class="Sitefooter" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
-    <div class="Sitefooter-info" itemscope itemtype="http://schema.org/Person">
-      <a class="name" href="http://vincentorback.se" itemprop="url"><div itemprop="name">Vincent Orback</div></a>
-      <div class="jobtitle" itemprop="jobtitle">Web designer and developer</div>
-      <div class="address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-        <div><span itemprop="addressLocality">Stockholm</span></div><div itemprop="addressCountry">, Sweden</div>
-      </div>
-      <div class="email" itemprop="email"><a href="mailto:vorback@gmail.com" target="_blank" rel="me">vorback@gmail.com</a></div>
-    </div>
-    <a href="https://github.com/vincentorback/Vincent-Orback" target="_blank" class="Octocat Tooltip Tooltip--top" data-trackvalue="github-footerLink">
-      <span class="Tooltip-inner">This website is available <span class="u-textTruncate">on GitHub!</span></span>
-      <span class="Octocat-image"></span>
-    </a>
-  </footer>
-
+    <div class="email" itemprop="email"><a href="mailto:vorback@gmail.com" target="_blank" rel="me">vorback@gmail.com</a></div>
   </div>
+  <a href="https://github.com/vincentorback/Vincent-Orback" target="_blank" class="Octocat Tooltip Tooltip--top" data-trackvalue="github-footerLink">
+    <span class="Tooltip-inner">This website is available <span class="u-textTruncate">on GitHub!</span></span>
+    <span class="Octocat-image"></span>
+  </a>
+</footer>
 
-  <script src="/js/vendor/prism.js"></script>
-  <script src="/js/main-min.js" async></script>
-  <script>
+</div>
+
+<!--[if gt IE 8]><!-->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+
+  <symbol id="arrow-left" viewBox="0 0 28.375 27.875">
+    <path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-miterlimit="10" d="M3.417 14.353h20.95m-20.95 0l8.47-8.472m-8.47 8.52l8.47 8.473"></path>
+  </symbol>
+
+  <symbol id="arrow-right" viewBox="0 0 28.375 27.875">
+    <path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-miterlimit="10" d="M24.078 14.4h-20.951m20.951 0l-8.471 8.472m8.471-8.519l-8.471-8.472"></path>
+  </symbol>
+
+</svg>
+<!--<![endif]-->
+
+<!--[if lt IE 9]>
+<div class="Alert" role="alert"><p>You are using an <strong>outdated</strong> browser! Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p></div>
+<![endif]-->
+
+<script src="/js/vendor/prism.js"></script>
+<script src="/js/main-min.js" async></script>
+<script>
 (function () {
   'use strict';
   var doc = document,
-    styleLink,
-    request,
-    DoNotTrack = navigator.doNotTrack === 'yes' || navigator.doNotTrack === '1' || navigator.msDoNotTrack === '1';
+    style = doc.createElement('style'),
+    request;
 
-
-  function addFont(localStoragePath) {
-    styleLink = doc.createElement('style');
-    style.textContent = localStoragePath;
+  function addFont() {
+    style.rel = 'stylesheet';
     doc.head.appendChild(style);
+    style.textContent = localStorage.vincentsFonts;
   }
 
   try {
-    if (localStorage.sourceSansPro) {
-      addFont(localStorage.sourceSansPro);
+    if (localStorage.vincentsFonts) {
+      // The font is in localStorage, we can load it directly
+      addFont();
     } else {
       // We have to first load the font file asynchronously
       request = new XMLHttpRequest();
@@ -197,29 +214,19 @@
 
       request.onload = function () {
         if (request.status >= 200 && request.status < 400) {
-
           // We save the file in localStorage
-          localStorage.sourceSansPro = request.responseText;
+          localStorage.vincentsFonts = request.responseText;
 
-          // ...and load the font
-          addFont(localStorage.sourceSansPro);
-        } else {
-          throw new Error('Couldn’t load fonts :/');
+          // ... and load the font
+          addFont();
         }
       };
 
       request.send();
     }
-  } catch (exc) {
-    styleLink = doc.createElement('link');
-    styleLink.rel = 'stylesheet';
-    styleLink.href = 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600';
-    doc.head.appendChild(styleLink);
-  }
-
-  if (localStorage.font_css_cache || localStorage.font_css_cache_file) {
-    localStorage.removeItem('font_css_cache');
-    localStorage.removeItem('font_css_cache_file');
+  } catch (ignore) {
+    // maybe load the font synchronously for woff-capable browsers
+    // to avoid blinking on every request when localStorage is not available
   }
 }());
 
