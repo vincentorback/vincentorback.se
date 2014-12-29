@@ -114,7 +114,7 @@ a {
     height: 1px;
   }
   @include respond-max(800px) {
-    font-size: 1em;
+    font-size: .8em;
     blockquote {
       margin: 10% 0;
     }
