@@ -27,13 +27,14 @@
 
 
 .Blog-entry {
-  padding-top: $section-spacing;
-  @extend %fadein;
+  padding-top: $section-spacing-mobile;
+
+  @include respond-min(800px) {
+    padding-top: $section-spacing;
+    animation: fadein 1000ms $nice-easing 1;
+  }
   @include respond-min(1600px) {
     padding-top: $section-spacing-large;
-  }
-  @include respond-max(800px) {
-    padding-top: $section-spacing-mobile;
   }
 }
 

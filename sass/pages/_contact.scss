@@ -130,14 +130,15 @@
 
   transition: opacity 300ms ease;
 
-  &.has-error {
-    @extend %shake;
-  }
-
   &.is-sent {
     opacity: .4;
   }
 
+  @include respond-min(800px) {
+    &.has-error {
+      animation: shake 400ms ease-in-out;
+    }
+  }
   @include respond-min(1600px) {
     max-width: 800px;
   }

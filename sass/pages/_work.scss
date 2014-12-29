@@ -7,10 +7,6 @@
     }
   }
 
-  .Sitehead-logo, .Navigation {
-    @extend %fadeinTop;
-  }
-
   .Sitehead-inner {
     width: 75%;
     max-width: 675px;
@@ -24,8 +20,6 @@
       padding: .65em 0;
       font-size: 1.1em;
       letter-spacing: 3px;
-
-      @extend %fadein;
     }
 
     .no-csstransforms & {
@@ -41,6 +35,15 @@
   .Sitehead-cover {
     background-position: 50% 0;
     opacity: 1;
+  }
+
+  @include respond-min(800px) {
+    .Sitehead-logo, .Navigation {
+      animation: fadeinTop 1000ms $nice-easing 1;
+    }
+    .Sitehead-inner a {
+      animation: fadein 1000ms $nice-easing 1;
+    }
   }
 
   @include respond-min(1600px) {
@@ -80,7 +83,7 @@
 .Work {
   position: relative;
   padding-top: 5%;
-  @extend %fadein;
+
   .u-wrapper {
     max-width: 700px;
   }
@@ -95,6 +98,9 @@
   }
   blockquote {
     margin: 3rem 0;
+  }
+  @include respond-min(800px) {
+    animation: fadein 1000ms $nice-easing 1;
   }
   @include respond-max(800px) {
     padding-top: $section-spacing-mobile;

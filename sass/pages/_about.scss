@@ -5,22 +5,23 @@
 }
 
 .About {
-  padding: #{$section-spacing - 20px} 0 $section-spacing;
+  padding: #{$section-spacing-mobile - 20px} 0 $section-spacing-mobile;
   h1 {
     font-size: 2em;
-    margin-bottom: 1em;
+    margin-bottom: .4em;
   }
   p:last-child {
     margin-bottom: 0;
   }
-  .u-wrapper {
-    @extend %fadein;
-  }
-  @include respond-max(800px) {
-    h1 {
-      margin-bottom: .4em;
+
+  @include respond-min(800px) {
+    padding: #{$section-spacing - 20px} 0 $section-spacing;
+    .u-wrapper {
+      animation: fadein 1000ms $nice-easing 1;
     }
-    padding: #{$section-spacing-mobile - 20px} 0 $section-spacing-mobile;
+    h1 {
+      margin-bottom: 1em;
+    }
   }
 }
 

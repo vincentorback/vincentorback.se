@@ -78,13 +78,15 @@
   font-size: 4.55em;
   font-weight: 600;
 
-  @extend %fadeinTop;
 
   @media (max-width: 800px), (max-height: 480px) {
     font-size: 3em;
   }
   @include respond-max(400px) {
     font-size: 2em;
+  }
+  @include respond-min(800px) {
+    animation: fadeinTop 1000ms $nice-easing 1;
   }
 }
 

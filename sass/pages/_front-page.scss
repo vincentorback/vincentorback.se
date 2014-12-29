@@ -14,8 +14,6 @@
   .Sitehead-inner {
     top: auto;
     bottom: 25%;
-
-    @extend %fadeinBottom;
   }
 
   .Sitehead-title,
@@ -40,12 +38,6 @@
       font-size: .6em;
       margin-top: 2em;
       opacity: 0;
-      animation: fadeinBottom 1000ms ease 1;
-      animation-delay: 1500ms;
-      animation-fill-mode:forwards;
-      &:hover svg {
-        @extend %bounce;
-      }
     }
     svg {
       display: inline-block;
@@ -54,6 +46,20 @@
       left: 3px;
       width: 18px;
       height: 18px;
+    }
+  }
+
+  @include respond-min(800px) {
+    .Sitehead-inner {
+      animation: fadeinBottom 700ms $nice-easing 1;
+    }
+    .Sitehead-subtitle a {
+      animation: fadeinBottom 1000ms ease 1;
+      animation-delay: 1500ms;
+      animation-fill-mode:forwards;
+      &:hover svg {
+        animation: bounce 2000ms ease-in-out infinite;
+      }
     }
   }
 
