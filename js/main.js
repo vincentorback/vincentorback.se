@@ -94,9 +94,6 @@
 
       vincent.tracking();
 
-      vincent.dateEvents();
-
-      // Fixes a webkit svg rendering bug in Safari and iOS Safari
       vincent.svgRefresh();
     },
 
@@ -135,8 +132,6 @@
     smoothScroll: function () {
       var $target,
         scrollOffset;
-        //targetHeight,
-        //windowHeight;
 
       $body.find('.js-scroll').on('click', function (e) {
 
@@ -169,41 +164,6 @@
 
         e.preventDefault();
       });
-
-      /*
-      $body.find('.js-scrollCenter').on('click', function (e) {
-        if (e.metaKey || e.ctrlKey) {
-          return;
-        }
-
-        $target = $(this.getAttribute('href'));
-
-        if ($target.length === 0) {
-          return;
-        }
-
-        targetHeight = $target.height();
-        windowHeight = getViewport().height;
-
-        if (windowHeight > targetHeight) {
-          scrollOffset = ((windowHeight - targetHeight) / 2) - targetHeight;
-        } else {
-          scrollOffset = Math.abs(targetHeight / 2) * -1;
-        }
-
-        $target.velocity('scroll', {
-          duration: 1200,
-          offset: Math.abs(scrollOffset) * -1,
-          easing: vincent.scrollEasing
-        });
-
-        win.setTimeout(function () {
-          $body.removeClass('nav-isOpen');
-        }, 450);
-
-        e.preventDefault();
-      });
-      */
     },
 
     disableHover: function () {
@@ -250,39 +210,6 @@
               win.location = href;
             }
           });
-
-        /*
-        if (!body.animate) {
-          $body.velocity({
-            opacity: 0
-          }, {
-            duration: 400,
-            easing: 'ease',
-            complete: function () {
-              win.location = href;
-            }
-          });
-        } else {
-
-          $body.velocity('scroll', {
-            duration: 700,
-            easing: vincent.scrollEasing
-          });
-
-          var pageAnimation = body.animate([
-            {opacity: 1},
-            {opacity: 0}
-          ], {
-            duration: 400,
-            iterations: 1,
-            easing: 'ease'
-          });
-
-          pageAnimation.onfinish = function () {
-            win.location = href;
-          };
-        }
-        */
 
         e.preventDefault();
       });
@@ -353,8 +280,6 @@
           easing: 'ease'
         });
 
-
-
         $siteHead
           .velocity({
             height: '60%',
@@ -377,23 +302,19 @@
             delay: delay
           });
 
-
-
-        /** Change header colors */
         $siteHead.find('a').velocity({
           color: vincent.colors.white
         }, {
           duration: 400,
           easing: 'ease'
         });
+
         $nav.find('a').velocity({
           color: vincent.colors.white
         }, {
           duration: 400,
           easing: 'ease'
         });
-
-
 
         $cover.velocity({
           opacity: 0
@@ -559,12 +480,14 @@
             transDone = true;
           }
         });
+
         $target.find('.WorkItem-inner').velocity({
           top: '60%'
         }, {
           duration: 400,
           easing: 'ease'
         });
+
         $target.find('.WorkItem-inner p').velocity({
           opacity: 0,
           maxHeight: 0,
@@ -577,6 +500,7 @@
           duration: 1000,
           easing: 'ease'
         });
+
         $target.find('.WorkItem-inner a').velocity({
           opacity: 0,
           maxHeight: '53px',
@@ -612,7 +536,6 @@
 
     navToggle: function () {
       function toggleNavigation(state) {
-
         if (!state) {
           state = null;
         }
@@ -643,7 +566,6 @@
           e.preventDefault();
         }
       });
-
     },
 
     contactForm: function () {
@@ -656,7 +578,6 @@
         isError = false;
 
       function getScroll() {
-
         if (win.pageYOffset) {
           return {
             top: win.pageYOffset,
@@ -670,7 +591,6 @@
         scrollX = docElem.scrollLeft || body.odyscrollLeft || 0;
         scrollY = docElem.scrollTop || body.scrollTop || 0;
         return [scrollX, scrollY];
-
       }
 
       $form.on('submit', function () {
@@ -688,8 +608,6 @@
           $message.next().addClass('is-error');
           isError = true;
         }
-
-
 
         // Shake form and scroll to the first error found.
         if (isError === true) {
@@ -710,8 +628,6 @@
           return false;
         }
 
-
-
         // Scroll to top
         if (getScroll().top >= $form.offset().top) {
           $form.velocity('scroll', {
@@ -720,7 +636,6 @@
             easing: vincent.scrollEasing
           });
         }
-
 
         // Post with ajax and display eventual response text.
         $.ajax({
@@ -775,6 +690,7 @@
           }
         });
     },
+
     expandable: function () {
       var $target,
         state = true;
@@ -793,11 +709,8 @@
         e.preventDefault();
         return false;
       });
-
     },
-    /**
-     * Lazy load Disqus comments
-     */
+
     blogComments: function () {
       var disqus_shortname = 'vincentorback',
         dsq = doc.createElement('script');
@@ -819,7 +732,6 @@
           $(win).unbind('scroll');
         }
       });
-
     },
 
     parallaxImages: function () {
@@ -832,21 +744,16 @@
         touch: Modernizr.touch
       });
     },
-    /*
-    lazyLoad: function () {
-      $body.find('.Sitemain').find('.lazy').lazyload({
-        threshold: winHeight
-      });
-    },
-    */
+
     easterEggs: function () {
-      var secret = [
+      var easterUrl = vincent.amazon + '/easter',
+        easterEggs = [
           {
             code: [65, 80, 80, 76, 69], // apple
             magic: function () {
               var appleFont = '<link href="http://fonts.googleapis.com/css?family=Josefin+Sans:100,300" rel="stylesheet">';
 
-              $.get(vincent.amazon + '/easter/apple.css', function (css) {
+              $.get(easterUrl + '/apple.css', function (css) {
                 $(head).append(appleFont);
                 $('<style>').html(css).appendTo(head).addClass('appleStyle');
               });
@@ -862,10 +769,10 @@
           {
             code: [87, 73, 78, 68, 79, 87, 83], // windows
             magic: function () {
-              $.get(vincent.amazon + '/easter/windows-min.js', function (response) {
+              $.get(easterUrl + '/windows-min.js', function (response) {
                 $('<script id="windows-script">').html(response).appendTo(head);
               });
-              $.get(vincent.amazon + '/easter/windows.css', function (css) {
+              $.get(easterUrl + '/windows.css', function (css) {
                 $('<style id="window-styles">').html(css).appendTo(head);
               });
 
@@ -892,7 +799,7 @@
           {
             code: [65, 83, 84, 69, 82, 79, 73, 68, 83], // asteroids
             magic: function () {
-              $.get(vincent.amazon + '/easter/asteroids-min.js', function (response) {
+              $.get(easterUrl + '/asteroids-min.js', function (response) {
                 $('<script is="asteroids-script">').html(response).appendTo(head);
               });
             }
@@ -906,7 +813,7 @@
           {
             code: [80, 65, 73, 78, 84], // paint
             magic: function () {
-              $.get(vincent.amazon + '/easter/paint-min.js', function (response) {
+              $.get(easterUrl + '/paint-min.js', function (response) {
                 $('<script id="paint-script">').html(response).appendTo(head);
               });
             }
@@ -922,29 +829,29 @@
           {
             code: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65], // konami code
             magic: function () {
-              $.get(vincent.amazon + '/easter/codelist.html', function (response) {
+              $.get(easterUrl + '/codelist.html', function (response) {
                 $('<article class="EasterEggs">').html(response).appendTo(body);
               });
             }
           }
         ],
-        len = secret.length,
+        len = easterEggs.length,
         matching = false,
         j = 0,
         i;
 
       $(doc).keydown(function (e) {
-        // for each secret check letter
+        // for each easter egg check letter
         for (i = 0; i < len; i += 1) {
-          // if pressed letter is the same as current secret and current letter.
-          if (e.keyCode === secret[i].code[j]) {
+          // if pressed letter is the same as current easter egg and current letter.
+          if (e.keyCode === easterEggs[i].code[j]) {
             j += 1; // go for next letter.
             // if the current letter streak is the same as the length of the current secrat, you win!
-            if (j === secret[i].code.length) {
+            if (j === easterEggs[i].code.length) {
               // removing the current keydown event
               $(doc).unbind('keydown', this);
-              // running secret function
-              secret[i].magic();
+              // running easter egg function function
+              easterEggs[i].magic();
             }
             matching = true;
             break;
@@ -991,54 +898,6 @@
           }
         });
       });
-    },
-
-    dateEvents: function () {
-      function checkDate(currentDate, startDate, endDate) {
-        var minDate = new Date(startDate),
-          maxDate = new Date(endDate);
-
-        if (currentDate <= maxDate && currentDate >= minDate) {
-          return true;
-        }
-
-        return false;
-      }
-
-      var date = new Date(),
-        currentDay = date.getDate(),
-        currentMonth = date.getMonth() + 1,
-        currentYear = date.getFullYear(),
-        nextYear = date.getFullYear() + 1,
-        currentDate = new Date(currentMonth + '-' + currentDay + '-' + currentYear),
-        i = 0,
-        dates = [
-          {
-            name: 'pride',
-            start: '7-28-' + currentYear,
-            end: '8-2-' + currentYear
-          },
-          {
-            name: 'christmas',
-            start: '12-15-' + currentYear,
-            end: '01-05-' + nextYear,
-            magic: function () {
-              $.get(vincent.amazon + '/js/vendor/xmas.js', function (response) {
-                $('<script id="xmas-script">').html(response).appendTo(head);
-              });
-            }
-          }
-        ];
-
-      for (i; i < dates.length; i += 1) {
-        if (checkDate(currentDate, dates[i].start, dates[i].end) === true) {
-          if (typeof dates[i].magic === 'function') {
-            dates[i].magic();
-          }
-          $body.addClass('is-' + dates[i].name);
-        }
-      }
-
     },
 
     svgRefresh: function () {
