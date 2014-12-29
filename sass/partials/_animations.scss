@@ -1,16 +1,4 @@
-/*
-@keyframes animated-bg {
-  0% {background: $blue;}
-  20% {background: $blue;}
-  25% {background: $green;}
-  45% {background: $green;}
-  50% {background: $yellow;}
-  75% {background: $yellow;}
-  80% {background: $red;}
-  95% {background: $red;}
-  100%{background: $blue;}
-}
-*/
+
 @keyframes fadeinTop {
   0% {
     //opacity: 0;
@@ -21,10 +9,10 @@
     transform: translate3d(0,0,0);
   }
 }
+
 %fadeinTop {
   animation: fadeinTop 1000ms $nice-easing 1;
 }
-
 
 
 @keyframes fadeinBottom {
@@ -43,58 +31,6 @@
 }
 
 
-/*
-@keyframes fadeoutBottom {
-  0% {
-    opacity: 1;
-    transform: translate3d(0,0,0);
-  }
-  50% {
-    transform: translate3d(0,0,0);
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 0;
-    transform: translate3d(0,0,0);
-  }
-}
-
-%fadeoutBottom {
-  animation: fadeoutBottom 700ms $nice-easing 1;
-}
-
-
-
-@keyframes moveInTop {
-  0% {
-    transform: translate3d(0,-100px,0);
-  }
-  100% {
-    transform: translate3d(0,0,0);
-  }
-}
-
-%moveInTop {
-  animation: moveInTop 700ms $nice-easing 1;
-}
-
-
-
-@keyframes moveinBottom {
-  0% {
-    transform: translate3d(0,100px,0);
-  }
-  100% {
-    transform: translate3d(0,0,0);
-  }
-}
-
-%moveinBottom {
-  animation: moveinBottom 700ms $nice-easing 1;
-}
-*/
-
-
 @keyframes fadein {
   0% {
     opacity: 0;
@@ -109,31 +45,6 @@
 }
 
 
-/*
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(359deg);
-  }
-}
-
-%rotate {
-  animation: rotate 1000ms linear infinite;
-}
-
-
-@keyframes moveToRight {
-  80% { transform: translateX(250%); }
-  81% { opacity: 1; transform: translateX(250%); }
-  82% { opacity: 0; transform: translateX(250%); }
-  83% { opacity: 0; transform: translateX(-50%); }
-  84% { opacity: 1; transform: translateX(-50%);  }
-  100% { transform: translateX(0%); }
-}
-
-*/
 @keyframes shake {
   0% {transform: translateX(0);}
   12.5% {transform: translateX(-6px) rotateY(-5deg)}
@@ -146,10 +57,6 @@
 %shake {
   animation: shake 400ms ease-in-out;
 }
-
-
-
-
 
 
 @keyframes bounce {
