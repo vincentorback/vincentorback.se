@@ -160,18 +160,19 @@
   'use strict';
   var doc = document,
     style = doc.createElement('style'),
+    head = doc.head,
     request;
 
-  function addFont() {
+  function addStyle(css) {
     style.rel = 'stylesheet';
-    doc.head.appendChild(style);
-    style.textContent = localStorage.vincentsFonts;
+    head.appendChild(style);
+    style.textContent = css;
   }
 
   try {
-    if (localStorage.vincentsFonts) {
+    if (localStorage && localStorage.vincentsFonts) {
       // The font is in localStorage, we can load it directly
-      addFont();
+      addStyle(localStorage.vincentsFonts);
     } else {
       // We have to first load the font file asynchronously
       request = new XMLHttpRequest();
@@ -179,19 +180,15 @@
 
       request.onload = function () {
         if (request.status >= 200 && request.status < 400) {
-          // We save the file in localStorage
+          addStyle(request.responseText);
           localStorage.vincentsFonts = request.responseText;
-
-          // ... and load the font
-          addFont();
         }
       };
 
       request.send();
     }
   } catch (ignore) {
-    // maybe load the font synchronously for woff-capable browsers
-    // to avoid blinking on every request when localStorage is not available
+    // Woops...
   }
 }());
 
@@ -202,10 +199,8 @@ if (!DoNotTrack) {
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-31135100-1', 'vincentorback.se');
+  ga('require', 'linkid', 'linkid.js');
   ga('send', 'pageview');
-
-  trq('account', 't-54652b425a0dabc01e3bf562');
-  (function(d,t){var s=d.createElement(t),c=d.getElementsByTagName(t)[0];s.async=1;s.src="https://cdn.capturly.com/js/track.js";c.parentNode.insertBefore(s,c);}(document,'script'));function trq(){(trq.q=trq.q||[]).push(arguments);}
 }
 </script>
 </body>
