@@ -13,10 +13,8 @@
     padding-top: 0;
   }
   @include respond-max(800px) {
-    .Sitehead-inner {
-      h3 {
-        font-size: 40px;
-      }
+    .Sitehead-title {
+      font-size: 2.5em;
     }
   }
 }
