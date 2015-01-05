@@ -6,7 +6,7 @@
   .Sitemain {
     padding-top: $section-spacing-large;
     @include respond-max(800px) {
-      padding-top: $section-spacing-mobile;
+      padding-top: $section-spacing-mobile / 2;
     }
   }
 }
