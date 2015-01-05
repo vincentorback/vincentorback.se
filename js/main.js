@@ -819,7 +819,7 @@
           {
             code: [83, 78, 79, 87], // snow
             magic: function () {
-              $.get(vincent.amazon + '/js/vendor/xmas.js', function (response) {
+              $.get(easterUrl + '/xmas-min.js', function (response) {
                 $('<script id="xmas-script">').html(response).appendTo(head);
               });
             }

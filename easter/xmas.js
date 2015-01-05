@@ -30,8 +30,8 @@
     document.body.appendChild(canvas);
   }
 
-  if (window.innerWidth > 900) {
-    flakeCount = 200;
+  if (window.innerWidth > 2000) {
+    flakeCount = 150;
   }
 
   function reset(flake) {
