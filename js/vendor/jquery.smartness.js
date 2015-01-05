@@ -1,64 +1,36 @@
 // http://paulirish.com/2009/throttled-smartresize-jquery-event-handler/
-(function($, sr){
+(function () {
+  'use strict';
 
-    // debouncing function from John Hann
+  var deBouncer = function ($, cf, of, interval) {
+    // deBouncer by hnldesign.nl
+    // based on code by Paul Irish and the original debouncing function from John Hann
     // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
     var debounce = function (func, threshold, execAsap) {
-        var timeout;
-
-        return function debounced () {
-            var obj = this, args = arguments;
-
-            function delayed () {
-                if (!execAsap)
-                    func.apply(obj, args);
-                timeout = null;
-            }
-
-            if (timeout)
-                clearTimeout(timeout);
-            else if (execAsap)
-                func.apply(obj, args);
-
-            timeout = setTimeout(delayed, threshold || 200);
-        };
+      var timeout;
+      return function debounced() {
+        var obj = this, args = arguments;
+        function delayed () {
+          if (!execAsap) {
+            func.apply(obj, args);
+          }
+          timeout = null;
+        }
+        if (timeout) {
+          clearTimeout(timeout);
+        } else if (execAsap) {
+          func.apply(obj, args);
+        }
+        timeout = setTimeout(delayed, threshold || interval);
+      };
     };
 
-    // smartscroll
-    jQuery.fn[sr] = function(fn, threshhold){  return fn ? this.bind('scroll', debounce(fn, threshhold)) : this.trigger(sr); };
+    $.fn[cf] = function (fn) {
+      return fn ? this.bind(of, debounce(fn)) : this.trigger(cf);
+    };
+  };
 
-})(jQuery,'smartscroll');
+  deBouncer(jQuery, 'smartresize', 'resize', 200);
+  deBouncer(jQuery, 'smartscroll', 'scroll', 200);
 
-
-
-
-
-
-
-(function($,sr){
-
-  // debouncing function from John Hann
-  // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
-  var debounce = function (func, threshold, execAsap) {
-      var timeout;
-
-      return function debounced () {
-          var obj = this, args = arguments;
-          function delayed () {
-              if (!execAsap)
-                  func.apply(obj, args);
-              timeout = null;
-          };
-
-          if (timeout)
-              clearTimeout(timeout);
-          else if (execAsap)
-              func.apply(obj, args);
-
-          timeout = setTimeout(delayed, threshold || 200);
-      };
-  }
-  // smartresize
-  jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
-
-})(jQuery,'smartresize');
+}());
