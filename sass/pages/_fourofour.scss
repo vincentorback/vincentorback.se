@@ -1,35 +1,59 @@
 .Page-fourofour {
   .Sitehead {
+    min-height: 0;
+    max-height: none;
+    height: auto;
+    background: transparent;
+    z-index: 3;
+  }
+
+  .Sitehead-logo {
+    position: static;
+  }
+
+  .Sitemain {
+    height: 100%;
+    background: #111;
+    color: #fff;
+
     position: absolute;
     top: 0;
-    left: 0;
-    height: auto;
-    overflow: visible;
     width: 100%;
-    min-height: 0;
+  }
+
+  .Sitehead-logo,
+  .Navigation a,
+  .Navigation-toggle {
+    color: #fff;
+  }
+
+  .Navigation-toggle {
+    border-color: #fff;
   }
 
   @include respond-max(800px) {
     .Navigation {
-      background: #fff;
       a {
-        color: $red;
-        &.is-active span {
-          border-bottom: 3px solid $red;
-        }
+        color: #fff;
       }
     }
   }
 }
 
 
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
+.Fourofour {
+  position: fixed;
+  top: 50%;
+  left: 50%;
 
-.fourofour-wrapper,
-.fourofour {
-  position: relative;
-  background: $red;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+
+  font-size: .5em;
 }

@@ -1,469 +1,202 @@
-/*
- * Copyright MIT © <2013> <Francesco Trillini>
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
- * documentation files (the "Software"), to deal in the Software without restriction, including without limitation
- * the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and
- * to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
- * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
- * PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
- * FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
- * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
-
-var self = window;
-
-;(function(self) {
-
-	var canvas,
-		context,
-		particles = [],
-		text = [],
-		nextText = [],
-		shape = {},
-		mouse = { x: -99999, y: -99999 },
-		layout = 0,
-		FPS = 60,
-
-		/*
-		 * List words.
-		 */
-		words = '404 error',
-
-		/*
-		 * List colors.
-		 */
-		colors = {
-			circle: [ '#e67e22', '#2c3e50' ]
-		};
-
-	/*
- 	 * Init.
-	 */
-
-	function init() {
-
-		var slideshowContainer = document.querySelector('.fourofour');
-
-		canvas = document.createElement('canvas');
-
-    canvas.width = window.innerWidth;
-		canvas.height = window.innerHeight / 1.6;
-
-    slideshowContainer.appendChild(canvas);
-
-		// Browser supports canvas?
-		if(!!(capable)) {
-
-			context = canvas.getContext('2d');
-
-			// Events
-			if('ontouchmove' in window) {
-				canvas.addEventListener('touchup', onTouchUp, false);
-				canvas.addEventListener('touchmove', onTouchMove, false);
-			}
-			else {
-				canvas.addEventListener('mousemove', onMouseMove, false);
-			}
-
-			window.onresize = onResize;
-
-			createParticles();
-
-		}
-		else {
-			console.error('Sorry, switch to a better browser to see this experiment.');
-		}
-
-	}
-
-	/*
-	 * Checks if browser supports canvas element.
-	 */
-
-	function capable() {
-		return canvas.getContext && canvas.getContext('2d');
-	}
-
-	/*
-	 * On resize window event.
-	 */
-
-	function onResize() {
-		canvas.width = window.innerWidth;
-		canvas.height = window.innerHeight / 1.6;
-
-		// Reset the text particles, and align again on the center of screen
-    nextText = [];
-    updateText();
-	}
-
-	function scrollX() {
-		return window.pageXOffset || window.document.documentElement.scrollLeft;
-	}
-
-	function scrollY() {
-		return window.pageYOffset || window.document.documentElement.scrollTop;
-	}
-
-	/*
-	 * Mouse move event.
-	 */
-
-	function onMouseMove(event) {
-		event.preventDefault();
-		mouse.x = event.pageX - ( scrollX() + canvas.getBoundingClientRect().left );
-		mouse.y = event.pageY - ( scrollY() + canvas.getBoundingClientRect().top );
-	}
-
-	/*
-	 * Touch up event.
-	 */
-
-	function onTouchUp(event) {
-		event.preventDefault();
-		// Reset mouse position
-		mouse = {
-			x: -99999,
-			y: -99999
-		};
-	}
-
-	/*
-	 * Touch move event.
-	 */
-
-	function onTouchMove(event) {
-		event.preventDefault();
-		mouse.x = event.touches[0].pageX - ( scrollX() + canvas.getBoundingClientRect().left );
-		mouse.y = event.touches[0].pageY - ( scrollY() + canvas.getBoundingClientRect().top );
-	}
-
-
-	/*
-	 * Create particles.
-	 */
-
-	function createParticles() {
-
-		for(var quantity = 0, len = 200; quantity < len; quantity++) {
-
-			var x, y, steps,
-
-			steps = Math.PI * 2 * quantity / len;
-
-			x = canvas.width * 0.5 + 10 * Math.cos(steps);
-			y = 180 + 10 * Math.sin(steps);
-
-			var radius = randomBetween(0, 12);
-			var hasBorn = radius > 0 || radius < 12 ? false : true;
-
-			var color = colors.circle[~~(Math.random() * colors.circle.length)];
-
-			particles.push({
-
-				x: x,
-				y: y,
-
-				hasBorn: hasBorn,
-
-				ease: 0.04 + Math.random() * 0.06,
-				bornSpeed: 0.07 + Math.random() * 0.07,
-
-				alpha: 0,
-				maxAlpha: 0.7 + Math.random() * 0.4,
-
-				radius: radius,
-				maxRadius: 12,
-
-				color: color,
-				interactive: false,
-
-				angle: 0,
-
-				steps: steps
-
-			});
-
-		}
-
-		// Go!
-		updateText();
-		loop();
-
-	}
-
-	/*
-	 * Create text particles.
-	 * @param seed.
-	 */
-
-	function createTextParticles(seed) {
-
-		for(var quantity = 0, len = seed; quantity < len; quantity++) {
-
-			var radius = randomBetween(0, 12);
-			var hasBorn = radius > 0 || radius < 12 ? false : true;
-
-			var color = colors.circle[~~(Math.random() * colors.circle.length)];
-
-			text.push({
-
-				x: canvas.width * 0.5,
-				y: canvas.height - 70,
-
-				hasBorn: hasBorn,
-
-				ease: 0.04 + Math.random() * 0.06,
-				bornSpeed: 0.07 + Math.random() * 0.07,
-
-				alpha: 0,
-				maxAlpha: 0.7 + Math.random() * 0.4,
-
-				radius: radius,
-				maxRadius: 12,
-
-				color: color,
-				interactive: false
-
-			});
-
-		}
-
-	}
-
-	/*
-	 * Update the current text to a new one.
-	 */
-
-	function updateText() {
-
-		// Clear immediately the screen
-		clear();
-
-		context.font = 100 + 'px Lato, Arial, sans-serif';
-		context.fillStyle = 'rgb(255, 255, 255)';
-		context.textAlign = 'center';
-
-		var strip = words.toUpperCase().split('').join(String.fromCharCode(8202));
-
-		context.fillText(strip, canvas.width * 0.5, canvas.height - 50);
-
-		var surface = context.getImageData(0, 0, canvas.width, canvas.height);
-
-		for(var width = 0; width < surface.width; width += 4) {
-
-			for(var height = 0; height < surface.height; height += 4) {
-
-				var color = surface.data[(height * surface.width * 4) + (width * 4) - 1];
-
-				// The pixel color is white? So draw on it...
-				if (color === 255) {
-
-					nextText.push({
-
-						x: width,
-						y: height,
-
-						orbit: randomBetween(1, 3),
-						angle: 0
-
-					});
-
-				}
-
-			}
-
-		}
-
-		var seed = nextText.length;
-
-		// Recreate text particles, based on this seed
-		createTextParticles(seed);
-
-	}
-
-	/*
-	 * Transitions handler.
-	 */
-
-	function updateTransition() {
-
-		/* --- Text ---- */
-		[].forEach.call(nextText, function(particle, index) {
-
-			if(!text[index].interactive) {
-
-				text[index].x += ((particle.x + Math.cos(particle.angle + index) * particle.orbit) - text[index].x) * 0.08;
-				text[index].y += ((particle.y + Math.sin(particle.angle + index) * particle.orbit) - text[index].y) * 0.08;
-
-			}
-
-			else {
-
-				text[index].x += ((mouse.x + Math.sin(particle.angle) * 30) - text[index].x) * 0.08;
-				text[index].y += ((mouse.y + Math.cos(particle.angle) * 30) - text[index].y) * 0.08;
-
-			}
-
-			particle.angle += 0.08;
-
-		});
-
-
-	}
-
-	/*
-	 * Loop logic.
-	 */
-
-	function loop() {
-		clear();
-		update();
-		render();
-
-		requestAnimFrame(loop);
-	}
-
-	/*
-	 * Clear the whole screen.
-	 */
-	function clear() {
-		context.clearRect(0, 0, canvas.width, canvas.height);
-	}
-
-	/*
-	 * Update the particles.
-	 */
-
-	function update() {
-
-		updateTransition();
-
-		[].forEach.call(particles, function(particle, index) {
-
-			particle.alpha += (particle.maxAlpha - particle.alpha) * 0.05;
-
-			if(particle.hasBorn) {
-
-				particle.radius += (0 - particle.radius) * particle.bornSpeed;
-
-				if(Math.round(particle.radius) === 0) {
-
-					particle.hasBorn = false;
-
-				}
-
-			}
-
-			if(!particle.hasBorn) {
-
-				particle.radius += (particle.maxRadius - particle.radius) * particle.bornSpeed;
-
-				if(Math.round(particle.radius) === particle.maxRadius)
-
-					particle.hasBorn = true;
-
-			}
-
-			distanceTo(mouse, particle) <= particle.radius + 30 ? particle.interactive = true : particle.interactive = false;
-
-		});
-
-		[].forEach.call(text, function(particle, index) {
-
-			particle.alpha += (particle.maxAlpha - particle.alpha) * 0.05;
-
-			if(particle.hasBorn) {
-
-				particle.radius += (0 - particle.radius) * particle.bornSpeed;
-
-				if(Math.round(particle.radius) === 0)
-
-					particle.hasBorn = false;
-
-			}
-
-			if(!particle.hasBorn) {
-
-				particle.radius += (particle.maxRadius - particle.radius) * particle.bornSpeed;
-
-				if(Math.round(particle.radius) === particle.maxRadius)
-
-					particle.hasBorn = true;
-
-			}
-
-			distanceTo(mouse, particle) <= particle.radius + 30 ? particle.interactive = true : particle.interactive = false;
-
-		});
-
-	}
-
-	/*
-	 * Render the particles.
-	 */
-
-	function render() {
-
-		[].forEach.call(text, function(particle, index) {
-
-			context.save();
-			context.globalAlpha = particle.alpha;
-			context.fillStyle = 'rgb(255, 255, 255)';
-			context.beginPath();
-			context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-			context.fill();
-			context.restore();
-
-		});
-
-	}
-
-	/*
-	 * Distance between two points.
-	 */
-
-	function distanceTo(pointA, pointB) {
-		var dx = Math.abs(pointA.x - pointB.x);
-		var dy = Math.abs(pointA.y - pointB.y);
-
-		return Math.sqrt(dx * dx + dy * dy);
-	}
-
-	/*
-	 * Useful function for random integer between [min, max].
-	 */
-
-	function randomBetween(min, max) {
-		return ~~(Math.random() * (max - min + 1) + min);
-	}
-
-	/*
-	 * Request new frame by Paul Irish.
-	 * 60 FPS.
-	 */
-
-	window.requestAnimFrame = (function() {
-
-		return  window.requestAnimationFrame       ||
-				window.webkitRequestAnimationFrame ||
-				window.mozRequestAnimationFrame    ||
-				window.oRequestAnimationFrame      ||
-				window.msRequestAnimationFrame     ||
-
-				function(callback) {
-
-					window.setTimeout(callback, 1000 / FPS);
-
-				};
-
-    })();
-
-	window.addEventListener ? window.addEventListener('load', init, false) : window.onload = init;
-
-})(self);
+(function (window) {
+  'use strict';
+
+  var win = window,
+    SQRT_3 = Math.pow(3, 0.5),
+    triangle,
+    D,
+    mousePos,
+    position,
+    count = 100;
+
+  paper.install(win);
+
+  win.onload = function () {
+    paper.setup('canvas');
+
+    D = Math.max(paper.view.getSize().width, paper.view.getSize().height);
+
+    mousePos = paper.view.center.add([view.bounds.width / 3, 100]);
+    position = paper.view.center;
+
+    // Draw the BG
+    var background = new Path.Rectangle(view.bounds);
+
+    background.fillColor = '#3B3251';
+    buildStars();
+    triangle = new Triangle(50);
+
+    paper.view.draw();
+
+    paper.view.onFrame = function () {
+      position = position.add((mousePos.subtract(position).divide(10)));
+      var vector = (view.center.subtract(position)).divide(10);
+      moveStars(vector.multiply(8));
+      triangle.update();
+    };
+  };
+
+  // ---------------------------------------------------
+  //  Helpers
+  // ---------------------------------------------------
+  win.onresize = function () {
+    project.clear();
+    D = Math.max(paper.view.getSize().width, paper.view.getSize().height);
+    // Draw the BG
+    var background = new Path.Rectangle(view.bounds);
+
+    background.fillColor = '#3B3251';
+    buildStars();
+    triangle.build(50);
+  };
+
+  var random = function (minimum, maximum) {
+    return Math.round(Math.random() * (maximum - minimum) + minimum);
+  };
+
+  var map = function (n, start1, stop1, start2, stop2) {
+    return (n - start1) / (stop1 - start1) * (stop2 - start2) + start2;
+  };
+
+
+  // ---------------------------------------------------
+  //  Triangle
+  // ---------------------------------------------------
+  var Triangle = function (a) {
+    this.build(a);
+  };
+
+  Triangle.prototype.build = function (a) {
+    // The points of the triangle
+    var segments = [new paper.Point(0, -a / SQRT_3), new paper.Point(-a / 2, a * 0.5 / SQRT_3), new paper.Point(a / 2, a * 0.5 / SQRT_3)];
+
+    this.flameSize = a / SQRT_3;
+    var flameSegments = [new paper.Point(0, this.flameSize), new paper.Point(-a / 3, a * 0.4 / SQRT_3), new paper.Point(a / 3, a * 0.4 / SQRT_3)];
+
+    this.flame = new Path({
+      segments: flameSegments,
+      closed: true,
+      fillColor: '#FCE589'
+    });
+
+    this.ship = new Path({
+      segments: segments,
+      closed: true,
+      fillColor: '#FF7885'
+    });
+    this.group = new Group({
+      children: [this.flame, this.ship],
+      position: view.center
+    });
+  };
+
+  Triangle.prototype.update = function () {
+    this.flame.segments[0].point.x = random(this.flame.segments[1].point.x, this.flame.segments[2].point.x);
+
+    var dist = mousePos.subtract(paper.view.center).length;
+    var angle = mousePos.subtract(paper.view.center).angle;
+    var spread = map(dist, 0, D / 2, 10, 30);
+
+    this.flame.segments[0].point = paper.view.center.subtract(new Point({
+      length: map(dist, 0, D / 2, 2 * this.flameSize / 3, this.flameSize),
+      angle: random(angle - spread, angle + spread)
+    }));
+  };
+
+  Triangle.prototype.rotate = function () {
+    var angle = paper.view.center.subtract(mousePos).angle - paper.view.center.subtract(this.ship.segments[0].point).angle;
+
+    this.group.rotate(angle, paper.view.center);
+  };
+
+
+
+  // ---------------------------------------------------
+  //  Stars (from paperjs.org examples section)
+  // ---------------------------------------------------
+  win.onmousemove = function (event) {
+    mousePos.x = event.x;
+    mousePos.y = event.y;
+    triangle.rotate();
+  };
+
+  var buildStars = function () {
+    // Create a symbol, which we will use to place instances of later:
+    var path = new Path.Circle({
+      center: [0, 0],
+      radius: 5,
+      fillColor: 'white',
+      strokeColor: 'white'
+    });
+
+    var symbol = new Symbol(path),
+      i = 0,
+      center,
+      placed;
+
+    // Place the instances of the symbol:
+    for (i; i < count; i += 1) {
+      // The center position is a random point in the view:
+      center = Point.random().multiply(paper.view.size);
+      placed = symbol.place(center);
+      placed.scale(i / count + 0.01);
+      placed.data = {
+        vector: new Point({
+          angle: Math.random() * 360,
+          length : (i / count) * Math.random() / 5
+        })
+      };
+    }
+
+    var vector = new Point({
+      angle: 45,
+      length: 0
+    });
+
+  };
+
+  var keepInView = function (item) {
+    var position = item.position;
+    var viewBounds = paper.view.bounds;
+    if (position.isInside(viewBounds)) {
+      return;
+    }
+
+    var itemBounds = item.bounds;
+
+    if (position.x > viewBounds.width + 5) {
+      position.x = -item.bounds.width;
+    }
+
+    if (position.x < -itemBounds.width - 5) {
+      position.x = viewBounds.width;
+    }
+
+    if (position.y > viewBounds.height + 5) {
+      position.y = -itemBounds.height;
+    }
+
+    if (position.y < -itemBounds.height - 5) {
+      position.y = viewBounds.height
+    }
+  };
+
+  var moveStars = function (vector) {
+    // Run through the active layer's children list and change
+    // the position of the placed symbols:
+    var layer = project.activeLayer,
+      i = 1,
+      item,
+      size,
+      length;
+
+    for (i; i < count + 1; i += 1) {
+      item = layer.children[i];
+      size = item.bounds.size;
+      length = vector.length / 10 * size.width / 10;
+      item.position = item.position.add(vector.normalize(length).add(item.data.vector));
+      keepInView(item);
+    }
+  };
+
+}(this));
