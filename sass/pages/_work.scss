@@ -289,25 +289,28 @@
 
 
 
+$test: ("prophet", "joy");
 
 @for $i from 1 through length($work-names) {
 
   .Work--#{nth($work-names, $i)} .Sitehead-cover, .WorkItem--#{nth($work-names, $i)} {
 
-    @if index("prophet", #{nth($work-names, $i)}) {
+    @if index(("prophet", "joy"), #{nth($work-names, $i)}) {
       background-color: #f4f4f4;
-      background-position: 50% 50%;
     } @else {
       background-color: #{nth($work-colors, $i)};
     }
 
-    @if index("prophet", #{nth($work-names, $i)}) {
+    @if index(("prophet", "joy"), #{nth($work-names, $i)}) {
       background-size: cover;
       background-position: 50% 50%;
     }
 
-    @if index("comai", #{nth($work-names, $i)}) {
+    @if index(("comai", "ican"), #{nth($work-names, $i)}) {
       background-image: url("/images/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb.svg");
+      .no-svg & {
+        background-image: url("/images/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb.jpg");
+      }
     } @else {
       .webp & {
         background-image: url("/webp/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb.webp");
@@ -324,7 +327,7 @@
    */
   .Work--#{nth($work-names, $i)} {
 
-    @if index("prophet", #{nth($work-names, $i)}) {
+    @if index(("prophet", "joy"), #{nth($work-names, $i)}) {
       .Navigation-toggle {
         color: $text;
         border-color: $text;
@@ -343,14 +346,14 @@
     }
 
     .Sitehead {
-      @if index("prophet", #{nth($work-names, $i)}) {
+      @if index(("prophet", "joy"), #{nth($work-names, $i)}) {
         background-color: #f4f4f4;
       } @else {
         background-color: #{nth($work-colors, $i)};
       }
     }
 
-    @if index("prophet", #{nth($work-names, $i)}) {
+    @if index(("prophet", "joy"), #{nth($work-names, $i)}) {
       .Sitehead a,
       .Sitehead-inner {
         color: $text;
@@ -380,14 +383,14 @@
    * Page navigation
    */
   .PageNav-item--#{nth($work-names, $i)} {
-    @if index("prophet", #{nth($work-names, $i)}) {
+    @if index(("prophet", "joy"), #{nth($work-names, $i)}) {
       background: #fff;
-      color: $prophet;
-      border-color: $prophet;
+      color: #{nth($work-colors, $i)};
+      border-color: #{nth($work-colors, $i)};
       &:hover {
-        background: $prophet;
+        background: #{nth($work-colors, $i)};
         color: #fff;
-        border-color: $prophet;
+        border-color: #{nth($work-colors, $i)};
       }
     } @else {
       background: #fff;
@@ -417,7 +420,7 @@
     a:hover {
       color: #{nth($work-colors, $i)};
     }
-    @if index("prophet", #{nth($work-names, $i)}) {
+    @if index(("prophet", "joy"), #{nth($work-names, $i)}) {
       color: $text;
       a {
         color: $text;

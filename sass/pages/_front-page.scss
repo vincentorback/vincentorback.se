@@ -28,17 +28,20 @@
 
   .Sitehead-subtitle {
     font-size: 1.8em;
+
     a {
       position: absolute;
       left: 0;
       top: 130%;
-      width: 100%;
-      display: block;
+
+      display: inline-block;
+      margin-top: 2em;
+      padding-right: 1em;
 
       font-size: .6em;
-      margin-top: 2em;
       opacity: 0;
     }
+
     svg {
       display: inline-block;
       position: relative;

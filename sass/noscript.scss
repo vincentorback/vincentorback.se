@@ -6,7 +6,7 @@
 
 
 @for $i from 1 through length($page-names) {
-  @if index("about" "blog" "contact", #{nth($work-names, $i)}) {
+  @if index(("about", "blog", "contact"), #{nth($work-names, $i)}) {
     .Page--#{nth($page-names), $i} .Sitehead-cover {
       background-image: url("#{$images}/#{nth($page-names, $i)}/header.jpg");
     }
@@ -19,7 +19,7 @@
 
 // Can’t see if WebP is supportetd.
 @for $i from 1 through length($work-names) {
-  .Work--#{nth($work-names, $i)} .Sitehead-cover, .Worklist-item--#{nth($work-names, $i)} {
+  .Work--#{nth($work-names, $i)} .Sitehead-cover, .WorkItem--#{nth($work-names, $i)} {
     background-image: url("#{$images}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb.jpg");
   }
 }

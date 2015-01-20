@@ -42,7 +42,7 @@
 }
 
 @for $i from 1 through length($page-names) {
-  @if index("front" "about" "blog" "contact", #{nth($page-names, $i)}) {
+  @if index(("front", "about", "blog", "contact"), #{nth($page-names, $i)}) {
     .Page-#{nth($page-names, $i)} .Sitehead-cover {
       background-image: url("/images/#{nth($page-names, $i)}/header.jpg");
     }
@@ -78,7 +78,6 @@
   font-size: 4.55em;
   font-weight: 600;
 
-
   @media (max-width: 800px), (max-height: 480px) {
     font-size: 3em;
   }
@@ -106,25 +105,28 @@
   left: 0;
   z-index: 10;
 
-  padding-top: 1.9em;
-  letter-spacing: 1px;
-  font-size: 1em;
   float: left;
   display: block;
+  padding-top: 1em;
+
+  letter-spacing: 1px;
+  font-size: .8em;
   color: #fff;
+
   h1 {
     font-size: 1.95em;
   }
+
   h2 {
     font-weight: 400;
     font-size: .845em;
   }
 
-  @include respond-max(850px) {
-    font-size: .8em;
-    padding-top: 2em;
+  @include respond-min(800px) {
+    font-size: 1em;
   }
-  @include respond-max(800px) {
-    padding-top: 1em;
+
+  @include respond-min(850px) {
+    padding-top: 1.9em;
   }
 }
