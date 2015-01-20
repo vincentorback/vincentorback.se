@@ -57,9 +57,9 @@
 
       vincent.navToggle();
 
-      if ((Modernizr.touch === false) && Modernizr.csstransforms) {
+      /*if ((Modernizr.touch === false) && Modernizr.csstransforms) {
         vincent.parallaxHead();
-      }
+      }*/
 
       vincent.smoothScroll();
 
@@ -95,7 +95,7 @@
       vincent.svgRefresh();
     },
 
-    parallaxHead: function () {
+    /*parallaxHead: function () {
       var $navigation = $body.find('.Navigation'),
         scrollPos;
 
@@ -125,7 +125,7 @@
       window.requestAnimFrame(parallax);
 
       parallax();
-    },
+    },*/
 
     smoothScroll: function () {
       var $target,
