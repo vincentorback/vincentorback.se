@@ -1,10 +1,10 @@
 Redirect 301 /en/ http://vincentorback.se/
-#Redirect 301 /work/ http://vincent.dev/work/
 Redirect 301 /om-mig/ http://vincentorback.se/about-me/
 Redirect 301 /ommig http://vincentorback.se/about-me/
 Redirect 301 /blogg http://vincentorback.se/blog/
 Redirect 301 /blog.html/ http://vincentorback.se/blog/
 Redirect 301 /kontakt/ http://vincentorback.se/contact/
+Redirect 301 /kontakt.html http://vincentorback.se/contact/
 
 Redirect 301 /cv http://vincentorback.se/cv.pdf
 Redirect 301 /cv.pdf/ http://vincentorback.se/cv.pdf
@@ -350,3 +350,21 @@ FileETag None
 # <IfModule mod_headers.c>
 #   Header append Vary Accept env=REDIRECT_accept
 # </IfModule>
+
+
+
+
+
+
+## BAN SPAMMY WEBSITE REFERRER RewriteEngine on
+# Options +FollowSymlinks
+<IfModule mod_rewrite.c>
+RewriteCond %{HTTP_REFERER} blackhatworth\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} priceg\.com [NC]
+RewriteCond %{HTTP_REFERER} semalt\.com [NC]
+RewriteCond %{HTTP_REFERER} semalt\.semalt\.com [NC]
+RewriteCond %{HTTP_REFERER} bashooka\.com [NC]
+RewriteCond %{HTTP_REFERER} buttons\-for\-websites\.com [NC]
+RewriteCond %{HTTP_REFERER} hulfingtonpost\.com [NC]
+RewriteRule .* - [F]
+</IfModule>
