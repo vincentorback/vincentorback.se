@@ -20,10 +20,6 @@
 }
 
 
-
-
-
-
 .Blog-entry {
   padding-top: $section-spacing-mobile / 2;
 
@@ -33,34 +29,5 @@
   }
   @include respond-min(1600px) {
     padding-top: $section-spacing-large;
-  }
-}
-
-
-.Entry-code {
-  width: 90%;
-  max-width: 1000px;
-  margin: $section-spacing auto !important;
-  font-size: .8em;
-  padding: 1.4em 2em !important;
-  border-radius: 3px;
-  overflow: auto;
-  @include respond-min(1600px) {
-    margin: $section-spacing-large auto !important;
-  }
-  @include respond-max(800px) {
-    margin: $section-spacing-mobile auto !important;
-  }
-}
-
-
-.Entry-images {
-  margin: $section-spacing 0;
-
-  @include respond-min(1600px) {
-    margin: $section-spacing-large 0;
-  }
-  @include respond-max(800px) {
-    margin: $section-spacing-mobile 0;
   }
 }

@@ -56,21 +56,20 @@
 @for $i from 1 through length($social-names) {
   .Social--#{nth($social-names, $i)} {
     color: #{nth($social-colors, $i)};
-  }
-}
-
-.Social--gmail {
-  position: relative;
-  top: 9px;
-  svg {
-    width: 55px;
-    height: 55px;
-  }
-  @include respond-max(600px) {
-    top: 7px;
-    svg {
-      width: 45px;
-      height: 45px;
+    @if index(("gmail"), #{nth($social-names, $i)}) {
+      position: relative;
+      top: 9px;
+      svg {
+        width: 55px;
+        height: 55px;
+      }
+      @include respond-max(600px) {
+        top: 7px;
+        svg {
+          width: 45px;
+          height: 45px;
+        }
+      }
     }
   }
 }
@@ -142,11 +141,6 @@
   @include respond-min(1600px) {
     max-width: 800px;
   }
-
-}
-
-.Form-expandText {
-
 }
 
 .Form-row {

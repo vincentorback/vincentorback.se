@@ -44,6 +44,7 @@
     text-align: center;
     float: none;
   }
+
   .Navigation {
     position: absolute;
     top: 60px;
@@ -72,6 +73,6 @@
   }
 }
 
-.Navigation-toggle {
-  display: none !important;
+.Navigation .Navigation-toggle {
+  display: none;
 }

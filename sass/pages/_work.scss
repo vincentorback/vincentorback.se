@@ -289,14 +289,13 @@
 
 
 
-$test: ("prophet", "joy");
-
 @for $i from 1 through length($work-names) {
 
-  .Work--#{nth($work-names, $i)} .Sitehead-cover, .WorkItem--#{nth($work-names, $i)} {
-
+  .Work--#{nth($work-names, $i)} .Sitehead-cover,
+  .WorkItem--#{nth($work-names, $i)} {
     @if index(("prophet", "joy"), #{nth($work-names, $i)}) {
       background-color: #f4f4f4;
+      color: $text;
     } @else {
       background-color: #{nth($work-colors, $i)};
     }
@@ -417,23 +416,28 @@ $test: ("prophet", "joy");
    * Worklist item on the front page
    */
   .WorkItem--#{nth($work-names, $i)} {
-    a:hover {
-      color: #{nth($work-colors, $i)};
-    }
-    @if index(("prophet", "joy"), #{nth($work-names, $i)}) {
-      color: $text;
-      a {
+    a {
+      @if index(("prophet", "joy"), #{nth($work-names, $i)}) {
         color: $text;
         border-color: $text;
-        &:hover {
-          background: $text;
-          color: #fff !important;
-        }
         @include respond-min(800px) {
           border-color: $text;
         }
+      } @else {
+        color: #fff;
+      }
+
+      &:hover {
+        @if index(("prophet", "joy"), #{nth($work-names, $i)}) {
+          color: $text;
+          background: $text;
+          color: #fff !important;
+        } @else {
+          color: #{nth($work-colors, $i)};
+        }
       }
     }
+
     @if index("nordiska", #{nth($work-names, $i)}) {
       @include respond-max(800px) {
         background-size: cover !important;
