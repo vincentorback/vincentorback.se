@@ -1,17 +1,27 @@
 (function (window) {
   'use strict';
 
-  var win = window,
-    SQRT_3 = Math.pow(3, 0.5),
+  var SQRT_3 = Math.pow(3, 0.5),
     triangle,
     D,
     mousePos,
     position,
-    count = 100;
+    winWidth = window.innerWidth,
+    winHeight = window.innerHeight,
+    isTouch = Modernizr.touch,
+    supportOrientation = isTouch && window.DeviceOrientationEvent,
+    starCount = isTouch ? 20 : 100,
+    rocketSpeed = 6,
+    canvas = document.getElementById('canvas'),
+    currentScreenOrientation = window.orientation || 0;
 
-  paper.install(win);
+  if (!supportOrientation && winWidth > 600) {
+    rocketSpeed = 10;
+  }
 
-  win.onload = function () {
+  paper.install(window);
+
+  window.onload = function () {
     paper.setup('canvas');
 
     D = Math.max(paper.view.getSize().width, paper.view.getSize().height);
@@ -34,13 +44,66 @@
       moveStars(vector.multiply(8));
       triangle.update();
     };
+
+    var gamma,
+      beta;
+
+    if (supportOrientation) {
+      window.addEventListener('deviceorientation', function (event) {
+        beta = event.beta;
+        gamma = event.gamma;
+
+        // Because we don't want to have the device upside down
+        // We constrain the x value to the range [-90,90]
+        if (beta >  90) {
+          beta = 90;
+        }
+
+        if (beta < -90) {
+          beta = -90;
+        }
+
+        // To make computation easier we shift the range of 
+        // beta and gamma to [0,180]
+        beta += 90;
+        gamma += 90;
+
+        // 10 is half the size of the ball
+        // It center the positioning point to the center of the ball
+        mousePos.y = (winWidth * beta / 180);
+        mousePos.x = (winHeight * gamma / 180);
+
+        triangle.rotate();
+
+      }, false);
+
+      if (isTouch) {
+        canvas.addEventListener('touchmove', function (event) {
+          event.preventDefault(); // Disable scroll
+        }, false);
+      }
+    } else if (isTouch) {
+      canvas.addEventListener('touchmove', function (event) {
+        mousePos.x = event.touches[0].clientX;
+        mousePos.y = event.touches[0].clientY;
+
+        triangle.rotate();
+
+        event.preventDefault(); // Disable scroll
+      }, false);
+    }
+
   };
 
   // ---------------------------------------------------
   //  Helpers
   // ---------------------------------------------------
-  win.onresize = function () {
+  window.onresize = function () {
     project.clear();
+
+    winWidth = window.innerWidth;
+    winHeight = window.innerHeight;
+
     D = Math.max(paper.view.getSize().width, paper.view.getSize().height);
     // Draw the BG
     var background = new Path.Rectangle(view.bounds);
@@ -114,11 +177,16 @@
   // ---------------------------------------------------
   //  Stars (from paperjs.org examples section)
   // ---------------------------------------------------
-  win.onmousemove = function (event) {
-    mousePos.x = event.x;
-    mousePos.y = event.y;
-    triangle.rotate();
-  };
+  if (!isTouch && !supportOrientation) {
+    window.onmousemove = function (event) {
+      mousePos.x = event.x;
+      mousePos.y = event.y;
+
+      triangle.rotate();
+    };
+  }
+
+
 
   var buildStars = function () {
     // Create a symbol, which we will use to place instances of later:
@@ -135,15 +203,15 @@
       placed;
 
     // Place the instances of the symbol:
-    for (i; i < count; i += 1) {
+    for (i; i < starCount; i += 1) {
       // The center position is a random point in the view:
       center = Point.random().multiply(paper.view.size);
       placed = symbol.place(center);
-      placed.scale(i / count + 0.01);
+      placed.scale(i / starCount + 0.01);
       placed.data = {
         vector: new Point({
           angle: Math.random() * 360,
-          length : (i / count) * Math.random() / 5
+          length : (i / starCount) * Math.random() / 5
         })
       };
     }
@@ -156,8 +224,9 @@
   };
 
   var keepInView = function (item) {
-    var position = item.position;
     var viewBounds = paper.view.bounds;
+    var position = item.position;
+
     if (position.isInside(viewBounds)) {
       return;
     }
@@ -177,7 +246,7 @@
     }
 
     if (position.y < -itemBounds.height - 5) {
-      position.y = viewBounds.height
+      position.y = viewBounds.height;
     }
   };
 
@@ -190,10 +259,10 @@
       size,
       length;
 
-    for (i; i < count + 1; i += 1) {
+    for (i; i < starCount + 1; i += 1) {
       item = layer.children[i];
       size = item.bounds.size;
-      length = vector.length / 10 * size.width / 10;
+      length = vector.length / rocketSpeed * size.width / rocketSpeed;
       item.position = item.position.add(vector.normalize(length).add(item.data.vector));
       keepInView(item);
     }

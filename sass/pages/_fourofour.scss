@@ -1,4 +1,22 @@
-.Page-fourofour {
+.no-scroll {
+  &,
+  body{
+    overflow: hidden;
+  }
+}
+
+.Page-fourofour,
+.Page-fivehundred {
+
+  .Navigation,
+  .Sitehead-logo {
+    opacity: .2;
+    transition: opacity 200ms ease;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
   .Sitehead {
     min-height: 0;
     max-height: none;
@@ -29,10 +47,12 @@
 
   .Navigation-toggle {
     border-color: #fff;
+    right: 0;
   }
 
   @include respond-max(800px) {
     .Navigation {
+      opacity: 1;
       a {
         color: #fff;
       }
@@ -41,11 +61,56 @@
 }
 
 
+
+
+
+@keyframes animatedBackground {
+  0% {background: $blue;}
+  15% {background: $blue;}
+  20% {background: $green;}
+  35% {background: $green;}
+  40% {background: $yellow;}
+  55% {background: $yellow;}
+  60% {background: $red;}
+  75% {background: $red;}
+  80% {background: $orange;}
+  95% {background: $orange;}
+  100%{background: $blue;}
+}
+
+.Page-fivehundred {
+  .Sitemain {
+    animation: animatedBackground 20000ms linear infinite normal;
+  }
+  #canvas {
+    height: calc(100% - 100px);
+    top: calc(0px + 100px);
+  }
+  .Fourofour {
+    font-size: 1em;
+    h1 {
+      font-size: 2em;
+    }
+  }
+  rect {
+    cursor: pointer;
+  }
+}
+
+
+
+
+
+
+
+
 #canvas {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .Fourofour {
@@ -55,6 +120,8 @@
 
   transform: translate(-50%, -50%);
   z-index: 99;
+
+  text-align: center;
 
   font-size: .5em;
 }
