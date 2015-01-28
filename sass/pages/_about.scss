@@ -217,22 +217,28 @@
 
 
 
-
 .Printlink {
   width: 95%;
   margin: 0 auto;
   text-align: center;
+
   a {
     display: inline-block;
     padding: .75em 2em;
-    font-size: 1em;
-    letter-spacing: 2px;
-    font-weight: 300;
-
+    
     color: $blue;
+    letter-spacing: 2px;
+
+    box-shadow: $blue 4px 4px;
+    border: 2px solid $blue;
+
+    &:active {
+      transform: translate(4px, 4px);
+      box-shadow: $blue 0 0;
+    }
+
     &:after {
-      background-color: $blue;
-      width: 75%;
+      content: normal;
     }
   }
 }
