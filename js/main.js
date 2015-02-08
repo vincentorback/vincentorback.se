@@ -4,18 +4,33 @@
 (function (window) {
   'use strict';
 
-  function getViewport() {
-    var docElem = window.document.documentElement;
+  var doc = window.document,
+    docElem = doc.documentElement;
 
+  function getViewport() {
     return {
       width: Math.max(docElem.clientWidth, window.innerWidth || 0),
       height: Math.max(docElem.clientHeight, window.innerHeight || 0)
     };
   }
 
-  var doc = window.document,
-    docElem = doc.documentElement,
-    head = doc.head || doc.getElementsByTagName('head')[0],
+  function isElementInViewport (el) {
+    //special bonus for those using jQuery
+    if (typeof jQuery === "function" && el instanceof jQuery) {
+      el = el[0];
+    }
+
+    var rect = el.getBoundingClientRect();
+
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || docElem.clientHeight) && /*or $(window).height() */
+      rect.right <= (window.innerWidth || docElem.clientWidth) /*or $(window).width() */
+    );
+  }
+
+  var head = doc.head || doc.getElementsByTagName('head')[0],
     body = doc.body || doc.getElementsByTagName('body')[0],
     $body = $(body),
     $siteHead = $body.find('.Sitehead'),
@@ -79,7 +94,7 @@
 
       if (doc.getElementById('page-contact')) {
         vincent.contactForm();
-        vincent.expandable();
+        //vincent.expandable();
       }
 
       if (doc.getElementById('page-post')) {
@@ -371,7 +386,7 @@
           duration: 400,
           easing: 'ease'
         });
-
+        
         $body.find('#navigation a').velocity({
           color: vincent.colors.white
         }, {
@@ -573,23 +588,8 @@
         $message = $form.find('#message'),
         $response = $('#response'),
         response = '',
-        isError = false;
-
-      function getScroll() {
-        if (window.pageYOffset) {
-          return {
-            top: window.pageYOffset,
-            left: window.pageXOffset
-          };
-        }
-
-        var scrollX,
-          scrollY;
-
-        scrollX = docElem.scrollLeft || body.odyscrollLeft || 0;
-        scrollY = docElem.scrollTop || body.scrollTop || 0;
-        return [scrollX, scrollY];
-      }
+        isError = false,
+        $firstError;
 
       $form.on('submit', function () {
         isError = false;
@@ -611,14 +611,20 @@
         if (isError === true) {
           $form.addClass('has-error');
 
-          $form.find('.is-error').first().velocity('scroll', {
-            duration: 900,
-            offset: -80,
-            easing: vincent.scrollEasing,
-            complete: function () {
-              $(this).prev('input, textarea').focus();
-            }
-          });
+          $firstError = $form.find('.is-error').first();
+
+          if (isElementInViewport($firstError)) {
+            $firstError.prev('input, textarea').focus();
+          } else {
+            $firstError.velocity('scroll', {
+              duration: 900,
+              offset: -60,
+              easing: vincent.scrollEasing,
+              complete: function () {
+                $firstError.prev('input, textarea').focus();
+              }
+            });
+          }
 
           window.setTimeout(function () {
             $form.removeClass('has-error');
@@ -626,8 +632,8 @@
           return false;
         }
 
-        // Scroll to top
-        if (getScroll().top >= $form.offset().top) {
+        // Scroll to top of form
+        if (!isElementInViewport($form)) {
           $form.velocity('scroll', {
             duration: 1200,
             offset: -80,
@@ -642,7 +648,7 @@
           data: $form.serialize(),
           success: function () {
             $form.addClass('is-sent');
-            $form.find('input').attr('disabled', '');
+            $form.find('input, textarea').prop('disabled', true);
           },
           error: function () {
             $form.addClass('has-error');
@@ -688,7 +694,7 @@
           }
         });
     },
-
+/*
     expandable: function () {
       var $target,
         state = true;
@@ -708,7 +714,7 @@
         return false;
       });
     },
-
+*/
     blogComments: function () {
       var disqus_shortname = 'vincentorback',
         dsq = doc.createElement('script');
