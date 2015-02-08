@@ -26,10 +26,6 @@ foreach ($fieldData as $field) {
 
 $message = "Meddelande från vincentorback.se\n\n" . $text;
 
-"Namn: " . $_POST['name'] . "\n" .
-"E-post: " . $_POST['email'] . "\n" .
-"Meddelande: " . $_POST['message'];
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if ($toemail && $message && $_POST['email']) {
     mail($toemail, 'Meddelande från vincentorback.se', $message, 'From: ' . $_POST['email']);
