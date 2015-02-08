@@ -71,7 +71,10 @@
       <p>If you want people to be able to decide what they do online should or shouldn’t be monitored, use this code-snippet to see if a DNT-setting is turned on in your code.</p>
     </div>
 
-<pre class="Entry-code Code language-javascript"><code>var DoNotTrack = navigator.doNotTrack === 'yes' || navigator.doNotTrack === '1' || navigator.msDoNotTrack === '1';
+<pre class="Entry-code Code language-javascript"><code>var DoNotTrack = navigator.doNotTrack === 'yes' 
+              || navigator.doNotTrack === '1'
+            || navigator.msDoNotTrack === '1';
+
 if (!DoNotTrack) {
 // Do your tracking here...
 }
