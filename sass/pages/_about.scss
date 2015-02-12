@@ -99,6 +99,7 @@
       margin-bottom: 2em;
     }
     footer {
+      text-align: left;
       margin: 0 auto $section-spacing-mobile auto;
     }
   }
@@ -218,13 +219,12 @@
 
 
 .Printlink {
-  width: 95%;
   margin: 0 auto;
   text-align: center;
 
   a {
     display: inline-block;
-    padding: .75em 2em;
+    padding: 1em 1.5em;
     
     color: $blue;
     letter-spacing: 2px;
@@ -241,4 +241,12 @@
       content: normal;
     }
   }
+
+  @include respond-max(800px) {
+    a {
+      padding: .7em 1em;
+    }
+  }
+
+
 }
