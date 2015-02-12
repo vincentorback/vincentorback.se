@@ -1,6 +1,22 @@
 (function (window) {
   'use strict';
 
+  function getQueryVariable(variable) {
+    var query = window.location.search.substring(1),
+      vars = query.split("&"),
+      i = 0,
+      pair;
+
+    for (i; i < vars.length; i += 1) {
+      pair = vars[i].split("=");
+
+      if (pair[0] === variable) {
+        return pair[1];
+      }
+    }
+    return false;
+  }
+
   var SQRT_3 = Math.pow(3, 0.5),
     triangle,
     D,
@@ -9,13 +25,23 @@
     winWidth = window.innerWidth,
     winHeight = window.innerHeight,
     isTouch = Modernizr.touch,
-    supportOrientation = isTouch && window.DeviceOrientationEvent,
+    supportOrientation = window.DeviceOrientationEvent,
     starCount = isTouch ? 20 : 100,
     rocketSpeed = 6,
     canvas = document.getElementById('canvas');
 
   if (!supportOrientation && winWidth > 600) {
     rocketSpeed = 10;
+  }
+
+  if (!isTouch && supportOrientation && winWidth > 600) {
+    document.body.classList.add('has-options');
+
+    if (getQueryVariable('orientation') === 'true') {
+      document.body.classList.add('using-orientation');
+    } else {
+      supportOrientation = false;
+    }
   }
 
   paper.install(window);

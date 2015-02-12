@@ -129,3 +129,34 @@
 
   font-size: .5em;
 }
+
+
+
+.Space-actions {
+  position: fixed;
+  bottom: 20px;
+  right: 0;
+
+  display: none;
+
+  .has-options & {
+    display: block;
+  }
+
+  a {
+    padding: 10px;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    color: #fff;
+    margin-right: 10px;
+
+    opacity: .2;
+    transition: opacity 200ms ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+  
+}
