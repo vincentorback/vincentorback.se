@@ -17,7 +17,7 @@ module.exports = function (grunt) {
     return ('/* \n' +
         ' * Vincent Orback \n' +
         ' * http://vincentorback.se \n' +
-        ' * https://github.com/vincentorback/Vincent-Orback \n' +
+        ' * https://github.com/vincentorback \n' +
         ' * \n' +
         ' * Latest build: ' + local + '\n' +
         '*/ ');
@@ -34,7 +34,7 @@ module.exports = function (grunt) {
           linebreak: true
         },
         files: {
-          src: ['css/style.css', 'js/main-min.js']
+          src: ['css/style.css', 'js/main-min.js', 'js/404-min.js', 'js/500-min.js']
         }
       },
       html: {

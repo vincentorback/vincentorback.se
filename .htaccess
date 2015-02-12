@@ -1,4 +1,5 @@
 Redirect 301 /en/ http://vincentorback.se/
+Redirect 301 /en.html http://vincentorback.se/
 Redirect 301 /om-mig/ http://vincentorback.se/about-me/
 Redirect 301 /ommig http://vincentorback.se/about-me/
 Redirect 301 /blogg http://vincentorback.se/blog/
@@ -10,20 +11,16 @@ Redirect 301 /cv http://vincentorback.se/cv.pdf
 Redirect 301 /cv.pdf/ http://vincentorback.se/cv.pdf
 Redirect 301 /cv-en.pdf http://vincentorback.se/cv.pdf
 
-Redirect 301 /en.html http://vincentorback.se/
-
 #old urls
 Redirect 301 /blog/dont-work-for-free/ http://vincentorback.se/blog/
 Redirect 301 /posts/dont-work-for-free/ http://vincentorback.se/blog/
 Redirect 301 /blog/optimizing-images-and-webp/ http://vincentorback.se/blog/using-webp-images/
 Redirect 301 /posts/optimizing-images-and-webp/ http://vincentorback.se/blog/using-webp-images/
-Redirect 301 /blog/dont-work-for-free/ http://vincentorback.se/blog/
 
 Redirect 301 /posts/using-webp-images/ http://vincentorback.se/blog/using-webp-images/
 Redirect 301 /posts/take-10-and-learn-typography/ http://vincentorback.se/blog/take-10-and-learn-typography/
 Redirect 301 /posts/smooth-scrolling-with-css/ http://vincentorback.se/blog/smooth-scrolling-with-css/
 Redirect 301 /posts/i-commit-from-my-heart/ http://vincentorback.se/blog/i-commit-from-my-heart/
-
 
 
 <IfModule mod_deflate.c>
@@ -335,25 +332,6 @@ FileETag None
     ExpiresByType image/svg+xml                         "access plus 1 month"
 
 </IfModule>
-
-
-
-
-
-
-# WebP Rewrites
-# <IfModule mod_rewrite.c>
-#   RewriteEngine On
-#   RewriteCond %{HTTP_ACCEPT} image/webp
-#   RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
-#   RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
-# </IfModule>
-#
-# <IfModule mod_headers.c>
-#   Header append Vary Accept env=REDIRECT_accept
-# </IfModule>
-
-
 
 
 

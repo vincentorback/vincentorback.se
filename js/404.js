@@ -12,8 +12,7 @@
     supportOrientation = isTouch && window.DeviceOrientationEvent,
     starCount = isTouch ? 20 : 100,
     rocketSpeed = 6,
-    canvas = document.getElementById('canvas'),
-    currentScreenOrientation = window.orientation || 0;
+    canvas = document.getElementById('canvas');
 
   if (!supportOrientation && winWidth > 600) {
     rocketSpeed = 10;
@@ -41,6 +40,7 @@
     paper.view.onFrame = function () {
       position = position.add((mousePos.subtract(position).divide(10)));
       var vector = (view.center.subtract(position)).divide(10);
+
       moveStars(vector.multiply(8));
       triangle.update();
     };

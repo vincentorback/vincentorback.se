@@ -9,10 +9,14 @@
 .Page-fivehundred {
 
   .Navigation,
+  .Navigation-toggle,
   .Sitehead-logo {
     opacity: .2;
     transition: opacity 200ms ease;
-    &:hover {
+    .no-touch &:hover {
+      opacity: 1;
+    }
+    .touch &:active {
       opacity: 1;
     }
   }

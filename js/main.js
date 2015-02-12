@@ -1,5 +1,5 @@
 /* jslint browser: true, indent: 2 */
-/* global $, Modernizr, FastClick, ga */
+/* global $, jQuery, Modernizr, FastClick, ga */
 
 (function (window) {
   'use strict';
@@ -14,7 +14,7 @@
     };
   }
 
-  function isElementInViewport (el) {
+  function isElementInViewport(el) {
     //special bonus for those using jQuery
     if (typeof jQuery === "function" && el instanceof jQuery) {
       el = el[0];
