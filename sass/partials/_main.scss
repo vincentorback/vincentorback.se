@@ -40,14 +40,11 @@
 /**
  * Disabeling hover on scroll
  */
-
-
-
-
 .disable-hover,
 .disable-hover * {
   pointer-events: none !important;
 }
+
 
 .Video {
   position: relative;
@@ -79,11 +76,10 @@
       margin-right: 0;
     }
   }
-  @include respond-max(900px) {
+  @include respond-max(800px) {
     > .col {
       width: 100%;
       margin: 0;
-      float: none;
     }
   }
 }
@@ -101,7 +97,6 @@
   @include respond-max(600px) {
     .col {
       width: 100%;
-      float: none;
       margin: 0 0 5% 0;
     }
   }
@@ -121,7 +116,6 @@
   @include respond-max(800px) {
     .col, .col.third {
       width: 100%;
-      float: none;
       margin: 0 0 5% 0;
     }
   }
