@@ -25,8 +25,8 @@
     return (
       rect.top >= 0 &&
       rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || docElem.clientHeight) && /*or $(window).height() */
-      rect.right <= (window.innerWidth || docElem.clientWidth) /*or $(window).width() */
+      rect.bottom <= getViewport().height &&
+      rect.right <= getViewport().width
     );
   }
 
@@ -209,6 +209,7 @@
         href = this.getAttribute('href');
 
         $body
+          .addClass('disable-hover')
           .velocity({
             opacity: 0
           }, {
@@ -280,6 +281,7 @@
         }
 
         $body
+          .addClass('disable-hover')
           .css('background', vincent.colors.white)
           .velocity('scroll', {
             duration: 700,
@@ -380,13 +382,15 @@
         page = href.replace('/', '');
         page = page.replace('/', '');
 
+        $body.addClass('disable-hover');
+
         $main.velocity({
           opacity: 0
         }, {
           duration: 400,
           easing: 'ease'
         });
-        
+
         $body.find('#navigation a').velocity({
           color: vincent.colors.white
         }, {
@@ -468,7 +472,10 @@
         }
 
         // Fade out the main content
-        $body.css('background', vincent.colors.white);
+        $body
+          .addClass('disable-hover')
+          .css('background', vincent.colors.white);
+
         $main.css('background', vincent.colors.white);
 
         $target.velocity('scroll', {
