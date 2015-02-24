@@ -452,15 +452,15 @@
         $footer = $body.find('.Sitefooter'),
         count = 0,
         scrollSpeed = 200,
-        transDone = false;
+        transDone = false,
+        viewHeight;
 
       $body.find('.js-transitionWork').on('click', function (e) {
         if (e.metaKey || e.ctrlKey) {
           return;
         }
 
-        e.preventDefault();
-
+        viewHeight = getViewport().height;
         target = this.getAttribute('data-target');
         $target = $(target);
         href = this.getAttribute('href');
@@ -492,7 +492,7 @@
         });
 
         $target.velocity({
-          height: (getViewport().height * 0.6) + 'px'
+          height: (viewHeight * 0.6) + 'px'
         }, {
           duration: 500,
           easing: 'ease',
@@ -534,7 +534,7 @@
         });
 
         $footer.velocity({
-          paddingBottom: getViewport().height + 'px',
+          paddingBottom: viewHeight + 'px',
           opacity: 0
         }, {
           duration: 50,
@@ -555,18 +555,8 @@
     },
 
     navToggle: function () {
-      function toggleNavigation(state) {
-        if (!state) {
-          state = null;
-        }
-
-        $body
-          .addClass('in-transition')
-          .toggleClass('nav-isOpen', null);
-
-        window.setTimeout(function () {
-          $body.removeClass('in-transition');
-        }, 400);
+      function toggleNavigation() {
+        $body.toggleClass('nav-isOpen');
       }
 
       $body.find('.js-navToggle').on('click', function (e) {
@@ -596,7 +586,8 @@
         $response = $('#response'),
         response = '',
         isError = false,
-        $firstError;
+        $firstError,
+        errorMessage = 'Something went wrong... Try sending and email to <a href="mailto:vorback@gmail.com&subject=Message from vincentorback.se&body=' + $message.val() + '">vorback@gmail.com</a> instead.';
 
       $form.on('submit', function () {
         isError = false;
@@ -661,13 +652,18 @@
             $form.addClass('has-error');
             window.setTimeout(function () {
               $form.removeClass('has-error');
+
+              $response
+                .html(errorMessage)
+                .slideDown('slow');
+
             }, 500);
           },
           complete: function (data) {
             if (data.responseText) {
               response = JSON.parse(data.responseText).response;
             } else {
-              response = 'Något gick fel!';
+              response = errorMessage;
             }
 
             $response
@@ -724,7 +720,8 @@
 */
     blogComments: function () {
       var disqus_shortname = 'vincentorback',
-        dsq = doc.createElement('script');
+        dsq = doc.createElement('script'),
+        $comments = $body.find('.js-comments');
 
       dsq.type = 'text/javascript';
       dsq.async = true;
@@ -733,13 +730,13 @@
       };
       dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 
-      function loadComments() {
+      var loadComments = function() {
         head.appendChild(dsq);
-      }
+      };
 
       $(window).smartscroll(function () {
-        if ($.belowthefold($('.js-comments'), {threshold: 100, container: window}) === false) {
-          loadComments();
+        if (isElementInViewport($comments)) {
+          window.requestAnimFrame(loadComments);
           $(window).unbind('scroll');
         }
       });
