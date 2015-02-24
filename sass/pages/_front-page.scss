@@ -7,7 +7,6 @@
   .Sitehead {
     height: 100%;
     max-height: none;
-    background: #fff;
     background: $red;
   }
 
@@ -58,7 +57,7 @@
     }
     .Sitehead-subtitle a {
       animation: fadeinBottom 1000ms ease 1;
-      animation-delay: 1500ms;
+      animation-delay: 700ms;
       animation-fill-mode:forwards;
       &:hover svg {
         animation: bounce 2000ms ease-in-out infinite;

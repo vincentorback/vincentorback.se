@@ -103,6 +103,7 @@
   @include respond-max($canvasWidth + 100px) {
     width: $canvasWidth-mobile;
     transform: translate3d(#{$canvasWidth-mobile - 60px},0,0);
+    transition: transform 500ms ease, visibility 500ms linear 500ms;
   }
 }
 
