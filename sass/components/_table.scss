@@ -17,7 +17,7 @@
   }
 
   @include respond-max(800px) {
-    box-shadow: inset rgba(0,0,0,.1) -2px 0 5px;
+    border: 1px solid #ccc;
   }
 
 }
