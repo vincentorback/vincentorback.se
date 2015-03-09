@@ -110,38 +110,6 @@
       vincent.svgRefresh();
     },
 
-    /*parallaxHead: function () {
-      var $navigation = $body.find('.Navigation'),
-        scrollPos;
-
-      function parallax() {
-        if (window.scrollY < $siteHead.height()) {
-          scrollPos = Math.round(window.scrollY / 5);
-          $siteHead.css({
-            transform: 'translate3d(0,' + scrollPos + 'px, 0)'
-          });
-        }
-
-        if (getViewport().width > 800) {
-          $navigation.css({
-            transform: 'translate3d(0,' + scrollPos + 'px, 0)'
-          });
-        } else {
-          $navigation.css({
-            transform: 'translate3d(0,0,0)'
-          });
-        }
-      }
-
-      window.addEventListener('scroll', function () {
-        window.requestAnimFrame(parallax);
-      }, false);
-
-      window.requestAnimFrame(parallax);
-
-      parallax();
-    },*/
-
     smoothScroll: function () {
       var $target,
         scrollOffset;
@@ -312,7 +280,7 @@
             opacity: 0,
             translateY: '150%'
           }, {
-            duration: 500,
+            duration: 400,
             easing: 'ease',
             delay: delay
           });
@@ -448,10 +416,10 @@
 
     workTransition: function () {
       var target, $target, href, transitionInterval,
+        $docEl = $('body, html'),
         $main = $body.find('.Sitemain'),
         $footer = $body.find('.Sitefooter'),
         count = 0,
-        scrollSpeed = 200,
         transDone = false,
         viewHeight;
 
@@ -465,12 +433,6 @@
         $target = $(target);
         href = this.getAttribute('href');
 
-        if ($target.offset().top > $(doc).scrollTop()) {
-          scrollSpeed = ($target.offset().top - $(doc).scrollTop()) * 2;
-        } else {
-          scrollSpeed = ($(doc).scrollTop() - $target.offset().top) * 2;
-        }
-
         // Fade out the main content
         $body
           .addClass('disable-hover')
@@ -478,11 +440,9 @@
 
         $main.css('background', vincent.colors.white);
 
-        $target.velocity('scroll', {
-          duration: scrollSpeed,
-          easing: vincent.scrollEasing,
-          offset: 2
-        });
+        $docEl.stop().animate({
+          scrollTop: $target.offset().top
+        }, 400);
 
         $target.next('.WorkItem').velocity({
           opacity: 0
@@ -697,27 +657,7 @@
           }
         });
     },
-/*
-    expandable: function () {
-      var $target,
-        state = true;
 
-      $body.find('.js-expander').on('click', function (e) {
-
-        $target = $('#' + $(this).attr('aria-controls'));
-        state = $(this).attr('aria-expanded') === 'false';
-
-        $target
-          .slideToggle('slow')
-          .attr('aria-hidden', !state);
-
-        $(this).attr('aria-expanded', state);
-
-        e.preventDefault();
-        return false;
-      });
-    },
-*/
     blogComments: function () {
       var disqus_shortname = 'vincentorback',
         dsq = doc.createElement('script'),
