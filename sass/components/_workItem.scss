@@ -27,7 +27,7 @@
   @include respond-max(400px) {
     max-height: 250px;
   }
-  @media (min-height: 100px) {
+  @media (min-height: 1000px) {
     height: 900px;
   }
   @media (min-height: 1200px) {
