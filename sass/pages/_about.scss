@@ -88,6 +88,9 @@
   }
   p {
     font-family: $serif;
+    a {
+      font-family: $sansserif;
+    }
   }
   footer {
     width: 100%;
