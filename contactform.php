@@ -4,7 +4,7 @@ header('Content-Type: application/json; charset=utf-8');
 $toemail = 'vorback@gmail.com';
 
 $fieldData = array(
-  'name' => isset($_POST['name']) ? 'Namn: ' . $_POST['name'] : false,
+  'name' => isset($_POST['name']) ? 'Name: ' . $_POST['name'] : false,
   'email' => isset($_POST['email']) ? 'Email: ' . $_POST['email'] : false,
   'purpose' => isset($_POST['purpose']) ? 'Purpose: ' . $_POST['purpose'] : false,
   'business' => isset($_POST['business']) ? 'Business: ' . $_POST['business'] : false,
