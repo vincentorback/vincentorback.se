@@ -175,6 +175,8 @@
   will-change: transform;
   transition: color 300ms ease, transform 250ms ease;
 
+  pointer-events: none;
+
   &.is-active {
     transform: translate3d(0, -2em, 0);
     color: $blue;
@@ -185,6 +187,8 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    pointer-events: auto;
   }
 
   &.is-error {
