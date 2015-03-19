@@ -332,20 +332,28 @@
     }
 
     .Work--#{nth($work-names, $i)} {
+
+      .Navigation a {
+        &:after {
+          background-color: $text;
+        }
+      }
+
       .Navigation-toggle {
         border-color: $text;
-        @include respond-min($threshold) {
-          .Navigation a:after {
-            background-color: $text;
-          }
-          .Navigation-toggle {
-            border-color: $text;
-          }
+        &:hover {
+          color: $text;
         }
       }
 
       .Sitehead {
         background-color: #f4f4f4;
+      }
+
+      @include respond-max(800px) {
+        .Navigation a {
+          color: #fff;
+        }
       }
     }
 

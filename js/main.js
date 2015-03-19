@@ -72,10 +72,6 @@
 
       vincent.navToggle();
 
-      /*if ((Modernizr.touch === false) && Modernizr.csstransforms) {
-        vincent.parallaxHead();
-      }*/
-
       vincent.smoothScroll();
 
       if (winWidth > 800 && Modernizr.csstransforms) {
@@ -94,7 +90,6 @@
 
       if (doc.getElementById('page-contact')) {
         vincent.contactForm();
-        //vincent.expandable();
       }
 
       if (doc.getElementById('page-post')) {
@@ -317,7 +312,7 @@
           });
         }
 
-        /** Wait for transitions and prefetches to comlpete. */
+        // Wait for transitions and prefetches to comlpete.
         transitionInterval = window.setInterval(function () {
           if (transDone || (count === 10)) {
             window.clearInterval(transitionInterval);
@@ -401,7 +396,7 @@
           });
         }
 
-        /** Wait for transitions and prefetches to comlpete. */
+        // Wait for transitions and prefetches to comlpete.
         transitionInterval = window.setInterval(function () {
           if (transDone || (count === 10)) {
             window.clearInterval(transitionInterval);
@@ -501,7 +496,7 @@
           easing: 'ease'
         });
 
-        /** Wait for transitions and prefetches to comlpete. */
+        // Wait for transitions and prefetches to comlpete.
         transitionInterval = window.setInterval(function () {
           if (transDone || (count === 10)) {
             window.clearInterval(transitionInterval);
