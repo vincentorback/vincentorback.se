@@ -103,6 +103,10 @@
       vincent.tracking();
 
       vincent.svgRefresh();
+
+      if (!Modernizr.csstransforms || !Modernizr.svg) {
+        $body.append('<div class="Alert" role="alert"><p>You are using an <strong>outdated</strong> browser! Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p></div>');
+      }
     },
 
     smoothScroll: function () {

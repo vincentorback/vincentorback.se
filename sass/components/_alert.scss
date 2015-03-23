@@ -3,16 +3,16 @@
   bottom: 0;
   left: 0;
   z-index: 20;
-  padding: 1em;
 
   background: $red;
+  color: #fff;
 
-  &,
-  a {
-    color: #fff;
+  p {
+    margin: 15px 20px;
   }
 
   a {
+    color: #fff;
     font-weight: 600;
     text-decoration: underline;
   }
