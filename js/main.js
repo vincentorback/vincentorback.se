@@ -5,7 +5,8 @@
   'use strict';
 
   var doc = window.document,
-    docElem = doc.documentElement;
+    docElem = doc.documentElement,
+    isSmoothScrollSupported = 'scrollBehavior' in document.documentElement.style;
 
   function getViewport() {
     return {
@@ -14,19 +15,15 @@
     };
   }
 
-  function isElementInViewport(el) {
-    //special bonus for those using jQuery
-    if (typeof jQuery === "function" && el instanceof jQuery) {
-      el = el[0];
-    }
-
-    var rect = el.getBoundingClientRect();
+  function isElementInViewport($el) {
+    var rect = $el[0].getBoundingClientRect(),
+      viewport = getViewport();
 
     return (
       rect.top >= 0 &&
       rect.left >= 0 &&
-      rect.bottom <= getViewport().height &&
-      rect.right <= getViewport().width
+      rect.bottom <= viewport.height &&
+      rect.right <= viewport.width
     );
   }
 
@@ -130,13 +127,21 @@
         } else {
           scrollOffset = 2;
         }
-
-        $target
-          .velocity('scroll', {
-            offset: scrollOffset,
-            duration: 1200,
-            easing: vincent.scrollEasing
+        
+        if (isSmoothScrollSupported) {
+          window.scrollTo({
+            'behavior': 'smooth',
+            'left': 0,
+            'top': $target.offset().top + scrollOffset
           });
+        } else {
+          $target
+            .velocity('scroll', {
+              offset: scrollOffset,
+              duration: 1200,
+              easing: vincent.scrollEasing
+            });
+        }
 
         window.setTimeout(function () {
           $body.removeClass('nav-isOpen');
@@ -323,7 +328,7 @@
             window.location = href;
           }
           count += 1;
-        }, 200);
+        }, 500);
 
         e.preventDefault();
       });
@@ -407,7 +412,7 @@
             window.location = href;
           }
           count += 1;
-        }, 200);
+        }, 500);
 
         e.preventDefault();
       });
@@ -507,7 +512,7 @@
             window.location = href;
           }
           count += 1;
-        }, 200);
+        }, 500);
 
         e.preventDefault();
       });
@@ -612,9 +617,8 @@
             window.setTimeout(function () {
               $form.removeClass('has-error');
 
-              $response
-                .html(errorMessage)
-                .slideDown('slow');
+              $response[0].innerHtml = errorMessage;
+              $response.slideDown();
 
             }, 500);
           },
@@ -625,9 +629,8 @@
               response = errorMessage;
             }
 
-            $response
-              .html(response)
-              .slideDown('slow');
+            $response[0].innerHtml = errorMessage;
+            $response.slideDown('slow');
           }
         });
 

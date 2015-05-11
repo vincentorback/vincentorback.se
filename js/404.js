@@ -125,18 +125,7 @@
   //  Helpers
   // ---------------------------------------------------
   window.onresize = function () {
-    project.clear();
-
-    winWidth = window.innerWidth;
-    winHeight = window.innerHeight;
-
-    D = Math.max(paper.view.getSize().width, paper.view.getSize().height);
-    // Draw the BG
-    var background = new Path.Rectangle(view.bounds);
-
-    background.fillColor = '#3B3251';
-    buildStars();
-    triangle.build(50);
+    location.reload();
   };
 
   var random = function (minimum, maximum) {
