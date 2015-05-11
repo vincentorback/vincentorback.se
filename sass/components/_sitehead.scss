@@ -118,7 +118,8 @@
 
   h2 {
     font-weight: 400;
-    font-size: .845em;
+    font-size: .95em;
+    letter-spacing: 1px;
   }
 
   @include respond-min(800px) {

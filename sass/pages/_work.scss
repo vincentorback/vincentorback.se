@@ -124,6 +124,9 @@
   }
 }
 
+.Work-image--full img {
+  max-height: none;
+}
 
 
 
@@ -176,10 +179,6 @@
   }
 }
 
-
-
-
-
 .Work-visit .Work-visitApp {
   display: inline-block;
   width: 180px;
@@ -230,10 +229,6 @@
   }
 }
 
-
-
-
-
 .Work-credits {
   margin: 0 auto;
   dt, dd {
@@ -265,13 +260,6 @@
   }
 }
 
-
-
-
-
-
-
-
 .Work-wrapper {
   padding: 10% 0;
 
@@ -280,12 +268,14 @@
     max-width: 900px;
     margin: 0 auto;
     color: #fff;
-    font-size: 1.75em;
   }
 }
 
-
-
+@include respond-min(800px) {
+  .Work-wrapper blockquote {
+    font-size: 1.75em;
+  }
+}
 
 
 
@@ -299,7 +289,7 @@
       background-color: #{nth($work-colors, $i)};
     }
 
-    @if index(("prophet", "joy"), #{nth($work-names, $i)}) {
+    @if index(("prophet", "joy", "nordiska"), #{nth($work-names, $i)}) {
       background-size: cover;
       background-position: 50% 50%;
     }
@@ -318,7 +308,8 @@
       }
     }
   }
-  
+
+
   @if index(("prophet", "joy"), #{nth($work-names, $i)}) {
     .Work--#{nth($work-names, $i)},
     .Work--#{nth($work-names, $i)} .Navigation-toggle,
@@ -371,6 +362,7 @@
       }
     }
   }
+
 
   /**
    * Work page
@@ -441,16 +433,10 @@
    @if index(("prophet", "joy"), #{nth($work-names, $i)} != null) {
     .WorkItem--#{nth($work-names, $i)} {
       a:hover {
-          color: #{nth($work-colors, $i)};
-        }
-      }
-
-    @if index("nordiska", #{nth($work-names, $i)}) {
-      @include respond-max(800px) {
-        background-size: cover !important;
-        background-position: 100% 50%;
+        color: #{nth($work-colors, $i)};
       }
     }
   }
+
 
 }

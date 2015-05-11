@@ -5,19 +5,32 @@
   }
 }
 
+.Page-fourothree,
 .Page-fourofour,
 .Page-fivehundred {
 
-  .Navigation,
   .Navigation-toggle,
   .Sitehead-logo {
-    opacity: .2;
     transition: opacity 200ms ease;
+    opacity: .2;
     .no-touch &:hover {
       opacity: 1;
     }
     .touch &:active {
       opacity: 1;
+    }
+  }
+
+  @include respond-min(800px) {
+    .Navigation {
+      transition: opacity 200ms ease;
+      opacity: .2;
+      .no-touch &:hover {
+        opacity: 1;
+      }
+      .touch &:active {
+        opacity: 1;
+      }
     }
   }
 
@@ -65,6 +78,13 @@
 }
 
 
+
+
+.Page-fourothree {
+  .Fourofour {
+    width: 100%;
+  }
+}
 
 
 
@@ -129,8 +149,6 @@
 
   font-size: .5em;
 }
-
-
 
 .Space-actions {
   position: fixed;

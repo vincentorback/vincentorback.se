@@ -18,7 +18,7 @@
   }
 
   .is-active {
-
+    
   }
 
   @include respond-min($threshold) {
@@ -37,6 +37,9 @@
         visibility: hidden;
         transform: scaleX(0);
         transition: all 200ms ease 0s;
+      }
+      &:hover {
+        color: #fff;
       }
       &:hover:after {
         visibility: visible;
@@ -104,6 +107,10 @@
     width: $canvasWidth-mobile;
     transform: translate3d(#{$canvasWidth-mobile - 60px},0,0);
     transition: transform 500ms ease, visibility 500ms linear 500ms;
+  }
+
+  @include respond-min(1600px) {
+    font-size: 1.2em;
   }
 }
 

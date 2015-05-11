@@ -23,11 +23,23 @@
 .Blog-entry {
   padding-top: $section-spacing-mobile / 2;
 
+  hr {
+    margin: $section-spacing-mobile / 2 0;
+  }
+
   @include respond-min(800px) {
     padding-top: $section-spacing;
     animation: fadein 1000ms $nice-easing 1;
+    hr {
+      margin: $section-spacing 0;
+    }
   }
   @include respond-min(1600px) {
     padding-top: $section-spacing-large;
+    hr {
+      margin: $section-spacing-large 0;
+    }
   }
+
+
 }

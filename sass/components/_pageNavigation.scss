@@ -1,28 +1,39 @@
 .PageNav {
+  position: relative;
+  z-index: 2;
+  
   width: 95%;
   margin: 0 auto;
   padding: 10% 0;
+
   background: #fff;
-  position: relative;
   text-align: center;
+
   @extend %clearfix;
 }
 
 .PageNav-item {
   position: relative;
   display: inline-block;
+
   margin: 0 3em;
   padding: 1em 2em;
+  
   border: 2px solid $text;
   border-radius: 50px;
   transition: background 200ms ease, padding 200ms ease, color 200ms ease;
+  
+  font-size: 1.2em;
+
   strong {
     margin: 0 5px;
   }
+
   &:hover {
     background: $text;
     color: #fff;
   }
+
   svg {
     position: absolute;
     top: 21px;
@@ -33,7 +44,7 @@
   @include respond-max(800px) {
     margin: .5em 1em;
     padding: .7em 2em;
-    font-size: .9em;
+    font-size: 1em;
     span {
       display: none;
     }

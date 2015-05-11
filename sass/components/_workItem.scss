@@ -16,8 +16,8 @@
   height: 800px;
 
   @include respond-max(800px) {
-    background-position: 50% 50% !important;
-    background-size: auto 100% !important;
+    background-position: 50% 50%;
+    background-size: auto 100%;
     max-height: 400px;
   }
 
