@@ -1,6 +1,6 @@
 .Navigation {
   position: absolute;
-  top: 2em;
+  top: 1.2em;
   right: -1.9em;
   z-index: 9;
 
@@ -117,37 +117,12 @@
 
 
 
-.Canvas, .Content {
+.Canvas {
   position: relative;
   height: 100%;
 }
-@include respond-max($threshold) {
-  body {
-    overflow-x: hidden;
-    overflow-y: visible;
-  }
-  .Canvas {
-    //overflow-x: hidden;
-    //overflow-y: visible;
-  }
 
-  .Content {
-    position: relative;
-    left: 0;
-    height: 100%;
-    transition: $canvasTransition;
-    z-index: 10;
 
-    .nav-isOpen & {
-      transform: translate3d(-#{$canvasWidth}, 0, 0);
-    }
-  }
-}
-@include respond-max($canvasWidth + 100px) {
-  .nav-isOpen .Content {
-    transform: translate3d(-#{$canvasWidth-mobile}, 0, 0);
-  }
-}
 
 
 
@@ -178,5 +153,8 @@
   @include respond-min($threshold) {
     display: none;
   }
+}
 
+.Navigation-toggle:focus {
+  background: rgba(255,255,255,.3);
 }

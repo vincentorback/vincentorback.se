@@ -1,0 +1,55 @@
+.Site,
+.Site-body,
+.Site-content {
+  position: relative;
+  height: 100%;
+}
+
+.Site-body {
+  background: #fff;
+  font-family: $sansserif;
+  font-weight: 400;
+  font-size: 100%;
+  line-height: 1.5;
+  color: $text;
+}
+
+@include respond-max($threshold) {
+  .Site-body {
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+
+  .Site-content {
+    position: relative;
+    left: 0;
+    height: 100%;
+    transition: $canvasTransition;
+    z-index: 10;
+
+    .nav-isOpen & {
+      transform: translate3d(-#{$canvasWidth}, 0, 0);
+    }
+  }
+}
+
+@include respond-max($canvasWidth + 100px) {
+  .nav-isOpen .Site-content {
+    transform: translate3d(-#{$canvasWidth-mobile}, 0, 0);
+  }
+}
+
+.Site-main {
+  margin: 0 auto;
+  background: #fff;
+  position: relative;
+  z-index: 3;
+}
+
+@include respond-min(800px) {
+  .Site-main > div,
+  .Site-main > article,
+  .Site-main > section {
+    animation: fadein 800ms ease;
+  }
+}

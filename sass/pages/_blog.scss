@@ -3,7 +3,7 @@
     background-color: #48648c;
     background-position: 75% 50%;
   }
-  .Sitemain {
+  .Site-main {
     padding-top: $section-spacing-large;
     @include respond-max(800px) {
       padding-top: $section-spacing-mobile / 2;

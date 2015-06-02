@@ -311,7 +311,7 @@
 
 
   @if index(("prophet", "joy"), #{nth($work-names, $i)}) {
-    .Work--#{nth($work-names, $i)},
+    // .Work--#{nth($work-names, $i)},
     .Work--#{nth($work-names, $i)} .Navigation-toggle,
     .Work--#{nth($work-names, $i)} .Navigation a,
     .Work--#{nth($work-names, $i)} .Navigation a,
@@ -319,21 +319,20 @@
     .Work--#{nth($work-names, $i)} .Sitehead a,
     .WorkItem--#{nth($work-names, $i)},
     .WorkItem--#{nth($work-names, $i)} a {
-      color: $text;
+      color: $joy;
     }
 
     .Work--#{nth($work-names, $i)} {
-
       .Navigation a {
         &:after {
-          background-color: $text;
+          background-color: $joy;
         }
       }
 
       .Navigation-toggle {
-        border-color: $text;
+        border-color: $joy;
         &:hover {
-          color: $text;
+          color: $joy;
         }
       }
 
@@ -349,16 +348,16 @@
     }
 
     .WorkItem--#{nth($work-names, $i)} a {
-      border-color: $text;
+      border-color: $joy;
 
       &:hover {
-        color: $text;
-        background: $text;
+        color: $joy;
+        background: $joy;
         color: #fff !important;
       }
 
       @include respond-min(800px) {
-        border-color: $text;
+        border-color: $joy;
       }
     }
   }

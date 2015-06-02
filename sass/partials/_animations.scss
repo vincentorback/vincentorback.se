@@ -18,7 +18,7 @@
 @keyframes fadeinBottom {
   0%, 25% {
     opacity: 0;
-    transform: translateY(60%);
+    transform: translateY(30px);
   }
   100% {
     opacity: 1;
@@ -29,6 +29,9 @@
 %fadeinBottom {
   animation: fadeinBottom 700ms $nice-easing 1;
 }
+
+
+
 
 
 @keyframes fadein {

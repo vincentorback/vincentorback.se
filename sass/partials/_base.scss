@@ -4,36 +4,54 @@
   box-sizing: border-box;
 }
 
-html {
-	height: 100%;
-}
-
-body {
-  position: relative;
-  height: 100%;
-  background: #fff;
-	font-family: $sansserif;
-	font-weight: 400;
-	font-size: 100%;
-	line-height: 1.5;
-	color: $text;
-}
-
 img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-input, textarea, button {
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+}
+
+input,
+textarea,
+button,
+select {
 	-webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
-	border: none;
+	border: 0;
 	outline: none;
 	font-size: 1rem;
 	border-radius: 0;
   background: transparent;
+}
+
+label,
+button,
+a {
+  cursor: pointer;
+}
+
+button {
+  padding: 0;
 }
 
 ::placeholder {

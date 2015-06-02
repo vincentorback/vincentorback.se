@@ -9,7 +9,10 @@
 
 .u-wrapper--S {
   @extend %wrapper;
-  max-width: 760px;
+  max-width: 680px;
+  @include respond-min(1600px) {
+    max-width: 780px;
+  }
 }
 
 .u-wrapper--M {
@@ -30,7 +33,7 @@
 
 
 /**
- * Place parallax scrolling images above .Sitemain
+ * Place parallax scrolling images above .Site-main
  */
 .imageHolder {
   z-index: 11;

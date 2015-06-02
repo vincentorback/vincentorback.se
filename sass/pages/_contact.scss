@@ -2,11 +2,11 @@
   .Sitehead-cover {
     background-position: 50% 0;
   }
-  .Sitemain {
+  .Site-main {
     padding: #{$section-spacing / 4} 0 #{$section-spacing / 1.5};
   }
   @include respond-max(800px) {
-    .Sitemain {
+    .Site-main {
       padding: #{$section-spacing-mobile / 4} 0 #{$section-spacing-mobile / 1.5};
     }
   }
@@ -46,8 +46,8 @@
   @include respond-max(600px) {
     padding: 1em .5em;
     svg {
-      width: 40px;
-      height: 40px;
+      width: 35px;
+      height: 35px;
     }
   }
 }
@@ -144,7 +144,7 @@
 }
 
 .Form-row {
-  @extend %clearfix;
+  @extend %clearfix;  
 }
 
 .Form-field {

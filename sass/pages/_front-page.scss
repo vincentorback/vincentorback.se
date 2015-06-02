@@ -52,6 +52,12 @@
     }
   }
 
+  .Site-main > div,
+  .Site-main > article,
+  .Site-main > section {
+    animation: none;
+  }
+
   @include respond-min(800px) {
     .Sitehead-inner {
       animation: fadeinBottom 700ms $nice-easing 1;

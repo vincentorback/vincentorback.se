@@ -1,6 +1,6 @@
 .no-scroll {
   &,
-  body{
+  .Site-body{
     overflow: hidden;
   }
 }
@@ -46,7 +46,7 @@
     position: static;
   }
 
-  .Sitemain {
+  .Site-main {
     height: 100%;
     background: #111;
     color: #fff;
@@ -103,7 +103,7 @@
 }
 
 .Page-fivehundred {
-  .Sitemain {
+  .Site-main {
     animation: animatedBackground 20000ms linear infinite normal;
   }
   #canvas {
