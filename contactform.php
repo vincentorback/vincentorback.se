@@ -24,11 +24,11 @@ foreach ($fieldData as $field) {
   }
 }
 
-$message = "Meddelande från vincentorback.se\n\n" . $text;
+$message = "Message from vincentorback.se\n\n" . $text;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if ($toemail && $message && $_POST['email']) {
-    mail($toemail, 'Meddelande från vincentorback.se', $message, 'From: ' . $_POST['email']);
+    mail($toemail, 'Message from vincentorback.se', $message, 'From: ' . $_POST['email']);
     $response = "Thank you for your message ". $_POST['name'] .". <br>I’ll get back to you ASAP!";
   }
   else {

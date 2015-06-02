@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="Site no-js" lang="en">
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,6 @@
 
   <link rel="stylesheet" href="/css/style.css">
   <noscript>
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:600,400" rel="stylesheet">
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
 
@@ -32,7 +31,7 @@
   <meta property="og:image" content="http://d3dx0f1ge67l9j.cloudfront.net/images/screenshot.jpg">
 </head>
 
-<body id="page-blog" class="Page-blog" onunload="" itemscope itemtype="http://schema.org/WebPage">
+<body id="page-blog" class="Site-body Page-blog" onunload="">
 
   <div class="u-wrapper--L">
     <nav id="navigation" class="Navigation" role="navigation">
@@ -45,11 +44,11 @@
     </nav>
   </div>
 
-  <div id="content" class="Content">
+  <div class="Site-content">
 
     <header class="Sitehead" role="banner">
       <div class="u-heightFull u-wrapper--L">
-        <a href="/" class="Sitehead-logo js-transitionFull">
+        <a href="/" class="Sitehead-logo js-transitionFull" tabindex="1">
           <h1>Vincent Orback</h1>
           <h2>Web designer and developer</h2>
         </a>
@@ -57,11 +56,23 @@
           <h3 class="Sitehead-title">The Blog</h3>
         </div>
       </div>
-      <button class="Navigation-toggle js-navToggle" type="button" role="button" aria-controls="navigation">Menu</button>
+      <button class="Navigation-toggle js-navToggle" type="button" role="button" aria-controls="navigation" aria-haspopup="true" tabindex="2">Menu</button>
       <figure class="Sitehead-cover"></figure>
     </header>
 
-    <main id="blog" class="Blog Sitemain" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+    <main id="blog" class="Blog Site-main" role="main" itemscope itemtype="http://schema.org/Blog">
+      
+      <article class="Excerpt Entry" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting"><a href="/blog/favorite-talks/" class="u-wrapper--S js-transitionHalf" data-slug="favorite-talks">
+        <header class="Excerpt-header">
+          <h1 class="Excerpt-title" itemprop="headline">Some of my favorite talks</h1>
+          <div class="Excerpt-meta">
+            <p class="Excerpt-metaDate"><time itemprop="datePublished" datetime="2015-29-05T20:00:00+00:00">May 29, 2015</time></p>
+          </div>
+        </header>
+        <div class="Excerpt-entry">
+          <p>A list of my personal favorite talks about design, development and the web industry in general.</p>
+        </div>
+      </a></article>
 
       <article class="Excerpt Entry" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting"><a href="/blog/how-to-honor-the-dnt-setting/" class="u-wrapper--S js-transitionHalf" data-slug="honor-dnt">
         <header class="Excerpt-header">
@@ -127,7 +138,7 @@
 
     </main>
 
-    <footer class="Sitefooter" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+    <footer class="Sitefooter" role="contentinfo">
       <div class="Sitefooter-info" itemscope itemtype="http://schema.org/Person">
         <a class="name" href="http://vincentorback.se" itemprop="url"><div itemprop="name">Vincent Orback</div></a>
         <div class="jobtitle" itemprop="jobtitle">Web designer and developer</div>
@@ -146,44 +157,7 @@
 
 <script src="/js/main-min.js" async></script>
 <script>
-(function () {
-  'use strict';
-  var doc = document,
-    style = doc.createElement('style'),
-    head = doc.head,
-    request;
-
-  function addStyle(css) {
-    style.rel = 'stylesheet';
-    head.appendChild(style);
-    style.textContent = css;
-  }
-
-  try {
-    if (localStorage && localStorage.vincentsFonts) {
-      // The font is in localStorage, we can load it directly
-      addStyle(localStorage.vincentsFonts);
-    } else {
-      // We have to first load the font file asynchronously
-      request = new XMLHttpRequest();
-      request.open('GET', '/css/fonts.css', true);
-
-      request.onload = function () {
-        if (request.status >= 200 && request.status < 400) {
-          addStyle(request.responseText);
-          localStorage.vincentsFonts = request.responseText;
-        }
-      };
-
-      request.send();
-    }
-  } catch (ignore) {
-    // Woops...
-  }
-}());
-
-var DoNotTrack = navigator.doNotTrack === 'yes' || navigator.doNotTrack === '1' || navigator.msDoNotTrack === '1';
-if (!DoNotTrack) {
+if (!(navigator.doNotTrack === 'yes' || navigator.doNotTrack === '1' || navigator.msDoNotTrack === '1')) {
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

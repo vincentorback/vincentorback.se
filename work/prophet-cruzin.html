@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="Site no-js" lang="en">
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,6 @@
 
   <link rel="stylesheet" href="/css/style.css">
   <noscript>
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:600,400" rel="stylesheet">
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
 
@@ -32,7 +31,7 @@
   <meta property="og:image" content="http://d3dx0f1ge67l9j.cloudfront.net/images/prophet/prophet1.jpg">
 </head>
 
-<body id="page-work" class="Page-work Work--prophet" itemscope itemtype="http://schema.org/CreativeWork" onunload="">
+<body id="page-work" class="Site-body Page-work Work--prophet" itemscope itemtype="http://schema.org/CreativeWork" onunload="">
 
 <div class="u-wrapper--L">
 <nav id="navigation" class="Navigation" role="navigation">
@@ -45,11 +44,11 @@
 </nav>
 </div>
 
-<div id="content" class="Content">
+<div class="Site-content">
 
 <header class="Sitehead" role="banner">
   <div class="u-heightFull u-wrapper--L">
-    <a href="/" class="Sitehead-logo js-transitionFull">
+    <a href="/" class="Sitehead-logo js-transitionFull" tabindex="1">
       <h1>Vincent Orback</h1>
       <h2>Web designer and developer</h2>
     </a>
@@ -58,11 +57,11 @@
       <a href="http://prophetcruz.in" itemprop="url">www.prophetcruz.in</a>
     </div>
   </div>
-  <button class="Navigation-toggle js-navToggle" type="button" role="button" aria-controls="navigation">Menu</button>
+  <button class="Navigation-toggle js-navToggle" type="button" role="button" aria-controls="navigation" aria-haspopup="true" tabindex="2">Menu</button>
   <figure class="Sitehead-cover"></figure>
 </header>
 
-<main class="Sitemain" role="main">
+<main class="Site-main" role="main">
   <article class="Work Work-entry Entry">
 
     <div class="u-wrapper--S">
@@ -119,7 +118,7 @@
   <a href="/work/architecture-now/" class="PageNav-item PageNav-item--prev PageNav-item--arkdes  js-transition" rel="prev"><svg role="presentation"><use xlink:href="#arrow-left"></use></svg><span>Previous work </span><strong>Architecture Now</strong></a><a href="/work/the-publics-choice/" class="PageNav-item PageNav-item--next PageNav-item--nordiska js-transition" rel="next"><span>Next work </span><strong>The Publics Choice</strong><svg role="presentation"><use xlink:href="#arrow-right"></use></svg></a>
 </nav>
 
-<footer class="Sitefooter" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+<footer class="Sitefooter" role="contentinfo">
   <div class="Sitefooter-info" itemscope itemtype="http://schema.org/Person">
     <a class="name" href="http://vincentorback.se" itemprop="url"><div itemprop="name">Vincent Orback</div></a>
     <div class="jobtitle" itemprop="jobtitle"><strong>Web designer</strong> and developer</div>
@@ -153,44 +152,7 @@
 
 <script src="/js/main-min.js" async></script>
 <script>
-(function () {
-  'use strict';
-  var doc = document,
-    style = doc.createElement('style'),
-    head = doc.head,
-    request;
-
-  function addStyle(css) {
-    style.rel = 'stylesheet';
-    head.appendChild(style);
-    style.textContent = css;
-  }
-
-  try {
-    if (localStorage && localStorage.vincentsFonts) {
-      // The font is in localStorage, we can load it directly
-      addStyle(localStorage.vincentsFonts);
-    } else {
-      // We have to first load the font file asynchronously
-      request = new XMLHttpRequest();
-      request.open('GET', '/css/fonts.css', true);
-
-      request.onload = function () {
-        if (request.status >= 200 && request.status < 400) {
-          addStyle(request.responseText);
-          localStorage.vincentsFonts = request.responseText;
-        }
-      };
-
-      request.send();
-    }
-  } catch (ignore) {
-    // Woops...
-  }
-}());
-
-var DoNotTrack = navigator.doNotTrack === 'yes' || navigator.doNotTrack === '1' || navigator.msDoNotTrack === '1';
-if (!DoNotTrack) {
+if (!(navigator.doNotTrack === 'yes' || navigator.doNotTrack === '1' || navigator.msDoNotTrack === '1')) {
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
