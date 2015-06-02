@@ -9,11 +9,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/vincentorback/Vincent-Orback.git"
+    "url": "https://github.com/vincentorback/vincent-orback.git"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
-    "grunt-aws-s3": "^0.13.0",
+    "grunt-aws-s3": "^0.13.1",
     "grunt-banner": "^0.4.0",
     "grunt-criticalcss": "^0.5.0",
     "grunt-contrib-compress": "^0.13.0",
@@ -22,7 +22,7 @@
     "grunt-imageoptim": "~1.4.1",
     "grunt-svgmin": "^2.0.1",
     "grunt-webp": "^0.0.4",
-    "load-grunt-tasks": "^3.1.0",
+    "load-grunt-tasks": "^3.2.0",
     "webp-bin": "^0.1.4"
   }
 }
