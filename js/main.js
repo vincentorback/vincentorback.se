@@ -47,9 +47,11 @@
         red: '#ff4e00',
         green: '#2ecc71',
         white: '#fff',
-        black: '#000'
+        black: '#000',
+        orange: '#f39c12'
       };
       vincent.postColors = {
+        'favorite-talks': vincent.colors.orange,
         'honor-dnt': vincent.colors.pink,
         'i-commit-from-my-heart': vincent.colors.yellow,
         'smooth-scrolling-with-css': vincent.colors.blue,
@@ -81,7 +83,7 @@
         }
       }
 
-      if (doc.getElementById('page-work') || doc.getElementById('page-about') || doc.getElementById('page-post')) {
+      if (Modernizr.csstransforms && (['page-work', 'page-about'].indexOf($body.attr('id')) > -1)) {
         vincent.parallaxImages();
       }
 
@@ -99,7 +101,9 @@
 
       vincent.tracking();
 
-      vincent.svgRefresh();
+      if (Modernizr.svg) {
+        vincent.svgRefresh();
+      }
 
       if (!Modernizr.csstransforms || !Modernizr.svg) {
         $body.append('<div class="Alert" role="alert"><p>You are using an <strong>outdated</strong> browser! Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p></div>');
@@ -203,7 +207,7 @@
 
     pageTransitionHalf: function () {
       var href,
-        $main = $body.find('.Sitemain'),
+        $main = $body.find('.Site-main'),
         $cover = $siteHead.find('.Sitehead-cover'),
         $nav = $body.find('#navigation'),
         hasCover = ($cover.length > 0) || ($siteHead.height() > winHeight),
@@ -215,7 +219,8 @@
         slug = false,
         bgCover,
         cover,
-        page;
+        page,
+        currentIsHalf = ['page-about', 'page-blog', 'page-post', 'page-contact'].indexOf($body.attr('id')) > -1;
 
       $body.find('.js-transitionHalf').on('click', function (e) {
 
@@ -230,7 +235,12 @@
         href = this.getAttribute('href');
         slug = e.currentTarget.getAttribute('data-slug');
 
+        console.log(slug, href);
+
         if (slug && href.indexOf('/blog/') > -1) {
+
+          console.log(13);
+
           cover = false;
           color = vincent.postColors[slug];
         } else {
@@ -252,13 +262,20 @@
           }
         }
 
-        $body
-          .addClass('disable-hover')
-          .css('background', vincent.colors.white)
-          .velocity('scroll', {
+        $body.addClass('disable-hover');
+
+        if (isSmoothScrollSupported) {
+          window.scrollTo({
+            'behavior': 'smooth',
+            'left': 0,
+            'top': 0
+          });
+        } else {
+          $body.velocity('scroll', {
             duration: 700,
             easing: vincent.scrollEasing
           });
+        }
 
         $main.velocity({
           opacity: 0
@@ -268,17 +285,6 @@
         });
 
         $siteHead
-          .velocity({
-            height: '60%',
-            backgroundColor: color || vincent.colors.black
-          }, {
-            duration: 400,
-            easing: 'ease',
-            delay: delay,
-            complete: function () {
-              transDone = true;
-            }
-          })
           .append(bgCover)
           .find('.Sitehead-inner').velocity({
             opacity: 0,
@@ -286,30 +292,55 @@
           }, {
             duration: 400,
             easing: 'ease',
+            delay: delay,
+            complete: function () {
+              transDone = true;
+            }
+          });
+
+        if (!currentIsHalf) {
+          $body.css('background', vincent.colors.white);
+
+          $siteHead.velocity({
+            height: '60%',
+            backgroundColor: color || vincent.colors.black
+          }, {
+            duration: 400,
+            easing: 'ease',
             delay: delay
           });
 
-        $siteHead.find('a').velocity({
-          color: vincent.colors.white
-        }, {
-          duration: 400,
-          easing: 'ease'
-        });
+          $siteHead.find('a').velocity({
+            color: vincent.colors.white
+          }, {
+            duration: 400,
+            easing: 'ease'
+          });
 
-        $nav.find('a').velocity({
-          color: vincent.colors.white
-        }, {
-          duration: 400,
-          easing: 'ease'
-        });
+          $nav.find('a').velocity({
+            color: vincent.colors.white
+          }, {
+            duration: 400,
+            easing: 'ease'
+          });
+        } else {
+          $siteHead.velocity({
+            backgroundColor: color || vincent.colors.black
+          }, {
+            duration: 400,
+            easing: 'ease'
+          });
+        }
 
-        $cover.velocity({
-          opacity: 0
-        }, {
-          duration: 400,
-          easing: 'ease',
-          delay: delay
-        });
+        if (hasCover) {
+          $cover.velocity({
+            opacity: 0
+          }, {
+            duration: 400,
+            easing: 'ease',
+            delay: delay
+          });
+        }
 
         if (cover) {
           $(bgCover).velocity({
@@ -336,7 +367,7 @@
 
     pageTransitionFull: function () {
       var href,
-        $main = $body.find('.Sitemain'),
+        $main = $body.find('.Site-main'),
         $cover = $siteHead.find('.Sitehead-cover'),
         hasCover = ($cover.length > 0) || ($siteHead.css('background-image') !== 'none') || ($siteHead.height() > winHeight),
         count = 0,
@@ -421,7 +452,7 @@
     workTransition: function () {
       var target, $target, href, transitionInterval,
         $docEl = $('body, html'),
-        $main = $body.find('.Sitemain'),
+        $main = $body.find('.Site-main'),
         $footer = $body.find('.Sitefooter'),
         count = 0,
         transDone = false,
@@ -519,27 +550,54 @@
     },
 
     navToggle: function () {
-      function toggleNavigation() {
-        $body.toggleClass('nav-isOpen');
+      var $navButton = $siteHead.find('.js-navToggle'),
+        $navMenu = $body.find('#navigation'),
+        $navLinks = $navMenu.find('a'),
+        ACTIVE_CLASS = 'nav-isOpen';
+
+      function enableNavLinks () {
+        $navButton.attr('aria-label', 'Menu expanded');
+        $navMenu.removeAttr('aria-hidden', '');
+        $navLinks.removeAttr('tabIndex');
       }
 
-      $body.find('.js-navToggle').on('click', function (e) {
-        toggleNavigation();
-        e.preventDefault();
-      });
+      function disableNavLinks () {
+        $navButton.attr('aria-label', 'Menu collapsed');
+        $navMenu.attr('aria-hidden', 'true');
+        $navLinks.attr('tabIndex', '-1');
+      }
 
-      $(window).smartresize(function () {
-        if ($body.hasClass('nav-isOpen')) {
-          toggleNavigation();
-        }
-      });
+      // true = open
+      function toggleNav(newState) {
+        newState = newState || ($body.hasClass(ACTIVE_CLASS) === false);
 
-      $('#content').on('click', function (e) {
-        if (($body.hasClass('nav-isOpen') === true) && ($(e.target).hasClass('js-navToggle') === false)) {
-          toggleNavigation();
-          e.preventDefault();
+        if (newState === true) {
+          enableNavLinks();
+        } else {
+          disableNavLinks();
         }
-      });
+
+        $body.toggleClass(ACTIVE_CLASS, newState);
+      }
+
+      function handleKeydown (event) {
+        if (event.keyCode === 27) { // Esc
+          toggleNav(false);
+          $navButton.focus();
+        }
+      }
+
+      function handleClick () {
+        toggleNav();
+
+        if ($body.hasClass(ACTIVE_CLASS)) {
+          $navLinks.eq(0).focus();
+        }
+      }
+
+      $navMenu.on('keydown', handleKeydown);
+      $navButton.on('click', handleClick);
+      disableNavLinks();
     },
 
     contactForm: function () {
@@ -596,11 +654,19 @@
 
         // Scroll to top of form
         if (!isElementInViewport($form)) {
-          $form.velocity('scroll', {
-            duration: 1200,
-            offset: -80,
-            easing: vincent.scrollEasing
-          });
+          if (isSmoothScrollSupported) {
+            window.scrollTo({
+              'behavior': 'smooth',
+              'left': 0,
+              'top': $form.offset().top - 80
+            });
+          } else {
+            $form.velocity('scroll', {
+              duration: 1200,
+              offset: -80,
+              easing: vincent.scrollEasing
+            });
+          }
         }
 
         // Post with ajax and display eventual response text.
