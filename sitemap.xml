@@ -2,86 +2,92 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://vincentorback.se/</loc>
-    <lastmod>2015-29-05T00:20:00+00:00</lastmod>
+    <lastmod>2015-05-29T20:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1</priority>
   </url>
   <url>
     <loc>http://vincentorback.se/about-me/</loc>
-    <lastmod>2015-29-05T00:20:00+00:00</lastmod>
+    <lastmod>2015-05-29T20:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>http://vincentorback.se/blog/</loc>
-    <lastmod>2015-29-05T00:20:00+00:00</lastmod>
+    <lastmod>2015-05-29T20:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://vincentorback.se/contact/</loc>
-    <lastmod>2015-29-05T00:20:00+00:00</lastmod>
+    <lastmod>2015-05-29T20:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>http://vincentorback.se/work/coop/</loc>
-    <lastmod>2015-29-05T00:20:00+00:00</lastmod>
+    <lastmod>2015-05-29T20:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://vincentorback.se/work/prophet-cruzin/</loc>
-    <lastmod>2015-29-05T00:20:00+00:00</lastmod>
+    <loc>http://vincentorback.se/work/arcini/</loc>
+    <lastmod>2015-05-29T20:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>http://vincentorback.se/work/johanna-bystrom/</loc>
+    <lastmod>2015-06-02T00:17:30+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>http://vincentorback.se/work/architecture-now/</loc>
-    <lastmod>2015-29-05T00:20:00+00:00</lastmod>
+    <lastmod>2015-05-29T20:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://vincentorback.se/work/arcini/</loc>
-    <lastmod>2015-29-05T00:20:00+00:00</lastmod>
+    <loc>http://vincentorback.se/work/prophet-cruzin/</loc>
+    <lastmod>2015-05-29T20:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>http://vincentorback.se/work/the-publics-choice/</loc>
-    <lastmod>2015-29-05T00:20:00+00:00</lastmod>
+    <lastmod>2015-05-29T20:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>http://vincentorback.se/blog/favorite-talks/</loc>
-    <lastmod>2015-29-05T00:20:00+00:00</lastmod>
+    <lastmod>2015-05-29T20:00:00+00:00</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>http://vincentorback.se/blog/how-to-honor-the-dnt-setting/</loc>
-    <lastmod>2015-29-05T00:20:00+00:00</lastmod>
+    <lastmod>2015-05-29T20:00:00+00:00</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>http://vincentorback.se/blog/using-webp-images/</loc>
-    <lastmod>2015-29-05T00:20:00+00:00</lastmod>
+    <lastmod>2015-05-29T20:00:00+00:00</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>http://vincentorback.se/blog/take-10-and-learn-typography/</loc>
-    <lastmod>2015-29-05T00:20:00+00:00</lastmod>
+    <lastmod>2015-05-29T20:00:00+00:00</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>http://vincentorback.se/blog/smooth-scrolling-with-css/</loc>
-    <lastmod>2015-29-05T00:20:00+00:00</lastmod>
+    <lastmod>2015-05-29T20:00:00+00:00</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>http://vincentorback.se/blog/i-commit-from-my-heart/</loc>
-    <lastmod>2015-29-05T00:20:00+00:00</lastmod>
+    <lastmod>2015-05-29T20:00:00+00:00</lastmod>
     <priority>0.5</priority>
   </url>
 </urlset>
