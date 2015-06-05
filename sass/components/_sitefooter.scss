@@ -60,7 +60,8 @@
   display: block;
   width: 150px;
   height: 150px;
-  &:hover .Octocat-image {
+  &:hover .Octocat-image,
+  &:focus .Octocat-image {
     transform: translateY(-22px);
   }
 
@@ -91,7 +92,8 @@
 
 .Tooltip {
   transition: none;
-
+  
+  &:focus .Tooltip-inner,
   &:hover .Tooltip-inner {
     opacity: 1;
     visibility: visible;
