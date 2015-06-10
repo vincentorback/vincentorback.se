@@ -60,10 +60,8 @@
   display: block;
   width: 150px;
   height: 150px;
-  &:hover .Octocat-image,
-  &:focus .Octocat-image {
-    transform: translateY(-22px);
-  }
+
+  transition: none;
 
   @include respond-max(700px) {
     width: 2.7em;
@@ -88,29 +86,16 @@
   transition: transform 400ms ease;
 }
 
-
-
-.Tooltip {
-  transition: none;
-  
-  &:focus .Tooltip-inner,
-  &:hover .Tooltip-inner {
-    opacity: 1;
-    visibility: visible;
-    transform: translate3d(-50%, 0, 0);
-    transition: all 400ms ease;
-  }
-}
-
-.Tooltip-inner {
+.Octocat-inner {
   position: absolute;
+  left: 50%;
+  bottom: 60px;
+  
+  width: 175px;
   padding: .5em;
   border-radius: 3px;
 
-  opacity: 0;
   pointer-events: none;
-  visibility: hidden;
-  transition: all 300ms ease;
 
   background: $text;
   background: rgba(0,0,0,.8);
@@ -119,28 +104,23 @@
   font-size: 14px;
   text-align: center;
 
+  transform: translate3d(-50%, 100%, 0);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 300ms ease;
+
+  .no-csstransforms & {
+    left: 25%;
+    left: calc(50% - 87px);
+  }
+
   &:after {
     content: " ";
     font-size: 0;
     line-height: 0;
     position: absolute;
     width: 0;
-  }
 
-  @include respond-max(700px) {
-    display: none;
-  }
-}
-
-
-
-.Tooltip--top .Tooltip-inner {
-  bottom: 60px;
-  left: 50%;
-  transform: translate3d(-50%, 100%, 0);
-  width: 175px;
-
-  &:after {
     border-top: 5px solid $text;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
@@ -149,8 +129,20 @@
     margin-left: -5px;
   }
 
-  .no-csstransforms & {
-    left: 25%;
-    left: calc(50% - 87px);
+  @include respond-max(700px) {
+    display: none;
   }
+}
+
+.Octocat:focus .Octocat-image,
+.Octocat:hover .Octocat-image {
+  transform: translateY(-22px);
+}
+
+.Octocat:focus .Octocat-inner,
+.Octocat:hover .Octocat-inner {
+  opacity: 1;
+  visibility: visible;
+  transform: translate3d(-50%, 0, 0);
+  transition: all 400ms ease;
 }
