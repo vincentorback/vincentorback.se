@@ -6,7 +6,7 @@ module.exports = function (grunt) {
   function htmlBanner() {
     return ('<!-- \n' +
     'Wow this markup is really mashed up! \n' +
-    'You can see all the clean code on GitHub: https://github.com/vincentorback/Vincent-Orback \n' +
+    'You can see all the clean code on GitHub: https://github.com/vincentorback/vincent-orback \n' +
     '-->');
   }
 
@@ -34,7 +34,7 @@ module.exports = function (grunt) {
           linebreak: true
         },
         files: {
-          src: ['css/style.css', 'js/main-min.js', 'js/404-min.js', 'js/500-min.js']
+          src: ['build/css/style.css', 'build/js/main-min.js']
         }
       },
       html: {
@@ -54,7 +54,9 @@ module.exports = function (grunt) {
           removeComments: true,
           collapseWhitespace: true,
           minifyJS: true,
-          minifyCSS: true
+          minifyCSS: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true
         },
         files: [{
           expand: true,
