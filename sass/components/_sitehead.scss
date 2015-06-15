@@ -3,7 +3,7 @@
 
   height: 60%;
   max-height: 800px;
-  min-height: 200px;
+  min-height: 250px;
 
   background: #111;
 
@@ -22,7 +22,7 @@
 
   @include respond-max(600px) {
     height: 50%;
-    min-height: 300px;
+    max-height: 350px;
   }
 
   @media (max-width: 800px) and (min-height: 800px) {

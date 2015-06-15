@@ -553,7 +553,8 @@
       var $navButton = $siteHead.find('.js-navToggle'),
         $navMenu = $body.find('#navigation'),
         $navLinks = $navMenu.find('a'),
-        ACTIVE_CLASS = 'nav-isOpen';
+        ACTIVE_CLASS = 'nav-isOpen',
+        winWidth = getViewport().width;
 
       function enableNavLinks () {
         $navButton.attr('aria-label', 'Menu expanded');
@@ -597,7 +598,10 @@
 
       $navMenu.on('keydown', handleKeydown);
       $navButton.on('click', handleClick);
-      disableNavLinks();
+
+      if (800 > winWidth) {
+        disableNavLinks();
+      }
     },
 
     contactForm: function () {
