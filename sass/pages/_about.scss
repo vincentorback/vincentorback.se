@@ -26,7 +26,6 @@
 }
 
 
-
 .Resume, .Library {
   header {
     text-align: left;
@@ -43,10 +42,13 @@
   }
   a {
     position: relative;
-    color: $text;
+    color: #000;
     border: 0;
     display: inline-block;
     @include hoverLink;
+  }
+  a:hover {
+    color: $text;
   }
   @include respond-min(1600px) {
     font-size: 1.2em;
@@ -62,6 +64,7 @@
 }
 
 
+/* Library */
 
 .Library {
   .u-wrapper {
@@ -164,6 +167,7 @@
 }
 
 
+/* Resume */
 
 .Resume {
   padding-bottom: $section-spacing;
@@ -204,6 +208,9 @@
 }
 
 .Resume-left {
+  ul {
+    margin-top: 0;
+  }
   li {
     margin: 0 0 1.5em 0;
   }
@@ -247,6 +254,4 @@
       padding: .7em 1em;
     }
   }
-
-
 }

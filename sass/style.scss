@@ -1,72 +1,42 @@
 /** Functions */
 @import "variables";
-
 @import "mixins";
-
 @import "functions";
-
 @import "fonts";
-
 
 /** Utlilities */
 @import "utilities/layout";
-
 @import "utilities/text";
-
 @import "utilities/helpers";
-
 
 /** Partials */
 @import "partials/normalize";
-
 @import "partials/animations";
-
 @import "partials/base";
-
 @import "partials/typography";
-
 @import "partials/main";
-
 @import "partials/prism";
-
 
 /** Components */
 @import "components/site";
-
 @import "components/pageNavigation";
-
 @import "components/sitehead";
-
 @import "components/navigation";
-
 @import "components/comments";
-
 @import "components/sitefooter";
-
 @import "components/workItem";
-
 @import "components/alert";
-
 @import "components/table";
-
 
 /** Pages */
 @import "pages/front-page";
-
 @import "pages/work";
-
 @import "pages/about";
-
 @import "pages/contact";
-
 @import "pages/blog";
-
 @import "pages/post";
-
 @import "pages/post-special";
-
 @import "pages/fourofour";
-
 
 /** Print styles */
 @import "partials/print";
