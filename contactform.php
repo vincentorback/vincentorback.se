@@ -6,15 +6,7 @@ $toemail = 'vorback@gmail.com';
 $fieldData = array(
   'name' => isset($_POST['name']) ? 'Name: ' . $_POST['name'] : false,
   'email' => isset($_POST['email']) ? 'Email: ' . $_POST['email'] : false,
-  'purpose' => isset($_POST['purpose']) ? 'Purpose: ' . $_POST['purpose'] : false,
-  'business' => isset($_POST['business']) ? 'Business: ' . $_POST['business'] : false,
-  'profile' => isset($_POST['profile']) ? 'Graphic profile: ' . $_POST['profile'] : false,
-  'ecommerce' => isset($_POST['ecommerce']) ? 'Sell online: ' . $_POST['ecommerce'] : false,
-  'working_for' => isset($_POST['working_for']) ? 'Working for: ' . $_POST['working_for'] : false,
-  'profit' => isset($_POST['profit']) ? 'Profit: ' . $_POST['profit'] : false,
-  'involved' => isset($_POST['involved']) ? 'Involved: ' . $_POST['involved'] : false,
-  'competitors' => isset($_POST['competitors']) ? 'Competitors: ' . $_POST['competitors'] : false,
-  'message' => isset($_POST['message']) ? 'Message: ' . $_POST['message'] : false);
+  'message' => isset($_POST['message']) ? "\n" . $_POST['message'] : false);
 
 $text = '';
 
