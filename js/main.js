@@ -695,7 +695,7 @@
               response = errorMessage;
             }
 
-            $response[0].innerHtml = errorMessage;
+            $response.html(response);
             $response.slideDown('slow');
           }
         });
