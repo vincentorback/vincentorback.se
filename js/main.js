@@ -235,11 +235,7 @@
         href = this.getAttribute('href');
         slug = e.currentTarget.getAttribute('data-slug');
 
-        console.log(slug, href);
-
         if (slug && href.indexOf('/blog/') > -1) {
-
-          console.log(13);
 
           cover = false;
           color = vincent.postColors[slug];
