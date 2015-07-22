@@ -723,6 +723,13 @@
           if ($(this).val() === '' || $(this).val() === 'blank') {
             $(this).next().removeClass('is-active');
           }
+        })
+        // Submit form on cmd + enter
+        .on('keydown', function (event) {
+          if (!(event.keyCode === 13 && event.metaKey)) {
+            return;
+          }
+          $form.submit();
         });
     },
 
