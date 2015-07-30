@@ -16,8 +16,7 @@
   }
 
   function isElementInViewport($el) {
-    var rect = $el[0].getBoundingClientRect(),
-      viewport = getViewport();
+    var rect = $el[0].getBoundingClientRect();
 
     return (
       rect.top >= 0 &&
@@ -31,8 +30,9 @@
     body = doc.body || doc.getElementsByTagName('body')[0],
     $body = $(body),
     $siteHead = $body.find('.Sitehead'),
-    winWidth = getViewport().width,
-    winHeight = getViewport().height,
+    viewport = getViewport(),
+    winWidth = viewport.width,
+    winHeight = viewport.height,
     vincent;
 
   vincent = {
@@ -210,10 +210,10 @@
         $main = $body.find('.Site-main'),
         $cover = $siteHead.find('.Sitehead-cover'),
         $nav = $body.find('#navigation'),
-        hasCover = ($cover.length > 0) || ($siteHead.height() > winHeight),
         delay = 0,
         count = 0,
         transitionInterval,
+        hasCover = false,
         transDone = false,
         color = false,
         slug = false,
@@ -228,6 +228,9 @@
           return;
         }
 
+        winHeight = getViewport().height;
+
+        hasCover = ($cover.length > 0) || ($siteHead.height() > winHeight);
         if (hasCover === true) {
           delay = 100;
         }
@@ -236,7 +239,6 @@
         slug = e.currentTarget.getAttribute('data-slug');
 
         if (slug && href.indexOf('/blog/') > -1) {
-
           cover = false;
           color = vincent.postColors[slug];
         } else {
@@ -377,6 +379,8 @@
           return;
         }
 
+        winHeight = getViewport().height;
+
         href = this.getAttribute('href');
         page = href.replace('/', '');
         page = page.replace('/', '');
@@ -451,15 +455,15 @@
         $main = $body.find('.Site-main'),
         $footer = $body.find('.Sitefooter'),
         count = 0,
-        transDone = false,
-        viewHeight;
+        transDone = false;
 
       $body.find('.js-transitionWork').on('click', function (e) {
         if (e.metaKey || e.ctrlKey) {
           return;
         }
 
-        viewHeight = getViewport().height;
+        winHeight = getViewport().height;
+
         target = this.getAttribute('data-target');
         $target = $(target);
         href = this.getAttribute('href');
@@ -483,7 +487,7 @@
         });
 
         $target.velocity({
-          height: (viewHeight * 0.6) + 'px'
+          height: (winHeight * 0.6) + 'px'
         }, {
           duration: 500,
           easing: 'ease',
@@ -525,7 +529,7 @@
         });
 
         $footer.velocity({
-          paddingBottom: viewHeight + 'px',
+          paddingBottom: winHeight + 'px',
           opacity: 0
         }, {
           duration: 50,
@@ -549,8 +553,7 @@
       var $navButton = $siteHead.find('.js-navToggle'),
         $navMenu = $body.find('#navigation'),
         $navLinks = $navMenu.find('a'),
-        ACTIVE_CLASS = 'nav-isOpen',
-        winWidth = getViewport().width;
+        ACTIVE_CLASS = 'nav-isOpen';
 
       function enableNavLinks () {
         $navButton.attr('aria-label', 'Menu expanded');
