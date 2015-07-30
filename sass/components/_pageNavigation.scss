@@ -54,6 +54,10 @@
       height: 16px;
     }
   }
+
+  @include respond-max(800px) {
+    border-width: 1px;
+  }
 }
 
 .PageNav-item--prev {
