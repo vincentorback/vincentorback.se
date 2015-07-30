@@ -1,16 +1,23 @@
 /**
  * Parallax ImageScroll - jQuery plugin
  * Author: Peder A. Nielsen
+ * Email: peder1976@gmail.com
  * Created date: 04.12.13
- * Updated date: 05.02.15
- * Version: 0.2.0
+ * Updated date: 08.07.15
+ * Version: 0.2.3
  * Company: Making Waves
  * Licensed under the MIT license
  */
 ;
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
+        // AMD
         define(['jquery'], factory);
+    } else if (typeof module === 'object' && typeof module.exports === 'object') {
+        // CommonJS
+        module.exports = factory(
+            require('jquery')
+        );
     } else {
         factory(root.jQuery);
     }
@@ -55,7 +62,6 @@
         supportedFeature = '',
         transformProperty,
         injectElementWithStyles = function (rule, callback, nodes, testnames) {
-
             var style, ret, node, docOverflow,
                 div = document.createElement('div'),
                 body = document.body,
@@ -90,7 +96,6 @@
             }
 
             return !!ret;
-
         };
 
     function is(obj, type) {
@@ -203,7 +208,7 @@
         this._defaults = defaults;
         this._name = pluginName;
         this.init();
-    }
+    };
 
     // Avoid Plugin.prototype conflicts
     $.extend(Plugin.prototype, {
@@ -231,6 +236,8 @@
                 this.$imageHolder.css('visibility', 'hidden').empty();
                 this.$scrollingElement.css({
                     position: 'absolute',
+                    top: 0,
+                    left: 0,
                     visibility: 'hidden',
                     maxWidth: 'none'
                 }).prependTo(this.$scrollerHolder);
@@ -368,6 +375,8 @@
                 options.top = options.y;
                 options.left = options.x;
             }
+            delete options.x;
+            delete options.y;
             return options;
         },
         enable: function () {
