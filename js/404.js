@@ -24,7 +24,7 @@
     position,
     winWidth = window.innerWidth,
     winHeight = window.innerHeight,
-    isTouch = Modernizr.touch,
+    isTouch = Modernizr.touchevents,
     supportOrientation = window.DeviceOrientationEvent,
     starCount = isTouch ? 20 : 100,
     rocketSpeed = 6,

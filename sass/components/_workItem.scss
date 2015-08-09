@@ -81,7 +81,7 @@
       color: $text;
     }
 
-    .no-touch &:hover {
+    .no-touchevents &:hover {
       transform: scale(1.08);
     }
   }

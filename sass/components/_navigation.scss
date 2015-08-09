@@ -145,7 +145,7 @@
 
   display: block;
 
-  .no-touch &:hover {
+  .no-touchevents &:hover {
     background: #fff;
     color: $red;
   }

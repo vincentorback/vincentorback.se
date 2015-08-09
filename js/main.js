@@ -482,7 +482,7 @@
         $target.next('.WorkItem').velocity({
           opacity: 0
         }, {
-          duration: 500,
+          duration: 300,
           easing: 'ease'
         });
 
@@ -494,6 +494,12 @@
           complete: function () {
             transDone = true;
           }
+        });
+
+        $target.velocity('scroll', {
+          duration: 300,
+          offset: 0,
+          easing: vincent.scrollEasing
         });
 
         $target.find('.WorkItem-inner').velocity({
@@ -693,7 +699,7 @@
           },
           complete: function (data) {
             if (data.responseText) {
-              response = JSON.parse(data.responseText).response;
+              response = JSON.parse(data.responseText);
             } else {
               response = errorMessage;
             }
@@ -706,8 +712,8 @@
         return false;
 
       });
-
-      if (Modernizr.touch === false) {
+  
+      if (Modernizr.touchevents === false) {
         vincent.floatLabels();
       }
     },
@@ -767,7 +773,7 @@
         speed: 0.4,
         coverRatio: 0.85,
         parallax: Modernizr.csstransforms,
-        touch: Modernizr.touch
+        touch: Modernizr.touchevents
       });
     },
 
