@@ -4,122 +4,149 @@
   }
 }
 
+
+
+
+
 .About {
   padding: #{$section-spacing-mobile - 20px} 0 $section-spacing-mobile;
-  h1 {
-    font-size: 2em;
-    margin-bottom: .4em;
-  }
   p:last-child {
     margin-bottom: 0;
   }
-
-  @include respond-min(800px) {
+}
+@include respond-min(800px) {
+  .About {
     padding: #{$section-spacing - 20px} 0 $section-spacing;
-    .u-wrapper {
-      animation: fadein 1000ms $nice-easing 1;
-    }
-    h1 {
-      margin-bottom: 1em;
-    }
+    animation: fadein 1000ms $nice-easing 1;
   }
 }
 
 
-.Resume, .Library {
-  header {
-    text-align: left;
-    background: $blue;
-    color: #fff;
-    padding: #{$section-spacing / 2} 0;
-    p {
-      max-width: 700px;
-      letter-spacing: 1px;
-    }
-  }
-  h3 {
-    font-size: 5em;
-  }
-  a {
-    position: relative;
-    color: #000;
-    border: 0;
-    display: inline-block;
-    @include hoverLink;
-  }
-  a:hover {
-    color: $text;
-  }
-  @include respond-min(1600px) {
+
+
+
+.AboutSection {
+
+}
+@include respond-min(1600px) {
+  .AboutSection {
     font-size: 1.2em;
   }
-  @include respond-max(800px) {
-    header {
-      padding: #{$section-spacing-mobile / 2} 0;
-    }
-    h3 {
-      font-size: 2em;
-    }
+}
+
+.AboutSection-head {
+  text-align: left;
+  background: $blue;
+  color: #fff;
+  padding: #{$section-spacing / 2} 0;
+  
+}
+@include respond-max(800px) {
+  .AboutSection-head {
+    padding: #{$section-spacing-mobile / 2} 0;
   }
 }
 
-
-/* Library */
-
-.Library {
-  .u-wrapper {
-    max-width: 1280px;
-  }
-  h4 {
-    font-size: 1.2em;
-    margin-bottom: 1em;
-  }
-  img {
-    float: left;
-    max-width: 100px;
-    margin: 0 .8em 0 0;
-  }
-  article {
-    margin-bottom: 2em;
-    @extend %clearfix;
-    &:last-child {
-      margin-bottom: 0;
-    }
-    h1 {
-      font-size: 1.2em;
-    }
-  }
-  p {
-    font-family: $serif;
-    a {
-      font-family: $sansserif;
-    }
-  }
-  footer {
-    width: 100%;
-    margin-bottom: $section-spacing;
-    font-size: .85em;
-    text-align: center;
-  }
-  @include respond-max(800px) {
-    article:last-child {
-      margin-bottom: 2em;
-    }
-    footer {
-      text-align: left;
-      margin: 0 auto $section-spacing-mobile auto;
-    }
+.AboutSection-title {
+  font-size: 5em;
+}
+@include respond-max(800px) {
+  .AboutSection-title {
+    font-size: 2em;
   }
 }
 
-.Library-inner {
+.AboutSection-subTitle {
+  max-width: 700px;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.AboutSection-inner {
   padding: $section-spacing 0;
   @include respond-max(800px) {
     padding: #{$section-spacing-mobile / 2} 0;
   }
 }
 
-.Library-websites {
+
+
+
+.AboutSection-inner a,
+.AboutSection--library .AboutSection-foot a {
+  position: relative;
+  color: #000;
+  border: 0;
+  display: inline-block;
+  @include hoverLink;
+  &:hover {
+    color: $text;
+  }
+}
+
+
+
+
+.AboutSection--library {
+  h3 {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+  }
+
+  img {
+    float: left;
+    max-width: 100px;
+    margin: 0 .8em 0 0;
+  }
+
+  article {
+    @extend %clearfix;
+    h1 {
+      font-size: 1.2em;
+    }
+  }
+
+  article:not(:last-child) {
+    margin-bottom: 2em;
+  }
+
+  p {
+    font-family: $serif;
+    a {
+      font-family: $sansserif;
+    }
+  }
+}
+@include respond-max(800px) {
+  .AboutSection--library {
+    article:last-child {
+      margin-bottom: 2em;
+    }
+  }
+}
+
+
+
+
+.AboutSection--library .AboutSection-foot {
+  width: 100%;
+  margin-bottom: $section-spacing;
+  font-size: .85em;
+  text-align: center;
+
+  @include respond-max(800px) {
+    text-align: left;
+    margin: 0 auto $section-spacing-mobile auto;
+  }
+}
+
+
+
+
+
+
+
+.LinkList {
   a {
     font-size: 1.1em;
     border: 0;
@@ -128,7 +155,7 @@
       bottom: .5em;
     }
   }
-  h4 {
+  h3 {
     margin-bottom: .5em;
   }
   @include respond-max(800px) {
@@ -167,6 +194,11 @@
 }
 
 
+
+
+
+
+
 /* Resume */
 
 .Resume {
@@ -200,13 +232,6 @@
   }
 }
 
-.Resume-inner {
-  padding: $section-spacing 0;
-  @include respond-max(800px) {
-    padding: #{$section-spacing-mobile / 2} 0;
-  }
-}
-
 .Resume-left {
   ul {
     margin-top: 0;
@@ -225,33 +250,33 @@
 
 
 
-.Printlink {
-  margin: 0 auto;
-  text-align: center;
 
-  a {
-    display: inline-block;
-    padding: 1em 1.5em;
-    
-    color: $blue;
-    letter-spacing: 2px;
 
-    box-shadow: $blue 4px 4px;
-    border: 2px solid $blue;
 
-    &:active {
-      transform: translate(4px, 4px);
-      box-shadow: $blue 0 0;
-    }
 
-    &:after {
-      content: normal;
-    }
+
+
+.PrintButton {
+  display: inline-block;
+  padding: 1em 1.5em;
+  
+  color: $blue;
+  letter-spacing: 2px;
+  box-shadow: $blue 4px 4px;
+  border: 2px solid $blue;
+
+  &:after {
+    content: normal;
   }
+  
+  &:active {
+    transform: translate(4px, 4px);
+    box-shadow: $blue 0 0;
+  }
+}
 
-  @include respond-max(800px) {
-    a {
-      padding: .7em 1em;
-    }
+@include respond-max(800px) {
+  .PrintButton-link {
+    padding: .7em 1em;
   }
 }
