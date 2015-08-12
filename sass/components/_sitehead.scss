@@ -114,6 +114,8 @@
   font-size: .8em;
   color: #fff;
 
+  transition: opacity 200ms ease;
+
   h1 {
     font-size: 1.95em;
   }
@@ -122,6 +124,10 @@
     font-weight: 400;
     font-size: .95em;
     letter-spacing: 1px;
+  }
+
+  &:hover {
+    opacity: .8;
   }
 
   @include respond-min(800px) {

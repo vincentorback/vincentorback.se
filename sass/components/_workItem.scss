@@ -19,14 +19,10 @@
     background-position: 50% 50%;
     background-size: auto 100%;
     max-height: 400px;
+    max-height: 51vh;
+    min-height: 300px;
   }
 
-  @include respond-max(500px) {
-    max-height: 350px;
-  }
-  @include respond-max(400px) {
-    max-height: 250px;
-  }
   @media (min-height: 1000px) {
     height: 900px;
   }
