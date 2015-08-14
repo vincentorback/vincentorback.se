@@ -61,3 +61,9 @@
   white-space: nowrap !important;
   word-wrap: normal !important; /* 2 */
 }
+
+
+
+.u-textSmall {
+  @extend small;
+}

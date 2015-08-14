@@ -65,12 +65,25 @@
 <main class="Blog Site-main" role="main">
   <article class="Blog-entry Entry" itemprop="articleBody">
     <div class="u-wrapper--S">
-      <p><b>TL;DR</b><br>I’m animating the whole body using transform. Here’s a <a href="http://cdpn.io/FCpBo">Demo</a></p>
+      <p><b>Update!</b> <time class="u-textSmall" itemprop="dateUpdated" datetime="2015-08-14">14 August 2015</time><br> There’s a W3C draft to improve the native javascript function <code class="language-javascript">scrollTo</code>. It currently works in Firefox and <span class="u-textTruncate">experimental Chrome.</span>
+      <br><a href="http://blog.gospodarets.com/native_smooth_scrolling/">Read more here</a>.</p>
     </div>
+
+<pre class="Entry-code Code language-javascript" style="margin: 0 auto !important;"><code>var targetOffset = document.getElementById('target-element').offsetTop;
+
+window.scrollTo({
+  'behavior': 'smooth',
+  'left': 0,
+  'top': targetOffset
+});
+</code></pre>
 
     <hr>
 
     <div class="u-wrapper--S">
+      <p><b>TL;DR</b><br>I’m animating the whole body using transform. Here’s a <a href="http://cdpn.io/FCpBo">Demo</a></p>
+      <br>
+
       <p>Recently, I decided to completely remove jQuery from my website (my <a href="http://v3.vincentorback.se/">old website</a>). Not just because it would be nice to loose another request and some bytes but because I wanted to test my vanilla Javascript skills.</p>
 
       <p>Now my site isn’t a very Javascript heavy site. The main functions are:</p>
