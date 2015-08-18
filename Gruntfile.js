@@ -23,6 +23,10 @@ module.exports = function (grunt) {
         '*/ ');
   }
 
+  var vincentConfig = {
+    imageQuality: 90
+  };
+
   grunt.initConfig({
 
     pkg: grunt.file.readJSON('package.json'),
@@ -89,8 +93,8 @@ module.exports = function (grunt) {
       },
       options: {
         binpath: require('webp-bin').path,
-        quality: 90,
-        alphaQuality: 90
+        quality: vincentConfig.imageQuality,
+        alphaQuality: vincentConfig.imageQuality
       }
     },
     imageoptim: {
@@ -110,6 +114,32 @@ module.exports = function (grunt) {
         },
         src: ['images']
       }
+    responsive_images: {
+      test: {
+        options: {
+          sizes: [{
+            name: 'small',
+            width: 600,
+            quality: vincentConfig.imageQuality
+          },{
+            name: 'medium',
+            width: 1200,
+            quality: vincentConfig.imageQuality
+          },{
+            name: 'large',
+            width: 1920,
+            quality: vincentConfig.imageQuality
+          }]
+        },
+        files: [{
+          expand: true,
+          src: [
+            'images/**/header.{jpg,gif,png}',
+            'images/**/*-thumb.{jpg,gif,png}'
+          ]
+        }]
+      }
+    },
     }
   });
 
