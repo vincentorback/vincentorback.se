@@ -296,17 +296,39 @@
     }
 
     @if index(("comai", "ican"), #{nth($work-names, $i)}) {
-      background-image: url("/images/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb.svg");
+      background-image: url("#{$images}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb.svg");
       .no-svg & {
-        background-image: url("/images/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb.jpg");
+        background-image: url("#{$images}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb.jpg");
       }
     } @else {
-      .webp & {
-        background-image: url("/webp/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb.webp");
+
+      @media (max-width: 600px) {
+        .webp & {
+          background-image: url("#{$webp}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb-small.webp");
+        }
+        .no-webp & {
+          background-image: url("#{$images}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb-small.jpg");
+        }
       }
-      .no-webp & {
-        background-image: url("/images/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb.jpg");
+
+      @media (min-width: 601px) {
+        .webp & {
+          background-image: url("#{$webp}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb-medium.webp");
+        }
+        .no-webp & {
+          background-image: url("#{$images}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb-medium.jpg");
+        }
       }
+
+      @media (min-width: 1200px) {
+        .webp & {
+          background-image: url("#{$webp}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb-large.webp");
+        }
+        .no-webp & {
+          background-image: url("#{$images}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb-large.jpg");
+        }
+      }
+
     }
   }
 

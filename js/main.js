@@ -220,6 +220,7 @@
         bgCover,
         cover,
         page,
+        coverSize = 'medium',
         currentIsHalf = ['page-about', 'page-blog', 'page-post', 'page-contact'].indexOf($body.attr('id')) > -1;
 
       $body.find('.js-transitionHalf').on('click', function (e) {
@@ -228,9 +229,9 @@
           return;
         }
 
-        winHeight = getViewport().height;
+        viewport = getViewport();
 
-        hasCover = ($cover.length > 0) || ($siteHead.height() > winHeight);
+        hasCover = ($cover.length > 0) || ($siteHead.height() > viewport.height);
         if (hasCover === true) {
           delay = 100;
         }
@@ -247,7 +248,10 @@
           if (page === 'about-me') {
             page = 'about';
           }
-          cover = '/images/' + page + '/header.jpg';
+
+          coverSize = viewport.width > 1200 ? 'large' : 'medium';
+
+          cover = Modernizr.webp ? vincent.amazon + '/images/' + page + '/header-' + coverSize + '.jpg' : vincent.amazon + '/webp/' + page + '/header-' + coverSize + '.webp';
         }
 
         if (cover) {
