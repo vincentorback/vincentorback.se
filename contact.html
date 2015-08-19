@@ -66,9 +66,12 @@
     <!--<div class="Entry Contact-intro">
       <p>At the moment I’m not taking on any new project. <span class="u-textTruncate">But that</span> doesn’t mean you can’t <span class="u-textTruncate">say hello!</span></p>
     </div>-->
-    <div class="Contact-social" itemscope itemtype="http://schema.org/Organization">
+    <div class="Contact-social" itemscope itemtype="http://schema.org/Organization" itemref="employee-vincent">
+      <meta itemprop="name" content="Vincent Orback">
       <link itemprop="url" href="http://vincentorback.se">
-      <meta itemprop="name">
+      <link itemprop="description" content="Front-end developer and web designer in Stockholm, Sweden.">
+      <link itemprop="image" href="http://vincentorback.se/images/about/portrait.jpg">
+
       <a href="//github.com/vincentorback" class="Social Social--github" title="Visit my GitHub" rel="me" data-trackvalue="contact-github" itemprop="sameAs">
         <svg role="img"><use xlink:href="#github"></use></svg>
       </a>
@@ -161,7 +164,7 @@
 </main>
 
 <footer class="Sitefooter" role="contentinfo">
-  <div class="Sitefooter-info" itemscope itemtype="http://schema.org/Person">
+  <div class="Sitefooter-info" itemscope itemtype="http://schema.org/Person" id="employee-vincent">
     <a class="name" href="http://vincentorback.se" itemprop="url"><div itemprop="name">Vincent Orback</div></a>
         <div class="jobtitle"><span itemprop="jobtitle">Web designer</span> and <span itemprop="jobtitle">developer</span></div>
     <div class="address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
