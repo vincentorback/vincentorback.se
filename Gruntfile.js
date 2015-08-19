@@ -30,6 +30,7 @@ module.exports = function (grunt) {
   grunt.initConfig({
 
     pkg: grunt.file.readJSON('package.json'),
+
     usebanner: {
       jscss: {
         options: {
@@ -38,7 +39,7 @@ module.exports = function (grunt) {
           linebreak: true
         },
         files: {
-          src: ['build/css/style.css', 'build/js/main-min.js']
+          src: ['css/style.css', 'js/main-min.js']
         }
       },
       html: {
@@ -52,6 +53,49 @@ module.exports = function (grunt) {
         }
       }
     },
+
+    sass: {
+      dist: {
+        options: {
+          style: 'compressed',
+          sourcemap: 'none'
+        },
+        files: {
+          'css/style.css' : 'sass/style.scss'
+        }
+      }
+    },
+
+    autoprefixer: {
+      options: {
+        browsers: ['last 3 versions']
+      },
+      target: {
+        src: 'css/*.css',
+      },
+    },
+
+    uglify: {
+      options: {
+        mangel: true,
+        screwIE8: true,
+        report: 'min'
+      },
+      target: {
+        files: {
+          'js/main-min.js': [
+            'js/vendor/modernizr-custom.js',
+            'js/vendor/fastclick.js',
+            'js/vendor/jquery-2.1.4.js',
+            'js/vendor/jquery.imageScroll.js',
+            'js/vendor/jquery.smartness.js',
+            'js/vendor/jquery.velocity.js',
+            'js/main.js'
+          ]
+        }
+      }
+    },
+
     htmlmin: {
       dist: {
         options: {
@@ -69,6 +113,7 @@ module.exports = function (grunt) {
         }]
       }
     },
+
     svgmin: {
       options: {
         plugins: [{
@@ -84,6 +129,7 @@ module.exports = function (grunt) {
         }]
       }
     },
+
     webp: {
       files: {
         expand: true,
@@ -97,6 +143,7 @@ module.exports = function (grunt) {
         alphaQuality: vincentConfig.imageQuality
       }
     },
+
     imageoptim: {
       png: {
         options: {
@@ -114,6 +161,8 @@ module.exports = function (grunt) {
         },
         src: ['images']
       }
+    },
+
     responsive_images: {
       test: {
         options: {
@@ -139,12 +188,18 @@ module.exports = function (grunt) {
           ]
         }]
       }
-    },
     }
+
   });
 
   require('load-grunt-tasks')(grunt);
 
   grunt.registerTask('default', ['htmlmin', 'usebanner']);
+
+  grunt.registerTask('css', ['sass', 'autoprefixer']);
+
+  grunt.registerTask('deploy', ['htmlmin', 'css', 'uglify', 'usebanner']);
+
+  grunt.registerTask('images', ['responsive_images:test', 'webp']);
 
 };
