@@ -5,31 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>Some of my favorite talks | Vincent Orback - Web designer and developer in Stockholm</title>
-  <meta name="description" content="A collection on some of my favorite talks by people in the web industry.">
+  <title>Looping scroll | Vincent Orback - Web designer and developer in Stockholm</title>
+  <meta name="description" content="How to develop a continous inifinite looping scroll technique on a website using javascript.">
+  <meta name="keywords" content="web designer, designer, developer, wordpress, portfolio">
 
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css?cache=why">
+
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
 
-  <meta name="theme-color" content="#f39c12">
+  <meta name="theme-color" content="#1eb0e9">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
   <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
   <!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
 
-  <link rel="canonical" href="http://vincentorback.se/blog/favorite-talks/">
+  <link rel="canonical" href="http://vincentorback.se/blog/looping-scroll">
   <link rel="author" href="https://plus.google.com/+VincentorbackSe">
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Some of my favorite talks - Vincent Orback">
-  <meta property="og:description" content="A collection on some of my favorite talks by people in the web industry.">
-  <meta property="og:url" content="http://vincentorback.se/blog/favorite-talks/">
+  <meta property="og:title" content="Looping scroll - Vincent Orback">
+  <meta property="og:description" content="How to develop a continous inifinite looping scroll technique on a website using javascript.">
+  <meta property="og:url" content="http://vincentorback.se/blog/looping-scroll">
   <meta property="og:site_name" content="Vincent Orback">
   <meta property="og:image" content="http://d3dx0f1ge67l9j.cloudfront.net/images/screenshot.jpg">
 </head>
-<body id="page-post" class="Site-body Page-post Page-blog Post--favorite-talks" onunload="" itemscope itemtype="http://schema.org/BlogPosting">
+<body id="page-post" class="Site-body Page-post Page-blog Post--loop-scroll" onunload="" itemscope itemtype="http://schema.org/BlogPosting">
 
 <div class="u-wrapper--L">
   <nav id="navigation" class="Navigation" role="navigation">
@@ -51,8 +53,8 @@
       <h2>Web designer and developer</h2>
     </a>
     <div class="Sitehead-inner">
-      <h3 class="Sitehead-title" itemprop="name headline">Some of my favorite talks</h3>
-      <p itemprop="datePublished">May 29, 2015</p>
+      <h3 class="Sitehead-title" itemprop="name headline">How to make a looping scroll</h3>
+      <time itemprop="datePublished" datetime="2015-08-19T14:15:00+00:00">August 19, 2015</time>
     </div>
   </div>
   <button class="Navigation-toggle js-navToggle" type="button" role="button" aria-controls="navigation" aria-haspopup="true" tabindex="2">Menu</button>
@@ -61,25 +63,26 @@
 <main class="Blog Site-main" role="main">
 
   <article class="Blog-entry Entry" itemprop="articleBody">
+
     <div class="u-wrapper--S">
-      <p>The following is a list of some of my favorite talks. The plan is to keep this post updated so check back later when you’re hungry for more. Also, please leave a comment below with YOUR favorite talks!</p>
-        
-      <h2>On the industry</h2>
-      <ul>
-        <li><a href="https://www.youtube.com/watch?v=17rkSdkc5TI">An End to Negativity - Chris Williams - JSConfEU 2011</a></li>
-        <li><a href="https://www.youtube.com/watch?v=jVkLVRt6c1U">F*ck you pay me - Mike Monteiro - CreativeMornings 2011</a></li>
-      </ul>
-
-      <h2>Design</h2>
-      <ul>
-        <li><a href="https://www.youtube.com/watch?v=J0ucEt-La9w">How Designers Destroyed the World - Mike Monteiro - UX Lx 2014</a></li>
-      </ul>
-
-      <h2>Development</h2>
-      <ul>
-        <li><a href="https://www.youtube.com/watch?v=L8w3v9m6G04">Thinking beyond “Scalable CSS” - Nicolas Gallagher - dotCSS 2014</a></li>
-      </ul>
+      <p>I had an idea for a client project that never made it into production, but I just had to build a small Javascript proof of concept anyways :)</p>
+      <p>These <a href="http://unfold.no">looping</a> scroll <a href="http://andrevv.com">websites</a> seems to be poping up more often now I get the feeling that we might just be in for a new trend in the measuers of parallax trend we’ve seen and grown tired of.</p>
+      <p>I made a small demo you can check out below. Get scrolling!</p>
     </div>
+
+    <div class="Entry-section">
+      <div class="u-wrapper--XL">
+        <p data-height="800" data-theme-id="12419" data-slug-hash="zxRyzj" data-default-tab="result" data-user="vincentorback" class='codepen'>See the Pen <a href='http://codepen.io/vincentorback/pen/zxRyzj/'>Scroll loop</a> by Vincent Orback (<a href='http://codepen.io/vincentorback'>@vincentorback</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+      </div>
+    </div>
+
+    <div class="u-wrapper--S">
+      <p>The trick is to have a set of cloned elements on the bottom of the path which will make the jump to the top look seemless when you reach the bottom.</p>
+      <p>Test the demo <a href="http://codepen.io/vincentorback/full/zxRyzj/">in fullscreen here</a> and of course, <a href="http://codepen.io/vincentorback/pen/zxRyzj/">browse the code here</a>.</p>
+      <p>If you’ve seen any more websites using this technique, please leave a link in the comments! Also, report a bug if you’ve seen one :)</p>
+    </div>
+
   </article>
 
   <section class="Comments js-comments u-wrapper--S test">
@@ -88,8 +91,7 @@
   </section>
 
   <nav class="PageNav" role="navigation">
-    <a href="/blog/looping-scroll" class="PageNav-item PageNav-item--prev js-transition" rel="next"><span>Previous post: </span><strong>How to make a looping scroll</strong><svg role="presentation"><use xlink:href="#arrow-left"></use></svg></a>
-    <a href="/blog/how-to-honor-the-dnt-setting/" class="PageNav-item PageNav-item--next js-transition" rel="next"><span>Next post: </span><strong>How to honor the DNT setting</strong><svg role="presentation"><use xlink:href="#arrow-right"></use></svg></a>
+    <a href="/blog/favorite-talks/" class="PageNav-item PageNav-item--next js-transition" rel="next"><span>Next post: </span><strong>Some of my favorite talks</strong><svg role="presentation"><use xlink:href="#arrow-right"></use></svg></a>
   </nav>
 
 </main>
@@ -99,7 +101,7 @@
     <a class="name" href="http://vincentorback.se" itemprop="url"><div itemprop="name">Vincent Orback</div></a>
     <div class="jobtitle" itemprop="jobtitle">Web designer and developer</div>
     <div class="address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-      <div><span itemprop="addressLocality">Stockholm</span></div><div itemprop="addressCountry">, Sweden</div>
+      <div><span itemprop="addressLocality">Stockholm</span></div><span><!-- htmlmin:ignore -->, <!-- htmlmin:ignore --></span></span><div itemprop="addressCountry">Sweden</div>
     </div>
     <div class="email" itemprop="email"><a href="mailto:vorback@gmail.com" target="_blank" rel="me">vorback@gmail.com</a></div>
   </div>
@@ -113,10 +115,10 @@
 
 <!--[if gt IE 8]><!-->
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-
+<!--
   <symbol id="arrow-left" viewBox="0 0 28.375 27.875">
     <path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-miterlimit="10" d="M3.417 14.353h20.95m-20.95 0l8.47-8.472m-8.47 8.52l8.47 8.473"></path>
-  </symbol>
+  </symbol> -->
 
   <symbol id="arrow-right" viewBox="0 0 28.375 27.875">
     <path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-miterlimit="10" d="M24.078 14.4h-20.951m20.951 0l-8.471 8.472m8.471-8.519l-8.471-8.472"></path>

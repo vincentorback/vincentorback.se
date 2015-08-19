@@ -51,6 +51,7 @@
         orange: '#f39c12'
       };
       vincent.postColors = {
+        'loop-scroll': vincent.colors.blue,
         'favorite-talks': vincent.colors.orange,
         'honor-dnt': vincent.colors.pink,
         'i-commit-from-my-heart': vincent.colors.yellow,
