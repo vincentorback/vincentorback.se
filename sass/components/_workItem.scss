@@ -14,6 +14,8 @@
   border-bottom-color: #fff;
 
   height: 800px;
+  height: 90vh;
+  min-height: 500px;
 
   @include respond-max(800px) {
     background-position: 50% 50%;
@@ -24,11 +26,19 @@
   }
 
   @media (min-height: 1000px) {
-    height: 900px;
+    height: 950px;
+    height: 90vh;
+  }
+  @media (min-height: 1100px) {
+    height: 1050px;
+    height: 90vh;
   }
   @media (min-height: 1200px) {
-    height: 1100px;
+    height: 1150px;
+    height: 90vh;
   }
+
+
 }
 
 
@@ -107,8 +117,10 @@
     }
     a {
       margin: 0 .5em 1em 0;
-      font-size: .7em;
+      font-size: .8em;
       border-width: 1px;
+      letter-spacing: 0;
+      padding: .45em 1.2em;
     }
   }
 }
@@ -120,6 +132,6 @@
     font-size: 3em;
   }
   @include respond-max(400px) {
-    font-size: 2em;
+    font-size: 2.2em;
   }
 }

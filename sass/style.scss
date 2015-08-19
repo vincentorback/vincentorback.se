@@ -4,13 +4,10 @@
 @import "functions";
 @import "fonts";
 
-/** Utlilities */
-@import "utilities/layout";
-@import "utilities/text";
-@import "utilities/helpers";
+/* Reset */
+@import "partials/normalize";
 
 /** Partials */
-@import "partials/normalize";
 @import "partials/animations";
 @import "partials/base";
 @import "partials/typography";
@@ -40,3 +37,8 @@
 
 /** Print styles */
 @import "partials/print";
+
+/** Utlilities */
+@import "utilities/layout";
+@import "utilities/text";
+@import "utilities/misc";

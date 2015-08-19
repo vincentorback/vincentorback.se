@@ -169,8 +169,8 @@
   color: #999;
   cursor: text;
 
-  padding: .3em .3em 0 .3em;
   background: #fff;
+  padding: .5em .3em 0 .3em;
 
   will-change: transform;
   transition: color 300ms ease, transform 250ms ease;
@@ -178,7 +178,7 @@
   pointer-events: none;
 
   &.is-active {
-    transform: translate3d(0, -2em, 0);
+    transform: translate3d(0, -2.1em, 0);
     color: $blue;
 
     max-width: 94%;

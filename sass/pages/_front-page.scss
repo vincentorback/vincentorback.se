@@ -28,28 +28,28 @@
 
   .Sitehead-subtitle {
     font-size: 1.8em;
+  }
 
-    a {
-      position: absolute;
-      left: 0;
-      top: 130%;
+  .Sitehead-link {
+    position: absolute;
+    left: 0;
+    top: 130%;
 
-      display: inline-block;
-      margin-top: 2em;
-      padding-right: 1em;
+    display: inline-block;
+    margin-top: 2em;
+    padding-right: 1em;
 
-      font-size: .6em;
-      opacity: 0;
-    }
+    font-size: .6em;
+    opacity: 0;
+  }
 
-    svg {
-      display: inline-block;
-      position: relative;
-      top: 3px;
-      left: 3px;
-      width: 18px;
-      height: 18px;
-    }
+  .Sitehead-link svg {
+    display: inline-block;
+    position: relative;
+    top: 3px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
   }
 
   .Site-main > div,
@@ -62,7 +62,7 @@
     .Sitehead-inner {
       animation: fadeinBottom 700ms $nice-easing 1;
     }
-    .Sitehead-subtitle a {
+    .Sitehead-link {
       animation: fadeinBottom 1000ms ease 1;
       animation-delay: 700ms;
       animation-fill-mode:forwards;
@@ -91,7 +91,7 @@
     .Sitehead-subtitle {
       font-size: 1.2em;
     }
-    .Sitehead-subtitle a {
+    .Sitehead-link {
       display: none;
     }
   }
