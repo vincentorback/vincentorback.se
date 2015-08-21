@@ -252,7 +252,7 @@
 
           coverSize = viewport.width > 1200 ? 'large' : 'medium';
 
-          cover = Modernizr.webp ? vincent.amazon + '/images/' + page + '/header-' + coverSize + '.jpg' : vincent.amazon + '/webp/' + page + '/header-' + coverSize + '.webp';
+          cover = vincent.amazon + '/images/' + page + '/header-' + coverSize + '.jpg';
         }
 
         if (cover) {

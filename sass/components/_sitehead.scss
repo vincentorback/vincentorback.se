@@ -47,28 +47,19 @@
   @if index(("about", "blog", "contact"), #{nth($page-names, $i)}) {
 
     @media (max-width: 600px) {
-      html.webp .Page-#{nth($page-names, $i)} .Sitehead-cover {
-        background-image: url("#{$webp}/#{nth($page-names, $i)}/header-small.webp");
-      }
-      html.no-webp .Page-#{nth($page-names, $i)} .Sitehead-cover {
+      .Page-#{nth($page-names, $i)} .Sitehead-cover {
         background-image: url("#{$images}/#{nth($page-names, $i)}/header-small.jpg");
       }
     }
 
     @media (min-width: 601px) {
-      html.webp .Page-#{nth($page-names, $i)} .Sitehead-cover {
-        background-image: url("#{$webp}/#{nth($page-names, $i)}/header-medium.webp");
-      }
-      html.no-webp .Page-#{nth($page-names, $i)} .Sitehead-cover {
+      .Page-#{nth($page-names, $i)} .Sitehead-cover {
         background-image: url("#{$images}/#{nth($page-names, $i)}/header-medium.jpg");
       }
     }
 
     @media (min-width: 1200px) {
-      html.webp .Page-#{nth($page-names, $i)} .Sitehead-cover {
-        background-image: url("#{$webp}/#{nth($page-names, $i)}/header-large.webp");
-      }
-      html.no-webp .Page-#{nth($page-names, $i)} .Sitehead-cover {
+      .Page-#{nth($page-names, $i)} .Sitehead-cover {
         background-image: url("#{$images}/#{nth($page-names, $i)}/header-large.jpg");
       }
     }

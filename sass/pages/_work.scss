@@ -303,30 +303,15 @@
     } @else {
 
       @media (max-width: 600px) {
-        .webp & {
-          background-image: url("#{$webp}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb-small.webp");
-        }
-        .no-webp & {
-          background-image: url("#{$images}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb-small.jpg");
-        }
+        background-image: url("#{$images}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb-small.jpg");
       }
 
       @media (min-width: 601px) {
-        .webp & {
-          background-image: url("#{$webp}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb-medium.webp");
-        }
-        .no-webp & {
-          background-image: url("#{$images}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb-medium.jpg");
-        }
+        background-image: url("#{$images}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb-medium.jpg");
       }
 
       @media (min-width: 1200px) {
-        .webp & {
-          background-image: url("#{$webp}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb-large.webp");
-        }
-        .no-webp & {
-          background-image: url("#{$images}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb-large.jpg");
-        }
+        background-image: url("#{$images}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb-large.jpg");
       }
 
     }
