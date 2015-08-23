@@ -1,6 +1,5 @@
 var path = require('path');
 
-
 module.exports = function (grunt) {
 
   function htmlBanner() {
@@ -41,18 +40,32 @@ module.exports = function (grunt) {
         files: {
           src: ['css/style.css', 'js/main-min.js']
         }
-      },
-      html: {
-        options: {
-          position: 'top',
-          banner: htmlBanner(),
-          linebreak: true
-        },
-        files: {
-          src: ['build/**/*.html']
-        }
       }
     },
+
+    replace: {
+      dist: {
+        options: {
+          usePrefix: false,
+          patterns: [
+            {
+              match: /<!doctype html>/g,
+              replacement: function () {
+                return '<!doctype html>\n' + htmlBanner() + '\n';
+              }
+            }
+          ]
+        },
+        files: [
+          {
+            expand: true,
+            src: ['build/**/*.html']
+          }
+        ]
+      }
+    },
+
+
 
     sass: {
       dist: {
@@ -198,7 +211,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('css', ['sass', 'autoprefixer']);
 
-  grunt.registerTask('deploy', ['htmlmin', 'css', 'uglify', 'usebanner']);
+  grunt.registerTask('deploy', ['htmlmin', 'css', 'uglify', 'usebanner', 'replace']);
 
   grunt.registerTask('images', ['responsive_images:test', 'webp']);
 
