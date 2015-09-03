@@ -65,8 +65,6 @@ module.exports = function (grunt) {
       }
     },
 
-
-
     sass: {
       dist: {
         options: {
@@ -90,7 +88,6 @@ module.exports = function (grunt) {
 
     uglify: {
       options: {
-        mangel: true,
         screwIE8: true,
         report: 'min'
       },
@@ -114,8 +111,10 @@ module.exports = function (grunt) {
         options: {
           removeComments: true,
           collapseWhitespace: true,
+          // lint: true,
           minifyJS: true,
           minifyCSS: true,
+          minifyURLs: true,
           removeScriptTypeAttributes: true,
           removeStyleLinkTypeAttributes: true
         },
@@ -201,18 +200,29 @@ module.exports = function (grunt) {
           ]
         }]
       }
+    },
+
+    watch: {
+      scripts: {
+        files: 'js/main.js',
+        tasks: ['uglify']
+      },
+      styles: {
+        files: 'sass/**/*.scss',
+        tasks: ['css']
+      }
     }
 
   });
 
   require('load-grunt-tasks')(grunt);
 
-  grunt.registerTask('default', ['htmlmin', 'usebanner']);
+  grunt.registerTask('default', ['css', 'uglify', 'watch']);
 
   grunt.registerTask('css', ['sass', 'autoprefixer']);
 
-  grunt.registerTask('deploy', ['htmlmin', 'css', 'uglify', 'usebanner', 'replace']);
-
   grunt.registerTask('images', ['responsive_images:test', 'webp']);
+
+  grunt.registerTask('deploy', ['htmlmin', 'css', 'uglify', 'usebanner', 'replace']);
 
 };
