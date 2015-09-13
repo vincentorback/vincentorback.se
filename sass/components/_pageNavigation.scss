@@ -1,7 +1,7 @@
 .PageNav {
   position: relative;
   z-index: 2;
-  
+
   width: 95%;
   margin: 0 auto;
   padding: 10% 0;
@@ -16,13 +16,13 @@
   position: relative;
   display: inline-block;
 
-  margin: 0 3em;
+  margin: 0 3em 1em;
   padding: 1em 2em;
-  
+
   border: 2px solid $text;
   border-radius: 50px;
   transition: background 200ms ease, padding 200ms ease, color 200ms ease;
-  
+
   font-size: 1.2em;
 
   strong {
@@ -33,65 +33,81 @@
     background: $text;
     color: #fff;
   }
+}
 
-  svg {
-    position: absolute;
-    top: 21px;
-    width: 20px;
-    height: 20px;
-  }
+.PageNav-itemSymbol {
+  position: absolute;
+  top: 21px;
+  width: 20px;
+  height: 20px;
+}
 
-  @include respond-max(800px) {
+
+
+@include respond-max(800px) {
+  .PageNav-item {
     margin: .5em 1em;
     padding: .7em 2em;
     font-size: 1em;
+    border-width: 1px;
     span {
       display: none;
     }
-    svg {
-      top: 15px;
-      width: 16px;
-      height: 16px;
-    }
   }
 
-  @include respond-max(800px) {
-    border-width: 1px;
+  .PageNav-itemSymbol {
+    top: 15px;
+    width: 16px;
+    height: 16px;
   }
 }
+
 
 .PageNav-item--prev {
   padding-left: 3.2em;
-  svg {
-    left: 22px;
-  }
-  @include respond-max(800px) {
+}
+.PageNav-item--prev .PageNav-itemSymbol {
+  left: 22px;
+}
+
+@include respond-max(800px) {
+  .PageNav-item--prev {
     padding-left: 3.5em;
-    svg {
-      left: 24px;
-    }
   }
-  @include respond-min(750px) {
-    &:hover {
-      padding-left: 4em;
-    }
+
+  .PageNav-item--prev .PageNav-itemSymbol {
+    left: 24px;
   }
 }
 
+@include respond-min(750px) {
+  .PageNav-item--prev:hover {
+    padding-left: 4em;
+  }
+}
+
+
+
+
+
 .PageNav-item--next {
   padding-right: 3.2em;
-  svg {
-    right: 22px;
-  }
-  @include respond-max(800px) {
+}
+.PageNav-item--next  .PageNav-itemSymbol {
+  right: 22px;
+}
+
+@include respond-max(800px) {
+  .PageNav-item--next {
     padding-right: 3.5em;
-    svg {
-      right: 24px;
-    }
   }
-  @include respond-min(750px) {
-    &:hover {
-      padding-right: 4em;
-    }
+  .PageNav-item--next .PageNav-itemSymbol {
+    right: 24px;
+  }
+}
+
+@include respond-min(750px) {
+  .PageNav-item--next:hover {
+    padding-right: 4em;
   }
 }

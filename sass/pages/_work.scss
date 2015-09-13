@@ -15,18 +15,22 @@
 
     top: 60%;
     transform: translateY(-50%);
-    a {
-      display: inline-block;
-      padding: .65em 0;
-      font-size: 1.1em;
-      letter-spacing: 3px;
-    }
-
-    .no-csstransforms & {
-      top: 30%;
-    }
-
   }
+
+
+  .Sitehead-link {
+    position: relative;
+    display: inline-block;
+    padding: .65em 0 .35em;
+    font-size: 1.1em;
+    letter-spacing: 3px;
+    @include hoverLink(#fff);
+  }
+
+  .no-csstransforms .Sitehead-link {
+    top: 30%;
+  }
+
 
   .Sitehead-title {
     animation: none !important;
@@ -41,7 +45,7 @@
     .Sitehead-logo, .Navigation {
       animation: fadeinTop 1000ms $nice-easing 1;
     }
-    .Sitehead-inner a {
+    .Sitehead-link {
       animation: fadein 1000ms $nice-easing 1;
     }
   }
