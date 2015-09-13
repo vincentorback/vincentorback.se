@@ -86,7 +86,7 @@
 
 .Work {
   position: relative;
-  padding-top: 5%;
+  padding-top: $section-spacing;
 
   .u-wrapper {
     max-width: 700px;
@@ -119,12 +119,17 @@
 
 .Work-image {
   display: block;
-  padding: 10% 0;
+  padding: $section-spacing 0;
   img {
     margin: 0 auto;
     width: auto;
     max-height: 95%;
     max-height: 95vmin;
+  }
+}
+@include respond-max(800px) {
+  .Work-image {
+    padding: $section-spacing-mobile 0;
   }
 }
 
@@ -135,7 +140,12 @@
 
 
 .Work-pushdown {
-  padding-bottom: 10%; // Push down content
+  padding-bottom: $section-spacing; // Push down content
+}
+@include respond-max(800px) {
+  .Work-pushdown {
+    padding-bottom: $section-spacing-mobile;
+  }
 }
 
 
@@ -144,7 +154,7 @@
 
 .Work-visit {
   margin: 0 auto;
-  padding-top: 5%;
+  padding-top: $section-spacing;
   text-align: center;
    > a {
     display: inline-block;
@@ -164,6 +174,9 @@
     &:hover {
       transform: scale(1.08);
     }
+  }
+  @include respond-max(800px) {
+    padding-top: $section-spacing-mobile;
   }
   @include respond-max (600px) {
     > a {
@@ -266,13 +279,19 @@
 }
 
 .Work-wrapper {
-  padding: 10% 0;
+  padding: $section-spacing 0;
 
   blockquote {
     width: 90%;
     max-width: 900px;
     margin: 0 auto;
     color: #fff;
+  }
+}
+
+@include respond-max(800px) {
+  .Work-wrapper {
+    padding: $section-spacing-mobile 0;
   }
 }
 
@@ -335,6 +354,11 @@
     }
 
     .Work--#{nth($work-names, $i)} {
+
+      .Sitehead-link:after {
+        background-color: $joy;
+      }
+
       .Navigation a {
         &:after {
           background-color: $joy;
