@@ -70,7 +70,7 @@
       <p>I made a small demo you can check out below. Get scrolling!</p>
     </div>
 
-    <div class="Entry-section">
+    <div class="Entry-section" id="demo-iframe">
       <div class="u-wrapper--XL">
         <p data-height="800" data-theme-id="12419" data-slug-hash="zxRyzj" data-default-tab="result" data-user="vincentorback" class='codepen'>See the Pen <a href='http://codepen.io/vincentorback/pen/zxRyzj/'>Scroll loop</a> by Vincent Orback (<a href='http://codepen.io/vincentorback'>@vincentorback</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
         <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
@@ -141,6 +141,12 @@
 
 <script src="/js/vendor/prism-min.js"></script>
 <script src="/js/main-min.js" async></script>
+<script>
+  if (Modernizr.touchevents === true) {
+    var demoIframe = document.getElementById('demo-iframe');
+    demoIframe.parentNode.removeChild(demoIframe);
+  }
+</script>
 <script>
 if (!(navigator.doNotTrack === 'yes' || navigator.doNotTrack === '1' || navigator.msDoNotTrack === '1')) {
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
