@@ -907,7 +907,7 @@
       var href,
         value,
         location,
-        DoNotTrack = window.navigator.doNotTrack === 'yes' || window.navigator.doNotTrack === '1' || window.navigator.msDoNotTrack === '1';
+        DoNotTrack = window.doNotTrack === '1' || window.doNotTrack === 'yes' || navigator.doNotTrack === 'yes' || navigator.doNotTrack === '1' || navigator.msDoNotTrack === '1';
 
       if (DoNotTrack) {
         return;
