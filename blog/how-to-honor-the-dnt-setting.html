@@ -68,9 +68,10 @@
       <p>If you want people to be able to decide what they do online should or shouldn’t be monitored, use this code-snippet to see if a DNT-setting is turned on in your code.</p>
     </div>
 
-<pre class="Entry-code Code language-javascript"><code>var DoNotTrack = navigator.doNotTrack === 'yes' 
-              || navigator.doNotTrack === '1'
-            || navigator.msDoNotTrack === '1';
+<pre class="Entry-code Code language-javascript"><code>var DoNotTrack = navigator.doNotTrack === 'yes'
+  || navigator.doNotTrack === '1'
+  || window.doNotTrack === '1'
+  || navigator.msDoNotTrack === '1'; // IE9 and IE10
 
 if (!DoNotTrack) {
 // Do your tracking here...
@@ -79,6 +80,12 @@ if (!DoNotTrack) {
 
     <div class="u-wrapper--S">
       <p>Services like Google Analytics doesn’t honor the DNT fully so be nice and check with your user before tracking them!</p>
+    </div>
+    <div class="u-wrapper--S">
+      <h2>Updates</h2>
+      <ul>
+        <li><strong>18 sep 2015</strong> - Added window.doNotTrack to support Safari 7.1.3+ and IE 11</li>
+      </ul>
     </div>
   </article>
 
@@ -135,7 +142,7 @@ if (!DoNotTrack) {
 <script src="/js/vendor/prism-min.js"></script>
 <script src="/js/main-min.js" async></script>
 <script>
-if (!(navigator.doNotTrack === 'yes' || navigator.doNotTrack === '1' || navigator.msDoNotTrack === '1')) {
+if (!(window.doNotTrack === '1' || window.doNotTrack === 'yes' || navigator.doNotTrack === 'yes' || navigator.doNotTrack === '1' || navigator.msDoNotTrack === '1')) {
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
