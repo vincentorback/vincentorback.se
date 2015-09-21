@@ -78,7 +78,7 @@ a {
     font-size: 1em;
   }
   blockquote {
-    margin: 10% -2em;
+    margin: $section-spacing -2em;
     font-size: 1.4em;
     line-height: 1.5;
     color: #666;
@@ -108,7 +108,7 @@ a {
   @include respond-max(800px) {
     font-size: 1em;
     blockquote {
-      margin: 10% 0;
+      margin: $section-spacing-mobile 0;
     }
     p {
       margin-bottom: 1.5rem;

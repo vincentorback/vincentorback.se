@@ -33,7 +33,7 @@ $post-colors: ($blue, $orange, $pink,  $green, $yellow, $blue, $red);
     .col {
       width: 50%;
       float: left;
-      margin: 5% 0;
+      margin: $section-spacing 0;
 
       color: #999;
       font-style: italic;
