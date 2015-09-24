@@ -44,7 +44,7 @@
         pink: '#ff7fa5',
         yellow: '#f1c40f',
         blue: '#1eb0e9',
-        red: '#ff4e00',
+        red: '#ff4136',
         green: '#2ecc71',
         white: '#fff',
         black: '#000',
