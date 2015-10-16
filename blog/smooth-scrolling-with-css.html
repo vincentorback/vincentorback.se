@@ -85,7 +85,7 @@ window.scrollTo({
       <p><b>TL;DR</b><br>I’m animating the whole body using transform. Here’s a <a href="http://cdpn.io/FCpBo">Demo</a></p>
       <br>
 
-      <p>Recently, I decided to completely remove jQuery from my website (my <a href="http://v3.vincentorback.se/">old website</a>). Not just because it would be nice to loose another request and some bytes but because I wanted to test my vanilla Javascript skills.</p>
+      <p>Recently, I decided to completely remove jQuery from my website (my <a href="http://v3.vincentorback.se/">old website</a>). Not because it would be nice to loose another request and some bytes but because I wanted to test my vanilla Javascript skills.</p>
 
       <p>Now my site isn’t a very Javascript heavy site. The main functions are:</p>
       <ol>
@@ -95,7 +95,7 @@ window.scrollTo({
 
       <p>Before I “turned vanilla”, I also had a smooth scrolling link on the front page. Now animation scroll is easy with jQuery, but with pure Javascript it can be a lot harder.</p>
 
-      <p>I thought, maybe I can do it with CSS? That sounds cool! The code below pulls the body upwards and out of the viewport using translate3d transforming. Just as you click the scroll button, a transition class is added to the body making the body move upwards with the chosen transition duration and timing-function (easing). Then after that transition time, the transform CSS is removed setting the body back to it’s original state and a in a blink of an eye, we scroll down to the targeted element.</p>
+      <p>I thought, maybe I can do it with CSS? That sounds cool! The code below pulls the body upwards and out of the viewport using translate3d transforming. As you click the scroll button, a transition class is added to the body making the body move upwards with the chosen transition duration and timing-function (easing). Then after that transition time, the transform CSS is removed setting the body back to it’s original state and a in a blink of an eye, we scroll down to the targeted element.</p>
     </div>
 
 <pre class="Entry-code Code language-javascript"><code>var targetOffset,

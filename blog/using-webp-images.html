@@ -66,9 +66,9 @@
     <div class="u-wrapper--S">
       <p>Are you optimizing your images? You better be! But if not, here are some tips to get you started. Plus some easy guidelines on how to get started with using WebP images, a newish image format from Google.</p>
 
-      <p>You might be working hard on reducing your CSS or JS files by writing more compact functions and mushing the files together super hard. But if you look at the bytes you are saving, it doesn’t compare to the size of just on image on your page.</p>
+      <p>You might be working hard on reducing your CSS or JS files by writing more compact functions and mushing the files together super hard. But if you look at the bytes you are saving, it doesn’t compare to the size of just one image on your page.</p>
 
-      <p>If you’re not already optimizing your images I recommend you start doing it right now! Like now! Go! Run! Do it! Skip this post! Just fix your images! Download <a href="http://imageoptim.com/">imageoptim</a> and drag and drop your images into it and voilà! Your images reduce in size without any visual impairment.</p>
+      <p>If you’re not already optimizing your images I recommend you start doing it right now! Like now! Go! Run! Do it! Skip this post! Fix your images! Download <a href="http://imageoptim.com/">imageoptim</a> and drag and drop your images into it and voilà! Your images reduce in size without any visual impairment.</p>
 
       <p>If you’re using Grunt, here are two great Grunt tasks, <a href="https://github.com/gruntjs/grunt-contrib-imagemin">imagemin</a> and for svg files there is <a href="https://github.com/sindresorhus/grunt-svgmin">svgmin</a>. I use both of these are they have saved me many mega bytes over a big span of projects.</p>
 
@@ -115,7 +115,7 @@
       <h2>How do I start?</h2>
       <p>First of all you need to convert your old JPGs and PNGS to the Webp format. I use this Grunt task <a href="https://github.com/somerandomdude/grunt-webp">grunt-webp</a>. It’s a super easy way to automate my workflow. You can also download more tools like plugins for Photoshop and Gimp over at <a href="https://developers.google.com/speed/webp/docs/using">Google</a>.</p>
       <br>
-      <p>To render your images on your page there are some different approaches. The easiest way, I feel, is to use the .htaccess technique. Just paste this code below into your .htaccess and when your server requests an image, it will first see if there’s a WebP image in the same search path with the same name and use it if the users browser supports it.</p>
+      <p>To render your images on your page there are some different approaches. The easiest way, I feel, is to use the .htaccess technique. Paste this code below into your .htaccess and when your server requests an image, it will first see if there’s a WebP image in the same search path with the same name and use it if the users browser supports it.</p>
     </div>
 
 <pre class="Entry-code Code language-clike"><code>&lt;IfModule mod_rewrite.c&gt;
