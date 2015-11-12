@@ -24,7 +24,8 @@
     padding: .65em 0 .35em;
     font-size: 1.1em;
     letter-spacing: 3px;
-    @include hoverLink(#fff);
+    @include hoverLink();
+    min-height: 45px;
   }
 
   .no-csstransforms .Sitehead-link {
@@ -354,16 +355,6 @@
     }
 
     .Work--#{nth($work-names, $i)} {
-
-      .Sitehead-link:after {
-        background-color: $joy;
-      }
-
-      .Navigation a {
-        &:after {
-          background-color: $joy;
-        }
-      }
 
       .Navigation-toggle {
         border-color: $joy;

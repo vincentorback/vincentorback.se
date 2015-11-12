@@ -6,7 +6,7 @@
 
   var doc = window.document,
     docElem = doc.documentElement,
-    isSmoothScrollSupported = 'scrollBehavior' in document.documentElement.style;
+    isSmoothScrollSupported = docElem.style.hasOwnProperty('scrollBehavior');
 
   function getViewport() {
     return {
@@ -121,18 +121,18 @@
           return;
         }
 
-        $target = this.getAttribute('data-scrolltarget') ? $(this.getAttribute('data-scrolltarget')) : $(this.getAttribute('href'));
+        $target = e.currentTarget.getAttribute('data-scrolltarget') ? $(e.currentTarget.getAttribute('data-scrolltarget')) : $(e.currentTarget.getAttribute('href'));
 
         if ($target.length === 0) {
           return;
         }
 
-        if (this.getAttribute('data-scrolloffset')) {
-          scrollOffset = parseInt(this.getAttribute('data-scrolloffset'), 10);
+        if (e.currentTarget.getAttribute('data-scrolloffset')) {
+          scrollOffset = parseInt(e.currentTarget.getAttribute('data-scrolloffset'), 10);
         } else {
           scrollOffset = 2;
         }
-        
+
         if (isSmoothScrollSupported) {
           window.scrollTo({
             'behavior': 'smooth',
@@ -143,7 +143,7 @@
           $target
             .velocity('scroll', {
               offset: scrollOffset,
-              duration: 1200,
+              duration: 800,
               easing: vincent.scrollEasing
             });
         }
@@ -183,24 +183,42 @@
           return;
         }
 
-        href = this.getAttribute('href');
+        href = e.currentTarget.getAttribute('href');
 
-        $body
-          .addClass('disable-hover')
-          .velocity({
-            opacity: 0
-          }, {
-            duration: 400,
-            easing: 'ease',
-            queue: false
-          })
-          .velocity('scroll', {
-            duration: 700,
-            easing: vincent.scrollEasing,
-            complete: function () {
-              window.location = href;
-            }
+        $body.addClass('disable-hover');
+
+        if (isSmoothScrollSupported) {
+          $body
+            .velocity({
+              opacity: [0, 1]
+            }, {
+              duration: 400,
+              easing: 'ease',
+              queue: false
+            });
+
+          window.scrollTo({
+            'behavior': 'smooth',
+            'left': 0,
+            'top': 0
           });
+        } else {
+          $body
+            .velocity({
+              opacity: [0, 1]
+            }, {
+              duration: 400,
+              easing: 'ease',
+              queue: false
+            })
+            .velocity('scroll', {
+              duration: 700,
+              easing: vincent.scrollEasing,
+              complete: function () {
+                window.location = href;
+              }
+            });
+        }
 
         e.preventDefault();
       });
@@ -237,7 +255,7 @@
           delay = 100;
         }
 
-        href = this.getAttribute('href');
+        href = e.currentTarget.getAttribute('href');
         slug = e.currentTarget.getAttribute('data-slug');
 
         if (slug && href.indexOf('/blog/') > -1) {
@@ -257,7 +275,7 @@
 
         if (cover) {
           bgCover = doc.createElement('div');
-          bgCover.style.cssText = 'position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url(' + cover + '); background-repeat: no-repeat; background-position: 50% 50%; background-size: cover; opacity: 0; z-index: -1;';
+          bgCover.style.cssText = 'transform: translateZ(0); position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url(' + cover + '); background-repeat: no-repeat; background-position: 50% 50%; background-size: cover; opacity: 0; z-index: -1;';
           if (page === 'contact') {
             bgCover.style.backgroundPosition = '50% 0';
           } else if (page === 'blog') {
@@ -281,7 +299,7 @@
         }
 
         $main.velocity({
-          opacity: 0
+          opacity: [0, 1]
         }, {
           duration: 400,
           easing: 'ease'
@@ -290,7 +308,7 @@
         $siteHead
           .append(bgCover)
           .find('.Sitehead-inner').velocity({
-            opacity: 0,
+            opacity: [0, 1],
             translateY: '150%'
           }, {
             duration: 400,
@@ -337,7 +355,7 @@
 
         if (hasCover) {
           $cover.velocity({
-            opacity: 0
+            opacity: [0, 1]
           }, {
             duration: 400,
             easing: 'ease',
@@ -347,7 +365,7 @@
 
         if (cover) {
           $(bgCover).velocity({
-            opacity: 1
+            opacity: [1, 0]
           }, {
             duration: 400,
             easing: 'ease',
@@ -386,14 +404,14 @@
 
         winHeight = getViewport().height;
 
-        href = this.getAttribute('href');
+        href = e.currentTarget.getAttribute('href');
         page = href.replace('/', '');
         page = page.replace('/', '');
 
         $body.addClass('disable-hover');
 
         $main.velocity({
-          opacity: 0
+          opacity: [0, 1]
         }, {
           duration: 400,
           easing: 'ease'
@@ -434,7 +452,7 @@
 
         if (hasCover) {
           $cover.velocity({
-            opacity: 0
+            opacity: [0, 1]
           }, {
             duration: 400,
             easing: 'ease'
@@ -460,7 +478,13 @@
         $main = $body.find('.Site-main'),
         $footer = $body.find('.Sitefooter'),
         count = 0,
-        transDone = false;
+        transDone = false,
+        workTitles = $body.find('.WorkItem-title'),
+        i = 0;
+
+      for (i; i < workTitles.length; i += 1) {
+        workTitles[i].setAttribute('data-height', workTitles[i].offsetHeight);
+      }
 
       $body.find('.js-transitionWork').on('click', function (e) {
         if (e.metaKey || e.ctrlKey) {
@@ -469,9 +493,9 @@
 
         winHeight = getViewport().height;
 
-        target = this.getAttribute('data-target');
+        target = e.currentTarget.getAttribute('data-target');
         $target = $(target);
-        href = this.getAttribute('href');
+        href = e.currentTarget.getAttribute('href');
 
         // Fade out the main content
         $body
@@ -480,12 +504,20 @@
 
         $main.css('background', vincent.colors.white);
 
-        $docEl.stop().animate({
-          scrollTop: $target.offset().top
-        }, 400);
+        if (isSmoothScrollSupported) {
+          window.scrollTo({
+            'behavior': 'smooth',
+            'left': 0,
+            'top': $target.offset().top
+          });
+        } else {
+          $docEl.stop().animate({
+            scrollTop: $target.offset().top
+          }, 400);
+        }
 
         $target.next('.WorkItem').velocity({
-          opacity: 0
+          opacity: [0, 1]
         }, {
           duration: 300,
           easing: 'ease'
@@ -494,58 +526,37 @@
         $target.velocity({
           height: (winHeight * 0.6) + 'px'
         }, {
-          duration: 500,
+          duration: 450,
           easing: 'ease',
           complete: function () {
             transDone = true;
           }
         });
 
-        $target.velocity('scroll', {
-          duration: 300,
-          offset: 0,
-          easing: vincent.scrollEasing
-        });
-
         $target.find('.WorkItem-inner').velocity({
-          top: '60%'
+          top: ['60%', '50%'],
+          height: parseInt($target.find('.WorkItem-title').attr('data-height')) + 50
         }, {
           duration: 400,
           easing: 'ease'
         });
 
-        $target.find('.WorkItem-inner p').velocity({
-          opacity: 0,
-          maxHeight: 0,
-          height: 0,
-          marginTop: 0,
-          marginBottom: 0,
-          paddingTop: 0,
-          paddingBottom: 0
+        $target.find('.WorkItem-text, .WorkItem-link').velocity({
+          opacity: [0, 1]
         }, {
-          duration: 1000,
+          duration: 300,
           easing: 'ease'
         });
 
-        $target.find('.WorkItem-inner a').velocity({
-          opacity: 0,
-          maxHeight: '53px',
-          paddingTop: 0,
-          paddingBottom: '2rem',
-          marginBottom: '0',
-          borderColorAlpha: 0
-        }, {
-          duration: 400,
-          easing: 'ease'
-        });
-
-        $footer.velocity({
-          paddingBottom: winHeight + 'px',
-          opacity: 0
-        }, {
-          duration: 50,
-          easing: 'ease'
-        });
+        if (window.scrollY + (winHeight * 2) > body.scrollHeight) {
+          $footer.velocity({
+            paddingBottom: winHeight + 'px',
+            opacity: [0, 1]
+          }, {
+            duration: 50,
+            easing: 'ease'
+          });
+        }
 
         // Wait for transitions and prefetches to comlpete.
         transitionInterval = window.setInterval(function () {
@@ -632,7 +643,7 @@
           $name.next().addClass('is-error');
           isError = true;
         }
-        if ($email.val() === '' || !/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test($email.val())) {
+        if ($email.val() === '' || (!/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test($email.val()))) {
           $email.next().addClass('is-error');
           isError = true;
         }
@@ -717,7 +728,7 @@
         return false;
 
       });
-  
+
       if (Modernizr.touchevents === false) {
         vincent.floatLabels();
       }
@@ -826,7 +837,7 @@
             code: [66, 76, 85, 82], // blur
             magic: function () {
               $body.velocity({
-                filter: 'blur(2px)'
+                filter: ['blur(2px)', 'blur(0)']
               }, {
                 duration: 2000,
                 easing: 'linear'
@@ -907,7 +918,7 @@
       var href,
         value,
         location,
-        DoNotTrack = window.doNotTrack === '1' || window.doNotTrack === 'yes' || navigator.doNotTrack === 'yes' || navigator.doNotTrack === '1' || navigator.msDoNotTrack === '1';
+        DoNotTrack = window.doNotTrack === '1' || window.doNotTrack === 'yes' || window.navigator.doNotTrack === 'yes' || window.navigator.doNotTrack === '1' || window.navigator.msDoNotTrack === '1';
 
       if (DoNotTrack) {
         return;
@@ -916,8 +927,8 @@
       $(window).on('load', function () {
         $body.find('a').on('click', function (e) {
           if (window.ga) {
-            href = $(this).attr('href');
-            value = $(this).attr('data-trackvalue') || href;
+            href = $(e.currentTarget).attr('href');
+            value = $(e.currentTarget).attr('data-trackvalue') || href;
             location = doc.title.substr(0, doc.title.indexOf('|')) || 'Frontpage';
 
             ga('send', 'event', 'link', 'click', location + ' - ' + value, {

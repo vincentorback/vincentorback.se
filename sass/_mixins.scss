@@ -23,7 +23,7 @@
 }
 
 
-@mixin hoverLink($color: $text) {
+@mixin hoverLink($color: currentColor) {
   &:after {
     content: "";
     position: absolute;
@@ -34,12 +34,13 @@
     right: 0;
     margin: auto;
     background-color: $color;
-    visibility: hidden;
+    opacity: 0;
     transform: scaleX(0);
-    transition: all 200ms ease 0s;
+    transition: transform 200ms, opacity 50ms 150ms;
   }
   &:hover:after {
-    visibility: visible;
+    opacity: 1;
     transform: scaleX(1);
+    transition: transform 200ms;
   }
 }

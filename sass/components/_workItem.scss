@@ -56,40 +56,9 @@
 
   width: 75%;
   max-width: 675px;
+
   div {
     display: inline-block;
-  }
-  p {
-    margin: .5em 0 1.5em;
-    font-size: 1.2em;
-    max-height: 300px;
-    max-width: 500px;
-
-    opacity: 1;
-    padding: 0;
-  }
-  a {
-    display: inline-block;
-    padding: .65em 1.5em;
-    border: 2px solid #fff;
-    letter-spacing: 1px;
-    border-radius: .4em;
-    color: #fff;
-    max-height: 300px;
-    transition: background 150ms ease, color 150ms ease, transform 100ms;
-    margin: 0 1.5em 1em 0;
-
-    transform: scale(1);
-    opacity: 1;
-
-    &:hover {
-      background: #fff;
-      color: $text;
-    }
-
-    .no-touchevents &:hover {
-      transform: scale(1.08);
-    }
   }
 
   .no-csstransforms & {
@@ -99,9 +68,6 @@
   @include respond-min(1600px) {
     max-width: 800px;
     font-size: 1.2em;
-    p {
-      max-width: 700px;
-    }
   }
 
   @include respond-max(800px) {
@@ -110,18 +76,65 @@
     div {
       display: block;
     }
-    p {
-      height: 0;
-      overflow: hidden;
-      margin: 0 0 1em 0;
-    }
-    a {
-      margin: 0 .5em 1em 0;
-      font-size: .8em;
-      border-width: 1px;
-      letter-spacing: 0;
-      padding: .45em 1.2em;
-    }
+  }
+}
+
+.WorkItem-text {
+  margin: .5em 0 1.5em;
+  font-size: 1.2em;
+  max-height: 300px;
+  max-width: 500px;
+
+  opacity: 1;
+  padding: 0;
+}
+
+@include respond-min(1600px) {
+  .WorkItem-text {
+    max-width: 700px;
+  }
+}
+
+@include respond-max(800px) {
+  .WorkItem-text {
+    height: 0;
+    overflow: hidden;
+    margin: 0 0 1em 0;
+  }
+}
+
+
+.WorkItem-link {
+  display: inline-block;
+  padding: .65em 1.5em;
+  border: 2px solid #fff;
+  letter-spacing: 1px;
+  border-radius: .4em;
+  color: #fff;
+  max-height: 300px;
+  transition: background 150ms ease, color 150ms ease, transform 100ms;
+  margin: 0 1.5em 1em 0;
+
+  transform: scale(1);
+  opacity: 1;
+
+  &:hover {
+    background: #fff;
+    color: $text;
+  }
+
+  .no-touchevents &:hover {
+    transform: scale(1.08);
+  }
+}
+
+@include respond-max(800px) {
+  .WorkItem-link {
+    margin: 0 .5em 1em 0;
+    font-size: .8em;
+    border-width: 1px;
+    letter-spacing: 0;
+    padding: .45em 1.2em;
   }
 }
 
