@@ -109,6 +109,17 @@
       if (!Modernizr.csstransforms || !Modernizr.svg) {
         $body.append('<div class="Alert" role="alert"><p>You are using an <strong>outdated</strong> browser! Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p></div>');
       }
+
+      vincent.lazyLoad();
+    },
+
+    lazyLoad: function () {
+      var targets = doc.querySelectorAll('.js-lazy'),
+        i = 0;
+
+      for (i; i < targets.length; i += 1) {
+        targets[i].setAttribute('src', targets[0].getAttribute('data-lazy'));
+      }
     },
 
     smoothScroll: function () {
