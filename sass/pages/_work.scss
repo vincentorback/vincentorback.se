@@ -242,10 +242,7 @@
 
 .Work-visit .Work-visitApp--googlePlay,
 .Work-visit .Work-visitApp--googlePlay:hover {
-  background-image: url("#{$images}/google-play.svg");
-  .no-svg & {
-    background-image: url("#{$images}/google-play.png");
-  }
+  background-image: url("#{$images}/google-play.jpg");
 }
 
 .Work-credits {
