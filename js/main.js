@@ -203,9 +203,12 @@
             .velocity({
               opacity: [0, 1]
             }, {
-              duration: 400,
+              duration: 500,
               easing: 'ease',
-              queue: false
+              queue: false,
+              complete: function () {
+                window.location = href;
+              }
             });
 
           window.scrollTo({
@@ -213,6 +216,7 @@
             'left': 0,
             'top': 0
           });
+
         } else {
           $body
             .velocity({
