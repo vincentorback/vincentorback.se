@@ -157,48 +157,53 @@
   margin: 0 auto;
   padding-top: $section-spacing;
   text-align: center;
-   > a {
-    display: inline-block;
-    padding: .8em 2em;
-    margin: 0;
 
-    color: $text;
-    letter-spacing: 2px;
-
-    background: #fff;
-    border: 2px solid $text;
-    border-radius: 15px;
-
-
-    transition: background 150ms ease, color 300ms ease, transform 200ms;
-
-    &:hover {
-      transform: scale(1.08);
-    }
+  @include respond-min(1400px) {
+    padding-top: $section-spacing-large;
   }
   @include respond-max(800px) {
     padding-top: $section-spacing-mobile;
   }
   @include respond-max (600px) {
-    > a {
-      padding: .7em 1.8em;
-      letter-spacing: 1px;
-      border-width: 1px;
-    }
     span {
       display: none;
     }
   }
+}
+
+.Work-visitLink {
+  display: inline-block;
+  padding: .8em 2em;
+  margin: 0;
+
+  min-width: 120px;
+  letter-spacing: 2px;
+
+  border: 2px solid currentColor;
+  border-radius: 15px;
+
+  transition: background 150ms ease, color 300ms ease, transform 200ms;
+
+  &:hover {
+    transform: scale(1.08);
+  }
+
+  @include respond-max (600px) {
+    padding: .7em 1.8em;
+    letter-spacing: 1px;
+    border-width: 1px;
+  }
+
   @include respond-max (400px) {
-    > a {
-      padding: .6em .8em;
-      letter-spacing: 0;
-      border-radius: 10px;
-    }
+    padding: .6em .8em;
+    letter-spacing: 0;
+    border-radius: 10px;
   }
 }
 
-.Work-visit .Work-visitApp {
+
+
+.Work-visitApp {
   display: inline-block;
   width: 180px;
   height: 50px;
@@ -207,16 +212,12 @@
   white-space: nowrap;
   padding: 0;
   border: 0;
-  margin: 0;
+  margin: 0 !important;
 
   background-size: auto 100%;
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center center;
-
-  &:first-child {
-    margin-top: 1em;
-  }
 
   &:hover {
     background-size: auto 100%;
@@ -232,16 +233,16 @@
   }
 }
 
-.Work-visit .Work-visitApp--appStore,
-.Work-visit .Work-visitApp--appStore:hover {
+.Work-visitApp--appStore,
+.Work-visitApp--appStore:hover {
   background-image: url("#{$images}/app-store.svg");
   .no-svg & {
     background-image: url("#{$images}/app-store.png");
   }
 }
 
-.Work-visit .Work-visitApp--googlePlay,
-.Work-visit .Work-visitApp--googlePlay:hover {
+.Work-visitApp--googlePlay,
+.Work-visitApp--googlePlay:hover {
   background-image: url("#{$images}/google-play.jpg");
 }
 
@@ -404,10 +405,8 @@
       }
     }
 
-    .Work-visit > a {
+    .Work-visitLink {
       background: #fff;
-      color: #{nth($work-colors, $i)};
-      border-color: #{nth($work-colors, $i)};
       &:hover {
         background: #{nth($work-colors, $i)};
         color: #fff;
