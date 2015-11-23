@@ -25,9 +25,7 @@
 
 
 
-.AboutSection {
 
-}
 @include respond-min(1600px) {
   .AboutSection {
     font-size: 1.2em;
@@ -73,7 +71,7 @@
 
 
 .AboutSection-inner a,
-.AboutSection--library .AboutSection-foot a {
+.Library-foot a {
   position: relative;
   color: #000;
   border: 0;
@@ -87,59 +85,53 @@
 
 
 
-.AboutSection--library {
-  h3 {
-    font-size: 1.2em;
-    margin-bottom: 1em;
-  }
 
-  img {
-    float: left;
-    max-width: 100px;
-    margin: 0 .8em 0 0;
-  }
 
-  article {
-    @extend %clearfix;
-    h1 {
-      font-size: 1.2em;
-    }
-  }
 
-  article:not(:last-child) {
-    margin-bottom: 2em;
-  }
 
-  p {
-    font-family: $serif;
-    a {
-      font-family: $sansserif;
-    }
-  }
+.Library-title {
+  font-size: 1.2em;
+  margin-bottom: 1em;
 }
-@include respond-max(800px) {
-  .AboutSection--library {
-    article:last-child {
-      margin-bottom: 2em;
-    }
-    article:not(:last-child) {
-      margin-bottom: 1em;
-    }
-  }
+
+
+.Library-item {
+  @extend %clearfix;
+  font-family: $serif;
+}
+
+.Library-item:not(:last-child) {
+  margin-bottom: 50px;
+}
+
+.Library-item a,
+.Library-itemTitle {
+  font-family: $sansserif;
+}
+
+.Library-itemTitle {
+  font-size: 1.2em;
+}
+
+.Library-itemImage {
+  float: left;
+  max-width: 100px;
+  margin: 0 .8em 0 0;
 }
 
 
 
 
-.AboutSection--library .AboutSection-foot {
+.Library-foot {
   width: 100%;
-  margin-bottom: $section-spacing;
-  font-size: .85em;
+  margin-bottom: $section-spacing !important;
+  font-size: .9em;
+  font-family: $serif;
   text-align: center;
 
   @include respond-max(800px) {
     text-align: left;
-    margin: 0 auto $section-spacing-mobile auto;
+    margin: 0 auto $section-spacing-mobile;
   }
 }
 
@@ -163,7 +155,9 @@
   }
 
   @include respond-max(800px) {
-    > .col {
+    padding-top: 50px;
+
+    > .LinkList-list {
       width: 44%;
       float: left;
       margin-right: 0;
@@ -174,11 +168,15 @@
   }
 
   @include respond-max(500px) {
-    > .col {
+    > .LinkList-list {
       width: 100%;
-      margin: 0 0 2em 0 !important;
+      margin: 0 0 2em !important;
     }
   }
+}
+
+.LinkList-list:not(:last-child) {
+  margin-bottom: 50px;
 }
 
 
@@ -191,33 +189,33 @@
 
 .Resume {
   padding-bottom: $section-spacing;
-  h4 {
-    font-size: 1.2em;
-  }
-  ol {
-    list-style: decimal inside;
-  }
-  li {
-    margin-top: .5em;
-    &:first-child {
-      margin-top: 0;
-    }
-  }
-  p, li {
-    font-family: $serif;
-    h5 {
-      font-family: $sansserif;
-    }
-  }
-  .date {
-    color: #999;
-    font-weight: 300;
-    font-size: .75em;
-    margin-left: .5em;
-  }
+
   @include respond-max(800px) {
     padding-bottom: $section-spacing-mobile;
   }
+}
+
+.Resume-title {
+  font-size: 1.2em;
+}
+
+.Resume ol {
+  list-style: decimal inside;
+}
+
+
+.Resume li {
+  margin-top: .5em;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.Resume-date {
+  color: #999;
+  font-weight: 300;
+  font-size: .75em;
+  margin-left: .5em;
 }
 
 .Resume-left {
@@ -225,14 +223,12 @@
     margin-top: 0;
   }
   li {
-    margin: 0 0 1.5em 0;
+    margin: 0 0 1.5em;
   }
 }
 
-.Resume-right {
-  h4 {
-    margin-bottom: .5em;
-  }
+.Resume-right .Resume-title {
+  margin-bottom: .5em;
 }
 
 
