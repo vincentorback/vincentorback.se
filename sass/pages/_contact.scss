@@ -141,7 +141,7 @@
 }
 
 .Form-row {
-  @extend %clearfix;  
+  @extend %clearfix;
 }
 
 .Form-field {
@@ -149,7 +149,7 @@
   width: 100%;
   border-color: $gray;
   border-style: solid;
-  border-width: 0 0 1px 0;
+  border-width: 0 0 1px;
 
   .no-touchevents &:hover .Form-label {
     color: $blue;
@@ -167,7 +167,7 @@
   cursor: text;
 
   background: #fff;
-  padding: .5em .3em 0 .3em;
+  padding: .5em .3em 0;
 
   will-change: transform;
   transition: color 300ms ease, transform 250ms ease;
@@ -211,7 +211,7 @@ input:-webkit-autofill {
   width: 100%;
   display: block;
 
-  transition: background 200ms ease, box-shadow 0ms linear;
+  transition: background 200ms ease, box-shadow 0 linear;
   outline: none;
 }
 
@@ -230,6 +230,11 @@ input:-webkit-autofill {
   &:active {
     box-shadow: 0 2px 5px darken($blue, 10%) inset;
   }
+}
+
+.Form-fieldText {
+  margin-top: 1em;
+  color: #999;
 }
 
 .Form-textarea {
@@ -263,6 +268,7 @@ input:-webkit-autofill {
   padding: 1em;
   font-size: .8em;
   border-bottom-width: 0;
+  text-align: center;
 }
 
 

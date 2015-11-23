@@ -32,7 +32,6 @@
     top: 30%;
   }
 
-
   .Sitehead-title {
     animation: none !important;
   }
@@ -68,10 +67,10 @@
     .Sitehead-inner {
       width: 100%;
       max-width: none;
-      a {
-        font-size: .9em;
-        letter-spacing: 1px;
-      }
+    }
+    .Sitehead-link {
+      font-size: .9em;
+      letter-spacing: 1px;
     }
   }
 
@@ -96,7 +95,7 @@
     margin-bottom: 1.5em;
   }
   h3,h4,h5,h6 {
-    margin-bottom: 0.25em;
+    margin-bottom: .25em;
   }
   p:last-child {
     margin-bottom: 0;
@@ -118,19 +117,29 @@
   }
 }
 
+
+
 .Work-image {
   display: block;
   padding: $section-spacing 0;
   img {
+    display: block;
     margin: 0 auto;
     width: auto;
     max-height: 95%;
     max-height: 95vmin;
   }
 }
+
 @include respond-max(800px) {
   .Work-image {
     padding: $section-spacing-mobile 0;
+  }
+}
+
+@include respond-min(1400px) {
+  .Work-image {
+    padding: $section-spacing-large 0;
   }
 }
 
@@ -139,18 +148,21 @@
 }
 
 
-
 .Work-pushdown {
   padding-bottom: $section-spacing; // Push down content
 }
+
 @include respond-max(800px) {
   .Work-pushdown {
     padding-bottom: $section-spacing-mobile;
   }
 }
 
-
-
+@include respond-min(1400px) {
+  .Work-pushdown {
+    padding: $section-spacing-large 0;
+  }
+}
 
 
 .Work-visit {
@@ -279,7 +291,6 @@
 
 .Work-wrapper {
   padding: $section-spacing 0;
-
   blockquote {
     width: 90%;
     max-width: 900px;
@@ -291,6 +302,12 @@
 @include respond-max(800px) {
   .Work-wrapper {
     padding: $section-spacing-mobile 0;
+  }
+}
+
+@include respond-min(1400px) {
+  .Work-wrapper {
+    padding: $section-spacing-large 0;
   }
 }
 

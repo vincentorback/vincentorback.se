@@ -13,26 +13,15 @@
     font-size: 1em;
   }
 
-  .Page-front .Sitehead,
-  .About-library footer,
-  .Printlink,
-  .About-theBoringStuff header p,
-  .Sitehead-logo,
-  .Worklist-itemInner a,
   .PageNav,
-  .Octocat {
+  .Octocat,
+  .Navigation-toggle,
+  .u-printHide {
     display: none;
   }
 
   .Canvas {
     overflow: visible !important;
-  }
-
-  .Worklist-item {
-    text-align: left;
-    h1 {
-      font-size: 1.5em;
-    }
   }
 
   section {

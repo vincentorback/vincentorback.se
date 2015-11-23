@@ -37,7 +37,6 @@
 
 
 
-
 .three-columns {
   @extend %clearfix;
   > .col {
@@ -69,7 +68,7 @@
   @include respond-max(600px) {
     .col {
       width: 100%;
-      margin: 0 0 5% 0;
+      margin: 0 0 5%;
     }
   }
 }
@@ -88,7 +87,7 @@
   @include respond-max(800px) {
     .col, .col.third {
       width: 100%;
-      margin: 0 0 5% 0;
+      margin: 0 0 5%;
     }
   }
 }

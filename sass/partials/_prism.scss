@@ -10,7 +10,7 @@
 .Code,
 .Code pre {
   color: #000;
-  text-shadow: 0 1px white;
+  text-shadow: 0 1px #fff;
   font-family: Consolas, Monaco, 'Andale Mono', monospace;
   direction: ltr;
   text-align: left;
@@ -152,7 +152,7 @@ pre[data-line] {
   vertical-align: .3em;
   border-radius: 999px;
   text-shadow: none;
-  box-shadow: 0 1px white;
+  box-shadow: 0 1px #fff;
 }
 
 .line-highlight[data-end]:after {
