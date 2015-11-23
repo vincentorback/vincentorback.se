@@ -1,10 +1,10 @@
 .Sitefooter {
   position: relative;
-  text-align: center;
   background: #fff;
   padding: 3em 0;
   border-top: 1px solid $gray;
   overflow: hidden;
+  text-align: center;
 
   @include respond-max(800px) {
     font-size: .85em;
@@ -17,40 +17,41 @@
 
 
 .Sitefooter-info {
-  div {
-    display: inline;
-    line-height: 1.8;
-  }
-  strong {
-    font-weight: normal;
-  }
-  .name {
-    padding: 6px 8px;
+  line-height: 1.8;
+}
 
-    font-weight: 600;
-    font-size: 1.1em;
-  }
-  .jobtitle {
-    display: block;
-    margin-bottom: .2em;
-  }
-  .address,.email,.phone {
-    margin: 0 .5em;
-  }
-  .email a {
-    position: relative;
-    @include hoverLink;
-    &:after {
-      bottom: -3px;
-    }
-  }
-  @include respond-max(800px) {
-    div {
-      line-height: 1.5;
-    }
+@include respond-max(800px) {
+  .Sitefooter-info {
+    line-height: 1.5;
   }
 }
 
+.Sitefooter-info strong {
+  font-weight: 400;
+}
+
+.Sitefooter-info a {
+  position: relative;
+  @include hoverLink;
+  &:after {
+    bottom: -3px;
+  }
+}
+
+.Sitefooter-name {
+  padding: 6px 8px;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.Sitefooter-title {
+  margin-bottom: .2em;
+}
+
+.Sitefooter-address,
+.Sitefooter-email {
+  margin: 0 .5em;
+}
 
 
 .Octocat {
@@ -64,8 +65,8 @@
   transition: none;
 
   @include respond-max(700px) {
-    width: 2.7em;
-    height: 2.7em;
+    width: 44px;
+    height: 44px;
   }
 }
 
@@ -84,13 +85,19 @@
   background-size: 100%;
 
   transition: transform 400ms ease;
+
+  @include respond-max(700px) {
+    bottom: -5px;
+    width: 44px;
+    height: 44px;
+  }
 }
 
 .Octocat-inner {
   position: absolute;
   left: 50%;
   bottom: 60px;
-  
+
   width: 175px;
   padding: .5em;
   border-radius: 3px;
