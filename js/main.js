@@ -48,7 +48,8 @@
         green: '#2ecc71',
         white: '#fff',
         black: '#000',
-        orange: '#f39c12'
+        orange: '#f39c12',
+        coop: '#14ab30'
       };
       vincent.postColors = {
         'loop-scroll': vincent.colors.blue,
@@ -77,7 +78,7 @@
       if (winWidth > 800 && Modernizr.csstransforms) {
         vincent.pageTransition();
         vincent.pageTransitionHalf();
-        vincent.pageTransitionFull();
+        //vincent.pageTransitionFull();
 
         if (doc.getElementById('page-front')) {
           vincent.workTransition();
@@ -118,7 +119,7 @@
         i = 0;
 
       for (i; i < targets.length; i += 1) {
-        targets[i].setAttribute('src', targets[0].getAttribute('data-lazy'));
+        targets[i].setAttribute('src', targets[i].getAttribute('data-lazy'));
       }
     },
 
@@ -244,6 +245,7 @@
         $main = $body.find('.Site-main'),
         $cover = $siteHead.find('.Sitehead-cover'),
         $nav = $body.find('#navigation'),
+        $logo = $siteHead.find('.Sitehead-logo'),
         delay = 0,
         count = 0,
         transitionInterval,
@@ -255,7 +257,7 @@
         cover,
         page,
         coverSize = 'medium',
-        currentIsHalf = ['page-about', 'page-blog', 'page-post', 'page-contact'].indexOf($body.attr('id')) > -1;
+        currentIsHalf = ['page-front', 'page-about', 'page-blog', 'page-post', 'page-contact'].indexOf($body.attr('id')) > -1;
 
       $body.find('.js-transitionHalf').on('click', function (e) {
 
@@ -264,8 +266,8 @@
         }
 
         viewport = getViewport();
-
         hasCover = ($cover.length > 0) || ($siteHead.height() > viewport.height);
+
         if (hasCover === true) {
           delay = 100;
         }
@@ -273,22 +275,26 @@
         href = e.currentTarget.getAttribute('href');
         slug = e.currentTarget.getAttribute('data-slug');
 
-        if (slug && href.indexOf('/blog/') > -1) {
+        if (href === '/') {
+          page = 'front';
+          cover = false;
+          color = vincent.colors.red;
+        } else if (slug && href.indexOf('/blog/') > -1) {
           cover = false;
           color = vincent.postColors[slug];
         } else {
           page = href.replace('/', '');
           page = page.replace('/', '');
+
           if (page === 'about-me') {
             page = 'about';
           }
 
           coverSize = viewport.width > 1200 ? 'large' : 'medium';
-
           cover = vincent.amazon + '/images/' + page + '/header-' + coverSize + '.jpg';
         }
 
-        if (cover) {
+        if (cover && (page !== 'front')) {
           bgCover = doc.createElement('div');
           bgCover.style.cssText = 'transform: translateZ(0); position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url(' + cover + '); background-repeat: no-repeat; background-position: 50% 50%; background-size: cover; opacity: 0; z-index: -1;';
           if (page === 'contact') {
@@ -320,8 +326,11 @@
           easing: 'ease'
         });
 
+        if (page !== 'front') {
+          $siteHead.append(bgCover);
+        }
+
         $siteHead
-          .append(bgCover)
           .find('.Sitehead-inner').velocity({
             opacity: [0, 1],
             translateY: '150%'
@@ -388,6 +397,17 @@
           });
         }
 
+        if (page === 'front') {
+          $body.css('background', vincent.colors.coop);
+
+          $logo.velocity({
+            translateY: '-300%'
+          }, {
+            duration: 500,
+            easing: 'ease'
+          });
+        }
+
         // Wait for transitions and prefetches to comlpete.
         transitionInterval = window.setInterval(function () {
           if (transDone || (count === 10)) {
@@ -401,6 +421,7 @@
       });
     },
 
+    /*
     pageTransitionFull: function () {
       var href,
         $main = $body.find('.Site-main'),
@@ -486,6 +507,7 @@
         e.preventDefault();
       });
     },
+    */
 
     workTransition: function () {
       var target, $target, href, transitionInterval,
