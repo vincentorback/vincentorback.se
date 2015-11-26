@@ -98,10 +98,13 @@
 .Library-item {
   @extend %clearfix;
   font-family: $serif;
+  margin-bottom: 50px;
 }
 
-.Library-item:not(:last-child) {
-  margin-bottom: 50px;
+@include respond-min(800px) {
+  .Library-item:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .Library-item a,
@@ -155,8 +158,6 @@
   }
 
   @include respond-max(800px) {
-    padding-top: 50px;
-
     > .LinkList-list {
       width: 44%;
       float: left;
