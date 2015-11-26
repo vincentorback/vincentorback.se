@@ -107,7 +107,7 @@
       }
 
       if (!Modernizr.csstransforms || !Modernizr.svg) {
-        $body.append('<div class="Alert" role="alert"><p>You are using an <strong>outdated</strong> browser! Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p></div>');
+        $body.append('<div class="Alert" role="alert"><p class="Alert-text">You are using an <strong>outdated</strong> browser! Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p></div>');
       }
 
       vincent.lazyLoad();
@@ -655,6 +655,7 @@
 
       $navMenu.on('keydown', handleKeydown);
       $navButton.on('click', handleClick);
+      $navLinks.on('click', toggleNav);
 
       if (800 > winWidth) {
         disableNavLinks();

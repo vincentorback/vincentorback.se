@@ -20,41 +20,45 @@
   .is-active {
 
   }
+}
 
-  @include respond-min($threshold) {
-    a {
-      &:after {
-        content: "";
-        position: absolute;
-        width: 65%;
-        height: 2px;
-        bottom: .5em;
-        left: 0;
-        right: 0;
-        margin: auto;
+@include respond-min($threshold) {
+  .Navigation a {
+    &:after {
+      content: "";
+      position: absolute;
+      width: 65%;
+      height: 2px;
+      bottom: .5em;
+      left: 0;
+      right: 0;
+      margin: auto;
 
-        background-color: currentColor;
-        opacity: 0;
-        transform: scaleX(0);
-        transition: transform 200ms, opacity 50ms 150ms;
-      }
-      &:hover {
-        color: #fff;
-      }
-      &:hover:after {
-        opacity: 1;
-        transform: scaleX(1);
-        transition: transform 200ms;
-      }
+      background-color: currentColor;
+      opacity: 0;
+      transform: scaleX(0);
+      transition: transform 200ms, opacity 50ms 150ms;
+    }
+    &:hover {
+      color: #fff;
+    }
+    &:hover:after {
+      opacity: 1;
+      transform: scaleX(1);
+      transition: transform 200ms;
     }
   }
+}
 
-  @include respond-max(850px) {
+@include respond-max(850px) {
+  .Navigation {
     font-size: .9em;
     top: 1.5em;
   }
+}
 
-  @include respond-max($threshold) {
+@include respond-max($threshold) {
+  .Navigation {
     position: fixed;
     top: 0;
     right: 0;
@@ -104,27 +108,21 @@
       visibility: visible;
     }
   }
-  @include respond-max($canvasWidth + 100px) {
+}
+
+@include respond-max($canvasWidth + 100px) {
+  .Navigation {
     width: $canvasWidth-mobile;
     transform: translate3d(#{$canvasWidth-mobile - 60px},0,0);
     transition: transform 500ms ease, visibility 500ms linear 500ms;
   }
+}
 
-  @include respond-min(1600px) {
+@include respond-min(1600px) {
+  .Navigation {
     font-size: 1.2em;
   }
 }
-
-
-
-
-.Canvas {
-  position: relative;
-  height: 100%;
-}
-
-
-
 
 
 

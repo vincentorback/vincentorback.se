@@ -26,8 +26,7 @@
     });
 
     rect.click(function() {
-      draw.node.firstChild.innerHTML = 'Great job! Now get back to work!';
-      rect.node.outerHTML = '';
+      window.alert('Great job! Now get back to work!');
     });
   }
 

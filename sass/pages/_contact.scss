@@ -211,24 +211,36 @@ input:-webkit-autofill {
   width: 100%;
   display: block;
 
-  transition: background 200ms ease, box-shadow 0 linear;
+  transition: background 200ms ease;
   outline: none;
 }
 
 .Form-input--submit {
+  position: relative;
   background: $blue;
   color: #fff;
   border-radius: .5em;
   padding: 1.5em 0;
-  transition: box-shadow 200ms ease;
   font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
-  &:focus {
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     box-shadow: 0 0 0 3px darken($blue, 10%) inset;
+    opacity: 0;
+    transition: opacity 200ms ease;
+    border-radius: inherit;
   }
-  &:active {
-    box-shadow: 0 2px 5px darken($blue, 10%) inset;
+
+  &:focus:after,
+  &:hover:after {
+    opacity: 1
   }
 }
 
@@ -240,7 +252,6 @@ input:-webkit-autofill {
 .Form-textarea {
   resize: vertical;
   min-height: 250px;
-  transition: height 200ms ease;
   z-index: 1;
 
   @include respond-max(600px) {

@@ -1,7 +1,7 @@
 Redirect 301 /en/ http://vincentorback.se/
 Redirect 301 /en.html http://vincentorback.se/
 Redirect 301 /om-mig/ http://vincentorback.se/about-me/
-Redirect 301 /ommig http://vincentorback.se/about-me/
+Redirect 301 /om-mig.html http://vincentorback.se/about-me/
 Redirect 301 /blogg http://vincentorback.se/blog/
 Redirect 301 /blog.html/ http://vincentorback.se/blog/
 Redirect 301 /kontakt/ http://vincentorback.se/contact/
@@ -11,8 +11,8 @@ Redirect 301 /cv http://vincentorback.se/cv.pdf
 Redirect 301 /cv.pdf/ http://vincentorback.se/cv.pdf
 Redirect 301 /cv-en.pdf http://vincentorback.se/cv.pdf
 
-#old urls
 Redirect 301 /blog/dont-work-for-free/ http://vincentorback.se/blog/
+#old urls
 Redirect 301 /posts/dont-work-for-free/ http://vincentorback.se/blog/
 Redirect 301 /blog/optimizing-images-and-webp/ http://vincentorback.se/blog/using-webp-images/
 Redirect 301 /posts/optimizing-images-and-webp/ http://vincentorback.se/blog/using-webp-images/
@@ -23,6 +23,7 @@ Redirect 301 /posts/smooth-scrolling-with-css/ http://vincentorback.se/blog/smoo
 Redirect 301 /posts/i-commit-from-my-heart/ http://vincentorback.se/blog/
 
 <IfModule mod_deflate.c>
+
     <IfModule mod_headers.c>
         Header append Vary User-Agent env=!dont-vary
     </IfModule>
@@ -61,6 +62,7 @@ AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css a
 
 Options -MultiViews
 
+ErrorDocument 403 /403.html
 ErrorDocument 404 /404.html
 ErrorDocument 500 /500.html
 
