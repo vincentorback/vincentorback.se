@@ -55,7 +55,6 @@
         'loop-scroll': vincent.colors.blue,
         'favorite-talks': vincent.colors.orange,
         'honor-dnt': vincent.colors.pink,
-        'i-commit-from-my-heart': vincent.colors.yellow,
         'smooth-scrolling-with-css': vincent.colors.blue,
         'take-10-and-learn-typography': vincent.colors.red,
         'using-webp-images': vincent.colors.green

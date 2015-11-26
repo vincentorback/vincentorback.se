@@ -1,5 +1,5 @@
-$post-names: ("loop-scroll", "favorite-talks", "honor-dnt", "using-webp-images", "i-commit-from-my-heart", "smooth-scrolling-with-css", "take-10-and-learn-typography");
-$post-colors: ($blue, $orange, $pink,  $green, $yellow, $blue, $red);
+$post-names: ("loop-scroll", "favorite-talks", "honor-dnt", "using-webp-images", "smooth-scrolling-with-css", "take-10-and-learn-typography");
+$post-colors: ($blue, $orange, $pink,  $green, $blue, $red);
 
 @for $i from 1 through length($post-names) {
   .Post--#{nth($post-names, $i)} .Sitehead {

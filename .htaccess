@@ -20,8 +20,7 @@ Redirect 301 /posts/optimizing-images-and-webp/ http://vincentorback.se/blog/usi
 Redirect 301 /posts/using-webp-images/ http://vincentorback.se/blog/using-webp-images/
 Redirect 301 /posts/take-10-and-learn-typography/ http://vincentorback.se/blog/take-10-and-learn-typography/
 Redirect 301 /posts/smooth-scrolling-with-css/ http://vincentorback.se/blog/smooth-scrolling-with-css/
-Redirect 301 /posts/i-commit-from-my-heart/ http://vincentorback.se/blog/i-commit-from-my-heart/
-
+Redirect 301 /posts/i-commit-from-my-heart/ http://vincentorback.se/blog/
 
 <IfModule mod_deflate.c>
     <IfModule mod_headers.c>
