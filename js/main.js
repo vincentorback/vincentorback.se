@@ -41,6 +41,7 @@
 
       vincent.amazon = '//d3dx0f1ge67l9j.cloudfront.net';
       vincent.colors = {
+        purple: '#9b59b6',
         pink: '#ff7fa5',
         yellow: '#f1c40f',
         blue: '#1eb0e9',
@@ -52,6 +53,7 @@
         coop: '#14ab30'
       };
       vincent.postColors = {
+        'clean-wordpress-admin': vincent.colors.purple,
         'loop-scroll': vincent.colors.blue,
         'favorite-talks': vincent.colors.orange,
         'honor-dnt': vincent.colors.pink,

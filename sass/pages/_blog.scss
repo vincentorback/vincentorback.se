@@ -35,7 +35,6 @@
 
   @include respond-max(800px) {
     margin-bottom: $section-spacing-mobile;
-    font-size: .9em;
 
     &:last-child {
       margin-bottom: #{$section-spacing-mobile};
@@ -56,7 +55,6 @@
 }
 
 .Excerpt-meta {
-  margin-top: .5em;
   p {
     color: #999;
     font-size: .8em;
@@ -66,8 +64,8 @@
 }
 
 .Excerpt-entry {
-  font-size: 1.3em;
-  line-height: 1.2;
+  font-size: 1.2em;
+  // line-height: 1.2;
   transition: color 300ms ease;
   color: $text;
   font-family: $serif;
@@ -80,6 +78,6 @@
   }
 
   @include respond-max(800px) {
-    font-size: 1em;
+    font-size: 1rem;
   }
 }

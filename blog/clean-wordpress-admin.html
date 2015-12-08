@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>Looping scroll | Vincent Orback - Web designer and developer in Stockholm</title>
-  <meta name="description" content="How to develop a continous inifinite looping scroll technique on a website using javascript.">
+  <title>Clean WordPress admin | Vincent Orback - Web designer and developer in Stockholm</title>
+  <meta name="description" content="Some neat functions to clean up the WordPress admin, update role and user capabilities and much more to customize your WordPress experience.">
   <meta name="keywords" content="web designer, designer, developer, wordpress, portfolio">
 
   <link rel="stylesheet" href="/css/style.css">
@@ -15,23 +15,23 @@
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
 
-  <meta name="theme-color" content="#1eb0e9">
+  <meta name="theme-color" content="#9b59b6">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
   <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
   <!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
 
-  <link rel="canonical" href="http://vincentorback.se/blog/looping-scroll">
+  <link rel="canonical" href="http://vincentorback.se/blog/clean-wordpress-admin">
   <link rel="author" href="https://plus.google.com/+VincentorbackSe">
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Looping scroll - Vincent Orback">
-  <meta property="og:description" content="How to develop a continous inifinite looping scroll technique on a website using javascript.">
-  <meta property="og:url" content="http://vincentorback.se/blog/looping-scroll">
+  <meta property="og:title" content="Clean WordPress admin - Vincent Orback">
+  <meta property="og:description" content="Some neat functions to clean up the WordPress admin, update role and user capabilities and much more to customize your WordPress experience.">
+  <meta property="og:url" content="http://vincentorback.se/blog/clean-wordpress-admin">
   <meta property="og:site_name" content="Vincent Orback">
   <meta property="og:image" content="http://d3dx0f1ge67l9j.cloudfront.net/images/screenshot.jpg">
 </head>
-<body id="page-post" class="Site-body Page-post Page-blog Post--loop-scroll" onunload="" itemscope itemtype="http://schema.org/BlogPosting">
+<body id="page-post" class="Site-body Page-post Page-blog Post--clean-wordpress-admin" onunload="" itemscope itemtype="http://schema.org/BlogPosting">
 
 <div class="u-wrapper--L">
   <nav id="navigation" class="Navigation" role="navigation">
@@ -53,8 +53,8 @@
       <h2>Web designer and developer</h2>
     </a>
     <div class="Sitehead-inner">
-      <h3 class="Sitehead-title" itemprop="name headline">How to make a looping scroll</h3>
-      <time itemprop="datePublished" datetime="2015-08-19T14:15:00+00:00">August 19, 2015</time>
+      <h3 class="Sitehead-title" itemprop="name headline">Clean WordPress admin</h3>
+      <time itemprop="datePublished" datetime="2015-12-05T23:53:00+00:00">December 5, 2015</time>
     </div>
   </div>
   <button class="Navigation-toggle js-navToggle" type="button" role="button" aria-controls="navigation" aria-haspopup="true" tabindex="2">Menu</button>
@@ -65,25 +65,59 @@
   <article class="Blog-entry Entry" itemprop="articleBody">
 
     <div class="u-wrapper--S">
-      <p>I had an idea for a client project that never made it into production, but I had to build a small Javascript proof-of-concept anyways :)</p>
-      <p><a href="http://fuzzco.com">These</a> <a href="http://unfold.no">looping</a> <a href="http://sammyrosen.com/me">scroll</a> <a href="http://andrevv.com">websites</a> <a href="http://andersdrage.com/">seems</a> to be popping up more often now I get the feeling that we might be in for a new trend in the measures of parallax trend we’ve seen and grown tired of.</p>
-      <p>I made a small demo you can check out below. Get scrolling!</p>
+      <p>I have taken the time to extract a collection of functions to clean up WordPress front-end and back-end to make it easier for editors to work and for you as a developer look at the source code. Hiding content is also a good thing to do to limit the possibilities for your clients to destroy your beautiful website.</p>
+      <p>Take a look: <a href="https://github.com/vincentorback/clean-wordpress-admin">github.com/vincentorback/clean-wordpress-admin</a></p>
+
+      <hr>
+
+      <p>Here’s some of the areas that the collection covers:</p>
+
+      <dl>
+
+        <dt>Admin menu</dt>
+          <dd>Hide items and sub-items in the admin menu. Also known as the Toolbar.</dd>
+
+        <dt>Clean head</dt>
+          <dd>Clears out generated unwanted stuff from the wp_head hook. Such as feeds and WordPress version.</dd>
+
+        <dt>Contextual tabs</dt>
+          <dd>Remove all, remove specific or add new contextual tabs with information about how to use the interface on the current page in the WordPress admin.</dd>
+
+        <dt>Dashboard</dt>
+          <dd>Remove dashboard metaboxes or even the whole dashboard itself.</dd>
+
+        <dt>Notifications</dt>
+          <dd>Remove notifications about core/plugin updates.</dd>
+
+        <dt>Posts</dt>
+          <dd>Remove specific metaboxes from post-types.</dd>
+
+        <dt>Profile fields</dt>
+          <dd>Remove and add fields on the user profile page. Like contact information or the Biographical Info section.</dd>
+
+        <dt>Capabilities</dt>
+          <dd>Remove and add administrating capabilities to specific roles or users. Like preventing user to switch themes or delete others posts.</dd>
+
+        <dt>WYSIWYG</dt>
+          <dd>Remove and add buttons and change the settings of the TinyMCE WYSIWYG.</dd>
+
+        <dt>Extras</dt>
+          <dd>A pretty personal collection of good, fun and just necessary functions to make WordPress development easier.</dd>
+
+      </dl>
+
+      <hr>
+      <p>Don’t just include the files in your project and be done. Look at the content, update the options and see what works for you!</p>
+      <p>You should probably keep some things visible for you or a super admin. Check the user role like this:</p>
     </div>
 
-    <div class="Entry-section" id="demo-iframe">
-      <div class="u-wrapper--XL">
-        <p data-height="800" data-theme-id="12419" data-slug-hash="zxRyzj" data-default-tab="result" data-user="vincentorback" class='codepen'>See the Pen <a href='http://codepen.io/vincentorback/pen/zxRyzj/'>Scroll loop</a> by Vincent Orback (<a href='http://codepen.io/vincentorback'>@vincentorback</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-      </div>
-    </div>
+    <pre class="Entry-code Code language-php" style="margin-top: 0 !important"><code>if ( ! current_user_can( 'administrator' ) ) {
+  // Clean it up!
+}</code></pre>
 
     <div class="u-wrapper--S">
-      <p>The trick is to have a set of cloned elements at the bottom of the page which will make the jump to the top look seamless when you reach the bottom.</p>
-      <p>Test the demo <a href="http://codepen.io/vincentorback/full/zxRyzj/">in fullscreen here</a> and of course, <a href="http://codepen.io/vincentorback/pen/zxRyzj/">browse the code here</a>.</p>
-      <p>Per request I also made another example showcasing how the technique can be used <a href="http://codepen.io/vincentorback/pen/NGXjda">with horizontall scrolling</a>.</p>
-      <p>If you’ve seen any more websites using this technique, please leave a link in the comments! Also, report a bug if you’ve seen one :)</p>
+      <p>These functions are a collection of what I have been using on clients since I started developing WordPress-sites. If you have any more functions or areas in WordPress that you want cleaned up, don’t hesitate to leave a comment, an <a href="https://github.com/vincentorback/clean-wordpress-admin/issues">issue</a> or a <a href="https://github.com/vincentorback/clean-wordpress-admin/pulls">pull request</a>!</p>
     </div>
-
   </article>
 
   <section class="Comments js-comments u-wrapper--S test">
@@ -94,12 +128,12 @@
   </section>
 
   <nav class="PageNav" role="navigation">
-    <a href="/blog/clean-wordpress-admin/" class="PageNav-item PageNav-item--prev js-transition" rel="prev">
+    <!-- <a href="/blog/clean-wordpress-admin/" class="PageNav-item PageNav-item--prev js-transition" rel="prev">
       <span>Previous post: </span><strong>Clean WordPress admin</strong>
       <svg class="PageNav-itemSymbol" role="presentation"><use xlink:href="#arrow-left"></use></svg>
-    </a>
-    <a href="/blog/favorite-talks/" class="PageNav-item PageNav-item--next js-transition" rel="next">
-      <span>Next post: </span><strong>Favorite talks</strong>
+    </a> -->
+    <a href="/blog/looping-scroll/" class="PageNav-item PageNav-item--next js-transition" rel="next">
+      <span>Next post: </span><strong>How to make a looping scroll</strong>
       <svg class="PageNav-itemSymbol" role="presentation"><use xlink:href="#arrow-right"></use></svg>
     </a>
   </nav>
@@ -134,9 +168,9 @@
       c10.989,0,18.283,6.265,18.283,17.07v0.188C120.247,110.995,112.953,117.168,101.964,117.168z"></path>
   </symbol>
 
-  <symbol id="arrow-left" viewBox="0 0 28.375 27.875">
+  <!-- <symbol id="arrow-left" viewBox="0 0 28.375 27.875">
     <path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-miterlimit="10" d="M3.417 14.353h20.95m-20.95 0l8.47-8.472m-8.47 8.52l8.47 8.473"></path>
-  </symbol>
+  </symbol> -->
 
   <symbol id="arrow-right" viewBox="0 0 28.375 27.875">
     <path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-miterlimit="10" d="M24.078 14.4h-20.951m20.951 0l-8.471 8.472m8.471-8.519l-8.471-8.472"></path>
@@ -148,12 +182,6 @@
 
 <script src="/js/vendor/prism-min.js"></script>
 <script src="/js/main-min.js"></script>
-<script>
-  if (Modernizr.touchevents === true) {
-    var demoIframe = document.getElementById('demo-iframe');
-    demoIframe.parentNode.removeChild(demoIframe);
-  }
-</script>
 <script>
 if (!(window.doNotTrack === '1' || window.doNotTrack === 'yes' || navigator.doNotTrack === 'yes' || navigator.doNotTrack === '1' || navigator.msDoNotTrack === '1')) {
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

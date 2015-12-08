@@ -1,10 +1,17 @@
-$post-names: ("loop-scroll", "favorite-talks", "honor-dnt", "using-webp-images", "smooth-scrolling-with-css", "take-10-and-learn-typography");
-$post-colors: ($blue, $orange, $pink,  $green, $blue, $red);
+$post-names: ("clean-wordpress-admin", "loop-scroll", "favorite-talks", "honor-dnt", "using-webp-images", "smooth-scrolling-with-css", "take-10-and-learn-typography");
+$post-colors: ($purple, $blue, $orange, $pink,  $green, $blue, $red);
 
 @for $i from 1 through length($post-names) {
   .Post--#{nth($post-names, $i)} .Sitehead {
     background: #{nth($post-colors, $i)};
   }
+}
+
+.Post--clean-wordpress-admin dt {
+  font-weight: 600;
+}
+.Post--clean-wordpress-admin dd {
+  margin-bottom: 40px;
 }
 
 .Post--using-webp-images {
