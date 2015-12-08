@@ -348,7 +348,7 @@
           $body.css('background', vincent.colors.white);
 
           $siteHead.velocity({
-            height: '60%',
+            height: '70%',
             backgroundColor: color || vincent.colors.black
           }, {
             duration: 400,
@@ -562,7 +562,7 @@
         });
 
         $target.velocity({
-          height: (winHeight * 0.6) + 'px'
+          height: (winHeight * 0.7) + 'px'
         }, {
           duration: 450,
           easing: 'ease',
@@ -573,7 +573,7 @@
 
         $target.find('.WorkItem-inner').velocity({
           top: ['60%', '50%'],
-          height: parseInt($target.find('.WorkItem-title').attr('data-height')) + 50
+          height: parseInt($target.find('.WorkItem-title').attr('data-height')) + 45
         }, {
           duration: 400,
           easing: 'ease'

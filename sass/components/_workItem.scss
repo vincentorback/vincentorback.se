@@ -3,11 +3,12 @@
 **/
 
 .WorkItem {
-  background: $text;
-  color: #fff;
+  background-color: $text;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 0;
+
+  color: #fff;
 
   border-bottom-width: 0;
   border-bottom-style: solid;
@@ -119,7 +120,7 @@
   opacity: 1;
 
   &:hover {
-    background: #fff;
+    background-color: #fff;
     color: $text;
   }
 

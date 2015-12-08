@@ -21,8 +21,7 @@
   }
 
   .Sitehead-inner {
-    top: 45%;
-    text-align: center;
+    top: 40%;
     margin: 0;
   }
 
@@ -47,7 +46,7 @@
     // top: 130%;
 
     display: block;
-    margin-top: 4em;
+    margin-top: 2em;
     padding-right: 1em;
 
     font-size: .6em;
@@ -71,6 +70,7 @@
 
   @include respond-min(800px) {
     .Sitehead-inner {
+      top: 45%;
       animation: fadeinBottom 700ms $nice-easing 1;
     }
     .Sitehead-link {
