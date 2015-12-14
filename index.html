@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="sv-SE">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Vincent Orback - vorback@gmail.com">
+<title> Vincent Orback - Portfolio, Webbutvecklare, Webbdesign</title>
+<meta name="description" content="En webbportfolio för de hemsidor jag har gjort. Vincent Orback 21 år - Webbutvecklare / Webbdesigner">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<meta name="robots" content="noindex">
+
+<link rel="icon" type="image/png" href="images/favicon.png">
+
+<link rel="stylesheet" href="style.css">
+
+
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="js/jquery.jparallax.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+	jQuery('#parallax').jparallax({triggerExposesEdges: true});
+	jQuery('a.goto').click(function(){
+    var ref=jQuery(this).attr("href");
+    // console.log(ref);
+    jQuery('#parallax').trigger("jparallax", [ref]);
+    return false;
+	});});
+</script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31135100-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+
+
+
+
+
+	<div class="kontakt">
+		<a href="mailto:vorback@gmail.com">vorback@gmail.com</a>
+	</div>
+
+	<div class="hemsidor">
+		<ul>
+			<li><h2>Hemsidor jag gjort</h2></li>
+			<li><a href="http://www.vasterbrokoren.com" target="blank">Västerbrokören</a></li>
+			<a href="http://www.vasterbrokoren.com" target="blank">www.vasterbrokoren.com</a>
+			<li><a href="http://www.artonglass.se" target="blank">Art On Glass</a></li>
+			<a href="http://www.artonglass.se" target="blank">www.artonglass.se</a>
+			<li><a href="http://www.g-h-c.se" target="blank">Green Heart Collection</a></li>
+			<a href="http://www.g-h-c.se" target="blank">www.g-h-c.se</a>
+		</ul>
+	</div>
+
+
+	<div id="parallax">
+		<div style="width:1200px; height:640px;z-index:-9999;">
+		<div style="position:absolute; top:280px; left:200px; color:#1fb0b8"> V </div> </div>
+
+		<div style="width:1800px; height:420px;">
+		<div style="position:absolute; top:180px; left:340px; color:#ff6600"> I </div></div>
+
+		<div style="width:1400px; height:460px;">
+		<div style="position:absolute; top:140px; left:380px; color:#ff1a1a"> n </div></div>
+
+		<div style="width:2000px; height:495px;">
+		<div style="position:absolute; top:260px; left:540px; color:#f5f15c;"> C </div></div>
+
+		<div style="width:1540px; height:480px;">
+		<div style="position:absolute; top:230px; left:540px; color:#e99400;"> e </div>
+
+		<div style="position:absolute; top:220px; left:900px; color:#b50c0c;"> T </div></div>
+
+		<div style="width:1800px; height:480px;">
+		<div style="position:absolute; top:170px; left:800px; color:#a4c522;"> N </div></div>
+
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,235 @@
+/* RESET */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+body {
+background:url(images/bg.png);
+overflow:hidden;
+cursor:url(images/arrow.cur);
+}
+
+#parallax div div{ font-size: 15em; line-height: 0.6em; z-index:-9999;}
+h1 {font-family:Helvetica, Palatino, Georgia, Trebuchet MS, serif; color:#464646;}
+
+
+#parallax{
+   -webkit-transition: all 0.4s ease;
+   -moz-transition:    all 0.4s ease;
+   -ms-transition:     all 0.4s ease;
+   -o-transition:      all 0.4s ease;
+}
+#parallax:hover {
+text-shadow: 1px 1px #fe4902,2px 2px #fff,3px 3px #fe4902,4px 4px #fff,5px 5px #fe4902,6px 6px #fff,7px 7px #fe4902,8px 8px #fff,9px 9px #fe4902,
+10px 10px #fff,11px 11px #fe4902;
+}
+
+.kontakt a{ 
+margin-top:93%;
+margin-left:86%;
+position:absolute;
+color: #000;
+font-family: 'Oswald', arial, serif;
+list-style:none;
+text-decoration:none;
+z-index:2;
+}
+
+.kontakt a:hover {
+color:#fff;
+text-shadow: 1px 1px #5f5f5f, 2px 2px #5f5f5f, 3px 3px #5f5f5f;
+text-decoration:underline;
+margin-top:92.5%;
+margin-left:85.8%;
+}
+.hemsidor{
+max-width:40%;
+}
+
+
+.hemsidor:hover + #parallax{
+text-shadow: 1px 1px #fe4902,2px 2px #fff,3px 3px #fe4902,4px 4px #fff,5px 5px #fe4902,6px 6px #fff,7px 7px #fe4902,8px 8px #fff,9px 9px #fe4902,
+10px 10px #fff,11px 11px 14px #fe4902;
+}
+
+.hemsidor ul {
+position:absolute;
+width:400px;
+bottom:10px;
+margin-left:61%;
+height:250px;
+width:100%;
+color: #555;
+font-family: 'Oswald', arial, serif;
+z-index:1;
+list-style:none;
+}
+
+.hemsidor ul h2{ 
+color: #43a2e7; font: bold 2.750em Helvetica, Arial, Sans-Serif;
+text-shadow: 1px 1px #fff, 2px 2px #fff, 3px 3px #fff, 4px 4px #fff;
+-webkit-transition: all 0.3s ease;
+-moz-transition: all 0.3s ease;
+-o-transition: all 0.3s ease;
+margin-bottom:-2px;
+}
+
+.hemsidor ul h2:hover {
+text-shadow: 1px 1px #fff, 2px 2px #fff, 3px 3px #fff, 4px 4px #fff, 5px 5px #fff, 6px 6px #fff, 7px 7px #fff, 8px 8px #fff;
+cursor:pointer;
+}
+
+.hemsidor ul li a {
+   color: #fff;
+   font: bold 34px Helvetica, Arial, Sans-Serif;
+   text-shadow: 1px 1px #fe4902,
+                2px 2px #fe4902,
+                3px 3px #fe4902;
+   -webkit-transition: all 0.2s ease;
+   -moz-transition:    all 0.2s ease;
+   -ms-transition:     all 0.2s ease;
+   -o-transition:      all 0.2s ease;
+}
+.hemsidor ul li a:hover {
+cursor:pointer;
+position: relative;
+top: -3px;
+left: -3px;
+text-shadow: 1px 1px #fe4902,2px 2px #fe4902,3px 3px #fe4902,4px 4px #fe4902,5px 5px #fe4902,6px 6px #fe4902,7px 7px #fe4902,8px 8px #fe4902,9px 9px #fe4902;
+text-decoration:none;
+}
+
+.hemsidor a {
+font-size: 22px;
+color:#fff;
+cursor:pointer;
+position: relative;
+top: -3px;
+left: -3px;
+text-shadow: 1px 1px #616161,2px 2px #616161;
+text-decoration:none;
+}
+.hemsidor a:hover {
+color:#fff;
+text-decoration:underline;
+}
+
+
+
+
+
+/* iPad [portrait + landscape] */
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+
+  body{ 
+  overflow:hidden;
+  padding:20px;
+  }
+  
+  #parallax {display:none;}
+  
+  .kontakt a{ 
+  color: #000;
+  font-family: 'Oswald', arial, serif;
+  text-decoration:none;
+  font-size:1em;
+  margin-top:70%;
+  margin-left:70%;
+  }
+ .kontakt a:hover {
+  margin-top:70%;
+  margin-left:70%;
+}
+  
+  .hemsidor ul {
+  width:250%;
+  position:relative;
+  float:left;
+  margin:0;
+  color: #555;
+  font-family: 'Oswald', arial, serif;
+  list-style:none;
+  }
+  
+  .hemsidor ul h2{ 
+  color: #43a2e7; font: bold 4.450em Helvetica, Arial, Sans-Serif;
+  text-shadow: 1px 1px #fff, 2px 2px #fff, 3px 3px #fff, 4px 4px #fff;
+  margin-bottom:-2px;
+  }
+  
+  .hemsidor ul li a {
+  width:50%;
+     color: #fff;
+     font: bold 3.450em Helvetica, Arial, Sans-Serif;
+     text-shadow: 1px 1px #fe4902,2px 2px #fe4902,3px 3px #fe4902;
+  }
+  .hemsidor a {
+  font-size: 22px;
+  color:#fff;
+  position: relative;
+  top: -3px;
+  left: -3px;
+  text-shadow: 1px 1px #616161,2px 2px #616161;
+  text-decoration:none;
+  }
+}
+
+
+
+
+/* iPhone */
+@media only screen and (max-width: 480px) {
+  body{ 
+  overflow-y:auto;
+  padding:10px;
+  }
+  
+  #parallax {display:none;}
+
+  .kontakt a{ 
+  color: #000;
+  font-family: 'Oswald', arial, serif;
+  text-decoration:none;
+  font-size:1em;
+  margin-top:80%;
+  margin-left:40%;
+  padding:5px;
+  }
+ .kontakt a:hover {
+  margin-top:80%;
+  margin-left:40%;
+  padding:5px;
+}
+  
+  .hemsidor ul {
+  width:250%;
+  position:relative;
+  float:left;
+  margin:0;
+  color: #555;
+  font-family: 'Oswald', arial, serif;
+  list-style:none;
+  }
+  
+  .hemsidor ul h2{ 
+  color: #43a2e7; font: bold 2em Helvetica, Arial, Sans-Serif;
+  text-shadow: 1px 1px #fff, 2px 2px #fff, 3px 3px #fff, 4px 4px #fff;
+  margin-bottom:-2px;
+  }
+  
+  .hemsidor ul li a {
+  
+  width:50%;
+  color: #fff;
+  font: bold 1.75em Helvetica, Arial, Sans-Serif;
+  text-shadow: 1px 1px #fe4902,2px 2px #fe4902,3px 3px #fe4902;
+  }
+  
+  .hemsidor a {
+  font-size: 1em;
+  color:#fff;
+  position: relative;
+  top: -3px;
+  left: -3px;
+  text-shadow: 1px 1px #616161,2px 2px #616161;
+  text-decoration:none;
+  }
+}
