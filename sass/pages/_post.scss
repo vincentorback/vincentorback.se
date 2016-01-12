@@ -1,13 +1,13 @@
 .Page-post {
   .Sitehead-inner {
-    max-width: none;
+    max-width: 1140px;
+    margin: auto;
+    left: 0;
+    right: 0;
     transform: translateY(-35%);
   }
   .Sitehead-title {
     margin-bottom: .2em;
-  }
-  .Sitehead-subtitle {
-    margin: -.2em 0 1em;
   }
   .Site-main {
     padding-top: 0;
@@ -17,6 +17,11 @@
       font-size: 2.5em;
     }
   }
+}
+
+
+.Sitehead-datetitle {
+  animation: fadeinBottom 700ms $nice-easing 1;
 }
 
 
@@ -40,6 +45,4 @@
       margin: $section-spacing-large 0;
     }
   }
-
-
 }
