@@ -334,25 +334,21 @@
       background-position: 50% 50%;
     }
 
-    @if index(("comai", "ican"), #{nth($work-names, $i)}) {
-      background-image: url("#{$images}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb.svg");
-      .no-svg & {
-        background-image: url("#{$images}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb.jpg");
-      }
-    } @else {
 
-      @media (max-width: 600px) {
-        background-image: url("#{$images}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb-small.jpg");
-      }
+    @media (max-width: 600px) and (max-resolution: 143dpi) {
+      background-image: url("#{$images}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb-small.jpg");
+    }
 
-      @media (min-width: 601px) {
-        background-image: url("#{$images}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb-medium.jpg");
-      }
+    @media (min-width: 601px), (min-resolution: 144dpi)   {
+      background-image: url("#{$images}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb-medium.jpg");
+    }
 
-      @media (min-width: 1200px) {
-        background-image: url("#{$images}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb-large.jpg");
-      }
+    @media (min-width: 1200px), (min-width: 601px) and (min-resolution: 144dpi) {
+      background-image: url("#{$images}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb-large.jpg");
+    }
 
+    @media (min-width: 1800px), (min-width: 1200px) and (min-resolution: 144dpi) {
+      background-image: url("#{$images}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb-huge.jpg");
     }
   }
 

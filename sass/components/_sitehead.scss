@@ -46,22 +46,26 @@
 @for $i from 1 through length($page-names) {
   @if index(("about", "blog", "contact"), #{nth($page-names, $i)}) {
 
-    @media (max-width: 600px) {
+    @media (max-width: 600px) and (max-resolution: 143dpi) {
       .Page-#{nth($page-names, $i)} .Sitehead-cover {
         background-image: url("#{$images}/#{nth($page-names, $i)}/header-small.jpg");
       }
     }
 
-    @media (min-width: 601px) {
+    @media (min-width: 601px), (min-resolution: 144dpi)   {
       .Page-#{nth($page-names, $i)} .Sitehead-cover {
         background-image: url("#{$images}/#{nth($page-names, $i)}/header-medium.jpg");
       }
     }
 
-    @media (min-width: 1200px) {
+    @media (min-width: 1200px), (min-width: 601px) and (min-resolution: 144dpi) {
       .Page-#{nth($page-names, $i)} .Sitehead-cover {
         background-image: url("#{$images}/#{nth($page-names, $i)}/header-large.jpg");
       }
+    }
+
+    @media (min-width: 1800px), (min-width: 1200px) and (min-resolution: 144dpi) {
+      background-image: url("#{$images}/#{nth($page-names, $i)}/header-huge.jpg");
     }
   }
 }
