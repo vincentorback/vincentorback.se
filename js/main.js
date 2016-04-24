@@ -1001,6 +1001,4 @@
 
   vincent.init();
 
-  FastClick.attach(body);
-
 }(this));
