@@ -263,7 +263,7 @@
         bgCover,
         cover,
         page,
-        coverSize = 'medium',
+        coverSize,
         currentIsHalf = ['page-front', 'page-about', 'page-blog', 'page-post', 'page-contact'].indexOf($body.attr('id')) > -1;
 
       $body.find('.js-transitionHalf').on('click', function (e) {

@@ -175,22 +175,26 @@ module.exports = function (grunt) {
     },
 
     responsive_images: {
+      options: {
+        sizes: [{
+          name: 'small',
+          width: 600,
+          quality: vincentConfig.imageQuality
+        },{
+          name: 'medium',
+          width: 1200,
+          quality: vincentConfig.imageQuality
+        },{
+          name: 'large',
+          width: 1920,
+          quality: vincentConfig.imageQuality
+        },{
+          name: 'huge',
+          width: 2560,
+          quality: vincentConfig.imageQuality
+        }]
+      },
       test: {
-        options: {
-          sizes: [{
-            name: 'small',
-            width: 600,
-            quality: vincentConfig.imageQuality
-          },{
-            name: 'medium',
-            width: 1200,
-            quality: vincentConfig.imageQuality
-          },{
-            name: 'large',
-            width: 1920,
-            quality: vincentConfig.imageQuality
-          }]
-        },
         files: [{
           expand: true,
           src: [
