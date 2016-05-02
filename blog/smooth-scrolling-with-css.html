@@ -67,7 +67,7 @@
     <div class="u-wrapper--S">
       <p><b>Update!</b> <time class="u-textSmall" itemprop="dateUpdated" datetime="2015-08-14">14 August 2015</time><br>
       For those of you who come here for an alternative to jQuery scroll: There’s a W3C draft to improve the native javascript function <code class="language-javascript">scrollTo</code> with smooth scrolling. It currently works in Firefox and <span class="u-textTruncate">experimental Chrome.</span>
-      <br><a href="http://blog.gospodarets.com/native_smooth_scrolling/">Read more here</a>.</p>
+      <br><a href="http://blog.gospodarets.com/native_smooth_scrolling">Read about native smooth scrolling here</a>.</p>
     </div>
 
 <pre class="Entry-code Code language-javascript" style="margin: 0 auto !important;"><code>var targetOffset = document.getElementById('target-element').offsetTop;
@@ -78,6 +78,10 @@ window.scrollTo({
   'top': targetOffset
 });
 </code></pre>
+
+    <div class="u-wrapper--S">
+      <p>For browsers that still doesnt have support for that, I would use this small and dependency-free library <a href="https://github.com/callmecavs/jump.js">Jump.js</a>
+    </div>
 
     <hr>
 
@@ -140,7 +144,7 @@ button.addEventListener('click', function (event) {
 
     <div class="u-wrapper--S">
       <p>Here’s a <a href="http://cdpn.io/FCpBo">demo</a>.</p>
-      <p>And if you must support browser that <a href="http://caniuse.com/#search=translate3d">don’t support</a> translate3d, <a href="http://cdpn.io/bivGe">here’s another way</a> of doing it using margin.</p>
+      <p>And if you must support browser that don’t <a href="http://caniuse.com/#search=translate3d">support translate3d</a>, <a href="http://cdpn.io/bivGe">here’s another way</a> of doing it using margin.</p>
       <p>If you have any comments on the code, approach, performance, semantics or what ever, please tell me in the comments below!</p>
     </div>
   </article>
