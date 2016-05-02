@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json; charset=utf-8');
 
-$toemail = 'vorback@gmail.com';
+$toemail = 'vincentorback@gmail.com';
 $subject = 'Message from vincentorback.se';
 $fieldData = array(
   'name' => isset($_POST['name']) ? 'Name: ' . $_POST['name'] : false,
@@ -26,10 +26,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $response = "Thank you for your message ". $_POST['name'] .". <br>I’ll get back to you ASAP!";
   }
   else {
-    $response = 'Something went wrong. Try sending and email to <a href="mailto:vorback@gmail.com&subject=Message from vincentorback.se&body=' . $_POST['message'] . '">vorback@gmail.com</a> instead.';
+    $response = 'Something went wrong. Try sending and email to <a href="mailto:vincentorback@gmail.com&subject=Message from vincentorback.se&body=' . $_POST['message'] . '">vincentorback@gmail.com</a> instead.';
   }
 } else {
-  $response = 'Something went wrong. Try sending and email to <a href="mailto:vorback@gmail.com&subject=Message from vincentorback.se&body=' . $_POST['message'] . '">vorback@gmail.com</a> instead.';
+  $response = 'Something went wrong. Try sending and email to <a href="mailto:vincentorback@gmail.com&subject=Message from vincentorback.se&body=' . $_POST['message'] . '">vincentorback@gmail.com</a> instead.';
 }
 
 echo json_encode($response, JSON_PRETTY_PRINT);

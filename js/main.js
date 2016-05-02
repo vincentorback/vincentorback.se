@@ -679,7 +679,7 @@
         response = '',
         isError = false,
         $firstError,
-        errorMessage = 'Something went wrong... Try sending and email to <a href="mailto:vorback@gmail.com&subject=Message from vincentorback.se&body=' + $message.val() + '">vorback@gmail.com</a> instead.';
+        errorMessage = 'Something went wrong... Try sending and email to <a href="mailto:vincentorback@gmail.com&subject=Message from vincentorback.se&body=' + $message.val() + '">vincentorback@gmail.com</a> instead.';
 
       $form.on('submit', function () {
         isError = false;
