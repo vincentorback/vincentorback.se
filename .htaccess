@@ -7,6 +7,8 @@ Redirect 301 /blog.html/ http://vincentorback.se/blog/
 Redirect 301 /kontakt/ http://vincentorback.se/contact/
 Redirect 301 /kontakt.html http://vincentorback.se/contact/
 
+Redirect 301 /work/johanna-bystrom/ http://johannabystrom.se
+
 Redirect 301 /cv http://vincentorback.se/cv.pdf
 Redirect 301 /cv.pdf/ http://vincentorback.se/cv.pdf
 Redirect 301 /cv-en.pdf http://vincentorback.se/cv.pdf
