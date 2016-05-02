@@ -126,7 +126,6 @@
 
 
 
-
 .Navigation-toggle {
   position: absolute;
   top: 1.2em;
@@ -135,18 +134,18 @@
 
   padding: .65em 1em;
 
+  color: #fff;
   border: 1px solid #fff;
   border-radius: 4px;
 
   background: transparent;
   font-size: .85em;
-  color: #fff;
 
   display: block;
 
   .no-touchevents &:hover {
     background: #fff;
-    color: $red;
+    color: $text;
   }
 
   @include respond-min($threshold) {

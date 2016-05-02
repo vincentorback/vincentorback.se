@@ -2,8 +2,13 @@ $post-names: ("clean-wordpress-admin", "loop-scroll", "favorite-talks", "honor-d
 $post-colors: ($purple, $blue, $orange, $pink,  $green, $blue, $red);
 
 @for $i from 1 through length($post-names) {
-  .Post--#{nth($post-names, $i)} .Sitehead {
-    background: #{nth($post-colors, $i)};
+  .Post--#{nth($post-names, $i)} {
+    .Sitehead {
+      background: #{nth($post-colors, $i)};
+    }
+    .Navigation-toggle:hover {
+      color: #{nth($post-colors, $i)};
+    }
   }
 }
 

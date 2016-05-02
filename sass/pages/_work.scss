@@ -1,10 +1,8 @@
 .Page-work {
 
-  .Sitehead {
+  .Sitehead,
+  .Sitehead a {
     color: #fff;
-    a {
-      color: #fff;
-    }
   }
 
   .Sitehead-inner {
@@ -334,7 +332,6 @@
       background-position: 50% 50%;
     }
 
-
     @media (max-width: 600px) and (max-resolution: 143dpi) {
       background-image: url("#{$images}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb-small.jpg");
     }
@@ -356,28 +353,22 @@
   @if index(("prophet", "joy"), #{nth($work-names, $i)}) {
     // .Work--#{nth($work-names, $i)},
     .Work--#{nth($work-names, $i)} .Navigation-toggle,
+    .Work--#{nth($work-names, $i)} .Navigation-toggle:hover,
     .Work--#{nth($work-names, $i)} .Navigation a,
     .Work--#{nth($work-names, $i)} .Navigation a,
     .Work--#{nth($work-names, $i)} .Sitehead-inner,
     .Work--#{nth($work-names, $i)} .Sitehead a,
     .WorkItem--#{nth($work-names, $i)},
-    .WorkItem--#{nth($work-names, $i)} a {
-      color: $joy;
+    .WorkItem--#{nth($work-names, $i)} a,
+    .WorkItem--#{nth($work-names, $i)} a:hover {
+      color: $text;
     }
 
+
     .Work--#{nth($work-names, $i)} {
-
-      .Navigation-toggle {
-        border-color: $joy;
-        &:hover {
-          color: $joy;
-        }
-      }
-
       .Sitehead {
         background-color: #f4f4f4;
       }
-
       @include respond-max(800px) {
         .Navigation a {
           color: #fff;
@@ -386,16 +377,14 @@
     }
 
     .WorkItem--#{nth($work-names, $i)} a {
-      border-color: $joy;
+      border-color: $text;
 
       &:hover {
-        color: $joy;
-        background: $joy;
-        color: #fff !important;
+        background: $text;
       }
 
       @include respond-min(800px) {
-        border-color: $joy;
+        border-color: $text;
       }
     }
   }
@@ -460,18 +449,5 @@
   .Work-wrapper--#{nth($work-names, $i)} {
     background: #{nth($work-colors, $i)};
   }
-
-
-  /**
-   * Worklist item on the front page
-   */
-   @if index(("prophet", "joy"), #{nth($work-names, $i)} != null) {
-    .WorkItem--#{nth($work-names, $i)} {
-      a:hover {
-        color: #{nth($work-colors, $i)};
-      }
-    }
-  }
-
 
 }

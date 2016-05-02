@@ -4,18 +4,6 @@
 
 .Page-front {
 
-  // .Sitehead {
-  //   height: 100%;
-  //   max-height: 1600px;
-  //   background: $red;
-  // }
-  //
-  // .Sitehead-inner {
-  //   top: auto;
-  //   bottom: 25%;
-  //   max-width: 1100px;
-  // }
-
   .Sitehead {
     background: $red;
   }
@@ -41,10 +29,6 @@
   }
 
   .Sitehead-link {
-    // position: absolute;
-    // left: 0;
-    // top: 130%;
-
     display: block;
     margin-top: 2em;
     padding-right: 1em;
@@ -68,7 +52,16 @@
     animation: none;
   }
 
-  @include respond-min(800px) {
+
+  .Navigation-toggle:hover {
+    color: $red;
+  }
+
+}
+
+
+@include respond-min(800px) {
+  .Page-front {
     .Sitehead-inner {
       top: 45%;
       animation: fadeinBottom 700ms $nice-easing 1;
@@ -82,8 +75,10 @@
       }
     }
   }
+}
 
-  @include respond-max(800px) {
+@include respond-max(800px) {
+  .Page-front {
     .Navigation {
       background: #fff;
       a {
@@ -106,8 +101,10 @@
       display: none;
     }
   }
+}
 
-  @include respond-max(400px) {
+@include respond-max(400px) {
+  .Page-front {
     .Sitehead {
       height: 250px;
       min-height: 0;
