@@ -35,6 +35,12 @@
     winHeight = viewport.height,
     vincent;
 
+  window.onpageshow = function(event) {
+    if (event.persisted) {
+      window.location.reload();
+    }
+  };
+
   vincent = {
 
     init: function () {
