@@ -1,5 +1,3 @@
-var path = require('path');
-
 module.exports = function (grunt) {
 
   function htmlBanner() {
@@ -91,7 +89,7 @@ module.exports = function (grunt) {
         screwIE8: true,
         report: 'min'
       },
-      target: {
+      main: {
         files: {
           'js/main-min.js': [
             'js/vendor/modernizr-custom.js',
@@ -102,6 +100,18 @@ module.exports = function (grunt) {
             'js/main.js'
           ]
         }
+      },
+      error: {
+        files: {
+          'js/500-min.js': [
+            'js/vendor/svg.js',
+            'js/500.js'
+          ],
+          'js/404-min.js': [
+            'js/vendor/paper-full.js',
+            'js/404.js'
+          ]
+        }
       }
     },
 
@@ -110,7 +120,6 @@ module.exports = function (grunt) {
         options: {
           removeComments: true,
           collapseWhitespace: true,
-          // lint: true,
           minifyJS: true,
           minifyCSS: true,
           minifyURLs: true,
@@ -208,19 +217,18 @@ module.exports = function (grunt) {
     watch: {
       scripts: {
         files: 'js/main.js',
-        tasks: ['uglify']
+        tasks: ['uglify:main']
       },
       styles: {
         files: 'sass/**/*.scss',
         tasks: ['css']
       }
     }
-
   });
 
   require('load-grunt-tasks')(grunt);
 
-  grunt.registerTask('default', ['css', 'uglify', 'watch']);
+  grunt.registerTask('default', ['css', 'uglify:main', 'watch']);
 
   grunt.registerTask('css', ['sass', 'autoprefixer']);
 

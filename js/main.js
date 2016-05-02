@@ -1,5 +1,5 @@
 /* jslint browser: true, indent: 2 */
-/* global $, jQuery, Modernizr, FastClick, ga */
+/* global $, jQuery, Modernizr, ga */
 
 (function (window) {
   'use strict';
@@ -119,6 +119,7 @@
       }
 
       vincent.lazyLoad();
+
     },
 
     lazyLoad: function () {
@@ -805,8 +806,13 @@
 
     blogComments: function () {
       var disqus_shortname = 'vincentorback',
-        dsq = doc.createElement('script'),
         $comments = $body.find('.js-comments');
+
+      if ($comments.length === 0) {
+        return;
+      }
+
+      var dsq = doc.createElement('script');
 
       dsq.type = 'text/javascript';
       dsq.async = true;

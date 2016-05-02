@@ -5,25 +5,19 @@
 }
 
 
-
-
-
 .About {
   padding: #{$section-spacing-mobile - 20px} 0 $section-spacing-mobile;
   p:last-child {
     margin-bottom: 0;
   }
 }
+
 @include respond-min(800px) {
   .About {
     padding: #{$section-spacing - 20px} 0 $section-spacing;
     animation: fadein 1000ms $nice-easing 1;
   }
 }
-
-
-
-
 
 
 @include respond-min(1600px) {
