@@ -350,45 +350,6 @@
   }
 
 
-  @if index(("prophet"), #{nth($work-names, $i)}) {
-    // .Work--#{nth($work-names, $i)},
-    .Work--#{nth($work-names, $i)} .Navigation-toggle,
-    .Work--#{nth($work-names, $i)} .Navigation-toggle:hover,
-    .Work--#{nth($work-names, $i)} .Navigation a,
-    .Work--#{nth($work-names, $i)} .Navigation a,
-    .Work--#{nth($work-names, $i)} .Sitehead-inner,
-    .Work--#{nth($work-names, $i)} .Sitehead a,
-    .WorkItem--#{nth($work-names, $i)},
-    .WorkItem--#{nth($work-names, $i)} a,
-    .WorkItem--#{nth($work-names, $i)} a:hover {
-      color: $text;
-    }
-
-
-    .Work--#{nth($work-names, $i)} {
-      .Sitehead {
-        background-color: #f4f4f4;
-      }
-      @include respond-max(800px) {
-        .Navigation a {
-          color: #fff;
-        }
-      }
-    }
-
-    .WorkItem--#{nth($work-names, $i)} a {
-      border-color: $text;
-
-      &:hover {
-        background: $text;
-      }
-
-      @include respond-min(800px) {
-        border-color: $text;
-      }
-    }
-  }
-
 
   /**
    * Work page
@@ -417,18 +378,101 @@
   }
 
 
+  @if index(("rikskriscentrum"), #{nth($work-names, $i)}) {
+    .Work--#{nth($work-names, $i)} .Navigation-toggle,
+    .Work--#{nth($work-names, $i)} .Navigation-toggle:hover,
+    .Work--#{nth($work-names, $i)} .Navigation a,
+    .Work--#{nth($work-names, $i)} .Navigation a,
+    .Work--#{nth($work-names, $i)} .Sitehead-inner,
+    .Work--#{nth($work-names, $i)} .Sitehead a,
+    .WorkItem--#{nth($work-names, $i)},
+    .WorkItem--#{nth($work-names, $i)} a,
+    .WorkItem--#{nth($work-names, $i)} a:hover {
+      color: $rikskriscentrum2;
+      border-color: $rikskriscentrum2;
+    }
+
+    .Work--#{nth($work-names, $i)} {
+      .Work-entry {
+        h1,h2,h3,h4,a,dt {
+          color: $rikskriscentrum2;
+          border-color: $rikskriscentrum2;
+        }
+      }
+
+      .Work-visitLink {
+        background: #fff;
+        &:hover {
+          background: $rikskriscentrum2;
+          color: #fff;
+        }
+      }
+    }
+
+    .WorkItem--#{nth($work-names, $i)} a {
+      border-color: $rikskriscentrum2;
+
+      &:hover {
+        background: $rikskriscentrum2;
+        color: $rikskriscentrum;
+      }
+
+      @include respond-min(800px) {
+        border-color: $rikskriscentrum2;
+      }
+    }
+  }
+
+  @if index(("prophet"), #{nth($work-names, $i)}) {
+    .Work--#{nth($work-names, $i)} .Navigation-toggle,
+    .Work--#{nth($work-names, $i)} .Navigation-toggle:hover,
+    .Work--#{nth($work-names, $i)} .Navigation a,
+    .Work--#{nth($work-names, $i)} .Navigation a,
+    .Work--#{nth($work-names, $i)} .Sitehead-inner,
+    .Work--#{nth($work-names, $i)} .Sitehead a,
+    .WorkItem--#{nth($work-names, $i)},
+    .WorkItem--#{nth($work-names, $i)} a,
+    .WorkItem--#{nth($work-names, $i)} a:hover {
+      color: $text;
+    }
+
+    .Work--#{nth($work-names, $i)} {
+      .Sitehead {
+        background-color: #f4f4f4;
+      }
+      @include respond-max(800px) {
+        .Navigation a {
+          color: #fff;
+        }
+      }
+    }
+
+    .WorkItem--#{nth($work-names, $i)} a {
+      border-color: $text;
+
+      &:hover {
+        background: $text;
+      }
+
+      @include respond-min(800px) {
+        border-color: $text;
+      }
+    }
+  }
+
+
   /**
    * Page navigation
    */
   .PageNav-item--#{nth($work-names, $i)} {
-    @if index(("prophet"), #{nth($work-names, $i)}) {
+    @if index(("rikskriscentrum"), #{nth($work-names, $i)}) {
       background: #fff;
-      color: #{nth($work-colors, $i)};
-      border-color: #{nth($work-colors, $i)};
+      color: $rikskriscentrum2;
+      border-color: $rikskriscentrum2;
       &:hover {
-        background: #{nth($work-colors, $i)};
+        background: $rikskriscentrum2;
         color: #fff;
-        border-color: #{nth($work-colors, $i)};
+        border-color: $rikskriscentrum2;
       }
     } @else {
       background: #fff;
