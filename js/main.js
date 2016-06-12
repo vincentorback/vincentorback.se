@@ -837,6 +837,7 @@
       $body.find('.js-parallax').imageScroll({
         imageAttribute: (winWidth < 800) ? 'mobile' : 'image',
         holderMinHeight: 300,
+        holderMaxHeight: (winWidth < 800) ? (winHeight / 2) : null,
         speed: 0.4,
         coverRatio: 0.85,
         parallax: Modernizr.csstransforms,
