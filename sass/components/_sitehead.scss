@@ -58,13 +58,13 @@
       }
     }
 
-    @media (min-width: 1200px), (min-width: 601px) and (min-resolution: 144dpi) {
+    @media (min-width: 1000px), (min-width: 601px) and (min-resolution: 144dpi) {
       .Page-#{nth($page-names, $i)} .Sitehead-cover {
         background-image: url("#{$images}/#{nth($page-names, $i)}/header-large.jpg");
       }
     }
 
-    @media (min-width: 1800px), (min-width: 1200px) and (min-resolution: 144dpi) {
+    @media (min-width: 1800px), (min-width: 1000px) and (min-resolution: 144dpi) {
       background-image: url("#{$images}/#{nth($page-names, $i)}/header-huge.jpg");
     }
   }

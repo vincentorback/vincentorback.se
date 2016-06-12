@@ -340,13 +340,14 @@
       background-image: url("#{$images}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb-medium.jpg");
     }
 
-    @media (min-width: 1200px), (min-width: 601px) and (min-resolution: 144dpi) {
+    @media (min-width: 1000px), (min-width: 601px) and (min-resolution: 144dpi) {
       background-image: url("#{$images}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb-large.jpg");
     }
 
-    @media (min-width: 1800px), (min-width: 1200px) and (min-resolution: 144dpi) {
+    @media (min-width: 1800px), (min-width: 1000px) and (min-resolution: 144dpi) {
       background-image: url("#{$images}/#{nth($work-names, $i)}/#{nth($work-names, $i)}-thumb-huge.jpg");
     }
+
   }
 
 

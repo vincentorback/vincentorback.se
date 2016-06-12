@@ -298,7 +298,7 @@
             page = 'about';
           }
 
-          coverSize = viewport.width > 1200 ? 'large' : 'medium';
+          coverSize = viewport.width > 1000 ? 'large' : 'medium';
           cover = vincent.amazon + '/images/' + page + '/header-' + coverSize + '.jpg';
         }
 
