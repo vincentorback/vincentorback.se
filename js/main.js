@@ -45,7 +45,6 @@
 
     init: function () {
 
-      vincent.amazon = '//d3dx0f1ge67l9j.cloudfront.net';
       vincent.colors = {
         purple: '#9b59b6',
         pink: '#ff7fa5',
@@ -299,7 +298,7 @@
           }
 
           coverSize = viewport.width > 1000 ? 'large' : 'medium';
-          cover = vincent.amazon + '/images/' + page + '/header-' + coverSize + '.jpg';
+          cover = '/images/' + page + '/header-' + coverSize + '.jpg';
         }
 
         if (cover && (page !== 'front')) {
@@ -846,7 +845,7 @@
     },
 
     easterEggs: function () {
-      var easterUrl = vincent.amazon + '/easter',
+      var easterUrl = '/easter',
         easterEggs = [
           {
             code: [65, 80, 80, 76, 69], // apple
