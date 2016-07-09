@@ -8,8 +8,14 @@
   overflow: hidden;
 }
 
+.WorkExcerpt-inner {
+  width: 90%;
+  max-width: var(--site-width);
+  margin: 0 auto;
+}
+
 @media (--md-viewport) {
-  .WorkExcerpt {
+  .WorkExcerpt-inner {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,15 +24,13 @@
 
 
 .WorkExcerpt-content {
-  padding: var(--site-spacing-sm) 5%;
+  padding: var(--site-spacing-sm) 0;
 }
 
 @media (--md-viewport) {
   .WorkExcerpt-content {
     flex: 1 1 500px;
     min-width: 500px;
-    padding: 10%;
-    padding-right: 0;
   }
 }
 
@@ -68,10 +72,22 @@
   }
 }
 
+@media (--xl-viewport) {
+  .WorkExcerpt-title {
+    font-size: 4.5em;
+  }
+}
+
 
 .WorkExcerpt-text {
   font-size: 1.3em;
   max-width: 600px;
+}
+
+@media (--xl-viewport) {
+  .WorkExcerpt-text {
+    font-size: 1.6em;
+  }
 }
 
 
@@ -92,7 +108,7 @@
 @media (--xl-viewport) {
   .WorkExcerpt-info,
   .WorkExcerpt-links {
-    font-size: 1.1em;
+    font-size: 1.3em;
   }
   .WorkExcerpt-info {
     margin-top: 1em;
@@ -108,7 +124,7 @@
 }
 
 .WorkExcerpt-link:hover {
-  opacity: .8;
+  opacity: .7;
 }
 
 
@@ -145,6 +161,7 @@
 .WorkExcerpt-imageWrap {
   /*padding: 0 5%;*/
   display: none;
+  text-align: right;
 }
 
 @media (--md-viewport) {
@@ -155,10 +172,9 @@
 }
 
 .WorkExcerpt-image {
-  text-align: center;
-  display: block;
+  display: inline-block;
   max-height: 95vh;
-  margin: var(--site-spacing-sm) auto;
+  margin: var(--site-spacing-sm) 0;
 }
 
 
@@ -183,13 +199,31 @@
 
 
 .WorkExcerpt--you {
-  /*display: block;*/
+  display: block;
   background: var(--color-pansarfilm);
+}
+
+@media (--md-viewport) {
+  .WorkExcerpt--you .WorkExcerpt-content {
+    padding: var(--site-spacing-md) 0;
+  }
+}
+
+@media (--lg-viewport) {
+  .WorkExcerpt--you .WorkExcerpt-content {
+    padding: var(--site-spacing-lg) 0;
+  }
+}
+
+@media (--xl-viewport) {
+  .WorkExcerpt--you .WorkExcerpt-content {
+    padding: var(--site-spacing-xl) 0;
+  }
 }
 
 
 /* Ziczack */
-.WorkExcerpt:nth-child(2n + 1) .WorkExcerpt-content {
+/*.WorkExcerpt:nth-child(2n + 1) .WorkExcerpt-content {
   order: 2;
   padding-right: 10%;
   flex: 1 0 60%;
@@ -197,4 +231,5 @@
 
 .WorkExcerpt:nth-child(2n + 1) .WorkExcerpt-imageWrap {
   flex: 0 1 40%;
-}
+  text-align: left;
+}*/
