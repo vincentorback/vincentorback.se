@@ -408,6 +408,13 @@
           color: #fff;
         }
       }
+
+      @include respond-max(800px) {
+        .Navigation a {
+          color: #fff;
+        }
+      }
+
     }
 
     .WorkItem--#{nth($work-names, $i)} a {
@@ -443,7 +450,7 @@
       }
       @include respond-max(800px) {
         .Navigation a {
-          color: #fff;
+        color: #fff;
         }
       }
     }
