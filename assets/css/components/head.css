@@ -1,0 +1,74 @@
+/** @define Head */
+
+:root {
+  --Head-color: var(--color-text);
+}
+
+
+.Head {
+  position: relative;
+  z-index: 10;
+}
+
+
+@media (--md-viewport) {
+  .Head {
+    /*position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;*/
+  }
+}
+
+
+.Head-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Head-logo,
+.Head-navItem {
+  display: block;
+  padding: 1em 0;
+
+  color: var(--Head-color);
+}
+
+.Head-logo:hover,
+.Head-navItem:hover {
+  opacity: .8;
+}
+
+.Head-logo {
+  font-weight: var(--font-bold);
+}
+
+@media (--md-viewport) {
+  .Head-logo,
+  .Head-navItem {
+    font-size: 1.2em;
+  }
+}
+
+
+@media (--lg-viewport) {
+  .Head-logo,
+  .Head-navItem {
+    padding: 1.5em 0;
+    font-size: 1.4em;
+  }
+
+  .Head-navItem {
+    font-weight: var(--font-normal);
+  }
+}
+
+
+
+
+@media (--lg-viewport) {
+  .Head--front {
+    margin-bottom: -40px;
+  }
+}

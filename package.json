@@ -1,0 +1,56 @@
+{
+  "name": "vincent-orback",
+  "version": "5.0.0",
+  "description": "My personal portfolio",
+  "homepage": "http://vincentorback.se",
+  "author": {
+    "name": "Vincent Orback",
+    "email": "vorback@gmail.com",
+    "url": "http://vincentorback.se"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vincentorback/vincent-orback.git"
+  },
+  "scripts": {
+    "start": "parallelshell 'npm run watch' 'npm run serve'",
+    "build": "npm run build:js && npm run build:css",
+    "build:js": "uglifyjs assets/javascript/vendor/modernizr-custom.js assets/javascript/main.js -o assets/min/main-min.js --screw-ie8 --comments",
+    "build:css": "postcss -u postcss-import -u postcss-css-variables -u postcss-custom-media -u postcss-custom-selectors -u autoprefixer autoprefixer.browsers 'last 3 versions' autoprefixer.cascade false -u postcss-reporter --postcss-reporter.clearMessages true -u csswring --sourcemap -o assets/min/style-min.css assets/css/style.css",
+    "lint:js": "eslint --quiet --ignore-pattern assets/javascript/vendor/**/* assets/javascript/**/*.js",
+    "lint:css": "postcss -u stylelint -q -u postcss-bem-linter --postcss-bem-linter.preset 'suit' --postcss-bem-linter.ignoreSelectors html. -u postcss-reporter --postcss-reporter.clearMessages true --dir assets/min/lint assets/css/**/*.css",
+    "watch:js": "watch 'npm run lint:js && npm run build:js' assets/javascript --wait 5",
+    "watch:css": "watch 'npm run build:css' assets/css --wait 5",
+    "watch": "parallelshell 'npm run watch:js' 'npm run watch:css'",
+    "serve": "ws --port $npm_package_config_port"
+  },
+  "config": {
+    "port": "3000",
+    "js_files": "assets/javascript/vendor/modernizr-custom.js assets/javascript/main.js",
+    "eslint_pattern": "assets/javascript/**/*.js !assets/javascript/vendor/**/*.js"
+  },
+  "dependencies": {
+    "suitcss-utils-size": "2.0.0",
+    "suitcss-components-grid": "3.0.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.7",
+    "csswring": "^5.1.0",
+    "eslint": "^3.0.1",
+    "local-web-server": "1.2.6",
+    "parallelshell": "^2.0.0",
+    "postcss": "^5.0.21",
+    "postcss-bem-linter": "^2.5.1",
+    "postcss-cli": "^2.5.2",
+    "postcss-css-variables": "^0.5.1",
+    "postcss-custom-media": "^5.0.1",
+    "postcss-custom-selectors": "^3.0.0",
+    "postcss-import": "^8.1.2",
+    "postcss-reporter": "^1.4.1",
+    "stylelint": "^6.9.0",
+    "stylelint-config-suitcss": "^7.0.0",
+    "uglify-js": "^2.7.0",
+    "watch": "^0.19.1"
+  }
+}

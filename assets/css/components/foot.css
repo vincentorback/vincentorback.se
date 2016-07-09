@@ -1,0 +1,95 @@
+/** @define Foot */
+
+:root {
+  --Foot-color: #fff;
+  --Foot-background: #333;
+  --Foot-slapPeace: '/assets/images/slap-peace.png';
+  --Foot-slapHand: '/assets/images/slap-hand.png';
+  --Foot-slapSize: 100px;
+}
+
+.Foot {
+  width: 100%;
+  padding: var(--site-spacing-sm) 0;
+  background: var(--Foot-background);
+  color: var(--Foot-color);
+  overflow: hidden;
+}
+
+@media (--md-viewport) {
+  .Foot {
+    padding: var(--site-spacing-md) 0;
+    font-size: 1.2em;
+  }
+}
+
+@media (--lg-viewport) {
+  .Foot {
+    padding: var(--site-spacing-lg) 0;
+  }
+}
+
+@media (--xl-viewport) {
+  .Foot {
+    padding: var(--site-spacing-xl) 0;
+  }
+}
+
+
+
+.Foot-title {
+  font-weight: var(--font-bold);
+  margin-bottom: .75em;
+  color: #aaa;
+}
+
+.Foot-link {
+  display: inline-block;
+  padding: .1em 0;
+  margin: .2em 0;
+}
+
+.Foot-link:hover {
+  border-bottom-color: #fff;
+}
+
+
+
+/* Slap */
+
+.Foot-slap {
+  user-select: none;
+}
+
+@media (--sm-max-viewport) {
+  .Foot-slap {
+    margin-top: 50px;
+  }
+}
+
+.Foot-slapHand {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  background-image: url(var(--Foot-slapPeace));
+  background-position: 0 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: var(--Foot-slapSize);
+  height: var(--Foot-slapSize);
+}
+
+html.touchevents .Foot-slapHand,
+.Foot-slapHand:hover {
+  background-image: url(var(--Foot-slapHand));
+}
+
+html.js .Foot-slapHand {
+  transform: scale(1.2);
+  cursor: grab;
+  transition: transform 100ms ease;
+}
+
+html.js .Foot-slapHand:active {
+  transform: scale(1.1);
+}

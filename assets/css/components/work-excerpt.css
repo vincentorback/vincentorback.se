@@ -1,0 +1,200 @@
+/** @define WorkExcerpt; */
+
+:root {
+  --WorkExcerpt-content-width: 40%;
+}
+
+.WorkExcerpt {
+  overflow: hidden;
+}
+
+@media (--md-viewport) {
+  .WorkExcerpt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+.WorkExcerpt-content {
+  padding: var(--site-spacing-sm) 5%;
+}
+
+@media (--md-viewport) {
+  .WorkExcerpt-content {
+    flex: 1 1 500px;
+    min-width: 500px;
+    padding: 10%;
+    padding-right: 0;
+  }
+}
+
+@media (--lg-viewport) {
+  .WorkExcerpt-content {
+    flex: 1 0 40%;
+  }
+}
+
+
+.WorkExcerpt-title {
+  font-size: 1.5em;
+  line-height: 1.2;
+  margin-bottom: .2em;
+  font-weight: var(--font-bold);
+}
+
+@media (--sm-max-viewport) {
+  .WorkExcerpt-title {
+    margin-bottom: .5em;
+  }
+}
+
+@media (--xs-viewport) {
+  .WorkExcerpt-title {
+    font-size: 2.2em;
+  }
+}
+
+@media (--sm-viewport) {
+  .WorkExcerpt-title {
+    font-size: 2.8em;
+  }
+}
+
+@media (--lg-viewport) {
+  .WorkExcerpt-title {
+    font-size: 3.5em;
+  }
+}
+
+
+.WorkExcerpt-text {
+  font-size: 1.3em;
+  max-width: 600px;
+}
+
+
+/* Info */
+
+.WorkExcerpt-info,
+.WorkExcerpt-links {
+  margin-top: 1em;
+}
+
+@media (--lg-viewport) {
+  .WorkExcerpt-info,
+  .WorkExcerpt-links {
+    margin-top: 2em;
+  }
+}
+
+@media (--xl-viewport) {
+  .WorkExcerpt-info,
+  .WorkExcerpt-links {
+    font-size: 1.1em;
+  }
+  .WorkExcerpt-info {
+    margin-top: 1em;
+  }
+}
+
+
+.WorkExcerpt-link {
+  display: inline-block;
+  border-bottom: 1px dotted currentColor;
+  color: currentColor;
+  transition: opacity 100ms;
+}
+
+.WorkExcerpt-link:hover {
+  opacity: .8;
+}
+
+
+.WorkExcerpt-link--button {
+  margin-right: 1.5em;
+  margin-bottom: .75em;
+  padding: 1em 1.75em;
+  background: currentColor;
+  border-radius: 4px;
+  border: 0;
+}
+
+
+.WorkExcerpt-linkText,
+.WorkExcerpt-linkSymbol {
+  display: inline-block;
+  vertical-align: middle;
+  color: #fff;
+}
+.WorkExcerpt-linkSymbol {
+  margin-left: .5em;
+  margin-right: -.5em;
+}
+
+.WorkExcerpt-link--external:hover {
+  opacity: 1;
+  border-bottom-style: solid;
+}
+
+
+
+/* Image */
+
+.WorkExcerpt-imageWrap {
+  /*padding: 0 5%;*/
+  display: none;
+}
+
+@media (--md-viewport) {
+  .WorkExcerpt-imageWrap {
+    display: block;
+    flex: 1 1 60%;
+  }
+}
+
+.WorkExcerpt-image {
+  text-align: center;
+  display: block;
+  max-height: 95vh;
+  margin: var(--site-spacing-sm) auto;
+}
+
+
+/* Coop */
+.WorkExcerpt--coop {
+  background: #f3f5f0;
+  color: var(--color-coop2);
+}
+
+
+/* Rikskriscentrum */
+.WorkExcerpt--rikskriscentrum {
+  background: var(--color-rikskriscentrum2);
+  color: var(--color-rikskriscentrum1);
+}
+
+
+/* Pansarfilm */
+.WorkExcerpt--pansarfilm {
+  background: var(--color-pansarfilm);
+}
+
+
+.WorkExcerpt--you {
+  /*display: block;*/
+  background: var(--color-pansarfilm);
+}
+
+
+/* Ziczack */
+.WorkExcerpt:nth-child(2n + 1) .WorkExcerpt-content {
+  order: 2;
+  padding-right: 10%;
+  flex: 1 0 60%;
+}
+
+.WorkExcerpt:nth-child(2n + 1) .WorkExcerpt-imageWrap {
+  flex: 0 1 40%;
+}

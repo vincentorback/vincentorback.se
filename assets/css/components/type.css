@@ -1,0 +1,225 @@
+/** @define Type */
+
+:root {
+  --Type-spacing: 30px;
+}
+
+
+
+.Type {
+  max-width: var(--site-width-narrow);
+  line-height: 1.7;
+  font-size: 1em;
+}
+
+@media (--lg-viewport) {
+  .Type {
+    font-size: 1.2em;
+  }
+}
+
+
+.Type > :first-child {
+  margin-top: 0 !important;
+}
+
+.Type > :last-child {
+  margin-bottom: 0 !important;
+}
+
+
+.Type--wide {
+  max-width: 900px;
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+/**
+ * Styled elements
+ */
+
+@custom-selector :--Type-block-elements
+  img, video, iframe, embed, object,
+  blockquote, p, pre, ul, ol, hr,
+  h1, h2, h3, h4, h5, h6;
+
+@custom-selector :--Type-custom-heading-123
+  .Type-h1, .Type-h2, .Type-h3;
+
+@custom-selector :--Type-custom-heading-345
+  .Type-h4, .Type-h5, .Type-h6;
+
+@custom-selector :--Type-inline-block
+  img, video, iframe, embed, object;
+
+@custom-selector :--Type-sub-lists
+  ul ul, ol ol, ul ol, ol ul;
+
+
+:--Type-custom-heading-123,
+:--Type-custom-heading-345,
+.Type :--Type-block-elements:not([class|="Type"]) {
+  max-width: 100%;
+  height: auto;
+  margin: var(--Type-spacing) 0;
+  display: block;
+}
+
+
+/* Links */
+
+.Type a:not([class|="Type"]) {
+  outline: 0;
+  color: inherit;
+  border-bottom: 1px dotted currentColor;
+
+  /* Break long urls */
+  word-break: break-all;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.Type a:not([class|="Type"]):hover,
+.Type a:not([class|="Type"]):focus,
+.Type a:not([class|="Type"]):active {
+  color: #000;
+  border-bottom-style: solid;
+}
+
+.Type a:not([class|="Type"]):visited {
+  color: #666;
+}
+
+.Type a:not([class|="Type"]):active {
+  color: #666;
+}
+
+
+/* Headings */
+
+:--Type-custom-heading-123,
+.Type h1:not([class|="Type"]),
+.Type h2:not([class|="Type"]),
+.Type h3:not([class|="Type"]) {
+  line-height: 1.3;
+  /*font-weight: var(--font-bold);*/
+}
+
+:--Type-custom-heading-123:not(:first-child),
+.Type h1:not([class|="Type"]):not(:first-child),
+.Type h2:not([class|="Type"]):not(:first-child),
+.Type h3:not([class|="Type"]):not(:first-child) {
+  padding-top: 20px;
+}
+
+.Type-h1,
+.Type h1:not([class|="Type"]) {
+  font-size: 28px;
+}
+
+.Type-h2,
+.Type h2:not([class|="Type"]) {
+  font-size: 24px;
+}
+
+.Type-h3,
+.Type h3:not([class|="Type"]) {
+  font-size: 20px;
+}
+
+@media (--xl-viewport) {
+  .Type-h1,
+  .Type h1:not([class|="Type"]) {
+    font-size: 32px;
+  }
+
+  .Type-h2,
+  .Type h2:not([class|="Type"]) {
+    font-size: 28px;
+  }
+
+  .Type-h3,
+  .Type h3:not([class|="Type"]) {
+    font-size: 24px;
+  }
+}
+
+
+/* Lists */
+
+.Type ol:not([class|="Type"]),
+.Type ul:not([class|="Type"]) {
+  padding-left: 2em;
+  list-style: disc;
+}
+
+.Type ol:not([class|="Type"]) {
+  list-style: decimal;
+}
+
+.Type :--Type-sub-lists:not([class|="Type"]) {
+  margin-bottom: 0;
+}
+
+
+/* Divider */
+
+.Type hr:not([class|="Type"]) {
+  height: 1px;
+  border: 0;
+  width: 300px;
+  background-color: var(--color-lightgray);
+  margin: 40px auto;
+  transform: rotate(-3deg);
+  transform-origin: top center;
+}
+
+
+/* Blockquote */
+
+.Type blockquote:not([class|="Type"]) {
+  font-style: italic;
+  font-size: 1.2em;
+  margin: 0;
+}
+
+
+/* Responsive videos */
+
+.Type-embed {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  margin: var(--Type-spacing) 0;
+}
+
+/*.Type-embed:before {
+  content: "";
+  display: block;
+  width: 100%;
+  padding-bottom: 56.25%;
+}*/
+
+.Type-embed > * {
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+}
+
+
+
+.Type-large {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+@media (--sm-viewport) {
+  .Type-large {
+    font-size: 1.5em;
+  }
+}
