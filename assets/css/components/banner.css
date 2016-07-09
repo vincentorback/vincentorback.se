@@ -1,0 +1,29 @@
+/* @define Banner */
+
+.Banner {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+
+  max-width: 2560px;
+  margin: 0 auto;
+}
+
+.Banner-image {
+  display: block;
+  width: 100%;
+}
+
+@media (--md-viewport) {
+  .Banner {
+    height: 80vh;
+    min-height: 200px;
+    max-height: 1000px;
+  }
+
+  .Banner-image {
+    position: absolute;
+    height: 100%;
+    object-fit: cover;
+  }
+}
