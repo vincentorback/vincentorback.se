@@ -1,16 +1,5 @@
 /** @define utilities */
 
-
-.u-alignMiddle > * {
-  vertical-align: middle;
-  display: inline-block;
-}
-
-
-.u-heightFull {
-  height: 100% !important;
-}
-
 .u-noList {
   list-style: none !important;
   padding: 0 !important;
@@ -43,26 +32,11 @@
   word-wrap: normal !important; /* 2 */
 }
 
+
 /* Sizes */
 
 .u-size1of1 {
   width: 100%;
-}
-
-.u-widthSite {
-  max-width: var(--site-width);
-}
-
-.u-widthSiteNarrow {
-  max-width: var(--site-width-narrow);
-}
-
-.u-xl-size3of8 {
-  width: 37.5% !important;
-}
-
-.u-xl-size2of8 {
-  width: 25% !important;
 }
 
 
@@ -77,34 +51,4 @@
   padding: 0 !important;
   position: absolute !important;
   width: 1px !important;
-}
-
-@media (--xs-viewport) {
-  .u-xs-hide {
-    display: none !important;
-  }
-}
-
-@media (--sm-viewport) {
-  .u-sm-hide {
-    display: none !important;
-  }
-}
-
-@media (--md-viewport) {
-  .u-md-hide {
-    display: none !important;
-  }
-}
-
-@media (--lg-viewport) {
-  .u-lg-hide {
-    display: none !important;
-  }
-}
-
-@media (--xl-viewport) {
-  .u-xl-hide {
-    display: none !important;
-  }
 }
