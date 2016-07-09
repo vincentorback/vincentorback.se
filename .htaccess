@@ -1,9 +1,9 @@
 Redirect 301 /en/ http://vincentorback.se/
 Redirect 301 /en.html http://vincentorback.se/
-Redirect 301 /om-mig/ http://vincentorback.se/about-me/
+Redirect 301 /om-mig http://vincentorback.se/about-me/
 Redirect 301 /om-mig.html http://vincentorback.se/about-me/
 Redirect 301 /blogg http://vincentorback.se/blog/
-Redirect 301 /blog.html/ http://vincentorback.se/blog/
+Redirect 301 /blog.html http://vincentorback.se/blog/
 Redirect 301 /kontakt/ http://vincentorback.se/contact/
 Redirect 301 /kontakt.html http://vincentorback.se/contact/
 
@@ -24,6 +24,19 @@ Redirect 301 /posts/take-10-and-learn-typography/ http://vincentorback.se/blog/t
 Redirect 301 /posts/smooth-scrolling-with-css/ http://vincentorback.se/blog/smooth-scrolling-with-css/
 Redirect 301 /posts/i-commit-from-my-heart/ http://vincentorback.se/blog/
 Redirect 301 /blog/looping-scroll/ http://vincentorback.se/blog/looping-scroll-website
+
+Redirect 301 /reggie-watts/ http://vincentorback.se/blog/
+Redirect 301 /blog//etikett/podcast/ http://vincentorback.se/blog/
+Redirect 301 /blog//etikett/sass/ http://vincentorback.se/blog/
+Redirect 301 /blog//valkommen/ http://vincentorback.se/blog/
+Redirect 301 /blog//tips-om-podcast/ http://vincentorback.se/blog/
+Redirect 301 /blog//etikett/reggie-watts/ http://vincentorback.se/blog/
+Redirect 301 /ommig.html http://vincentorback.se/about-me/
+Redirect 301 /podcast/ http://vincentorback.se/
+Redirect 301 /xmlrpc.php http://vincentorback.se/
+Redirect 301 /blog//2012/09/ http://vincentorback.se/blog/
+Redirect 301 /english/ http://vincentorback.se/
+Redirect 301 /aboutme/ http://vincentorback.se/about-me/
 
 <IfModule mod_deflate.c>
     <IfModule mod_headers.c>
@@ -61,7 +74,6 @@ Options -MultiViews
 ErrorDocument 403 /403.html
 ErrorDocument 404 /404.html
 ErrorDocument 500 /500.html
-
 
 <IfModule mod_headers.c>
     Header set X-UA-Compatible "IE=edge"
