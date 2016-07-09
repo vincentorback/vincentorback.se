@@ -93,7 +93,7 @@ module.exports = function (grunt) {
         files: {
           'js/main-min.js': [
             'js/vendor/modernizr-custom.js',
-            'js/vendor/jquery-2.2.3.js',
+            'js/vendor/jquery-2.2.4.js',
             'js/vendor/jquery.imageScroll.js',
             'js/vendor/jquery.smartness.js',
             'js/vendor/jquery.velocity.js',
@@ -235,5 +235,4 @@ module.exports = function (grunt) {
   grunt.registerTask('images', ['responsive_images:test', 'webp']);
 
   grunt.registerTask('deploy', ['htmlmin', 'css', 'uglify', 'usebanner', 'replace']);
-
 };
