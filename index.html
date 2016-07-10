@@ -165,5 +165,53 @@
     // ga('send', 'pageview');
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context" : "http://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "http://vincentorback.se",
+        "name": "Vincent Orback",
+        "url" : "http://vincentorback.se",
+        "email": "hello@vincentorback.se",
+        "logo": "http://vincentorback.se/images/about/portrait.jpg",
+        "sameAs": [
+          "https://github.com/vincentorback",
+          "https://se.linkedin.com/in/vincent-orback-45795750",
+          "https://twitter.com/vorback",
+          "http://codepen.io/vincentorback",
+          "https://dribbble.com/vincentorback"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Lindhagensterrassen 9",
+          "addressLocality" : "Stockholm",
+          "postalCode" : "11218",
+          "addressCountry" : "SE"
+        },
+        "contactPoint" : [{
+          "@type" : "ContactPoint",
+          "telephone" : "+4672-530-9222",
+          "contactType" : "sales",
+          "availableLanguage" : [ "English", "Swedish"]
+        }],
+        "employee": {
+          "@type": "Person",
+          "name": "Vincent Orback",
+          "email": "hello@vincentorback.se",
+          "jobTitle": "Web designer",
+          "image": "http://vincentorback.se/images/about/portrait.jpg"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "name" : "Vincent Orback",
+        "url" : "http://vincentorback.se"
+      }
+    ]
+  }
+  </script>
+
 </body>
 </html>
