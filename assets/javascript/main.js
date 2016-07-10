@@ -23,6 +23,7 @@
 
     slap: function () {
       var slapHand = doc.querySelector('.js-slap');
+      var slaps = 0;
 
       if (!slapHand) {
         return;
@@ -35,6 +36,7 @@
       }
 
       var altHand = slapHand.getAttribute('data-alt');
+      var slapText = doc.querySelector('.js-slapText');
 
       slapSound.volume = 0.4;
 
@@ -42,6 +44,46 @@
         slapSound.currentTime = 0;
         slapSound.play();
         vincent.track(1, 'slap');
+
+        if (Modernizr.touchevents) {
+          slapHand.classList.add('is-active');
+        }
+
+        slaps += 1;
+
+        if (slaps === 10) {
+          slapSound.volume = 0.8;
+          slapText.innerHTML = "You’re awesome!";
+          slapHand.classList.add('is-awesome');
+        }
+
+        if (slaps === 40) {
+          slapSound.volume = .3;
+          slapText.innerHTML = "You’re awesome, let’s give it a rest....";
+          slapHand.classList.remove('is-5', 'is-10');
+        }
+
+        if (slaps === 50) {
+          slapSound.volume = 1;
+          slapText.innerHTML = "ARGHH! MY HAAAAND!";
+        }
+
+        if (slaps === 60) {
+          slapSound.volume = 0.4;
+          slapText.innerHTML = "<s>ARGHH! MY HAAAAND!</s> Just kidding, I’m just a computer...";
+        }
+
+        if (slaps === 70) {
+          slapText.innerHTML = "<s>ARGHH! MY HAAAAND!</s> Just kidding, I’m just a computer... :'(";
+        }
+
+        if (slaps === 100) {
+          slapText.innerHTML = "100 slaps! Keep going!";
+        }
+
+        if (slaps === 1000) {
+          slapText.innerHTML = "1000 slaps! You win! Email me and I’ll send you back a funny gif or something :)";
+        }
       }, false);
 
     },
