@@ -5,7 +5,7 @@
   --Foot-background: #333;
   --Foot-slapPeace: '/assets/images/slap-peace.png';
   --Foot-slapHand: '/assets/images/slap-hand.png';
-  --Foot-slapSize: 100px;
+  --Foot-slapSize: 90px;
 }
 
 .Foot {
@@ -59,6 +59,7 @@
 
 .Foot-slap {
   user-select: none;
+  text-align: center;
 }
 
 @media (--sm-max-viewport) {
@@ -79,7 +80,19 @@
   height: var(--Foot-slapSize);
 }
 
-html.touchevents .Foot-slapHand,
+@media (--xl-viewport) {
+  .Foot-slapHand {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+.Foot-slapText {
+  margin-top: 2em;
+  font-size: .8em;
+}
+
+.Foot-slapHand.is-active,
 .Foot-slapHand:hover {
   background-image: url(var(--Foot-slapHand));
 }
@@ -87,9 +100,16 @@ html.touchevents .Foot-slapHand,
 html.js .Foot-slapHand {
   transform: scale(1.2);
   cursor: grab;
-  transition: transform 100ms ease;
+  transition: transform 100ms;
 }
 
 html.js .Foot-slapHand:active {
   transform: scale(1.1);
+}
+
+html.js .Foot-slapHand.is-awesome {
+  transform: scale(1.5);
+}
+html.js .Foot-slapHand.is-awesome:active {
+  transform: scale(1.4);
 }

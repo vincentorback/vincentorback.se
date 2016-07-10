@@ -8,6 +8,10 @@
 
 /* Text */
 
+.u-textNormal {
+  font-weight: var(--font-normal);
+}
+
 .u-textBold {
   font-weight: var(--font-bold);
 }

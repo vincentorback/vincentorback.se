@@ -36,7 +36,3 @@
   transform: scaleX(1);
   transition: transform 150ms;
 }
-
-.Link.is-active:hover .Link-inner:after {
-  transform: scaleX(1.05);
-}

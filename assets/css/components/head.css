@@ -24,11 +24,6 @@
   color: var(--Head-color);
 }
 
-.Head-logo:hover,
-.Head-navItem:hover {
-  opacity: .8;
-}
-
 .Head-logo {
   font-weight: var(--font-bold);
 }

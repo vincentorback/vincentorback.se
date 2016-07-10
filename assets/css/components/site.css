@@ -18,6 +18,12 @@
   margin: 0 auto;
 }
 
+@media (--sm-viewport) {
+  .Site-container {
+    width: 80%;
+  }
+}
+
 .Site-container--narrow {
   max-width: var(--site-width-narrow);
 }
