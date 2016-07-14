@@ -24,21 +24,25 @@
     slap: function () {
       var slapHand = doc.querySelector('.js-slap');
       var slaps = 0;
+      var slapSound;
 
       if (!slapHand) {
         return;
       }
 
-      var slapSound = new Audio('/assets/audio/slap.mp3');
-
-      if (!slapSound.canPlayType('audio/mp3')) {
-        return;
+      function loadSound() {
+        slapSound = new Audio('/assets/audio/slap.mp3');
+        if (!slapSound.canPlayType('audio/mp3')) {
+          return;
+        }
+        slapSound.volume = 0.4;
+        slapHand.removeEventListener('mouseover', loadSound, false);
       }
+
+      slapHand.addEventListener('mouseover', loadSound, false);
 
       var altHand = slapHand.getAttribute('data-alt');
       var slapText = doc.querySelector('.js-slapText');
-
-      slapSound.volume = 0.4;
 
       slapHand.addEventListener(Modernizr.touchevents ? 'touchstart' : 'mousedown', function (e) {
         slapSound.currentTime = 0;
@@ -51,7 +55,7 @@
 
         slaps += 1;
 
-        if (slaps === 10) {
+        if (slaps === 20) {
           slapSound.volume = 0.8;
           slapText.innerHTML = "You’re awesome!";
           slapHand.classList.add('is-awesome');
@@ -78,11 +82,10 @@
         }
 
         if (slaps === 100) {
-          slapText.innerHTML = "100 slaps! Keep going!";
-        }
-
-        if (slaps === 1000) {
-          slapText.innerHTML = "1000 slaps! You win! Email me and I’ll send you back a funny gif or something :)";
+          slapText.innerHTML = "100 slaps! Let’s do something fun!";
+          window.setTimeout(function () {
+            window.location.href = 'https://unicef.se/ge-pengar';
+          }, 3000);
         }
       }, false);
 
