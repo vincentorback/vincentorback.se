@@ -117,26 +117,28 @@
       //   return;
       // }
 
-      var links = doc.querySelectorAll('a');
-      var linkUrl;
+      var links = doc.querySelectorAll('a[href^="http://"]');
 
       Array.from(links, function (link) {
+
+        if (linkEl.host.indexOf('vincentorback') > -1) {
+          return;
+        }
+
         link.addEventListener('click', function (e) {
 
-          linkUrl = link.getAttribute('href');
-
-          console.log(window.location.href, linkUrl);
-          doc.location = linkUrl;
-
-          // ga('send', 'event', 'outbound', 'click', linkUrl, {
-          //   'transport': 'beacon',
-          //   'hitCallback': function() {
-          //     doc.location = linkUrl;
-          //   }
+          // ga('send', 'event', 'outbound', 'click', link.href, {
+          //   'transport': 'beacon'
           // });
 
+          if (e.metaKey || e.ctrlKey) {
+            return;
+          }
+
+          doc.location = linkUrl;
+
           e.preventDefault();
-        })
+        }, false);
       });
 
 
