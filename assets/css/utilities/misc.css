@@ -62,3 +62,9 @@
   position: absolute !important;
   width: 1px !important;
 }
+
+@media (--sm-max-viewport) {
+  .u-hideSmall {
+    display: none;
+  }
+}

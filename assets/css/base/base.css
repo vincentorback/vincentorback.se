@@ -136,6 +136,11 @@ ul {
   opacity: .7;
 }
 
+::selection {
+  background: #333;
+  color: #fff;
+}
+
 /**
  * Allow only vertical user resizing
  */

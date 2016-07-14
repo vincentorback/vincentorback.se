@@ -9,17 +9,20 @@
 }
 
 .WorkExcerpt-inner {
+  position: relative;
   width: 90%;
   max-width: var(--site-width);
   margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (--sm-viewport) {
   .WorkExcerpt-inner {
     width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
   }
 }
 
@@ -28,9 +31,15 @@
   padding: var(--site-spacing-sm) 0;
 }
 
+@media (min-width: 350px) and (--sm-max-viewport) {
+  .WorkExcerpt-content {
+    padding: var(--site-spacing-sm) 20% var(--site-spacing-sm) 0;
+  }
+}
+
 @media (--sm-viewport) {
   .WorkExcerpt-content {
-    flex: 1 1 300px;
+    padding: var(--site-spacing-sm) 0;
     min-width: 300px;
   }
 }
@@ -59,7 +68,7 @@
 
 @media (--xs-viewport) {
   .WorkExcerpt-title {
-    font-size: 2.2em;
+    font-size: 2em;
   }
 }
 
@@ -83,8 +92,15 @@
 
 
 .WorkExcerpt-text {
-  font-size: 1.3em;
-  max-width: 600px;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+@media (--sm-viewport) {
+  .WorkExcerpt-text {
+    font-size: 1.3em;
+    max-width: 600px;
+  }
 }
 
 @media (--xl-viewport) {
@@ -99,6 +115,7 @@
 .WorkExcerpt-info,
 .WorkExcerpt-links {
   margin-top: 1em;
+  line-height: 1.6;
 }
 
 @media (--lg-viewport) {
@@ -164,27 +181,59 @@
 .WorkExcerpt-imageWrap {
   display: none;
   text-align: center;
-  flex: 1 1 auto;
+  flex: 0 1 300px;
+}
+
+@media (min-width: 350px) {
+  .WorkExcerpt-imageWrap {
+    display: block;
+  }
+}
+
+@media (min-width: 350px) and (--sm-max-viewport) {
+  .WorkExcerpt-imageWrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateX(60%);
+    overflow: hidden;
+  }
 }
 
 @media (--sm-viewport) {
   .WorkExcerpt-imageWrap {
-    display: block;
     padding-left: 10%;
+    flex: 1 1 auto;
   }
 }
 
 .WorkExcerpt-image {
-  display: inline-block;
+  display: none;
+  vertical-align: middle;
   margin: var(--site-spacing-sm) 0;
 }
 
-@media (--md-viewport) {
+@media (min-width: 350px) {
   .WorkExcerpt-image {
-    min-height: 500px;
-    max-height: 90vh;
+    display: inline-block;
   }
 }
+
+@media (min-width: 350px) and (--sm-max-viewport) {
+  .WorkExcerpt-image {
+    height: 400px;
+    max-width: none;
+    transform: rotate(-5deg);
+  }
+}
+
+@media (min-height: 500px) {
+  .WorkExcerpt-image {
+    max-height: 95vh;
+  }
+}
+
 
 
 /* Coop */

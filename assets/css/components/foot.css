@@ -66,6 +66,10 @@
   .Foot-slap {
     margin-top: 50px;
   }
+
+  html.touchevents .Foot-slap {
+    display: none;
+  }
 }
 
 .Foot-slapHand {
@@ -100,7 +104,7 @@
 html.js .Foot-slapHand {
   transform: scale(1.2);
   cursor: grab;
-  transition: transform 100ms;
+  transition: transform 80ms;
 }
 
 html.js .Foot-slapHand:active {

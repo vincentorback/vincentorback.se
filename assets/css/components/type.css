@@ -168,10 +168,11 @@
 .Type hr:not([class|="Type"]) {
   height: 1px;
   border: 0;
-  width: 300px;
-  background-color: var(--color-lightgray);
+  width: 100%;
+  max-width: 300px;
+  background-color: #333;
   margin: 40px auto;
-  transform: rotate(-3deg);
+  transform: rotate(-2deg);
   transform-origin: top center;
 }
 
