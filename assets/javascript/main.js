@@ -35,7 +35,7 @@
         if (!slapSound.canPlayType('audio/mp3')) {
           return;
         }
-        slapSound.volume = 0.4;
+        slapSound.volume = 0.5;
         slapHand.removeEventListener('mouseover', loadSound, false);
       }
 
@@ -121,7 +121,7 @@
 
       Array.from(links, function (link) {
 
-        if (linkEl.host.indexOf('vincentorback') > -1) {
+        if (link.host.indexOf('vincentorback') > -1) {
           return;
         }
 
@@ -140,10 +140,7 @@
           e.preventDefault();
         }, false);
       });
-
-
     }
-
   };
 
   vincent.init();

@@ -1,9 +1,8 @@
-/** @define Type */
+/** @define Type; weak */
 
 :root {
   --Type-spacing: 30px;
 }
-
 
 
 .Type {
@@ -32,8 +31,6 @@
   max-width: 900px;
 }
 
-
-/* -------------------------------------------------------------------------- */
 
 /**
  * Styled elements
@@ -103,7 +100,6 @@
 .Type h2:not([class|="Type"]),
 .Type h3:not([class|="Type"]) {
   line-height: 1.3;
-  /*font-weight: var(--font-bold);*/
 }
 
 :--Type-custom-heading-123:not(:first-child),
@@ -169,10 +165,9 @@
   height: 1px;
   border: 0;
   width: 100%;
-  max-width: 300px;
-  background-color: #333;
-  margin: 40px auto;
-  transform: rotate(-2deg);
+  background-color: currentColor;;
+  margin: calc(var(--Type-spacing) * 2) auto;
+  transform: rotate(-1deg);
   transform-origin: top center;
 }
 
@@ -194,13 +189,6 @@
   position: relative;
   margin: var(--Type-spacing) 0;
 }
-
-/*.Type-embed:before {
-  content: "";
-  display: block;
-  width: 100%;
-  padding-bottom: 56.25%;
-}*/
 
 .Type-embed > * {
   position: absolute !important;

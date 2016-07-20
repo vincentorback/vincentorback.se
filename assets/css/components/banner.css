@@ -4,8 +4,7 @@
   position: relative;
   overflow: hidden;
   z-index: 0;
-
-  max-width: 2560px;
+  max-width: var(--site-width);
   margin: 0 auto;
 }
 
@@ -17,7 +16,7 @@
 @media (--md-viewport) {
   .Banner {
     height: 80vh;
-    min-height: 200px;
+    min-height: 400px;
     max-height: 1000px;
   }
 

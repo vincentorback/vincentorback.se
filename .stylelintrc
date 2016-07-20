@@ -5,10 +5,15 @@
     "declaration-block-properties-order": null,
     "selector-pseudo-element-colon-notation": null,
     "rule-nested-empty-line-before": null,
-    "rule-non-nested-empty-line-before": null,
+    "max-empty-lines": 3,
+    "rule-non-nested-empty-line-before": ["always", {
+      ignore: ["after-comment"]
+    }],
+    "color-hex-case": null,
     "number-leading-zero": null,
-    "max-empty-lines": null,
-    "block-no-empty": null,
-    "at-rule-empty-line-before": null
+    "at-rule-empty-line-before": ["always", {
+      "ignore": "blockless-group"
+    }],
+    "function-url-quotes": null
   }
 }

@@ -22,13 +22,20 @@
 @media (--sm-viewport) {
   .WorkExcerpt-inner {
     width: 80%;
-
   }
 }
 
 
 .WorkExcerpt-content {
+  position: relative;
+  z-index: 1;
   padding: var(--site-spacing-sm) 0;
+}
+
+@media (--sm-max-viewport) and (--xs-viewport) {
+  .WorkExcerpt-content {
+    padding: var(--site-spacing-sm) 15% var(--site-spacing-sm) 0;
+  }
 }
 
 @media (min-width: 350px) and (--sm-max-viewport) {
@@ -39,7 +46,6 @@
 
 @media (--sm-viewport) {
   .WorkExcerpt-content {
-    padding: var(--site-spacing-sm) 0;
     min-width: 300px;
   }
 }
@@ -68,7 +74,7 @@
 
 @media (--xs-viewport) {
   .WorkExcerpt-title {
-    font-size: 2em;
+    font-size: 1.8em;
   }
 }
 
@@ -115,7 +121,7 @@
 .WorkExcerpt-info,
 .WorkExcerpt-links {
   margin-top: 1em;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 @media (--lg-viewport) {
@@ -141,6 +147,7 @@
   border-bottom: 1px dotted currentColor;
   color: currentColor;
   transition: opacity 100ms;
+  line-height: 1.3;
 }
 
 .WorkExcerpt-link:hover {
@@ -164,6 +171,7 @@
   vertical-align: middle;
   color: #fff;
 }
+
 .WorkExcerpt-linkSymbol {
   margin-left: .5em;
   margin-right: -.5em;
@@ -184,20 +192,27 @@
   flex: 0 1 300px;
 }
 
-@media (min-width: 350px) {
+@media (--xs-viewport) {
   .WorkExcerpt-imageWrap {
     display: block;
   }
 }
 
-@media (min-width: 350px) and (--sm-max-viewport) {
+@media (--xs-viewport) and (--sm-max-viewport) {
   .WorkExcerpt-imageWrap {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
-    transform: translateX(60%);
+    z-index: 0;
+    transform: translateX(70%);
     overflow: hidden;
+  }
+}
+
+@media (min-width: 350px) and (--sm-max-viewport) {
+  .WorkExcerpt-imageWrap {
+    transform: translateX(60%);
   }
 }
 
@@ -214,13 +229,13 @@
   margin: var(--site-spacing-sm) 0;
 }
 
-@media (min-width: 350px) {
+@media (--xs-viewport) {
   .WorkExcerpt-image {
     display: inline-block;
   }
 }
 
-@media (min-width: 350px) and (--sm-max-viewport) {
+@media (--xs-viewport) and (--sm-max-viewport) {
   .WorkExcerpt-image {
     height: 400px;
     max-width: none;
@@ -276,17 +291,3 @@
     padding: var(--site-spacing-xl) 0;
   }
 }
-
-
-
-/* Ziczack */
-/*.WorkExcerpt:nth-child(2n + 1) .WorkExcerpt-content {
-  order: 2;
-  padding-right: 10%;
-  flex: 1 0 60%;
-}
-
-.WorkExcerpt:nth-child(2n + 1) .WorkExcerpt-imageWrap {
-  flex: 0 1 40%;
-  text-align: left;
-}*/

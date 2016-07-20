@@ -1,6 +1,4 @@
-.Entry {
-
-}
+/* @define Entry */
 
 .Entry {
   margin-bottom: var(--site-spacing-sm);
@@ -36,10 +34,8 @@
 }
 
 
-
 .Entry-title {
   font-size: 2em !important;
-  /*font-weight: var(--font-bold);*/
 }
 
 .Entry--excerpt {
