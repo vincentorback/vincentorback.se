@@ -1,0 +1,47 @@
+@custom-media --xs-viewport (min-width: 300px);
+@custom-media --sm-viewport (min-width: 600px);
+@custom-media --md-viewport (min-width: 800px);
+@custom-media --lg-viewport (min-width: 1200px);
+@custom-media --xl-viewport (min-width: 1700px);
+@custom-media --xs-max-viewport (max-width: 300px);
+@custom-media --sm-max-viewport (max-width: 600px);
+@custom-media --md-max-viewport (max-width: 800px);
+@custom-media --lg-max-viewport (max-width: 1200px);
+@custom-media --xl-max-viewport (max-width: 1700px);
+
+
+:root {
+  --color-blue: #0074D9;
+  --color-navy: #001F3F;
+  --color-purple: #6701CD;
+  --color-text: #222;
+  --color-red: #FF3F2C;
+  --color-orange: #f25f30;
+  --color-green: #45b68a;
+  --color-pink: #e763ae;
+  --color-gold: #b69853;
+  --color-darkgray: #666;
+  --color-lightgray: #eee;
+
+  --color-coop1: #C0E18C;
+  --color-coop2: #00AD25;
+  --color-rikskriscentrum1: #0074d9;
+  --color-rikskriscentrum2: #f0f8ff;
+  --color-arcini: #222;
+  --color-pansarfilm: #ffcdcd;
+
+  --color-yellow: #f0db24;
+  --font-sansserif: "Roboto", sans-serif;
+  --font-serif: Georgia, serif;
+  --font-monospace: monospace;
+  --font-normal: 300;
+  --font-bold: 500;
+
+  --site-width: 1600px;
+  --site-width-narrow: 900px;
+  --site-background: #fff;
+  --site-spacing-sm: 40px;
+  --site-spacing-md: 100px;
+  --site-spacing-lg: 160px;
+  --site-spacing-xl: 200px;
+}

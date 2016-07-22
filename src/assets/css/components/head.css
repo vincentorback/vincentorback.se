@@ -1,0 +1,54 @@
+/** @define Head */
+
+:root {
+  --Head-color: var(--color-text);
+}
+
+
+.Head-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Head-logo,
+.Head-navItem {
+  display: block;
+  padding: .8em 0;
+  font-size: 1.2em;
+  color: var(--Head-color);
+}
+
+@media (--sm-viewport) {
+  .Head-logo,
+  .Head-navItem {
+    padding: 1.2em 0;
+  }
+}
+
+@media (--lg-viewport) {
+  .Head-logo,
+  .Head-navItem {
+    padding: 1.5em 0;
+    font-size: 1.5em;
+  }
+}
+
+
+.Head:not(.Head--front) .Head-logo:hover {
+  opacity: .7;
+}
+
+
+/* Front page */
+
+@media (--lg-viewport) {
+  .Head--front {
+    margin-bottom: -60px;
+  }
+}
+
+@media (--xl-viewport) {
+  .Head--front {
+    margin-bottom: -80px;
+  }
+}

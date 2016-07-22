@@ -1,0 +1,35 @@
+/** @define Site */
+
+.Site {
+  font: 300 16px/1.5 var(--font-sansserif);
+  letter-spacing: 1px;
+  color: var(--color-text);
+  background: var(--site-background);
+  text-size-adjust: 100%;
+}
+
+.Site-body {
+  min-height: 100%;
+}
+
+.Site-container {
+  width: 90%;
+  max-width: var(--site-width);
+  margin: 0 auto;
+}
+
+@media (--xs-viewport) {
+  .Site-container {
+    width: 86%;
+  }
+}
+
+@media (--md-viewport) {
+  .Site-container {
+    width: 80%;
+  }
+}
+
+.Site-container--narrow {
+  max-width: var(--site-width-narrow);
+}
