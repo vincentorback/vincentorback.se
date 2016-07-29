@@ -1,0 +1,23 @@
+%clearfix {
+  &:after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+}
+
+
+
+
+/* Colors */
+$green: #1ee38e;
+$red: #ff4e4b;
+
+/* Fonts */
+$helvetica: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+
+
+/* Mixins */
+@mixin hello {
+
+}

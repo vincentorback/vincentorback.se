@@ -1,0 +1,671 @@
+@media (-webkit-min-device-pixel-ratio: 1.5),(min-resolution: 192dpi) {
+	body {
+		background:url(images/portfolio-bg2.png);
+		background-size:150px;
+	}
+	
+	.english {
+		background:url(images/language.jpg);
+		background-position:0 -8px;
+		background-size:24px;
+	}
+	
+	.swedish {
+		background:url(images/language.jpg);
+		background-position:0 -24px;
+		background-size:24px;
+	}
+	
+	#kontakt {
+		background:url(images/kontakt-bg2.png);
+		background-size:300px;
+	}
+}
+
+@media only screen and (min-width: 1824px) {
+	body.home {
+		font-size:1.3em;
+	}
+	
+	#hem {
+		h2 {
+			padding: 15% 0 0 0;
+			text-align: center;
+		}
+		h1 {
+			margin:0;
+			padding: 0px;
+			text-align: center;
+		}
+		a {
+			width:250px;
+			height:80px;
+		}
+	}
+}
+
+@media only screen and (min-width: 1440px) {
+	#kontakt {
+		min-height:700px;
+	}
+}
+
+@media only screen and (max-width: 1200px) {
+	.cv {
+		.skills {
+			font-size:.8em;
+			li {
+				margin:10px 0;	
+				.full {
+					padding:0 100px;
+				}
+				.soclose {
+					padding:0 90px;
+				}
+				.almost {
+					padding:0 80px;
+				}
+				.alot {
+					padding:0 70px;
+				}
+				.half {
+					padding:0 40px;
+				}
+				.beginner {
+					padding:0 25px;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	#hem h2 {
+		font-size:5em;
+	}
+	
+	#hem h1 {
+		font-size:3em;
+	}
+	
+	#ommig {
+		padding-bottom:0;
+		.ommig {
+			display:block;
+			margin:0 auto;
+			width:90%;
+			.box {
+				margin:0 auto;
+				width:95%;	
+			}
+			.title-2 {
+				font-weight: bold;
+				font-size: 2em;
+			}
+			p {
+				font-size: 1.4em;
+			}
+			.vincent {
+				float:none;
+				margin:0px;
+				padding-bottom: 50px;
+				width:auto;	
+				img {
+					padding-top:40px;
+				}
+			}
+		}
+	}
+	
+	
+	.cv {
+		h2 {
+			font-size:6em;
+		}
+		h1 {
+			font-size:3em;
+		}
+		.infos {
+			font-size:.8em;
+		}
+		.skills li {
+			font-size: 1.1em;
+		}
+		.education {
+			max-width: 60%;
+		}
+	}
+	
+	#content {
+		margin-left:0;
+		padding-left:0;
+		width:67%;
+	}
+
+	#sidebar {
+		.bstart {
+		font-size:1em;
+		}
+		#searchsubmit {
+			padding: 5px 0px;
+			width:50px;
+			height:40px;
+			text-transform:uppercase;
+		}
+		h2 {
+			font-size: 1.6em;
+		}
+		ul li {
+			font-size: 1.6em;
+		}
+	}
+}
+
+
+@media only screen and (max-width: 940px) {
+	.work {
+		width:100%;
+		h3 {
+			font-size: 3em;
+		}
+		.work-info {
+			margin-left: 2%;
+			padding-bottom: 10px;
+			width: 88%;
+		}
+		img {
+			padding: 0;
+			width: 100%;
+		}
+	}
+	#kontakt {
+		.info {
+			width:681px;
+			.left {
+				width:320px;
+			}
+			.right {
+				width:320px;
+			}
+		}
+	}
+	.cv {
+		h1 {
+			font-size:2.8em;
+		}
+		.skills {
+			font-size: 1em;
+			li span {
+				display:table;
+				float:none;
+			}
+		}
+		.print {
+			display: block;
+			float: none;
+			overflow: auto;
+			margin-top: 100px;
+		}
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.main-nav {
+		@include border-radius(0 0 15px 15px);
+		float:left;
+		overflow:hidden;
+		width:100%;
+		height:38px;
+		background:#fff;
+		background:#fff url(images/nav-bg.png);
+		
+		ul {
+			position: relative;
+			left:50%;
+			float:left;
+			clear:left;
+			margin:0;
+			padding:0;
+			list-style:none;
+			text-align:center;
+		}
+		li {
+			position:relative;
+			right:50%;
+			display:block;
+			float:left;
+			margin:0;
+			padding:0;
+			list-style:none;
+		}
+		a {
+			display:block;
+			margin:6px 0 0 1px;
+			padding:3px 13px;
+			text-decoration:none;
+			font-size:1.1em;
+			line-height:1.3em;
+		}
+	}
+	
+	#hem {
+		h2 {
+			margin-top:200px;
+			padding:0;
+			width:100%;
+			text-align:center;
+			font-size:4.5em;
+		}
+		h1 {
+			margin:0;
+			padding:0;
+			width:100%;
+			text-align:center;
+			font-size:2em;
+		}
+		a {
+			display: none;
+		}
+	}
+	
+	
+
+	
+	#kontakt {
+		.info {
+			width:100%;
+		}
+		.left {
+			width:45%;
+		}
+		.right {
+			width:45%;
+			font-size: .7em;
+		}
+	}
+	
+	.blogg #hem h2 {
+		margin-top:40px;
+	}
+	
+	#content {
+		margin:0 auto;
+		padding:0;
+		width:97%;
+	}
+	
+	#sidebar .bstart,#sidebar h2,#sidebar ul {
+		display:none;
+	}
+	
+	#sidebar {
+		float: none;
+		margin:0 auto;
+		width:90%;
+		input {
+			width:70%;
+		}
+	}
+	
+	.post .date {
+		margin:5px;
+		padding:11px 7px;
+	}
+	
+	.post h2 a {
+		margin-left:0;
+	}
+	
+	.entry {
+		padding:0;
+	}
+	
+	.container {
+		margin:0;
+		padding:60px 0;
+		max-width:100%;
+	}
+	#respond {
+		input, textarea {
+			margin: 0 auto;
+			width: 90%;
+		}
+	}
+	
+	
+	.cv {
+		@include border-radius(0px);
+		@include box-shadow(none);
+		margin:0 auto;
+		padding:0;
+		width:95%;
+		height:auto;
+		background:#fff;
+		
+		.intro, .infos, .about, .current, .skills, .experience, .education, .print {
+			float:none;
+			margin: 0 auto;
+			padding:40px 0;
+			max-width:100%;
+			width:90%;
+			
+		}
+		
+		.intro, .infos{
+			margin: 0 auto;
+			width: 100%;
+			text-align: center;
+		}
+		.infos .image {
+			margin: 0 auto;
+		}
+		.current {
+			border-top: 1px solid #ee6557;
+		}
+		.skills {
+			border:0;
+			font-size:1.2em;
+			li span {
+				display:inline;
+				float:right;
+			}
+		}
+		.print {
+			width: 100%;
+			a {
+				float: left;
+				margin:0 auto;
+				width:50%;
+				text-align: center;
+			}
+			span {
+				display:block;
+				font-size:3em;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+	.main-nav {
+		height:55px;
+	}
+	.pagination .next, .pagination .prev {
+		display: none;
+	}
+	#menu-huvudmeny li a, #menu-bloggmeny li a, #menu-englishmenu li a  {
+		margin:12px 0 0;
+		padding:10px 7px;
+		font-size:1em;
+	}
+	
+	#hem {
+		height:300px;
+		h2 {
+			@include text-shadow(none);
+			margin-top:50px;	
+		}
+		h1 {
+			@include text-shadow(none);
+		}
+	}
+	
+	.work {
+		padding:50px 0;
+	}
+	#ommig 
+		.title-2 {
+			font-size: 1.4em;
+		}
+		.ommig .box p {
+			font-size: 1.1em;
+	}
+	
+	.container {
+		padding:0;
+	}
+	
+	.cv {
+		padding:50px 0;
+		width:100%;
+		h2 {
+			font-size:5em;
+		}
+		h1 {
+			font-size:2.6em;
+		}
+		.title {
+			text-align:center;
+		}
+		.infos p {
+			font-size:1.3em;
+		}
+		.current {
+			text-align: center;
+		}
+		.skills span {
+			padding:0;
+			background:#fff;
+			color:#ee6557;
+		}
+	}
+	
+	#kontakt {
+		.info {
+			.left {
+				display: none;
+			}
+			.right {
+				float: none;
+				padding: 0;
+				width:100%;
+				text-align: center;
+				font-size: 1.2em;
+			}
+		}
+	}
+	
+	.blogg #hem {
+		height:275px;
+		h2 {
+			margin-top: 5px;
+		}
+	}
+
+	#respond {
+		margin: 0 auto;
+		width:95%;
+	}
+	
+	#searchform {
+		width:99%;
+		
+		input {
+			width: 95%;
+		}
+		#searchsubmit {
+			width: 100px;
+		}
+	}
+	
+}
+
+@media only screen and (min-width: 321px) and (max-width: 480px) {
+	.main-nav ul li a {
+		margin:0 2px;
+		padding:10px;
+		font-size:1em;
+	}
+	
+	#hem {
+		height:260px;
+		
+		h2 {
+			margin-top:50px;
+			font-size:4.4em;
+		}
+	}
+}
+@media only screen and (max-width: 300px) {
+	.main-nav {
+		height: 200px;
+		ul {
+			padding-top: 5px;
+		}
+	}
+	#hem {
+		height: 200px;
+		h2{
+			padding-top: 1em;
+			font-size: 2.5em;
+		}
+		h1 {
+			font-size: 1.5em;
+		}
+	}
+	.title {
+		font-size: 2em;
+	}
+	#menu-huvudmeny li , #menu-bloggmeny li a, #menu-englishmenu li a  {
+		display: block;
+		float: none;
+	}
+	#kontakt {
+		.info {
+			margin: 0 auto;
+			padding: 50px 0;
+			width: 90%;
+			.left {
+				display: none;
+			}
+			.right{
+			float: none;
+			padding: 0px; 
+			width:100%;
+				li{
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+@media print {
+	* {
+		@include box-shadow(none !important);
+		@include text-shadow(none !important);
+		background:none !important;
+		color:#000!important;	 
+		-webkit-filter:grayscale(100%);
+		-ms-filter:grayscale(100%);
+		filter:Gray();
+		filter:url(desaturate.svg#grayscale);
+		filter:grayscale(100%);
+		-o-filter:grayscale(100%);
+	}
+	
+	a {
+		text-decoration:underline;
+	}
+	
+	.work-info a[href]:after {
+		content:" (" attr(href) ")";
+	}
+	
+	.work-info a[href="#"],.work-info a[href="javascript:"] {
+		content:"";
+	}
+		
+	.main-nav,#hem a {
+		display:none;
+	}
+	.work {
+		width:100%;
+		border-bottom:0;
+		page-break-after:always;
+		h3 {
+			font-size:3em;
+		}
+		.work-info {
+			margin-left:2%;
+			padding-bottom:10px;
+			width:88%;
+		}
+		img {
+			padding:0;
+			width:100%;
+		}
+	}
+
+	.container {
+		margin:0;
+		padding:0;
+		width:100%;
+	}
+	
+	.cv {
+		@include border-radius(0px);
+		@include box-shadow(none);
+		margin:0;
+		padding:0;
+		width:100%;
+		height:auto;
+		background:#fff;
+		font-size:12px;
+		h2 {
+			letter-spacing:-1px;
+			font-size:65px;
+		}
+		h1 {
+			letter-spacing:normal;
+			font-size:30px;
+		}
+		.infos {
+			.image {
+				background: url(images/vincent.png);
+				background: none, url(images/qr.svg) !important;
+				width: 200px;
+				height: 200px;
+				background-size: 100%;
+			}
+			p {
+				font-size:15px;
+			}
+		}
+		.about {
+			display:inline;
+			width:55%;
+		}
+		.skills {
+			padding-left:40px;
+			li {
+				margin:0;
+				font-size:14px;
+				line-height:normal;
+				
+				span {
+					float:right;
+					padding:0px;
+					background:none;
+					color:#000;
+					text-align: right;
+				}
+			}
+			.program {
+				margin: 0;
+			}
+		}
+	}
+
+	.cv .experience,.cv .education {
+		width:45%;
+		border-bottom:none;
+		font-size:12px;
+		line-height:normal;
+	}
+	.cv .education {
+		padding: 0;
+	}
+	.cv .print {
+		display:none;
+	}
+}

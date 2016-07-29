@@ -1,0 +1,47 @@
+.main-nav {
+	position:fixed;
+	z-index:1;
+	width:100%;
+	height:1.6em;
+	background:#fff url(images/nav-bg.png);
+	ul {
+		@include border-radius(0 0 1em 1em);
+		float:right;
+		margin-right:3em; /*47*/
+		padding:1.8em 1.3em 0;
+		height:2.3em;
+		background:#fff url(images/nav-bg.png);
+		list-style:none;
+	}
+	li {
+		float:left;
+	}
+	a {
+		padding:1em .6em;
+		&:hover {
+			color: $red;
+		}
+	}
+}
+
+.english,.swedish {
+	position:fixed;
+	top:.4em;
+	right:1.2em;
+	z-index:2;
+	float:right;
+	overflow:hidden;
+	width:23px;
+	height:15px;
+	background:url(images/language.jpg);
+	text-indent:100%;
+	white-space:nowrap;
+	
+	&:hover {
+		opacity: .6;
+	}
+}
+
+.swedish {
+	background-position:-23px 0;
+}

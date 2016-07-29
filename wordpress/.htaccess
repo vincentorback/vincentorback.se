@@ -1,0 +1,18 @@
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /wordpress/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /wordpress/index.php [L]
+</IfModule>
+# END WordPress
+
+
+
+RewriteEngine On
+RewriteBase /wordpress/
+RewriteRule ^sitemap_index.xml$ /wordpress/index.php?sitemap=1 [L]
+RewriteRule ^([^/]+?)-sitemap([0-9]+)?.xml$ /wordpress/index.php?sitemap=$1&sitemap_n=$2 [L]

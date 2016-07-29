@@ -1,0 +1,33 @@
+@-webkit-keyframes intro {
+	0% {
+		margin:100% 0 0 73%;
+		opacity:0;
+	}
+	
+	20% {
+		margin:50% 0 0 73%;
+		opacity:0;
+	}
+	
+	100% {
+		margin:5% 0 0 73%;
+		opacity:1;
+	}
+}
+
+@keyframes intro {
+	0% {
+		margin:100% 0 0 73%;
+		opacity:0;
+	}
+	
+	20% {
+		margin:50% 0 0 73%;
+		opacity:0;
+	}
+	
+	100% {
+		margin:5% 0 0 73%;
+		opacity:1;
+	}
+}

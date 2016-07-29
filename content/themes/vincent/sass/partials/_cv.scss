@@ -1,0 +1,172 @@
+.container {
+	@extend %clearfix;
+	margin:0 auto;
+	padding:70px 0;
+	max-width:1024px;
+}
+
+.cv {
+	@include border-radius(3px);
+	@include box-shadow(#777 5px 5px 20px);
+	@extend %clearfix;
+	margin:0 auto;
+	padding:50px 20px;
+	background:#fff;
+	line-height:1.4;
+	h2 {
+		letter-spacing:-2px;
+		font-weight:700;
+		font-size:7.5em;
+		font-family:Arial,sans-serif;
+		line-height:.9;	
+	}
+	h1 {
+		color:#ee6557;
+		letter-spacing:-4px;
+		font-weight:700;
+		font-size:3.7em;
+		font-family:Arial,sans-serif;
+		line-height:.8;
+	}
+
+	span {
+	padding-right: 10px;
+	color:#ee6557;		
+	}
+	a {
+		color:#ee6557;
+		-webkit-tap-highlight-color:rgba(0,0,0,0);	
+		&:hover {
+			color:#333;	
+		}
+	}
+	.title, .title-2, p {
+		font-weight: lighter;
+		font-family: $helvetica;
+	}
+	.title {
+		font-size: 2.5em;
+	}
+	.title-2 {
+		font-size:1.3em;
+	}
+	.intro {
+		float:left;
+		padding:20px 0;
+		max-width:47%;
+	}
+	.infos {
+		float:right;
+		padding:20px 0;
+		width:47%;
+		border-bottom:1px solid #ee6557;
+		p {
+			padding:5px 0;
+			font-size:1.5em;
+			line-height:.89;
+		}
+		.image {
+			background: url(images/vincent.png);
+			width: 320px;
+			height: 300px;
+			background-size: 100%;
+		}
+	}
+	.about {
+		float:left;
+		padding:20px 0;
+		max-width:51%;
+	}
+	.current {
+		float:right;
+		padding:20px 0;
+		width:47%;
+		border-bottom:1px solid #ee6557;	
+	}
+	.skills {
+		float:right;
+		margin-top:30px;
+		padding-left:15px;
+		width:38%;
+		border-left:1px solid #ee6557;
+		p {
+			font-weight: bold;
+			font-size: 1.6em;
+			line-height: 1.8;
+		}
+		.title {
+			font-weight: lighter;
+			font-size: 2.5em;
+		}
+		li {
+			margin:2px 0;
+			font-size:1.1em;
+			line-height:1.8;
+			span {
+				@include border-radius(10px);
+				float:right;
+				background:#ee6557;
+				color:#fff;
+				text-align:center;
+			}
+		}
+		.full {
+			padding:0 111px;	
+		}
+		.soclose {
+			padding:0 110px;	
+		}
+		.almost {
+			padding:0 100px;	
+		}
+		.alot {
+			padding:0 90px;	
+		}
+		.half {
+			padding:0 60px;	
+		}
+		.beginner {
+			padding:0 40px;	
+		}
+		.program {
+			margin-top: 33px;	
+		}
+	}
+	
+	.education li:before, .experience li:before{
+		color:#ee6557;
+		content:"♦ ";
+	}
+	.experience {
+		float:left;
+		padding:30px 0;
+		width:58%;
+		border-top:1px solid #ee6557;
+		border-bottom:1px solid #ee6557;
+		line-height:1.8;
+	}
+	.education {
+		overflow: auto;
+		padding:30px 0;
+		width:50%;
+		line-height:1.8;
+	}
+	.print {
+		float:right;
+		margin:-200px 75px 0 auto;
+		text-align:center;
+		font-size:1.4em;
+		a {
+			float:left;
+			margin:0 15px;
+			span {
+				@include transition(all .1s linear);
+				display:block;
+				font-size:3em;	
+			}
+			&:hover span {
+				color: #333;
+			}
+		}
+	}
+}

@@ -1,0 +1,46 @@
+@font-face {
+	font-family: 'Satellite';
+	src: url('inc/fonts/satellite.eot'); /* IE9 Compat Modes */
+	src: url('inc/fonts/satellite.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	     url('inc/fonts/satellite.woff') format('woff'), /* Modern Browsers */
+	     url('inc/fonts/satellite.ttf')  format('truetype'), /* Safari, Android, iOS */
+	     url('inc/fonts/satellite.svg#Satellite') format('svg'); /* Legacy iOS */
+	}
+@font-face {
+	font-family: 'Vincent';
+	src: url('inc/fonts/vincent.eot'); /* IE9 Compat Modes */
+	src: url('inc/fonts/vincent.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	     url('inc/fonts/vincent.woff') format('woff'), /* Modern Browsers */
+	     url('inc/fonts/vincent.ttf')  format('truetype'), /* Safari, Android, iOS */
+	     url('inc/fonts/vincent.svg#Vincent') format('svg'); /* Legacy iOS */
+	}
+
+[data-icon]:before {
+	content:attr(data-icon);
+	font-weight:400;
+	font-family:'Vincent';
+	speak:none;
+	-webkit-font-smoothing:antialiased;
+}
+
+
+
+.work .visit {
+	&:after {
+		font-weight:400;
+		position: relative;
+		font-family:'Vincent';
+		speak:none;
+		-webkit-font-smoothing:antialiased;
+	}
+}
+
+.webbdesign,.webbutveckling,.responsive,.wordpress,.seo,.foto,.vincent a {
+	&:before {
+		font-weight:400;
+		position: relative;
+		font-family:'Vincent';
+		speak:none;
+		-webkit-font-smoothing:antialiased;
+	}
+}

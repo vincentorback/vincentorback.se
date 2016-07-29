@@ -1,0 +1,82 @@
+html {
+	height:100%;
+	-webkit-text-size-adjust:none;
+	-ms-text-size-adjust:none;
+}
+
+body {
+	height:100%;
+	background:url(images/portfolio-bg.png);
+	color:#171717;
+	font-weight: normal;
+	font-size: 100%;
+	font-family: "Century Gothic",$helvetica;
+	line-height:1.3;
+}
+.wrapper {
+	margin: 0 auto;
+	max-width: 2000px;
+}
+::selection {
+	background:#1ee39b;
+	color:#fff;
+}
+
+::-moz-selection {
+	background:#1ee39b;
+	color:#fff;
+}
+
+img {
+	max-width:100%;
+}
+a {
+	@include transition(all .3s ease);
+	color:#3e3c3c;
+	text-decoration:none;
+	
+	&:hover {
+		color:#ff4900;
+		text-decoration:none;
+	}
+	&:active {
+		outline:none;
+	}
+}
+
+b {
+	font-weight:700;
+}
+
+h1,h2,#hem a,.title,.title-2,.work-title {
+	font-weight: 100;
+	font-family:Satellite,"Century Gothic",$helvetica;
+}
+
+.title {
+	font-size:4em;
+}
+
+.title-2 {
+	font-size:1.5em;
+}
+
+section {
+	display:block;
+	padding:40px 0;
+}
+
+.fourofour {
+	overflow:hidden;
+	height:100%;
+}
+
+.chromeframe {
+	margin:.2em;
+	padding:.2em;
+	background:#fff;
+	color:#181818;
+	a {
+		color:#ff2a12;
+	}
+}

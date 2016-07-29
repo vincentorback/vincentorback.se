@@ -1,0 +1,140 @@
+@font-face {
+	font-family: 'vincent';
+	src:url('fonts/vincent.eot');
+	src:url('fonts/vincent.eot?#iefix') format('embedded-opentype'),
+		url('fonts/vincent.svg#vincent') format('svg'),
+		url('fonts/vincent.woff') format('woff'),
+		url('fonts/vincent.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'vincent';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"]:before {
+*/
+.icon-brush:before, .icon-tools:before, .icon-cog:before, .icon-mobile:before, .icon-gauge:before, .icon-camera:before, .icon-cart:before, .icon-twitter:before, .icon-linkedin:before, .icon-github:before, .icon-phone:before, .icon-mail:before, .icon-thumbs-up:before, .icon-compass:before, .icon-search:before, .icon-printer:before, .icon-trophy:before, .icon-megaphone:before, .icon-graduation:before, .icon-new:before, .icon-briefcase:before, .icon-screen:before, .icon-newspaper:before, .icon-cc:before, .icon-cc-by:before, .icon-cc-nc:before, .icon-dribbble:before, .icon-rss:before, .icon-export:before, .icon-link:before, .icon-list:before, .icon-cycle:before, .icon-heart:before, .icon-googleplus:before, .icon-facebook:before {
+	font-family: 'vincent';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+.icon-brush:before {
+	content: "\61";
+}
+.icon-tools:before {
+	content: "\62";
+}
+.icon-cog:before {
+	content: "\63";
+}
+.icon-mobile:before {
+	content: "\64";
+}
+.icon-gauge:before {
+	content: "\65";
+}
+.icon-camera:before {
+	content: "\66";
+}
+.icon-cart:before {
+	content: "\68";
+}
+.icon-twitter:before {
+	content: "\6b";
+}
+.icon-linkedin:before {
+	content: "\6c";
+}
+.icon-github:before {
+	content: "\6d";
+}
+.icon-phone:before {
+	content: "\6e";
+}
+.icon-mail:before {
+	content: "\6f";
+}
+.icon-thumbs-up:before {
+	content: "\70";
+}
+.icon-compass:before {
+	content: "\71";
+}
+.icon-search:before {
+	content: "\72";
+}
+.icon-printer:before {
+	content: "\73";
+}
+.icon-trophy:before {
+	content: "\74";
+}
+.icon-megaphone:before {
+	content: "\75";
+}
+.icon-graduation:before {
+	content: "\76";
+}
+.icon-new:before {
+	content: "\77";
+}
+.icon-briefcase:before {
+	content: "\78";
+}
+.icon-screen:before {
+	content: "\79";
+}
+.icon-newspaper:before {
+	content: "\7a";
+}
+.icon-cc:before {
+	content: "\31";
+}
+.icon-cc-by:before {
+	content: "\32";
+}
+.icon-cc-nc:before {
+	content: "\33";
+}
+.icon-dribbble:before {
+	content: "\34";
+}
+.icon-rss:before {
+	content: "\35";
+}
+.icon-export:before {
+	content: "\21";
+}
+.icon-link:before {
+	content: "\22";
+}
+.icon-list:before {
+	content: "\28";
+}
+.icon-cycle:before {
+	content: "\2a";
+}
+.icon-heart:before {
+	content: "\23";
+}
+.icon-googleplus:before {
+	content: "\6a";
+}
+.icon-facebook:before {
+	content: "\69";
+}
