@@ -3,6 +3,7 @@
 .Banner {
   position: relative;
   overflow: hidden;
+  width: 100%;
   max-width: var(--site-width);
   margin: 0 auto;
 }
@@ -10,18 +11,24 @@
 .Banner-image {
   display: block;
   width: 100%;
+  max-width: none;
 }
 
 @media (--md-viewport) {
   .Banner {
-    height: 80vh;
+    height: 75vh;
     min-height: 400px;
     max-height: 1000px;
   }
 
   .Banner-image {
     position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
     height: 100%;
+    max-width: 100%;
+    width: 100%;
     object-fit: cover;
   }
 }

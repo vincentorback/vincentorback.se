@@ -40,7 +40,8 @@
   --site-width: 1600px;
   --site-width-narrow: 900px;
   --site-background: #fff;
-  --site-spacing-sm: 40px;
+  --site-percent-spacing: 7%;
+  --site-spacing-sm: 60px;
   --site-spacing-md: 100px;
   --site-spacing-lg: 160px;
   --site-spacing-xl: 200px;

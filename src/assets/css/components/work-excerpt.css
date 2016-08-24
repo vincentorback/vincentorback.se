@@ -13,10 +13,6 @@
   width: 90%;
   max-width: var(--site-width);
   margin: 0 auto;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 @media (--xs-viewport) {
@@ -40,7 +36,7 @@
 
 @media (--xs-viewport) and (--sm-max-viewport) {
   .WorkExcerpt-content {
-    padding: 7% 15% 7% 0;
+    padding: var(--site-spacing-sm) 15% var(--site-spacing-sm) 0;
   }
 }
 
@@ -59,14 +55,9 @@
 @media (--sm-viewport) {
   .WorkExcerpt-content {
     padding: var(--site-spacing-sm) 0;
-    min-width: 300px;
-  }
-}
-
-@media (--lg-viewport) {
-  .WorkExcerpt-content {
-    flex: 0 1 40%;
-    min-width: 500px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
   }
 }
 
@@ -159,12 +150,7 @@
   display: inline-block;
   border-bottom: 1px dotted currentColor;
   color: currentColor;
-  transition: opacity 100ms;
   line-height: 1.3;
-}
-
-html.no-touchevents .WorkExcerpt-link:hover {
-  opacity: .7;
 }
 
 
@@ -201,7 +187,6 @@ html.no-touchevents .WorkExcerpt-link--external:hover {
 .WorkExcerpt-imageWrap {
   display: none;
   text-align: center;
-  flex: 0 1 300px;
 }
 
 @media (--xs-viewport) {
@@ -236,8 +221,10 @@ html.no-touchevents .WorkExcerpt-link--external:hover {
 
 @media (--sm-viewport) {
   .WorkExcerpt-imageWrap {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
     padding-left: 10%;
-    flex: 1 1 auto;
   }
 }
 
@@ -270,6 +257,7 @@ html.no-touchevents .WorkExcerpt-link--external:hover {
 
 
 /* Coop */
+
 .WorkExcerpt--coop {
   background: #f3f5f0;
   color: var(--color-coop2);
@@ -277,22 +265,14 @@ html.no-touchevents .WorkExcerpt-link--external:hover {
 
 
 /* Rikskriscentrum */
+
 .WorkExcerpt--rikskriscentrum {
   background: var(--color-rikskriscentrum2);
   color: var(--color-rikskriscentrum1);
 }
 
 
-/* Pansarfilm */
-/*.WorkExcerpt--pansarfilm {
-  background: var(--color-pansarfilm);
-}*/
-
-
-.WorkExcerpt--arcini {
-  /*background: var(--color-arcini);
-  color: #fff;*/
-}
+/* Arcini */
 
 @media (--xs-viewport) and (max-width: 400px) {
   .WorkExcerpt--arcini .WorkExcerpt-imageWrap {
@@ -307,6 +287,8 @@ html.no-touchevents .WorkExcerpt-link--external:hover {
 }
 
 
+/* You */
+
 .WorkExcerpt--you {
   display: block;
   background: var(--color-pansarfilm);
@@ -314,6 +296,12 @@ html.no-touchevents .WorkExcerpt-link--external:hover {
 
 .WorkExcerpt--you .WorkExcerpt-inner {
   display: block;
+}
+
+@media (--sm-viewport) {
+  .WorkExcerpt--you .WorkExcerpt-content {
+    width: 100%;
+  }
 }
 
 @media (--md-viewport) {

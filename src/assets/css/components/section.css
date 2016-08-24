@@ -6,7 +6,7 @@
 
 @media (--xs-viewport) {
   .Section {
-    padding: 7% 0;
+    padding: var(--site-percent-spacing) 0;
   }
 }
 

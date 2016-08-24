@@ -12,6 +12,14 @@
   min-height: 100%;
 }
 
+.Site-main {
+  transition: opacity 300ms ease;
+}
+
+.Site-main.in-transition {
+  opacity: 0;
+}
+
 .Site-container {
   width: 90%;
   max-width: var(--site-width);

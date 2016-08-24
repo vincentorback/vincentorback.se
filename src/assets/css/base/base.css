@@ -113,6 +113,10 @@ ul {
   padding: 0;
 }
 
+abbr {
+  cursor: inherit; /* TODO: questionmark? */
+}
+
 /**
  * Suppress the focus outline on links that cannot be accessed via keyboard.
  * This prevents an unwanted focus outline from appearing around elements that
@@ -134,11 +138,6 @@ ul {
 ::placeholder {
   color: inherit;
   opacity: .7;
-}
-
-::selection {
-  background: #333;
-  color: #fff;
 }
 
 /**

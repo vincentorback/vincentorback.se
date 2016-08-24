@@ -28,5 +28,5 @@
 }
 
 .Link.is-active .Link-inner:after {
-  transition: transform 1000ms ease 300ms, opacity 50ms 150ms;
+  transition: transform 150ms ease 300ms, opacity 50ms 150ms;
 }

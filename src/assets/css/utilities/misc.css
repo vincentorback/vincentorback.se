@@ -6,6 +6,10 @@
 }
 
 
+.u-selectAll {
+  user-select: all;
+}
+
 /* Text */
 
 .u-textNormal {
@@ -52,5 +56,29 @@
 @media (--sm-max-viewport) {
   .u-hideSmall {
     display: none;
+  }
+}
+
+@media (--sm-viewport) {
+  .u-hideBig {
+    display: none;
+  }
+}
+
+
+
+.u-fadeIn {
+  opacity: 0;
+  animation: fadein 600ms ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadein {
+  0%,
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

@@ -2,11 +2,13 @@
 
 :root {
   --Foot-color: #fff;
-  --Foot-background: var(--color-text);
+  --Foot-titleColor: #999;
+  --Foot-background: #111;
   --Foot-slapPeace: "/assets/images/slap-peace.png";
   --Foot-slapHand: "/assets/images/slap-hand.png";
   --Foot-slapSize: 90px;
 }
+
 
 .Foot {
   width: 100%;
@@ -16,11 +18,11 @@
   overflow: hidden;
 }
 
-@media (--xs-viewport) {
+/*@media (--xs-viewport) {
   .Foot {
-    padding: 7% 0;
+    padding: var(--site-percent-spacing) 0;
   }
-}
+}*/
 
 @media (--md-viewport) {
   .Foot {
@@ -43,22 +45,28 @@
 }
 
 
-
 .Foot-sectionBreak {
   padding-top: var(--site-spacing-sm);
 }
 
 @media (--xs-viewport) {
   .Foot-sectionBreak {
-    padding-top: 7%;
+    padding-top: var(--site-percent-spacing);
   }
 }
 
 @media (--md-viewport) {
   .Foot-sectionBreak {
-    padding-top: .9em;
+    padding-top: 1.55em;
   }
 }
+
+@media (--xl-viewport) {
+  .Foot-sectionBreak {
+    padding-top: 1.55em; /* TODO: other value */
+  }
+}
+
 
 .Foot-section {
   flex: 1 0 auto;
@@ -80,10 +88,9 @@
     flex-wrap: wrap;
   }
   .Foot-section:first-child {
-    margin-bottom: 7%;
+    margin-bottom: var(--site-percent-spacing);
   }
   .Foot-section:last-child {
-    /*align-self: flex-start;*/
     justify-content: flex-start;
   }
   .Foot-section:not(:last-child) {
@@ -133,23 +140,22 @@
 }
 
 
-
 .Foot-title {
   font-weight: var(--font-bold);
   margin-bottom: .5em;
-  color: #aaa;
+  color: var(--Foot-titleColor);
 }
+
 
 .Foot-link {
   display: inline-block;
-  padding: .1em 0;
-  margin: .2em 0;
+  padding-bottom: .2em;
+  margin-bottom: .2em;
 }
 
 .Foot-link:hover {
   border-bottom-color: #fff;
 }
-
 
 
 /* Slap */
@@ -182,7 +188,6 @@ html.no-js .Foot-slap {
 }
 
 
-
 .Foot-slapHand {
   position: relative;
   display: inline-block;
@@ -201,17 +206,21 @@ html.no-js .Foot-slap {
   }
 }
 
+
 .Foot-slapText {
   font-size: .8em;
 }
+
 
 .Foot-slapHand.is-active,
 .Foot-slapHand:hover {
   background-image: url(var(--Foot-slapHand));
 }
 
+
 html.js .Foot-slapHand {
   transform: scale(1.2);
+  cursor: pointer;
   cursor: grab;
   transition: transform 80ms;
 }
@@ -230,8 +239,35 @@ html.js .Foot-slapHand.is-awesome:active {
 }
 
 
+@media (min-width: 340px) {
+  html.no-flexbox .Foot-inner {
+    display: block;
+  }
+  html.no-flexbox .Foot-section {
+    width: 80px;
+    display: inline-block;
+    vertical-align: top;
+    padding-right: 0;
+  }
+  html.no-flexbox .Foot-section:first-child {
+    width: calc(100% - 80px);
+    padding-right: 80px;
+  }
+  html.no-flexbox .Foot-section:last-child {
+    width: 100%;
+  }
+}
 
-.Foot ::selection {
-  background: var(--Foot-color);
-  color: var(--Foot-background);
+@media (--sm-viewport) {
+  html.no-flexbox .Foot-section {
+    width: 40%;
+    padding-right: 80px;
+  }
+  html.no-flexbox .Foot-section:first-child {
+    width: 40%;
+  }
+  html.no-flexbox .Foot-section:last-child {
+    width: 20%;
+    padding-right: 0;
+  }
 }

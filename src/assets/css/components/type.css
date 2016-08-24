@@ -78,7 +78,7 @@ html.no-touchevents .Type a:not([class|="Type"]):active {
   border-bottom-style: solid;
 }
 
-.Type a:not([class|="Type"]):visited {
+.Type a[href^="http"]:not([class|="Type"]):visited {
   color: #666;
 }
 
@@ -159,7 +159,7 @@ html.no-touchevents .Type a:not([class|="Type"]):active {
   height: 1px;
   border: 0;
   width: 100%;
-  background-color: currentColor;;
+  background-color: currentColor;
   margin: calc(var(--Type-spacing) * 2) auto;
   transform: rotate(-1deg);
   transform-origin: top center;
@@ -198,6 +198,9 @@ html.no-touchevents .Type a:not([class|="Type"]):active {
 
 .Type-large {
   font-size: 1.2em;
+}
+
+.Type-large:not(:last-child) {
   margin-bottom: 1em;
 }
 

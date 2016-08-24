@@ -5,17 +5,27 @@
 }
 
 
-.Head-nav {
-  display: flex;
-  justify-content: space-between;
+.Head-nav:before,
+.Head-nav:after {
+  content: " ";
+  display: table;
 }
+
+.Head-nav:after {
+  clear: both;
+}
+
 
 .Head-logo,
 .Head-navItem {
-  display: block;
+  display: inline-block;
   padding: .8em 0;
   font-size: 1.2em;
   color: var(--Head-color);
+}
+
+.Head-navItem {
+  float: right;
 }
 
 @media (--sm-viewport) {
@@ -39,16 +49,17 @@
 }
 
 
+
 /* Front page */
 
 @media (--lg-viewport) {
-  .Head--front {
-    margin-bottom: -60px;
+  .u-fulfix {
+    padding-top: 70px !important;
   }
 }
 
 @media (--xl-viewport) {
-  .Head--front {
-    margin-bottom: -80px;
+  .u-fulfix {
+    padding-top: 100px !important;
   }
 }
