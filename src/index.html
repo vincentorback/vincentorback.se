@@ -34,32 +34,32 @@
 
 <body class="Site-body">
 
-  <header class="Head Head--front" role="banner">
+  <header class="Head" role="banner">
     <div class="Site-container">
       <nav class="Head-nav" role="navigation">
-        <a class="Head-logo" href="/">
+        <a class="Head-logo js-pageTransition" href="/">
           <h1>Vincent Orback</h1>
         </a>
-        <a class="Head-navItem Link js-navLink" href="/about-me.html" rel="next">
+        <a class="Head-navItem Link js-pageTransition js-aboutLink" href="/about-me" rel="next">
           <span class="Link-inner">About <span class="u-hideSmall">me</span></span>
         </a>
-      </div>
+      </nav>
     </div>
   </header>
 
-  <main id="container" role="main">
+  <div class="Site-main" id="container" role="main">
 
-    <section class="Section ">
+    <section class="Section u-fulfix">
       <div class="Site-container Site-container--narrow">
         <div class="Type">
-          <p class="Type-large">Hey there! I’m Vincent, a <strong class="u-textNormal u-textTruncate">web designer</strong> and <span class="u-textTruncate">front-end developer</span> living and working in Stockholm, Sweden. I aim to make functional and aesthetically attractive websites that work well for everyone using the web. <a class="u-textTruncate js-contactLink" href="#contact">Get in touch</a> and let’s <span class="u-textTruncate">work together &lt;3</span></p>
-          <!-- <p><span class="u-textBold">Specialties:</span> Front-end, WordPress, prototyping<br><span class="u-textBold">Currently:</span> <span class="u-textTruncate">Web developer</span> at <a class="u-textTruncate" href="https://earthpeople.se/">Earth People</a>.</p> -->
+          <p class="Type-large">Hey there! I’m Vincent, a <strong class="u-textNormal u-textTruncate">web designer</strong> and <span class="u-textTruncate">front-end developer</span> living and working in Stockholm, Sweden. I aim to make functional and aesthetically attractive websites that work well for everyone using the web. <a class="u-textTruncate js-contactLink" href="#contact">Get in touch</a> and let’s <span class="u-textTruncate">work together!</span></p>
+          <p><!--<span class="u-textBold">Specialties:</span> Front-end, WordPress, prototyping.<br>--><span class="u-textBold">Currently:</span> <span class="u-textTruncate">Web developer</span> at <a class="u-textTruncate" href="https://earthpeople.se/">Earth People</a>.</p>
           <!-- <p><span class="u-textBold">Specialties:</span> Front-end, WordPress, prototyping, e-commerce.</p> -->
         </div>
       </div>
     </section>
 
-    <article class="WorkExcerpt WorkExcerpt--coop" itemscope itemtype="http://schema.org/CreativeWork">
+    <article class="WorkExcerpt WorkExcerpt--coop" id="coop" itemscope itemtype="http://schema.org/CreativeWork">
       <div class="WorkExcerpt-inner">
         <div class="WorkExcerpt-content">
           <h1 class="WorkExcerpt-title" itemprop="name">Coop</h1>
@@ -79,12 +79,22 @@
           </div>
         </div>
         <figure class="WorkExcerpt-imageWrap">
-          <img class="WorkExcerpt-image" src="/assets/images/coop/coop.png" alt="Coop" itemprop="image">
+
+          <picture itemscope itemtype="http://schema.org/ImageObject">
+            <source media="(max-width:300px)" srcset="about:blank">
+            <source media="(max-width:600px)" srcset="/assets/images/coop-small.webp" type="image/webp">
+            <source media="(max-width:600px)" srcset="/assets/images/coop-small.png" type="image/png">
+            <source srcset="/assets/images/coop.webp" type="image/webp">
+            <img class="WorkExcerpt-image" src="/assets/images/coop.png" alt="Coop" itemprop="contentUrl">
+          </picture>
+
+          <!-- <img class="WorkExcerpt-image" src="/assets/images/coop.png" alt="Coop" itemprop="image"> -->
+
         </figure>
       </div>
     </article>
 
-    <article class="WorkExcerpt WorkExcerpt--rikskriscentrum" itemscope itemtype="http://schema.org/CreativeWork">
+    <article class="WorkExcerpt WorkExcerpt--rikskriscentrum" id="rikskriscentrum" itemscope itemtype="http://schema.org/CreativeWork">
       <div class="WorkExcerpt-inner">
         <div class="WorkExcerpt-content">
           <h1 class="WorkExcerpt-title" itemprop="name">Rikskriscentrum</h1>
@@ -104,12 +114,19 @@
           </div>
         </div>
         <figure class="WorkExcerpt-imageWrap">
-          <img class="WorkExcerpt-image" src="/assets/images/rikskriscentrum/rikskriscentrum.png" alt="Rikskriscentrum" itemprop="image">
+          <picture itemscope itemtype="http://schema.org/ImageObject">
+            <source media="(max-width:300px)" srcset="about:blank">
+            <source media="(max-width:600px)" srcset="/assets/images/rikskriscentrum-small.webp" type="image/webp">
+            <source media="(max-width:600px)" srcset="/assets/images/rikskriscentrum-small.png" type="image/png">
+            <source srcset="/assets/images/rikskriscentrum.webp" type="image/webp">
+            <img class="WorkExcerpt-image" src="/assets/images/rikskriscentrum.png" alt="Rikskriscentrum" itemprop="contentUrl">
+          </picture>
+          <!-- <img class="WorkExcerpt-image" src="/assets/images/rikskriscentrum.png" alt="Rikskriscentrum" itemprop="image"> -->
         </figure>
       </div>
     </article>
 
-    <article class="WorkExcerpt WorkExcerpt--arcini" itemscope itemtype="http://schema.org/CreativeWork">
+    <article class="WorkExcerpt WorkExcerpt--arcini" id="arcini" itemscope itemtype="http://schema.org/CreativeWork">
       <div class="WorkExcerpt-inner">
         <div class="WorkExcerpt-content">
           <h1 class="WorkExcerpt-title" itemprop="name">Arcini</h1>
@@ -129,15 +146,22 @@
           </div>
         </div>
         <figure class="WorkExcerpt-imageWrap">
-          <img class="WorkExcerpt-image" src="/assets/images/arcini/arcini2.png" alt="Arcini" itemprop="image">
+          <picture itemscope itemtype="http://schema.org/ImageObject">
+            <source media="(max-width:300px)" srcset="about:blank">
+            <source media="(max-width:600px)" srcset="/assets/images/arcini-small.webp" type="image/webp">
+            <source media="(max-width:600px)" srcset="/assets/images/arcini-small.png" type="image/png">
+            <source srcset="/assets/images/arcini.webp" type="image/webp">
+            <img class="WorkExcerpt-image" src="/assets/images/arcini.png" alt="Arcini" itemprop="contentUrl">
+          </picture>
+          <!-- <img class="WorkExcerpt-image" src="/assets/images/arcini2.png" alt="Arcini" itemprop="image"> -->
         </figure>
       </div>
     </article>
 
-    <article class="WorkExcerpt WorkExcerpt--you">
+    <!--<article class="WorkExcerpt WorkExcerpt--you">
       <div class="WorkExcerpt-inner">
         <div class="WorkExcerpt-content">
-          <h1 class="WorkExcerpt-title">Your company?</h1>
+          <h1 class="WorkExcerpt-title">You?</h1>
           <div class="WorkExcerpt-text">
             <p>Get in touch if you want to make websites!</p>
           </div>
@@ -147,21 +171,21 @@
           </div>
         </div>
       </div>
-    </article>
+    </article>-->
 
-  </main>
+  </div>
 
   <footer class="Foot" role="contentinfo" id="contact">
     <div class="Site-container">
       <div class="Foot-inner">
         <div class="Foot-section">
           <p class="Foot-title">Contact</p>
-          <p><a class="Link js-contact" href="mailto:hello@vincentorback.se" target="_blank">
+          <p><span class="Link u-selectAll js-contact">
             <span class="Link-inner">hello@vincentorback.se</span>
-          </a></p>
+          </span></p>
           <div class="Foot-sectionBreak"></div>
           <p class="Foot-title">Location</p>
-          <p><s>Stockholm, Sweden</s><br>I’m on vacation so not sure!</p>
+          <p>Stockholm, Sweden</p>
         </div>
         <div class="Foot-section">
           <p class="Foot-title">Social</p>
@@ -210,19 +234,18 @@
         "name": "Vincent Orback",
         "url": "http://vincentorback.se",
         "email": "hello@vincentorback.se",
-        "logo": "http://vincentorback.se/images/about/portrait.jpg",
+        "logo": "http://vincentorback.se/assets/images/portrait.jpg",
         "sameAs": [
           "https://github.com/vincentorback",
-          "https://se.linkedin.com/in/vincent-orback-45795750",
-          "https://twitter.com/vorback",
           "http://codepen.io/vincentorback",
-          "https://dribbble.com/vincentorback"
+          "https://twitter.com/vorback",
+          "https://se.linkedin.com/in/vincent-orback-45795750"
         ],
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Lindhagensterrassen 9",
+          "streetAddress": "Tantogatan 63",
           "addressLocality": "Stockholm",
-          "postalCode": "11218",
+          "postalCode": "11842",
           "addressCountry": "SE"
         },
         "contactPoint" : [{
@@ -236,7 +259,7 @@
           "name": "Vincent Orback",
           "email": "hello@vincentorback.se",
           "jobTitle": "Web designer",
-          "image": "http://vincentorback.se/images/about/portrait.jpg"
+          "image": "http://vincentorback.se/assets/images/portrait.jpg"
         }
       },
       {
