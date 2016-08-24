@@ -1,26 +1,151 @@
-/* global Modernizr, jump */
+/* global Modernizr, History */
 
-(function (window) {
+(function (window, undefined) {
   'use strict';
+
+  function addClass(el, className) {
+    if (el.classList) {
+      el.classList.add(className);
+    } else {
+      el.className += ' ' + className;
+    }
+  }
+
+  function removeClass(el, className) {
+    if (el.classList) {
+      el.classList.remove(className);
+    } else {
+      el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+    }
+  }
+
+  function hasClass(el, className) {
+    if (el.classList) {
+      return el.classList.contains(className);
+    }
+    return new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
+  }
+
+  function toggleClass(el, className, state) {
+    if (el.classList) {
+      el.classList.toggle(className, state);
+    } else {
+      state = isUndefined(state) ? hasClass(el, className) : state;
+      if (state) {
+        addClass(el, className);
+      } else {
+        removeClass(el, className);
+      }
+    }
+  }
+
+  function isUndefined(obj) {
+    return (typeof obj === 'undefined');
+  }
 
   var doc = window.document,
   vincent = {
 
     init: function () {
-      vincent.slap();
+
+      // vincent.pageTransitions();
+
+      if (!Modernizr.touchevents) {
+        vincent.slap();
+      }
+
       vincent.contactLink();
+
       vincent.trackLinks();
+    },
+
+    pageTransitions: function () {
+      var transitionLinks = doc.querySelectorAll('.js-pageTransition');
+      var container = doc.getElementById('container');
+      var aboutLink = doc.querySelector('.js-aboutLink');
+      var template;
+      var pageTitle;
+      var activeClass = 'is-active';
+      var transitionClass = 'in-transition';
+
+      History.Adapter.bind(window, 'statechange', function() {
+        var State = History.getState();
+      });
+
+      function changePage(url) {
+        addClass(container, transitionClass);
+
+        if ((url === window.location.origin) || (url === (window.location.origin + '/'))) {
+          template = window.location.origin + '/partials/index';
+          pageTitle = 'Vincent Orback - Front-end utvecklare i Stockholm';
+        } else {
+          template = url.replace(window.location.origin, window.location.origin + '/partials');
+          pageTitle = 'About me - Vincent Orback - Front-end utvecklare i Stockholm';
+        }
+
+        toggleClass(aboutLink, activeClass, (url.replace(window.location.origin, '') === '/about-me'));
+
+        template = template.replace('.html', '');
+
+        fetch(template + '.html')
+        .then(function(response) {
+          return response.text();
+        }).then(function(body) {
+          History.pushState({path: url}, pageTitle, url.replace('.html', ''));
+          window.setTimeout(function () {
+            container.innerHTML = body;
+            removeClass(container, transitionClass);
+            vincent.contactLink();
+            vincent.trackLinks();
+          }, 400);
+        }).catch(function(error) {
+
+          console.log('request failed', error);
+          addClass(container, transitionClass);
+
+          History.pushState({path: url}, '404', url.replace('.html', ''));
+          fetch(window.location.origin + '/partials/404.html')
+          .then(function(response) {
+            return response.text();
+          }).then(function(body) {
+            container.innerHTML = body;
+            removeClass(container, transitionClass);
+          }).catch(function(error) {
+            console.log('request failed', error);
+            container.innerHTML = 'something went wront :)';
+            removeClass(container, transitionClass);
+          })
+        });
+      }
+
+      Array.prototype.slice.call(transitionLinks).forEach(function (linkEl) {
+        linkEl.addEventListener('click', function (e) {
+          if (window.location.href !== this.href) {
+            changePage(this.href);
+          }
+          e.preventDefault();
+        }, false);
+      });
+
+      window.addEventListener('popstate', function (e) {
+        if (window.location.hash && window.location.hash.length > 0) {
+          return;
+        }
+
+        changePage(window.location.href);
+      });
     },
 
     contactLink: function () {
       var newClass = 'is-active';
+      var linkEl = doc.querySelector('.js-contactLink');
       var targetEl = doc.querySelector('.js-contact');
 
-      if (targetEl) {
-        doc.querySelector('.js-contactLink').addEventListener('click', function (e) {
-          targetEl.classList.add(newClass);
+      if (linkEl && targetEl) {
+        linkEl.addEventListener('click', function (e) {
+          addClass(targetEl, newClass);
           targetEl.addEventListener('mouseover', function () {
-            targetEl.classList.remove(newClass);
+            removeClass(targetEl, newClass);
           });
         }, false);
       }
@@ -44,9 +169,11 @@
           }
         }
 
-        slapSound.volume = 0.5;
+        slapSound.volume = 0.4;
+        slapSound.loop = false;
 
         slapSound.addEventListener('ended', function () {
+          slapSound.pause();
           slapSound.currentTime = 0;
         });
 
@@ -57,6 +184,8 @@
 
       var altHand = slapHand.getAttribute('data-alt');
       var slapText = doc.querySelector('.js-slapText');
+      var activeClass = 'is-active';
+      var awesomeClass = 'is-awesome';
 
       vincent.slaps = 0;
 
@@ -69,7 +198,7 @@
         slapSound.play();
 
         if (Modernizr.touchevents) {
-          slapHand.classList.add('is-active');
+          addClass(slapHand, activeClass);
         }
 
         vincent.slaps += 1;
@@ -77,13 +206,13 @@
         if (vincent.slaps === 20) {
           slapSound.volume = 0.8;
           slapText.innerHTML = "You’re awesome!";
-          slapHand.classList.add('is-awesome');
+          addClass(slapHand, awesomeClass);
         }
 
         if (vincent.slaps === 40) {
-          slapSound.volume = .3;
+          slapSound.volume = .5;
           slapText.innerHTML = "You’re awesome, let’s give it a rest....";
-          slapHand.classList.remove('is-5', 'is-10');
+          removeClass(slapHand, 'is-5 is-10'); // TODO: Test
         }
 
         if (vincent.slaps === 60) {
@@ -92,7 +221,7 @@
         }
 
         if (vincent.slaps === 80) {
-          slapSound.volume = 0.4;
+          slapSound.volume = 0.5;
           slapText.innerHTML = "<s>ARGHH! MY HAAAAND!</s> Just kidding, I’m just a computer...";
         }
 
@@ -104,10 +233,9 @@
           slapText.innerHTML = "100 slaps! Let’s do something fun!";
           window.setTimeout(function () {
             window.location.href = 'https://unicef.se/ge-pengar';
-          }, 3000);
+          }, 2000);
         }
 
-        // vincent.track(1, 'slap');
       }, false);
 
     },
@@ -120,7 +248,7 @@
       //   return;
       // }
 
-      console.log(value, category);
+      console.log('track:', value, category);
 
       // ga('send', {
       //   'hitType': 'event',
@@ -142,10 +270,9 @@
       //   return;
       // }
 
-      var links = doc.querySelectorAll('a[href^="http"], a[href^="mailto"]');
+      var outboundLinks = doc.querySelectorAll('a[href^="http"], a[href^="mailto"]');
 
-      Array.from(links, function (link) {
-
+      Array.prototype.slice.call(outboundLinks).forEach(function (link) {
         if (link.host.indexOf('vincentorback') > -1) {
           return;
         }
@@ -174,4 +301,4 @@
 
   window.addEventListener('load', vincent.init, false);
 
-}(this));
+}(window));
