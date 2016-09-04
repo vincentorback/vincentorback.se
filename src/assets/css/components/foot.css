@@ -3,7 +3,7 @@
 :root {
   --Foot-color: #fff;
   --Foot-titleColor: #999;
-  --Foot-background: #111;
+  --Foot-background: var(--color-text);
   --Foot-slapPeace: "/assets/images/slap-peace.png";
   --Foot-slapHand: "/assets/images/slap-hand.png";
   --Foot-slapSize: 90px;
@@ -12,150 +12,86 @@
 
 .Foot {
   width: 100%;
-  padding: var(--site-spacing-sm) 0;
   background: var(--Foot-background);
   color: var(--Foot-color);
-  overflow: hidden;
+  line-height: var(--text-lineheight-large);
 }
-
-/*@media (--xs-viewport) {
-  .Foot {
-    padding: var(--site-percent-spacing) 0;
-  }
-}*/
 
 @media (--md-viewport) {
   .Foot {
-    padding: var(--site-spacing-md) 0;
-    font-size: 1.2em;
+    font-size: 1.3em;
   }
 }
 
-@media (--lg-viewport) {
-  .Foot {
-    padding: var(--site-spacing-lg) 0;
-  }
-}
-
-@media (--xl-viewport) {
-  .Foot {
-    padding: var(--site-spacing-xl) 0;
-    font-size: 1.4em;
-  }
-}
-
-
-.Foot-sectionBreak {
-  padding-top: var(--site-spacing-sm);
-}
 
 @media (--xs-viewport) {
-  .Foot-sectionBreak {
-    padding-top: var(--site-percent-spacing);
-  }
-}
-
-@media (--md-viewport) {
-  .Foot-sectionBreak {
-    padding-top: 1.55em;
-  }
-}
-
-@media (--xl-viewport) {
-  .Foot-sectionBreak {
-    padding-top: 1.55em; /* TODO: other value */
+  .Foot-inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 }
 
 
 .Foot-section {
-  flex: 1 0 auto;
-  padding-right: 0;
+  flex: 1 0 100%;
 }
 
-.Foot-section:first-child {
+.Foot-section:not(:last-child) {
   margin-bottom: var(--site-spacing-sm);
 }
 
 .Foot-section:last-child {
-  display: flex;
-  justify-content: center;
+  flex: 1 1 auto;
 }
 
 @media (--xs-viewport) {
-  .Foot-inner {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .Foot-section:first-child {
-    margin-bottom: var(--site-percent-spacing);
+  .Foot-section:not(:last-child) {
+    flex: 0 0 auto;
+    padding-right: calc(var(--site-spacing-sm) / 2);
+    margin-bottom: var(--site-spacing-percent);
   }
   .Foot-section:last-child {
-    justify-content: flex-start;
-  }
-  .Foot-section:not(:last-child) {
-    padding-right: var(--site-spacing-sm);
+    align-self: center;
   }
 }
 
-@media (min-width: 412px) {
-  .Foot-section:last-child {
-    justify-content: center;
-  }
-  .Foot-section:first-child {
+@media (min-width: 470px) {
+  .Foot-section:not(:last-child) {
     margin-bottom: 0;
   }
 }
 
 @media (--sm-viewport) {
-  .Foot-section {
-    flex: 1 1 auto;
+  .Foot-section:not(:last-child) {
+    flex: 0 0 auto;
+    padding-right: var(--site-spacing-sm);
+    margin-bottom: var(--site-spacing-sm);
+  }
+  .Foot-section:last-child {
+    flex: 1 0 auto;
   }
 }
 
 @media (--md-viewport) {
-  .Foot-section {
-    flex: 0 0 auto;
-  }
   .Foot-section:not(:last-child) {
-    padding-right: var(--site-spacing-md);
-  }
-  .Foot-section:last-child {
-    flex-grow: 1;
-    justify-content: flex-end;
-    align-self: center;
+    flex: 0 1 auto;
   }
 }
 
-@media (--lg-viewport) {
-  .Foot-section:not(:last-child) {
-    padding-right: var(--site-spacing-lg);
-  }
-}
-
-@media (--xl-viewport) {
-  .Foot-section:not(:last-child) {
-    padding-right: var(--site-spacing-xl);
-  }
-}
 
 
 .Foot-title {
   font-weight: var(--font-bold);
-  margin-bottom: .5em;
   color: var(--Foot-titleColor);
+  margin-bottom: 10px;
 }
-
 
 .Foot-link {
-  display: inline-block;
-  padding-bottom: .2em;
-  margin-bottom: .2em;
+  display: block;
+  margin-bottom: 3.5px;
 }
 
-.Foot-link:hover {
-  border-bottom-color: #fff;
-}
 
 
 /* Slap */
@@ -169,19 +105,13 @@ html.no-js .Foot-slap {
   display: none;
 }
 
-@media (--xs-viewport) and (--sm-max-viewport) {
-  html.no-touchevents .Foot-slap {
-    margin-top: var(--site-spacing-sm);
-  }
-}
-
 @media (--sm-max-viewport) {
   html.touchevents .Foot-slap {
     display: none;
   }
 }
 
-@media (--lg-viewport) {
+@media (--sm-viewport) {
   .Foot-slap {
     text-align: right;
   }
@@ -218,56 +148,22 @@ html.no-js .Foot-slap {
 }
 
 
-html.js .Foot-slapHand {
+.Foot-slapHand {
   transform: scale(1.2);
   cursor: pointer;
   cursor: grab;
   transition: transform 80ms;
 }
 
-html.js .Foot-slapHand:active {
+.Foot-slapHand:active {
   transform: scale(1.1);
 }
 
-html.js .Foot-slapHand.is-awesome {
+.Foot-slapHand.is-awesome {
   transform: scale(1.5);
   margin-bottom: 1em;
 }
 
-html.js .Foot-slapHand.is-awesome:active {
+.Foot-slapHand.is-awesome:active {
   transform: scale(1.4);
-}
-
-
-@media (min-width: 340px) {
-  html.no-flexbox .Foot-inner {
-    display: block;
-  }
-  html.no-flexbox .Foot-section {
-    width: 80px;
-    display: inline-block;
-    vertical-align: top;
-    padding-right: 0;
-  }
-  html.no-flexbox .Foot-section:first-child {
-    width: calc(100% - 80px);
-    padding-right: 80px;
-  }
-  html.no-flexbox .Foot-section:last-child {
-    width: 100%;
-  }
-}
-
-@media (--sm-viewport) {
-  html.no-flexbox .Foot-section {
-    width: 40%;
-    padding-right: 80px;
-  }
-  html.no-flexbox .Foot-section:first-child {
-    width: 40%;
-  }
-  html.no-flexbox .Foot-section:last-child {
-    width: 20%;
-    padding-right: 0;
-  }
 }
