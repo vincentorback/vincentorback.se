@@ -146,6 +146,27 @@
 }
 
 
+
+.WorkExcerpt-infoItem,
+.WorkExcerpt-infoTitle {
+  padding-bottom: .5em;
+  display: inline;
+}
+
+.WorkExcerpt-infoTitle {
+  margin-right: .5em;
+  font-weight: var(--font-bold);
+}
+
+.WorkExcerpt-infoItem:after {
+  content: "\A";
+  white-space: pre;
+}
+
+
+
+
+
 .WorkExcerpt-link {
   display: inline-block;
   color: currentColor;
