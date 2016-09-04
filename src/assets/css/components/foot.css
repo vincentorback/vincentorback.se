@@ -34,11 +34,11 @@
 
 
 .Foot-section {
-  flex: 1 0 100%;
+  flex: 0 0 auto;
 }
 
 .Foot-section:not(:last-child) {
-  margin-bottom: var(--site-spacing-sm);
+  margin-bottom: var(--site-spacing-percent);
 }
 
 .Foot-section:last-child {
