@@ -79,12 +79,13 @@
 
       vincent.navToggle();
 
+      vincent.oldWebsite();
+
       vincent.smoothScroll();
 
       if (winWidth > 800 && Modernizr.csstransforms) {
         vincent.pageTransition();
         vincent.pageTransitionHalf();
-        //vincent.pageTransitionFull();
 
         if (doc.getElementById('page-front')) {
           vincent.workTransition();
@@ -118,7 +119,6 @@
       }
 
       vincent.lazyLoad();
-
     },
 
     lazyLoad: function () {
@@ -427,94 +427,6 @@
         e.preventDefault();
       });
     },
-
-    /*
-    pageTransitionFull: function () {
-      var href,
-        $main = $body.find('.Site-main'),
-        $cover = $siteHead.find('.Sitehead-cover'),
-        hasCover = ($cover.length > 0) || ($siteHead.css('background-image') !== 'none') || ($siteHead.height() > winHeight),
-        count = 0,
-        transitionInterval,
-        transDone = false,
-        page;
-
-      $body.find('.js-transitionFull').on('click', function (e) {
-
-        if (e.metaKey || e.ctrlKey) {
-          return;
-        }
-
-        winHeight = getViewport().height;
-
-        href = e.currentTarget.getAttribute('href');
-        page = href.replace('/', '');
-        page = page.replace('/', '');
-
-        $body.addClass('disable-hover');
-
-        $main.velocity({
-          opacity: [0, 1]
-        }, {
-          duration: 400,
-          easing: 'ease'
-        });
-
-        $body.find('#navigation a').velocity({
-          color: vincent.colors.white
-        }, {
-          duration: 500,
-          easing: 'ease'
-        });
-
-        $siteHead.velocity({
-          height: winHeight,
-          maxHeight: '100%',
-          backgroundColor: vincent.colors.red
-        }, {
-          duration: 500,
-          easing: 'ease',
-          complete: function () {
-            transDone = true;
-          }
-        });
-
-        $siteHead.find('.Sitehead-inner').velocity({
-          translateY: winHeight
-        }, {
-          duration: 400,
-          easing: 'ease'
-        });
-
-        $siteHead.find('.Sitehead-logo').velocity({
-          translateY: -200
-        }, {
-          duration: 400,
-          easing: 'ease'
-        });
-
-        if (hasCover) {
-          $cover.velocity({
-            opacity: [0, 1]
-          }, {
-            duration: 400,
-            easing: 'ease'
-          });
-        }
-
-        // Wait for transitions and prefetches to comlpete.
-        transitionInterval = window.setInterval(function () {
-          if (transDone || (count === 10)) {
-            window.clearInterval(transitionInterval);
-            window.location = href;
-          }
-          count += 1;
-        }, 500);
-
-        e.preventDefault();
-      });
-    },
-    */
 
     workTransition: function () {
       var target, $target, href, transitionInterval,
@@ -1008,6 +920,17 @@
         href = svgElements[i].getAttribute('xlink:href');
         svgElements[i].setAttribute('xlink:href', href);
       }
+    },
+
+    oldWebsite: function () {
+      var $alertEl = $('<div class="Alert Alert--white js-alert" role="alert"><p class="Alert-text">Hey there! This is my old website. You probably got here by some old link that doesnt exist on my new one. When you’re finished here, <a class="u-block" href="http://vincentorback.se">check out my new portfolio &rarr;</a></p></div>');
+      $body.append($alertEl);
+
+      window.addEventListener('keydown', function (e) {
+        if (e.keyCode === 27) { // Esc
+          $alertEl.remove();
+        }
+      }, false);
     }
   };
 
