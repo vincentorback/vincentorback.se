@@ -1,5 +1,5 @@
-# Vincent Orback (In development)
-My personal portfolio, available at [v5.vincentorback.se](http://v5.vincentorback.se).
+# Vincent Orback
+My personal portfolio, available at [vincentorback.se](http://vincentorback.se).
 
 ## Setup
 Install dependencies: `npm install`  
