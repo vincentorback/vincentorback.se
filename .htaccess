@@ -1,42 +1,42 @@
-Redirect 301 /en/ http://vincentorback.se/
-Redirect 301 /en.html http://vincentorback.se/
-Redirect 301 /om-mig http://vincentorback.se/about-me/
-Redirect 301 /om-mig.html http://vincentorback.se/about-me/
-Redirect 301 /blogg http://vincentorback.se/blog/
-Redirect 301 /blog.html http://vincentorback.se/blog/
-Redirect 301 /kontakt/ http://vincentorback.se/contact/
-Redirect 301 /kontakt.html http://vincentorback.se/contact/
+Redirect 301 /en/ http://v4.vincentorback.se/
+Redirect 301 /en.html http://v4.vincentorback.se/
+Redirect 301 /om-mig http://v4.vincentorback.se/about-me/
+Redirect 301 /om-mig.html http://v4.vincentorback.se/about-me/
+Redirect 301 /blogg http://v4.vincentorback.se/blog/
+Redirect 301 /blog.html http://v4.vincentorback.se/blog/
+Redirect 301 /kontakt/ http://v4.vincentorback.se/contact/
+Redirect 301 /kontakt.html http://v4.vincentorback.se/contact/
 
 Redirect 301 /work/johanna-bystrom/ http://johannabystrom.se
 
-Redirect 301 /cv http://vincentorback.se/cv.pdf
-Redirect 301 /cv.pdf/ http://vincentorback.se/cv.pdf
-Redirect 301 /cv-en.pdf http://vincentorback.se/cv.pdf
+Redirect 301 /cv http://v4.vincentorback.se/cv.pdf
+Redirect 301 /cv.pdf/ http://v4.vincentorback.se/cv.pdf
+Redirect 301 /cv-en.pdf http://v4.vincentorback.se/cv.pdf
 
-Redirect 301 /blog/dont-work-for-free/ http://vincentorback.se/blog/
+Redirect 301 /blog/dont-work-for-free/ http://v4.vincentorback.se/blog/
 #old urls
-Redirect 301 /posts/dont-work-for-free/ http://vincentorback.se/blog/
-Redirect 301 /blog/optimizing-images-and-webp/ http://vincentorback.se/blog/using-webp-images/
-Redirect 301 /posts/optimizing-images-and-webp/ http://vincentorback.se/blog/using-webp-images/
+Redirect 301 /posts/dont-work-for-free/ http://v4.vincentorback.se/blog/
+Redirect 301 /blog/optimizing-images-and-webp/ http://v4.vincentorback.se/blog/using-webp-images/
+Redirect 301 /posts/optimizing-images-and-webp/ http://v4.vincentorback.se/blog/using-webp-images/
 
-Redirect 301 /posts/using-webp-images/ http://vincentorback.se/blog/using-webp-images/
-Redirect 301 /posts/take-10-and-learn-typography/ http://vincentorback.se/blog/take-10-and-learn-typography/
-Redirect 301 /posts/smooth-scrolling-with-css/ http://vincentorback.se/blog/smooth-scrolling-with-css/
-Redirect 301 /posts/i-commit-from-my-heart/ http://vincentorback.se/blog/
-Redirect 301 /blog/looping-scroll/ http://vincentorback.se/blog/looping-scroll-website
+Redirect 301 /posts/using-webp-images/ http://v4.vincentorback.se/blog/using-webp-images/
+Redirect 301 /posts/take-10-and-learn-typography/ http://v4.vincentorback.se/blog/take-10-and-learn-typography/
+Redirect 301 /posts/smooth-scrolling-with-css/ http://v4.vincentorback.se/blog/smooth-scrolling-with-css/
+Redirect 301 /posts/i-commit-from-my-heart/ http://v4.vincentorback.se/blog/
+Redirect 301 /blog/looping-scroll/ http://v4.vincentorback.se/blog/looping-scroll-website
 
-Redirect 301 /reggie-watts/ http://vincentorback.se/blog/
-Redirect 301 /blog//etikett/podcast/ http://vincentorback.se/blog/
-Redirect 301 /blog//etikett/sass/ http://vincentorback.se/blog/
-Redirect 301 /blog//valkommen/ http://vincentorback.se/blog/
-Redirect 301 /blog//tips-om-podcast/ http://vincentorback.se/blog/
-Redirect 301 /blog//etikett/reggie-watts/ http://vincentorback.se/blog/
-Redirect 301 /ommig.html http://vincentorback.se/about-me/
-Redirect 301 /podcast/ http://vincentorback.se/
-Redirect 301 /xmlrpc.php http://vincentorback.se/
-Redirect 301 /blog//2012/09/ http://vincentorback.se/blog/
-Redirect 301 /english/ http://vincentorback.se/
-Redirect 301 /aboutme/ http://vincentorback.se/about-me/
+Redirect 301 /reggie-watts/ http://v4.vincentorback.se/blog/
+Redirect 301 /blog//etikett/podcast/ http://v4.vincentorback.se/blog/
+Redirect 301 /blog//etikett/sass/ http://v4.vincentorback.se/blog/
+Redirect 301 /blog//valkommen/ http://v4.vincentorback.se/blog/
+Redirect 301 /blog//tips-om-podcast/ http://v4.vincentorback.se/blog/
+Redirect 301 /blog//etikett/reggie-watts/ http://v4.vincentorback.se/blog/
+Redirect 301 /ommig.html http://v4.vincentorback.se/about-me/
+Redirect 301 /podcast/ http://v4.vincentorback.se/
+Redirect 301 /xmlrpc.php http://v4.vincentorback.se/
+Redirect 301 /blog//2012/09/ http://v4.vincentorback.se/blog/
+Redirect 301 /english/ http://v4.vincentorback.se/
+Redirect 301 /aboutme/ http://v4.vincentorback.se/about-me/
 
 <IfModule mod_deflate.c>
     <IfModule mod_headers.c>
