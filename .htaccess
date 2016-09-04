@@ -1,6 +1,6 @@
 AddDefaultCharset utf-8
 
-ErrorDocument 404 /404.html
+ErrorDocument 404 /404.php
 
 Options -MultiViews
 
@@ -15,6 +15,20 @@ FileETag None
 </IfModule>
 
 
+# Removes file extension .html
+<IfModule mod_rewrite.c>
+  Options +FollowSymLinks
+  RewriteEngine On
+  RewriteBase /
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/|#(.*))$
+  RewriteRule ^(.*)$ $1/ [R=301,L]
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}\.html -f
+  RewriteRule ^([^\.]+)/$ $1.html
+</IfModule>
+
+
 # Gzip
 <IfModule mod_rewrite.c>
   RewriteEngine On
@@ -24,7 +38,7 @@ FileETag None
 </IfModule>
 
 
-# Cache (1 week)
+# Cache (1 week) TODO: 1 month!
 <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
   Header set Cache-Control "max-age=604800, public"
 </FilesMatch>
@@ -91,10 +105,11 @@ Redirect 301 /work/arcini/ http://v4.vincentorback.se/work/arcini/
 Redirect 301 /work/architecture-now/ http://v4.vincentorback.se/work/architecture-now/
 Redirect 301 /work/the-publics-choice/ http://v4.vincentorback.se/work/the-publics-choice/
 Redirect 301 /work/prophet-cruzin/ http://v4.vincentorback.se/work/prophet-cruzin/
+Redirect 301 /work/johanna-bystrom/ http://johannabystrom.se
 
-Redirect 301 /contact/ http://vincentorback.se/#contact
+Redirect 301 /contact/ http://v4.vincentorback.se/contact/
 
-Redirect 301 /blog/ http://v4.vincentorback.se/blog
+#Redirect 301 /blog/ http://v4.vincentorback.se/blog
 Redirect 301 /blog/clean-wordpress-admin/ http://v4.vincentorback.se/blog/clean-wordpress-admin/
 Redirect 301 /blog/looping-scroll-website/ http://v4.vincentorback.se/blog/looping-scroll-website/
 Redirect 301 /blog/favorite-talks/ http://v4.vincentorback.se/blog/favorite-talks/
@@ -102,3 +117,5 @@ Redirect 301 /blog/how-to-honor-the-dnt-setting/ http://v4.vincentorback.se/blog
 Redirect 301 /blog/using-webp-images/ http://v4.vincentorback.se/blog/using-webp-images/
 Redirect 301 /blog/take-10-and-learn-typography/ http://v4.vincentorback.se/blog/take-10-and-learn-typography/
 Redirect 301 /blog/smooth-scrolling-with-css/ http://v4.vincentorback.se/blog/smooth-scrolling-with-css/
+
+Redirect 301 /cv http://v4.vincentorback.se/cv.pdf
