@@ -65,7 +65,7 @@
 
 .WorkExcerpt-title {
   font-size: 1.5em;
-  line-height: 1.2;
+  line-height: var(--text-lineheight-small);
   margin-bottom: .2em;
   font-weight: var(--font-bold);
 }
@@ -103,7 +103,7 @@
 
 .WorkExcerpt-text {
   font-size: 1.1em;
-  line-height: 1.6;
+  line-height: var(--text-lineheight-large);
 }
 
 @media (--sm-viewport) {
@@ -125,7 +125,7 @@
 .WorkExcerpt-info,
 .WorkExcerpt-links {
   margin-top: 1em;
-  line-height: 1.7;
+  line-height: var(--text-lineheight-large);
 }
 
 @media (--lg-viewport) {
@@ -148,37 +148,57 @@
 
 .WorkExcerpt-link {
   display: inline-block;
-  border-bottom: 1px dotted currentColor;
   color: currentColor;
-  line-height: 1.3;
+  line-height: var(--text-lineheight-small);
+  border-bottom: 1px dotted currentColor;
 }
 
+.WorkExcerpt-link:hover {
+  border-bottom-style: solid;
+}
 
+/*
 .WorkExcerpt-link--button {
-  margin-right: 1.5em;
+  margin-right: 40px;
   margin-bottom: .75em;
   padding: 1em 1.75em;
   background: currentColor;
   border-radius: 4px;
-  border: 0;
 }
-
 
 .WorkExcerpt-linkText,
 .WorkExcerpt-linkSymbol {
   display: inline-block;
   vertical-align: middle;
-  color: #fff;
 }
 
 .WorkExcerpt-linkSymbol {
   margin-left: .5em;
   margin-right: -.5em;
+  transition: transform 200ms ease;
 }
 
-html.no-touchevents .WorkExcerpt-link--external:hover {
+.WorkExcerpt-link--button .WorkExcerpt-linkText,
+.WorkExcerpt-link--button .WorkExcerpt-linkSymbol {
+  color: #fff;
+}
+
+.WorkExcerpt-link--external .WorkExcerpt-linkText {
+  border-bottom: 1px dotted currentColor;
+}
+
+html.no-touchevents .WorkExcerpt-link--external:hover .WorkExcerpt-linkText {
   border-bottom-style: solid;
 }
+
+html.no-touchevents .WorkExcerpt-link--button:hover {
+  opacity: .9;
+}
+
+html.no-touchevents .WorkExcerpt-link--button:hover .WorkExcerpt-linkSymbol {
+  transform: translateX(2px);
+}
+*/
 
 
 
@@ -259,7 +279,7 @@ html.no-touchevents .WorkExcerpt-link--external:hover {
 /* Coop */
 
 .WorkExcerpt--coop {
-  background: #f3f5f0;
+  background: var(--color-coop3);
   color: var(--color-coop2);
 }
 

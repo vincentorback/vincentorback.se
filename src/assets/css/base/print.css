@@ -12,10 +12,6 @@
     font-size: 1em;
   }
 
-  .Head--front {
-    margin: 0;
-  }
-
   .WorkExcerpt-title {
     font-size: 28px;
     font-weight: var(--font-normal);
@@ -26,7 +22,7 @@
   }
 
   .Foot {
-    border-top: 1px solid #ccc;
+    border-top: 1px solid var(--color-gray-light);
   }
 
   .Foot-slap {

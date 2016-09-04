@@ -12,35 +12,38 @@
 
 :root {
   --color-blue: #0074D9;
-  --color-navy: #001F3F;
-  --color-purple: #6701CD;
-  --color-text: #222;
-  --color-red: #FF3F2C;
-  --color-orange: #f25f30;
-  --color-green: #45b68a;
-  --color-pink: #e763ae;
   --color-gold: #b69853;
-  --color-darkgray: #666;
-  --color-lightgray: #eee;
+  --color-gray-dark: #666;
+  --color-gray-light: #eee;
+  --color-green: #45b68a;
+  --color-navy: #001F3F;
+  --color-orange: #f25f30;
+  --color-pink: #e763ae;
+  --color-purple: #6701CD;
+  --color-red: #FF3F2C;
+  --color-text: #222;
+  --color-yellow: #f0db24;
 
   --color-coop1: #C0E18C;
   --color-coop2: #00AD25;
+  --color-coop3: #f3f5f0;
   --color-rikskriscentrum1: #0074d9;
   --color-rikskriscentrum2: #f0f8ff;
   --color-arcini: #222;
   --color-pansarfilm: #ffcdcd;
 
-  --color-yellow: #f0db24;
+  --font-monospace: monospace;
   --font-sansserif: "Roboto", sans-serif;
   --font-serif: Georgia, serif;
-  --font-monospace: monospace;
   --font-normal: 300;
   --font-bold: 500;
+  --text-lineheight-small: 1.2;
+  --text-lineheight-large: 1.7;
 
   --site-width: 1600px;
-  --site-width-narrow: 900px;
+  --site-width-narrow: 850px;
   --site-background: #fff;
-  --site-percent-spacing: 7%;
+  --site-spacing-percent: 7vw;
   --site-spacing-sm: 60px;
   --site-spacing-md: 100px;
   --site-spacing-lg: 160px;

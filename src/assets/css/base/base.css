@@ -19,9 +19,6 @@ dd,
 h1,
 h2,
 h3,
-h4,
-h5,
-h6,
 figure,
 p,
 pre,
@@ -45,7 +42,7 @@ select {
   padding: 0;
   letter-spacing: inherit;
 }
-
+/*
 input[type="search"] {
   appearance: none;
   box-sizing: inherit;
@@ -58,6 +55,7 @@ input[type="checkbox"] {
 input[type="radio"] {
   appearance: radio;
 }
+*/
 
 /**
  * Work around a Firefox/IE bug where the transparent `button` background
@@ -114,7 +112,7 @@ ul {
 }
 
 abbr {
-  cursor: inherit; /* TODO: questionmark? */
+  cursor: help;
 }
 
 /**
