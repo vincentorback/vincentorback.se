@@ -6,7 +6,7 @@
 
 
 .Type {
-  line-height: 1.7;
+  line-height: var(--text-lineheight-large);
   font-size: 1em;
 }
 
@@ -210,4 +210,39 @@
   .Type-large {
     font-size: 2em;
   }
+}
+
+
+
+@custom-selector :--Type-table-row
+  .Type-table tr;
+
+@custom-selector :--Type-table-cell
+  .Type-table th, .Type-table td;
+
+.Type-table {
+  width: 100%;
+  overflow: auto;
+  text-align: left;
+}
+
+.Type-tableTable {
+  min-width: var(--site-width-narrow);
+}
+
+:--Type-table-cell {
+  padding: 5px;
+}
+
+@media (--md-viewport) {
+  :--Type-table-cell {
+    padding: 10px 5px;
+  }
+}
+
+
+.Type-code {
+  background: var(--color-gray-light);
+  padding: 20px;
+  overflow: auto;
 }
