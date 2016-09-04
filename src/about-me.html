@@ -53,14 +53,25 @@
 
   <header class="Head" role="banner">
     <div class="Site-container">
-      <nav class="Head-nav" role="navigation">
+      <div class="Head-inner">
         <a class="Head-logo js-pageTransition" href="/">
-          <h1>Vincent Orback</h1>
+          <h1 class="Head-logoTitle">Vincent Orback</h1>
         </a>
-        <a class="Head-navItem Link js-pageTransition js-aboutLink is-active" href="/about-me" rel="next">
-          <span class="Link-inner">About <span class="u-hideSmall">me</span></span>
-        </a>
-      </nav>
+        <nav class="Head-nav" role="navigation">
+          <ul class="Head-navList">
+            <li class="Head-navItem">
+              <a class="Head-navLink Link js-pageTransition js-aboutLink is-active" href="/about-me" rel="next">
+                <span class="Link-inner">About <span class="u-hideSmall">me</span></span>
+              </a>
+            </li>
+            <!-- <li class="Head-navItem">
+              <a class="Head-navLink Link" href="/blog">
+                <span class="Link-inner">Blog</span>
+              </a>
+            </li> -->
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 

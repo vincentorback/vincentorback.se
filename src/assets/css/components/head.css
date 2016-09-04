@@ -5,47 +5,78 @@
 }
 
 
-.Head-nav:before,
-.Head-nav:after {
-  content: " ";
-  display: table;
+.Head {
+  color: var(--Head-color);
 }
 
-.Head-nav:after {
-  clear: both;
+
+.Head-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
+
+
+.Head-logo {
+  flex: 0 0 auto;
+
+  padding: .8em 0;
+  font-size: 1.2em;
+}
+
+
+.Head-nav {
+  flex: 0 1 auto;
+  display: inline-block;
+}
+
+.Head-navItem {
+  display: inline-block;
+}
+
+.Head-navItem:not(:last-child) {
+  margin-right: 40px;
+}
+
 
 
 .Head-logo,
-.Head-navItem {
-  display: inline-block;
+.Head-navLink {
+  display: block;
   padding: .8em 0;
   font-size: 1.2em;
   color: var(--Head-color);
 }
 
-.Head-navItem {
-  float: right;
-}
-
 @media (--sm-viewport) {
   .Head-logo,
-  .Head-navItem {
+  .Head-navLink {
     padding: 1.2em 0;
   }
 }
 
 @media (--lg-viewport) {
   .Head-logo,
-  .Head-navItem {
+  .Head-navLink {
     padding: 1.5em 0;
     font-size: 1.5em;
   }
 }
 
 
-.Head:not(.Head--front) .Head-logo:hover {
+.Head-logo:hover {
   opacity: .7;
+}
+
+
+html.no-flexbox .Head-logo,
+html.no-flexbox .Head-nav {
+  display: inline-block;
+}
+
+html.no-flexbox .Head-navList {
+  float: right;
 }
 
 
