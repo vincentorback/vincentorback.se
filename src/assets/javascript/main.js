@@ -244,21 +244,16 @@
       },
 
       track: function(value, category, callback) {
-        // if (typeof ga === 'undefined') {
-        //   window.setTimeout(function () {
-        //     vincent.track(value, category)
-        //   }, 1000);
-        //   return;
-        // }
+        if (typeof ga === 'undefined') {
+          return;
+        }
 
-        console.log('track:', value, category);
-
-        // ga('send', {
-        //   'hitType': 'event',
-        //   'eventCategory': category,
-        //   'eventAction': supportTouch ? 'tap' : 'click',
-        //   'eventValue': value
-        // });
+        ga('send', {
+          'hitType': 'event',
+          'eventCategory': category,
+          'eventAction': supportTouch ? 'tap' : 'click',
+          'eventValue': value
+        });
 
         if (callback) {
           callback();
@@ -266,12 +261,9 @@
       },
 
       trackLinks: function () {
-        // if (typeof ga === 'undefined') {
-        //   window.setTimeout(function () {
-        //     vincent.track(value, category)
-        //   }, 1000);
-        //   return;
-        // }
+        if (typeof ga === 'undefined') {
+          return;
+        }
 
         var outboundLinks = doc.querySelectorAll('a[href^="http"], a[href^="mailto"]');
 
@@ -286,11 +278,9 @@
               vincent.track(vincent.slaps, 'slaps');
             }
 
-            console.log('track outbound link');
-
-            // ga('send', 'event', 'outbound', 'click', link.href, {
-            //   'transport': 'beacon'
-            // });
+            ga('send', 'event', 'outbound', 'click', link.href, {
+              'transport': 'beacon'
+            });
 
             if (e.metaKey || e.ctrlKey) {
               return;
