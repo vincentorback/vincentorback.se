@@ -48,95 +48,13 @@
     vincent = {
 
       init: function () {
-
-        // vincent.pageTransitions();
-
         if (!supportTouch) {
           vincent.slap();
-
-          vincent.contactLink();
 
           vincent.trackLinks();
         }
 
-      },
-
-      pageTransitions: function () {
-        var transitionLinks = doc.querySelectorAll('.js-pageTransition'),
-          container = doc.getElementById('container'),
-          aboutLink = doc.querySelector('.js-aboutLink'),
-          activeClass = 'is-active',
-          transitionClass = 'in-transition',
-          template,
-          pageTitle,
-          State;
-
-        History.Adapter.bind(window, 'statechange', function() {
-          State = History.getState();
-        });
-
-        function changePage(url) {
-          addClass(container, transitionClass);
-
-          if ((url === window.location.origin) || (url === (window.location.origin + '/'))) {
-            template = window.location.origin + '/partials/index';
-            pageTitle = 'Vincent Orback - Web designer and developer in Stockholm';
-          } else {
-            template = url.replace(window.location.origin, window.location.origin + '/partials');
-            pageTitle = 'About me - Vincent Orback - Web designer and developer in Stockholm';
-          }
-
-          toggleClass(aboutLink, activeClass, (url.replace(window.location.origin, '') === '/about-me'));
-
-          template = template.replace('.html', '');
-
-          fetch(template + '.html')
-          .then(function(response) {
-            return response.text();
-          }).then(function(body) {
-            History.pushState({path: url}, pageTitle, url.replace('.html', ''));
-            window.setTimeout(function () {
-              container.innerHTML = body;
-              removeClass(container, transitionClass);
-              vincent.contactLink();
-              vincent.trackLinks();
-            }, 400);
-          }).catch(function(error) {
-
-            console.log('request failed', error);
-            addClass(container, transitionClass);
-
-            History.pushState({path: url}, '404', url.replace('.html', ''));
-            fetch(window.location.origin + '/partials/404.html')
-            .then(function(response) {
-              return response.text();
-            }).then(function(body) {
-              container.innerHTML = body;
-              removeClass(container, transitionClass);
-            }).catch(function(error) {
-              console.log('request failed', error);
-              container.innerHTML = 'something went wront :)';
-              removeClass(container, transitionClass);
-            })
-          });
-        }
-
-        Array.prototype.slice.call(transitionLinks).forEach(function (linkEl) {
-          linkEl.addEventListener('click', function (e) {
-            if (window.location.href !== this.href) {
-              changePage(this.href);
-            }
-            e.preventDefault();
-          }, false);
-        });
-
-        window.addEventListener('popstate', function (e) {
-          if (window.location.hash && window.location.hash.length > 0) {
-            return;
-          }
-
-          changePage(window.location.href);
-        });
+        vincent.contactLink();
       },
 
       contactLink: function () {
@@ -146,10 +64,9 @@
 
         if (linkEl && targetEl) {
           linkEl.addEventListener('click', function (e) {
-            addClass(targetEl, newClass);
-            targetEl.addEventListener('mouseover', function () {
-              removeClass(targetEl, newClass);
-            });
+            window.setTimeout(function() {
+              targetEl.focus()
+            }, 200)
           }, false);
         }
       },
