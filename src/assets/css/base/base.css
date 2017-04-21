@@ -4,8 +4,8 @@ html {
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
@@ -27,55 +27,9 @@ form {
   font: inherit;
 }
 
-label,
-input,
-textarea,
-button,
-select {
-  border: 0;
-  box-sizing: inherit;
-  font: inherit;
-  color: inherit;
-  background: transparent;
-  border-radius: 0;
-  appearance: none;
-  padding: 0;
-  letter-spacing: inherit;
-}
-/*
-input[type="search"] {
-  appearance: none;
-  box-sizing: inherit;
-}
-
-input[type="checkbox"] {
-  appearance: checkbox;
-}
-
-input[type="radio"] {
-  appearance: radio;
-}
-*/
-
-/**
- * Work around a Firefox/IE bug where the transparent `button` background
- * results in a loss of the default `button` focus styles.
- */
-button:focus {
-  outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-}
-
-a,
-button,
-label,
-input[type="submit"],
-input[type="button"] {
-  cursor: pointer;
-}
-
 a {
   color: inherit;
+  cursor: pointer;
   text-decoration: none;
 }
 
@@ -92,16 +46,6 @@ em {
 img {
   max-width: 100%;
   height: auto;
-}
-
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-
-iframe {
-  border: 0;
 }
 
 ol,

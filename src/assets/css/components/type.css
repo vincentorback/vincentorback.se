@@ -60,11 +60,6 @@
   outline: 0;
   color: inherit;
   border-bottom: 1px dotted currentColor;
-
-  /* Break long urls */
-  word-break: break-all;
-  word-break: break-word;
-  hyphens: auto;
 }
 
 .Type a:hover,
@@ -208,7 +203,7 @@
 
 @media (--md-viewport) {
   .Type-large {
-    font-size: 2em;
+    font-size: 1.7em;
   }
 }
 
