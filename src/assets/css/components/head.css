@@ -20,7 +20,6 @@
 
 .Head-logo {
   flex: 0 0 auto;
-
   padding: .8em 0;
   font-size: 1.2em;
 }
@@ -77,20 +76,4 @@ html.no-flexbox .Head-nav {
 
 html.no-flexbox .Head-navList {
   float: right;
-}
-
-
-
-/* Front page */
-
-@media (--lg-viewport) {
-  .u-fulfix {
-    padding-top: 70px !important;
-  }
-}
-
-@media (--xl-viewport) {
-  .u-fulfix {
-    padding-top: 100px !important;
-  }
 }

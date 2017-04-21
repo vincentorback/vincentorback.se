@@ -109,7 +109,7 @@
 @media (--sm-viewport) {
   .WorkExcerpt-text {
     font-size: 1.3em;
-    max-width: 600px;
+    max-width: 550px;
   }
 }
 
@@ -158,12 +158,10 @@
   font-weight: var(--font-bold);
 }
 
-.WorkExcerpt-infoItem:after {
+.WorkExcerpt-infoItem::after {
   content: "\A";
   white-space: pre;
 }
-
-
 
 
 
@@ -297,6 +295,14 @@ html.no-touchevents .WorkExcerpt-link--button:hover .WorkExcerpt-linkSymbol {
 
 
 
+/* Arkitektur */
+
+.WorkExcerpt--arkitektur {
+  color: var(--color-arkitektur);
+  background: #fff;
+}
+
+
 /* Coop */
 
 .WorkExcerpt--coop {
@@ -310,6 +316,26 @@ html.no-touchevents .WorkExcerpt-link--button:hover .WorkExcerpt-linkSymbol {
 .WorkExcerpt--rikskriscentrum {
   background: var(--color-rikskriscentrum2);
   color: var(--color-rikskriscentrum1);
+}
+
+
+/* RDEV */
+
+.WorkExcerpt--rdev {
+  background: var(--color-rdev);
+  color: #fff;
+}
+
+@media (--xs-viewport) and (max-width: 400px) {
+  .WorkExcerpt--rdev .WorkExcerpt-imageWrap {
+    transform: translateX(75%);
+  }
+}
+
+@media (min-width: 400px) and (--sm-max-viewport) {
+  .WorkExcerpt--rdev .WorkExcerpt-imageWrap {
+    transform: translateX(65%);
+  }
 }
 
 
@@ -332,7 +358,7 @@ html.no-touchevents .WorkExcerpt-link--button:hover .WorkExcerpt-linkSymbol {
 
 .WorkExcerpt--you {
   display: block;
-  background: var(--color-pansarfilm);
+  background: var(--color-pink);
 }
 
 .WorkExcerpt--you .WorkExcerpt-inner {

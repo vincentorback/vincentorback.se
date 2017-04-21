@@ -5,7 +5,7 @@
   padding-bottom: 3px;
 }
 
-.Link-inner:after {
+.Link-inner::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -20,13 +20,14 @@
   transition: transform 150ms, opacity 50ms 150ms;
 }
 
-.Link.is-active .Link-inner:after,
-.Link:hover .Link-inner:after {
+.Link:focus .Link-inner::after,
+.Link.is-active .Link-inner::after,
+.Link:hover .Link-inner::after {
   opacity: 1;
   transform: scaleX(1);
   transition: transform 150ms;
 }
 
-.Link.is-active .Link-inner:after {
+.Link.is-active .Link-inner::after {
   transition: transform 150ms ease 300ms, opacity 50ms 150ms;
 }

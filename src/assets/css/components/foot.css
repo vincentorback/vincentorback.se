@@ -3,7 +3,7 @@
 :root {
   --Foot-color: #fff;
   --Foot-titleColor: #999;
-  --Foot-background: var(--color-text);
+  --Foot-background: #111;
   --Foot-slapPeace: "/assets/images/slap-peace.png";
   --Foot-slapHand: "/assets/images/slap-hand.png";
   --Foot-slapSize: 90px;
@@ -66,8 +66,8 @@
   .Foot-section:not(:last-child) {
     flex: 0 0 auto;
     padding-right: var(--site-spacing-sm);
-    margin-bottom: var(--site-spacing-sm);
   }
+
   .Foot-section:last-child {
     flex: 1 0 auto;
   }

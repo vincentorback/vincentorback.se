@@ -12,11 +12,6 @@
     font-size: 1em;
   }
 
-  .WorkExcerpt-title {
-    font-size: 28px;
-    font-weight: var(--font-normal);
-  }
-
   .Banner {
     display: none;
   }
@@ -37,4 +32,8 @@
     display: none;
   }
 
+  .WorkExcerpt-title {
+    font-size: 28px;
+    font-weight: var(--font-normal);
+  }
 }

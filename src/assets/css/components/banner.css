@@ -1,44 +1,18 @@
 /* @define Banner */
 
 .Banner {
-  position: relative;
-  overflow: hidden;
   width: 100%;
-  max-width: var(--site-width);
-  margin: 0 auto;
-}
-
-.Banner-image {
   display: block;
-  width: 100%;
-  max-width: none;
 }
 
 @media (--md-viewport) {
-  .Banner {
-    height: 70vh;
+  html.objectfit .Banner,
+  html.object-fit .Banner {
+    height: 80vh;
     min-height: 400px;
-    max-height: 1000px;
-  }
-
-  .Banner-image {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto;
-    height: 100%;
-    max-width: 100%;
-    width: 100%;
+    max-height: 600px;
+    max-width: 1920px;
+    margin: 0 auto;
     object-fit: cover;
-  }
-
-  html.no-objectfit .Banner {
-    height: auto;
-  }
-
-  html.no-objectfit .Banner-image {
-    position: static;
-    width: auto;
-    height: auto;
   }
 }
