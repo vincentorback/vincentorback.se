@@ -16,8 +16,8 @@
   "scripts": {
     "start": "parallelshell 'npm run watch' 'npm run serve'",
     "build": "npm run build:js && npm run build:css && npm run build:html && npm run build:images",
-    "build:js": "uglifyjs $npm_package_config_js_files -o build/assets/javascript/main.js --screw-ie8 --comments",
     "build:css": "postcss -u postcss-import -u postcss-css-variables -u postcss-custom-media -u postcss-custom-selectors -u postcss-calc -u autoprefixer -u postcss-reporter --postcss-reporter.clearMessages true -u csswring --no-map -o build/assets/css/style.css src/assets/css/style.css",
+    "build:js": "mkdir -p build/assets/javascript && uglifyjs $npm_package_config_js_files -o build/assets/javascript/main.js --screw-ie8 --comments",
     "build:html": "html-minifier --remove-comments --collapse-whitespace --minify-js true --output-dir build --input-dir src --file-ext html",
     "build:icons": "imagemin ./src/assets/icons/**/* -o=./build/assets/icons",
     "build:images": "imagemin ./src/assets/images/* ./src/assets/images/**/* -o=./build/assets/images && imagemin ./build/assets/images/* -p=webp -o=./build/assets/images",
@@ -79,8 +79,7 @@
   },
   "standard": {
     "ignore": [
-      "src/assets/javascript/vendor/",
-      "*min.js"
+      "src/assets/javascript/vendor/"
     ]
   }
 }
