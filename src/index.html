@@ -94,7 +94,7 @@
             <dt class="WorkExcerpt-infoTitle">Role:</dt>
               <dd class="WorkExcerpt-infoItem">Front-end developer</dd>
             <dt class="WorkExcerpt-infoTitle">Agency:</dt>
-              <dd class="WorkExcerpt-infoItem">Daytona</dd>
+              <dd class="WorkExcerpt-infoItem" itemprop="sourceOrganization">Daytona</dd>
           </dl>
         </div>
         <figure class="WorkExcerpt-imageWrap">
@@ -107,6 +107,7 @@
           </picture>
         </figure>
       </div>
+      <meta itemprop="author creator" itemscope itemtype="http://schema.org/Organization" itemref="organization">
     </article>
 
     <article class="WorkExcerpt WorkExcerpt--arkitektur" id="arkitektur" itemscope itemtype="http://schema.org/CreativeWork">
@@ -114,7 +115,7 @@
         <div class="WorkExcerpt-content">
           <h1 class="WorkExcerpt-title" itemprop="name">Arkitektur</h1>
           <div class="WorkExcerpt-text">
-            <p itemprop="about">Arkitektur Förlag publishes the magazine Arkitektur and a variety of books on architecture, urban planning <span class="u-textTruncate">and design.</span></p>
+            <p itemprop="about">Arkitektur Förlag publishes the Swedish magazine Arkitektur and a variety of books on architecture, urban planning <span class="u-textTruncate">and design.</span></p>
           </div>
           <div class="WorkExcerpt-links">
             <p>Visit: <a class="WorkExcerpt-link" href="https://arkitektur.se/" itemprop="url">arkitektur.se</a></p>
@@ -123,7 +124,7 @@
             <dt class="WorkExcerpt-infoTitle">Role:</dt>
               <dd class="WorkExcerpt-infoItem">Front-end developer</dd>
             <dt class="WorkExcerpt-infoTitle">Agency:</dt>
-              <dd class="WorkExcerpt-infoItem">Earth People</dd>
+              <dd class="WorkExcerpt-infoItem" itemprop="sourceOrganization">Earth People</dd>
           </dl>
         </div>
         <figure class="WorkExcerpt-imageWrap">
@@ -136,6 +137,7 @@
           </picture>
         </figure>
       </div>
+      <meta itemprop="author creator" itemscope itemtype="http://schema.org/Organization" itemref="organization">
     </article>
 
     <article class="WorkExcerpt WorkExcerpt--rdev" id="rdev" itemscope itemtype="http://schema.org/CreativeWork">
@@ -143,7 +145,7 @@
         <div class="WorkExcerpt-content">
           <h1 class="WorkExcerpt-title" itemprop="name">RDEV</h1>
           <div class="WorkExcerpt-text">
-            <p itemprop="about">A small portfolio for <span class="u-textTruncate">concept artist</span> and director <span class="u-textTruncate">Johan Rimer.</span></p>
+            <p itemprop="about">Portfolio for <span class="u-textTruncate">concept artist</span> and director <span class="u-textTruncate">Johan Rimer.</span></p>
           </div>
           <div class="WorkExcerpt-links">
             <p>Visit: <a class="WorkExcerpt-link" href="http://rdev.se/" itemprop="url">rdev.se</a></p>
@@ -152,7 +154,7 @@
             <dt class="WorkExcerpt-infoTitle">Role:</dt>
               <dd class="WorkExcerpt-infoItem">Developer</dd>
             <dt class="WorkExcerpt-infoTitle">Agency:</dt>
-              <dd class="WorkExcerpt-infoItem">Earth People</dd>
+              <dd class="WorkExcerpt-infoItem" itemprop="sourceOrganization">Earth People</dd>
           </dl>
         </div>
         <figure class="WorkExcerpt-imageWrap">
@@ -165,6 +167,7 @@
           </picture>
         </figure>
       </div>
+      <meta itemprop="author creator" itemscope itemtype="http://schema.org/Organization" itemref="organization">
     </article>
 
     <article class="WorkExcerpt WorkExcerpt--rikskriscentrum" id="rikskriscentrum" itemscope itemtype="http://schema.org/CreativeWork">
@@ -192,6 +195,7 @@
           </picture>
         </figure>
       </div>
+      <meta itemprop="author creator" itemscope itemtype="http://schema.org/Organization" itemref="organization">
     </article>
 
     <article class="WorkExcerpt WorkExcerpt--arcini" id="arcini" itemscope itemtype="http://schema.org/CreativeWork">
@@ -219,6 +223,7 @@
           </picture>
         </figure>
       </div>
+      <meta itemprop="author creator" itemscope itemtype="http://schema.org/Organization" itemref="organization">
     </article>
 
     <article class="WorkExcerpt WorkExcerpt--you">
@@ -262,9 +267,6 @@
             <li><a class="Foot-link Link" href="https://twitter.com/vorback" rel="me">
               <span class="Link-inner">Twitter</span>
             </a></li>
-            <li><a class="Foot-link Link" href="https://se.linkedin.com/in/vincent-orback-45795750" rel="me">
-              <span class="Link-inner">LinkedIn</span>
-            </a></li>
           </ul>
         </div>
         <div class="Foot-section">
@@ -278,7 +280,7 @@
   </footer>
 
   <script src="/assets/javascript/main.js" async></script>
-  <script type="application/ld+json">
+  <script type="application/ld+json" id="organization">
   {
     "@context": "http://schema.org",
     "@graph": [
@@ -306,6 +308,7 @@
           "@type": "ContactPoint",
           "email": "hello@vincentorback.se",
           "contactType": "sales",
+          "url": "http://vincentorback.se",
           "availableLanguage": [ "English", "Swedish"]
         }],
         "employee": {
