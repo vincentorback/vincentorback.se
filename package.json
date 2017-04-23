@@ -27,7 +27,7 @@
     "lint:js": "standard 'src/assets/javascript/**/*.js'",
     "lint:css": "postcss -u stylelint -u postcss-reporter --dir build/assets/lint src/assets/css/**/*.css",
     "watch": "parallelshell 'npm run watch:js' 'npm run watch:css' 'npm run watch:html'",
-    "watch:js": "eye --*glob=src/assets/javascript/**/*.js,%**/*-min.js npm run lint:js && npm run build:js",
+    "watch:js": "eye --*glob=src/assets/javascript/**/*.js,%**/*-min.js npm run lint:js and npm run build:js",
     "watch:css": "eye --*glob=src/assets/css/**/*.css,%**/*-min.css npm run lint:css and npm run build:css",
     "watch:html": "eye --*glob=src/**/*.html npm run build:html",
     "serve": "ws -c -d build -p $npm_package_config_port",
