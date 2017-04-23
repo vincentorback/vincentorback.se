@@ -38,7 +38,7 @@ FileETag None
 </IfModule>
 
 
-# Cache (1 week) TODO: 1 month!
+# Cache
 <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
   Header set Cache-Control "max-age=604800, public"
 </FilesMatch>
@@ -97,7 +97,6 @@ FileETag None
 </IfModule>
 
 
-
 # Redirects
 Redirect 301 /work/coop/ http://v4.vincentorback.se/work/coop/
 Redirect 301 /work/rikskriscentrum/ http://v4.vincentorback.se/work/rikskriscentrum/
@@ -107,7 +106,7 @@ Redirect 301 /work/the-publics-choice/ http://v4.vincentorback.se/work/the-publi
 Redirect 301 /work/prophet-cruzin/ http://v4.vincentorback.se/work/prophet-cruzin/
 Redirect 301 /work/johanna-bystrom/ http://johannabystrom.se
 
-Redirect 301 /contact/ http://v4.vincentorback.se/contact/
+Redirect 301 /contact/ http://vincentorback.se/#contact
 
 #Redirect 301 /blog/ http://v4.vincentorback.se/blog
 Redirect 301 /blog/clean-wordpress-admin/ http://v4.vincentorback.se/blog/clean-wordpress-admin/
@@ -118,4 +117,4 @@ Redirect 301 /blog/using-webp-images/ http://v4.vincentorback.se/blog/using-webp
 Redirect 301 /blog/take-10-and-learn-typography/ http://v4.vincentorback.se/blog/take-10-and-learn-typography/
 Redirect 301 /blog/smooth-scrolling-with-css/ http://v4.vincentorback.se/blog/smooth-scrolling-with-css/
 
-Redirect 301 /cv http://v4.vincentorback.se/cv.pdf
+Redirect 301 /cv http://vincentorback.se/about-me/
