@@ -14,7 +14,7 @@
     "url": "https://github.com/vincentorback/vincent-orback.git"
   },
   "scripts": {
-    "start": "parallelshell 'npm run watch' 'npm run serve'",
+    "start": "if [ ! -d build ]; then npm run build && npm run move:assets; fi && parallelshell 'npm run watch' 'npm run serve'",
     "build": "npm run build:js && npm run build:css && npm run build:html && npm run build:images",
     "build:js": "mkdir -p build/assets/javascript && uglifyjs $npm_package_config_js_files -o build/assets/javascript/main.js --screw-ie8 --comments",
     "build:css": "postcss -u postcss-import -u postcss-cssnext -u postcss-reporter --postcss-reporter.clearMessages true -u csswring --no-map -o build/assets/css/style.css src/assets/css/style.css",
