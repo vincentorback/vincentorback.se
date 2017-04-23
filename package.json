@@ -30,7 +30,7 @@
     "watch:js": "eye --*glob=src/assets/javascript/**/*.js,%**/*-min.js npm run lint:js and npm run build:js",
     "watch:css": "eye --*glob=src/assets/css/**/*.css,%**/*-min.css npm run lint:css and npm run build:css",
     "watch:html": "eye --*glob=src/**/*.html npm run build:html",
-    "serve": "ws -c -d build -p $npm_package_config_port",
+    "serve": "ws -c -d build -r '/about-me -> /about-me.html' -p $npm_package_config_port",
     "analyze": "npm run build:css && parker build/assets/css/style.css"
   },
   "config": {
@@ -50,7 +50,7 @@
     "imagemin-mozjpeg": "^6.0.0",
     "imagemin-pngquant": "^5.0.0",
     "imagemin-webp": "^4.0.0",
-    "local-web-server": "1.2.7",
+    "local-web-server": "^1.2.7",
     "parallelshell": "^2.0.0",
     "parker": "^0.0.10",
     "postcss": "^5.2.17",
