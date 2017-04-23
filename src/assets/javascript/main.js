@@ -10,22 +10,6 @@
     return (typeof obj === 'undefined')
   }
 
-  function addClass (el, className) {
-    if (el.classList) {
-      el.classList.add(className)
-    } else {
-      el.className += ' ' + className
-    }
-  }
-
-  function removeClass (el, className) {
-    if (el.classList) {
-      el.classList.remove(className)
-    } else {
-      el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ')
-    }
-  }
-
   var vincent = {
     init: function () {
       if (!supportTouch) {
@@ -95,7 +79,7 @@
         slapSound.play()
 
         if (supportTouch) {
-          addClass(slapHand, activeClass)
+          slapHand.classList.add(activeClass)
         }
 
         vincent.slaps += 1
@@ -103,13 +87,14 @@
         if (vincent.slaps === 20) {
           slapSound.volume = 0.8
           slapText.innerHTML = 'You’re awesome!'
-          addClass(slapHand, awesomeClass)
+          slapHand.classList.add(awesomeClass)
         }
 
         if (vincent.slaps === 40) {
           slapSound.volume = 0.5
           slapText.innerHTML = 'You’re awesome, let’s give it a rest....'
-          removeClass(slapHand, 'is-5 is-10') // TODO: Test
+          slapHand.classList.remove('is-5')
+          slapHand.classList.remove('is-10')
         }
 
         if (vincent.slaps === 60) {
