@@ -163,6 +163,14 @@
   white-space: pre;
 }
 
+p.WorkExcerpt-infoItem {
+  display: block;
+}
+
+p.WorkExcerpt-infoItem .WorkExcerpt-infoTitle {
+  margin-right: .25em;
+}
+
 
 
 .WorkExcerpt-link {
