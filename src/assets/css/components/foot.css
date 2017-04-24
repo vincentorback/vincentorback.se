@@ -3,7 +3,7 @@
 :root {
   --Foot-color: #fff;
   --Foot-titleColor: #999;
-  --Foot-background: #111;
+  --Foot-background: var(--color-text);
   --Foot-slapPeace: "/assets/images/slap-peace.png";
   --Foot-slapHand: "/assets/images/slap-hand.png";
   --Foot-slapSize: 90px;
@@ -121,12 +121,14 @@ html.no-js .Foot-slap {
 .Foot-slapHand {
   position: relative;
   display: inline-block;
+  width: var(--Foot-slapSize);
+  height: var(--Foot-slapSize);
+  background-color: transparent;
   background-image: url(var(--Foot-slapPeace));
   background-position: 0 0;
   background-size: contain;
   background-repeat: no-repeat;
-  width: var(--Foot-slapSize);
-  height: var(--Foot-slapSize);
+  border: 0;
 }
 
 @media (--xl-viewport) {
@@ -147,7 +149,6 @@ html.no-js .Foot-slap {
   background-image: url(var(--Foot-slapHand));
 }
 
-
 .Foot-slapHand {
   transform: scale(1.2);
   cursor: pointer;
@@ -155,6 +156,11 @@ html.no-js .Foot-slap {
   transition: transform 80ms;
 }
 
+.Foot-slapHand:focus {
+  outline: none;
+}
+
+.Foot-slapHand:focus,
 .Foot-slapHand:active {
   transform: scale(1.1);
 }

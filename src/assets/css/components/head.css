@@ -64,8 +64,10 @@
 }
 
 
+.Head-logo:focus,
 .Head-logo:hover {
   opacity: .7;
+  outline: none;
 }
 
 

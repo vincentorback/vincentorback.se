@@ -180,8 +180,10 @@ p.WorkExcerpt-infoItem .WorkExcerpt-infoTitle {
   border-bottom: 1px dotted currentColor;
 }
 
-.WorkExcerpt-link:hover {
+.WorkExcerpt-link:hover,
+.WorkExcerpt-link:focus {
   border-bottom-style: solid;
+  outline: none;
 }
 
 

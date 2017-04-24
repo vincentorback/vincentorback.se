@@ -28,6 +28,10 @@
   transition: transform 150ms;
 }
 
+.Link:focus {
+  outline: none;
+}
+
 .Link.is-active .Link-inner::after {
   transition: transform 150ms ease 300ms, opacity 50ms 150ms;
 }
