@@ -135,24 +135,25 @@
       if (ga && ga.loaded) {
         var outboundLinks = doc.querySelectorAll('a[href^="http"], a[href^="mailto"]')
 
-        Array.prototype.slice.call(outboundLinks).forEach(function (link) {
-          if (link.host.indexOf('vincentorback') > -1) {
+        Array.prototype.slice.call(outboundLinks).forEach(function (linkEl) {
+          if (linkEl.host.indexOf('vincentorback') > -1) {
             return
           }
 
-          link.addEventListener('click', function (e) {
+          linkEl.addEventListener('click', function (e) {
             if (vincent.slaps > 0) {
               vincent.track(vincent.slaps, 'slaps')
             }
 
-            ga('send', 'event', 'outbound', 'click', link.href, {
-              'transport': 'beacon',
-              'hitCallback': function () {
-                if (!e.metaKey || !e.ctrlKey) {
-                  doc.location = e.currentTarget.href
-                }
-              }
+            ga('send', 'event', 'outbound', 'click', linkEl.href, {
+              'transport': 'beacon'
             })
+
+            if (e.metaKey || e.ctrlKey) {
+              return
+            }
+
+            doc.location = e.currentTarget.href
 
             e.preventDefault()
           }, false)
