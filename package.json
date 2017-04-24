@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "if [ ! -d build ]; then npm run build && npm run move:assets; fi && parallelshell 'npm run watch' 'npm run serve'",
-    "build": "npm run build:js && npm run build:css && npm run build:html && npm run build:images",
+    "build": "npm run build:js && npm run build:css && npm run build:html && npm run build:images && npm run build:icons",
     "build:js": "mkdir -p build/assets/javascript && uglifyjs $npm_package_config_js_files -o build/assets/javascript/main.js --screw-ie8 --comments",
     "build:css": "postcss -u postcss-import -u postcss-cssnext -u postcss-reporter --postcss-reporter.clearMessages true -u csswring --no-map -o build/assets/css/style.css src/assets/css/style.css",
     "build:html": "html-minifier --remove-comments --collapse-whitespace --minify-js true --output-dir build --input-dir src --file-ext html",
@@ -45,7 +45,6 @@
     "html-minifier": "^3.4.3",
     "standard": "^10.0.2",
     "eye": "^0.0.3",
-    "imagemin": "^5.2.2",
     "imagemin-cli": "^3.0.0",
     "imagemin-mozjpeg": "^6.0.0",
     "imagemin-pngquant": "^5.0.0",
