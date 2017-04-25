@@ -1,4 +1,4 @@
-/* global Modernizr, Audio, ga */
+/* global Modernizr, Blazy, Audio, ga */
 
 (function (window) {
   'use strict'
@@ -8,6 +8,8 @@
 
   var vincent = {
     init: function () {
+      vincent.lazyImages()
+
       if (!supportTouch) {
         vincent.slap()
       }
@@ -15,6 +17,13 @@
       vincent.trackLinks()
 
       vincent.contactLink()
+    },
+
+    lazyImages: function () {
+      return new Blazy({
+        selector: '.js-lazy',
+        offset: 200
+      })
     },
 
     contactLink: function () {

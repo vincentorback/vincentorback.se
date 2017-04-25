@@ -35,7 +35,7 @@
   },
   "config": {
     "port": "3000",
-    "js_files": "src/assets/javascript/vendor/modernizr-custom.js src/assets/javascript/main.js",
+    "js_files": "src/assets/javascript/vendor/modernizr-custom.js src/assets/javascript/vendor/blazy.js src/assets/javascript/main.js",
     "eslint_pattern": "src/assets/javascript/**/*.js !src/assets/javascript/vendor/**/*.js"
   },
   "devDependencies": {
