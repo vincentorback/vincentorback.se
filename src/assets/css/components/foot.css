@@ -124,7 +124,7 @@ html.no-js .Foot-slap {
   width: var(--Foot-slapSize);
   height: var(--Foot-slapSize);
   background-color: transparent;
-  background-image: url(var(--Foot-slapPeace));
+  /*background-image: url(var(--Foot-slapPeace));*/
   background-position: 0 0;
   background-size: contain;
   background-repeat: no-repeat;
@@ -146,7 +146,7 @@ html.no-js .Foot-slap {
 
 .Foot-slapHand.is-active,
 .Foot-slapHand:hover {
-  background-image: url(var(--Foot-slapHand));
+  background-image: url(var(--Foot-slapHand)) !important;
 }
 
 .Foot-slapHand {
@@ -160,7 +160,6 @@ html.no-js .Foot-slap {
   outline: none;
 }
 
-.Foot-slapHand:focus,
 .Foot-slapHand:active {
   transform: scale(1.1);
 }
