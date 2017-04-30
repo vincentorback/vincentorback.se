@@ -141,15 +141,15 @@
     },
 
     trackLinks: function () {
-      if (ga && ga.loaded) {
-        var outboundLinks = doc.querySelectorAll('a[href^="http"], a[href^="mailto"]')
+      var outboundLinks = doc.querySelectorAll('a[href^="http"], a[href^="mailto"]')
 
-        Array.prototype.slice.call(outboundLinks).forEach(function (linkEl) {
-          if (linkEl.host.indexOf('vincentorback') > -1) {
-            return
-          }
+      Array.prototype.slice.call(outboundLinks).forEach(function (linkEl) {
+        if (linkEl.host.indexOf('vincentorback') > -1) {
+          return
+        }
 
-          linkEl.addEventListener('click', function (e) {
+        linkEl.addEventListener('click', function (e) {
+          if (ga && ga.loaded) {
             if (vincent.slaps > 0) {
               vincent.track(vincent.slaps, 'slaps')
             }
@@ -165,9 +165,9 @@
             doc.location = e.currentTarget.href
 
             e.preventDefault()
-          }, false)
-        })
-      }
+          }
+        }, false)
+      })
     }
   }
 
