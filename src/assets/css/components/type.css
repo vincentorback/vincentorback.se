@@ -58,7 +58,6 @@
 
 .Type a {
   outline: 0;
-  color: inherit;
   border-bottom: 1px dotted currentColor;
 }
 
@@ -69,11 +68,8 @@
   border-bottom-style: solid;
 }
 
+.Type a:active,
 .Type a[href^="http"]:visited {
-  color: var(--color-gray-dark);
-}
-
-.Type a:active {
   color: var(--color-gray-dark);
 }
 

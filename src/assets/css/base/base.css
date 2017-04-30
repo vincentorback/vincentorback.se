@@ -9,10 +9,7 @@ html {
   box-sizing: inherit;
 }
 
-body {
-  margin: 0;
-}
-
+body,
 blockquote,
 dl,
 dd,
@@ -22,9 +19,12 @@ h3,
 figure,
 p,
 pre,
-form {
+form,
+ol,
+ul {
   margin: 0;
   font: inherit;
+  padding: 0;
 }
 
 a {
@@ -51,8 +51,6 @@ img {
 ol,
 ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 abbr {

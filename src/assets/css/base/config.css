@@ -9,33 +9,12 @@
 @custom-media --lg-max-viewport (max-width: 1200px);
 @custom-media --xl-max-viewport (max-width: 1700px);
 
-
 :root {
-  --color-blue: blue;
-  --color-gold: #b69853;
-  --color-gray-dark: #666;
+  --color-gray-dark: #999;
   --color-gray-light: #eee;
-  --color-green: #45b68a;
-  --color-navy: #001f3f;
-  --color-orange: #f25f30;
-  --color-pink: #ffcdcd;
-  --color-purple: #6701cd;
-  --color-red: #ff3f2c;
   --color-text: #222;
-  --color-yellow: #f0db24;
 
-  --color-arkitektur: #1992c1;
-  --color-rdev: #000;
-  --color-coop1: #c0e18c;
-  --color-coop2: #00ad25;
-  --color-coop3: #f3f5f0;
-  --color-rikskriscentrum1: #0074d9;
-  --color-rikskriscentrum2: #f0f8ff;
-  --color-arcini: #303948;
-
-  --font-monospace: monospace;
   --font-sansserif: "Roboto", sans-serif;
-  --font-serif: Georgia, serif;
   --font-normal: 300;
   --font-bold: 500;
   --text-lineheight-small: 1.2;
@@ -43,7 +22,7 @@
 
   --site-width: 1600px;
   --site-width-narrow: 800px;
-  --site-background: #fff;
+
   --site-spacing-percent: 7vw;
   --site-spacing-sm: 60px;
   --site-spacing-md: 100px;

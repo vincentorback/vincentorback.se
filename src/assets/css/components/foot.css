@@ -1,8 +1,6 @@
 /** @define Foot */
 
 :root {
-  --Foot-color: #fff;
-  --Foot-titleColor: #999;
   --Foot-background: var(--color-text);
   --Foot-slapPeace: "/assets/images/slap-peace.png";
   --Foot-slapHand: "/assets/images/slap-hand.png";
@@ -11,9 +9,8 @@
 
 
 .Foot {
-  width: 100%;
   background: var(--Foot-background);
-  color: var(--Foot-color);
+  color: #fff;
   line-height: var(--text-lineheight-large);
 }
 
@@ -51,6 +48,7 @@
     padding-right: calc(var(--site-spacing-sm) / 2);
     margin-bottom: var(--site-spacing-percent);
   }
+
   .Foot-section:last-child {
     align-self: center;
   }
@@ -83,7 +81,7 @@
 
 .Foot-title {
   font-weight: var(--font-bold);
-  color: var(--Foot-titleColor);
+  color: var(--color-gray-dark);
   margin-bottom: 10px;
 }
 
@@ -124,11 +122,17 @@ html.no-js .Foot-slap {
   width: var(--Foot-slapSize);
   height: var(--Foot-slapSize);
   background-color: transparent;
-  /*background-image: url(var(--Foot-slapPeace));*/
+
+  /* background-image: url(var(--Foot-slapPeace)); */
+
   background-position: 0 0;
   background-size: contain;
   background-repeat: no-repeat;
   border: 0;
+  transform: scale(1.2);
+  cursor: pointer;
+  cursor: grab;
+  transition: transform 80ms;
 }
 
 @media (--xl-viewport) {
@@ -147,13 +151,6 @@ html.no-js .Foot-slap {
 .Foot-slapHand.is-active,
 .Foot-slapHand:hover {
   background-image: url(var(--Foot-slapHand)) !important;
-}
-
-.Foot-slapHand {
-  transform: scale(1.2);
-  cursor: pointer;
-  cursor: grab;
-  transition: transform 80ms;
 }
 
 .Foot-slapHand:focus {

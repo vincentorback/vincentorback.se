@@ -4,7 +4,7 @@
   font: 300 16px/var(--text-lineheight-small) var(--font-sansserif);
   letter-spacing: 1px;
   color: var(--color-text);
-  background: var(--site-background);
+  background: #fff;
   text-size-adjust: 100%;
 }
 

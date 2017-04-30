@@ -2,6 +2,14 @@
 
 :root {
   --WorkExcerpt-content-width: 40%;
+  --WorkExcerpt-arkitektur: #1992c1;
+  --WorkExcerpt-rdev: #000;
+  --WorkExcerpt-coop1: #00ad25;
+  --WorkExcerpt-coop2: #f3f5f0;
+  --WorkExcerpt-rikskriscentrum1: #0074d9;
+  --WorkExcerpt-rikskriscentrum2: #f0f8ff;
+  --WorkExcerpt-arcini: #303948;
+  --WorkExcerpt--you: #ffcdcd;
 }
 
 .WorkExcerpt {
@@ -27,6 +35,8 @@
   }
 }
 
+
+/* Content */
 
 .WorkExcerpt-content {
   position: relative;
@@ -62,6 +72,7 @@
 }
 
 
+/* Title */
 
 .WorkExcerpt-title {
   font-size: 1.5em;
@@ -90,7 +101,7 @@
 
 @media (--lg-viewport) {
   .WorkExcerpt-title {
-    font-size: 3.5em;
+    font-size: 4em;
   }
 }
 
@@ -100,6 +111,8 @@
   }
 }
 
+
+/* Work description */
 
 .WorkExcerpt-text {
   font-size: 1.1em;
@@ -120,7 +133,7 @@
 }
 
 
-/* Info */
+/* Text */
 
 .WorkExcerpt-info,
 .WorkExcerpt-links {
@@ -131,6 +144,7 @@
 @media (--lg-viewport) {
   .WorkExcerpt-info,
   .WorkExcerpt-links {
+    font-size: 1.1em;
     margin-top: 2em;
   }
 }
@@ -140,6 +154,7 @@
   .WorkExcerpt-links {
     font-size: 1.3em;
   }
+
   .WorkExcerpt-info {
     margin-top: 1em;
   }
@@ -175,7 +190,6 @@ p.WorkExcerpt-infoItem .WorkExcerpt-infoTitle {
 
 .WorkExcerpt-link {
   display: inline-block;
-  color: currentColor;
   line-height: var(--text-lineheight-small);
   border-bottom: 1px dotted currentColor;
 }
@@ -265,7 +279,7 @@ p.WorkExcerpt-infoItem .WorkExcerpt-infoTitle {
 /* Arkitektur */
 
 .WorkExcerpt--arkitektur {
-  color: var(--color-arkitektur);
+  color: var(--WorkExcerpt-arkitektur);
   background: #fff;
 }
 
@@ -273,23 +287,23 @@ p.WorkExcerpt-infoItem .WorkExcerpt-infoTitle {
 /* Coop */
 
 .WorkExcerpt--coop {
-  background: var(--color-coop3);
-  color: var(--color-coop2);
+  background: var(--WorkExcerpt-coop2);
+  color: var(--WorkExcerpt-coop1);
 }
 
 
 /* Rikskriscentrum */
 
 .WorkExcerpt--rikskriscentrum {
-  background: var(--color-rikskriscentrum2);
-  color: var(--color-rikskriscentrum1);
+  background: var(--WorkExcerpt-rikskriscentrum2);
+  color: var(--WorkExcerpt-rikskriscentrum1);
 }
 
 
 /* RDEV */
 
 .WorkExcerpt--rdev {
-  background: var(--color-rdev);
+  background: var(--WorkExcerpt-rdev);
   color: #fff;
 }
 
@@ -325,7 +339,7 @@ p.WorkExcerpt-infoItem .WorkExcerpt-infoTitle {
 
 .WorkExcerpt--you {
   display: block;
-  background: var(--color-pink);
+  background: var(--WorkExcerpt--you);
 }
 
 .WorkExcerpt--you .WorkExcerpt-inner {
