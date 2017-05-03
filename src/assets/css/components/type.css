@@ -17,6 +17,29 @@
 }
 
 
+.Type--large {
+  font-size: 1.2em;
+}
+
+@media (--sm-viewport) {
+  .Type--large {
+    font-size: 1.5em;
+  }
+}
+
+@media (--md-viewport) {
+  .Type--large {
+    font-size: 1.75em;
+  }
+}
+
+@media (--lg-viewport) {
+  .Type--large {
+    font-size: 2em;
+  }
+}
+
+
 .Type > :first-child {
   margin-top: 0 !important;
 }
@@ -92,34 +115,17 @@
 
 .Type-h1,
 .Type h1 {
-  font-size: 28px;
+  font-size: 2em;
 }
 
 .Type-h2,
 .Type h2 {
-  font-size: 24px;
+  font-size: 1.8em;
 }
 
 .Type-h3,
 .Type h3 {
-  font-size: 20px;
-}
-
-@media (--xl-viewport) {
-  .Type-h1,
-  .Type h1 {
-    font-size: 32px;
-  }
-
-  .Type-h2,
-  .Type h2 {
-    font-size: 28px;
-  }
-
-  .Type-h3,
-  .Type h3 {
-    font-size: 24px;
-  }
+  font-size: 1.5em;
 }
 
 
@@ -146,7 +152,7 @@
   height: 1px;
   border: 0;
   width: 100%;
-  background-color: var(--color-gray-light);
+  background: var(--color-gray-light);
   margin: calc(var(--Type-spacing) * 2) auto;
   transform: rotate(-1deg);
   transform-origin: top center;
@@ -179,28 +185,6 @@
   width: 100% !important;
   height: 100% !important;
   margin: 0 !important;
-}
-
-
-
-.Type-large {
-  font-size: 1.2em;
-}
-
-.Type-large:not(:last-child) {
-  margin-bottom: 1em;
-}
-
-@media (--sm-viewport) {
-  .Type-large {
-    font-size: 1.5em;
-  }
-}
-
-@media (--md-viewport) {
-  .Type-large {
-    font-size: 1.7em;
-  }
 }
 
 
