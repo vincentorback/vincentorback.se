@@ -114,7 +114,7 @@
         }
 
         if (vincent.slaps === 90) {
-          slapText.innerHTML = "<s>ARGHH! MY HAAAAND!</s> Just kidding, I’m just a computer... :'("
+          slapText.innerHTML += " :'("
         }
 
         if (vincent.slaps === 100) {
@@ -144,7 +144,7 @@
     trackLinks: function () {
       var outboundLinks = doc.querySelectorAll('a[href^="http"], a[href^="mailto"]')
 
-      Array.prototype.slice.call(outboundLinks).forEach(function (linkEl) {
+      Array.from(outboundLinks, function (linkEl) {
         if (linkEl.host.indexOf('vincentorback') > -1) {
           return
         }
