@@ -1,12 +1,222 @@
 <!doctype html>
-<html class="Site no-js" lang="en">
+<html class="Site Site--404 no-js" lang="en">
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+  * {
+    cursor: url('/assets/images/cursor.png'), cell;
+  }
+
+  .Site--404,
+  .Site--404 .Site-body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    max-height: 100vh;
+  }
+
+  .Site--404 {
+    transition: background 500ms ease;
+    font-size: 100%;
+    line-height: 1.5;
+    font-family: "Press Start 2P", '-apple-system', sans-serif;
+    color: #fff;
+    background: #171DA8;
+    filter: blur(1px);
+  }
+
+  .Site--404::after {
+    box-shadow: inset 0 0 150px rgba(0, 0, 0, .75);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    content: "";
+    background: #171DA8;
+    opacity: .7;
+
+    transform: scale(0.999)
+  }
+
+  .Site--404 .Site-body {
+    background-image: url('/assets/images/bg3.jpeg');
+    background-color: #171DA8;
+    background-size: cover;
+    background-repeat: no-repeat !important;
+    background-position: 50% 1%;
+  }
+
+  .Site--404 .Site-main {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+
+  .Site--404 .Head {
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    animation: blur 30ms infinite, flick 50ms infinite;
+  }
+
+  .Site--404 .Link:hover {
+    opacity: .7;
+  }
+
+  .Site--404 .Link-inner::after {
+    content: normal;
+  }
+
+
+
+  .Fourofour {
+    position: relative;
+    display: block;
+
+    font-size: calc(20px + 2vw);
+    letter-spacing: 1.5vw;
+    text-align: center;
+    text-shadow: 1px 3px green, -2px -2px red;
+    text-transform: uppercase;
+
+    animation: blur 30ms infinite, flick 50ms infinite;
+  }
+
+  .Fourofour p {
+    display: block;
+    margin-bottom: .5em;
+    filter: blur(3px);
+  }
+
+  .Fourofour p:first-child {
+    font-size: 1.5em;
+  }
+
+  .Fourofour span {
+    display: inline-block;
+    animation: shift 3000ms ease infinite alternate;
+  }
+
+  .Fourofour span:hover {
+    opacity: .7
+  }
+
+
+  .Fourofour-button {
+    display: none;
+    margin: 0 auto;
+    padding: .5em .7em;
+
+    background: rgba(255, 255, 255, .2);
+    border: .3em solid currentColor;
+    transform: skewX(-5deg);
+
+    font: inherit;
+    color: currentColor;
+    font-size: 1em;
+    font-size: .5em;
+
+    animation: shift 2000ms ease infinite alternate;
+
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .Fourofour-button:hover {
+    background: rgba(255, 255, 255, .8)
+  }
+
+
+
+  .Video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+
+    display: none;
+  }
+
+  .Video-iframe {
+    width: 100vw;
+    height: 100vh;
+    border: 0;
+  }
+
+
+
+  @keyframes blur {
+    0% {
+      filter: blur(1px);
+      opacity: 0.8;
+    }
+    50% {
+      filter: blur(2px);
+      opacity: 1;
+    }
+    100% {
+      filter: blur(1px);
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes flick {
+    30% {
+      transform: translate(.1vw, .2vw);
+    }
+    31% {
+      transform: translate(.1vw, 0);
+    }
+    50% {
+      transform: translate(0, .1vw);
+    }
+    51% {
+      transform: translate(0, 0)
+    }
+  }
+
+  @keyframes shift {
+    0%,40%, 44%, 58%, 61%, 65%,69%,73%,100%{
+      transform: skewX(0deg)
+    }
+    41%{
+      transform: skewX(10deg);
+    }
+    42%{
+      transform: skewX(-10deg);
+    }
+    59%{
+      transform: skewX(30deg) skewY(10deg);
+    }
+    60%{
+      transform: skewX(-30deg) skewY(-10deg);
+    }
+    63%{
+      transform: skewX(10deg) skewY(-5deg);
+    }
+    70%{
+      transform: skewX(-40deg) skewY(-20deg);
+    }
+    71%{
+      transform: skewX(10deg) skewY(-10deg);
+    }
+  }
+  </style>
 
   <meta name="robots" content="noindex">
 
@@ -51,72 +261,163 @@
 
   <header class="Head" role="banner">
     <div class="Site-container">
-      <div class="Head-inner">
-        <a class="Head-logo" href="/">
-          <h1 class="Head-logoTitle">Vincent Orback</h1>
-        </a>
-        <nav class="Head-nav" role="navigation">
-          <ul class="Head-navList">
-            <li class="Head-navItem">
-              <a class="Head-navLink Link" href="/about-me" rel="next">
-                <span class="Link-inner">About <span class="u-hideSmall">me</span></span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <a class="Head-logo" href="/">
+        <h1 class="Head-logoTitle">Vincent Orback</h1>
+      </a>
+      <nav class="Head-nav" role="navigation">
+        <ul class="Head-navList">
+          <li class="Head-navItem">
+            <a class="Head-navLink Link" href="/about-me" rel="next">
+              <span class="Link-inner">About <span class="u-hideSmall">me</span></span>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </header>
 
-  <main class="Site-main" id="container" role="main">
-
-    <section class="Section">
-      <div class="Site-container Site-container--narrow">
-        <div class="Type">
-          <h1 class="Type-large u-textBold">404 - Looks like this page doesn’t exist :/</h1>
-        </div>
-      </div>
-    </section>
-
+  <main class="Site-main" role="main">
+    <h1 class="Fourofour">
+      <p class="js-firstTitle">404</p>
+      <p class="js-secondTitle">Page not found</p>
+      <button class="Fourofour-button js-button">Click me!!!</button>
+    </h1>
   </main>
 
-  <footer class="Foot Section" role="contentinfo" id="contact">
-    <div class="Site-container">
-      <div class="Foot-inner">
-        <div class="Foot-section">
-          <p class="Foot-title">Contact</p>
-          <p><a class="Link js-contact" href="mailto:hello@vincentorback.se" rel="noopener" target="_blank">
-            <span class="Link-inner">hello@vincentorback.se</span>
-          </a></p>
-          <br>
-          <p class="Foot-title">Location</p>
-          <p class="u-textTruncate">Stockholm, Sweden</p>
-        </div>
-        <div class="Foot-section">
-          <p class="Foot-title">Social</p>
-          <ul>
-            <li><a class="Foot-link Link" href="https://github.com/vincentorback" rel="me">
-              <span class="Link-inner">GitHub</span>
-            </a></li>
-            <li><a class="Foot-link Link" href="https://codepen.io/vincentorback/" rel="me">
-              <span class="Link-inner">CodePen</span>
-            </a></li>
-            <li><a class="Foot-link Link" href="https://twitter.com/vorback" rel="me">
-              <span class="Link-inner">Twitter</span>
-            </a></li>
-          </ul>
-        </div>
-        <div class="Foot-section">
-          <div class="Foot-slap">
-            <button class="Foot-slapHand js-slap js-lazy" data-src='/assets/images/slap-peace.png'></button>
-            <p class="Foot-slapText js-slapText"></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <div class="Video js-video">
+    <button class="Video-button js-nextVideo">Next video</button>
+  </div>
 
   <script src="/assets/javascript/main.js" async></script>
+  <script>
+  const firstTitleEl = document.querySelector('.js-firstTitle')
+  const secondTitleEl = document.querySelector('.js-secondTitle')
+  const buttonEl = document.querySelector('.js-button')
+  const videoEl = document.querySelector('.js-video')
+  const firstTitle = firstTitleEl.innerHTML
+  const secondTitle = secondTitleEl.innerHTML
+  const videos = [
+    {
+      id: 'su5TApSOX3o',
+      start: 108,
+      end: 170
+    },
+    {
+      id: 'q7xXxehhEvs'
+    },
+    {
+      id: 'NFTaiWInZ44'
+    },
+    {
+      id: 'r9B7BQWnZJs',
+      start: 11
+    },
+    {
+      id: 'PtsbOpRnZ3w'
+    },
+    {
+      id: 'BdHK_r9RXTc',
+      start: 100
+    },
+    {
+      id: 'dqB-EMqpsUA'
+    },
+    {
+      id: 'qiIdmT1GURg',
+      start: 150
+    },
+    {
+      id: '-3H0_U2kBoY',
+      start: 50
+    },
+    {
+      id: 'W0ySiGsAb28',
+      start: 2029
+    }
+  ]
+
+  let firstCount = 0
+  let secondCount = 0
+  let dataUrl = ''
+
+  function numberBetween (min, max) {
+    return Math.floor(Math.random() * max) + min
+  }
+
+  function instantLoad () {
+    firstCount = firstTitle.length
+    secondCount = secondTitle.length
+
+    firstTitleEl.innerHTML = ''
+    secondTitleEl.innerHTML = ''
+
+    Array.from(firstTitle, (letter) => {
+      firstTitleEl.innerHTML += `<span>${letter}</span>`
+    })
+
+    Array.from(secondTitle, (letter) => {
+      secondTitleEl.innerHTML += `<span>${letter}</span>`
+    })
+
+    buttonEl.style.display = 'block'
+  }
+
+  if (firstTitleEl && secondTitleEl) {
+    firstTitleEl.innerHTML = ''
+    secondTitleEl.innerHTML = ''
+
+    document.documentElement.addEventListener('click', instantLoad)
+
+    window.setInterval(() => {
+      window.requestAnimationFrame(() => {
+        if (firstCount < firstTitle.length) {
+          firstTitleEl.innerHTML += `<span>${firstTitle[firstCount]}</span>`
+          firstCount++
+        } else if (secondCount < secondTitle.length) {
+          secondTitleEl.innerHTML += `<span>${secondTitle[secondCount]}</span>`
+          secondCount++
+        } else if (secondCount === secondTitle.length) {
+          document.documentElement.removeEventListener('click', instantLoad)
+
+          window.setTimeout(() => {
+            buttonEl.style.display = 'block'
+          }, 1000)
+        }
+
+        dataUrl = `/assets/images/bg${numberBetween(1, 4)}.jpeg`
+        document.body.style.backgroundImage = `url(${dataUrl})`
+      })
+    }, 300)
+  }
+
+  buttonEl.addEventListener('click', (e) => {
+    buttonEl.disabled = true
+
+    let randomVideo = videos[Math.floor(Math.random() * videos.length)]
+
+    randomVideo.start = randomVideo.start || '0'
+    randomVideo.end = randomVideo.end || '0'
+    randomVideo.loop = randomVideo.loop || '0'
+
+    videoEl.innerHTML = `<iframe
+      class="Video-iframe"
+      src="https://www.youtube.com/embed/${randomVideo.id}?feature=oembed&start=${randomVideo.start}&end=${randomVideo.end}&loop=${randomVideo.loop}&autoplay=1&hd=1&rel=0&autohide=1&controls=0"
+      frameborder="0"
+      allowfullscreen
+   ></iframe>`
+    videoEl.style.display = 'block'
+
+    window.addEventListener('keydown', (e) => {
+      if (e.keyCode === 27) {
+        buttonEl.disabled = false
+        videoEl.innerHTML = ''
+        videoEl.style.display = ''
+      }
+    })
+
+    e.preventDefault()
+  })
+  </script>
   <script type="application/ld+json" id="organization">
   {
     "@context": "http://schema.org",
