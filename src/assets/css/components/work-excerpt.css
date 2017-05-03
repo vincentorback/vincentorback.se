@@ -268,7 +268,7 @@ p.WorkExcerpt-infoItem .WorkExcerpt-infoTitle {
   }
 }
 
-@media (min-height: 500px) {
+@media (min-height: 500px) and (max-height: 700px) {
   .WorkExcerpt-image {
     max-height: 95vh;
   }
