@@ -14,7 +14,7 @@
   left: 0;
   right: 0;
   margin: auto;
-  background-color: currentColor;
+  background: currentColor;
   opacity: 0;
   transform: scaleX(0);
   transition: transform 150ms, opacity 50ms 150ms;

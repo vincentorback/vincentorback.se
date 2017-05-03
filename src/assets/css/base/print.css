@@ -33,7 +33,7 @@
   }
 
   .WorkExcerpt-title {
-    font-size: 28px;
+    font-size: 2em;
     font-weight: var(--font-normal);
   }
 }

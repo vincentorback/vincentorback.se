@@ -4,6 +4,12 @@
   padding: var(--site-spacing-sm) 0;
 }
 
+@media (--xs-viewport) {
+  .Section {
+    padding: var(--site-spacing-percent) 0;
+  }
+}
+
 @media (--md-viewport) {
   .Section {
     padding: var(--site-spacing-md) 0;
