@@ -1,24 +1,13 @@
 /** @define Head */
 
-
-.Head-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-
+.Head-nav,
 .Head-logo {
-  flex: 0 0 auto;
-  padding: .8em 0;
-  font-size: 1.2em;
+  display: inline-block;
+  vertical-align: middle;
 }
-
 
 .Head-nav {
-  flex: 0 1 auto;
-  display: inline-block;
+  float: right;
 }
 
 .Head-navItem {
@@ -29,18 +18,28 @@
   margin-right: 40px;
 }
 
+.Head-navLink {
+  display: block;
+}
+
 
 .Head-logo,
 .Head-navLink {
-  display: block;
   padding: .8em 0;
   font-size: 1.2em;
+}
+
+@media (--xs-viewport) {
+  .Head-logo,
+  .Head-navLink {
+    padding: var(--site-spacing-percent) 0;
+  }
 }
 
 @media (--sm-viewport) {
   .Head-logo,
   .Head-navLink {
-    padding: 1.2em 0;
+    padding: calc(var(--site-spacing-percent) / 2) 0;
   }
 }
 
@@ -57,14 +56,4 @@
 .Head-logo:hover {
   opacity: .7;
   outline: none;
-}
-
-
-html.no-flexbox .Head-logo,
-html.no-flexbox .Head-nav {
-  display: inline-block;
-}
-
-html.no-flexbox .Head-navList {
-  float: right;
 }
