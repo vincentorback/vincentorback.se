@@ -263,7 +263,7 @@ p.WorkExcerpt-infoItem .WorkExcerpt-infoTitle {
 }
 
 
-html.js .WorkExcerpt-image {
+html.js .WorkExcerpt-image.is-lazy {
   opacity: 0;
   transition: opacity 300ms ease 100ms;
 }
@@ -359,5 +359,22 @@ html.js .WorkExcerpt-image.is-loaded {
 @media (--lg-viewport) {
   .WorkExcerpt--you .WorkExcerpt-content {
     padding: var(--site-spacing-xl) 0;
+  }
+}
+
+
+
+@media (--sm-viewport) and (min-height: 700px) {
+  html.js .WorkExcerpt--coop .WorkExcerpt-image.is-lazy:not(.is-loaded),
+  html.js .WorkExcerpt--arkitektur .WorkExcerpt-image.is-lazy:not(.is-loaded),
+  html.js .WorkExcerpt--rikskriscentrum .WorkExcerpt-image.is-lazy:not(.is-loaded) {
+    height: 0;
+    padding-bottom: calc((1000px / 581px) * 100%);
+  }
+
+  html.js .WorkExcerpt--rdev .WorkExcerpt-image.is-lazy:not(.is-loaded),
+  html.js .WorkExcerpt--arcini .WorkExcerpt-image.is-lazy:not(.is-loaded) {
+    height: 0;
+    padding-bottom: calc((782px / 581px) * 100%);
   }
 }
