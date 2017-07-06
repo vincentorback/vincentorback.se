@@ -3,16 +3,13 @@
 (function (window) {
   'use strict'
 
-  var supportTouch = Modernizr.touchevents
   var doc = window.document
 
   var vincent = {
     init: function () {
       vincent.lazyImages()
 
-      if (!supportTouch) {
-        vincent.slap()
-      }
+      vincent.slap()
 
       vincent.trackLinks()
 
@@ -33,7 +30,7 @@
       var targetEl = doc.querySelector('.js-contact')
 
       if (linkEl && targetEl) {
-        linkEl.addEventListener('click', function (e) {
+        linkEl.addEventListener('click', function () {
           window.setTimeout(function () {
             targetEl.focus()
           }, 200)
@@ -42,12 +39,21 @@
     },
 
     slap: function () {
+      if (Modernizr.touchevents) {
+        return
+      }
+
       var slapHand = doc.querySelector('.js-slap')
-      var slapSound
 
       if (!slapHand) {
         return
       }
+
+      var slapSound
+      var slapText = doc.querySelector('.js-slapText')
+      var activeClass = 'is-active'
+      var awesomeClass = 'is-awesome'
+      vincent.slaps = 0
 
       function loadSound () {
         slapSound = new Audio('/assets/audio/slap.mp3')
@@ -72,20 +78,14 @@
 
       slapHand.addEventListener('mouseover', loadSound, false)
 
-      var slapText = doc.querySelector('.js-slapText')
-      var activeClass = 'is-active'
-      var awesomeClass = 'is-awesome'
-
-      vincent.slaps = 0
-
-      slapHand.addEventListener(supportTouch ? 'touchstart' : 'mousedown', function (e) {
+      slapHand.addEventListener(Modernizr.touchevents ? 'touchstart' : 'mousedown', function (e) {
         if (slapSound.currentTime !== 0) {
           slapSound.currentTime = 0
         }
 
         slapSound.play()
 
-        if (supportTouch) {
+        if (Modernizr.touchevents) {
           slapHand.classList.add(activeClass)
         }
 
@@ -98,23 +98,16 @@
         }
 
         if (vincent.slaps === 40) {
-          slapSound.volume = 0.5
-          slapText.innerHTML = 'You’re awesome, let’s give it a rest....'
-          slapHand.classList.remove('is-5')
-          slapHand.classList.remove('is-10')
-        }
-
-        if (vincent.slaps === 60) {
           slapSound.volume = 1
           slapText.innerHTML = 'ARGHH! MY HAAAAND!'
         }
 
-        if (vincent.slaps === 80) {
+        if (vincent.slaps === 60) {
           slapSound.volume = 0.5
           slapText.innerHTML = '<s>ARGHH! MY HAAAAND!</s> Just kidding, I’m just a computer...'
         }
 
-        if (vincent.slaps === 90) {
+        if (vincent.slaps === 80) {
           slapText.innerHTML += " :'("
         }
 
@@ -122,7 +115,7 @@
           slapText.innerHTML = '100 slaps! Let’s do something fun!'
           window.setTimeout(function () {
             window.location.href = 'https://unicef.se/ge-pengar'
-          }, 2000)
+          }, 1000)
         }
       }, false)
     },
@@ -132,7 +125,7 @@
         ga('send', {
           'hitType': 'event',
           'eventCategory': category,
-          'eventAction': supportTouch ? 'tap' : 'click',
+          'eventAction': Modernizr.touchevents ? 'tap' : 'click',
           'eventValue': value
         })
       }
