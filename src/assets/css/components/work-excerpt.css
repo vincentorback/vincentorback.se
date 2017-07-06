@@ -344,6 +344,10 @@ html.js .WorkExcerpt-image.is-loaded {
   display: block;
 }
 
+.WorkExcerpt--you .WorkExcerpt-content {
+  padding-right: 0;
+}
+
 @media (--sm-viewport) {
   .WorkExcerpt--you .WorkExcerpt-content {
     width: 100%;
@@ -360,6 +364,10 @@ html.js .WorkExcerpt-image.is-loaded {
   .WorkExcerpt--you .WorkExcerpt-content {
     padding: var(--site-spacing-xl) 0;
   }
+}
+
+.WorkExcerpt--you .WorkExcerpt-infoItem::after {
+  content: normal;
 }
 
 
