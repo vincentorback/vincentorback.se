@@ -17,11 +17,13 @@
     "start": "if [ ! -d build ]; then npm run build:deploy; fi && parallelshell 'npm run watch' 'npm run serve'",
     "build": "npm run build:js && npm run build:css && npm run build:html && npm run build:images && npm run build:icons",
     "build:js": "mkdir -p build/assets/javascript && uglifyjs $npm_package_config_js_files -o build/assets/javascript/main.js --screw-ie8 --comments",
-    "build:css": "postcss -u postcss-import -u postcss-cssnext -u postcss-reporter --postcss-reporter.clearMessages true -u csswring --no-map -o build/assets/css/style.css src/assets/css/style.css",
+    "build:css": "postcss -u postcss-import -u postcss-cssnext -u csswring --no-map -o build/assets/css/style.css src/assets/css/style.css",
     "build:html": "html-minifier --remove-comments --collapse-whitespace --process-scripts 'application/ld+json' --minify-js true --output-dir build --input-dir src --file-ext html",
     "build:icons": "copyfiles -u 2 -f src/assets/icons/* build/assets/icons && imageoptim -d ./build/assets/icons",
-    "build:images": "copyfiles -u 2 -f src/assets/images/* src/assets/images/**/* build/assets/images && imageoptim -d ./build/assets/images && imagemin ./build/assets/images/* -p=webp -o=./build/assets/images && imagemin ./build/assets/images/* -p=webp -o=./build/assets/images",
+    "build:images": "npm run move:images && imageoptim -d ./build/assets/images && npm run build:images:webp",
+    "build:images:webp": "imagemin ./build/assets/images/* -p=webp -o=./build/assets/images",
     "build:deploy": "npm run lint:js && npm run lint:css && npm run build && npm run move:assets",
+    "move:images": "copyfiles -u 2 -f src/assets/images/* src/assets/images/**/* build/assets/images",
     "move:assets": "copyfiles -u 2 src/assets/audio/* build/assets",
     "lint:js": "standard 'src/assets/javascript/**/*.js'",
     "lint:css": "stylelint 'src/assets/css/**/*.css'",
@@ -37,21 +39,21 @@
   },
   "devDependencies": {
     "copyfiles": "^1.2.0",
-    "csswring": "^6.0.0",
+    "csswring": "^6.0.1",
     "eye": "^0.0.3",
-    "html-minifier": "^3.5.3",
+    "html-minifier": "^3.5.5",
     "imagemin-cli": "^3.0.0",
     "imagemin-webp": "^4.0.0",
     "imageoptim-cli": "^1.15.1",
     "local-web-server": "^2.2.4",
     "parallelshell": "^3.0.1",
-    "postcss-cli": "^4.1.0",
+    "postcss-cli": "^4.1.1",
     "postcss-cssnext": "^3.0.2",
-    "postcss-import": "^10.0.0",
+    "postcss-import": "^11.0.0",
     "standard": "^10.0.3",
-    "stylelint": "^8.0.0",
+    "stylelint": "^8.1.1",
     "stylelint-config-standard": "^17.0.0",
-    "uglify-js": "^3.0.27"
+    "uglify-js": "^3.1.1"
   },
   "stylelint": {
     "extends": "stylelint-config-standard",
@@ -61,7 +63,8 @@
       "number-leading-zero": null,
       "custom-property-empty-line-before": null,
       "at-rule-empty-line-before": null,
-      "selector-pseudo-class-case": null
+      "selector-pseudo-class-case": null,
+      "selector-pseudo-element-colon-notation": null
     }
   },
   "standard": {
