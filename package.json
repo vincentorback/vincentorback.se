@@ -2,11 +2,11 @@
   "name": "vincent-orback",
   "version": "5.0.0",
   "description": "My personal portfolio",
-  "homepage": "http://vincentorback.se",
+  "homepage": "https://vincentorback.se",
   "author": {
     "name": "Vincent Orback",
     "email": "vorback@gmail.com",
-    "url": "http://vincentorback.se"
+    "url": "https://vincentorback.se"
   },
   "license": "MIT",
   "repository": {
