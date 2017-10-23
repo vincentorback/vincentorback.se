@@ -5,7 +5,6 @@
 @import "base/base";
 
 /* Components */
-@import "components/banner";
 @import "components/entry";
 @import "components/foot";
 @import "components/head";

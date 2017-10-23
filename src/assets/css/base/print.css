@@ -12,10 +12,6 @@
     font-size: 1em;
   }
 
-  .Banner {
-    display: none;
-  }
-
   .Foot {
     border-top: 1px solid var(--color-gray-light);
   }
