@@ -22,13 +22,25 @@
 
 @media (--xs-viewport) {
   .Site-container {
-    width: 86%;
+    width: calc(100% - calc(var(--site-spacing-percent) * 2));
   }
 }
 
 @media (--md-viewport) {
   .Site-container {
-    width: 80%;
+    width: calc(100% - calc(var(--site-spacing-md) * 2));
+  }
+}
+
+@media (--lg-viewport) {
+  .Site-container {
+    width: calc(100% - calc(var(--site-spacing-lg) * 2));
+  }
+}
+
+@media (--xl-viewport) {
+  .Site-container {
+    width: calc(100% - calc(var(--site-spacing-xl) * 2));
   }
 }
 

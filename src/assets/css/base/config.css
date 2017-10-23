@@ -2,12 +2,12 @@
 @custom-media --sm-viewport (min-width: 600px);
 @custom-media --md-viewport (min-width: 800px);
 @custom-media --lg-viewport (min-width: 1200px);
-@custom-media --xl-viewport (min-width: 1700px);
+@custom-media --xl-viewport (min-width: 1600px);
 @custom-media --xs-max-viewport (max-width: 300px);
 @custom-media --sm-max-viewport (max-width: 600px);
 @custom-media --md-max-viewport (max-width: 800px);
 @custom-media --lg-max-viewport (max-width: 1200px);
-@custom-media --xl-max-viewport (max-width: 1700px);
+@custom-media --xl-max-viewport (max-width: 1600px);
 
 :root {
   --color-gray-dark: #999;
