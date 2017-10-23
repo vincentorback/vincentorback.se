@@ -1,25 +1,13 @@
 /** @define Head */
 
-.Head-nav,
 .Head-logo {
   display: inline-block;
   vertical-align: middle;
 }
 
-.Head-nav {
-  float: right;
-}
-
-.Head-navItem {
-  display: inline-block;
-}
-
-.Head-navItem:not(:last-child) {
-  margin-right: 40px;
-}
 
 .Head-navLink {
-  display: block;
+  float: right;
 }
 
 
