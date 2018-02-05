@@ -1,13 +1,11 @@
-/** @define utilities */
-
 /* Text */
 
 .u-textNormal {
-  font-weight: var(--font-normal);
+  font-weight: var(--text-normal);
 }
 
 .u-textBold {
-  font-weight: var(--font-bold);
+  font-weight: var(--text-bold);
 }
 
 /**

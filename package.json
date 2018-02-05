@@ -15,56 +15,57 @@
   },
   "scripts": {
     "start": "if [ ! -d build ]; then npm run build:deploy; fi && parallelshell 'npm run watch' 'npm run serve'",
-    "build": "npm run build:js && npm run build:css && npm run build:html && npm run build:images && npm run build:icons",
-    "build:js": "mkdir -p build/assets/javascript && uglifyjs $npm_package_config_js_files -o build/assets/javascript/main.js --screw-ie8 --comments",
-    "build:css": "postcss -u postcss-import -u postcss-cssnext -u csswring --no-map -o build/assets/css/style.css src/assets/css/style.css",
-    "build:html": "html-minifier --remove-comments --collapse-whitespace --process-scripts 'application/ld+json' --minify-js true --output-dir build --input-dir src --file-ext html",
+    "build:js": "if [ ! -d build/assets/javascript ]; then mkdir -p build/assets/javascript; fi && uglifyjs $npm_package_config_js_files -o build/assets/javascript/main.js --screw-ie8 --comments",
+    "build:css": "postcss src/assets/css/style.css -o build/assets/css/style.css",
+    "build:html": "html-minifier --remove-comments --sort-attributes --sort-class-name --collapse-whitespace --remove-redundant-attributes --process-scripts 'application/ld+json' --minify-js true --output-dir build --input-dir src --file-ext html",
     "build:icons": "copyfiles -u 2 -f src/assets/icons/* build/assets/icons && imageoptim -d ./build/assets/icons",
-    "build:images": "npm run move:images && imageoptim -d ./build/assets/images && npm run build:images:webp",
-    "build:images:webp": "imagemin ./build/assets/images/* -p=webp -o=./build/assets/images",
-    "build:deploy": "npm run lint:js && npm run lint:css && npm run build && npm run move:assets",
+    "build:images": "npm run move:images && npm run build:images:webp && npm run build:images:other",
+    "build:images:webp": "imagemin ./build/assets/images/{*.jpg,*.png} -p=webp -o=./build/assets/images",
+    "build:images:other": "imageoptim -d ./build/assets/images",
+    "build:deploy": "npm run test:js && npm run test:css && npm run build:js && npm run build:css && npm run build:html && npm run build:images && npm run build:icons && npm run move:assets",
     "move:images": "copyfiles -u 2 -f src/assets/images/* src/assets/images/**/* build/assets/images",
-    "move:assets": "copyfiles -u 2 src/assets/audio/* build/assets",
-    "lint:js": "standard 'src/assets/javascript/**/*.js'",
-    "lint:css": "stylelint 'src/assets/css/**/*.css'",
+    "move:assets": "copyfiles -u 2 src/assets/audio/* build/assets && copyfiles",
+    "test:js": "standard 'src/assets/javascript/**/*.js'",
+    "test:css": "stylelint 'src/assets/css/**/*.css'",
     "watch": "parallelshell 'npm run watch:js' 'npm run watch:css' 'npm run watch:html'",
-    "watch:js": "eye --*glob=src/assets/javascript/**/*.js,%**/*-min.js npm run lint:js and npm run build:js",
-    "watch:css": "eye --*glob=src/assets/css/**/*.css,%**/*-min.css npm run lint:css and npm run build:css",
+    "watch:js": "eye --*glob=src/assets/javascript/**/*.js,%**/*-min.js npm run test:js and npm run build:js",
+    "watch:css": "eye --*glob=src/assets/css/**/*.css,%**/*-min.css npm run test:css and npm run build:css",
     "watch:html": "eye --*glob=src/**/*.html npm run build:html",
-    "serve": "ws -c -d build -r '/about-me -> /about-me.html' -p $npm_package_config_port"
+    "serve": "ws -c -d build -r '/about-me/ -> /about-me.html' -p $npm_package_config_port"
   },
   "config": {
     "port": "3000",
-    "js_files": "src/assets/javascript/vendor/modernizr-custom.js src/assets/javascript/vendor/blazy.js src/assets/javascript/main.js"
+    "js_files": "src/assets/javascript/vendor/blazy.js src/assets/javascript/main.js"
   },
   "devDependencies": {
+    "autoprefixer": "^7.2.5",
     "copyfiles": "^1.2.0",
-    "csswring": "^6.0.1",
     "eye": "^0.0.3",
-    "html-minifier": "^3.5.5",
+    "html-minifier": "^3.5.8",
     "imagemin-cli": "^3.0.0",
-    "imagemin-webp": "^4.0.0",
-    "imageoptim-cli": "^1.15.1",
-    "local-web-server": "^2.2.4",
-    "parallelshell": "^3.0.1",
+    "imagemin-webp": "^4.1.0",
+    "imageoptim-cli": "^1.15.4",
+    "local-web-server": "^2.4.0",
+    "parallelshell": "^3.0.2",
     "postcss-cli": "^4.1.1",
-    "postcss-cssnext": "^3.0.2",
+    "postcss-custom-media": "^6.0.0",
+    "postcss-custom-properties": "^6.2.0",
+    "postcss-csso": "^3.0.0",
+    "postcss-flexbugs-fixes": "^3.3.0",
     "postcss-import": "^11.0.0",
     "standard": "^10.0.3",
-    "stylelint": "^8.1.1",
-    "stylelint-config-standard": "^17.0.0",
-    "uglify-js": "^3.1.1"
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^18.0.0",
+    "uglify-js": "^3.3.9"
   },
+  "browserslist": [
+    "> 3% in SE"
+  ],
   "stylelint": {
     "extends": "stylelint-config-standard",
     "rules": {
-      "max-empty-lines": 3,
-      "rule-empty-line-before": null,
-      "number-leading-zero": null,
-      "custom-property-empty-line-before": null,
-      "at-rule-empty-line-before": null,
-      "selector-pseudo-class-case": null,
-      "selector-pseudo-element-colon-notation": null
+      "max-empty-lines": 2,
+      "number-leading-zero": "never"
     }
   },
   "standard": {

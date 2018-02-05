@@ -1,5 +1,3 @@
-/** @define Section */
-
 .Section {
   padding: var(--site-spacing-sm) 0;
 }
@@ -16,34 +14,8 @@
   }
 }
 
-@media (--lg-viewport) {
+@media (--xl-viewport) {
   .Section {
     padding: var(--site-spacing-lg) 0;
-  }
-}
-
-@media (--xl-viewport) {
-  .Section {
-    padding: var(--site-spacing-xl) 0;
-  }
-}
-
-
-
-@media (--md-viewport) {
-  .Section--about {
-    padding-top: calc(var(--site-spacing-md) / 2);
-  }
-}
-
-@media (--lg-viewport) {
-  .Section--about {
-    padding-top: calc(var(--site-spacing-lg) / 2);
-  }
-}
-
-@media (--xl-viewport) {
-  .Section--about {
-    padding-top: calc(var(--site-spacing-xl) / 2);
   }
 }

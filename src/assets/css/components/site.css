@@ -1,16 +1,8 @@
-/** @define Site */
-
 .Site {
-  font: 300 16px/var(--text-lineheight-small) var(--font-sansserif);
+  font: var(--text-normal) 16px/var(--text-lineheight-small) var(--text-sansserif);
   letter-spacing: 1px;
   color: var(--color-text);
   background: #fff;
-  text-size-adjust: 100%;
-}
-
-
-.Site-body {
-  min-height: 100%;
 }
 
 
@@ -44,6 +36,6 @@
   }
 }
 
-.Site-container--narrow {
-  max-width: var(--site-width-narrow);
+.Site-container--sm {
+  max-width: var(--site-width-sm);
 }

@@ -12,24 +12,20 @@
     font-size: 1em;
   }
 
-  .Foot {
-    border-top: 1px solid var(--color-gray-light);
+  .u-printHide {
+    display: none;
   }
 
-  .Foot-slap {
-    display: none;
+  .Foot {
+    border-top: 1px solid var(--color-gray-light);
   }
 
   .Head-logo {
     text-decoration: none !important;
   }
 
-  .Head-navItem {
-    display: none;
-  }
-
   .WorkExcerpt-title {
     font-size: 2em;
-    font-weight: var(--font-normal);
+    font-weight: var(--text-normal);
   }
 }

@@ -1,5 +1,4 @@
 html {
-  height: 100%;
   box-sizing: border-box;
 }
 
@@ -10,17 +9,13 @@ html {
 }
 
 body,
-blockquote,
 dl,
 dd,
 h1,
 h2,
-h3,
 figure,
 p,
 pre,
-form,
-ol,
 ul {
   margin: 0;
   font: inherit;
@@ -33,14 +28,8 @@ a {
   text-decoration: none;
 }
 
-strong,
-b {
-  font-weight: var(--font-bold);
-}
-
-i,
-em {
-  font-style: italic;
+strong {
+  font-weight: var(--text-bold);
 }
 
 img {
@@ -48,7 +37,6 @@ img {
   height: auto;
 }
 
-ol,
 ul {
   list-style: none;
 }
@@ -56,34 +44,4 @@ ul {
 abbr {
   cursor: help;
   text-decoration: none;
-}
-
-/**
- * Suppress the focus outline on links that cannot be accessed via keyboard.
- * This prevents an unwanted focus outline from appearing around elements that
- * might still respond to pointer events.
- */
-[tabindex="-1"]:focus {
-  outline: none !important;
-}
-
-/**
- * Normalize text color for disabled elements and input placeholders
- */
-:disabled {
-  color: inherit;
-  opacity: .4;
-  -webkit-text-fill-color: currentColor;
-}
-
-::placeholder {
-  color: inherit;
-  opacity: .7;
-}
-
-/**
- * Allow only vertical user resizing
- */
-textarea {
-  resize: vertical;
 }

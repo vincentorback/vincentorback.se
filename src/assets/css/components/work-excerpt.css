@@ -1,14 +1,11 @@
-/** @define WorkExcerpt; */
-
 :root {
   --WorkExcerpt-content-width: 40%;
-  --WorkExcerpt-arkitektur: #1992c1;
-  --WorkExcerpt-rdev: #000;
   --WorkExcerpt-coop1: #00ad25;
   --WorkExcerpt-coop2: #f3f5f0;
+  --WorkExcerpt-arkitektur: #1992c1;
+  --WorkExcerpt-rdev: #000;
   --WorkExcerpt-rikskriscentrum1: #0074d9;
   --WorkExcerpt-rikskriscentrum2: #f0f8ff;
-  --WorkExcerpt-arcini: #303948;
   --WorkExcerpt--you: #ffcdcd;
 }
 
@@ -78,7 +75,7 @@
   font-size: 1.5em;
   line-height: var(--text-lineheight-small);
   margin-bottom: .2em;
-  font-weight: var(--font-bold);
+  font-weight: var(--text-bold);
 }
 
 @media (--sm-max-viewport) {
@@ -121,8 +118,12 @@
   }
 }
 
+.WorkExcerpt-text a:hover {
+  text-decoration: underline;
+}
 
-/* Text */
+
+/* Info */
 
 .WorkExcerpt-info,
 .WorkExcerpt-links {
@@ -149,8 +150,6 @@
   }
 }
 
-
-
 .WorkExcerpt-infoItem,
 .WorkExcerpt-infoTitle {
   padding-bottom: .5em;
@@ -159,7 +158,7 @@
 
 .WorkExcerpt-infoTitle {
   margin-right: .5em;
-  font-weight: var(--font-bold);
+  font-weight: var(--text-bold);
 }
 
 .WorkExcerpt-infoItem::after {
@@ -176,6 +175,7 @@ p.WorkExcerpt-infoItem .WorkExcerpt-infoTitle {
 }
 
 
+/* Link */
 
 .WorkExcerpt-link {
   display: inline-block;
@@ -188,7 +188,6 @@ p.WorkExcerpt-infoItem .WorkExcerpt-infoTitle {
   border-bottom-style: solid;
   outline: none;
 }
-
 
 
 /* Image */
@@ -264,21 +263,11 @@ p.WorkExcerpt-infoItem .WorkExcerpt-infoTitle {
 
 
 html.js .WorkExcerpt-image.is-lazy {
-  opacity: 0;
   transition: opacity 300ms ease 100ms;
 }
 
-html.js .WorkExcerpt-image.is-loaded {
-  opacity: 1;
-}
-
-
-
-/* Arkitektur */
-
-.WorkExcerpt--arkitektur {
-  color: var(--WorkExcerpt-arkitektur);
-  background: #fff;
+html.js .WorkExcerpt-image.is-lazy:not(.is-loaded) {
+  opacity: 0;
 }
 
 
@@ -287,6 +276,14 @@ html.js .WorkExcerpt-image.is-loaded {
 .WorkExcerpt--coop {
   background: var(--WorkExcerpt-coop2);
   color: var(--WorkExcerpt-coop1);
+}
+
+
+/* Arkitektur */
+
+.WorkExcerpt--arkitektur {
+  color: var(--WorkExcerpt-arkitektur);
+  background: #fafafa;
 }
 
 

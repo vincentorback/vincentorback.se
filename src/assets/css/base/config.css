@@ -13,19 +13,16 @@
   --color-gray-dark: #999;
   --color-gray-light: #eee;
   --color-text: #111;
-
-  --font-sansserif: "Roboto", sans-serif;
-  --font-normal: 300;
-  --font-bold: 500;
+  --text-sansserif: "Roboto", sans-serif;
+  --text-normal: 300;
+  --text-bold: 500;
   --text-lineheight-small: 1.2;
   --text-lineheight-large: 1.65;
-
   --site-width: 1600px;
-  --site-width-narrow: 800px;
-
+  --site-width-sm: 800px;
   --site-spacing-percent: 7vw;
   --site-spacing-sm: 60px;
-  --site-spacing-md: 100px;
+  --site-spacing-md: 115px;
   --site-spacing-lg: 160px;
   --site-spacing-xl: 200px;
 }
