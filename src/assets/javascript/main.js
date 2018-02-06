@@ -1,4 +1,4 @@
-/* global Modernizr, Blazy, Audio, ga */
+/* global Blazy, Audio, gtag */
 
 (function (window) {
   'use strict'
@@ -7,6 +7,9 @@
 
   var vincent = {
     init: function () {
+      doc.documentElement.classList.remove('no-js')
+      doc.documentElement.classList.add('js')
+
       vincent.lazyImages()
 
       vincent.slap()
@@ -39,10 +42,6 @@
     },
 
     slap: function () {
-      if (Modernizr.touchevents) {
-        return
-      }
-
       var slapHand = doc.querySelector('.js-slap')
 
       if (!slapHand) {
@@ -78,7 +77,7 @@
 
       slapHand.addEventListener('mouseover', loadSound, false)
 
-      slapHand.addEventListener(Modernizr.touchevents ? 'touchstart' : 'mousedown', function (e) {
+      slapHand.addEventListener('mousedown', function (e) {
         if (slapSound.currentTime !== 0) {
           slapSound.currentTime = 0
         }
