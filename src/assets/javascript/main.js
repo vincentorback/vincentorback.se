@@ -21,7 +21,7 @@
 
     lazyImages: function () {
       return new Blazy({
-        offset: Math.max(doc.documentElement.clientHeight, window.innerHeight || 0),
+        offset: Math.max(doc.documentElement.clientHeight, window.innerHeight || 0) / 2,
         selector: '.js-lazy',
         successClass: 'is-loaded',
         loadInvisible: true
