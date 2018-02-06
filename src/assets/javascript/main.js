@@ -49,10 +49,6 @@
       }
 
       var slapSound
-      var slapText = doc.querySelector('.js-slapText')
-      var activeClass = 'is-active'
-      var awesomeClass = 'is-awesome'
-      vincent.slaps = 0
 
       function loadSound () {
         slapSound = new Audio('/assets/audio/slap.mp3')
@@ -83,55 +79,7 @@
         }
 
         slapSound.play()
-
-        if (Modernizr.touchevents) {
-          slapHand.classList.add(activeClass)
-        }
-
-        vincent.slaps += 1
-
-        if (vincent.slaps === 20) {
-          slapSound.volume = 0.8
-          slapText.innerHTML = 'You’re awesome!'
-          slapHand.classList.add(awesomeClass)
-        }
-
-        if (vincent.slaps === 40) {
-          slapSound.volume = 1
-          slapText.innerHTML = 'ARGHH! MY HAAAAND!'
-        }
-
-        if (vincent.slaps === 60) {
-          slapSound.volume = 0.5
-          slapText.innerHTML = '<s>ARGHH! MY HAAAAND!</s> Just kidding, I’m just a computer...'
-        }
-
-        if (vincent.slaps === 80) {
-          slapText.innerHTML += " :'("
-        }
-
-        if (vincent.slaps === 100) {
-          slapText.innerHTML = '100 slaps! Let’s do something fun!'
-          window.setTimeout(function () {
-            window.location.href = 'https://unicef.se/ge-pengar'
-          }, 1000)
-        }
       }, false)
-    },
-
-    track: function (value, category, callback) {
-      if (ga && ga.loaded) {
-        ga('send', {
-          'hitType': 'event',
-          'eventCategory': category,
-          'eventAction': Modernizr.touchevents ? 'tap' : 'click',
-          'eventValue': value
-        })
-      }
-
-      if (callback) {
-        callback()
-      }
     },
 
     trackLinks: function () {
