@@ -91,20 +91,19 @@
         }
 
         linkEl.addEventListener('click', function (e) {
-          if (ga && ga.loaded) {
-            if (vincent.slaps > 0) {
-              vincent.track(vincent.slaps, 'slaps')
-            }
-
-            ga('send', 'event', 'outbound', 'click', linkEl.href, {
-              'transport': 'beacon'
+          if (gtag) {
+            gtag('event', 'click', {
+              'event_category': 'outbound',
+              'event_label': e.currentTarget.href,
+              'transport_type': 'beacon',
+              'event_callback': function () {
+                doc.location = e.currentTarget.href
+              }
             })
 
             if (e.metaKey || e.ctrlKey) {
               return
             }
-
-            doc.location = e.currentTarget.href
 
             e.preventDefault()
           }
