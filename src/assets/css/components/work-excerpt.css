@@ -1,11 +1,13 @@
 :root {
   --WorkExcerpt-content-width: 40%;
-  --WorkExcerpt-coop1: #00ad25;
-  --WorkExcerpt-coop2: #f3f5f0;
+  --WorkExcerpt-coop-1: #00ad25;
+  --WorkExcerpt-coop-2: #f3f5f0;
   --WorkExcerpt-arkitektur: #1992c1;
   --WorkExcerpt-rdev: #000;
-  --WorkExcerpt-rikskriscentrum1: #0074d9;
-  --WorkExcerpt-rikskriscentrum2: #f0f8ff;
+  --WorkExcerpt-rikskriscentrum-1: #0074d9;
+  --WorkExcerpt-rikskriscentrum-2: #f0f8ff;
+  --WorkExcerpt-filosoferamedflera-1: #006cb3;
+  --WorkExcerpt-filosoferamedflera-2: linear-gradient(60deg, #006cb3 0%, #7ac6c2 100%);
   --WorkExcerpt--you: #ffcdcd;
 }
 
@@ -86,7 +88,7 @@
 
 @media (--xs-viewport) {
   .WorkExcerpt-title {
-    font-size: calc(1.5em + 3vw);
+    font-size: calc(1.5em + 2.5vw);
   }
 }
 
@@ -106,14 +108,14 @@
 
 @media (--sm-viewport) {
   .WorkExcerpt-text {
-    font-size: 1.3em;
+    font-size: 1.2em;
     max-width: 550px;
   }
 }
 
 @media (--xl-viewport) {
   .WorkExcerpt-text {
-    font-size: 1.7em;
+    font-size: 1.4em;
     max-width: 650px;
   }
 }
@@ -274,8 +276,8 @@ html.js .WorkExcerpt-image.is-lazy:not(.is-loaded) {
 /* Coop */
 
 .WorkExcerpt--coop {
-  background: var(--WorkExcerpt-coop2);
-  color: var(--WorkExcerpt-coop1);
+  background: var(--WorkExcerpt-coop-2);
+  color: var(--WorkExcerpt-coop-1);
 }
 
 
@@ -290,8 +292,17 @@ html.js .WorkExcerpt-image.is-lazy:not(.is-loaded) {
 /* Rikskriscentrum */
 
 .WorkExcerpt--rikskriscentrum {
-  background: var(--WorkExcerpt-rikskriscentrum2);
-  color: var(--WorkExcerpt-rikskriscentrum1);
+  background: var(--WorkExcerpt-rikskriscentrum-2);
+  color: var(--WorkExcerpt-rikskriscentrum-1);
+}
+
+
+/* Filosofera med flera */
+
+.WorkExcerpt--filosoferamedflera {
+  background-color: var(--WorkExcerpt-filosoferamedflera-1);
+  background-image: var(--WorkExcerpt-filosoferamedflera-2);
+  color: #fff;
 }
 
 
@@ -368,11 +379,11 @@ html.js .WorkExcerpt-image.is-lazy:not(.is-loaded) {
 }
 
 
-
 @media (--sm-viewport) and (min-height: 700px) {
   html.js .WorkExcerpt--coop .WorkExcerpt-image.is-lazy:not(.is-loaded),
   html.js .WorkExcerpt--arkitektur .WorkExcerpt-image.is-lazy:not(.is-loaded),
-  html.js .WorkExcerpt--rikskriscentrum .WorkExcerpt-image.is-lazy:not(.is-loaded) {
+  html.js .WorkExcerpt--filosoferamedflera .WorkExcerpt-image.is-lazy:not(.is-loaded),
+  html.js .WorkExcerpt--ninnan .WorkExcerpt-image.is-lazy:not(.is-loaded) {
     height: 0;
     padding-bottom: calc((1000 / 581) * 100%);
   }
