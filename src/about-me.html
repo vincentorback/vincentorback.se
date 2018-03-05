@@ -26,29 +26,34 @@
   <link href="/manifest.json" rel="manifest">
   <link href="/safari-pinned-tab.svg" rel="mask-icon" color="#757575">
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-31135100-1"></script>
   <script>
-    if (!(window.doNotTrack === '1' || window.doNotTrack === 'yes' || navigator.doNotTrack === 'yes' || navigator.doNotTrack === 1 || navigator.msDoNotTrack === '1')) {
-      window['ga-disable-UA-31135100-1'] = true
+    if (!(window.doNotTrack === '1' || window.doNotTrack === 'yes' || navigator.doNotTrack === 'yes' || navigator.doNotTrack ===
+      var _paq = _paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//analytics.vincentorback.se/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
     }
-    window.dataLayer = window.dataLayer || []
-    function gtag() {dataLayer.push(arguments)}
-    gtag('js', new Date())
-    gtag('config', 'UA-31135100-1')
   </script>
 </head>
 
 <body class="Site-body">
 
   <header class="Head" role="banner">
-    <div class="Site-container">
+    <nav class="Site-container">
       <a class="Head-logo" href="/">
         <h1 class="Head-logoTitle">Vincent Orback</h1>
       </a>
       <a class="Head-navLink Link is-active" href="/about-me/">
         <span class="Link-inner">About <span class="u-hideSmall">me</span></span>
       </a>
-    </div>
+    </nav>
   </header>
 
   <main class="Site-main" role="main">
@@ -60,16 +65,15 @@
             I’m Vincent Orback, a freelancing <strong class="u-textNormal u-textTruncate">web designer</strong> and <span class="u-textTruncate">front-end developer</span> based in Stockholm, Sweden.
           </p>
           <p>
-            The work I do ranges from tiny portfolios to huge <span class="u-textTruncate">E-commerce</span> platforms. I love building well engineered, high performing websites with appealing designs. My main focus is interface development and design but I also have experience with Node, WordPress, PHP and a whole lot of other web technologies.
+            The work I do ranges from tiny portfolios to huge <span class="u-textTruncate">E-commerce</span> platforms. I love building well engineered, high performing websites with appealing designs. My main focus is interface development and design but I also have experience with React, PHP, Node, WordPress and a whole lot of other web technologies.
           </p>
-          <p></p>
           <p>
             If you want to talk, <a class="js-contactLink" href="#contact">send me an email</a>!
           </p>
         </div>
         <div class="Type">
           <p><span class="u-textBold">Experience:</span> Currently freelancing, previously <span class="u-textTruncate">web</span> developer at <a class="u-textTruncate" href="https://earthpeople.se/">Earth People</a> and before that <span class="u-textTruncate">interface developer</span> at <a href="http://www.daytona.se/">Daytona</a>.</p>
-          <p><span class="u-textBold">Worked with:</span> Coop, Systembolaget, <span class="u-textTruncate">Arkitektur Förlag</span>, <span class="u-textTruncate">Nordiska Museet</span>, <span class="u-textTruncate">Arkitektur- och Designcentrum</span>, <span class="u-textTruncate">International Campaign</span> to Abolish <span class="u-textTruncate">Nuclear Weapons</span> <br>and lots more.</p>
+          <p><span class="u-textBold">Worked with:</span> Coop, Systembolaget, <span class="u-textTruncate">Arkitektur Förlag</span>, <span class="u-textTruncate">Nordiska Museet</span>, <span class="u-textTruncate">Arkitektur- och Designcentrum</span>, <span class="u-textTruncate">International Campaign</span> to Abolish <span class="u-textTruncate">Nuclear Weapons</span>, Rikskriscentrum and lots more.</p>
           <p><span class="u-textBold">Specialties:</span> Front-end, WordPress, prototyping, <span class="u-textTruncate">E-commerce.</span></p>
         </div>
       </div>

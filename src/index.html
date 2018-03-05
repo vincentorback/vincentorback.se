@@ -26,15 +26,20 @@
   <link href="/manifest.json" rel="manifest">
   <link href="/safari-pinned-tab.svg" rel="mask-icon" color="#757575">
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-31135100-1"></script>
   <script>
-    if (!(window.doNotTrack === '1' || window.doNotTrack === 'yes' || navigator.doNotTrack === 'yes' || navigator.doNotTrack === 1 || navigator.msDoNotTrack === '1')) {
-      window['ga-disable-UA-31135100-1'] = true
+    if (!(window.doNotTrack === '1' || window.doNotTrack === 'yes' || navigator.doNotTrack === 'yes' || navigator.doNotTrack ===
+      var _paq = _paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//analytics.vincentorback.se/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
     }
-    window.dataLayer = window.dataLayer || []
-    function gtag() {dataLayer.push(arguments)}
-    gtag('js', new Date())
-    gtag('config', 'UA-31135100-1')
   </script>
 </head>
 

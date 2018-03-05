@@ -1,4 +1,4 @@
-/* global Blazy, Audio, gtag */
+/* global Blazy, Audio */
 
 (function (window) {
   'use strict'
@@ -13,8 +13,6 @@
       vincent.lazyImages()
 
       vincent.slap()
-
-      vincent.trackLinks()
 
       vincent.contactLink()
     },
@@ -80,35 +78,6 @@
 
         slapSound.play()
       }, false)
-    },
-
-    trackLinks: function () {
-      var outboundLinks = doc.querySelectorAll('a[href^="http"], a[href^="mailto"]')
-
-      Array.from(outboundLinks, function (linkEl) {
-        if (linkEl.host.indexOf('vincentorback') > -1) {
-          return
-        }
-
-        linkEl.addEventListener('click', function (e) {
-          if (gtag) {
-            gtag('event', 'click', {
-              'event_category': 'outbound',
-              'event_label': e.currentTarget.href,
-              'transport_type': 'beacon',
-              'event_callback': function () {
-                doc.location = e.currentTarget.href
-              }
-            })
-
-            if (e.metaKey || e.ctrlKey) {
-              return
-            }
-
-            e.preventDefault()
-          }
-        }, false)
-      })
     }
   }
 
