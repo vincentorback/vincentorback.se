@@ -2,31 +2,32 @@
   --Type-spacing: 30px;
 }
 
-
 .Type {
   line-height: var(--text-lineheight-large);
-  font-size: 1em;
+  font-size: 1.1em;
 }
 
-@media (--lg-viewport) {
+@media (--sm-viewport) {
   .Type {
     font-size: 1.2em;
   }
 }
 
-.Type:not(:last-child) {
-  margin-bottom: var(--site-spacing-percent);
-}
-
-@media (--md-viewport) {
-  .Type:not(:last-child) {
-    margin-bottom: var(--site-spacing-sm);
+@media (--lg-viewport) {
+  .Type {
+    font-size: 1.4em;
   }
 }
 
-
 .Type--lg {
-  font-size: 1.2em;
+  font-size: 1.3em;
+  margin-bottom: var(--Type-spacing);
+}
+
+@media (--xs-viewport) {
+  .Type--lg {
+    margin-bottom: var(--site-spacing-percent);
+  }
 }
 
 @media (--sm-viewport) {
@@ -35,15 +36,10 @@
   }
 }
 
-@media (--md-viewport) {
-  .Type--lg {
-    font-size: 1.75em;
-  }
-}
-
 @media (--lg-viewport) {
   .Type--lg {
-    font-size: 2em;
+    font-size: 1.7em;
+    margin-bottom: calc(var(--Type-spacing) * 2);
   }
 }
 

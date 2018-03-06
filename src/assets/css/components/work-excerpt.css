@@ -17,21 +17,6 @@
 
 .WorkExcerpt-inner {
   position: relative;
-  width: 90%;
-  max-width: var(--site-width);
-  margin: 0 auto;
-}
-
-@media (--xs-viewport) {
-  .WorkExcerpt-inner {
-    width: 86%;
-  }
-}
-
-@media (--md-viewport) {
-  .WorkExcerpt-inner {
-    width: 80%;
-  }
 }
 
 
@@ -101,27 +86,16 @@
 
 /* Work description */
 
-.WorkExcerpt-text {
-  font-size: 1.1em;
-  line-height: var(--text-lineheight-large);
-}
-
 @media (--sm-viewport) {
   .WorkExcerpt-text {
-    font-size: 1.2em;
     max-width: 550px;
   }
 }
 
 @media (--xl-viewport) {
   .WorkExcerpt-text {
-    font-size: 1.4em;
     max-width: 650px;
   }
-}
-
-.WorkExcerpt-text a:hover {
-  text-decoration: underline;
 }
 
 
@@ -152,6 +126,11 @@
   }
 }
 
+.WorkExcerpt-linksTitle,
+.WorkExcerpt-infoTitle {
+  font-weight: var(--text-bold);
+}
+
 .WorkExcerpt-infoItem,
 .WorkExcerpt-infoTitle {
   padding-bottom: .5em;
@@ -159,8 +138,7 @@
 }
 
 .WorkExcerpt-infoTitle {
-  margin-right: .5em;
-  font-weight: var(--text-bold);
+  margin-right: .3em;
 }
 
 .WorkExcerpt-infoItem::after {

@@ -38,3 +38,8 @@
 .Site-container--sm {
   max-width: var(--site-width-sm);
 }
+
+.Site-container--wide {
+  width: auto;
+  margin: 0;
+}

@@ -12,7 +12,7 @@
 :root {
   --color-gray-dark: #999;
   --color-gray-light: #eee;
-  --color-text: #111;
+  --color-text: #080808;
   --text-sansserif: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   --text-normal: 300;
   --text-bold: 400;
@@ -20,7 +20,7 @@
   --text-lineheight-small: 1.2;
   --text-lineheight-large: 1.65;
   --site-width: 1600px;
-  --site-width-sm: 800px;
+  --site-width-sm: 700px;
   --site-spacing-percent: 7vw;
   --site-spacing-sm: 60px;
   --site-spacing-md: 115px;
