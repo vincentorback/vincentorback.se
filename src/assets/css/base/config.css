@@ -13,9 +13,10 @@
   --color-gray-dark: #999;
   --color-gray-light: #eee;
   --color-text: #111;
-  --text-sansserif: "Roboto", sans-serif;
+  --text-sansserif: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   --text-normal: 300;
-  --text-bold: 500;
+  --text-bold: 400;
+  --text-bolder: 600;
   --text-lineheight-small: 1.2;
   --text-lineheight-large: 1.65;
   --site-width: 1600px;

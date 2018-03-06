@@ -1,6 +1,5 @@
 .Site {
   font: var(--text-normal) 16px/var(--text-lineheight-small) var(--text-sansserif);
-  letter-spacing: 1px;
   color: var(--color-text);
   background: #fff;
 }
