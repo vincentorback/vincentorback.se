@@ -7,9 +7,6 @@
 
   var vincent = {
     init: function () {
-      doc.documentElement.classList.remove('no-js')
-      doc.documentElement.classList.add('js')
-
       vincent.lazyImages()
 
       vincent.slap()
@@ -80,6 +77,8 @@
       }, false)
     }
   }
+
+  doc.documentElement.classList.remove('no-js')
 
   doc.addEventListener('DOMContentLoaded', vincent.init, false)
 }(window))

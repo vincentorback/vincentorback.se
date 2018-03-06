@@ -242,11 +242,11 @@ p.WorkExcerpt-infoItem .WorkExcerpt-infoTitle {
 }
 
 
-html.js .WorkExcerpt-image.is-lazy {
+html:not(.no-js) .WorkExcerpt-image.is-lazy {
   transition: opacity 300ms ease 100ms;
 }
 
-html.js .WorkExcerpt-image.is-lazy:not(.is-loaded) {
+html:not(.no-js) .WorkExcerpt-image.is-lazy:not(.is-loaded) {
   opacity: 0;
 }
 
@@ -358,16 +358,16 @@ html.js .WorkExcerpt-image.is-lazy:not(.is-loaded) {
 
 
 @media (--sm-viewport) and (min-height: 700px) {
-  html.js .WorkExcerpt--coop .WorkExcerpt-image.is-lazy:not(.is-loaded),
-  html.js .WorkExcerpt--arkitektur .WorkExcerpt-image.is-lazy:not(.is-loaded),
-  html.js .WorkExcerpt--filosoferamedflera .WorkExcerpt-image.is-lazy:not(.is-loaded),
-  html.js .WorkExcerpt--ninnan .WorkExcerpt-image.is-lazy:not(.is-loaded) {
+  html:not(.no-js) .WorkExcerpt--coop .WorkExcerpt-image.is-lazy:not(.is-loaded),
+  html:not(.no-js) .WorkExcerpt--arkitektur .WorkExcerpt-image.is-lazy:not(.is-loaded),
+  html:not(.no-js) .WorkExcerpt--filosoferamedflera .WorkExcerpt-image.is-lazy:not(.is-loaded),
+  html:not(.no-js) .WorkExcerpt--ninnan .WorkExcerpt-image.is-lazy:not(.is-loaded) {
     height: 0;
     padding-bottom: calc((1000 / 581) * 100%);
   }
 
-  html.js .WorkExcerpt--rdev .WorkExcerpt-image.is-lazy:not(.is-loaded),
-  html.js .WorkExcerpt--arcini .WorkExcerpt-image.is-lazy:not(.is-loaded) {
+  html:not(.no-js) .WorkExcerpt--rdev .WorkExcerpt-image.is-lazy:not(.is-loaded),
+  html:not(.no-js) .WorkExcerpt--arcini .WorkExcerpt-image.is-lazy:not(.is-loaded) {
     height: 0;
     padding-bottom: calc((782 / 581) * 100%);
   }
