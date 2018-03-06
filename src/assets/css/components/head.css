@@ -1,14 +1,3 @@
-.Head-logo {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-
-.Head-navLink {
-  float: right;
-}
-
-
 .Head-logo,
 .Head-navLink {
   padding: .8em 0;
@@ -37,6 +26,26 @@
   }
 }
 
+@media (--lg-viewport) {
+  .Head-logo,
+  .Head-navLink {
+    padding: calc(var(--site-spacing-lg) * .5) 0 0;
+    font-size: 1.5em;
+  }
+}
+
+.Head-logo {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.Head-logo.is-active {
+  visibility: hidden;
+}
+
+.Head-navLink {
+  float: right;
+}
 
 .Head-logo:focus,
 .Head-logo:hover {
