@@ -1,7 +1,5 @@
 :root {
   --Foot-background: var(--color-text);
-  --Foot-slapPeace: "/assets/images/slap-peace.png";
-  --Foot-slapHand: "/assets/images/slap-hand.png";
   --Foot-slapSize: 90px;
 }
 
@@ -89,7 +87,7 @@
 }
 
 .Foot-slapHand:hover {
-  background-image: url(var(--Foot-slapHand)) !important;
+  background-image: url('/assets/images/slap-hand.png') !important;
 }
 
 .Foot-slapHand:focus {
@@ -101,7 +99,7 @@
 }
 
 html.no-js .Foot-slapHand {
-  background-image: url(var(--Foot-slapPeace));
+  background-image: url('/assets/images/slap-peace.png');
   cursor: default;
   transform: none !important;
 }
