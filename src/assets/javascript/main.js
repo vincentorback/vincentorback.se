@@ -81,5 +81,5 @@
     }
   }
 
-  window.addEventListener('load', vincent.init, false)
+  doc.addEventListener('DOMContentLoaded', vincent.init, false)
 }(window))
