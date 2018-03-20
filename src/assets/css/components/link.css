@@ -1,13 +1,13 @@
-.Link-inner {
+.Link-text {
   position: relative;
 }
 
-.Link-inner::after {
+.Link-text::after {
   content: "";
   width: 100%;
-  height: 1px;
+  height: 2px;
   position: absolute;
-  bottom: -4px;
+  bottom: -5px;
   left: 0;
   right: 0;
   background: currentColor;
@@ -16,9 +16,9 @@
   transition: transform 200ms, opacity 200ms;
 }
 
-.Link:focus .Link-inner::after,
-.Link.is-active .Link-inner::after,
-.Link:hover .Link-inner::after {
+.Link:focus .Link-text::after,
+.Link.is-active .Link-text::after,
+.Link:hover .Link-text::after {
   opacity: .8;
   transform: translate3d(0, 0, 0);
 }
@@ -27,6 +27,6 @@
   outline: none;
 }
 
-.Link.is-active .Link-inner::after {
+.Link.is-active .Link-text::after {
   transition: transform 200ms 500ms, opacity 200ms 500ms;
 }
