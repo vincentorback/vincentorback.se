@@ -52,6 +52,7 @@
     "imageoptim-cli": "^1.15.4",
     "local-web-server": "^2.4.0",
     "parallelshell": "^3.0.2",
+    "postcss-calc": "^6.0.1",
     "postcss-cli": "^5.0.0",
     "postcss-custom-media": "^6.0.0",
     "postcss-custom-properties": "^7.0.0",
@@ -67,6 +68,20 @@
   "browserslist": [
     "> 3% in SE"
   ],
+  "postcss": {
+    "plugins": {
+      "postcss-import": {},
+      "postcss-custom-media": {},
+      "autoprefixer": {
+        "grid": true
+      },
+      "postcss-calc": {
+        "warnWhenCannotResolve": true,
+        "preserve": false
+      },
+      "postcss-csso": {}
+    }
+  },
   "stylelint": {
     "extends": "stylelint-config-standard",
     "rules": {
