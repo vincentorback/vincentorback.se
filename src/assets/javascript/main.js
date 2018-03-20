@@ -80,5 +80,9 @@
 
   doc.documentElement.classList.remove('no-js')
 
-  doc.addEventListener('DOMContentLoaded', vincent.init, false)
+  if (doc.readyState !== 'loading') {
+    vincent.init()
+  } else {
+    doc.addEventListener('DOMContentLoaded', vincent.init, false)
+  }
 }(window))
