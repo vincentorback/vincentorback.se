@@ -15,7 +15,6 @@ h1,
 h2,
 figure,
 p,
-pre,
 ul {
   margin: 0;
   font: inherit;
@@ -29,7 +28,7 @@ a {
 }
 
 strong {
-  font-weight: var(--text-bold);
+  font-weight: var(--text-normal);
 }
 
 img {
