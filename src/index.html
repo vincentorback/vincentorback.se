@@ -7,8 +7,9 @@
   <link href="/assets/css/style.css" rel="stylesheet">
 
   <title>Vincent Orback - Web designer and developer in Stockholm</title>
-  <meta name="description" content="I’m a freelancer working with web design and front-end development in Stockholm, Sweden. Welcome to my portfolio!">
+  <meta name="description" content="I’m a freelancer working with web designer and web development. My main focus in front-end and building great interactive experiences. Most of my websites are build with WordPress but my skill set is way broader than that. Welcome to my portfolio!">
   <meta name="keywords" content="web designer, web developer, front-end, portfolio">
+  <meta itemprop="image" content="http://vincentorback.se/assets/images/share.jpg">
 
   <meta property="og:title" content="Vincent Orback">
   <meta property="og:description" content="Freelancing web designer and front-end developer in Stockholm, Sweden.">
@@ -294,16 +295,19 @@
     "@context": "http://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
+        "@type": ["Organization", "Person"],
         "@id": "https://vincentorback.se",
         "name": "Vincent Orback",
+        "jobTitle": "Web designer and developer",
         "url": "https://vincentorback.se",
         "email": "hello@vincentorback.se",
         "logo": "https://vincentorback.se/assets/images/portrait.jpg",
+        "image": "https://vincentorback.se/assets/images/portrait.jpg",
         "sameAs": [
           "https://github.com/vincentorback",
           "https://codepen.io/vincentorback",
-          "https://twitter.com/vorback"
+          "https://twitter.com/vorback",
+          "https://www.instagram.com/vincentorback/"
         ],
         "address": {
           "@type": "PostalAddress",
@@ -314,17 +318,10 @@
         "contactPoint" : [{
           "@type": "ContactPoint",
           "email": "hello@vincentorback.se",
-          "contactType": "sales",
+          "contactType": "customer service",
           "url": "https://vincentorback.se",
           "availableLanguage": ["English", "Swedish"]
-        }],
-        "employee": {
-          "@type": "Person",
-          "name": "Vincent Orback",
-          "email": "hello@vincentorback.se",
-          "jobTitle": "Web designer",
-          "image": "https://vincentorback.se/assets/images/portrait.jpg"
-        }
+        }]
       },
       {
         "@type": "WebSite",
@@ -334,6 +331,5 @@
     ]
   }
   </script>
-
 </body>
 </html>

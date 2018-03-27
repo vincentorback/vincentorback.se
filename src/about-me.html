@@ -7,8 +7,9 @@
   <link href="/assets/css/style.css" rel="stylesheet">
 
   <title>About me | Vincent Orback - Web designer and developer in Stockholm</title>
-  <meta name="description" content="I`m an experienced web designer and front-end developer. Currently freelancing and might be available for new projects :)">
+  <meta name="description" content="Freelancing web designer and developer. Get in touch if you want to make websites!">
   <meta name="keywords" content="web designer, web developer, front-end, portfolio">
+  <meta itemprop="image" content="http://vincentorback.se/assets/images/share.jpg">
 
   <meta property="og:title" content="About me">
   <meta property="og:description" content="Freelancing web designer and front-end developer in Stockholm, Sweden.">
@@ -124,16 +125,19 @@
     "@context": "http://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
+        "@type": ["Organization", "Person"],
         "@id": "https://vincentorback.se",
         "name": "Vincent Orback",
+        "jobTitle": "Web designer and developer",
         "url": "https://vincentorback.se",
         "email": "hello@vincentorback.se",
         "logo": "https://vincentorback.se/assets/images/portrait.jpg",
+        "image": "https://vincentorback.se/assets/images/portrait.jpg",
         "sameAs": [
           "https://github.com/vincentorback",
           "https://codepen.io/vincentorback",
-          "https://twitter.com/vorback"
+          "https://twitter.com/vorback",
+          "https://www.instagram.com/vincentorback/"
         ],
         "address": {
           "@type": "PostalAddress",
@@ -144,17 +148,10 @@
         "contactPoint" : [{
           "@type": "ContactPoint",
           "email": "hello@vincentorback.se",
-          "contactType": "sales",
+          "contactType": "customer service",
           "url": "https://vincentorback.se",
           "availableLanguage": ["English", "Swedish"]
-        }],
-        "employee": {
-          "@type": "Person",
-          "name": "Vincent Orback",
-          "email": "hello@vincentorback.se",
-          "jobTitle": "Web designer",
-          "image": "https://vincentorback.se/assets/images/portrait.jpg"
-        }
+        }]
       },
       {
         "@type": "WebSite",
