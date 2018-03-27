@@ -18,11 +18,10 @@
   --text-bolder: 600;
   --text-lineheight-small: 1.2;
   --text-lineheight-large: 1.65;
-  --site-width: 1600px;
-  --site-width-sm: 700px;
-  --site-spacing-percent: 7vw;
-  --site-spacing-sm: 60px;
-  --site-spacing-md: 115px;
-  --site-spacing-lg: 160px;
-  --site-spacing-xl: 200px;
+  --global-spacing: 8vw;
+  --global-spacing-xs: 30px;
+  --global-spacing-sm: 60px;
+  --global-spacing-md: 115px;
+  --global-spacing-lg: 160px;
+  --global-spacing-xl: 200px;
 }

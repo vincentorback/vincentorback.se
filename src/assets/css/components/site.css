@@ -4,39 +4,38 @@
   background: #fff;
 }
 
-
 .Site-container {
   width: 90%;
-  max-width: var(--site-width);
+  max-width: 1600px;
   margin: 0 auto;
 }
 
 @media (--xs-viewport) {
   .Site-container {
-    width: calc(100% - calc(var(--site-spacing-percent) * 2));
+    width: calc(100% - calc(var(--global-spacing) * 2));
   }
 }
 
 @media (--md-viewport) {
   .Site-container {
-    width: calc(100% - calc(var(--site-spacing-md) * 2));
+    width: calc(100% - calc(var(--global-spacing-md) * 2));
   }
 }
 
 @media (--lg-viewport) {
   .Site-container {
-    width: calc(100% - calc(var(--site-spacing-lg) * 2));
+    width: calc(100% - calc(var(--global-spacing-lg) * 2));
   }
 }
 
 @media (--xl-viewport) {
   .Site-container {
-    width: calc(100% - calc(var(--site-spacing-xl) * 2));
+    width: calc(100% - calc(var(--global-spacing-xl) * 2));
   }
 }
 
 .Site-container--sm {
-  max-width: var(--site-width-sm);
+  max-width: 700px;
 }
 
 .Site-container--wide {

@@ -37,6 +37,6 @@
   }
 }
 
-.no-js .u-noJsHide {
+html.no-js .u-noJsHide {
   display: none;
 }

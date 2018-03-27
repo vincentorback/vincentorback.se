@@ -1,21 +1,23 @@
 .Section {
-  padding: var(--site-spacing-sm) 0;
+  --Section-spacing: var(--global-spacing-sm);
+
+  padding: var(--Section-spacing) 0;
 }
 
 @media (--xs-viewport) {
   .Section {
-    padding: var(--site-spacing-percent) 0;
+    --Section-spacing: var(--global-spacing);
   }
 }
 
 @media (--md-viewport) {
   .Section {
-    padding: var(--site-spacing-md) 0;
+    --Section-spacing: var(--global-spacing-md);
   }
 }
 
 @media (--xl-viewport) {
   .Section {
-    padding: var(--site-spacing-lg) 0;
+    --Section-spacing: var(--global-spacing-lg);
   }
 }
