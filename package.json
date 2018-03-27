@@ -14,7 +14,7 @@
     "url": "https://github.com/vincentorback/vincent-orback.git"
   },
   "scripts": {
-    "start": "if [ ! -d build ]; then npm run build:deploy; fi && parallelshell 'npm run watch' 'npm run serve'",
+    "start": "if [ ! -d build ]; then npm run build:deploy; fi && parallelshell 'npm run serve' 'npm run watch'",
     "build:js": "if [ ! -d build/assets/javascript ]; then mkdir -p build/assets/javascript; fi && uglifyjs $npm_package_config_js_files -o build/assets/javascript/main.js --screw-ie8 --comments",
     "build:css": "postcss src/assets/css/style.css -o build/assets/css/style.css && purgecss --css build/assets/css/style.css --content build/*.html -o build/assets/css",
     "build:html": "html-minifier --remove-comments --sort-attributes --sort-class-name --collapse-whitespace --remove-redundant-attributes --process-scripts 'application/ld+json' --minify-js true --output-dir build --input-dir src --file-ext html",
@@ -30,13 +30,13 @@
     "test:js": "standard 'src/assets/javascript/**/*.js'",
     "test:css": "stylelint 'src/assets/css/**/*.css'",
     "watch": "parallelshell 'npm run watch:js' 'npm run watch:css' 'npm run watch:html'",
-    "watch:js": "eye --*glob=src/assets/javascript/**/*.js,%**/*-min.js npm run test:js and npm run build:js and npm run compress:js",
-    "watch:css": "eye --*glob=src/assets/css/**/*.css,%**/*-min.css npm run test:css and npm run build:css and npm run compress:css",
-    "watch:html": "eye --*glob=src/**/*.html npm run build:html && npm run compress:html",
+    "watch:js": "eye --*glob=src/assets/javascript/**/*.js npm run test:js and npm run build:js and npm run compress:js",
+    "watch:css": "eye --*glob=src/assets/css/**/*.css npm run test:css and npm run build:css and npm run compress:css",
+    "watch:html": "eye --*glob=src/**/*.html npm run build:html and npm run compress:html",
     "serve": "ws -c -d build -r '/about-me/ -> /about-me.html' -p $npm_package_config_port",
     "compress:js": "brotli -f build/assets/javascript/main.js",
     "compress:css": "brotli -f build/assets/css/style.css",
-    "compress:html": "brotli -f build/*.html && brotli -f build/**/*.html"
+    "compress:html": "brotli -f build/*.html"
   },
   "config": {
     "port": "3000",
@@ -44,13 +44,13 @@
   },
   "devDependencies": {
     "autoprefixer": "^8.1.0",
-    "copyfiles": "^1.2.0",
+    "copyfiles": "^2.0.0",
     "eye": "^0.0.3",
     "html-minifier": "^3.5.10",
     "imagemin-cli": "^3.0.0",
     "imagemin-webp": "^4.1.0",
     "imageoptim-cli": "^1.15.4",
-    "local-web-server": "^2.4.0",
+    "local-web-server": "^2.5.1",
     "parallelshell": "^3.0.2",
     "postcss-calc": "^6.0.1",
     "postcss-cli": "^5.0.0",
@@ -59,14 +59,14 @@
     "postcss-csso": "^3.0.0",
     "postcss-flexbugs-fixes": "^3.3.0",
     "postcss-import": "^11.1.0",
-    "purgecss": "^0.20.0",
+    "purgecss": "^0.20.1",
     "standard": "^11.0.0",
-    "stylelint": "^9.1.1",
+    "stylelint": "^9.1.2",
     "stylelint-config-standard": "^18.2.0",
-    "uglify-js": "^3.3.13"
+    "uglify-js": "^3.3.14"
   },
   "browserslist": [
-    "> 3% in SE"
+    "> 5% in SE"
   ],
   "postcss": {
     "plugins": {
