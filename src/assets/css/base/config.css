@@ -10,9 +10,14 @@
 @custom-media --xl-max-viewport (max-width: 1600px);
 
 :root {
+  font: var(--text-normal) 16px/var(--text-lineheight-small) var(--text-sansserif);
+  color: var(--color-text);
+  background: #fff;
+  box-sizing: border-box;
+
   --color-gray: #999;
   --color-text: #080808;
-  --text-sansserif: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  --text-sansserif: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif;
   --text-normal: 300;
   --text-bold: 400;
   --text-bolder: 600;
