@@ -6,25 +6,25 @@
 
 @media (--xs-viewport) {
   .Container {
-    width: calc(100% - calc(var(--global-spacing) * 2));
+    width: calc(100% - (var(--global-spacing) * 2));
   }
 }
 
 @media (--md-viewport) {
   .Container {
-    width: calc(100% - calc(var(--global-spacing-md) * 2));
+    width: calc(100% - (var(--global-spacing-md) * 2));
   }
 }
 
 @media (--lg-viewport) {
   .Container {
-    width: calc(100% - calc(var(--global-spacing-lg) * 2));
+    width: calc(100% - (var(--global-spacing-lg) * 2));
   }
 }
 
 @media (--xl-viewport) {
   .Container {
-    width: calc(100% - calc(var(--global-spacing-xl) * 2));
+    width: calc(100% - (var(--global-spacing-xl) * 2));
   }
 }
 

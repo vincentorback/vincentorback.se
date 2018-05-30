@@ -6,12 +6,6 @@
   line-height: var(--text-lineheight-large);
 }
 
-@media (--xl-viewport) {
-  .Foot {
-    --Foot-slapSize: 120px;
-  }
-}
-
 @media (--md-viewport) {
   .Foot {
     font-size: 1.3em;
@@ -38,6 +32,10 @@
   }
 }
 
+
+.Foot-grid > :last-child {
+  align-self: center;
+}
 
 @media (--sm-max-viewport) {
   .Foot-grid > :last-child {

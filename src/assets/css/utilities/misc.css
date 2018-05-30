@@ -37,6 +37,12 @@
   }
 }
 
+@media (--sm-viewport) {
+  .u-hideSmallUp {
+    display: none;
+  }
+}
+
 html.no-js .u-noJsHide {
   display: none;
 }

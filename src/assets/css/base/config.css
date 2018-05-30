@@ -23,10 +23,33 @@
   --text-bolder: 600;
   --text-lineheight-small: 1.2;
   --text-lineheight-large: 1.65;
+  --text-size: 1.1em;
+  --text-size-lg: 1.3em;
   --global-spacing: 8vw;
   --global-spacing-xs: 30px;
   --global-spacing-sm: 60px;
   --global-spacing-md: 115px;
   --global-spacing-lg: 160px;
   --global-spacing-xl: 200px;
+}
+
+@media (--sm-viewport) {
+  :root {
+    --text-size: 1.2em;
+    --text-size-lg: 1.5em;
+  }
+}
+
+@media (--lg-viewport) {
+  :root {
+    --text-size: 1.3em;
+    --text-size-lg: 1.7em;
+  }
+}
+
+@media (--xl-viewport) {
+  :root {
+    --text-size: 1.4em;
+    --text-size-lg: 1.9em;
+  }
 }

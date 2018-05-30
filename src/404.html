@@ -6,6 +6,19 @@
 
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/style.css">
+
+  <meta name="robots" content="noindex">
+
+  <title>404 | Vincent Orback - Web designer and developer in Stockholm</title>
+  <meta name="keywords" content="web designer, web developer, front-end, portfolio, stocholm">
+  <meta itemprop="image" content="https://vincentorback.se/assets/images/share.jpg">
+
+  <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+  <link href="/favicon-32x32.png" rel="icon" type="image/png" sizes="32x32">
+  <link href="/favicon-16x16.png" rel="icon" type="image/png" sizes="16x16">
+  <link href="/site.webmanifest" rel="manifest">
+  <link href="/safari-pinned-tab.svg" rel="mask-icon" color="#757575">
+
   <style>
   * {
     cursor: url('/assets/images/cursor.png'), cell;
@@ -23,10 +36,9 @@
     transition: background 500ms ease;
     font-size: 100%;
     line-height: 1.5;
-    font-family: "Press Start 2P", '-apple-system', sans-serif;
+    font-family: "Press Start 2P";
     color: #fff;
     background: #171DA8;
-    filter: blur(1px);
   }
 
   .Site--404::after {
@@ -75,7 +87,7 @@
     opacity: .7;
   }
 
-  .Site--404 .Link-inner::after {
+  .Site--404 .Link-text::after {
     content: normal;
   }
 
@@ -216,26 +228,6 @@
     }
   }
   </style>
-
-  <meta name="robots" content="noindex">
-
-  <title>404 | Vincent Orback - Web designer and developer in Stockholm</title>
-  <meta name="keywords" content="web designer, web developer, front-end, portfolio, stocholm">
-
-  <meta property="og:title" content="Vincent Orback - Web designer and developer">
-  <meta property="og:description" content="Web designer and front-end developer in Stockholm, Sweden. I make functional and aesthetically attractive responsive websites :)">
-  <meta property="og:url" content="https://vincentorback.se">
-  <meta property="og:site_name" content="Vincent Orback">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://vincentorback.se/assets/images/share.jpg">
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-  <link rel="manifest" href="/manifest.json">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#757575">
-
   <script>
     if (
       (window.doNotTrack !== '1') &&
@@ -258,10 +250,10 @@
   </script>
 </head>
 
-<body>
+<body class="Site-body">
 
   <header class="Head">
-    <div class="Site-container">
+    <div class="Container">
       <a class="Head-logo" href="/">
         <h1 class="Head-logoTitle">Vincent Orback</h1>
       </a>
@@ -271,7 +263,7 @@
     </div>
   </header>
 
-  <main>
+  <main class="Site-main">
     <h1 class="Fourofour">
       <p class="js-firstTitle">404</p>
       <p class="js-secondTitle">Page not found</p>
@@ -283,7 +275,7 @@
     <button class="Video-button js-nextVideo">Next video</button>
   </div>
 
-  <script src="/assets/javascript/main.js" async></script>
+  <script src="/assets/javascript/main.js?v=1" async></script>
   <script>
   const firstTitleEl = document.querySelector('.js-firstTitle')
   const secondTitleEl = document.querySelector('.js-secondTitle')
@@ -360,7 +352,7 @@
 
     document.documentElement.addEventListener('click', instantLoad)
 
-    window.setInterval(() => {
+    var backgroundInterval = window.setInterval(() => {
       window.requestAnimationFrame(() => {
         if (firstCount < firstTitle.length) {
           firstTitleEl.innerHTML += `<span>${firstTitle[firstCount]}</span>`
@@ -407,6 +399,8 @@
       }
     })
 
+    clearInterval(backgroundInterval)
+
     e.preventDefault()
   })
   </script>
@@ -415,16 +409,19 @@
     "@context": "http://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
+        "@type": ["Organization", "Person"],
         "@id": "https://vincentorback.se",
         "name": "Vincent Orback",
+        "jobTitle": "Web designer and developer",
         "url": "https://vincentorback.se",
         "email": "hello@vincentorback.se",
-        "logo": "https://vincentorback.se/assets/images/portrait.jpg",
+        "logo": "https://vincentorback.se/assets/images/vincent-orback.jpg",
+        "image": "https://vincentorback.se/assets/images/vincent-orback.jpg",
         "sameAs": [
           "https://github.com/vincentorback",
           "https://codepen.io/vincentorback",
-          "https://twitter.com/vorback"
+          "https://twitter.com/vorback",
+          "https://www.instagram.com/vincentorback/"
         ],
         "address": {
           "@type": "PostalAddress",
@@ -438,14 +435,7 @@
           "contactType": "sales",
           "url": "https://vincentorback.se",
           "availableLanguage": ["English", "Swedish"]
-        }],
-        "employee": {
-          "@type": "Person",
-          "name": "Vincent Orback",
-          "email": "hello@vincentorback.se",
-          "jobTitle": "Web designer",
-          "image": "https://vincentorback.se/assets/images/portrait.jpg"
-        }
+        }]
       },
       {
         "@type": "WebSite",
@@ -455,6 +445,5 @@
     ]
   }
   </script>
-
 </body>
 </html>

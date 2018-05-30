@@ -1,6 +1,5 @@
 .Head {
   --Head-link-spacing: var(--global-spacing) 0;
-  --Head-link-size: 1.3em;
 }
 
 @media (--xs-viewport) {
@@ -12,21 +11,19 @@
 @media (--sm-viewport) {
   .Head {
     --Head-link-spacing: calc(var(--global-spacing) * .5) 0;
-    --Head-link-size: 1.5em;
   }
 }
 
 @media (--lg-viewport) {
   .Head {
     --Head-link-spacing: calc(var(--global-spacing-lg) * .5) 0 0;
-    --Head-link-size: 1.7em;
   }
 }
 
 .Head-logo,
 .Head-navLink {
   padding: var(--Head-link-spacing);
-  font-size: var(--Head-link-size);
+  font-size: var(--text-size-lg);
 }
 
 .Head-logo {

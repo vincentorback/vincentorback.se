@@ -1,11 +1,9 @@
 .Type {
   --Type-spacing: var(--global-spacing-xs);
   --Type-spacing-lg: var(--global-spacing-xs);
-  --Type-size: 1.1em;
-  --Type-size-lg: 1.3em;
 
   line-height: var(--text-lineheight-large);
-  font-size: var(--Type-size);
+  font-size: var(--text-size);
 }
 
 @media (--xs-viewport) {
@@ -14,23 +12,20 @@
   }
 }
 
-@media (--sm-viewport) {
-  .Type {
-    --Type-size: 1.2em;
-    --Type-size-lg: 1.5em;
-  }
-}
-
 @media (--lg-viewport) {
   .Type {
-    --Type-size: 1.3em;
-    --Type-size-lg: 1.7em;
     --Type-spacing-lg: var(--global-spacing-sm);
   }
 }
 
+@media (--xl-viewport) {
+  .Type {
+    --Type-size-lg: 1.9em;
+  }
+}
+
 .Type--lg {
-  font-size: var(--Type-size-lg);
+  font-size: var(--text-size-lg);
   margin-bottom: var(--Type-spacing-lg);
 }
 
@@ -57,7 +52,7 @@
 /* Links */
 .Type a {
   outline: 0;
-  border-bottom: 2px dotted currentColor;
+  border-bottom: 1px dashed currentColor;
 }
 
 .Type a:hover,
@@ -71,3 +66,4 @@
 .Type a[href^="http"]:visited {
   color: var(--color-gray);
 }
+
