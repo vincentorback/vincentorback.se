@@ -38,3 +38,13 @@
 html.no-js .u-noJsHide {
   display: none;
 }
+
+
+.u-block {
+  display: block;
+}
+
+.u-sticky {
+  position: sticky;
+  top: var(--global-spacing);
+}

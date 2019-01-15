@@ -1,0 +1,12 @@
+.Grid {
+  display: grid;
+  grid-gap: var(--global-spacing);
+}
+
+@media (--lg-viewport) {
+  .Grid {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-gap: var(--global-spacing-sm);
+  }
+}
+

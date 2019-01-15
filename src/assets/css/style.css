@@ -10,6 +10,7 @@
 /* Components */
 @import "components/container";
 @import "components/foot";
+@import "components/grid";
 @import "components/head";
 @import "components/link";
 @import "components/section";
