@@ -4,6 +4,7 @@
   'use strict'
 
   var doc = window.document
+  var docEl = doc.documentElement
 
   var vincent = {
     init: function () {
@@ -16,7 +17,7 @@
 
     lazyImages: function () {
       return new Blazy({
-        offset: Math.max(doc.documentElement.clientHeight, window.innerHeight || 0) / 2,
+        offset: Math.max(docEl.clientHeight, window.innerHeight || 0) / 3,
         selector: '.js-lazy',
         successClass: 'is-loaded',
         loadInvisible: true
@@ -78,7 +79,7 @@
     }
   }
 
-  doc.documentElement.classList.remove('no-js')
+  docEl.classList.remove('no-js')
 
   if (doc.readyState !== 'loading') {
     vincent.init()
