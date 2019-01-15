@@ -12,7 +12,7 @@
 :root {
   font: var(--text-normal) 16px/var(--text-lineheight-small) var(--text-sansserif);
   color: var(--color-text);
-  background: #fff;
+  background: #fcfbfe;
   box-sizing: border-box;
 
   --color-gray: #999;
