@@ -1,13 +1,5 @@
 /* Text */
 
-.u-textNormal {
-  font-weight: var(--text-normal);
-}
-
-.u-textBold {
-  font-weight: var(--text-bold);
-}
-
 /**
  * Text truncation
  *

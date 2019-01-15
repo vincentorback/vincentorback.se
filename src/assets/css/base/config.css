@@ -17,12 +17,10 @@
 
   --color-gray: #999;
   --color-text: #080808;
-  --text-sansserif: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif;
-  --text-normal: 300;
-  --text-bold: 400;
-  --text-bolder: 600;
-  --text-lineheight-small: 1.2;
-  --text-lineheight-large: 1.65;
+  --text-sansserif: "GT Walsheim Pro", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif;
+  --text-normal: 400;
+  --text-lineheight-small: 1.1;
+  --text-lineheight-large: 1.6;
   --text-size: 1.1em;
   --text-size-lg: 1.3em;
   --global-spacing: 8vw;
@@ -42,14 +40,14 @@
 
 @media (--lg-viewport) {
   :root {
-    --text-size: 1.3em;
+    --text-size: 1.4em;
     --text-size-lg: 1.7em;
   }
 }
 
 @media (--xl-viewport) {
   :root {
-    --text-size: 1.4em;
-    --text-size-lg: 1.9em;
+    --text-size: 1.6em;
+    --text-size-lg: 2.2em;
   }
 }

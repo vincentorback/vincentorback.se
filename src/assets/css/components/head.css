@@ -23,7 +23,7 @@
 .Head-logo,
 .Head-navLink {
   padding: var(--Head-link-spacing);
-  font-size: var(--text-size-lg);
+  font-size: var(--text-size);
 }
 
 .Head-logo {

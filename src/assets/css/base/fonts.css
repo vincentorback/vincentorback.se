@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'GT Walsheim Pro';
+  src:
+    url('../fonts/gt-walsheim-pro-regular-webfont.woff2') format('woff2'),
+    url('../fonts/gt-walsheim-pro-regular-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}

@@ -45,7 +45,6 @@
 
 
 .Foot-title {
-  font-weight: var(--text-bold);
   color: var(--color-gray);
   margin-bottom: .4em;
 }

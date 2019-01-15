@@ -40,18 +40,17 @@
   font-size: 1.5em;
   line-height: var(--text-lineheight-small);
   margin-bottom: calc(var(--global-spacing-xs) * .5);
-  font-weight: var(--text-bolder);
 }
 
 @media (--xs-viewport) {
   .WorkExcerpt-title {
-    font-size: calc(1.5em + 2.5vw);
+    font-size: calc(2em + 2.5vw);
   }
 }
 
 @media (--xl-viewport) {
   .WorkExcerpt-title {
-    font-size: 4.5em;
+    font-size: 5.5em;
   }
 }
 
@@ -85,7 +84,6 @@
 
 .WorkExcerpt-infoTitle {
   margin-right: .3em;
-  font-weight: var(--text-bold);
 }
 
 .WorkExcerpt-infoItem::after {
