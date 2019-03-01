@@ -18,10 +18,10 @@
     "build:js": "if [ ! -d dist/assets/javascript ]; then mkdir -p dist/assets/javascript; fi && uglifyjs $npm_package_config_js_files -o dist/assets/javascript/main.js --screw-ie8 --comments",
     "build:css": "postcss src/assets/css/style.css -o dist/assets/css/style.css && purgecss --css dist/assets/css/style.css --content dist/*.html -o dist/assets/css",
     "build:html": "html-minifier --remove-comments --sort-attributes --sort-class-name --collapse-whitespace --remove-redundant-attributes --process-scripts 'application/ld+json' --minify-js true --output-dir dist --input-dir src --file-ext html",
-    "build:icons": "npm run move:icons && imageoptim ./dist/assets/icons/*",
+    "build:icons": "npm run move:icons && imageoptim dist/assets/icons/*",
     "build:images": "npm run move:images && npm run build:images:webp && npm run build:images:other",
-    "build:images:webp": "imagemin ./dist/assets/images/{*.jpg,*.png} -p=webp -o=./dist/assets/images",
-    "build:images:other": "imageoptim ./dist/assets/images/*",
+    "build:images:webp": "imagemin dist/assets/images/{*.jpg,*.png} -p=webp --out-dir=dist/assets/images",
+    "build:images:other": "imageoptim dist/assets/images/*",
     "build:deploy:light": "npm run build:html && npm run test:js && npm run test:css && npm run build:js && npm run build:css && npm run compress:js && npm run compress:css && npm run compress:html",
     "build:deploy": "npm run build:deploy:light && npm run build:images && npm run build:icons && npm run move:audio && npm run move:fonts",
     "move:images": "copyfiles -u 2 -f src/assets/images/* src/assets/images/**/* dist/assets/images",
@@ -38,7 +38,7 @@
     "compress:js": "brotli-cli dist/assets/javascript/main.js",
     "compress:css": "brotli-cli dist/assets/css/style.css",
     "compress:html": "brotli-cli dist/*.html",
-    "deploy": "copyfiles .htaccess sitemap.xml dist && ./bin/deploy && rm -i dist/.htaccess"
+    "deploy": "copyfiles .htaccess sitemap.xml dist && bin/deploy && rm -i dist/.htaccess"
   },
   "config": {
     "port": "3000",
