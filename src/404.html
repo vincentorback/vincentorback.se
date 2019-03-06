@@ -56,14 +56,6 @@
     transform: scale(0.999)
   }
 
-  .Site--404 .Site-body {
-    background-image: url('/assets/images/bg3.jpeg');
-    background-color: #171DA8;
-    background-size: cover;
-    background-repeat: no-repeat !important;
-    background-position: 50% 1%;
-  }
-
   .Site--404 .Site-main {
     position: relative;
     z-index: 2;
@@ -80,7 +72,6 @@
     position: fixed;
     z-index: 3;
     width: 100%;
-    animation: blur 30ms infinite, flick 50ms infinite;
   }
 
   .Site--404 .Link:hover {
@@ -91,7 +82,9 @@
     content: normal;
   }
 
-
+  .Head {
+    filter: blur(2px);
+  }
 
   .Fourofour {
     position: relative;
@@ -102,8 +95,6 @@
     text-align: center;
     text-shadow: 1px 3px green, -2px -2px red;
     text-transform: uppercase;
-
-    animation: blur 30ms infinite, flick 50ms infinite;
   }
 
   .Fourofour p {
@@ -118,7 +109,6 @@
 
   .Fourofour span {
     display: inline-block;
-    animation: shift 3000ms ease infinite alternate;
   }
 
   .Fourofour span:hover {
@@ -140,7 +130,7 @@
     font-size: 1em;
     font-size: .5em;
 
-    animation: shift 2000ms ease infinite alternate;
+    filter: blur(2px);
 
     -webkit-appearance: none;
     appearance: none;
@@ -170,18 +160,24 @@
   }
 
 
+  .Background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+  }
 
+  /*
   @keyframes blur {
     0% {
-      filter: blur(1px);
       opacity: 0.8;
     }
     50% {
-      filter: blur(2px);
       opacity: 1;
     }
     100% {
-      filter: blur(1px);
       opacity: 0.8;
     }
   }
@@ -227,7 +223,9 @@
       transform: skewX(10deg) skewY(-10deg);
     }
   }
+  */
   </style>
+  <!--
   <script>
     if (
       (window.doNotTrack !== '1') &&
@@ -248,6 +246,7 @@
       })();
     }
   </script>
+  -->
 </head>
 
 <body class="Site-body">
@@ -275,15 +274,21 @@
     <button class="Video-button js-nextVideo">Next video</button>
   </div>
 
+  <div class="Background js-bg" style="background-image:url('/assets/images/bg1.jpeg')"></div>
+  <div class="Background js-bg" style="background-image:url('/assets/images/bg2.jpeg')"></div>
+  <div class="Background js-bg" style="background-image:url('/assets/images/bg3.jpeg')"></div>
+  <div class="Background js-bg" style="background-image:url('/assets/images/bg4.jpeg')"></div>
+
   <script src="/assets/javascript/main.js?v=1" async></script>
   <script>
-  const firstTitleEl = document.querySelector('.js-firstTitle')
-  const secondTitleEl = document.querySelector('.js-secondTitle')
-  const buttonEl = document.querySelector('.js-button')
-  const videoEl = document.querySelector('.js-video')
-  const firstTitle = firstTitleEl.innerHTML
-  const secondTitle = secondTitleEl.innerHTML
-  const videos = [
+  var firstTitleEl = document.querySelector('.js-firstTitle')
+  var secondTitleEl = document.querySelector('.js-secondTitle')
+  var buttonEl = document.querySelector('.js-button')
+  var videoEl = document.querySelector('.js-video')
+  var backgroundEls = document.querySelectorAll('.js-bg')
+  var firstTitle = firstTitleEl.innerHTML
+  var secondTitle = secondTitleEl.innerHTML
+  var videos = [
     {
       id: 'su5TApSOX3o',
       start: 108,
@@ -368,8 +373,9 @@
           }, 1000)
         }
 
-        dataUrl = `/assets/images/bg${numberBetween(1, 4)}.jpeg`
-        document.body.style.backgroundImage = `url(${dataUrl})`
+        Array.from(backgroundEls, function (el, index) {
+          el.style.zIndex = numberBetween(0, 3) === index ? '0' : '-1'
+        })
       })
     }, 300)
   }
