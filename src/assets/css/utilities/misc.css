@@ -1,5 +1,9 @@
 /* Text */
 
+.u-textBold {
+  font-weight: var(--text-bold);
+}
+
 /**
  * Text truncation
  *

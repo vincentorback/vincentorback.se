@@ -19,6 +19,7 @@
   --color-text: #080808;
   --text-sansserif: "GT Walsheim Pro", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif;
   --text-normal: 400;
+  --text-bold: 600;
   --text-lineheight-small: 1.1;
   --text-lineheight-large: 1.6;
   --text-size: 1.1em;
