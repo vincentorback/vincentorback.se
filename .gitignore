@@ -1,6 +1,9 @@
 .DS_Store
 node_modules
-build
+dist
+dist/*
 Underlag
 .htaccess
 sitemap.xml
+*.woff
+*.woff2
