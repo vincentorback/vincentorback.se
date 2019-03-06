@@ -2,9 +2,10 @@
   --WorkExcerpt-coop-1: #00ad25;
   --WorkExcerpt-coop-2: #f3f5f0;
   --WorkExcerpt-arkitektur: #e5342a;
-  --WorkExcerpt-rdev: #000;
+  --WorkExcerpt-johanrimer: #000;
   --WorkExcerpt-filosoferamedflera-1: #006cb3;
   --WorkExcerpt-filosoferamedflera-2: linear-gradient(60deg, #006cb3 0%, #7ac6c2 100%);
+  --WorkExcerpt--ninnan: #d0d0d0;
   --WorkExcerpt-rikskriscentrum-1: #0074d9;
   --WorkExcerpt-rikskriscentrum-2: #f0f8ff;
   --WorkExcerpt--you: #ffcdcd;
@@ -33,6 +34,19 @@
   .WorkExcerpt-grid {
     grid-template-columns: minmax(400px, 1fr) minmax(200px, 400px);
   }
+}
+
+@media (--xl-viewport) {
+  .WorkExcerpt-grid {
+    grid-gap: var(--global-spacing-sm);
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+.WorkExcerpt-infoWrap {
+  position: relative;
+  z-index: 1;
 }
 
 
@@ -64,9 +78,15 @@
   }
 }
 
-@media (--xl-viewport) {
+@media (--lg-viewport) {
   .WorkExcerpt-text {
     max-width: 650px;
+  }
+}
+
+@media (--xl-viewport) {
+  .WorkExcerpt-text {
+    max-width: 750px;
   }
 }
 
@@ -149,6 +169,15 @@ p.WorkExcerpt-infoItem .WorkExcerpt-infoTitle {
   }
 }
 
+@media (--xl-viewport) {
+  .WorkExcerpt-image {
+    width: auto;
+    height: auto;
+    max-width: none;
+    max-height: none;
+  }
+}
+
 @media (--xs-max-viewport) {
   .WorkExcerpt-image {
     display: none;
@@ -208,11 +237,18 @@ html:not(.no-js) .WorkExcerpt-image.is-lazy:not(.is-loaded) {
 }
 
 
-/* RDEV */
+/* johanrimer */
 
-.WorkExcerpt--rdev {
-  background: var(--WorkExcerpt-rdev);
+.WorkExcerpt--johanrimer {
+  background: var(--WorkExcerpt-johanrimer);
   color: #fff;
+}
+
+
+/* Ninnan */
+
+.WorkExcerpt--ninnan {
+  background: var(--WorkExcerpt--ninnan);
 }
 
 
@@ -252,7 +288,7 @@ html:not(.no-js) .WorkExcerpt-image.is-lazy:not(.is-loaded) {
     padding-bottom: var(--WorkExcerpt-phone-padding);
   }
 
-  html:not(.no-js) .WorkExcerpt--rdev .WorkExcerpt-image.is-lazy:not(.is-loaded) {
+  html:not(.no-js) .WorkExcerpt--johanrimer .WorkExcerpt-image.is-lazy:not(.is-loaded) {
     height: 0;
     padding-bottom: var(--WorkExcerpt-tablet-padding);
   }

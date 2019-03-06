@@ -1,6 +1,6 @@
 .Container {
   width: 90%;
-  max-width: 1600px;
+  max-width: 1800px;
   margin: 0 auto;
 }
 
@@ -30,6 +30,12 @@
 
 .Container--sm {
   max-width: 700px;
+}
+
+@media (--xl-viewport) {
+  .Container--sm {
+    max-width: 950px;
+  }
 }
 
 .Container--wide {
