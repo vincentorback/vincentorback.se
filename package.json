@@ -20,7 +20,7 @@
     "build:html": "html-minifier --remove-comments --sort-attributes --sort-class-name --collapse-whitespace --remove-redundant-attributes --process-scripts 'application/ld+json' --minify-js true --output-dir dist --input-dir src --file-ext html",
     "build:icons": "npm run move:icons && imageoptim dist/assets/icons/*",
     "build:images": "npm run move:images && npm run build:images:webp && npm run build:images:other",
-    "build:images:webp": "imagemin dist/assets/images/{*.jpg,*.png} -p=webp --out-dir=dist/assets/images",
+    "build:images:webp": "imagemin --plugin=webp ./dist/assets/images/{*.jpg,*.png} --out-dir=./dist/assets/images",
     "build:images:other": "imageoptim dist/assets/images/*",
     "build:deploy:light": "npm run build:html && npm run test:js && npm run test:css && npm run build:js && npm run build:css && npm run compress:js && npm run compress:css && npm run compress:html",
     "build:deploy": "npm run build:deploy:light && npm run build:images && npm run build:icons && npm run move:audio && npm run move:fonts",
@@ -45,7 +45,7 @@
     "js_files": "src/assets/javascript/vendor/blazy.js src/assets/javascript/main.js"
   },
   "devDependencies": {
-    "autoprefixer": "^9.4.9",
+    "autoprefixer": "^9.4.10",
     "brotli-cli": "^0.0.1",
     "copyfiles": "^2.1.0",
     "eye": "^0.0.3",
