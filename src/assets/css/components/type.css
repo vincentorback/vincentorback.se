@@ -28,6 +28,10 @@
   font-size: var(--text-size-lg);
 }
 
+.Type:not(:last-child) {
+  margin-bottom: var(--global-spacing-xs);
+}
+
 
 /* Block elements */
 
