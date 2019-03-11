@@ -2,7 +2,7 @@
   --Foot-slapSize: 90px;
 
   background: var(--color-text);
-  color: #fff;
+  color: var(--color-background);
   line-height: var(--text-lineheight-large);
 }
 

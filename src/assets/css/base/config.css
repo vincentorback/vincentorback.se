@@ -10,13 +10,9 @@
 @custom-media --xl-max-viewport (max-width: 1600px);
 
 :root {
-  font: var(--text-normal) 16px/var(--text-lineheight-small) var(--text-sansserif);
-  color: var(--color-text);
-  background: #fcfbfe;
-  box-sizing: border-box;
-
   --color-gray: #999;
   --color-text: #080808;
+  --color-background: #fcfbfe;
   --text-sansserif: "GT Walsheim Pro", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif;
   --text-normal: 400;
   --text-bold: 600;
@@ -30,6 +26,18 @@
   --global-spacing-md: 115px;
   --global-spacing-lg: 160px;
   --global-spacing-xl: 200px;
+
+  font: var(--text-normal) 16px/var(--text-lineheight-small) var(--text-sansserif);
+  color: var(--color-text);
+  background: var(--color-background);
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: #fff;
+    --color-background: #1f152e;
+  }
 }
 
 @media (--sm-viewport) {
