@@ -1,0 +1,99 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/*
+* {
+  cursor: url(/assets/images/cursor.png) 12 4, auto !important;
+  cursor: url(/assets/images/cursor.svg) 12 4, auto !important;
+  cursor: -webkit-image-set(url(/assets/images/cursor.png) 1x, url(/assets/images/cursor@x2.png) 2x) 12 4, auto !important;
+}
+*/
+
+:root {
+  box-sizing: border-box;
+  font: var(--font-normal) 16px/var(--font-lineheight-sm) var(--font-sansserif);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: inherit; /* fix for mix-blend-mode in chrome */
+}
+
+::selection {
+  background-color: var(--color-text);
+  color: var(--color-background);
+}
+
+::before,
+::after {
+  text-decoration: inherit;
+  vertical-align: inherit;
+}
+
+body,
+figure,
+dl,
+dd,
+h1,
+h2,
+h3,
+p,
+ul,
+button {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+a {
+  background-color: transparent;
+  color: inherit;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+strong {
+  font-weight: var(--font-bold);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  user-select: none;
+  border-style: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+}
+
+button:hover {
+  opacity: .5;
+}
+
+abbr {
+  text-decoration: none;
+  cursor: help;
+}

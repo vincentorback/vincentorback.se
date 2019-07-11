@@ -1,0 +1,49 @@
+.ColorLink:hover span {
+  animation: colorCycle 2.4s step-end infinite;
+}
+
+.ColorLink:hover > :nth-of-type(5n+1) {
+  animation-delay: -2s;
+}
+
+.ColorLink:hover > :nth-of-type(5n+2) {
+  animation-delay: -1.6s;
+}
+
+.ColorLink:hover > :nth-of-type(5n+3) {
+  animation-delay: -1.2s;
+}
+
+.ColorLink:hover > :nth-of-type(5n+4) {
+  animation-delay: -.8s;
+}
+
+.ColorLink:hover > :nth-of-type(5n+5) {
+  animation-delay: -.4s;
+}
+
+@keyframes colorCycle {
+  0% {
+    color: var(--color-yellow);
+  }
+
+  20% {
+    color: var(--color-red);
+  }
+
+  40% {
+    color: var(--color-green);
+  }
+
+  60% {
+    color: var(--color-pink);
+  }
+
+  80% {
+    color: var(--color-blue);
+  }
+
+  100% {
+    color: var(--color-orange);
+  }
+}

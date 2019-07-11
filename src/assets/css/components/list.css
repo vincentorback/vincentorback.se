@@ -1,0 +1,39 @@
+.List {
+  position: relative;
+  z-index: 1;
+}
+
+@supports (mix-blend-mode: exclusion) {
+  .List {
+    mix-blend-mode: exclusion;
+    color: #fff;
+  }
+}
+
+.List-header {
+  font-weight: var(--font-bold);
+}
+
+.List-list {
+  flex-wrap: wrap;
+  margin-top: 2ch;
+  font-size: 1.1em;
+  list-style: none;
+}
+
+@media (min-width: 600px) {
+  .List-list {
+    display: flex;
+  }
+}
+
+.List-list li {
+  display: block;
+  margin-bottom: 1.5ch;
+}
+
+@media (min-width: 600px) {
+  .List-list li {
+    margin-right: var(--spacing-sm);
+  }
+}

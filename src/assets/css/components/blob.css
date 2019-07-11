@@ -1,0 +1,52 @@
+.Blob {
+  display: block;
+}
+
+.Blob path {
+  mix-blend-mode: multiply;
+}
+
+.Blob--animate path {
+  animation: blob 40000ms var(--ease-in-out-sine) infinite;
+  transform-origin: 47% 47%;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .Blob--animate path {
+    animation: none;
+  }
+}
+
+.Blob path:nth-child(2) {
+  animation-delay: -16000ms;
+  animation-direction: reverse;
+}
+
+.Blob path:nth-child(3) {
+  animation-delay: -25000ms;
+}
+
+@keyframes blob {
+  0% { transform: translateZ(0) rotate(0deg); }
+  100% { transform: translateZ(0) rotate(359deg); }
+}
+
+/*
+@keyframes blob {
+  0%,
+  100% { transform: translateZ(0) scale(1) rotate(0deg); }
+  40% { transform: translateZ(0) scale(1.05, .9); }
+  70% { transform: translateZ(0) scale(.85, 1.05) rotate(35deg); }
+}
+*/
+
+/*
+@keyframes blob {
+  0%,
+  100% { transform: scale(1) rotate(0deg) skew(1.2deg, -1.1deg); }
+  40% { transform: scale(1.05, .9) skew(-2deg, 2deg); }
+  70% { transform: scale(.85, 1.05) rotate(15deg) skew(-1.5deg, 2deg); }
+}
+*/

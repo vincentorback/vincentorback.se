@@ -1,0 +1,88 @@
+@media (min-width: 1100px) {
+  .About {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+}
+
+
+.About-text {
+  position: relative;
+  z-index: 1;
+  flex: 1 0 300px;
+  max-width: 800px;
+  margin: var(--spacing-sm) 0 0;
+}
+
+@media (min-width: 800px) {
+  .About-text {
+    margin: 0 var(--spacing-sm) 0 0;
+  }
+}
+
+
+.About-imageContainer {
+  position: relative;
+  z-index: 0;
+  flex: 1 1 300px;
+  order: 2;
+  max-width: 600px;
+}
+
+@media (min-width: 600px) and (max-width: 1100px) {
+  .About-imageContainer {
+    float: right;
+    width: 50vw;
+  }
+}
+
+
+.About-imageWrap {
+  position: relative;
+  padding-bottom: 100%;
+  height: 0;
+}
+
+.About-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding: var(--spacing-sm);
+  opacity: 1;
+  transition: opacity 600ms ease, transform 600ms ease, clip-path 600ms ease;
+}
+
+@media (min-width: 600px) {
+  .About-image {
+    transform: rotateY(180deg);
+  }
+}
+
+.About-image[data-src]:not(.is-loaded) {
+  opacity: 0;
+}
+
+.About-blob {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.5);
+}
+
+@media (min-width: 600px) {
+  .About-blob {
+    transform: scale(1.3);
+  }
+}

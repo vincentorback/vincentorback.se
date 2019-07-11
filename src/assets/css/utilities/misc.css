@@ -1,0 +1,78 @@
+/* Text */
+
+.u-textNormal {
+  font-weight: var(--font-normal) !important;
+}
+
+.u-textBold {
+  font-weight: var(--font-bold) !important;
+}
+
+/**
+ * Text truncation
+ *
+ * Prevent text from wrapping onto multiple lines, and truncate with an
+ * ellipsis.
+ *
+ * 1. Ensure that the node has a maximum width after which truncation can
+ *    occur.
+ * 2. Fix for IE 8/9 if `word-wrap: break-word` is in effect on ancestor
+ *    nodes.
+ */
+
+@media (min-width: 320px) {
+  .u-textTruncate {
+    max-width: 100%; /* 1 */
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    word-wrap: normal !important; /* 2 */
+  }
+}
+
+
+/* Display */
+
+html.no-js .u-noJsHide {
+  display: none !important;
+}
+
+.u-hidden {
+  display: none;
+}
+
+.u-hiddenVisually {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+}
+
+@media print {
+  .u-printHide {
+    display: none !important;
+  }
+}
+
+
+.u-wave {
+  position: absolute;
+  display: inline-block;
+  animation: handwave 1000ms ease-in-out infinite;
+  transform-origin: 80% 80%;
+  font-size: 1.5em;
+}
+
+@keyframes handwave {
+  0%,
+  100% {
+    transform: translate(.15em, -.25em) rotateZ(19deg);
+  }
+
+  50% {
+    transform: translate(.15em, -.25em) rotateZ(9deg);
+  }
+}

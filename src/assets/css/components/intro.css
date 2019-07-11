@@ -1,0 +1,102 @@
+.Intro {
+  position: relative;
+}
+
+
+.Intro-text {
+  position: relative;
+  z-index: 1;
+  max-width: 550px;
+}
+
+@media (min-width: 1200px) {
+  .Intro-text {
+    max-width: 800px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .Intro-text {
+    max-width: 1000px;
+  }
+}
+
+@supports (mix-blend-mode: exclusion) {
+  .Intro-text {
+    color: #fff;
+    mix-blend-mode: exclusion;
+  }
+}
+
+
+.Intro-text svg {
+  width: .8ch;
+  height: .8ch;
+  transform: translate(.2ch, .2ch) rotateZ(-90deg) rotateY(180deg);
+}
+
+.Intro-contact {
+  margin-top: 1rem;
+  line-height: var(--font-lineheight-lg);
+}
+
+@media (min-width: 1000px) {
+  .Intro-contact {
+    margin-top: var(--spacing-sm);
+    font-size: 1.5rem;
+  }
+}
+
+.Intro-contactLink {
+  display: inline-block;
+}
+
+.Intro-contactLinkText,
+.Intro-contactLinkSymbol {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.Intro-contactLinkText {
+  user-select: all;
+  transition: opacity 400ms ease;
+}
+
+.Intro-contactLinkSymbol {
+  width: 1ch;
+  height: 1ch;
+  margin-right: 4px;
+  transform: translateY(2px);
+}
+
+.Intro-contactLink:hover .Intro-contactLinkText {
+  opacity: .6;
+}
+
+
+.Intro-blob {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+  width: 110vmax;
+  height: 110vmax;
+  transform: translate(75%, -35%) rotateZ(60deg);
+}
+
+@media (min-width: 600px) {
+  .Intro-blob {
+    width: 110vmax;
+    height: 110vmax;
+    transform: translate(50%, -30%) rotateZ(60deg);
+  }
+}
+
+@media (min-width: 1000px) {
+  .Intro-blob {
+    width: 110vmax;
+    height: 110vmax;
+    transform: translate(50%, -30%) rotateZ(60deg);
+  }
+}

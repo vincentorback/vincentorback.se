@@ -1,0 +1,89 @@
+.Type {
+  --Type-spacing: .7em;
+
+  font-size: 1.1rem;
+  line-height: var(--font-lineheight-lg);
+}
+
+@media (min-width: 900px) {
+  .Type {
+    font-size: 1.3rem;
+  }
+
+  .Type--lg {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1800px) {
+  .Type {
+    font-size: 1.6rem;
+  }
+
+  .Type--lg {
+    font-size: 2rem;
+  }
+}
+
+.Type h1,
+.Type h2,
+.Type h3,
+.Type p,
+.Type img {
+  display: block;
+  margin: var(--Type-spacing) 0;
+}
+
+.Type h1,
+.Type h2 {
+  font-weight: var(--font-bold);
+}
+
+.Type h1 {
+  font-size: 1.3em;
+}
+
+.Type h2 {
+  font-size: 1.1em;
+}
+
+@media (min-width: 600px) {
+  .Type h1 {
+    font-size: 1.4em;
+  }
+
+  .Type h2 {
+    font-size: 1.2em;
+  }
+}
+
+@media (min-width: 1200px) {
+  .Type h1 {
+    font-size: 1.6em;
+  }
+
+  .Type h2 {
+    font-size: 1.3em;
+  }
+}
+
+.Type h1:first-child,
+.Type h2:first-child,
+.Type h3:first-child,
+.Type p:first-child,
+.Type img:first-child {
+  margin-top: 0;
+}
+
+.Type h1:last-child,
+.Type h2:last-child,
+.Type h3:last-child,
+.Type p:last-child,
+.Type img:last-child {
+  margin-bottom: 0;
+}
+
+
+.Type a {
+  font-style: italic;
+}

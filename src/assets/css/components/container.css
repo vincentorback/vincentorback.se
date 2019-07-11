@@ -1,0 +1,16 @@
+.Container {
+  position: relative;
+  width: calc(100% - var(--spacing-lg));
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .Container {
+    width: calc(100% - var(--spacing-sm));
+  }
+}
+
+.Container--md {
+  max-width: 1000px;
+}

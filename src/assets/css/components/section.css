@@ -1,0 +1,43 @@
+.Section {
+  --Section-spacing: var(--spacing-lg);
+
+  margin: var(--Section-spacing) 0;
+}
+
+/*
+.Section--first {
+  margin-top: 0;
+}
+*/
+
+.Section--first {
+  margin-top: calc(var(--Section-spacing) * 1.5);
+}
+
+@media (min-width: 1200px) {
+  .Section--first {
+    margin-top: calc(var(--Section-spacing) * 2.2);
+  }
+}
+
+@media (min-width: 1600px) {
+  .Section--first {
+    margin-top: calc(var(--Section-spacing) * 3.2);
+  }
+}
+
+.Section--last {
+  margin-bottom: 0;
+}
+
+.Section-head {
+  padding-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  font-weight: var(--font-bold);
+}
+
+@media (min-width: 900px) {
+  .Section-head {
+    margin-bottom: var(--spacing-sm);
+  }
+}

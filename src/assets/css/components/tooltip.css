@@ -1,0 +1,27 @@
+.Tooltip {
+  position: relative;
+  cursor: help;
+}
+
+.Tooltip-content {
+  position: absolute;
+  left: 0;
+  bottom: -30px;
+  width: auto;
+  white-space: nowrap;
+  background: var(--color-text);
+  color: var(--color-background);
+  font-size: .9rem;
+  padding: 3px 5px;
+  border-radius: 4px;
+}
+
+.Tooltip-content--break {
+  white-space: initial;
+  width: 90vw;
+}
+
+.Tooltip-content--right {
+  left: auto;
+  right: 0;
+}

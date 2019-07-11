@@ -1,0 +1,99 @@
+{
+  "name": "vincent-orback",
+  "version": "6.0.0",
+  "description": "My personal portfolio",
+  "homepage": "https://vincentorback.se",
+  "author": {
+    "name": "Vincent Orback",
+    "email": "vorback@gmail.com",
+    "url": "https://vincentorback.se"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vincentorback/vincent-orback.git"
+  },
+  "scripts": {
+    "start": "if [ ! -d dist ]; then npm run build; fi && npm-run-all --parallel serve watch",
+    "build:js": "if [ ! -d dist/assets/javascript ]; then mkdir -p dist/assets/javascript; fi && uglifyjs $npm_package_config_js_files -o dist/assets/javascript/main.js --warn --mangle --toplevel",
+    "build:css": "postcss src/assets/css/style.css -o dist/assets/css/style.css",
+    "build:html": "html-minifier --remove-comments --sort-attributes --sort-class-name --collapse-whitespace --remove-redundant-attributes --process-scripts 'application/ld+json' --minify-js true --output-dir dist --input-dir src --file-ext html",
+    "build:webp": "imagemin --plugin=webp ./dist/assets/images/{*.jpg,*.png} --out-dir=./dist/assets/images",
+    "build": "rm -rf dist && npm-run-all build:light move:images move:fonts move:icons move:fonts",
+    "build:light": "npm-run-all build:html test:js test:css build:js build:css",
+    "build:deploy": "npm-run-all build compress compress:images build:webp",
+    "move:images": "copyfiles -u 2 -f src/assets/images/* src/assets/images/**/* dist/assets/images",
+    "move:icons": "copyfiles -u 2 -f src/assets/icons/* dist",
+    "move:fonts": "copyfiles -u 2 src/assets/fonts/* dist/assets",
+    "test:js": "standard 'src/assets/javascript/**/*.js'",
+    "test:css": "stylelint 'src/assets/css/**/*.css'",
+    "watch": "npm-run-all --parallel watch:js watch:css watch:html",
+    "watch:js": "eye --*glob=src/assets/javascript/**/*.js npm run test:js and npm run build:js",
+    "watch:css": "eye --*glob=src/assets/css/**/*.css npm run test:css and npm run build:css",
+    "watch:html": "eye --*glob=src/**/*.html npm run build:html",
+    "serve": "ws -d dist -r '/about-me/ -> /about-me.html' -p $npm_package_config_port",
+    "compress": "npm-run-all compress:js compress:css compress:html",
+    "compress:js": "brotli-cli dist/assets/javascript/main.js",
+    "compress:css": "brotli-cli dist/assets/css/style.css",
+    "compress:html": "brotli-cli dist/*.html",
+    "compress:images": "imageoptim dist/*",
+    "deploy": "copyfiles .htaccess sitemap.xml dist && bin/deploy"
+  },
+  "config": {
+    "port": "3000",
+    "js_files": "src/assets/javascript/vendor/macy.js src/assets/javascript/vendor/lazyload.iife.min.js src/assets/javascript/main.js"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.6.1",
+    "brotli-cli": "^0.0.1",
+    "copyfiles": "^2.1.1",
+    "eye": "^0.0.3",
+    "html-minifier": "^4.0.0",
+    "imagemin-cli": "^5.0.0",
+    "imagemin-webp": "^5.1.0",
+    "imageoptim-cli": "^2.3.7",
+    "inline-source-cli": "^1.2.0",
+    "local-web-server": "^3.0.4",
+    "npm-run-all": "^4.1.5",
+    "postcss-calc": "^7.0.1",
+    "postcss-cli": "^6.1.3",
+    "postcss-custom-properties": "^9.0.1",
+    "postcss-csso": "^3.0.0",
+    "postcss-import": "^12.0.1",
+    "purgecss": "^1.3.0",
+    "standard": "^13.0.0",
+    "stylelint": "^10.1.0",
+    "stylelint-config-standard": "^18.3.0",
+    "uglify-es": "^3.3.10"
+  },
+  "browserslist": [
+    "> 5% in SE"
+  ],
+  "postcss": {
+    "plugins": {
+      "postcss-import": {},
+      "autoprefixer": {
+        "grid": true
+      },
+      "postcss-calc": {
+        "preserve": false
+      },
+      "postcss-csso": {}
+    }
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "rules": {
+      "max-empty-lines": 2,
+      "number-leading-zero": "never",
+      "unit-no-unknown": [true, {
+        "ignoreUnits": "x"
+      }]
+    }
+  },
+  "standard": {
+    "ignore": [
+      "src/assets/javascript/vendor/"
+    ]
+  }
+}
