@@ -1,5 +1,48 @@
+.ColorLink {
+  position: relative;
+}
+
+.ColorLink span {
+  position: relative;
+  z-index: 1;
+}
+
 .ColorLink:hover span {
   animation: colorCycle 2.4s step-end infinite;
+}
+
+.ColorLink--dark {
+  position: relative;
+}
+
+.ColorLink--dark::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 0;
+  display: block;
+  width: calc(100% + .8em);
+  height: 1.5em;
+  background: #0e004e;
+  border-radius: 4px;
+  transform: translateX(-.35em);
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.ColorLink--dark:hover::after {
+  opacity: 1;
+  transition: opacity 200ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ColorLink span {
+    animation: none;
+  }
 }
 
 .ColorLink:hover > :nth-of-type(5n+1) {

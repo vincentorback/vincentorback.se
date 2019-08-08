@@ -44,7 +44,7 @@ html.no-js .u-noJsHide {
 .u-hiddenVisually {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
-  height: 1px !important;
+  height: 0 !important;
   overflow: hidden !important;
   padding: 0 !important;
   position: absolute !important;
@@ -54,25 +54,5 @@ html.no-js .u-noJsHide {
 @media print {
   .u-printHide {
     display: none !important;
-  }
-}
-
-
-.u-wave {
-  position: absolute;
-  display: inline-block;
-  animation: handwave 1000ms ease-in-out infinite;
-  transform-origin: 80% 80%;
-  font-size: 1.5em;
-}
-
-@keyframes handwave {
-  0%,
-  100% {
-    transform: translate(.15em, -.25em) rotateZ(19deg);
-  }
-
-  50% {
-    transform: translate(.15em, -.25em) rotateZ(9deg);
   }
 }

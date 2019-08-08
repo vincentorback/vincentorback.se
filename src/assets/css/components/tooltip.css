@@ -1,19 +1,35 @@
 .Tooltip {
   position: relative;
-  cursor: help;
 }
 
 .Tooltip-content {
   position: absolute;
   left: 0;
-  bottom: -30px;
+  top: 100%;
   width: auto;
   white-space: nowrap;
   background: var(--color-text);
   color: var(--color-background);
   font-size: .9rem;
-  padding: 3px 5px;
+  padding: 5px 10px;
   border-radius: 4px;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 200ms var(--ease-in-out-sine), transform 200ms var(--ease-in-out-sine), visibility 0ms linear 300ms;
+}
+
+.Tooltip:hover .Tooltip-content,
+.Tooltip-content.is-active {
+  opacity: 1;
+  transform: translateY(6px);
+  visibility: visible;
+  transition: opacity 200ms var(--ease-in-out-sine), transform 200ms var(--ease-in-out-sine);
+}
+
+.Tooltip-content::selection {
+  background-color: var(--color-background);
+  color: var(--color-text);
 }
 
 .Tooltip-content--break {

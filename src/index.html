@@ -36,12 +36,12 @@
 
   <div class="Wrap">
 
-    <section class="Section  Section--first">
+    <section class="Section Section--first">
       <div class="Container">
         <div class="Intro">
           <div class="Intro-text Type Type--lg">
             <h1 class="u-textNormal">
-              <span class="u-textTruncate">Vincent Orback</span>, <span class="u-textTruncate">a freelancing</span> <strong class="u-textTruncate u-textNormal">front-end developer</strong> and <span class="u-textTruncate">web designer</span> <span class="u-textTruncate">based in</span> <span class="u-textTruncate">Gothenburg, Sweden.</span>
+              I’m <span class="u-textTruncate">Vincent Orback</span>, <span class="u-textTruncate">a freelancing</span> <strong class="u-textTruncate u-textNormal">front-end developer</strong> and <span class="u-textTruncate">web designer</span> <span class="u-textTruncate">based in</span> <span class="u-textTruncate">Gothenburg, Sweden.</span>
             </h1>
           </div>
           <div class="Intro-contact">
@@ -51,11 +51,11 @@
                 <svg class="Intro-contactLinkSymbol" width="8px" height="7px">
                   <use xlink:href="#arrow"></use>
                 </svg>
-                <span class="Intro-contactLinkText">hello@vincentorback.se</span>
+                <span class="Intro-contactLinkText ColorLink ColorLink--dark js-splitLetters">hello@vincentorback.se</span>
               </a>
             </p>
           </div>
-          <svg class="Intro-blob">
+          <svg class="Intro-blob js-introBlob">
             <use xlink:href="#blob"></use>
           </svg>
         </div>
@@ -65,9 +65,11 @@
     <section class="Section" id="work">
       <div class="Container">
 
+        <!--
         <header class="Section-head Type">
-          <h2><span class="u-textTruncate">Things I’ve</span> <span class="u-textTruncate">worked on</span></h2>
+          <h2>Some of the things I’ve <span class="u-textTruncate">worked on</span></h2>
         </header>
+        -->
 
         <div class="Work js-grid">
 
@@ -87,7 +89,7 @@
               </div>
               <div class="Work-info">
                 <div class="Work-infoText Type" itemprop="about">
-                  <p><strong itemprop="name">Arkitektur Förlag</strong> publish the Swedish magazine Arkitektur and a variety of books on architecture, urban planning, and design.</p>
+                  <p><strong itemprop="name">Arkitektur Förlag</strong> publishes the Swedish magazine Arkitektur and a variety of books on architecture, urban planning, and design.</p>
                   <p>The website is built with WordPress as the CMS using WooCommerce for the store.</p>
                 </div>
                 <p class="Work-role">Front-end developer</p>
@@ -119,7 +121,7 @@
               </div>
               <div class="Work-info">
                 <div class="Work-infoText Type" itemprop="about">
-                  <p><strong itemprop="name">Välj Att Sluta</strong> (Choose to quit) is a telephone line for those who want help to change a controlling or violent behavior. Callers talk anonymously to therapist or other professional who then suggest further treatment.</p>
+                  <p><strong itemprop="name">Välj Att Sluta</strong> (Choose to quit) is a telephone line for those who want help to change a controlling or violent behavior. Callers talk anonymously to a therapist or other professional who then suggest further treatment.</p>
                   <p>I helped by building the interface used by the operators while taking calls as wells as producing statistics to analyze data collected. Built with React and Node.</p>
                 </div>
                 <p class="Work-role">Developer, designer</p>
@@ -127,40 +129,8 @@
             </div>
             <meta itemprop="author creator" itemscope itemtype="http://schema.org/Organization" itemref="organization">
             <meta itemprop="image" content="/assets/images/valjattsluta.jpg">
+            <meta itemprop="datePublished" content="2018">
           </article>
-
-          <!--
-          <article class="Work-item Work-item--saqmi" aria-label="SAQMI" itemscope itemtype="http://schema.org/CreativeWork">
-            <div class="Work-itemInner">
-              <div class="Work-imageWrap">
-                <picture>
-                  <source data-srcset="/assets/images/saqmi.webp" type="image/webp">
-                  <img class="Work-image" loading="lazy" data-src="/assets/images/saqmi.jpg" alt="">
-                </picture>
-                <noscript>
-                  <picture>
-                    <source srcset="/assets/images/saqmi.webp" type="image/webp">
-                    <img class="Work-image" loading="lazy" src="/assets/images/saqmi.jpg" alt="">
-                  </picture>
-                </noscript>
-              </div>
-              <div class="Work-info">
-                <div class="Work-infoText Type" itemprop="about">
-                  <p><strong itemprop="name">SAQMI</strong>, The Swedish Archive for Queer Moving Images, is ...</p>
-                </div>
-                <p class="Work-role">Developer</p>
-                <a class="Work-infoLink" href="#/">
-                  <svg width="8px" height="7px">
-                    <use xlink:href="#arrow"></use>
-                  </svg>
-                  <span>https://saqmi.se</span>
-                </a>
-              </div>
-            </div>
-            <meta itemprop="author creator" itemscope itemtype="http://schema.org/Organization" itemref="organization">
-            <meta itemprop="image" content="/assets/images/saqmi.jpg">
-          </article>
-          -->
 
           <article class="Work-item Work-item--ninnan" aria-label="Ninnan Santessons Samling" itemscope itemtype="http://schema.org/CreativeWork">
             <div class="Work-itemInner">
@@ -178,7 +148,7 @@
               </div>
               <div class="Work-info">
                 <div class="Work-infoText Type" itemprop="about">
-                  <p><strong itemprop="name">Ninna Santessons Samling</strong> is <span class="u-textTruncate">Linnéa Carlson’s</span> graduation project from Beckmans College of Design consisting of a collection of letters, photographs and interviews written by and about and sculptur artist <span class="u-textTruncate">Ninnan Santesson.</span></p>
+                  <p><strong itemprop="name">Ninna Santessons Samling</strong> is <span class="u-textTruncate">Linnéa Carlson’s</span> graduation project from Beckmans College of Design consisting of a collection of letters, photographs and, interviews written by and about sculptor <span class="u-textTruncate">Ninnan Santesson.</span></p>
                 </div>
                 <p class="Work-role">Front-end developer</p>
                 <a class="Work-infoLink" href="https://ninnan-santessons-samling.se">
@@ -209,7 +179,7 @@
               </div>
               <div class="Work-info">
                 <div class="Work-infoText Type" itemprop="about">
-                  <p>Portfolio for creative director, art director and artist <strong itemprop="name">Johan Rimér</strong>. Johan provided the clean design and I the development using WordPress.</p>
+                  <p>Portfolio for creative director, art director, and artist <strong itemprop="name">Johan Rimér</strong>. Johan provided the clean design and I developed the website using WordPress.</p>
                 </div>
                 <p class="Work-role">Front-end developer</p>
                 <a class="Work-infoLink" href="https://johanrimer.com">
@@ -248,10 +218,168 @@
             <meta itemprop="image" content="/assets/images/filosoferamedflera.jpg">
           </article>
 
+          <article class="Work-item Work-item--systerochbror" aria-label="Syster & Bror" itemscope itemtype="http://schema.org/CreativeWork">
+            <div class="Work-itemInner">
+              <div class="Work-imageWrap">
+                <picture>
+                  <source data-srcset="/assets/images/systerochbror2.webp" type="image/webp">
+                  <img class="Work-image" loading="lazy" data-src="/assets/images/systerochbror2.jpg" alt="">
+                </picture>
+                <noscript>
+                  <picture>
+                    <source srcset="/assets/images/systerochbror2.webp" type="image/webp">
+                    <img class="Work-image" loading="lazy" src="/assets/images/systerochbror2.jpg" alt="">
+                  </picture>
+                </noscript>
+              </div>
+              <div class="Work-info">
+                <div class="Work-infoText Type" itemprop="about">
+                  <p><strong itemprop="name">Syster & Bror</strong>, is a work in progress.</p>
+                  <p>Built using Choo and Bankai using Prismic as a headless CMS.</p>
+                </div>
+                <p class="Work-role">Developer, designer</p>
+                <a class="Work-infoLink" href="https://film.vincentorback.se/">
+                  <svg width="8px" height="7px">
+                    <use xlink:href="#arrow"></use>
+                  </svg>
+                  <span>https://systerochbror.se</span>
+                </a>
+              </div>
+            </div>
+            <meta itemprop="author creator" itemscope itemtype="http://schema.org/Organization" itemref="organization">
+            <meta itemprop="image" content="/assets/images/systerochbror.jpg">
+          </article>
+
+          <!--
+          <article class="Work-item Work-item--saqmi" aria-label="SAQMI" itemscope itemtype="http://schema.org/CreativeWork">
+            <div class="Work-itemInner">
+              <div class="Work-imageWrap">
+                <picture>
+                  <source data-srcset="/assets/images/saqmi.webp" type="image/webp">
+                  <img class="Work-image" loading="lazy" data-src="/assets/images/saqmi.jpg" alt="">
+                </picture>
+                <noscript>
+                  <picture>
+                    <source srcset="/assets/images/saqmi.webp" type="image/webp">
+                    <img class="Work-image" loading="lazy" src="/assets/images/saqmi.jpg" alt="">
+                  </picture>
+                </noscript>
+              </div>
+              <div class="Work-info">
+                <div class="Work-infoText Type" itemprop="about">
+                  <p><strong itemprop="name">SAQMI</strong>, The Swedish Archive for Queer Moving Images, is ... Work in progress</p>
+                </div>
+                <p class="Work-role">Developer</p>
+                <a class="Work-infoLink" href="#/">
+                  <svg width="8px" height="7px">
+                    <use xlink:href="#arrow"></use>
+                  </svg>
+                  <span>https://saqmi.se</span>
+                </a>
+              </div>
+            </div>
+            <meta itemprop="author creator" itemscope itemtype="http://schema.org/Organization" itemref="organization">
+            <meta itemprop="image" content="/assets/images/saqmi.jpg">
+          </article>
+          -->
+
         </div>
 
       </div>
     </section>
+
+    <section class="Section">
+      <div class="Container Container--md">
+        <div class="List Type">
+          <div class="List-header">
+            <h2><span class="u-textTruncate">Some clients</span> I’ve <span class="u-textTruncate">worked with</span></h2>
+          </div>
+          <ul class="List-list">
+            <li>
+              <!--1000 möjligheter-->
+              <img class="List-image" src="/assets/images/1000-mojligheter.png" alt="1000 Möjligheter">
+            </li>
+            <li>
+              <!--<span class="Tooltip js-tooltip" data-title="Arkitektur- och Designcentrum">ArkDes</span>-->
+              <img class="List-image" src="/assets/images/arkdes-logo.svg" alt="Arkdes">
+            </li>
+            <li>
+              <!--Arkitektur Förlag-->
+              <img class="List-image" src="/assets/images/arkitektur-logo.svg" alt="Arkitektur">
+            </li>
+            <li>
+              <!--Coop-->
+              <img class="List-image" src="/assets/images/coop-logo.svg" alt="Coop">
+            </li>
+            <li>
+              <!--Djurens Rätt-->
+              <img class="List-image" src="/assets/images/djurens-ratt-logo.svg" alt="Djurens Rätt">
+            </li>
+            <li>
+              <!--<span class="Tooltip js-tooltip" data-title="The International Campaign to Abolish Nuclear Weapons">ICAN</span>-->
+              <img class="List-image" src="/assets/images/ican-logo.svg" alt="The International Campaign to Abolish Nuclear Weapons">
+            </li>
+            <li>
+              <img class="List-image List-image--sm" src="/assets/images/manscentrum-logo.svg" alt="Manscentrum">
+              <!--Manscentrum-->
+            </li>
+            <li>
+              <img class="List-image List-image--md" src="/assets/images/nordiska-museet-logo.svg" alt="Nordiska Museet">
+              <!--Nordiska Museet-->
+            </li>
+            <!--
+            <li>
+              <img class="List-image List-image--md" src="/assets/images/office-recycling-logo.svg" alt="Office Recycling">
+            </li>
+            -->
+            <li>
+              <img class="List-image List-image--md" src="/assets/images/rikskriscentrum-logo.svg" alt="Rikskriscentrum">
+              <!--Rikskriscentrum-->
+            </li>
+            <!--
+            <li>
+              <span class="Tooltip js-tooltip" data-title="The Swedish Archive for Queer Moving Images">SAQMI</span>
+            </li>
+            -->
+            <li>
+              <!--<span class="Tooltip js-tooltip" data-title="Svenska Sällskapet för Filosofisk Praxis">SSFP</span>-->
+              <img class="List-image" src="/assets/images/ssfp-logo.svg" alt="Svenska Sällskapet för Filosofisk Praxis" title="Svenska Sällskapet för Filosofisk Praxis">
+            </li>
+            <li>
+              <!--Sveriges Författarförbund</li>-->
+              <img class="List-image List-image--lg" src="/assets/images/forfattarforbundet-logo.png" alt="Författarförbundet">
+            </li>
+            <li>
+              <!--Systembolaget-->
+              <img class="List-image" src="/assets/images/systembolaget-logo.svg" alt="Systembolaget">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!--
+    <section class="Section" id="new" aria-label="About me">
+      <div class="Container">
+        <div class="New">
+          <picture>
+            <source data-srcset="/assets/images/vincent-orback-blob.webp" type="image/webp">
+            <img class="New-image" loading="lazy" data-src="/assets/images/vincent-orback-blob.png" alt="Vincent Orback">
+          </picture>
+          <noscript>
+            <picture>
+              <source srcset="/assets/images/vincent-orback-blob.webp" type="image/webp">
+              <img class="New-image" loading="lazy" src="/assets/images/vincent-orback-blob.png" alt="Vincent Orback">
+            </picture>
+          </noscript>
+          <div class="New-text Type Type--lg">
+            <p>I like building solid web projects. Things that last, things that solve problems that need solving. We shouldn’t work to create new needs for people. The tools I use are a mix of different front-end technologies. I’m comfortable with most of them and feel comfortable with quickly learning new ones <span class="u-textTruncate">when needed.</span></p>
+            <p>Before I started freelancing, about two years ago, I worked as a web developer at <a class="ColorLink js-splitLetters" href="https://earthpeople.se/">Earth People</a> working mostly with WordPress and React. Before that, I worked as a front-end developer at <a class="ColorLink js-splitLetters" href="https://daytona.se/">Daytona</a> where I developed <span class="u-textTruncate">interface prototypes.</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    -->
 
     <section class="Section" id="about" aria-label="About me">
       <div class="Container">
@@ -274,49 +402,19 @@
             </div>
           </div>
           <div class="About-text Type Type--lg">
-            <h2>Hello there!</h2>
-
-            <p>I’m Vincent Orback, and I work as a freelancing front-end developer and web designer creating thoughtful experiences with the combination of design and technology.</p>
-            <p>I like building solid web projects. Things that last, things that solve problems that needs solving. We shouldn’t work to create new needs <span class="u-textTruncate">for people.</span></p>
-            <p>The tools I use are a mix of different front-end technologies. I’m comfortable with most of them and feel comfortable with quickly learning new ones <span class="u-textTruncate">when needed.</span></p>
-            <p>Before I started freelancing, about two years ago, I worked as a web developer at <a class="ColorLink js-splitLetters" href="https://earthpeople.se/" rel="nofollow">Earth People</a> working mostly with WordPress and React. Before that, I worked as a front-end developer at <a class="ColorLink js-splitLetters" href="https://daytona.se/" rel="nofollow">Daytona</a> where I developed <span class="u-textTruncate">interface prototypes.</span></p>
+            <!--<h2>Let’s build something together!</h2>-->
+            <h2>A bit about me</h2>
+            <!--<p>I work as a front-end developer and web designer creating thoughtful experiences with the combination of design <span class="u-textTruncate">and technology.</span></p>-->
+            <p><span class="u-textTruncate">I like</span> building solid web projects. Things that last, things that solve problems that need solving. <span class="u-textTruncate">The tools</span> I use are a mix of different front-end technologies like React, Node, WordPress etc.</p>
+            <p>I take on projects on my own, designing and building everything from the ground up, as well as collaborate with other creatives, like developers, designers, copywriters, and photographers.</p>
+            <p>Before I started freelancing I worked as a web developer at <a class="ColorLink ColorLink--dark js-splitLetters js-touchHover" href="https://earthpeople.se/">Earth People</a> working mostly with WordPress and React. Before that, I worked as a front-end developer at <a class="ColorLink ColorLink--dark js-splitLetters js-touchHover" href="https://daytona.se/" rel="nofollow">Daytona</a> where I developed <span class="u-textTruncate">interface prototypes.</span></p>
             <!--
-              <p>I believe that the products we build should be made accessible by default. Everyone should be able to use the internet, not just the ones holding an 800$ phone.</p>
-              <p>I believe that the work we do shouldn’t keep the users attention for more than needed. The users time is valuable and not ours to use for profit.</p>
-              <p>I dream of starting a potato restaurant some day :)</p>
+            <p>I believe that the products we build should be made accessible by default. Everyone should be able to use the internet, not just the ones holding an 800$ phone.</p>
+            <p>I believe that the work we do shouldn’t keep the users attention for more than needed. The users time is valuable and not ours to use for profit.</p>
+            <p>I dream of starting a potato restaurant some day :)</p>
             -->
+            <p>I like cats, potatoes, ice cream and bla bla bla get in touch and let’s <span class="u-textTruncate">talk more!</span></p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="Section">
-        <div class="Container">
-
-        <div class="List Type">
-          <div class="List-header">
-            <h2><span class="u-textTruncate">Selected clients</span> I’ve <span class="u-textTruncate">worked with</span></h2>
-          </div>
-          <ul class="List-list">
-            <li>1000 möjligheter</li>
-            <li>
-              <span class="Tooltip js-tooltip" data-title="Arkitektur- och Designcentrum">ArkDes</span>
-            </li>
-            <li>Arkitektur Förlag</li>
-            <li>Coop</li>
-            <li>Djurens Rätt</li>
-            <li>
-              <span class="Tooltip js-tooltip" data-title="The International Campaign to Abolish Nuclear Weapons">ICAN</span>
-            </li>
-            <li>Manscentrum</li>
-            <li>Nordiska Museet</li>
-            <li>Rikskriscentrum</li>
-            <li>
-              <span class="Tooltip js-tooltip" data-title="Svenska Sällskapet för Filosofisk Praxis">SSFP</span>
-            </li>
-            <li>Sveriges Författarförbund</li>
-            <li>Systembolaget</li>
-          </ul>
         </div>
       </div>
     </section>
@@ -324,14 +422,119 @@
     <footer class="Foot Section Section--last">
       <div class="Container">
         <ul class="Foot-list">
-          <li><a class="Foot-link Foot-link--lg ColorLink js-splitLetters" href="mailto:hello@vincentorback.se">hello@vincentorback.se</a></li>
-          <li><a class="Foot-link ColorLink js-splitLetters" href="https://github.com/vincentorback/">Github</a></li>
-          <li><a class="Foot-link ColorLink js-splitLetters" href="https://codepen.io/vincentorback/">Codepen</a></li>
-          <li><a class="Foot-link ColorLink js-splitLetters" href="https://www.are.na/vincent-orback">Are.na</a></li>
+          <li><a class="Foot-link Foot-link--lg ColorLink js-splitLetters js-touchHover" href="mailto:hello@vincentorback.se">hello@vincentorback.se</a></li>
+          <li><a class="Foot-link ColorLink js-splitLetters js-touchHover" href="https://github.com/vincentorback/">Github</a></li>
+          <li><a class="Foot-link ColorLink js-splitLetters js-touchHover" href="https://codepen.io/vincentorback/">Codepen</a></li>
+          <li><a class="Foot-link ColorLink js-splitLetters js-touchHover" href="https://www.are.na/vincent-orback">Are.na</a></li>
         </ul>
         <svg class="Foot-blob">
           <use xlink:href="#blob"></use>
         </svg>
+        <div class="Foot-menu">
+          <span>
+            <svg width="10px" height="10px"><use xlink:href="#up-arrow"></use></svg>
+            Need something else?
+          </span>
+          <div class="Foot-menuContainer">
+            <div class="Foot-menuList">
+              <ul>
+                <li>
+                  <span>Art directors / designers</span>
+                  <ul>
+                    <li><a href="https://linaforsgren.com/" target="_blank">Lina Forsgren</a></li>
+                    <li><a href="http://sakaria.se/" target="_blank">Minna Sakaria</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <span>Developers</span>
+                  <ul>
+                    <li><a href="http://sannafre.se/" target="_blank">Sanna Frese</a></li>
+                    <!--<li><a href="https://william-andersson.se/" target="_blank">William Andersson</a></li>-->
+                  </ul>
+                </li>
+                <li>
+                  <span>Photographers</span>
+                  <ul>
+                    <li><a href="https://cramerlinnea.wordpress.com/" target="_blank">Linnéa Cramer</a></li>
+                    <li><a href="http://arcini.com/" target="_blank">Nikolina Arcini</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <span>Digital agency</span>
+                  <ul>
+                    <li><a href="https://www.codeandconspire.com/" target="_blank">Code and Conspire</a></li>
+                    <li><a href="https://earthpeople.se/" target="_blank">Earth People</a></li>
+                    <li><a href="https://marsapril.se/" target="_blank">MarsApril</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <span>Design agency</span>
+                  <ul>
+                    <li><a href="https://spektradesign.se/" target="_blank">Spektra</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <span>Food for thougth</span>
+                  <ul>
+                    <li><a href="https://youtu.be/ORHB9c8e7ok" target="_blank" rel="nofollow">A different perspective</a></li>
+                    <li><a href="https://www.lokidesign.net/journal/2018/5/14/now-you-see-it-helvetica-modernism-and-the-status-quo-of-design" target="_blank">Modernism and the Status Quo of Design</a></li>
+                    <li><a href="https://youtu.be/xuCn8ux2gbs" target="_blank" rel="nofollow">History of the entire world</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://www.reddit.com/r/aww/" target="_blank" rel="nofollow">Something cute</a>
+                </li>
+                <li>
+                  <span>Things I like</span>
+                  <ul>
+                    <li>
+                      <a href="https://www.goodreads.com/review/list/52894693?shelf=favorites" target="_blank" rel="nofollow">Books</a>
+                    </li>
+                    <li>
+                      <a href="https://www.imdb.com/user/ur25104614/ratings?sort=your_rating,desc&ratingFilter=0&mode=detail&lastPosition=0" target="_blank" rel="nofollow">Movies</a>
+                    </li>
+                    <li>
+                      <a href="https://open.spotify.com/user/vincento1" target="_blank" rel="nofollow">Music</a>
+                    </li>
+                    <li>
+                      <span>Music videos</span>
+                      <ul>
+                        <li>
+                          <a href="https://youtu.be/YxVZbMgA3p0" target="_blank" rel="nofollow">The Blaze - Heaven</a>
+                        </li>
+                        <li>
+                          <a href="https://youtu.be/ZdJ6FO9HAcc" target="_blank" rel="nofollow">The Blaze - Queens</a>
+                        </li>
+                        <li>
+                          <a href="https://youtu.be/gB98kRDUTM4" target="_blank" rel="nofollow">Polo & Pan - Coeur Croisé</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <span>Short films</span>
+                      <ul>
+                        <li><a href="https://vimeo.com/286740784" target="_blank" rel="nofollow">Red Light</a></li>
+                        <li><a href="https://vimeo.com/174957219" target="_blank" rel="nofollow">Thunder Road</a></li>
+                        <li><a href="https://vimeo.com/282586471" target="_blank" rel="nofollow">The Climb</a></li>
+                        <li><a href="https://vimeo.com/265361498" target="_blank" rel="nofollow">Mixtape Marauders</a></li>
+                        <li><a href="https://youtu.be/xw0sQUdYAns" target="_blank" rel="nofollow">Bastille</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <span>TV shows</span>
+                      <ul>
+                        <li><a href="https://www.imdb.com/title/tt2699128/" target="_blank" rel="nofollow"><strong>👉 Leftovers</strong></a></li>
+                        <li><a href="https://www.imdb.com/title/tt2103085/" target="_blank" rel="nofollow">Top of the lake</a></li>
+                        <li><a href="https://www.imdb.com/title/tt3561180/" target="_blank" rel="nofollow">Trapped</a></li>
+                        <li><a href="https://www.imdb.com/title/tt4288182/" target="_blank" rel="nofollow">Atlanta</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
 
@@ -349,6 +552,12 @@
         <polyline points="4.24914551 0.686816406 6.91081543 3.34848633 4.24914551 6.01015625"></polyline>
       </g>
     </symbol>
+    <symbol id="up-arrow" viewBox="0 0 8 7">
+        <g stroke="currentColor" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(0.500000, 0.000000)">
+          <polyline points="8.8817842e-15 3.32443848 6.36987305 3.34848633"></polyline>
+          <polyline points="4.24914551 0.686816406 6.91081543 3.34848633 4.24914551 6.01015625"></polyline>
+        </g>
+      </symbol>
     <symbol id="fmf" viewBox="0 0 172 117">
       <path fill="#fff" d="M125.2202,88.0302 C125.2202,91.3002 128.2332,93.9482 131.9492,93.9482 C135.6672,93.9482 138.6812,91.3002 138.6812,88.0302 C138.6812,84.7592 135.6672,82.1072 131.9492,82.1072 C128.2332,82.1072 125.2202,84.7592 125.2202,88.0302"></path>
       <path fill="#fff" d="M143.0103,100.9911 C143.0103,103.4131 145.2433,105.3781 147.9963,105.3781 C150.7493,105.3781 152.9843,103.4131 152.9843,100.9911 C152.9843,98.5661 150.7493,96.6051 147.9963,96.6051 C145.2433,96.6051 143.0103,98.5661 143.0103,100.9911"></path>
@@ -411,6 +620,6 @@
         }
       ]
     }
-    </script>
+  </script>
 </body>
 </html>

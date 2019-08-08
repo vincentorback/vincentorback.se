@@ -25,6 +25,16 @@
   }
 }
 
+@media (min-width: 2400px) {
+  .Type {
+    font-size: 2rem;
+  }
+
+  .Type--lg {
+    font-size: 2.6rem;
+  }
+}
+
 .Type h1,
 .Type h2,
 .Type h3,
@@ -44,7 +54,7 @@
 }
 
 .Type h2 {
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 
 @media (min-width: 600px) {
@@ -53,7 +63,7 @@
   }
 
   .Type h2 {
-    font-size: 1.2em;
+    font-size: 1.3em;
   }
 }
 
@@ -63,7 +73,7 @@
   }
 
   .Type h2 {
-    font-size: 1.3em;
+    font-size: 1.4em;
   }
 }
 

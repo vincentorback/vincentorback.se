@@ -19,9 +19,8 @@
     "build:css": "postcss src/assets/css/style.css -o dist/assets/css/style.css",
     "build:html": "html-minifier --remove-comments --sort-attributes --sort-class-name --collapse-whitespace --remove-redundant-attributes --process-scripts 'application/ld+json' --minify-js true --output-dir dist --input-dir src --file-ext html",
     "build:webp": "imagemin --plugin=webp ./dist/assets/images/{*.jpg,*.png} --out-dir=./dist/assets/images",
-    "build": "rm -rf dist && npm-run-all build:light move:images move:fonts move:icons move:fonts",
-    "build:light": "npm-run-all build:html test:js test:css build:js build:css",
-    "build:deploy": "npm-run-all build compress compress:images build:webp",
+    "build:light": "npm-run-all test:js test:css build:html build:js build:css compress",
+    "build": "rm -rf dist && npm-run-all build:light move:images move:fonts move:icons move:fonts compress:images build:webp",
     "move:images": "copyfiles -u 2 -f src/assets/images/* src/assets/images/**/* dist/assets/images",
     "move:icons": "copyfiles -u 2 -f src/assets/icons/* dist",
     "move:fonts": "copyfiles -u 2 src/assets/fonts/* dist/assets",
@@ -37,7 +36,9 @@
     "compress:css": "brotli-cli dist/assets/css/style.css",
     "compress:html": "brotli-cli dist/*.html",
     "compress:images": "imageoptim dist/*",
-    "deploy": "copyfiles .htaccess sitemap.xml dist && bin/deploy"
+    "deploy": "copyfiles .htaccess sitemap.xml dist && bash bin/deploy",
+    "purge": "bash bin/purge.sh",
+    "netlify:build": "rm -rf dist && npm-run-all build:light move:images move:fonts move:icons move:fonts"
   },
   "config": {
     "port": "3000",
@@ -51,17 +52,19 @@
     "html-minifier": "^4.0.0",
     "imagemin-cli": "^5.0.0",
     "imagemin-webp": "^5.1.0",
-    "imageoptim-cli": "^2.3.7",
+    "imageoptim-cli": "^2.3.9",
     "inline-source-cli": "^1.2.0",
-    "local-web-server": "^3.0.4",
+    "local-web-server": "^3.0.7",
     "npm-run-all": "^4.1.5",
     "postcss-calc": "^7.0.1",
     "postcss-cli": "^6.1.3",
-    "postcss-custom-properties": "^9.0.1",
+    "postcss-color-function": "^4.1.0",
+    "postcss-color-mod-function": "^3.0.3",
     "postcss-csso": "^3.0.0",
+    "postcss-custom-properties": "^9.0.2",
     "postcss-import": "^12.0.1",
     "purgecss": "^1.3.0",
-    "standard": "^13.0.0",
+    "standard": "^13.1.0",
     "stylelint": "^10.1.0",
     "stylelint-config-standard": "^18.3.0",
     "uglify-es": "^3.3.10"
@@ -78,6 +81,8 @@
       "postcss-calc": {
         "preserve": false
       },
+      "postcss-color-function": {},
+      "postcss-color-mod-function": {},
       "postcss-csso": {}
     }
   },
@@ -86,9 +91,12 @@
     "rules": {
       "max-empty-lines": 2,
       "number-leading-zero": "never",
-      "unit-no-unknown": [true, {
-        "ignoreUnits": "x"
-      }]
+      "unit-no-unknown": [
+        true,
+        {
+          "ignoreUnits": "x"
+        }
+      ]
     }
   },
   "standard": {

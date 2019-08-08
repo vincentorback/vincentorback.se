@@ -7,13 +7,13 @@
 
 @media (min-width: 400px) {
   .Foot {
-    padding: calc(var(--spacing-lg) * 1.5) 0 var(--spacing-sm);
+    padding: calc(var(--spacing-lg) * 2) 0 var(--spacing-sm);
   }
 }
 
 @media (min-width: 900px) {
   .Foot {
-    padding: calc(var(--spacing-lg) * 1.5) 0 var(--spacing-sm);
+    padding: calc(var(--spacing-lg) * 1) 0 var(--spacing-sm);
   }
 }
 
@@ -68,7 +68,7 @@
   .Foot-blob {
     width: 1200px;
     height: 1200px;
-    transform: translate(-400px, -360px);
+    transform: translate(-400px, -320px);
   }
 }
 
@@ -82,125 +82,116 @@
   .Foot-blob {
     width: 1600px;
     height: 1600px;
-    transform: translate(-30%, -30%);
+    transform: translate(-33%, -27%);
   }
 }
 
 
-/*
-.Foot {
+.Foot-menu {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: var(--color-dark);
+  z-index: 2;
+}
+
+@media (max-width: 1000px) {
+  .Foot-menu {
+    display: none;
+  }
+}
+
+.Foot-menu > span {
+  display: block;
+  padding: 40px 0 0 40px;
+  font-size: 1.2rem;
+}
+
+@media (min-width: 1600px) {
+  .Foot-menu > span {
+    font-size: 1.8rem;
+  }
+}
+
+.Foot-menu svg {
+  display: inline-block;
+  vertical-align: top;
+  transform: rotateZ(-135deg);
+  width: .6em;
+  height: .6em;
+}
+
+.Foot-menuContainer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 200ms ease, opacity 200ms ease, visibility 0ms linear 200ms;
+}
+
+.Foot-menu:hover .Foot-menuContainer {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  transition: transform 200ms ease, opacity 200ms ease, visibility 0ms linear;
+}
+
+.Foot-menuList {
+  padding-bottom: 2em;
+  transform: translateX(-100px);
+}
+
+.Foot-menuList li {
   position: relative;
-  z-index: 0;
-  padding: calc(var(--spacing-lg) * 4) 0 var(--spacing-sm);
+  display: block;
+  background: #fff;
+  color: var(--color-dark);
+  border: 1px solid var(--color-dark);
+  border-width: 1px 1px 0;
+  cursor: default;
+  white-space: nowrap;
+}
+
+.Foot-menuList a {
+  display: block;
+}
+
+.Foot-menuList li > span,
+.Foot-menuList li > a {
+  display: block;
+  padding: .5em .8em;
+}
+
+.Foot-menuList li:last-child {
+  border-width: 1px;
+}
+
+.Foot-menuList li:hover {
+  background: var(--color-dark);
   color: #fff;
 }
 
-@media (min-width: 400px) {
-  .Foot {
-    padding: calc(var(--spacing-lg) * 2) 0 var(--spacing-sm);
-  }
-}
-
-@media (min-width: 900px) {
-  .Foot {
-    width: calc(100% - var(--spacing-sm));
-    padding: calc(var(--spacing-lg) * 1.5) 0 var(--spacing-sm);
-  }
-}
-
-
-.Foot-grid {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-gap: var(--spacing-sm);
-}
-
-@media (min-width: 1200px) {
-  .Foot-grid {
-    grid-auto-flow: column;
-    align-items: end;
-  }
-}
-
-.Foot-left {
-  font-size: 1.1rem;
-  line-height: var(--font-lineheight-lg);
-}
-
-@media (min-width: 900px) {
-  .Foot-left {
-    font-size: 1.3rem;
-  }
-}
-
-@media (min-width: 1800px) {
-  .Foot-left {
-    font-size: 1.6rem;
-  }
-}
-
-.Foot-link {
-  display: inline-block;
-}
-
-.Foot-link--lg {
-  padding-bottom: 1ch;
-  font-size: 1.2em;
-}
-
-@media (min-width: 900px) {
-  .Foot-link--lg {
-    font-size: 1.6em;
-  }
-}
-
-@media (max-width: 600px) {
-  .Foot-right {
-    padding-top: 20px;
-    font-size: .9em;
-  }
-}
-
-@media (min-width: 1200px) {
-  .Foot-right {
-    color: var(--color-text);
-    text-align: right;
-  }
-}
-
-
-.Foot-blob {
+.Foot-menuList li > ul {
   position: absolute;
-  top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0;
-  width: 700px;
-  height: 700px;
-  transform: translate(-220px, -200px);
+  bottom: .2em;
+  transform: translateX(-99%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 200ms ease, opacity 200ms ease, visibility 0ms linear 200ms;
 }
 
-@media (min-width: 900px) {
-  .Foot-blob {
-    width: 1200px;
-    height: 1200px;
-    transform: translate(-400px, -360px);
-  }
+.Foot-menuList li:hover > ul {
+  transform: translateX(-100%);
+  opacity: 1;
+  visibility: visible;
+  transition: transform 200ms ease, opacity 200ms ease, visibility 0ms linear;
 }
-
-@media (min-width: 1200px) {
-  .Foot-blob {
-    transform: translate(-380px, -340px);
-  }
-}
-
-@media (min-width: 1800px) {
-  .Foot-blob {
-    width: 1600px;
-    height: 1600px;
-    transform: translate(-30%, -30%);
-  }
-}
-*/

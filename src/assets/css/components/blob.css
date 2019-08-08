@@ -6,6 +6,14 @@
   mix-blend-mode: multiply;
 }
 
+.Blob--scroll path {
+  transform-origin: center;
+  transform: rotate(calc(360deg * var(--Blob-scroll))) translateZ(0);
+  transition: transform 3000ms ease;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
 .Blob--animate path {
   animation: blob 40000ms var(--ease-in-out-sine) infinite;
   transform-origin: 47% 47%;
@@ -33,6 +41,7 @@
   100% { transform: translateZ(0) rotate(359deg); }
 }
 
+
 /*
 @keyframes blob {
   0%,
@@ -48,5 +57,49 @@
   100% { transform: scale(1) rotate(0deg) skew(1.2deg, -1.1deg); }
   40% { transform: scale(1.05, .9) skew(-2deg, 2deg); }
   70% { transform: scale(.85, 1.05) rotate(15deg) skew(-1.5deg, 2deg); }
+}
+*/
+
+
+/*
+
+.Test {
+  display: block;
+}
+
+.Test div {
+  position: absolute;
+  margin: auto;
+  border-radius: 48% 49% 50% 47%;
+  mix-blend-mode: multiply;
+  animation: test 40000ms var(--ease-in-out-sine) infinite;
+  transform-origin: 47% 47%;
+  backface-visibility: hidden;
+  perspective: 1000px;
+  background-color: var(--color-yellow);
+  width: 100vw;
+  height: 100vw;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .Test--animate div {
+    animation: none;
+  }
+}
+
+.Test div:nth-child(2) {
+  background-color: var(--color-pink);
+  animation-delay: -16000ms;
+  animation-direction: reverse;
+}
+
+.Test div:nth-child(3) {
+  background-color: var(--color-blue);
+  animation-delay: -25000ms;
+}
+
+@keyframes test {
+  0% { transform: translateZ(0) rotate(0deg); }
+  100% { transform: translateZ(0) rotate(359deg); }
 }
 */

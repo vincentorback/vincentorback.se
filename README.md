@@ -11,10 +11,9 @@ My personal portfolio [vincentorback.se](https://vincentorback.se).
 
 ## Development
 - Build and serve at localhost:3000: `yarn start`
-- Build, minify and compress everything and move all assets to `dist/` folder: `yarn run build:deploy`
+- Build, minify, compress all assets: `yarn run build`
 
 ## TODO
-- Remove noindex, nofollow
 - Non-retina images
-- Webpack build (to import javascript modules)
-- Deploy script with Cloudflare cache purge
+- Improve blob animation performance
+- Write Foot-menu interactions with javascript to preserve open state

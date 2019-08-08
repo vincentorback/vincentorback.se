@@ -1,7 +1,7 @@
 .Container {
   position: relative;
   width: calc(100% - var(--spacing-lg));
-  max-width: 2000px;
+  max-width: 2400px;
   margin: 0 auto;
 }
 
@@ -9,8 +9,4 @@
   .Container {
     width: calc(100% - var(--spacing-sm));
   }
-}
-
-.Container--md {
-  max-width: 1000px;
 }

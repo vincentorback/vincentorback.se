@@ -3,23 +3,32 @@ html.no-js .Work {
   grid-gap: var(--spacing-lg);
 }
 
-@media (min-width: 900) {
+@media (min-width: 1400px) {
   html.no-js .Work {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr);
   }
 }
 
+@media (min-width: 1800px) {
+  html.no-js .Work {
+    grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr) minmax(300px, 1fr);
+  }
+}
 
 .Work-item {
   overflow: hidden;
 }
 
-.Work-itemInner {
-  max-width: 600px;
+@media (max-width: 1800px) {
+  .Work-itemInner {
+    max-width: 600px;
+  }
 }
 
-.Work-item:nth-child(2n) .Work-itemInner {
-  margin-left: auto;
+@media (min-width: 900px) and (max-width: 1800px) {
+  .Work-item:nth-child(2n) .Work-itemInner {
+    margin-left: auto;
+  }
 }
 
 .Work-imageWrap {
@@ -29,6 +38,10 @@ html.no-js .Work {
   overflow: hidden;
   background: rgba(255, 255, 255, .4);
   border-radius: 4px 4px 0 0;
+}
+
+.Work-item--systerochbror .Work-imageWrap {
+  padding-bottom: calc(649 / 1200 * 100%);
 }
 
 .Work-item--arkitektur .Work-imageWrap {
@@ -46,10 +59,12 @@ html.no-js .Work {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+
+  /* object-fit: cover; */
+
   display: block;
   opacity: 1;
-  transition: opacity 1600ms ease;
+  transition: opacity 300ms ease;
 }
 
 .Work-image[data-src]:not(.is-loaded) {

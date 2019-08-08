@@ -27,9 +27,14 @@
 /* Print */
 @import "base/print";
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 .Wrap {
   display: block;
-  height: auto;
   width: 100vw;
+  max-width: 100vw;
   overflow: hidden;
 }

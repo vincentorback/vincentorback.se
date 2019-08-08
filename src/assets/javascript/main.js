@@ -1,4 +1,4 @@
-/* global Macy, LazyLoad */
+/* global LazyLoad, localStorage, Macy */
 
 (function (window) {
   'use strict'
@@ -10,6 +10,12 @@
   function getViewportWidth () {
     return Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
   }
+
+  /*
+  function getViewportHeight () {
+    return Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+  }
+  */
 
   function randomBetween (from, to, floor = true) {
     var randomNumber = floor
@@ -32,280 +38,69 @@
 
   var vincent = {
     init: function () {
+      vincent.blob()
+
+      // vincent.foot()
+
       vincent.grid()
 
       vincent.lazyImages()
 
-      vincent.blob()
-
-      vincent.foot()
-
       vincent.splitLetters()
 
       vincent.tooltip()
-    },
 
-    tooltip: function () {
-      var tooltips = doc.querySelectorAll('.js-tooltip')
-
-      function isOutOfViewport (elem) {
-        var bounding = elem.getBoundingClientRect()
-        var out = {}
-
-        out.left = bounding.left < 0
-        out.right = bounding.right > getViewportWidth()
-
-        return out
-      }
-
-      function setTooltipPosition (tooltipContent) {
-        tooltipContent.classList.remove(rightClass, breakClass)
-
-        var isOut = isOutOfViewport(tooltipContent)
-
-        if (isOut.right) {
-          tooltipContent.classList.add(rightClass)
-        }
-
-        isOut = isOutOfViewport(tooltipContent)
-
-        if (isOut.left) {
-          tooltipContent.classList.remove(rightClass)
-          tooltipContent.classList.add(breakClass)
-        }
-
-        isOut = isOutOfViewport(tooltipContent)
-
-        if (isOut.left || isOut.right) {
-          // TODO: Disable tooltip
-        }
-      }
-
-      if (tooltips) {
-        var rightClass = 'Tooltip-content--right'
-        var breakClass = 'Tooltip-content--break'
-
-        Array.from(tooltips, function (tooltip, index) {
-          var tooltipContent = stringToElements(`<span class="Tooltip-content" id="tooltip-${index}" role="tooltip" hidden>${tooltip.getAttribute('data-title')}</span>`)
-
-          tooltip.appendChild(tooltipContent)
-
-          tooltip.setAttribute('aria-describedby', `tooltip-${index}`)
-          tooltip.setAttribute('tabindex', '0')
-          tooltip.setAttribute('role', 'tooltip')
-          tooltip.removeAttribute('data-title')
-
-          function showTooltip () {
-            tooltipContent.hidden = false
-
-            setTooltipPosition(tooltipContent)
-          }
-
-          function hideTooltip () {
-            tooltipContent.hidden = true
-          }
-
-          tooltip.addEventListener('mouseover', showTooltip)
-          tooltip.addEventListener('mouseout', hideTooltip)
-          tooltip.addEventListener('focus', showTooltip)
-          tooltip.addEventListener('blur', hideTooltip)
-        })
-      }
-    },
-
-    lazyImages: function () {
-      return new LazyLoad({
-        elements_selector: 'img[loading=lazy]',
-        class_loaded: 'is-loaded',
-        use_native: true
-      })
-    },
-
-    grid: function () {
-      var gridEl = doc.querySelector('.js-grid')
-
-      if (!gridEl) {
-        return
-      }
-
-      var viewportWidth = getViewportWidth()
-      var breakAt = {
-        1800: {
-          margin: {
-            x: '5vw',
-            y: viewportWidth * 0.05
-          },
-          columns: 2
-        },
-        900: {
-          margin: {
-            x: '2.5vw',
-            y: viewportWidth * 0.025
-          },
-          columns: 2
-        },
-        600: {
-          margin: {
-            x: '10vw',
-            y: 55
-          },
-          columns: 1
-        }
-      }
-
-      var grid = Macy({
-        container: gridEl,
-        trueOrder: true,
-        waitForImages: true,
-        columns: 3,
-        margin: {
-          x: '5vw',
-          y: viewportWidth * 0.05
-        },
-        breakAt: breakAt
-      })
-
-      grid.runOnImageLoad(function () {
-        grid.recalculate(true)
-      }, true)
-
-      window.addEventListener('resize', function () {
-        viewportWidth = getViewportWidth()
-
-        grid.recalculate(true)
-      }, false)
-    },
-
-    foot: function () {
-      var greetingContainer = document.querySelector('.js-greeting')
-
-      if (greetingContainer) {
-        /*
-        var things = {
-          agency: {
-            title: 'a digital agency',
-            items: [
-              'https://www.codeandconspire.com/'
-            ]
-          },
-          designer: {
-            title: 'a designer',
-            items: []
-          },
-          developer: {
-            title: 'some other developer',
-            items: [
-              'https://william-andersson.se/'
-            ]
-          },
-          music: {
-            title: 'a good song',
-            items: []
-          },
-          video: {
-            title: 'a music video',
-            items: [
-              'https://youtu.be/YxVZbMgA3p0',
-              'https://youtu.be/gB98kRDUTM4',
-              'https://youtu.be/UCwD5f1APTY'
-            ]
-          },
-          film: {
-            title: 'a movie suggestion',
-            items: []
-          },
-          faith: {
-            title: 'faith in humanity',
-            items: []
-          }
-        }
-        */
-
-        var now = new Date()
-        var nowHour = now.getHours()
-        var niceDayGreeting = `Have a nice ${[
-          'Sunday',
-          'Monday',
-          'Tuesday',
-          'Wednesday',
-          'Thursday',
-          'Weekend',
-          'Weekend'
-        ][now.getDay()]}!`
-
-        var greetings = [
-          {
-            text: 'random link to thing I like &rarr;', // 'eyes like lotus leaves, no not even like',
-            url: 'https://youtu.be/Avek46dJWpU'
-          }, {
-            text: 'random link to thing I like &rarr;', // 'monastery monochrome <br>boom balloon machine and oh',
-            url: 'https://youtu.be/G5OV1JPqlNQ'
-          }, {
-            text: 'random link to thing I like &rarr;', // 'c’est comme si on s’aimait',
-            url: 'https://youtu.be/W2PRAjimRWM'
-          },
-          {
-            url: 'https://youtu.be/YxVZbMgA3p0'
-          },
-          {
-            url: 'https://youtu.be/gB98kRDUTM4'
-          },
-          {
-            url: 'https://vimeo.com/286740784'
-          },
-          {
-            url: 'https://vimeo.com/174957219'
-          },
-          {
-            url: 'https://vimeo.com/265361498'
-          },
-          {
-            url: 'https://youtu.be/ORHB9c8e7ok'
-          },
-          {
-            url: 'https://youtu.be/xw0sQUdYAns'
-          }
-          /*
-          {
-            text: 'It doesn’t matter, does it?',
-            url: 'https://youtu.be/UCwD5f1APTY'
-          }
-          */
-        ]
-
-        var greeting = ((nowHour < 16) && (nowHour > 6)) ? {
-          text: niceDayGreeting
-        } : greetings[randomBetween(0, greetings.length - 1)]
-
-        greetingContainer.innerHTML = `<p>
-          ${greeting.url ? `<a class="ColorLink js-splitLetters" href="${greeting.url}" target="_blank">${greeting.text || 'random link to thing I like &rarr;'}</a>` : greeting.text}
-        </p>`
-
-        // TODO: LocalStore generated to give new thing each time?
-      }
-    },
-
-    splitLetters: function () {
-      Array.from(document.querySelectorAll('.js-splitLetters'), function (cycleEl) {
-        var letters = cycleEl.innerText.split('')
-        cycleEl.innerHTML = ''
-        letters.forEach(function (letter) {
-          cycleEl.innerHTML += `<span>${letter}</span>`
-        })
-      })
+      vincent.touchHover()
     },
 
     blob: function () {
       var blob = doc.querySelector('.js-blob')
 
-      if (!blob) return
-
-      if (
-        (navigator.hardwareConcurrency && navigator.hardwareConcurrency > 8) ||
-        (new URLSearchParams(window.location.search).get('animate') === 'true')
-      ) {
+      if (blob && new URLSearchParams(window.location.search).get('animate') === 'true') {
         blob.classList.add('Blob--animate')
       }
+      /*
+      var introBlob = doc.querySelector('.js-introBlob')
+      var inview = true
+      var offset, height
+
+      else if (!prefersReducedMotion) {
+        blob.classList.add('Blob--scroll')
+
+        function onScroll () {
+          window.requestAnimationFrame(function () {
+            var scrollY = window.pageYOffset
+
+            console.log(inview, offset, height, scrollY)
+
+            if (scrollY > offset + height) {
+              if (inview) blob.style.setProperty('--Blob-scroll', 1)
+              return
+            }
+            if (scrollY + getViewportHeight() < offset) {
+              if (inview) blob.style.setProperty('--Blob-scroll', 0)
+              return
+            }
+            var ratio = 1 - ((offset + height - scrollY) / (getViewportHeight() + height))
+            blob.style.setProperty('--Blob-scroll', ratio.toFixed(3))
+          })
+        }
+
+        function onResize () {
+          var blobBox = introBlob.getBBox()
+          height = blobBox.height
+          offset = blobBox.y
+          var parent = introBlob
+          while ((parent = parent.offsetParent)) offset += (parent.offsetTop || parent.getBBox().y)
+        }
+
+        onResize()
+        onScroll()
+
+        window.addEventListener('scroll', onScroll, false)
+        window.addEventListener('resize', onResize, false)
+      }
+      */
 
       /*
       var blobs = [
@@ -409,6 +204,290 @@
         return closed ? path + 'z' : path
       }
       */
+    },
+
+    foot: function () {
+      var greetingContainer = document.querySelector('.js-greeting')
+
+      if (greetingContainer) {
+        /*
+        var things = {
+          agency: {
+            title: 'a digital agency',
+            items: [
+              'https://www.codeandconspire.com/',
+              'https://earthpeople.se/'
+            ]
+          },
+          designer: {
+            title: 'a designer',
+            items: [
+              'https://linaforsgren.com/',
+              'http://www.linneacarlson.se/'
+            ]
+          },
+          developer: {
+            title: 'some other developer',
+            items: [
+              'https://william-andersson.se/'
+            ]
+          },
+          music: {
+            title: 'a good song',
+            items: []
+          },
+          video: {
+            title: 'a music video',
+            items: [
+              'https://youtu.be/YxVZbMgA3p0',
+              'https://youtu.be/gB98kRDUTM4',
+              'https://youtu.be/UCwD5f1APTY'
+            ]
+          },
+          film: {
+            title: 'a movie suggestion',
+            items: [
+              'https://www.imdb.com/user/ur25104614/ratings?sort=your_rating'
+            ]
+          },
+          faith: {
+            title: 'faith in humanity',
+            items: []
+          }
+        }
+        */
+
+        var now = new Date()
+        var nowHour = now.getHours()
+        var greeting = {}
+
+        if (((nowHour > 18) || (nowHour < 6))) {
+          var greetings = [
+            {
+              url: 'https://youtu.be/Avek46dJWpU'
+            }, {
+              url: 'https://youtu.be/G5OV1JPqlNQ'
+            }, {
+              url: 'https://youtu.be/W2PRAjimRWM'
+            }, {
+              url: 'https://youtu.be/UCwD5f1APTY'
+            }, {
+              url: 'https://youtu.be/YxVZbMgA3p0'
+            }, {
+              url: 'https://youtu.be/gB98kRDUTM4'
+            }, {
+              url: 'https://vimeo.com/286740784'
+            }, {
+              url: 'https://vimeo.com/174957219'
+            }, {
+              url: 'https://vimeo.com/265361498'
+            }, {
+              url: 'https://youtu.be/ORHB9c8e7ok'
+            }, {
+              url: 'https://youtu.be/xw0sQUdYAns'
+            }
+          ]
+
+          var viewedItems = localStorage.getItem('greeting') || []
+          if (viewedItems && viewedItems.length) {
+            viewedItems = JSON.parse(viewedItems)
+            greetings = greetings.filter((greeting, index) => {
+              return viewedItems.some(item => item === index) === false
+            })
+          }
+
+          var greetingID = randomBetween(0, greetings.length - 1)
+          greeting = greetings[greetingID]
+
+          if (viewedItems) {
+            viewedItems.push(greetingID)
+          } else {
+            viewedItems = [greetingID]
+          }
+
+          localStorage.setItem('greeting', JSON.stringify(viewedItems))
+        } else {
+          greeting.text = `Have a nice ${[
+            'Sunday',
+            'Monday',
+            'Tuesday',
+            'Wednesday',
+            'Thursday',
+            'Weekend',
+            'Weekend'
+          ][now.getDay()]}!`
+        }
+
+        greetingContainer.innerHTML = `<p>
+          ${greeting.url
+    ? `<a class="ColorLink js-splitLetters" href="${greeting.url}" target="_blank">${greeting.text || 'random thing I like'}</a><svg width="8px" height="7px"><use xlink:href="#up-arrow"></use></svg>`
+    : greeting.text
+  }
+        </p>`
+
+        // TODO: LocalStore generated to give new thing each time?
+      }
+    },
+
+    grid: function () {
+      var gridEl = doc.querySelector('.js-grid')
+      var viewportWidth = getViewportWidth()
+      var breakAt = {
+        600: {
+          margin: {
+            x: '10vw',
+            y: 55
+          },
+          columns: 1
+        },
+        900: {
+          margin: {
+            x: '2.5vw',
+            y: viewportWidth * 0.025
+          },
+          columns: 2
+        },
+        1800: {
+          margin: {
+            x: '5vw',
+            y: viewportWidth * 0.05
+          },
+          columns: 2
+        }
+      }
+
+      var grid = Macy({
+        container: gridEl,
+        trueOrder: true,
+        waitForImages: true,
+        columns: 3,
+        margin: {
+          x: '5vw',
+          y: viewportWidth * 0.05
+        },
+        breakAt: breakAt
+      })
+
+      grid.runOnImageLoad(function () {
+        grid.recalculate(true, true)
+      }, true)
+
+      window.addEventListener('resize', function () {
+        viewportWidth = getViewportWidth()
+
+        window.setTimeout(function () {
+          grid.recalculate(true)
+        }, 100)
+      }, false)
+
+      grid.on(grid.constants.EVENT_RECALCULATED, function (ctx) {
+        window.setTimeout(function () {
+          var yMargin = ctx.instance.options.margin.y
+
+          Object.keys(ctx.instance.options.breakAt)
+            .sort((a, b) => parseFloat(a) - parseFloat(b))
+            .forEach(breakpoint => {
+              if (viewportWidth > parseFloat(breakpoint)) {
+                yMargin = ctx.instance.options.breakAt[breakpoint].margin.y
+              }
+            })
+
+          gridEl.style.marginBottom = `${yMargin * -1}px`
+        }, 600)
+      })
+    },
+
+    lazyImages: function () {
+      return new LazyLoad({
+        elements_selector: 'img[loading=lazy]',
+        class_loaded: 'is-loaded',
+        use_native: true
+      })
+    },
+
+    splitLetters: function () {
+      Array.from(document.querySelectorAll('.js-splitLetters'), function (cycleEl) {
+        var letters = cycleEl.innerText.split('')
+        cycleEl.innerHTML = ''
+        letters.forEach(function (letter) {
+          cycleEl.innerHTML += `<span>${letter}</span>`
+        })
+      })
+    },
+
+    tooltip: function () {
+      var tooltips = doc.querySelectorAll('.js-tooltip')
+
+      function isOutOfViewport (elem) {
+        var bounding = elem.getBoundingClientRect()
+        var out = {}
+
+        out.left = bounding.left < 0
+        out.right = bounding.right > getViewportWidth()
+
+        return out
+      }
+
+      function setTooltipPosition (tooltipContent) {
+        tooltipContent.classList.remove(rightClass, breakClass)
+
+        var isOut = isOutOfViewport(tooltipContent)
+
+        if (isOut.right) {
+          tooltipContent.classList.add(rightClass)
+        }
+
+        isOut = isOutOfViewport(tooltipContent)
+
+        if (isOut.left) {
+          tooltipContent.classList.remove(rightClass)
+          tooltipContent.classList.add(breakClass)
+        }
+
+        isOut = isOutOfViewport(tooltipContent)
+
+        if (isOut.left || isOut.right) {
+          // TODO: Disable tooltip
+        }
+      }
+
+      if (tooltips) {
+        var activeClass = 'is-active'
+        var rightClass = 'Tooltip-content--right'
+        var breakClass = 'Tooltip-content--break'
+
+        Array.from(tooltips, function (tooltip, index) {
+          var tooltipContent = stringToElements(`<span class="Tooltip-content" id="tooltip-${index}" role="tooltip">${tooltip.getAttribute('data-title')}</span>`)
+
+          tooltip.appendChild(tooltipContent)
+
+          tooltip.setAttribute('aria-describedby', `tooltip-${index}`)
+          tooltip.setAttribute('tabindex', '0')
+          tooltip.setAttribute('role', 'tooltip')
+          tooltip.removeAttribute('data-title')
+
+          function showTooltip () {
+            tooltipContent.classList.add(activeClass)
+
+            setTooltipPosition(tooltipContent)
+          }
+
+          function hideTooltip () {
+            tooltipContent.classList.remove(activeClass)
+          }
+
+          tooltip.addEventListener('mouseover', showTooltip)
+          tooltip.addEventListener('mouseout', hideTooltip)
+          tooltip.addEventListener('focus', showTooltip)
+          tooltip.addEventListener('blur', hideTooltip)
+        })
+      }
+    },
+
+    touchHover: function () {
+      doc.querySelectorAll('.js-touchHover').forEach(linkEl => {
+        linkEl.setAttribute('onclick', '')
+      })
     }
   }
 

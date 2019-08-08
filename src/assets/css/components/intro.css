@@ -3,7 +3,8 @@
 }
 
 
-.Intro-text {
+.Intro-text,
+.Intro-contact {
   position: relative;
   z-index: 1;
   max-width: 550px;
@@ -18,6 +19,12 @@
 @media (min-width: 1600px) {
   .Intro-text {
     max-width: 1000px;
+  }
+}
+
+@media (min-width: 2400px) {
+  .Intro-text {
+    max-width: 1400px;
   }
 }
 
@@ -47,6 +54,12 @@
   }
 }
 
+@media (min-width: 1600px) {
+  .Intro-contact {
+    font-size: 2.5rem;
+  }
+}
+
 .Intro-contactLink {
   display: inline-block;
 }
@@ -60,7 +73,7 @@
 
 .Intro-contactLinkText {
   user-select: all;
-  transition: opacity 400ms ease;
+  transition: opacity 200ms ease;
 }
 
 .Intro-contactLinkSymbol {
@@ -68,10 +81,6 @@
   height: 1ch;
   margin-right: 4px;
   transform: translateY(2px);
-}
-
-.Intro-contactLink:hover .Intro-contactLinkText {
-  opacity: .6;
 }
 
 
