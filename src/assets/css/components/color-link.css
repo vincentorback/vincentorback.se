@@ -25,11 +25,11 @@
   margin: auto;
   z-index: 0;
   display: block;
-  width: calc(100% + .8em);
+  width: calc(100% + .6em);
   height: 1.5em;
   background: #0e004e;
   border-radius: 4px;
-  transform: translateX(-.35em);
+  transform: translateX(-.3em);
   opacity: 0;
   transition: opacity 300ms ease;
 }

@@ -1,7 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="en" itemscope itemtype="http://schema.org/WebSite">
 <head prefix="og: http://ogp.me/ns#">
-  <meta name="robots" content="noindex, nofollow">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
@@ -10,14 +9,14 @@
   <title>Vincent Orback - Front-end developer and designer</title>
   <meta name="description" content="A freelancing web developer and web designer living in Gotenburg, Sweden. Welcome to my portfolio!">
   <meta name="keywords" content="front-end developer, web developer, web designer, webbutvecklare, webbdesigner">
-  <meta itemprop="image" content="https://vincentorback.se/assets/images/share.png">
+  <meta itemprop="image" content="https://vincentorback.se/assets/images/share.jpg">
 
   <meta property="og:title" content="Vincent Orback">
   <meta property="og:description" content="Freelancing front-end developer in Gotenburg, Sweden">
   <meta property="og:url" content="https://vincentorback.se">
   <meta property="og:site_name" content="Vincent Orback">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://vincentorback.se/assets/images/share.png">
+  <meta property="og:image" content="https://vincentorback.se/assets/images/share.jpg">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1280">
   <meta property="og:image:height" content="630">
@@ -30,6 +29,14 @@
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0e004e">
   <meta name="msapplication-TileColor" content="#ffdfcb">
   <meta name="theme-color" content="#ffdfcb">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-31135100-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-31135100-1');
+  </script>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -78,12 +85,20 @@
               <div class="Work-imageWrap">
                 <picture>
                   <source data-srcset="/assets/images/arkitektur.webp" type="image/webp">
-                  <img class="Work-image" loading="lazy" data-src="/assets/images/arkitektur.jpg" alt="Arkitektur Förlag">
+                  <img
+                    class="Work-image"
+                    loading="lazy"
+                    data-src="/assets/images/arkitektur.jpg"
+                    alt="Arkitektur Förlag">
                 </picture>
                 <noscript>
                   <picture>
                     <source srcset="/assets/images/arkitektur.webp" type="image/webp">
-                    <img class="Work-image" loading="lazy" src="/assets/images/arkitektur.jpg" alt="Arkitektur Förlag">
+                    <img
+                      class="Work-image"
+                      loading="lazy"
+                      src="/assets/images/arkitektur.jpg"
+                      alt="Arkitektur Förlag">
                   </picture>
                 </noscript>
               </div>
@@ -222,28 +237,31 @@
             <div class="Work-itemInner">
               <div class="Work-imageWrap">
                 <picture>
-                  <source data-srcset="/assets/images/systerochbror2.webp" type="image/webp">
-                  <img class="Work-image" loading="lazy" data-src="/assets/images/systerochbror2.jpg" alt="">
+                  <source data-srcset="/assets/images/systerochbror.webp" type="image/webp">
+                  <img class="Work-image" loading="lazy" data-src="/assets/images/systerochbror.jpg" alt="">
                 </picture>
                 <noscript>
                   <picture>
-                    <source srcset="/assets/images/systerochbror2.webp" type="image/webp">
-                    <img class="Work-image" loading="lazy" src="/assets/images/systerochbror2.jpg" alt="">
+                    <source srcset="/assets/images/systerochbror.webp" type="image/webp">
+                    <img class="Work-image" loading="lazy" src="/assets/images/systerochbror.jpg" alt="">
                   </picture>
                 </noscript>
               </div>
               <div class="Work-info">
                 <div class="Work-infoText Type" itemprop="about">
-                  <p><strong itemprop="name">Syster & Bror</strong>, is a work in progress.</p>
-                  <p>Built using Choo and Bankai using Prismic as a headless CMS.</p>
+                  <p><strong itemprop="name">Syster & Bror</strong></p>
+                  <p>A work in progress, see you soon!</p>
+                  <!--<p>Built using Choo and Bankai using Prismic as a headless CMS.</p>-->
                 </div>
                 <p class="Work-role">Developer, designer</p>
-                <a class="Work-infoLink" href="https://film.vincentorback.se/">
+                <!--
+                <a class="Work-infoLink" href="https://systerochbror.se/">
                   <svg width="8px" height="7px">
                     <use xlink:href="#arrow"></use>
                   </svg>
                   <span>https://systerochbror.se</span>
                 </a>
+                -->
               </div>
             </div>
             <meta itemprop="author creator" itemscope itemtype="http://schema.org/Organization" itemref="organization">
@@ -288,6 +306,7 @@
       </div>
     </section>
 
+    <!--
     <section class="Section">
       <div class="Container Container--md">
         <div class="List Type">
@@ -296,67 +315,52 @@
           </div>
           <ul class="List-list">
             <li>
-              <!--1000 möjligheter-->
-              <img class="List-image" src="/assets/images/1000-mojligheter.png" alt="1000 Möjligheter">
+              <img class="List-image" loading="lazy" data-src="/assets/images/1000-mojligheter.png" alt="1000 Möjligheter">
             </li>
             <li>
-              <!--<span class="Tooltip js-tooltip" data-title="Arkitektur- och Designcentrum">ArkDes</span>-->
-              <img class="List-image" src="/assets/images/arkdes-logo.svg" alt="Arkdes">
+              <img class="List-image" loading="lazy" data-src="/assets/images/arkdes-logo.svg" alt="Arkdes">
             </li>
             <li>
-              <!--Arkitektur Förlag-->
-              <img class="List-image" src="/assets/images/arkitektur-logo.svg" alt="Arkitektur">
+              <img class="List-image" loading="lazy" data-src="/assets/images/arkitektur-logo.svg" alt="Arkitektur">
             </li>
             <li>
-              <!--Coop-->
-              <img class="List-image" src="/assets/images/coop-logo.svg" alt="Coop">
+              <img class="List-image" loading="lazy" data-src="/assets/images/coop-logo.svg" alt="Coop">
             </li>
             <li>
-              <!--Djurens Rätt-->
-              <img class="List-image" src="/assets/images/djurens-ratt-logo.svg" alt="Djurens Rätt">
+              <img class="List-image" loading="lazy" data-src="/assets/images/djurens-ratt-logo.svg" alt="Djurens Rätt">
             </li>
             <li>
-              <!--<span class="Tooltip js-tooltip" data-title="The International Campaign to Abolish Nuclear Weapons">ICAN</span>-->
-              <img class="List-image" src="/assets/images/ican-logo.svg" alt="The International Campaign to Abolish Nuclear Weapons">
+              <img class="List-image" loading="lazy" data-src="/assets/images/ican-logo.svg" alt="The International Campaign to Abolish Nuclear Weapons">
             </li>
             <li>
-              <img class="List-image List-image--sm" src="/assets/images/manscentrum-logo.svg" alt="Manscentrum">
-              <!--Manscentrum-->
+              <img class="List-image List-image--sm" loading="lazy" data-src="/assets/images/manscentrum-logo.svg" alt="Manscentrum">
             </li>
             <li>
-              <img class="List-image List-image--md" src="/assets/images/nordiska-museet-logo.svg" alt="Nordiska Museet">
-              <!--Nordiska Museet-->
+              <img class="List-image List-image--md" loading="lazy" data-src="/assets/images/nordiska-museet-logo.svg" alt="Nordiska Museet">
             </li>
-            <!--
             <li>
-              <img class="List-image List-image--md" src="/assets/images/office-recycling-logo.svg" alt="Office Recycling">
+              <img class="List-image List-image--md" loading="lazy" data-src="/assets/images/office-recycling-logo.svg" alt="Office Recycling">
             </li>
-            -->
             <li>
-              <img class="List-image List-image--md" src="/assets/images/rikskriscentrum-logo.svg" alt="Rikskriscentrum">
-              <!--Rikskriscentrum-->
+              <img class="List-image List-image--md" loading="lazy" data-src="/assets/images/rikskriscentrum-logo.svg" alt="Rikskriscentrum">
             </li>
-            <!--
             <li>
               <span class="Tooltip js-tooltip" data-title="The Swedish Archive for Queer Moving Images">SAQMI</span>
             </li>
-            -->
             <li>
-              <!--<span class="Tooltip js-tooltip" data-title="Svenska Sällskapet för Filosofisk Praxis">SSFP</span>-->
-              <img class="List-image" src="/assets/images/ssfp-logo.svg" alt="Svenska Sällskapet för Filosofisk Praxis" title="Svenska Sällskapet för Filosofisk Praxis">
+              <img class="List-image" loading="lazy" data-src="/assets/images/ssfp-logo.svg" alt="Svenska Sällskapet för Filosofisk Praxis" title="Svenska Sällskapet för Filosofisk Praxis">
             </li>
             <li>
-              <!--Sveriges Författarförbund</li>-->
-              <img class="List-image List-image--lg" src="/assets/images/forfattarforbundet-logo.png" alt="Författarförbundet">
+              <img class="List-image List-image--lg" loading="lazy" data-src="/assets/images/forfattarforbundet-logo.png" alt="Författarförbundet">
             </li>
             <li>
-              <!--Systembolaget-->
-              <img class="List-image" src="/assets/images/systembolaget-logo.svg" alt="Systembolaget">
+              <img class="List-image" loading="lazy" data-src="/assets/images/systembolaget-logo.svg" alt="Systembolaget">
             </li>
           </ul>
         </div>
       </div>
     </section>
+    -->
 
     <!--
     <section class="Section" id="new" aria-label="About me">
@@ -402,18 +406,17 @@
             </div>
           </div>
           <div class="About-text Type Type--lg">
-            <!--<h2>Let’s build something together!</h2>-->
             <h2>A bit about me</h2>
             <!--<p>I work as a front-end developer and web designer creating thoughtful experiences with the combination of design <span class="u-textTruncate">and technology.</span></p>-->
-            <p><span class="u-textTruncate">I like</span> building solid web projects. Things that last, things that solve problems that need solving. <span class="u-textTruncate">The tools</span> I use are a mix of different front-end technologies like React, Node, WordPress etc.</p>
+            <p><span class="u-textTruncate">I like</span> building solid web projects. Things that last, things that solve problems that need solving. <span class="u-textTruncate">The tools</span> I use are a mix of different front-end technologies like React, Node, WordPress, etc.</p>
             <p>I take on projects on my own, designing and building everything from the ground up, as well as collaborate with other creatives, like developers, designers, copywriters, and photographers.</p>
             <p>Before I started freelancing I worked as a web developer at <a class="ColorLink ColorLink--dark js-splitLetters js-touchHover" href="https://earthpeople.se/">Earth People</a> working mostly with WordPress and React. Before that, I worked as a front-end developer at <a class="ColorLink ColorLink--dark js-splitLetters js-touchHover" href="https://daytona.se/" rel="nofollow">Daytona</a> where I developed <span class="u-textTruncate">interface prototypes.</span></p>
             <!--
             <p>I believe that the products we build should be made accessible by default. Everyone should be able to use the internet, not just the ones holding an 800$ phone.</p>
             <p>I believe that the work we do shouldn’t keep the users attention for more than needed. The users time is valuable and not ours to use for profit.</p>
-            <p>I dream of starting a potato restaurant some day :)</p>
-            -->
             <p>I like cats, potatoes, ice cream and bla bla bla get in touch and let’s <span class="u-textTruncate">talk more!</span></p>
+            -->
+            <p>Get in touch and let’s <span class="u-textTruncate">talk more!</span></p>
           </div>
         </div>
       </div>
@@ -430,8 +433,8 @@
         <svg class="Foot-blob">
           <use xlink:href="#blob"></use>
         </svg>
-        <div class="Foot-menu">
-          <span>
+        <div class="Foot-menu js-contextMenu">
+          <span class="js-contextMenuToggle">
             <svg width="10px" height="10px"><use xlink:href="#up-arrow"></use></svg>
             Need something else?
           </span>
@@ -440,53 +443,57 @@
               <ul>
                 <li>
                   <span>Art directors / designers</span>
-                  <ul>
+                  <ul class="js-contextMenuSub">
                     <li><a href="https://linaforsgren.com/" target="_blank">Lina Forsgren</a></li>
                     <li><a href="http://sakaria.se/" target="_blank">Minna Sakaria</a></li>
                   </ul>
                 </li>
                 <li>
                   <span>Developers</span>
-                  <ul>
+                  <ul class="js-contextMenuSub">
                     <li><a href="http://sannafre.se/" target="_blank">Sanna Frese</a></li>
                     <!--<li><a href="https://william-andersson.se/" target="_blank">William Andersson</a></li>-->
                   </ul>
                 </li>
                 <li>
-                  <span>Photographers</span>
-                  <ul>
-                    <li><a href="https://cramerlinnea.wordpress.com/" target="_blank">Linnéa Cramer</a></li>
-                    <li><a href="http://arcini.com/" target="_blank">Nikolina Arcini</a></li>
-                  </ul>
-                </li>
-                <li>
                   <span>Digital agency</span>
-                  <ul>
+                  <ul class="js-contextMenuSub">
                     <li><a href="https://www.codeandconspire.com/" target="_blank">Code and Conspire</a></li>
                     <li><a href="https://earthpeople.se/" target="_blank">Earth People</a></li>
                     <li><a href="https://marsapril.se/" target="_blank">MarsApril</a></li>
                   </ul>
                 </li>
                 <li>
+                  <span>Photographers</span>
+                  <ul class="js-contextMenuSub">
+                    <li><a href="https://cramerlinnea.wordpress.com/" target="_blank">Linnéa Cramer</a></li>
+                    <li><a href="http://arcini.com/" target="_blank">Nikolina Arcini</a></li>
+                  </ul>
+                </li>
+                <li>
                   <span>Design agency</span>
-                  <ul>
+                  <ul class="js-contextMenuSub">
                     <li><a href="https://spektradesign.se/" target="_blank">Spektra</a></li>
                   </ul>
                 </li>
                 <li>
                   <span>Food for thougth</span>
-                  <ul>
+                  <ul class="js-contextMenuSub">
                     <li><a href="https://youtu.be/ORHB9c8e7ok" target="_blank" rel="nofollow">A different perspective</a></li>
                     <li><a href="https://www.lokidesign.net/journal/2018/5/14/now-you-see-it-helvetica-modernism-and-the-status-quo-of-design" target="_blank">Modernism and the Status Quo of Design</a></li>
                     <li><a href="https://youtu.be/xuCn8ux2gbs" target="_blank" rel="nofollow">History of the entire world</a></li>
+                    <li><a href="https://youtu.be/BdHK_r9RXTc" target="_blank" rel="nofollow">An infinite plane which has the illusion <br>of leading yourself back to a point of origin</a></li>
                   </ul>
                 </li>
                 <li>
                   <a href="https://www.reddit.com/r/aww/" target="_blank" rel="nofollow">Something cute</a>
                 </li>
                 <li>
+                  <a href="http://astronaut.io/" target="_blank">Something unseen</a>
+                </li>
+                <li>
                   <span>Things I like</span>
-                  <ul>
+                  <ul class="js-contextMenuSub">
                     <li>
                       <a href="https://www.goodreads.com/review/list/52894693?shelf=favorites" target="_blank" rel="nofollow">Books</a>
                     </li>
@@ -498,21 +505,30 @@
                     </li>
                     <li>
                       <span>Music videos</span>
-                      <ul>
-                        <li>
-                          <a href="https://youtu.be/YxVZbMgA3p0" target="_blank" rel="nofollow">The Blaze - Heaven</a>
-                        </li>
+                      <ul class="js-contextMenuSub">
                         <li>
                           <a href="https://youtu.be/ZdJ6FO9HAcc" target="_blank" rel="nofollow">The Blaze - Queens</a>
                         </li>
                         <li>
+                          <a href="https://youtu.be/YxVZbMgA3p0" target="_blank" rel="nofollow">The Blaze - Heaven</a>
+                        </li>
+                        <li>
                           <a href="https://youtu.be/gB98kRDUTM4" target="_blank" rel="nofollow">Polo & Pan - Coeur Croisé</a>
+                        </li>
+                        <li>
+                          <a href="https://youtu.be/W2PRAjimRWM" target="_blank" rel="nofollow">Christine and the Queens - Comme si</a>
+                        </li>
+                        <li>
+                          <a href="https://youtu.be/UCwD5f1APTY" target="_blank" rel="nofollow">Christine and the Queens - Doesn't matter</a>
+                        </li>
+                        <li>
+                          <a href="https://vimeo.com/168013411" target="_blank" rel="nofollow">Major Lazer - Get Free</a>
                         </li>
                       </ul>
                     </li>
                     <li>
                       <span>Short films</span>
-                      <ul>
+                      <ul class="js-contextMenuSub">
                         <li><a href="https://vimeo.com/286740784" target="_blank" rel="nofollow">Red Light</a></li>
                         <li><a href="https://vimeo.com/174957219" target="_blank" rel="nofollow">Thunder Road</a></li>
                         <li><a href="https://vimeo.com/282586471" target="_blank" rel="nofollow">The Climb</a></li>
@@ -522,7 +538,7 @@
                     </li>
                     <li>
                       <span>TV shows</span>
-                      <ul>
+                      <ul class="js-contextMenuSub">
                         <li><a href="https://www.imdb.com/title/tt2699128/" target="_blank" rel="nofollow"><strong>👉 Leftovers</strong></a></li>
                         <li><a href="https://www.imdb.com/title/tt2103085/" target="_blank" rel="nofollow">Top of the lake</a></li>
                         <li><a href="https://www.imdb.com/title/tt3561180/" target="_blank" rel="nofollow">Trapped</a></li>

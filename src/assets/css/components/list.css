@@ -10,7 +10,6 @@
 }
 
 .List-header {
-  font-weight: var(--font-bold);
   margin-bottom: var(--spacing-sm);
 }
 
@@ -18,7 +17,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin-top: 2ch;
   font-size: 1.1em;
   list-style: none;
 }
@@ -47,7 +45,7 @@
 .List-image {
   --List-image-width: 80px;
 
-  opacity: .85;
+  opacity: .7;
   display: block;
   height: auto;
   width: var(--List-image-width);

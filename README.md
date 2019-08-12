@@ -16,4 +16,4 @@ My personal portfolio [vincentorback.se](https://vincentorback.se).
 ## TODO
 - Non-retina images
 - Improve blob animation performance
-- Write Foot-menu interactions with javascript to preserve open state
+- Write Foot-menu interactions with javascript to preserve open state + accessibility?
