@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "if [ ! -d dist ]; then npm run build; fi && npm-run-all --parallel serve watch",
-    "build:js": "if [ ! -d dist/assets/javascript ]; then mkdir -p dist/assets/javascript; fi && uglifyjs $npm_package_config_js_files -o dist/assets/javascript/main.js --warn --mangle --toplevel",
+    "build:js": "if [ ! -d dist/assets/javascript ]; then mkdir -p dist/assets/javascript; fi && uglifyjs $npm_package_config_js_files -o dist/assets/javascript/main.js --warn --mangle --toplevel && uglifyjs src/assets/javascript/service-worker.js -o dist/assets/javascript/service-worker.js --warn --mangle --toplevel",
     "build:css": "postcss src/assets/css/style.css -o dist/assets/css/style.css",
     "build:html": "html-minifier --remove-comments --sort-attributes --sort-class-name --collapse-whitespace --remove-redundant-attributes --process-scripts 'application/ld+json' --minify-js true --output-dir dist --input-dir src --file-ext html",
     "build:webp": "imagemin --plugin=webp ./dist/assets/images/{*.jpg,*.png} --out-dir=./dist/assets/images",
@@ -32,13 +32,11 @@
     "watch:html": "eye --*glob=src/**/*.html npm run build:html",
     "serve": "ws -d dist -r '/about-me/ -> /about-me.html' -p $npm_package_config_port",
     "compress": "npm-run-all compress:js compress:css compress:html",
-    "compress:js": "brotli-cli dist/assets/javascript/main.js",
-    "compress:css": "brotli-cli dist/assets/css/style.css",
+    "compress:js": "brotli-cli dist/assets/javascript/*.js",
+    "compress:css": "brotli-cli dist/assets/css/*.css",
     "compress:html": "brotli-cli dist/*.html",
     "compress:images": "imageoptim dist/*",
-    "deploy": "copyfiles .htaccess sitemap.xml dist && bash bin/deploy",
-    "purge": "bash bin/purge.sh",
-    "netlify:build": "rm -rf dist && npm-run-all build:light move:images move:fonts move:icons move:fonts"
+    "purge": "bash bin/purge.sh"
   },
   "config": {
     "port": "3000",

@@ -7,6 +7,9 @@
 .Intro-contact {
   position: relative;
   z-index: 1;
+}
+
+.Intro-text {
   max-width: 550px;
 }
 
@@ -25,13 +28,6 @@
 @media (min-width: 2400px) {
   .Intro-text {
     max-width: 1400px;
-  }
-}
-
-@supports (mix-blend-mode: exclusion) {
-  .Intro-text {
-    color: #fff;
-    mix-blend-mode: exclusion;
   }
 }
 

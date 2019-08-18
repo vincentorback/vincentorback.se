@@ -34,6 +34,10 @@
   transition: opacity 300ms ease;
 }
 
+.u-textMixBlend .ColorLink--dark::after {
+  background: #ffa;
+}
+
 .ColorLink--dark:hover::after {
   opacity: 1;
   transition: opacity 200ms ease;

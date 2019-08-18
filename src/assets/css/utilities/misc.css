@@ -1,3 +1,18 @@
+/* Mix-blend-mode */
+
+@supports (mix-blend-mode: exclusion) {
+  .u-textMixBlend {
+    color: #fff;
+    mix-blend-mode: exclusion;
+  }
+
+  .u-textMixBlend *::selection {
+    background: var(--color-background);
+    color: var(--color-text);
+  }
+}
+
+
 /* Text */
 
 .u-textNormal {

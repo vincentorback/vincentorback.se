@@ -13,11 +13,8 @@
 @import "components/color-link";
 @import "components/container";
 @import "components/foot";
-@import "components/head";
 @import "components/intro";
-@import "components/list";
 @import "components/section";
-@import "components/tooltip";
 @import "components/type";
 @import "components/work";
 
@@ -26,15 +23,3 @@
 
 /* Print */
 @import "base/print";
-
-html,
-body {
-  overflow-x: hidden;
-}
-
-.Wrap {
-  display: block;
-  width: 100vw;
-  max-width: 100vw;
-  overflow: hidden;
-}

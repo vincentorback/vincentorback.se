@@ -10,3 +10,11 @@
     width: calc(100% - var(--spacing-sm));
   }
 }
+
+
+.Container--site {
+  display: block;
+  width: 100vw;
+  max-width: 100vw;
+  overflow: hidden;
+}

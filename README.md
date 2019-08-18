@@ -1,10 +1,5 @@
-<div align="center">
-
 # Vincent Orback
-
 My personal portfolio [vincentorback.se](https://vincentorback.se).
-
-</div>
 
 ## Setup
 - Install dependencies: `yarn install`
