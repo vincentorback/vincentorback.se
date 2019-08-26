@@ -32,5 +32,6 @@
   :root {
     --color-text: #fff;
     --color-background: #1f152e;
+    --color-dark: #3c304e;
   }
 }

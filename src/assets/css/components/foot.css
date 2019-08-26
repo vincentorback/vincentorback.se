@@ -95,6 +95,12 @@
   z-index: 2;
 }
 
+@media (prefers-color-scheme: dark) {
+  .Foot-menu {
+    color: #fff;
+  }
+}
+
 @media (max-width: 1000px) {
   .Foot-menu {
     display: none;
@@ -131,6 +137,7 @@
   right: 0;
   width: 100%;
   height: 100%;
+  color: var(--color-dark);
   transform: translateY(10px);
   opacity: 0;
   visibility: hidden;
@@ -194,4 +201,11 @@
   opacity: 1;
   visibility: visible;
   transition: transform 200ms ease, opacity 200ms ease, visibility 0ms linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .Foot-menuContainer,
+  .Foot-menuList li > ul {
+    transition: none !important;
+  }
 }
