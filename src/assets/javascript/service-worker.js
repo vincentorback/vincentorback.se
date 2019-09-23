@@ -1,11 +1,13 @@
-'use strict';
+/* global caches, fetch, Headers, Response, self */
+
+'use strict'
 
 console.log('WORKER: executing.')
 
 /* A version number is useful when updating the worker logic,
    allowing you to remove outdated cache entries during the update.
 */
-var version = 'v0::'
+var version = 'v2::'
 
 /* These resources will be downloaded and cached by the service worker
    during the installation process. If any resource fails to be downloaded,
@@ -13,9 +15,9 @@ var version = 'v0::'
 */
 var offlineFundamentals = [
   '',
-  'index.html',
-  'assets/css/style.css',
-  'assets/javascript/main.js'
+  '/index.html',
+  '/assets/css/style.css',
+  '/assets/javascript/main.js'
 ]
 
 /* The install event fires when the service worker is first installed.
@@ -99,7 +101,7 @@ self.addEventListener('fetch', function (event) {
         console.log('WORKER: fetch event', cached ? '(cached)' : '(network)', event.request.url)
         return cached || networked
 
-        function fetchedFromNetwork(response) {
+        function fetchedFromNetwork (response) {
           /* We copy the response before replying to the network request.
              This is the response that will be stored on the ServiceWorker cache.
           */
@@ -110,7 +112,7 @@ self.addEventListener('fetch', function (event) {
           caches
             // We open a cache to store the response for this request.
             .open(version + 'pages')
-            .then(function add(cache) {
+            .then(function add (cache) {
               /* We store the response for this request. It'll later become
                  available to caches.match(event.request) calls, when looking
                  for cached responses.

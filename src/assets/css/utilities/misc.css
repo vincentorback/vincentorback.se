@@ -13,6 +13,11 @@
 }
 
 
+.u-relative {
+  position: relative !important;
+}
+
+
 /* Text */
 
 .u-textNormal {

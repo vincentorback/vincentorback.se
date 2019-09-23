@@ -34,8 +34,8 @@ body {
 }
 
 ::selection {
-  background-color: var(--color-text);
-  color: var(--color-background);
+  background-color: #00324b;
+  color: #d1bfb4;
 }
 
 ::before,
@@ -81,4 +81,3 @@ ol {
 [hidden] {
   display: none;
 }
-

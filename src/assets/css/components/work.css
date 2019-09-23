@@ -1,16 +1,28 @@
-html.no-js .Work {
+.Work {
+  position: relative;
+  z-index: 1;
+  margin: var(--spacing-lg) 0;
+}
+
+@media (max-width: 600px) {
+  .Work {
+    /* margin-top: calc(var(--spacing-lg) * 1.5); */
+  }
+}
+
+html.no-js .Work-grid {
   display: grid;
   grid-gap: var(--spacing-lg);
 }
 
 @media (min-width: 1400px) {
-  html.no-js .Work {
+  html.no-js .Work-grid {
     grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr);
   }
 }
 
 @media (min-width: 1800px) {
-  html.no-js .Work {
+  html.no-js .Work-grid {
     grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr) minmax(300px, 1fr);
   }
 }
@@ -33,6 +45,7 @@ html.no-js .Work {
 
 .Work-imageWrap {
   position: relative;
+  display: block;
   padding-bottom: calc(900 / 1200 * 100%); /* height / width * 100%  */
   height: 0;
   overflow: hidden;

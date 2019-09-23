@@ -1,7 +1,21 @@
 .Intro {
   position: relative;
+  padding-top: calc(var(--spacing-lg) * 1.5);
+  max-width: var(--site-width);
+  margin: 0 auto;
 }
 
+@media (min-width: 1200px) {
+  .Intro {
+    padding-top: calc(var(--spacing-lg) * 2.2);
+  }
+}
+
+@media (min-width: 1600px) {
+  .Intro {
+    padding-top: calc(var(--spacing-lg) * 3.2);
+  }
+}
 
 .Intro-text,
 .Intro-contact {
@@ -79,7 +93,7 @@
   transform: translateY(2px);
 }
 
-
+/*
 .Intro-blob {
   position: absolute;
   right: 0;
@@ -103,5 +117,31 @@
     width: 110vmax;
     height: 110vmax;
     transform: translate(50%, -30%) rotateZ(60deg);
+  }
+}
+/*
+
+/* With canvas */
+
+.Intro-blob {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+  width: 200px;
+  height: 500px;
+}
+
+@media (min-width: 800px) {
+  .Intro-blob {
+    width: 50%;
+    height: 100vmax;
+  }
+}
+
+@media (min-width: 1600px) {
+  .Intro-blob {
+    width: 50%;
+    height: 1200px;
   }
 }

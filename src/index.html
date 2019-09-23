@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-  <link href="/assets/css/style.css" rel="stylesheet">
+  <link href="/assets/css/style.css?v=1" rel="stylesheet">
 
   <title>Vincent Orback - Front-end developer and designer</title>
   <meta name="description" content="Hello there! I’m Vincent, a freelance web developer and web designer living in Gotenburg, Sweden. Welcome to my portfolio!">
@@ -43,40 +43,41 @@
 
   <div class="Container Container--site">
 
-    <section class="Section Section--first">
+    <section class="Intro">
       <div class="Container">
-        <div class="Intro">
-          <div class="Intro-text Type Type--lg u-textMixBlend">
-            <h1 class="u-textNormal">
-              I’m <span class="u-textTruncate">Vincent Orback</span>, <span class="u-textTruncate">a freelance</span> <strong class="u-textTruncate u-textNormal">front-end developer</strong> and <span class="u-textTruncate">web designer</span> <span class="u-textTruncate">based in</span> <span class="u-textTruncate">Gothenburg, Sweden.</span>
-            </h1>
-          </div>
-          <div class="Intro-contact">
-            <p>
-              I’m available for new projects<br>
-              <a class="Intro-contactLink" href="mailto:hello@vincentorback.se">
-                <svg class="Intro-contactLinkSymbol" width="8px" height="7px">
-                  <use xlink:href="#arrow"></use>
-                </svg>
-                <span class="Intro-contactLinkText ColorLink ColorLink--dark js-splitLetters">hello@vincentorback.se</span>
-              </a>
-            </p>
-          </div>
-          <svg class="Intro-blob js-introBlob">
-            <use xlink:href="#blob"></use>
-          </svg>
+        <div class="Intro-text Type Type--lg u-textMixBlend">
+          <h1 class="u-textNormal">
+            I’m <span class="u-textTruncate">Vincent Orback</span>, <span class="u-textTruncate">a freelance</span> <strong class="u-textTruncate u-textNormal">front-end developer</strong> and <span class="u-textTruncate">web designer</span> <span class="u-textTruncate">based in</span> <span class="u-textTruncate">Gothenburg, Sweden.</span>
+          </h1>
         </div>
+        <div class="Intro-contact">
+          <p>
+            I’m available for new projects<br>
+            <a class="Intro-contactLink" href="mailto:hello@vincentorback.se">
+              <svg class="Intro-contactLinkSymbol" width="8px" height="7px">
+                <use xlink:href="#arrow"></use>
+              </svg>
+              <span class="Intro-contactLinkText ColorLink ColorLink--dark js-splitLetters">hello@vincentorback.se</span>
+            </a>
+          </p>
+        </div>
+        <!--
+        <svg class="Intro-blob">
+          <use xlink:href="#blob"></use>
+        </svg>
+        -->
+        <canvas class="Intro-blob js-blobCanvas" id="blob-intro"></canvas>
       </div>
     </section>
 
-    <section class="Section" id="work">
+    <section class="Work" id="work">
       <div class="Container">
 
-        <div class="Work js-grid">
+        <div class="Work-grid js-grid">
 
           <article class="Work-item Work-item--arkitektur" aria-label="Arkitektur Förlag" itemscope itemtype="http://schema.org/CreativeWork">
             <div class="Work-itemInner">
-              <div class="Work-imageWrap">
+              <a href="https://arkitektur.se" class="Work-imageWrap">
                 <picture>
                   <source data-srcset="/assets/images/arkitektur.webp" type="image/webp">
                   <img
@@ -99,7 +100,7 @@
                       alt="Arkitektur Förlag">
                   </picture>
                 </noscript>
-              </div>
+              </a>
               <div class="Work-info">
                 <div class="Work-infoText Type" itemprop="about">
                   <p><strong itemprop="name">Arkitektur Förlag</strong> publishes the Swedish magazine Arkitektur and a variety of books on architecture, urban planning, and design.</p>
@@ -159,7 +160,7 @@
 
           <article class="Work-item Work-item--ninnan" aria-label="Ninnan Santessons Samling" itemscope itemtype="http://schema.org/CreativeWork">
             <div class="Work-itemInner">
-              <div class="Work-imageWrap">
+              <a href="https://ninnan-santessons-samling.se" class="Work-imageWrap">
                 <picture>
                   <source data-srcset="/assets/images/ninnan.webp" type="image/webp">
                   <img
@@ -182,7 +183,7 @@
                       alt="Ninnan Santessons Samling">
                   </picture>
                 </noscript>
-              </div>
+              </a>
               <div class="Work-info">
                 <div class="Work-infoText Type" itemprop="about">
                   <p><strong itemprop="name">Ninna Santessons Samling</strong> is <span class="u-textTruncate">Linnéa Carlson’s</span> graduation project from Beckmans College of Design consisting of a collection of letters, photographs and, interviews written by and about sculptor <span class="u-textTruncate">Ninnan Santesson.</span></p>
@@ -202,7 +203,7 @@
 
           <article class="Work-item Work-item--johanrimer" aria-label="Johan Rimér" itemscope itemtype="http://schema.org/CreativeWork">
             <div class="Work-itemInner">
-              <div class="Work-imageWrap">
+              <a href="https://johanrimer.com" class="Work-imageWrap">
                 <picture>
                   <source data-srcset="/assets/images/johanrimer.webp" type="image/webp">
                   <img
@@ -225,7 +226,7 @@
                       alt="Johan Rimér">
                   </picture>
                 </noscript>
-              </div>
+              </a>
               <div class="Work-info">
                 <div class="Work-infoText Type" itemprop="about">
                   <p>Portfolio for creative director, art director, and artist <strong itemprop="name">Johan Rimér</strong>. Johan provided the clean design and I developed the website using WordPress.</p>
@@ -245,11 +246,11 @@
 
           <article class="Work-item Work-item--filosoferamedflera" aria-label="Filosofera med flera" itemscope itemtype="http://schema.org/CreativeWork">
             <div class="Work-itemInner">
-              <div class="Work-imageWrap">
+              <a href="https://filosoferamedflera.se" class="Work-imageWrap">
                 <svg class="Work-image is-loaded" width="172" height="117px">
                   <use xlink:href="#fmf"></use>
                 </svg>
-              </div>
+              </a>
               <div class="Work-info">
                 <div class="Work-infoText Type" itemprop="about">
                   <p><strong itemprop="name">Filosofera med flera</strong> is a resource library for holding philosophical and investigative discussions. Primarily for teachers but also useful for other conversations in other activities and other roles.</p>
@@ -310,9 +311,9 @@
       </div>
     </section>
 
-    <section class="Section" id="about" aria-label="About me">
+    <section class="About" id="about" aria-label="About me">
       <div class="Container">
-        <div class="About">
+        <div class="About-grid">
           <div class="About-imageContainer">
             <div class="About-imageWrap">
               <picture>
@@ -337,33 +338,38 @@
                   alt="Vincent Orback">
                 </picture>
               </noscript>
-              <svg class="About-blob js-scrollBlob">
-                <use xlink:href="#blob"></use>
+              <svg class="About-blob Blob u-printHide" viewBox="0 0 1000 1000">
+                <path fill="var(--color-yellow)" d="M137.0168640359351 451.5099596874178 C 141.50092825204416 384.5333952632676 173.60547469547416 305.5680616510025 217.45795493856804 253.79209740361907 261.31043518166194 202.01613315623567 334.1104107107185 156.25141624123134 400.13174549449843 140.85417420311734 466.15308027827837 125.45693216500335 556.3725614306879 131.52642482322796 613.5859636412476 161.40864517493512 670.7993658518074 191.29086552664228 707.9120203720227 262.2507072260167 743.4121587578564 320.1474963133603 778.9122971436902 378.0442854007039 830.602724896978 447.78118114287025 826.5867939562502 508.7893796989969 822.5708630155224 569.7975782551237 763.772609582421 634.4831253265735 719.3165731134895 686.1966876501205 674.8605366445581 737.9102499736674 621.4249928646373 801.7120330472925 559.8505751426616 819.0707536402787 498.2761574206858 836.4294742332648 411.4195676984264 817.5855561566641 349.8700667816351 790.3490112080377 288.3205658648438 763.1124662594113 226.02910343286374 712.124659201957 190.55356964191373 655.6514839485203 155.07803585096372 599.1783086950836 132.53279981982604 518.486524111568 137.0168640359351 451.5099596874178z"></path>
+                <path fill="var(--color-pink)" d="M184.54846383868716 379.37280520621624 C 211.1360963770935 321.20595941963114 274.88710587224136 277.7464293090693 330.4388607385304 239.62938366592468 385.9906156048195 201.51233802278003 454.27237924982506 151.014347098288 517.8589930364217 150.67053134734834 581.4456068230182 150.3267155964087 658.9052014431317 194.4349980701712 711.9585434581101 237.56648916028672 765.0118854730885 280.6979802504022 817.8171540114874 345.1903983845769 836.1790451262918 409.4594778880415 854.5409362410962 473.72855739150606 846.4268241174052 559.3632251762292 822.1298901469362 623.1809661810742 797.8329561764672 686.9987071859191 746.6634945294859 762.4744338258827 690.397441303478 792.365923917111 634.1313880774701 822.2574140083393 550.5516405407459 808.8078650627095 484.53357079088914 802.5299067284442 418.5155010410324 796.2519483941788 346.559107018137 790.3480819686869 294.28902280433755 754.6981739115188 242.01893859053808 719.0482658543507 189.20315866903405 651.1846865029859 170.91306550809233 588.6304583854354 152.6229723471506 526.076230267885 157.9608313002808 437.53965099280134 184.54846383868716 379.37280520621624z"></path>
+                <path fill="var(--color-blue)" d="M709.7413372804688 278.65569447089877 C 763.5645950951755 320.2532214231326 832.9021307322098 364.40771005270614 856.0295908919982 424.74790864552045 879.1570510517865 485.08810723833477 872.0492921540344 576.3785093949439 848.5060982391993 640.6968860277847 824.9629043243642 705.0152626606255 771.7127760518933 773.0470080699467 714.7704274029877 810.6581684425654 657.8280787540821 848.269328815184 574.7126391530561 869.7807274219626 506.8520063457656 866.3638482634963 438.9913735384751 862.9469691050299 355.0801740009535 833.8060268535477 307.60663055924476 790.156893491767 260.13308711753604 746.5077601299864 240.9857115654451 669.4727734130367 222.01074569551332 604.4690480928126 203.03577982558156 539.4653227725885 176.18338644737506 462.1031248123913 193.75683533965412 400.1345415704225 211.33028423193318 338.16595832845377 270.89590427183714 270.15284774738427 327.45143904918774 232.65754864100012 384.00697382653834 195.16224953461597 469.3750609652109 167.49638929380112 533.0900440037577 175.16274693211756 596.8050270423046 182.829104570434 655.918079465762 237.05816751866496 709.7413372804688 278.65569447089877z"></path>
               </svg>
             </div>
+            <!--<canvas class="About-blob js-blobCanvas" id="blob-about"></canvas>-->
           </div>
           <div class="About-text Type Type--lg">
             <h2>A bit about me</h2>
             <p><span class="u-textTruncate">I like</span> building solid web projects. Things that last, things that solve problems that need solving. <span class="u-textTruncate">The tools</span> I use are a mix of different front-end technologies including React, Node, <span class="u-textTruncate">and WordPress.</span></p>
             <p>I take on projects on my own, where I design and build everything from the ground up, as well as collaborate with other creatives, including developers, designers, copywriters, <span class="u-textTruncate">and photographers.</span></p>
-            <p>Before freelancing, I worked as a web developer at <a class="ColorLink ColorLink--dark js-splitLetters js-touchHover" href="https://earthpeople.se/">Earth People</a>, mostly using WordPress and React. Before that, I worked as a front-end developer at <a class="ColorLink ColorLink--dark js-splitLetters js-touchHover" href="https://daytona.se/" rel="nofollow">Daytona</a> where I developed <span class="u-textTruncate">interface prototypes.</span></p>
+            <p>Before freelancing, I worked as a web developer at <a class="ColorLink ColorLink--dark u-textTruncate js-splitLetters js-touchHover" href="https://earthpeople.se/">Earth People</a>, mostly using WordPress and React. Before that, I worked as a front-end developer at <a class="ColorLink ColorLink--dark js-splitLetters js-touchHover" href="https://daytona.se/" rel="nofollow">Daytona</a> where I developed <span class="u-textTruncate">interface prototypes.</span></p>
             <p>Get in touch and <span class="u-textTruncate">let’s talk!</span></p>
           </div>
         </div>
       </div>
     </section>
 
-    <footer class="Foot Section Section--last">
-      <div class="Container">
+    <footer class="Foot">
+      <div class="Container u-relative">
         <ul class="Foot-list">
           <li><a class="Foot-link Foot-link--lg ColorLink js-splitLetters js-touchHover" href="mailto:hello@vincentorback.se">hello@vincentorback.se</a></li>
           <li><a class="Foot-link ColorLink js-splitLetters js-touchHover" href="https://github.com/vincentorback/">Github</a></li>
           <li><a class="Foot-link ColorLink js-splitLetters js-touchHover" href="https://codepen.io/vincentorback/">Codepen</a></li>
           <li><a class="Foot-link ColorLink js-splitLetters js-touchHover" href="https://www.are.na/vincent-orback">Are.na</a></li>
         </ul>
+        <!--
         <svg class="Foot-blob">
           <use xlink:href="#blob"></use>
         </svg>
+        -->
         <div class="Foot-menu js-contextMenu">
           <span class="js-contextMenuToggle">
             <svg width="10px" height="10px"><use xlink:href="#up-arrow"></use></svg>
@@ -462,7 +468,7 @@
                         <li><a href="https://vimeo.com/174957219" target="_blank" rel="nofollow">Thunder Road</a></li>
                         <li><a href="https://vimeo.com/282586471" target="_blank" rel="nofollow">The Climb</a></li>
                         <li><a href="https://vimeo.com/265361498" target="_blank" rel="nofollow">Mixtape Marauders</a></li>
-                        <li><a href="https://youtu.be/xw0sQUdYAns" target="_blank" rel="nofollow">Bastille</li>
+                        <li><a href="https://youtu.be/xw0sQUdYAns" target="_blank" rel="nofollow">Bastille</a></li>
                       </ul>
                     </li>
                     <li>
@@ -481,12 +487,19 @@
           </div>
         </div>
       </div>
+      <canvas class="Foot-blob js-blobCanvas" id="blob-foot"></canvas>
     </footer>
 
   </div>
 
+  <svg class="u-hidden js-blobSvg" viewBox="0 0 1000 1000">
+    <path d="M137.0168640359351 451.5099596874178 C 141.50092825204416 384.5333952632676 173.60547469547416 305.5680616510025 217.45795493856804 253.79209740361907 261.31043518166194 202.01613315623567 334.1104107107185 156.25141624123134 400.13174549449843 140.85417420311734 466.15308027827837 125.45693216500335 556.3725614306879 131.52642482322796 613.5859636412476 161.40864517493512 670.7993658518074 191.29086552664228 707.9120203720227 262.2507072260167 743.4121587578564 320.1474963133603 778.9122971436902 378.0442854007039 830.602724896978 447.78118114287025 826.5867939562502 508.7893796989969 822.5708630155224 569.7975782551237 763.772609582421 634.4831253265735 719.3165731134895 686.1966876501205 674.8605366445581 737.9102499736674 621.4249928646373 801.7120330472925 559.8505751426616 819.0707536402787 498.2761574206858 836.4294742332648 411.4195676984264 817.5855561566641 349.8700667816351 790.3490112080377 288.3205658648438 763.1124662594113 226.02910343286374 712.124659201957 190.55356964191373 655.6514839485203 155.07803585096372 599.1783086950836 132.53279981982604 518.486524111568 137.0168640359351 451.5099596874178z"></path>
+    <path d="M184.54846383868716 379.37280520621624 C 211.1360963770935 321.20595941963114 274.88710587224136 277.7464293090693 330.4388607385304 239.62938366592468 385.9906156048195 201.51233802278003 454.27237924982506 151.014347098288 517.8589930364217 150.67053134734834 581.4456068230182 150.3267155964087 658.9052014431317 194.4349980701712 711.9585434581101 237.56648916028672 765.0118854730885 280.6979802504022 817.8171540114874 345.1903983845769 836.1790451262918 409.4594778880415 854.5409362410962 473.72855739150606 846.4268241174052 559.3632251762292 822.1298901469362 623.1809661810742 797.8329561764672 686.9987071859191 746.6634945294859 762.4744338258827 690.397441303478 792.365923917111 634.1313880774701 822.2574140083393 550.5516405407459 808.8078650627095 484.53357079088914 802.5299067284442 418.5155010410324 796.2519483941788 346.559107018137 790.3480819686869 294.28902280433755 754.6981739115188 242.01893859053808 719.0482658543507 189.20315866903405 651.1846865029859 170.91306550809233 588.6304583854354 152.6229723471506 526.076230267885 157.9608313002808 437.53965099280134 184.54846383868716 379.37280520621624z"></path>
+    <path d="M709.7413372804688 278.65569447089877 C 763.5645950951755 320.2532214231326 832.9021307322098 364.40771005270614 856.0295908919982 424.74790864552045 879.1570510517865 485.08810723833477 872.0492921540344 576.3785093949439 848.5060982391993 640.6968860277847 824.9629043243642 705.0152626606255 771.7127760518933 773.0470080699467 714.7704274029877 810.6581684425654 657.8280787540821 848.269328815184 574.7126391530561 869.7807274219626 506.8520063457656 866.3638482634963 438.9913735384751 862.9469691050299 355.0801740009535 833.8060268535477 307.60663055924476 790.156893491767 260.13308711753604 746.5077601299864 240.9857115654451 669.4727734130367 222.01074569551332 604.4690480928126 203.03577982558156 539.4653227725885 176.18338644737506 462.1031248123913 193.75683533965412 400.1345415704225 211.33028423193318 338.16595832845377 270.89590427183714 270.15284774738427 327.45143904918774 232.65754864100012 384.00697382653834 195.16224953461597 469.3750609652109 167.49638929380112 533.0900440037577 175.16274693211756 596.8050270423046 182.829104570434 655.918079465762 237.05816751866496 709.7413372804688 278.65569447089877z"></path>
+  </svg>
+
   <svg class="u-hiddenVisually">
-    <symbol class="Blob u-printHide js-blob" id="blob" viewBox="0 0 1000 1000">
+    <symbol id="blob" class="Blob u-printHide js-blob" viewBox="0 0 1000 1000">
       <path fill="var(--color-yellow)" d="M137.0168640359351 451.5099596874178 C 141.50092825204416 384.5333952632676 173.60547469547416 305.5680616510025 217.45795493856804 253.79209740361907 261.31043518166194 202.01613315623567 334.1104107107185 156.25141624123134 400.13174549449843 140.85417420311734 466.15308027827837 125.45693216500335 556.3725614306879 131.52642482322796 613.5859636412476 161.40864517493512 670.7993658518074 191.29086552664228 707.9120203720227 262.2507072260167 743.4121587578564 320.1474963133603 778.9122971436902 378.0442854007039 830.602724896978 447.78118114287025 826.5867939562502 508.7893796989969 822.5708630155224 569.7975782551237 763.772609582421 634.4831253265735 719.3165731134895 686.1966876501205 674.8605366445581 737.9102499736674 621.4249928646373 801.7120330472925 559.8505751426616 819.0707536402787 498.2761574206858 836.4294742332648 411.4195676984264 817.5855561566641 349.8700667816351 790.3490112080377 288.3205658648438 763.1124662594113 226.02910343286374 712.124659201957 190.55356964191373 655.6514839485203 155.07803585096372 599.1783086950836 132.53279981982604 518.486524111568 137.0168640359351 451.5099596874178z"></path>
       <path fill="var(--color-pink)" d="M184.54846383868716 379.37280520621624 C 211.1360963770935 321.20595941963114 274.88710587224136 277.7464293090693 330.4388607385304 239.62938366592468 385.9906156048195 201.51233802278003 454.27237924982506 151.014347098288 517.8589930364217 150.67053134734834 581.4456068230182 150.3267155964087 658.9052014431317 194.4349980701712 711.9585434581101 237.56648916028672 765.0118854730885 280.6979802504022 817.8171540114874 345.1903983845769 836.1790451262918 409.4594778880415 854.5409362410962 473.72855739150606 846.4268241174052 559.3632251762292 822.1298901469362 623.1809661810742 797.8329561764672 686.9987071859191 746.6634945294859 762.4744338258827 690.397441303478 792.365923917111 634.1313880774701 822.2574140083393 550.5516405407459 808.8078650627095 484.53357079088914 802.5299067284442 418.5155010410324 796.2519483941788 346.559107018137 790.3480819686869 294.28902280433755 754.6981739115188 242.01893859053808 719.0482658543507 189.20315866903405 651.1846865029859 170.91306550809233 588.6304583854354 152.6229723471506 526.076230267885 157.9608313002808 437.53965099280134 184.54846383868716 379.37280520621624z"></path>
       <path fill="var(--color-blue)" d="M709.7413372804688 278.65569447089877 C 763.5645950951755 320.2532214231326 832.9021307322098 364.40771005270614 856.0295908919982 424.74790864552045 879.1570510517865 485.08810723833477 872.0492921540344 576.3785093949439 848.5060982391993 640.6968860277847 824.9629043243642 705.0152626606255 771.7127760518933 773.0470080699467 714.7704274029877 810.6581684425654 657.8280787540821 848.269328815184 574.7126391530561 869.7807274219626 506.8520063457656 866.3638482634963 438.9913735384751 862.9469691050299 355.0801740009535 833.8060268535477 307.60663055924476 790.156893491767 260.13308711753604 746.5077601299864 240.9857115654451 669.4727734130367 222.01074569551332 604.4690480928126 203.03577982558156 539.4653227725885 176.18338644737506 462.1031248123913 193.75683533965412 400.1345415704225 211.33028423193318 338.16595832845377 270.89590427183714 270.15284774738427 327.45143904918774 232.65754864100012 384.00697382653834 195.16224953461597 469.3750609652109 167.49638929380112 533.0900440037577 175.16274693211756 596.8050270423046 182.829104570434 655.918079465762 237.05816751866496 709.7413372804688 278.65569447089877z"></path>
@@ -498,11 +511,11 @@
       </g>
     </symbol>
     <symbol id="up-arrow" viewBox="0 0 8 7">
-        <g stroke="currentColor" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(0.500000, 0.000000)">
-          <polyline points="8.8817842e-15 3.32443848 6.36987305 3.34848633"></polyline>
-          <polyline points="4.24914551 0.686816406 6.91081543 3.34848633 4.24914551 6.01015625"></polyline>
-        </g>
-      </symbol>
+      <g stroke="currentColor" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(0.500000, 0.000000)">
+        <polyline points="8.8817842e-15 3.32443848 6.36987305 3.34848633"></polyline>
+        <polyline points="4.24914551 0.686816406 6.91081543 3.34848633 4.24914551 6.01015625"></polyline>
+      </g>
+    </symbol>
     <symbol id="fmf" viewBox="0 0 172 117">
       <path fill="#fff" d="M125.2202,88.0302 C125.2202,91.3002 128.2332,93.9482 131.9492,93.9482 C135.6672,93.9482 138.6812,91.3002 138.6812,88.0302 C138.6812,84.7592 135.6672,82.1072 131.9492,82.1072 C128.2332,82.1072 125.2202,84.7592 125.2202,88.0302"></path>
       <path fill="#fff" d="M143.0103,100.9911 C143.0103,103.4131 145.2433,105.3781 147.9963,105.3781 C150.7493,105.3781 152.9843,103.4131 152.9843,100.9911 C152.9843,98.5661 150.7493,96.6051 147.9963,96.6051 C145.2433,96.6051 143.0103,98.5661 143.0103,100.9911"></path>
@@ -524,7 +537,7 @@
     </symbol>
   </svg>
 
-  <script src="/assets/javascript/main.js"></script>
+  <script src="/assets/javascript/main.js?v=1"></script>
   <script type="application/ld+json" id="organization">
     {
       "@context": "http://schema.org",

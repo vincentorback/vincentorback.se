@@ -3,6 +3,8 @@
   z-index: 0;
   padding: calc(var(--spacing-lg) * 4) 0 var(--spacing-sm);
   color: #fff;
+  max-width: var(--site-width);
+  margin: 0 auto;
 }
 
 @media (min-width: 400px) {
@@ -54,6 +56,31 @@
 
 .Foot-blob {
   position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+  width: 500px;
+  height: 300px;
+}
+
+@media (min-width: 900px) {
+  .Foot-blob {
+    width: 1000px;
+    height: 700px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .Foot-blob {
+    width: 1600px;
+    height: 1200px;
+    transform: translateX(-8%);
+  }
+}
+
+/*
+.Foot-blob {
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -85,7 +112,7 @@
     transform: translate(-33%, -27%);
   }
 }
-
+*/
 
 .Foot-menu {
   position: absolute;

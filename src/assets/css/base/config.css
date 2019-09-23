@@ -19,6 +19,7 @@
   --font-size-lg: 1.3em;
   --spacing-sm: 5vw;
   --spacing-lg: calc(var(--spacing-sm) * 2);
+  --site-width: 2400px;
   --ease-in-out-sine: cubic-bezier(.445, .05, .55, .95);
 }
 
