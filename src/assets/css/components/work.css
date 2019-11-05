@@ -52,17 +52,25 @@ html.no-js .Work-grid {
   border-radius: 4px 4px 0 0;
 }
 
-.Work-item--systerochbror .Work-imageWrap {
-  padding-bottom: calc(643 / 1200 * 100%);
+.Work-imageWrap:focus {
+  outline: none;
 }
 
 .Work-item--arkitektur .Work-imageWrap {
   padding-bottom: 100%;
 }
 
+.Work-item--saqmi .Work-imageWrap {
+  padding-bottom: calc(800 / 1200 * 100%); /* height / width * 100%  */
+}
+
 .Work-item--filosoferamedflera .Work-imageWrap {
   background-color: #006cb3;
   background-image: linear-gradient(-59deg, #006cb3 0%, #7ac6c2 100%);
+}
+
+.Work-item--systerochbror .Work-imageWrap {
+  padding-bottom: calc(680 / 1200 * 100%); /* height / width * 100%  */
 }
 
 .Work-image {
@@ -72,17 +80,34 @@ html.no-js .Work-grid {
   width: 100%;
   height: 100%;
   display: block;
-  opacity: 1;
-  transition: opacity 300ms ease 100ms;
-}
-
-.Work-image[data-src]:not(.is-loaded) {
   opacity: 0;
+  backface-visibility: hidden;
+  transition: opacity 200ms ease 100ms, transform 200ms ease 100ms;
+  transform: translateY(3%);
 }
 
 .Work-item--filosoferamedflera .Work-image {
+  opacity: 1;
   transform: rotateY(180deg);
+  backface-visibility: visible;
   padding: 15%;
+}
+
+@media (min-width: 1400px) {
+  .Work-item:nth-child(2) .Work-image {
+    transition-delay: 200ms;
+  }
+}
+
+@media (min-width: 1800px) {
+  .Work-item:nth-child(3) .Work-image {
+    transition-delay: 300ms;
+  }
+}
+
+.Work-image.is-loaded {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .fmf-hand {
@@ -98,7 +123,7 @@ html.no-js .Work-grid {
 @keyframes wave {
   0%,
   100% {
-    transform: rotateZ(-9deg);
+    transform: rotateZ(-25deg);
   }
 
   50% {

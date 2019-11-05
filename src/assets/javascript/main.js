@@ -28,28 +28,17 @@
 
   var vincent = {
     init: function () {
-      // vincent.blob()
-
-      vincent.canvasBlob()
-
       vincent.grid()
 
       if (saveData !== true) {
         vincent.lazyImages()
       }
 
+      vincent.canvasBlob()
+
       vincent.splitLetters()
 
       vincent.touchHover()
-    },
-
-    blob: function () {
-      var blob = doc.querySelector('.js-blob')
-
-      if (blob && !prefersReducedMotion && new URLSearchParams(window.location.search).get('animate') === 'true') {
-        blob.classList.add('Blob--animate')
-        doc.querySelector('.About-text').classList.add('u-textMixBlend')
-      }
     },
 
     canvasBlob: function () {
@@ -75,6 +64,11 @@
               x: 2.3,
               y: 0.8,
               scale: 1.1
+            },
+            1200: {
+              x: 1.8,
+              y: 0.65,
+              scale: 1.3
             },
             1500: {
               x: 1.6,
@@ -159,6 +153,7 @@
       var svgHTML = blobSvg.outerHTML
       var viewportWidth = getViewportWidth()
       var scopes = []
+      var activeClass = 'is-active'
 
       function initializeBlob (options, canvas, scope) {
         var currentPosition = Object.keys(options.breakpoints).find(key => viewportWidth < key)
@@ -217,6 +212,8 @@
             })
           }
         }
+
+        canvas.classList.add(activeClass)
       }
 
       window.addEventListener('resize', debounce(function () {

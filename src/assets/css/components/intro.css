@@ -21,6 +21,21 @@
 .Intro-contact {
   position: relative;
   z-index: 1;
+  opacity: 0;
+  transform: translateY(5%);
+  animation: fadeIn 300ms ease 100ms forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(4%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .Intro-text {
@@ -55,6 +70,7 @@
 .Intro-contact {
   margin-top: 1rem;
   line-height: var(--font-lineheight-lg);
+  animation-delay: 300ms;
 }
 
 @media (min-width: 1000px) {
@@ -130,11 +146,25 @@
   z-index: 0;
   width: 200px;
   height: 500px;
+  backface-visibility: hidden;
+  transition: opacity 500ms ease 300ms, transform 2000ms ease;
+}
+
+.Intro-blob:not(.is-active) {
+  opacity: 0;
+  transform: translate3d(5%, 0, 0);
 }
 
 @media (min-width: 800px) {
   .Intro-blob {
     width: 50%;
+    height: 100vmax;
+  }
+}
+
+@media (min-width: 1000px) {
+  .Intro-blob {
+    width: 55%;
     height: 100vmax;
   }
 }
