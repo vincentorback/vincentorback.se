@@ -11,44 +11,6 @@
   animation: colorCycle 2.4s step-end infinite;
 }
 
-.ColorLink--dark {
-  position: relative;
-}
-
-.ColorLink--dark::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  z-index: 0;
-  display: block;
-  width: calc(100% + .6em);
-  height: 1.5em;
-  background: #0e004e;
-  border-radius: 4px;
-  transform: translateX(-.3em);
-  opacity: 0;
-  transition: opacity 300ms ease;
-}
-
-@media (prefers-color-scheme: dark) {
-  .ColorLink--dark::after {
-    content: initial;
-  }
-}
-
-.u-textMixBlend .ColorLink--dark::after {
-  background: #ffa;
-}
-
-.ColorLink--dark:hover::after {
-  opacity: 1;
-  transition: opacity 200ms ease;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .ColorLink span {
     animation: none;
