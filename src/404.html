@@ -59,12 +59,25 @@
       }
     }
   </style>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-31135100-1"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-31135100-1');
+    if (
+      (window.doNotTrack !== '1') &&
+      (window.doNotTrack !== 'yes') &&
+      (navigator.doNotTrack !== 'yes') &&
+      (navigator.doNotTrack !== '1') &&
+      (navigator.msDoNotTrack !== '1')
+    ) {
+      var script = document.createElement('script')
+
+      script.onload = function () {
+        window.dataLayer = window.dataLayer || []
+        function gtag() { dataLayer.push(arguments) }
+        gtag('js', new Date())
+        gtag('config', 'UA-31135100-1')
+      }
+
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=UA-31135100-1'
+    }
   </script>
 </head>
 
