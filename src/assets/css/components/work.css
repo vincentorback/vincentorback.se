@@ -50,21 +50,23 @@ html:not(.has-js) .Work-grid {
   outline: none;
 }
 
-.Work-item--arkitektur .Work-imageWrap {
+.Work-item--tall .Work-imageWrap {
   padding-bottom: 100%;
 }
 
+/*
 .Work-item--saqmi .Work-imageWrap {
-  padding-bottom: calc(800 / 1200 * 100%); /* height / width * 100%  */
-}
-
-.Work-item--filosoferamedflera .Work-imageWrap {
-  background-color: #006cb3;
-  background-image: linear-gradient(-59deg, #006cb3 0%, #7ac6c2 100%);
+  padding-bottom: calc(800 / 1200 * 100%);
 }
 
 .Work-item--systerochbror .Work-imageWrap {
-  padding-bottom: calc(680 / 1200 * 100%); /* height / width * 100%  */
+  padding-bottom: calc(680 / 1200 * 100%);
+}
+*/
+
+.Work-item--filosofera .Work-imageWrap {
+  background-color: #006cb3;
+  background-image: linear-gradient(-59deg, #006cb3 0%, #7ac6c2 100%);
 }
 
 .Work-image {
@@ -80,7 +82,7 @@ html:not(.has-js) .Work-grid {
   transform: translateY(3%);
 }
 
-.Work-item--filosoferamedflera .Work-image {
+.Work-item--filosofera .Work-image {
   opacity: 1;
   transform: rotateY(180deg);
   backface-visibility: visible;
