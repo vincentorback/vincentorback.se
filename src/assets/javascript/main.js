@@ -343,8 +343,6 @@
     }
   }
 
-  docEl.classList.remove('no-js')
-
   if (doc.readyState !== 'loading') {
     vincent.init()
   } else {

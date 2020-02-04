@@ -53,7 +53,7 @@
 
 /* Display */
 
-html.no-js .u-noJsHide {
+html:not(.has-js) .u-noJsHide {
   display: none !important;
 }
 
