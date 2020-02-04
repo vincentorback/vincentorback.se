@@ -175,3 +175,9 @@
     height: 1200px;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .Intro-blob {
+    transition: none;
+  }
+}

@@ -2,7 +2,6 @@
   position: relative;
   z-index: 0;
   padding: calc(var(--spacing-lg) * 4) 0 var(--spacing-sm);
-  color: #fff;
   max-width: var(--site-width);
   margin: 0 auto;
 }

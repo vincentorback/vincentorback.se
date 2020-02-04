@@ -27,12 +27,18 @@
   }
 }
 
+.Blob path:first-child {
+  color: var(--color-yellow);
+}
+
 .Blob path:nth-child(2) {
+  color: var(--color-pink);
   animation-delay: -16000ms;
   animation-direction: reverse;
 }
 
 .Blob path:nth-child(3) {
+  color: var(--color-blue);
   animation-delay: -25000ms;
 }
 

@@ -12,7 +12,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ColorLink span {
+  .ColorLink:hover span {
     animation: none;
   }
 }
@@ -39,7 +39,7 @@
 
 @keyframes colorCycle {
   0% {
-    color: var(--color-yellow);
+    color: #fdb74a; /* var(--color-yellow); */
   }
 
   20% {
@@ -55,7 +55,7 @@
   }
 
   80% {
-    color: var(--color-blue);
+    color: #251bce; /* var(--color-blue); */
   }
 
   100% {

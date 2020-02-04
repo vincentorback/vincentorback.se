@@ -190,7 +190,7 @@ html:not(.has-js) .Work-grid {
   width: 1ch;
   height: 1ch;
   margin-right: 4px;
-  transform: translateY(2px);
+  transform: translateY(1px);
 }
 
 .Work-infoLink span {
