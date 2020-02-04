@@ -51,7 +51,7 @@
 
       var options = {
         intro: {
-          rotationSpeed: 0.3,
+          rotationSpeed: 0.4,
           stretchSpeed: 1,
           startRotate: randomBetween(0, 359),
           breakpoints: {
@@ -186,30 +186,14 @@
         })
 
         if (prefersReducedMotion === false) {
+          var nPaths = paths.length
           scope.view.onFrame = function (event) {
-            paths.forEach(function (path, index) {
-              path.rotate(index % 2 === 0
+            if (event.delta > 0.03) return
+            for (var i = 0; i < nPaths; i += 1) {
+              paths[i].rotate(i % 2 === 0
                 ? options.rotationSpeed
                 : options.rotationSpeed * -1)
-
-              /*
-              path.segments.forEach(function (segment, segIndex) {
-                var sinus = Math.sin(event.time * 3 + segIndex) // timed number between -1 and 1
-
-                segment.point.y = segment.point.y - (sinus * options.stretchSpeed)
-                segment.point.x = segment.point.x + (sinus * options.stretchSpeed)
-              })
-
-              path.curves.forEach(function (curve, curveIndex) {
-                var sinus = Math.sin(event.time * 3 + curveIndex) // timed number between -1 and 1
-
-                curve.handle1.y = curve.handle1.y - (sinus * options.stretchSpeed)
-                curve.handle2.y = curve.handle2.y - (sinus * options.stretchSpeed)
-                curve.handle1.x = curve.handle1.x + (sinus * options.stretchSpeed)
-                curve.handle2.x = curve.handle2.x + (sinus * options.stretchSpeed)
-              })
-              */
-            })
+            }
           }
         }
 
