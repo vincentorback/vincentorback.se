@@ -304,9 +304,9 @@
 
     lazyImages: function () {
       return new LazyLoad({
-        elements_selector: 'img[loading=lazy]',
+        elements_selector: '[data-loading=lazy]',
         class_loaded: 'is-loaded',
-        use_native: true
+        use_native: false
       })
     },
 
