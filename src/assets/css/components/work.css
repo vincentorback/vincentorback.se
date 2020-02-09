@@ -54,15 +54,14 @@ html:not(.has-js) .Work-grid {
   padding-bottom: 100%;
 }
 
-/*
-.Work-item--saqmi .Work-imageWrap {
+.Work-item--medium .Work-imageWrap {
   padding-bottom: calc(800 / 1200 * 100%);
 }
 
-.Work-item--systerochbror .Work-imageWrap {
-  padding-bottom: calc(680 / 1200 * 100%);
+.Work-item--short .Work-imageWrap {
+  padding-bottom: calc(700 / 1200 * 100%);
 }
-*/
+
 
 .Work-item--filosofera .Work-imageWrap {
   background-color: #006cb3;
