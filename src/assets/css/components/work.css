@@ -37,7 +37,7 @@ html:not(.has-js) .Work-grid {
   }
 }
 
-.Work-imageWrap {
+.Work-mediaWrap {
   position: relative;
   display: block;
   padding-bottom: calc(900 / 1200 * 100%); /* height / width * 100%  */
@@ -46,63 +46,73 @@ html:not(.has-js) .Work-grid {
   border-radius: 4px 4px 0 0;
 }
 
-.Work-imageWrap:focus {
+.Work-mediaWrap:focus {
   outline: none;
 }
 
-.Work-item--tall .Work-imageWrap {
+.Work-item--tall .Work-mediaWrap {
   padding-bottom: 100%;
 }
 
-.Work-item--medium .Work-imageWrap {
+.Work-item--medium .Work-mediaWrap {
   padding-bottom: calc(800 / 1200 * 100%);
 }
 
-.Work-item--short .Work-imageWrap {
+.Work-item--short .Work-mediaWrap {
   padding-bottom: calc(700 / 1200 * 100%);
 }
 
+.Work-item--saqmi .Work-mediaWrap {
+  background-color: #fff8dc;
+}
 
-.Work-item--filosofera .Work-imageWrap {
+.Work-item--filosofera .Work-mediaWrap {
   background-color: #006cb3;
   background-image: linear-gradient(-59deg, #006cb3 0%, #7ac6c2 100%);
 }
 
-.Work-image {
+.Work-media {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   display: block;
-  opacity: 0;
   backface-visibility: hidden;
   transition: opacity 200ms ease 100ms, transform 200ms ease 100ms;
-  transform: translateY(3%);
 }
 
-.Work-item--filosofera .Work-image {
-  opacity: 1;
+video.Work-media {
+  object-fit: cover;
+  border-radius: 4px 4px 0 0;
+  background: var(--color-dark);
+}
+
+.Work-item--saqmi .Work-media {
+  padding: 10%;
+}
+
+.Work-item--filosofera .Work-media {
   transform: rotateY(180deg);
   backface-visibility: visible;
   padding: 15%;
 }
 
 @media (min-width: 1400px) {
-  .Work-item:nth-child(2) .Work-image {
+  .Work-item:nth-child(2) .Work-media {
     transition-delay: 200ms;
   }
 }
 
 @media (min-width: 1800px) {
-  .Work-item:nth-child(3) .Work-image {
+  .Work-item:nth-child(3) .Work-media {
     transition-delay: 300ms;
   }
 }
 
-.Work-image.is-loaded {
-  opacity: 1;
-  transform: translateY(0);
+.Work-media[data-loading=lazy]:not(.is-loaded) {
+  opacity: 0;
+  transform: translateY(3%);
 }
 
 .fmf-hand {

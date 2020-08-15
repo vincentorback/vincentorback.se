@@ -22,6 +22,7 @@
     "build:light": "npm-run-all test:js test:css build:html build:js build:css compress",
     "build": "rm -rf dist && npm-run-all build:light move:images move:fonts move:icons move:fonts compress:images build:webp",
     "move:images": "copyfiles -u 2 -f src/assets/images/* src/assets/images/**/* dist/assets/images",
+    "move:video": "copyfiles -u 2 -f src/assets/video/* dist/assets/video",
     "move:icons": "copyfiles -u 2 -f src/assets/icons/* dist",
     "move:fonts": "copyfiles -u 2 src/assets/fonts/* dist/assets",
     "test:js": "standard 'src/assets/javascript/**/*.js'",
