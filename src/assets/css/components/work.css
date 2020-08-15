@@ -1,7 +1,13 @@
 .Work {
   position: relative;
   z-index: 1;
-  margin: var(--spacing-lg) 0;
+  margin: calc(var(--spacing-lg) * 1.5) 0 var(--spacing-lg);
+}
+
+@media (min-width: 800px) {
+  .Work {
+    margin-top: var(--spacing-lg);
+  }
 }
 
 html:not(.has-js) .Work-grid {
@@ -27,15 +33,17 @@ html:not(.has-js) .Work-grid {
 
 @media (max-width: 1800px) {
   .Work-itemInner {
-    max-width: 600px;
+    /* max-width: 600px; */
   }
 }
 
+/*
 @media (min-width: 900px) and (max-width: 1800px) {
   .Work-item:nth-child(2n) .Work-itemInner {
     margin-left: auto;
   }
 }
+*/
 
 .Work-mediaWrap {
   position: relative;

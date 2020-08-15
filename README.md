@@ -1,5 +1,5 @@
 # Vincent Orback
-My personal portfolio [vincentorback.se](https://vincentorback.se).
+My personal portfolio [vincentorback.se](https://www.vincentorback.se).
 
 ## Setup
 - Install dependencies: `yarn install`

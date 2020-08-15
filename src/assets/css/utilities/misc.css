@@ -13,40 +13,26 @@
 }
 
 
+/* Position */
+
 .u-relative {
-  position: relative !important;
+  position: relative;
 }
 
 
 /* Text */
 
 .u-textNormal {
-  font-weight: var(--font-normal) !important;
+  font-weight: var(--font-normal);
 }
-
-.u-textBold {
-  font-weight: var(--font-bold) !important;
-}
-
-/**
- * Text truncation
- *
- * Prevent text from wrapping onto multiple lines, and truncate with an
- * ellipsis.
- *
- * 1. Ensure that the node has a maximum width after which truncation can
- *    occur.
- * 2. Fix for IE 8/9 if `word-wrap: break-word` is in effect on ancestor
- *    nodes.
- */
 
 @media (min-width: 320px) {
   .u-textTruncate {
-    max-width: 100%; /* 1 */
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    white-space: nowrap !important;
-    word-wrap: normal !important; /* 2 */
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
   }
 }
 
@@ -54,7 +40,7 @@
 /* Display */
 
 html:not(.has-js) .u-noJsHide {
-  display: none !important;
+  display: none;
 }
 
 .u-hidden {
@@ -62,17 +48,11 @@ html:not(.has-js) .u-noJsHide {
 }
 
 .u-hiddenVisually {
-  border: 0 !important;
-  clip: rect(1px, 1px, 1px, 1px) !important;
-  height: 0 !important;
-  overflow: hidden !important;
-  padding: 0 !important;
-  position: absolute !important;
-  width: 1px !important;
-}
-
-@media print {
-  .u-printHide {
-    display: none !important;
-  }
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }

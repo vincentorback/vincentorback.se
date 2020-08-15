@@ -46,7 +46,7 @@
 
 .Type h1,
 .Type h2 {
-  font-weight: var(--font-bold);
+  /* font-weight: var(--font-bold); */
 }
 
 .Type h1 {
@@ -92,7 +92,6 @@
 .Type img:last-child {
   margin-bottom: 0;
 }
-
 
 .Type a {
   font-style: italic;

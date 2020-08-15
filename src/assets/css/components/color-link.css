@@ -17,23 +17,27 @@
   }
 }
 
-.ColorLink:hover > :nth-of-type(5n+1) {
+.ColorLink:hover > :nth-of-type(6n+1) {
+  animation-delay: -2.4s;
+}
+
+.ColorLink:hover > :nth-of-type(6n+2) {
   animation-delay: -2s;
 }
 
-.ColorLink:hover > :nth-of-type(5n+2) {
+.ColorLink:hover > :nth-of-type(6n+3) {
   animation-delay: -1.6s;
 }
 
-.ColorLink:hover > :nth-of-type(5n+3) {
+.ColorLink:hover > :nth-of-type(6n+4) {
   animation-delay: -1.2s;
 }
 
-.ColorLink:hover > :nth-of-type(5n+4) {
+.ColorLink:hover > :nth-of-type(6n+5) {
   animation-delay: -.8s;
 }
 
-.ColorLink:hover > :nth-of-type(5n+5) {
+.ColorLink:hover > :nth-of-type(6n+6) {
   animation-delay: -.4s;
 }
 

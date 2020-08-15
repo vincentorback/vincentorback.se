@@ -82,7 +82,7 @@
 
 @media (min-width: 1600px) {
   .Intro-contact {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 
@@ -108,36 +108,6 @@
   margin-right: 4px;
   transform: translateY(2px);
 }
-
-/*
-.Intro-blob {
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 0;
-  width: 110vmax;
-  height: 110vmax;
-  transform: translate(75%, -35%) rotateZ(60deg);
-}
-
-@media (min-width: 600px) {
-  .Intro-blob {
-    width: 110vmax;
-    height: 110vmax;
-    transform: translate(50%, -30%) rotateZ(60deg);
-  }
-}
-
-@media (min-width: 1000px) {
-  .Intro-blob {
-    width: 110vmax;
-    height: 110vmax;
-    transform: translate(50%, -30%) rotateZ(60deg);
-  }
-}
-/*
-
-/* With canvas */
 
 .Intro-blob {
   position: absolute;

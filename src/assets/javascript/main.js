@@ -108,29 +108,55 @@
           }
         },
         about: {
-          rotationSpeed: 0.2,
-          stretchSpeed: 0.3,
+          rotationSpeed: 0.3,
+          stretchSpeed: 0.1,
           startRotate: 120,
+          scaleEl: document.querySelector('.js-aboutImage'),
           breakpoints: {
-            800: {
+            500: {
               x: 1,
               y: 1,
-              scale: 0.6
+              scale: 0.35
+            },
+            700: {
+              x: 1,
+              y: 1,
+              scale: 0.5
+            },
+            1000: {
+              x: 1,
+              y: 1,
+              scale: 0.35
+            },
+            1300: {
+              x: 1,
+              y: 1,
+              scale: 0.5
+            },
+            1400: {
+              x: 1,
+              y: 1,
+              scale: 0.65
             },
             1600: {
               x: 1,
               y: 1,
-              scale: 0.6
+              scale: 0.75
+            },
+            2000: {
+              x: 1,
+              y: 1,
+              scale: 0.9
             },
             30000: {
               x: 1,
               y: 1,
-              scale: 0.8
+              scale: 1.2
             }
           }
         },
         foot: {
-          rotationSpeed: 0.2,
+          rotationSpeed: 0.3,
           stretchSpeed: 0.1,
           startRotate: 40,
           breakpoints: {
@@ -164,16 +190,16 @@
       }
 
       var rootStyles = window.getComputedStyle(document.documentElement)
+      var blendMode = 'multiply'
+      var svgHTML = blobSvg.outerHTML
+      var viewportWidth = getViewportWidth()
+      var activeClass = 'is-active'
+      var scopes = []
       var colors = [
         rootStyles.getPropertyValue('--color-yellow'),
         rootStyles.getPropertyValue('--color-pink'),
         rootStyles.getPropertyValue('--color-blue')
       ]
-      var blendMode = 'multiply'
-      var svgHTML = blobSvg.outerHTML
-      var viewportWidth = getViewportWidth()
-      var scopes = []
-      var activeClass = 'is-active'
 
       function initializeBlob (options, canvas, scope) {
         var currentPosition = Object.keys(options.breakpoints).find(key => viewportWidth < key)
@@ -182,6 +208,11 @@
         scope.setup(canvas)
 
         scope.project.importSVG(svgHTML, function (item) {
+          if (options.scaleEl) {
+            canvas.style.width = `${options.scaleEl.offsetWidth * 1.5}px`
+            canvas.style.height = `${options.scaleEl.offsetWidth * 1.5}px`
+          }
+
           item.scale(options.breakpoints[currentPosition].scale)
           item.rotate(options.startRotate)
 
@@ -190,9 +221,8 @@
             y: scope.view.center.y * options.breakpoints[currentPosition].y
           })
 
-          item.children.forEach((path, pathIndex) => {
+          item.children.forEach(function (path, pathIndex) {
             if (path.closed) {
-              // path.fullySelected = true
               path.blendMode = blendMode
               path.fillColor = colors[pathIndex]
 
@@ -209,10 +239,11 @@
           var nPaths = paths.length
           scope.view.onFrame = function (event) {
             if (event.delta > 0.03) return
+
             for (var i = 0; i < nPaths; i += 1) {
               paths[i].rotate(i % 2 === 0
-                ? options.rotationSpeed
-                : options.rotationSpeed * -1)
+                ? ((options.rotationSpeed) * (1 + event.delta))
+                : ((options.rotationSpeed) * (1 + event.delta)) * -1)
             }
           }
         }

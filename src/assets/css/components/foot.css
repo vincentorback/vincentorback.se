@@ -186,6 +186,12 @@ html.has-js .Foot-list {
   transform: translateX(-100px);
 }
 
+@media (min-width: 1600px) {
+  .Foot-menuList {
+    font-size: 1.3rem;
+  }
+}
+
 .Foot-menuList li {
   position: relative;
   display: block;
@@ -196,6 +202,7 @@ html.has-js .Foot-list {
   cursor: default;
   white-space: nowrap;
 }
+
 
 .Foot-menuList a {
   display: block;
@@ -234,8 +241,8 @@ html.has-js .Foot-list {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .Foot-menuContainer,
-  .Foot-menuList li > ul {
-    transition: none !important;
+  .Foot .Foot-menuContainer,
+  .Foot .Foot-menuList li > ul {
+    transition: none;
   }
 }

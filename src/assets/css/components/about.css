@@ -4,7 +4,7 @@
 
 @media (min-width: 900px) {
   .About {
-    margin: 0 0 calc(var(--spacing-lg) * 2);
+    margin: 0 0 calc(var(--spacing-lg) * 1);
   }
 }
 
@@ -79,23 +79,31 @@
   position: absolute;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
   z-index: 1;
   width: 100%;
   height: 100%;
   display: block;
-  padding: var(--spacing-sm);
-  opacity: 1;
-  transition: opacity 600ms ease, transform 600ms ease, clip-path 600ms ease;
+  padding: 15%;
+}
+
+#clip {
+  transform-origin: 500px 500px;
+  animation: rotate 15000ms linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotateZ(360deg);
+  }
 }
 
 @media (min-width: 600px) {
   .About-image {
     transform: rotateY(180deg);
   }
-}
-
-.About-image[data-src]:not(.is-loaded) {
-  opacity: 0;
 }
 
 .About-blob {
@@ -123,8 +131,24 @@
   }
 }
 
-@media (min-width: 1100px) {
-  .About-blob {
-    transform: scale(1.5);
+/*
+.About-canvasBlob {
+  position: absolute;
+  margin: auto;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: opacity 500ms ease 300ms;
+}
+
+.About-canvasBlob:not(.is-active) {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .About-canvasBlob {
+    transition: none;
   }
 }
+*/

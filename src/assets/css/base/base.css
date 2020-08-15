@@ -4,14 +4,6 @@
   box-sizing: inherit;
 }
 
-/*
-* {
-  cursor: url(/assets/images/cursor.png) 12 4, auto !important;
-  cursor: url(/assets/images/cursor.svg) 12 4, auto !important;
-  cursor: -webkit-image-set(url(/assets/images/cursor.png) 1x, url(/assets/images/cursor@x2.png) 2x) 12 4, auto !important;
-}
-*/
-
 :root {
   box-sizing: border-box;
   font-weight: var(--font-normal);
@@ -20,11 +12,6 @@
   font-family: var(--font-sansserif);
   color: var(--color-text);
   background-color: var(--color-background);
-  text-rendering: geometricPrecision;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-text-size-adjust: 100%;
 }
 
 html,
@@ -91,4 +78,14 @@ ol {
 
 [hidden] {
   display: none;
+}
+
+a[href^="http:"]::after,
+a[href^="https:"]::after {
+  content: " - External link";
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
 }
