@@ -13,7 +13,7 @@
 
 @media (min-width: 1600px) {
   .Intro {
-    padding-top: calc(var(--spacing-lg) * 3.2);
+    padding-top: calc(var(--spacing-lg) * 2.8);
   }
 }
 
@@ -44,13 +44,13 @@
 
 @media (min-width: 1200px) {
   .Intro-text {
-    max-width: 800px;
+    max-width: 650px;
   }
 }
 
 @media (min-width: 1600px) {
   .Intro-text {
-    max-width: 1000px;
+    max-width: 800px;
   }
 }
 
@@ -76,13 +76,13 @@
 @media (min-width: 1000px) {
   .Intro-contact {
     margin-top: var(--spacing-sm);
-    font-size: 1.5rem;
+    font-size: 1.5em;
   }
 }
 
 @media (min-width: 1600px) {
   .Intro-contact {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 }
 

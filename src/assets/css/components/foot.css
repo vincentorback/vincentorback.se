@@ -36,9 +36,9 @@ html.has-js .Foot-list {
   }
 }
 
-@media (min-width: 1800px) {
+@media (min-width: 1600px) {
   .Foot-list {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -188,6 +188,7 @@ html.has-js .Foot-list {
 
 @media (min-width: 1600px) {
   .Foot-menuList {
+    padding-bottom: 3em;
     font-size: 1.3rem;
   }
 }
