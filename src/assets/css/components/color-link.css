@@ -43,15 +43,15 @@
 
 @keyframes colorCycle {
   0% {
-    color: #fdb74a; /* var(--color-yellow); */
+    color: #251bce;
   }
 
   20% {
-    color: var(--color-red);
+    color: var(--color-green);
   }
 
   40% {
-    color: var(--color-green);
+    color: #fdb74a;
   }
 
   60% {
@@ -59,7 +59,7 @@
   }
 
   80% {
-    color: #251bce; /* var(--color-blue); */
+    color: var(--color-red);
   }
 
   100% {
