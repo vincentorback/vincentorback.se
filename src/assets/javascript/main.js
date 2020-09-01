@@ -1,4 +1,4 @@
-/* global IntersectionObserver, LazyLoad, Macy, paper */
+/* global LazyLoad, Macy, paper */
 
 (function (window) {
   'use strict'
@@ -28,7 +28,7 @@
 
   var vincent = {
     init: function () {
-      vincent.video()
+      vincent.autoplayFallback()
 
       vincent.grid()
 
@@ -43,21 +43,29 @@
       vincent.touchHover()
     },
 
-    video: function () {
-      var observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.intersectionRatio !== 1 && !entry.target.paused) {
-            entry.target.pause()
-          } else if (entry.target.paused) {
-            entry.target.play()
-          }
-        })
-      }, {
-        threshold: 1
-      })
+    autoplayFallback: function () {
+      function replaceVideoWithImage (el) {
+        var image = el.querySelector('img')
 
-      Array.from(document.querySelector('video'), function (el) {
-        observer.observe(el)
+        el.parentNode.appendChild(image)
+        el.parentNode.removeChild(el)
+      }
+
+      Array.from(document.querySelectorAll('.js-autoplay'), function (el) {
+        var startPlayPromise = el.play()
+
+        startPlayPromise
+          .catch(function (error) {
+            console.log(error)
+            el.muted = true
+            var secondTry = el.play() // Try one more time muted, works sometimes.
+
+            secondTry
+              .catch(function (error) {
+                console.log(error)
+                replaceVideoWithImage(el)
+              })
+          })
       })
     },
 
@@ -330,7 +338,7 @@
           viewportWidth = getViewportWidth()
 
           window.setTimeout(function () {
-            grid.recalculate(null, true)
+            grid.recalculate(true)
           }, 100)
         }, 300))
 
@@ -349,50 +357,20 @@
         }, 600))
 
         grid.runOnImageLoad(function () {
-          grid.recalculate(null, true)
+          grid.recalculate(true)
+        })
+
+        window.addEventListener('load', function () {
+          grid.recalculate(true)
         })
       }
     },
 
     lazyLoad: function () {
-      function replaceVideoWithImage (el) {
-        var image = el.querySelector('img')
-
-        el.parentNode.appendChild(image)
-        el.parentNode.removeChild(el)
-      }
-
       return new LazyLoad({
         elements_selector: '[data-loading=lazy]',
         class_loaded: 'is-loaded',
-        use_native: false,
-        callback_loaded: function (el, lazy) {
-          if (el.play) {
-            var startPlayPromise = el.play()
-
-            if (startPlayPromise !== undefined) {
-              startPlayPromise
-                .catch(function (error) {
-                  replaceVideoWithImage(el)
-
-                  if (error.name === 'NotAllowedError') {
-                    console.log('autoplay not allowed')
-                  } else {
-                    console.log('load/playback error')
-                  }
-                })
-            } else {
-              replaceVideoWithImage(el)
-            }
-          }
-        },
-        callback_error: function (el) {
-          console.log('callback_error')
-          replaceVideoWithImage(el)
-        },
-        callback_finish: function () {
-          console.log('callback_finish')
-        }
+        use_native: false
       })
     },
 
