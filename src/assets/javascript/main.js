@@ -6,7 +6,6 @@
   var doc = window.document
   var docEl = doc.documentElement
   var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  var saveData = navigator.connection && navigator.connection.saveData === true
 
   function getViewportWidth () {
     return Math.max(docEl.clientWidth, window.innerWidth || 0)
@@ -32,9 +31,7 @@
 
       vincent.grid()
 
-      if (saveData !== true) {
-        vincent.lazyLoad()
-      }
+      vincent.lazyLoad()
 
       vincent.canvasBlob()
 
@@ -363,14 +360,56 @@
         window.addEventListener('load', function () {
           grid.recalculate(true)
         })
+
+        setTimeout(function () {
+          grid.recalculate(null, true)
+        }, 2000)
       }
     },
 
     lazyLoad: function () {
+      function replaceVideoWithImage (el) {
+        var image = el.querySelector('picture')
+
+        el.parentNode.appendChild(image)
+        el.parentNode.removeChild(el)
+
+        LazyLoad({
+          container: image.parentNode,
+          elements_selector: '[data-loading="lazy"]',
+          class_loaded: 'is-loaded'
+        })
+      }
+
       return new LazyLoad({
         elements_selector: '[data-loading=lazy]',
         class_loaded: 'is-loaded',
-        use_native: false
+        callback_loaded: function (el) {
+          if (el.play) {
+            console.log('play video...')
+
+            var startPlayPromise = el.play()
+
+            if (startPlayPromise !== undefined) {
+              startPlayPromise
+                .catch(function (error) {
+                  replaceVideoWithImage(el)
+
+                  if (error.name === 'NotAllowedError') {
+                    console.log('autoplay not allowed')
+                  } else {
+                    console.log('load/playback error')
+                  }
+                })
+            } else {
+              replaceVideoWithImage(el)
+            }
+          }
+        },
+        callback_error: function (el) {
+          console.log('callback_error')
+          replaceVideoWithImage(el)
+        }
       })
     },
 
