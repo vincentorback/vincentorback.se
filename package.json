@@ -19,6 +19,7 @@
     "build:css": "postcss src/assets/css/style.css -o dist/assets/css/style.css",
     "build:html": "html-minifier --remove-comments --sort-attributes --sort-class-name --collapse-whitespace --remove-redundant-attributes --process-scripts 'application/ld+json' --minify-js true --output-dir dist --input-dir src --file-ext html",
     "build:webp": "imagemin ./dist/assets/images/{*.jpg,*.png} -p=webp -o=./dist/assets/images",
+    "build:avif": "avif -e dist/assets/images/hyper-human.jpg -o dist/assets/images/hyper-human.avif",
     "build:light": "npm-run-all test:js test:css build:html build:js build:css compress",
     "build": "rm -rf dist && npm-run-all build:light move:images move:video move:fonts move:icons move:fonts compress:images build:webp",
     "move:images": "copyfiles -u 2 -f src/assets/images/* src/assets/images/**/* dist/assets/images",
