@@ -197,6 +197,12 @@ video.Work-media {
   }
 }
 
+@media (min-width: 1600px) {
+  .Work-infoLink {
+    font-size: 1.4em;
+  }
+}
+
 .Work-infoLink > * {
   display: inline;
   vertical-align: middle;
