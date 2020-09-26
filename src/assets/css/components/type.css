@@ -5,6 +5,16 @@
   line-height: var(--font-lineheight-lg);
 }
 
+@media (max-height: 500px) and (min-width: 800px) {
+  .Type {
+    font-size: .85rem;
+  }
+
+  .Type--lg {
+    font-size: 1.1rem;
+  }
+}
+
 @media (min-width: 900px) {
   .Type {
     font-size: 1.3rem;

@@ -23,6 +23,7 @@
   flex: 1 0 300px;
   max-width: 700px;
   margin: var(--spacing-sm) 0 0;
+  padding-left: env(safe-area-inset-left);
 }
 
 @media (min-width: 800px) {
