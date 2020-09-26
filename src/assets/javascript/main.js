@@ -258,6 +258,7 @@
 
       window.addEventListener('resize', debounce(function () {
         var newViewportWidth = getViewportWidth()
+
         if (viewportWidth !== newViewportWidth) {
           viewportWidth = newViewportWidth
           initializeBlobs()
@@ -292,9 +293,11 @@
 
     grid: function () {
       var gridEl = doc.querySelector('.js-grid')
+      var viewportWidth = getViewportWidth()
 
-      if (gridEl) {
-        var viewportWidth = getViewportWidth()
+      function newMacy (el) {
+        viewportWidth = getViewportWidth()
+
         var breakAt = {
           600: {
             margin: {
@@ -306,38 +309,38 @@
           900: {
             margin: {
               x: '2.5vw',
-              y: viewportWidth * 0.025
+              y: Math.floor(viewportWidth * 0.025)
             },
             columns: 2
           },
           1800: {
             margin: {
               x: '5vw',
-              y: viewportWidth * 0.05
+              y: Math.floor(viewportWidth * 0.05)
             },
             columns: 2
           }
         }
 
-        var grid = Macy({
-          container: gridEl,
+        return new Macy({
+          container: el,
           trueOrder: false,
           waitForImages: false,
           columns: 3,
           margin: {
             x: '5vw',
-            y: viewportWidth * 0.05
+            y: Math.floor(viewportWidth * 0.05)
           },
           breakAt: breakAt
         })
+      }
+
+      if (gridEl) {
+        var grid = newMacy(gridEl)
 
         window.addEventListener('resize', debounce(function () {
-          viewportWidth = getViewportWidth()
-
-          window.setTimeout(function () {
-            grid.recalculate(true)
-          }, 100)
-        }, 300))
+          grid = newMacy(gridEl)
+        }, 500))
 
         grid.on(grid.constants.EVENT_RECALCULATED, debounce(function () {
           var yMargin = grid.options.margin.y
@@ -351,19 +354,15 @@
             })
 
           gridEl.style.marginBottom = `${yMargin * -1}px`
-        }, 600))
+        }, 700))
 
         grid.runOnImageLoad(function () {
-          grid.recalculate(true)
+          grid = newMacy(gridEl)
         })
 
         window.addEventListener('load', function () {
-          grid.recalculate(true)
+          grid = newMacy(gridEl)
         })
-
-        setTimeout(function () {
-          grid.recalculate(null, true)
-        }, 2000)
       }
     },
 
