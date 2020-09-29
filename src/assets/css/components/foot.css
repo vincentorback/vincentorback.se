@@ -144,19 +144,19 @@ html.has-js .Foot-list {
   }
 }
 
-.Foot-menu > span {
+.Foot-menuToggle {
   display: block;
   padding: 40px 0 0 40px;
   font-size: 1.2rem;
 }
 
 @media (min-width: 1600px) {
-  .Foot-menu > span {
+  .Foot-menuToggle {
     font-size: 1.8rem;
   }
 }
 
-.Foot-menu svg {
+.Foot-menuToggleSymbol {
   display: inline-block;
   vertical-align: top;
   transform: rotateZ(-135deg);
@@ -200,7 +200,7 @@ html.has-js .Foot-list {
   }
 }
 
-.Foot-menuList li {
+.Foot-menuListItem {
   position: relative;
   display: block;
   background: #fff;
@@ -216,22 +216,22 @@ html.has-js .Foot-list {
   display: block;
 }
 
-.Foot-menuList li > span,
-.Foot-menuList li > a {
+.Foot-menuListItem > span,
+.Foot-menuListItem > a {
   display: block;
   padding: .5em .8em;
 }
 
-.Foot-menuList li:last-child {
+.Foot-menuListItem:last-child {
   border-width: 1px;
 }
 
-.Foot-menuList li:hover {
+.Foot-menuListItem:hover {
   background: var(--color-dark);
   color: #fff;
 }
 
-.Foot-menuList li > ul {
+.Foot-menuListItem > ul {
   position: absolute;
   left: 0;
   bottom: .2em;
@@ -241,7 +241,7 @@ html.has-js .Foot-list {
   transition: transform 200ms ease, opacity 200ms ease, visibility 0ms linear 200ms;
 }
 
-.Foot-menuList li:hover > ul {
+.Foot-menuListItem:hover > ul {
   transform: translateX(-100%);
   opacity: 1;
   visibility: visible;
@@ -250,7 +250,7 @@ html.has-js .Foot-list {
 
 @media (prefers-reduced-motion: reduce) {
   .Foot .Foot-menuContainer,
-  .Foot .Foot-menuList li > ul {
+  .Foot .Foot-menuListItem > ul {
     transition: none;
   }
 }
