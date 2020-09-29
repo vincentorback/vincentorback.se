@@ -1,9 +1,8 @@
 # Vincent Orback
 My personal portfolio [vincentorback.se](https://www.vincentorback.se).
 
-## Setup
+## Scripts
 - Install dependencies: `npm install`
-
-## Development
-- Build and serve at localhost:3000: `npm start`
-- Build, minify, compress all assets: `npm run build`
+- Build and serve: `npm start`
+- Build, minify, compress assets: `npm run build`
+- Build assets and : `npm run deploy`

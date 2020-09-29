@@ -5,7 +5,7 @@
   "homepage": "https://www.vincentorback.se",
   "author": {
     "name": "Vincent Orback",
-    "email": "vorback@gmail.com",
+    "email": "hello@vincentorback.se",
     "url": "https://www.vincentorback.se"
   },
   "license": "MIT",
@@ -35,7 +35,6 @@
     "serve": "serve dist -l 3000",
     "compress": "gzip dist/**/*.{css,js,html} --extension=gz --extension=br",
     "compress:images": "imageoptim dist/*",
-    "purge": "bash bin/purge.sh",
     "deploy:light": "yarn build:light && copyfiles -u 1 src/sitemap.xml dist && copyfiles -u 1 src/.htaccess dist && copyfiles -u 1 src/robots.txt dist",
     "deploy": "yarn build && copyfiles -u 1 src/sitemap.xml dist && copyfiles -u 1 src/.htaccess dist && copyfiles -u 1 src/robots.txt dist"
   },
