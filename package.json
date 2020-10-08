@@ -35,8 +35,8 @@
     "serve": "serve dist -l 3000",
     "compress": "gzip dist/**/*.{css,js,html} --extension=gz --extension=br",
     "compress:images": "imageoptim dist/*",
-    "deploy:light": "yarn build:light && copyfiles -u 1 src/sitemap.xml dist && copyfiles -u 1 src/.htaccess dist && copyfiles -u 1 src/robots.txt dist",
-    "deploy": "yarn build && copyfiles -u 1 src/sitemap.xml dist && copyfiles -u 1 src/.htaccess dist && copyfiles -u 1 src/robots.txt dist"
+    "deploy:light": "npm run build:light && copyfiles -u 1 src/sitemap.xml dist && copyfiles -u 1 src/.htaccess dist && copyfiles -u 1 src/robots.txt dist",
+    "deploy": "npm run build && copyfiles -u 1 src/sitemap.xml dist && copyfiles -u 1 src/.htaccess dist && copyfiles -u 1 src/robots.txt dist"
   },
   "config": {
     "js_files": "src/assets/javascript/vendor/paper-full.min.js src/assets/javascript/vendor/macy.js src/assets/javascript/vendor/lazyload.iife.min.js src/assets/javascript/main.js"
