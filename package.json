@@ -44,9 +44,9 @@
     "vanilla-lazyload": "^17.1.3"
   },
   "devDependencies": {
-    "autoprefixer": "^9.8.6",
+    "autoprefixer": "^10.0.1",
     "chokidar-cli": "^2.1.0",
-    "copyfiles": "^2.3.0",
+    "copyfiles": "^2.4.0",
     "esbuild": "^0.8.0",
     "gzip-cli": "^1.1.1",
     "html-minifier": "^4.0.0",
@@ -55,19 +55,20 @@
     "imageoptim-cli": "^3.0.2",
     "inline-source-cli": "^2.0.0",
     "npm-run-all": "^4.1.5",
-    "postcss-calc": "^7.0.4",
-    "postcss-cli": "^8.0.0",
-    "postcss-csso": "^4.0.0",
+    "postcss": "^8.1.4",
+    "postcss-calc": "^7.0.5",
+    "postcss-cli": "^8.2.0",
+    "postcss-csso": "^5.0.0",
     "postcss-custom-properties": "^10.0.0",
-    "postcss-import": "^12.0.1",
+    "postcss-import": "^13.0.0",
     "serve": "^11.3.2",
-    "standard": "^14.3.4",
-    "stylelint": "^13.7.1",
+    "standard": "^16.0.0",
+    "stylelint": "^13.7.2",
     "stylelint-config-standard": "^20.0.0",
     "uglify-es": "^3.3.10"
   },
   "browserslist": [
-    "> 5% in SE",
+    "> 2% in SE",
     "not ie <= 10"
   ],
   "postcss": {
