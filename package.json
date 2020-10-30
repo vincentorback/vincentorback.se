@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "if [ ! -d dist ]; then npm run build; fi && npm-run-all --parallel serve watch",
-    "build:js": "if [ ! -d dist/assets/javascript ]; then mkdir -p dist/assets/javascript; fi && uglifyjs $npm_package_config_js_files -o dist/assets/javascript/main.js --warn --mangle --toplevel",
+    "build:js": "esbuild src/assets/javascript/main.js --outfile=dist/assets/javascript/main.js --bundle --minify",
     "build:css": "postcss src/assets/css/style.css -o dist/assets/css/style.css",
     "build:html": "html-minifier --remove-comments --sort-attributes --sort-class-name --collapse-whitespace --remove-redundant-attributes --process-scripts 'application/ld+json' --minify-js true --output-dir dist --input-dir src --file-ext html",
     "build:webp": "imagemin ./dist/assets/images/{*.jpg,*.png} -p=webp -o=./dist/assets/images",
@@ -38,13 +38,16 @@
     "deploy:light": "npm run build:light && copyfiles -u 1 src/sitemap.xml dist && copyfiles -u 1 src/.htaccess dist && copyfiles -u 1 src/robots.txt dist",
     "deploy": "npm run build && copyfiles -u 1 src/sitemap.xml dist && copyfiles -u 1 src/.htaccess dist && copyfiles -u 1 src/robots.txt dist"
   },
-  "config": {
-    "js_files": "src/assets/javascript/vendor/paper-full.min.js src/assets/javascript/vendor/macy.js src/assets/javascript/vendor/lazyload.iife.min.js src/assets/javascript/main.js"
+  "dependencies": {
+    "macy": "^2.5.1",
+    "paper": "0.11.3",
+    "vanilla-lazyload": "^17.1.3"
   },
   "devDependencies": {
     "autoprefixer": "^9.8.6",
     "chokidar-cli": "^2.1.0",
     "copyfiles": "^2.3.0",
+    "esbuild": "^0.8.0",
     "gzip-cli": "^1.1.1",
     "html-minifier": "^4.0.0",
     "imagemin-cli": "^6.0.0",
