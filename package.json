@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "macy": "^2.5.1",
-    "paper": "0.11.3",
+    "paper": "0.12.11",
     "vanilla-lazyload": "^17.1.3"
   },
   "devDependencies": {

@@ -226,7 +226,7 @@ const vincent = {
         item.children.forEach(function (path, pathIndex) {
           if (path.closed) {
             path.blendMode = blendMode
-            path.fillColor = colors[pathIndex]
+            path.fillColor = colors[pathIndex - 1]
 
             if (prefersReducedMotion === false) {
               path.rotate(30 * pathIndex)
@@ -240,7 +240,7 @@ const vincent = {
       if (prefersReducedMotion === false) {
         const nPaths = paths.length
         scope.view.onFrame = function (event) {
-          if (event.delta > 0.03) return
+          // if (event.delta > 0.03) return
 
           for (let i = 0; i < nPaths; i += 1) {
             paths[i].rotate(i % 2 === 0
