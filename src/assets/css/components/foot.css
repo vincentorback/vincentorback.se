@@ -249,8 +249,8 @@ html.has-js .Foot-list {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .Foot .Foot-menuContainer,
-  .Foot .Foot-menuListItem > ul {
-    transition: none;
+  .Foot-menuContainer,
+  .Foot-menuListItem > ul {
+    transition: none !important;
   }
 }

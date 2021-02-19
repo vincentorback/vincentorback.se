@@ -7,7 +7,7 @@
 :root {
   box-sizing: border-box;
   font-weight: var(--font-normal);
-  font-size: 16px;
+  font-size: 100%;
   line-height: var(--font-lineheight-sm);
   font-family: var(--font-sansserif);
   color: var(--color-text);

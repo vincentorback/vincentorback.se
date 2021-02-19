@@ -29,6 +29,10 @@
   .Type {
     font-size: 1.5rem;
   }
+
+  .Type--lg {
+    font-size: 1.7rem;
+  }
 }
 
 @media (min-width: 1800px) {

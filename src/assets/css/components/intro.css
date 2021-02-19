@@ -24,7 +24,7 @@
   z-index: 1;
   opacity: 0;
   transform: translateY(5%);
-  animation: fadeIn 300ms ease 100ms forwards;
+  animation: fadeIn 300ms ease 200ms forwards;
 }
 
 @keyframes fadeIn {
@@ -41,6 +41,12 @@
 
 .Intro-text {
   max-width: 550px;
+}
+
+@media (min-width: 800px) {
+  .Intro-text {
+    max-width: 600px;
+  }
 }
 
 @media (min-width: 1200px) {

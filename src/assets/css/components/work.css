@@ -31,20 +31,6 @@ html:not(.has-js) .Work-grid {
   overflow: hidden;
 }
 
-@media (max-width: 1800px) {
-  .Work-itemInner {
-    /* max-width: 600px; */
-  }
-}
-
-/*
-@media (min-width: 900px) and (max-width: 1800px) {
-  .Work-item:nth-child(2n) .Work-itemInner {
-    margin-left: auto;
-  }
-}
-*/
-
 .Work-mediaWrap {
   position: relative;
   display: block;

@@ -414,14 +414,10 @@ const vincent = {
 
             videoObserver.observe(el)
 
-            replaceVideoWithImage(el)
-
-            /*
             startPlayPromise
               .catch(function () {
                 replaceVideoWithImage(el)
               })
-            */
           } else {
             replaceVideoWithImage(el)
           }
