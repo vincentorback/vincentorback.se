@@ -63,10 +63,6 @@ img {
   border-style: none;
 }
 
-video {
-  pointer-events: none;
-}
-
 video::-webkit-media-controls-start-playback-button {
   display: none;
 }

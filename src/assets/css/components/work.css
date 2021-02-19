@@ -66,12 +66,12 @@ html:not(.has-js) .Work-grid {
   padding-bottom: calc(800 / 1200 * 100%);
 }
 
-.Work-item--short .Work-mediaWrap {
-  padding-bottom: calc(700 / 1200 * 100%);
-}
-
 .Work-item--saqmi .Work-mediaWrap {
   background-color: #fff8dc;
+}
+
+.Work-item--forfattaren .Work-mediaWrap {
+  background-color: #fef9eb;
 }
 
 .Work-item--filosofera .Work-mediaWrap {
@@ -87,16 +87,24 @@ html:not(.has-js) .Work-grid {
   height: 100%;
   display: block;
   backface-visibility: hidden;
-  transition: opacity 200ms ease 100ms, transform 200ms ease 100ms;
+  transition: opacity 200ms ease 100ms;
+}
+
+img.Work-media {
+  object-fit: cover;
 }
 
 video.Work-media {
-  object-fit: cover;
   border-radius: 4px 4px 0 0;
-  background: var(--color-dark);
 }
 
-.Work-item--saqmi .Work-media {
+.Work-item--video .Work-mediaWrap {
+  background: #111;
+  padding-bottom: calc(720 / 1280 * 100%);
+}
+
+.Work-item--saqmi .Work-media,
+.Work-item--forfattaren .Work-media {
   padding: 10%;
 }
 
@@ -120,7 +128,6 @@ video.Work-media {
 
 .Work-media[data-loading=lazy]:not(.is-loaded) {
   opacity: 0;
-  transform: translateY(3%);
 }
 
 .fmf-hand {

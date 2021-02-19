@@ -1,14 +1,18 @@
+/* global IntersectionObserver */
+
 import LazyLoad from 'vanilla-lazyload'
 import Macy from 'macy'
 import { PaperScope, Point } from 'paper'
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection
+const saveData = connection && (connection.saveData || (connection.effectiveType && ['slow-2g', '2g', '3g'].includes(connection.effectiveType)))
 
 function getViewportWidth () {
   return Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
 }
 
-function randomBetween (from = 0, to = 1) {
+function randomBetween (from, to) {
   return Math.floor(Math.random() * to) + from
 }
 
@@ -22,10 +26,12 @@ function debounce (fn, wait) {
   }
 }
 
+function getStyleProperty (property, el) {
+  return window.getComputedStyle(document.documentElement).getPropertyValue(property)
+}
+
 const vincent = {
   init: function () {
-    vincent.autoplayFallback()
-
     vincent.grid()
 
     vincent.lazyLoad()
@@ -35,32 +41,6 @@ const vincent = {
     vincent.splitLetters()
 
     vincent.touchHover()
-  },
-
-  autoplayFallback: function () {
-    function replaceVideoWithImage (el) {
-      const image = el.querySelector('img')
-
-      el.parentNode.appendChild(image)
-      el.parentNode.removeChild(el)
-    }
-
-    Array.from(document.querySelectorAll('.js-autoplay')).forEach(function (el) {
-      const startPlayPromise = el.play()
-
-      startPlayPromise
-        .catch(function (error) {
-          console.log(error)
-          el.muted = true
-          const secondTry = el.play() // Try one more time muted, works sometimes.
-
-          secondTry
-            .catch(function (error) {
-              console.log(error)
-              replaceVideoWithImage(el)
-            })
-        })
-    })
   },
 
   canvasBlob: function () {
@@ -204,8 +184,10 @@ const vincent = {
     ]
 
     function initializeBlob (options, canvas, scope) {
-      const currentPosition = Object.keys(options.breakpoints).find(key => viewportWidth < key)
       const paths = []
+      const currentPosition = Object.keys(options.breakpoints).find(function (key) {
+        return viewportWidth < key
+      })
 
       scope.setup(canvas)
 
@@ -228,7 +210,7 @@ const vincent = {
             path.blendMode = blendMode
             path.fillColor = colors[pathIndex - 1]
 
-            if (prefersReducedMotion === false) {
+            if (!saveData || !prefersReducedMotion) {
               path.rotate(30 * pathIndex)
             }
 
@@ -237,8 +219,9 @@ const vincent = {
         })
       })
 
-      if (prefersReducedMotion === false) {
+      if (!saveData || !prefersReducedMotion) {
         const nPaths = paths.length
+
         scope.view.onFrame = function (event) {
           // if (event.delta > 0.03) return
 
@@ -252,15 +235,6 @@ const vincent = {
 
       canvas.classList.add(activeClass)
     }
-
-    window.addEventListener('resize', debounce(function () {
-      const newViewportWidth = getViewportWidth()
-
-      if (viewportWidth !== newViewportWidth) {
-        viewportWidth = newViewportWidth
-        initializeBlobs()
-      }
-    }, 300))
 
     function initializeBlobs () {
       if (scopes.length) {
@@ -286,34 +260,50 @@ const vincent = {
     }
 
     initializeBlobs()
+
+    window.addEventListener('resize', debounce(function () {
+      const newViewportWidth = getViewportWidth()
+
+      if (viewportWidth !== newViewportWidth) {
+        viewportWidth = newViewportWidth
+        initializeBlobs()
+      }
+    }, 300))
   },
 
   grid: function () {
     const gridEl = document.querySelector('.js-grid')
-    let viewportWidth = getViewportWidth()
+    let viewportWidth = 0
 
     function newMacy (el) {
-      viewportWidth = getViewportWidth()
+      let gridGutter = getStyleProperty('--spacing-sm')
+
+      if (gridGutter.includes('vw')) {
+        viewportWidth = getViewportWidth()
+        gridGutter = (parseInt(gridGutter) / 100) * viewportWidth
+      }
+
+      gridGutter = parseFloat(gridGutter)
 
       const breakAt = {
         600: {
           margin: {
-            x: '10vw',
-            y: 55
+            x: 0,
+            y: gridGutter
           },
           columns: 1
         },
         900: {
           margin: {
-            x: '2.5vw',
-            y: Math.floor(viewportWidth * 0.025)
+            x: gridGutter / 2,
+            y: gridGutter / 2
           },
           columns: 2
         },
         1800: {
           margin: {
-            x: '5vw',
-            y: Math.floor(viewportWidth * 0.05)
+            x: gridGutter,
+            y: gridGutter
           },
           columns: 2
         }
@@ -325,8 +315,8 @@ const vincent = {
         waitForImages: false,
         columns: 3,
         margin: {
-          x: '5vw',
-          y: Math.floor(viewportWidth * 0.05)
+          x: gridGutter,
+          y: gridGutter
         },
         breakAt: breakAt
       })
@@ -336,14 +326,20 @@ const vincent = {
       let grid = newMacy(gridEl)
 
       window.addEventListener('resize', debounce(function () {
-        grid = newMacy(gridEl)
+        const newViewportWidth = getViewportWidth()
+
+        if (viewportWidth !== newViewportWidth) {
+          grid = newMacy(gridEl)
+        }
       }, 500))
 
       grid.on(grid.constants.EVENT_RECALCULATED, debounce(function () {
         let yMargin = grid.options.margin.y
 
         Object.keys(grid.options.breakAt)
-          .sort((a, b) => parseFloat(a) - parseFloat(b))
+          .sort(function (a, b) {
+            return parseFloat(a) - parseFloat(b)
+          })
           .forEach(function (breakpoint) {
             if (viewportWidth > parseFloat(breakpoint)) {
               yMargin = grid.options.breakAt[breakpoint].margin.y
@@ -364,46 +360,74 @@ const vincent = {
   },
 
   lazyLoad: function () {
+    const manuallyPausedClass = 'is-manuallyPaused'
+    const loadedClass = 'is-loaded'
+    const lazySelector = '[data-loading="lazy"]'
+
     function replaceVideoWithImage (el) {
       const image = el.querySelector('picture')
 
-      el.parentNode.appendChild(image)
-      el.parentNode.removeChild(el)
+      if (image) {
+        el.parentNode.appendChild(image.parentNode.childNodes[0])
+        el.parentNode.removeChild(el)
 
-      LazyLoad({
-        container: image.parentNode,
-        elements_selector: '[data-loading="lazy"]',
-        class_loaded: 'is-loaded'
-      })
+        LazyLoad({
+          container: image.parentNode,
+          elements_selector: lazySelector,
+          class_loaded: loadedClass
+        })
+      }
     }
 
-    return new LazyLoad({
-      elements_selector: '[data-loading=lazy]',
-      class_loaded: 'is-loaded',
-      callback_loaded: function (el) {
-        if (el.play) {
-          console.log('play video...')
+    function togglePlay (el) {
+      if (el.paused === true) {
+        el.play()
+      } else {
+        el.pause()
+      }
 
+      el.classList.toggle(manuallyPausedClass, el.paused)
+    }
+
+    const videoObserver = new IntersectionObserver((entries, observer) => {
+      for (const entry of entries) (entry.isIntersecting && !entry.target.classList.contains(manuallyPausedClass)) ? entry.target.play() : entry.target.pause()
+    })
+
+    return new LazyLoad({
+      elements_selector: lazySelector,
+      class_loaded: loadedClass,
+      callback_loaded: function (el) {
+        if (!prefersReducedMotion && !saveData && el && el.play) {
           const startPlayPromise = el.play()
 
           if (startPlayPromise !== undefined) {
-            startPlayPromise
-              .catch(function (error) {
-                replaceVideoWithImage(el)
+            el.addEventListener('click', function () {
+              togglePlay(el)
+            })
 
-                if (error.name === 'NotAllowedError') {
-                  console.log('autoplay not allowed')
-                } else {
-                  console.log('load/playback error')
-                }
+            const togglePlayButton = el.parentNode.querySelector('.js-togglePlay')
+            if (togglePlayButton) {
+              togglePlayButton.addEventListener('click', function () {
+                togglePlay(el)
               })
+            }
+
+            videoObserver.observe(el)
+
+            replaceVideoWithImage(el)
+
+            /*
+            startPlayPromise
+              .catch(function () {
+                replaceVideoWithImage(el)
+              })
+            */
           } else {
             replaceVideoWithImage(el)
           }
         }
       },
       callback_error: function (el) {
-        console.log('callback_error')
         replaceVideoWithImage(el)
       }
     })
