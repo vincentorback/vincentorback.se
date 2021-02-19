@@ -36,3 +36,11 @@
     --color-dark: #3c304e;
   }
 }
+
+/* stylelint-disable */
+@media (prefers-reduced-data: reduce) {
+  :root {
+    --font-sansserif: system-ui, -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+  }
+}
+/* stylelint-enable */
