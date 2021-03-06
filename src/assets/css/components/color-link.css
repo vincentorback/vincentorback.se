@@ -15,6 +15,10 @@
   .ColorLink:hover span {
     animation: none;
   }
+
+  .ColorLink:hover {
+    text-decoration: underline;
+  }
 }
 
 .ColorLink:hover > :nth-of-type(6n+1) {

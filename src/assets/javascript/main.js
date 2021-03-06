@@ -4,7 +4,7 @@ import LazyLoad from 'vanilla-lazyload'
 import Macy from 'macy'
 import { PaperScope, Point } from 'paper'
 
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches === true
 const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection
 const saveData = connection && (connection.saveData || (connection.effectiveType && ['slow-2g', '2g', '3g'].includes(connection.effectiveType)))
 
@@ -209,17 +209,13 @@ const vincent = {
           if (path.closed) {
             path.blendMode = blendMode
             path.fillColor = colors[pathIndex - 1]
-
-            if (!saveData || !prefersReducedMotion) {
-              path.rotate(30 * pathIndex)
-            }
-
+            path.rotate(30 * pathIndex)
             paths.push(path)
           }
         })
       })
 
-      if (!saveData || !prefersReducedMotion) {
+      if (!saveData && !prefersReducedMotion) {
         const nPaths = paths.length
 
         scope.view.onFrame = function (event) {
