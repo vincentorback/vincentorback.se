@@ -129,6 +129,12 @@
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  .About-blob {
+    filter: brightness(60%);
+  }
+}
+
 /*
 .About-canvasBlob {
   position: absolute;

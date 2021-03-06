@@ -88,6 +88,12 @@ html.has-js .Foot-list {
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  .Foot-blob {
+    filter: brightness(60%);
+  }
+}
+
 /*
 .Foot-blob {
   position: absolute;

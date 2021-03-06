@@ -158,3 +158,9 @@
     transition: none;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .Intro-blob {
+    filter: brightness(60%);
+  }
+}
