@@ -37,6 +37,12 @@ html.has-js .Foot-list {
   color: #fff;
 }
 
+@media (prefers-color-scheme: dark) {
+  html.has-js .Foot-list {
+    color: rgba(255, 255, 255, 0.87);
+  }
+}
+
 @media (min-width: 900px) {
   .Foot-list {
     font-size: 1.3rem;
@@ -105,7 +111,7 @@ html.has-js .Foot-list {
 
 @media (prefers-color-scheme: dark) {
   .Foot-menu {
-    color: #fff;
+    color: rgba(255, 255, 255, 0.87);
   }
 }
 
@@ -182,6 +188,13 @@ html.has-js .Foot-list {
   white-space: nowrap;
 }
 
+@media (prefers-color-scheme: dark) {
+  .Foot-menuListItem {
+    background: var(--color-dark);
+    color: var(--color-text);
+    border-color: var(--color-text);
+  }
+}
 
 .Foot-menuList a {
   display: block;
@@ -200,6 +213,14 @@ html.has-js .Foot-list {
 .Foot-menuListItem:hover {
   background: var(--color-dark);
   color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  .Foot-menuListItem:hover,
+  .Foot-menuListItem:focus {
+    background: #eee;
+    color: var(--color-dark);
+  }
 }
 
 .Foot-menuListItem > ul {
