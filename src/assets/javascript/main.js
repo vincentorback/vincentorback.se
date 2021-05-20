@@ -90,40 +90,69 @@ const vincent = {
         }
       },
       about: {
-        rotationSpeed: 0.3,
-        stretchSpeed: 0.1,
-        startRotate: 120,
+        rotationSpeed: 0.2,
+        startRotate: randomBetween(0, 359),
         scaleEl: document.querySelector('.js-aboutImage'),
         breakpoints: {
-          500: {
+          340: {
             x: 1,
             y: 1,
-            scale: 0.35
+            scale: 0.4
+          },
+          380: {
+            x: 1,
+            y: 1,
+            scale: 0.45
+          },
+          450: {
+            x: 1,
+            y: 1,
+            scale: 0.5
+          },
+          600: {
+            x: 1,
+            y: 1,
+            scale: 0.55
           },
           700: {
             x: 1,
             y: 1,
-            scale: 0.5
+            scale: 0.425
+          },
+          800: {
+            x: 1,
+            y: 1,
+            scale: 0.475
           },
           1000: {
             x: 1,
             y: 1,
-            scale: 0.35
+            scale: 0.55
           },
-          1300: {
+          1100: {
             x: 1,
             y: 1,
-            scale: 0.5
+            scale: 0.6
           },
-          1400: {
+          1200: {
             x: 1,
             y: 1,
             scale: 0.65
           },
-          1600: {
+          1300: {
             x: 1,
             y: 1,
             scale: 0.75
+          },
+          1400: {
+            x: 1,
+            y: 1,
+            scale: 0.8
+          },
+          1600: {
+            x: 1,
+            y: 1,
+            scale: 0.85
           },
           2000: {
             x: 1,
@@ -133,13 +162,12 @@ const vincent = {
           30000: {
             x: 1,
             y: 1,
-            scale: 1.2
+            scale: 0.9
           }
         }
       },
       foot: {
         rotationSpeed: 0.3,
-        stretchSpeed: 0.1,
         startRotate: 40,
         breakpoints: {
           600: {
@@ -193,8 +221,9 @@ const vincent = {
 
       scope.project.importSVG(svgHTML, function (item) {
         if (options.scaleEl) {
-          canvas.style.width = `${options.scaleEl.offsetWidth * 1.5}px`
-          canvas.style.height = `${options.scaleEl.offsetWidth * 1.5}px`
+          canvas.style.width = `${options.scaleEl.offsetWidth * 1.25}px`
+          canvas.style.height = `${options.scaleEl.offsetWidth * 1.25}px`
+          canvas.style.transform = 'translate(-8%, -8%)'
         }
 
         item.scale(options.breakpoints[currentPosition].scale)

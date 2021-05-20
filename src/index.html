@@ -467,55 +467,31 @@
       </div>
     </section>
 
-    <section class="About" id="about" aria-label="About me">
+    <div class="About" id="about">
       <div class="Container">
         <div class="About-grid">
           <div class="About-imageContainer">
-            <div class="About-imageWrap">
-              <picture>
-                <source
-                  data-srcset="/assets/images/vincent-orback-blob.webp"
-                  type="image/webp"
-                >
-                <img
-                  class="About-image js-aboutImage"
-                  data-loading="lazy"
-                  data-src="/assets/images/vincent-orback-blob.png"
-                  width="800"
-                  height="800"
-                  alt="Vincent Orback">
-              </picture>
-              <noscript>
-                <picture>
-                  <source
-                    data-srcset="/assets/images/vincent-orback-blob.webp"
-                    type="image/webp"
-                  >
-                  <img
-                  class="About-image"
-                  data-loading="lazy"
-                  src="/assets/images/vincent-orback-blob.png"
-                  width="800"
-                  height="800"
-                  alt="Vincent Orback">
-                </picture>
-              </noscript>
-              <svg class="About-blob Blob u-printHide" aria-hidden="true" viewBox="0 0 800 800">
-                <path fill="currentColor" d="M316 40c66-14 150-3 212 26 61 29 124 87 156 147s49 149 35 212-73 117-119 166c-47 50-101 117-161 129s-138-28-199-57c-62-30-137-65-170-120S33 399 44 333c10-67 43-140 88-189 46-49 118-91 184-104z"/>
-                <path fill="currentColor" d="M81 280c27-58 90-102 146-140s124-89 187-89c64 0 141 44 195 87 53 43 105 108 124 172 18 64 10 150-14 214-25 63-76 139-132 169s-140 16-206 10-138-12-190-48A337 337 0 0167 489c-18-63-12-151 14-209z"/>
-                <path fill="currentColor" d="M606 179c54 42 123 86 147 146 23 60 16 152-8 216-23 64-77 132-134 170s-140 59-208 56c-67-4-151-33-199-77-47-43-66-120-85-185S73 362 90 300c18-62 77-130 134-167 57-38 142-65 206-58 63 8 122 62 176 104z"/>
+            <div class="About-imageWrap js-aboutImage">
+              <svg class="About-imageBlob u-printHide" aria-hidden="true" viewBox="0 0 800 800">
+                <defs>
+                  <mask id="mask-path" x="0" y="0" width="1" height="1">
+                    <path transform="translate(40 0)" id="mask-path" fill="#fff" d="M316 40c66-14 150-3 212 26 61 29 124 87 156 147s49 149 35 212-73 117-119 166c-47 50-101 117-161 129s-138-28-199-57c-62-30-137-65-170-120S33 399 44 333c10-67 43-140 88-189 46-49 118-91 184-104z"></path>
+                  </maks>
+                </defs>
+                <image transform="translate(20 60) scale(0.95)" href="/assets/images/vincent-orback-2.jpg" height="800" width="800" mask="url(#mask-path)"></image>
               </svg>
+              <canvas class="About-canvasBlob js-blobCanvas" id="blob-about"></canvas>
             </div>
           </div>
           <div class="About-text Type Type--lg">
             <h2>A bit about me</h2>
-            <p><span class="u-textTruncate">I like</span> building solid web projects. Things that last, things that solve real problems that need solving. I like my websites to be loading fast and the pace we travel the internet to be slow.</p>
+            <p><span class="u-textTruncate">I like</span> building solid things. Things that last, things that solve real problems that need solving. <span class="u-textTruncate">I like</span> my websites to be loading fast and the pace we travel the internet to <span class="u-textTruncate">be slow.</span></p>
             <p><span class="u-textTruncate">The tools</span> I use are a mix of different technologies including React, Node, WordPress <span class="u-textTruncate">and more</span>.</span></p>
             <p>Get in touch and <span class="u-textTruncate">let’s talk!</span></p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
     <footer class="Foot">
       <div class="Container u-relative">
