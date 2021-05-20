@@ -84,11 +84,8 @@ html:not(.has-js) .Work-grid {
   height: 100%;
   display: block;
   backface-visibility: hidden;
-  transition: opacity 200ms ease 100ms;
-}
-
-img.Work-media {
   object-fit: cover;
+  transition: opacity 200ms ease 100ms;
 }
 
 video.Work-media {
@@ -96,8 +93,14 @@ video.Work-media {
 }
 
 .Work-item--video .Work-mediaWrap {
-  background: #111;
-  padding-bottom: calc(720 / 1280 * 100%);
+  background: var(--color-dark);
+  padding-bottom: calc(800 / 1200 * 100%);
+}
+
+@media (min-width: 900px) {
+  .Work-item--video .Work-mediaWrap {
+    padding-bottom: calc(720 / 1280 * 100%);
+  }
 }
 
 .Work-item--saqmi .Work-media,
