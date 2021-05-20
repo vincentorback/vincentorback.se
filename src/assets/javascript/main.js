@@ -243,11 +243,23 @@ const vincent = {
         })
       })
 
+      let pauseTimeout
+      let pauseAnimation = false
+
       if (!saveData && !prefersReducedMotion) {
         const nPaths = paths.length
 
         scope.view.onFrame = function (event) {
-          // if (event.delta > 0.03) return
+          if (pauseAnimation) return
+
+          if (event.delta > 0.6) {
+            pauseAnimation = true
+            clearTimeout(pauseTimeout)
+            pauseTimeout = setTimeout(() => {
+              pauseAnimation = false
+            }, 200)
+            return
+          }
 
           for (let i = 0; i < nPaths; i += 1) {
             paths[i].rotate(i % 2 === 0
