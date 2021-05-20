@@ -29,7 +29,7 @@
 
 @media (max-height: 500px) and (min-width: 800px) {
   .Foot-list {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -94,41 +94,6 @@ html.has-js .Foot-list {
   }
 }
 
-/*
-.Foot-blob {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0;
-  width: 700px;
-  height: 700px;
-  transform: translate(-220px, -200px);
-}
-
-@media (min-width: 900px) {
-  .Foot-blob {
-    width: 1200px;
-    height: 1200px;
-    transform: translate(-400px, -320px);
-  }
-}
-
-@media (min-width: 1200px) {
-  .Foot-blob {
-    transform: translate(-400px, -340px);
-  }
-}
-
-@media (min-width: 1800px) {
-  .Foot-blob {
-    width: 1600px;
-    height: 1600px;
-    transform: translate(-33%, -27%);
-  }
-}
-*/
 
 .Foot-menu {
   position: absolute;
@@ -166,8 +131,8 @@ html.has-js .Foot-list {
   display: inline-block;
   vertical-align: top;
   transform: rotateZ(-135deg);
-  width: .6em;
-  height: .6em;
+  width: 0.6em;
+  height: 0.6em;
 }
 
 .Foot-menuContainer {
@@ -225,7 +190,7 @@ html.has-js .Foot-list {
 .Foot-menuListItem > span,
 .Foot-menuListItem > a {
   display: block;
-  padding: .5em .8em;
+  padding: 0.5em 0.8em;
 }
 
 .Foot-menuListItem:last-child {
@@ -240,7 +205,7 @@ html.has-js .Foot-list {
 .Foot-menuListItem > ul {
   position: absolute;
   left: 0;
-  bottom: .2em;
+  bottom: 0.2em;
   transform: translateX(-99%);
   opacity: 0;
   visibility: hidden;

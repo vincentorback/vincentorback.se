@@ -215,6 +215,7 @@ video.Work-media {
   text-decoration: underline;
 }
 
+.Work-infoLink:focus,
 .Work-infoLink:hover span {
-  opacity: .7;
+  opacity: 0.7;
 }

@@ -69,9 +69,9 @@
 
 
 .Intro-text svg {
-  width: .8ch;
-  height: .8ch;
-  transform: translate(.2ch, .2ch) rotateZ(-90deg) rotateY(180deg);
+  width: 0.8ch;
+  height: 0.8ch;
+  transform: translate(0.2ch, 0.2ch) rotateZ(-90deg) rotateY(180deg);
 }
 
 .Intro-contact {

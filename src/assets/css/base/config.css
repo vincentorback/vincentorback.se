@@ -20,7 +20,7 @@
   --spacing-sm: 5vw;
   --spacing-lg: calc(var(--spacing-sm) * 2);
   --site-width: 2400px;
-  --ease-in-out-sine: cubic-bezier(.445, .05, .55, .95);
+  --ease-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
 @media (min-width: 1200px) {

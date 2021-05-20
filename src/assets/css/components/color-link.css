@@ -38,11 +38,11 @@
 }
 
 .ColorLink:hover > :nth-of-type(6n+5) {
-  animation-delay: -.8s;
+  animation-delay: -0.8s;
 }
 
 .ColorLink:hover > :nth-of-type(6n+6) {
-  animation-delay: -.4s;
+  animation-delay: -0.4s;
 }
 
 @keyframes colorCycle {

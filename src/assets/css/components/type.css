@@ -1,5 +1,5 @@
 .Type {
-  --Type-spacing: .7em;
+  --Type-spacing: 0.7em;
 
   font-size: 1.1rem;
   line-height: var(--font-lineheight-lg);
@@ -7,7 +7,7 @@
 
 @media (max-height: 500px) and (min-width: 800px) {
   .Type {
-    font-size: .85rem;
+    font-size: 0.85rem;
   }
 
   .Type--lg {
@@ -64,10 +64,6 @@
   margin: var(--Type-spacing) 0;
 }
 
-.Type h1,
-.Type h2 {
-  /* font-weight: var(--font-bold); */
-}
 
 .Type h1 {
   font-size: 1.3em;

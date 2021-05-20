@@ -54,7 +54,6 @@ const vincent = {
     const options = {
       intro: {
         rotationSpeed: 0.4,
-        stretchSpeed: 1,
         startRotate: randomBetween(0, 359),
         breakpoints: {
           800: {
