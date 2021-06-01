@@ -17,7 +17,7 @@
     "start": "if [ ! -d dist ]; then npm run build; fi && npm-run-all --parallel serve watch",
     "build:js": "esbuild src/assets/javascript/main.js --outfile=dist/assets/javascript/main.js --bundle --minify --sourcemap",
     "build:css": "postcss src/assets/css/style.css -o dist/assets/css/style.css",
-    "build:html": "html-minifier --remove-comments --sort-attributes --sort-class-name --collapse-whitespace --remove-redundant-attributes --process-scripts 'application/ld+json' --minify-js true --output-dir dist --input-dir src --file-ext html",
+    "build:html": "html-minifier --remove-comments --sort-attributes --sort-class-name --collapse-whitespace --process-scripts 'application/ld+json' --minify-js true --output-dir dist --input-dir src --file-ext html",
     "build:light": "npm-run-all test:js test:css build:html build:js build:css compress",
     "build": "rm -rf dist && npm-run-all build:light move:images move:video move:fonts move:icons move:fonts compress:images",
     "move:images": "copyfiles -u 2 -f src/assets/images/* src/assets/images/**/* dist/assets/images",
