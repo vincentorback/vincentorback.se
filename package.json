@@ -19,12 +19,12 @@
     "build:css": "postcss src/assets/css/style.css -o dist/assets/css/style.css",
     "build:html": "html-minifier --remove-comments --sort-attributes --sort-class-name --collapse-whitespace --process-scripts 'application/ld+json' --minify-js true --output-dir dist --input-dir src --file-ext html",
     "build:light": "npm-run-all test:js test:css build:html build:js build:css compress",
-    "build": "rm -rf dist && npm-run-all build:light move:images move:video move:fonts move:icons move:fonts compress:images",
+    "build": "rm -rf dist && npm-run-all build:light move:images move:video move:fonts move:icons move:fonts",
     "move:images": "copyfiles -u 2 -f src/assets/images/* src/assets/images/**/* dist/assets/images",
     "move:video": "copyfiles -u 2 -f src/assets/video/* dist/assets/video",
     "move:icons": "copyfiles -u 2 -f src/assets/icons/* dist",
     "move:fonts": "copyfiles -u 2 src/assets/fonts/* dist/assets",
-    "test:js": "standard src/assets/javascript --verbose",
+    "test:js": "standard src/assets/javascript --verbose --fix",
     "test:css": "stylelint src/assets/css/**/*.css",
     "watch": "npm-run-all --parallel watch:js watch:css watch:html",
     "watch:js": "chokidar 'src/assets/javascript/**/*.js' -c 'npm run test:js && npm run build:js && npm run compress'",
@@ -32,40 +32,41 @@
     "watch:html": "chokidar 'src/**/*.html' -c 'npm run build:html && npm run compress'",
     "serve": "serve dist -l 3000",
     "compress": "gzip dist/**/*.{css,js,html} --extension=gz --extension=br",
-    "compress:images": "imageoptim dist/* && imagemin ./dist/assets/images/{*.jpg,*.png} --plugin.webp.quality=75 -o=./dist/assets/images && squoosh-cli --avif -d dist/assets/images dist/assets/images/*.{jpg,png}",
+    "compress:images": "imageoptim dist/* && imagemin ./dist/assets/images/*.{jpg,png} --plugin.webp.quality=75 -o=./dist/assets/images",
+    "compress:images:avif": "squoosh-cli --avif true --max-optimizer-rounds 1 -d dist/assets/images dist/assets/images/*.png",
     "deploy:light": "npm run build:light && copyfiles -u 1 src/sitemap.xml dist && copyfiles -u 1 src/.htaccess dist && copyfiles -u 1 src/robots.txt dist",
     "deploy": "npm run build && copyfiles -u 1 src/sitemap.xml dist && copyfiles -u 1 src/.htaccess dist && copyfiles -u 1 src/robots.txt dist"
   },
   "dependencies": {
+    "@squoosh/cli": "^0.7.2",
     "macy": "^2.5.1",
-    "paper": "0.12.11",
-    "vanilla-lazyload": "^17.3.1"
+    "paper": "0.12.15",
+    "vanilla-lazyload": "^17.5.0"
   },
   "devDependencies": {
-    "@squoosh/cli": "^0.6.1",
-    "autoprefixer": "^10.2.4",
-    "chokidar": "^3.5.1",
-    "chokidar-cli": "^2.1.0",
+    "autoprefixer": "^10.4.0",
+    "chokidar": "^3.5.2",
+    "chokidar-cli": "^3.0.0",
     "copyfiles": "^2.4.1",
-    "esbuild": "^0.8.49",
+    "esbuild": "^0.14.2",
     "gzip-cli": "^1.2.0",
     "html-minifier": "^4.0.0",
-    "imagemin-cli": "^6.0.0",
+    "imagemin-cli": "^7.0.0",
     "imagemin-webp": "^6.0.0",
-    "imageoptim-cli": "^3.0.2",
+    "imageoptim-cli": "^3.0.7",
     "inline-source-cli": "^2.0.0",
     "npm-run-all": "^4.1.5",
     "parcel-bundler": "^1.12.4",
-    "postcss": "^8.2.6",
+    "postcss": "^8.4.4",
     "postcss-calc": "^8.0.0",
-    "postcss-cli": "^8.3.1",
-    "postcss-csso": "^5.0.0",
-    "postcss-custom-properties": "^11.0.0",
-    "postcss-import": "^14.0.0",
-    "serve": "^11.3.2",
-    "standard": "^16.0.3",
-    "stylelint": "^13.10.0",
-    "stylelint-config-standard": "^20.0.0",
+    "postcss-cli": "^9.0.2",
+    "postcss-csso": "^5.0.1",
+    "postcss-custom-properties": "^12.0.0",
+    "postcss-import": "^14.0.2",
+    "serve": "^13.0.2",
+    "standard": "^16.0.4",
+    "stylelint": "^14.0.1",
+    "stylelint-config-standard": "^23.0.0",
     "uglify-es": "^3.3.10"
   },
   "browserslist": [
@@ -91,13 +92,18 @@
     "extends": "stylelint-config-standard",
     "rules": {
       "max-empty-lines": 2,
-      "number-leading-zero": "never",
+      "number-leading-zero": "always",
       "unit-no-unknown": [
         true,
         {
           "ignoreUnits": "x"
         }
-      ]
+      ],
+      "selector-class-pattern": null,
+      "color-function-notation": null,
+      "alpha-value-notation": "number",
+      "custom-property-pattern": null,
+      "keyframes-name-pattern": null
     }
   },
   "standard": {

@@ -10,7 +10,16 @@
   --color-yellow: #ffcf4e;
   --color-text: var(--color-dark);
   --color-background: var(--color-cream);
-  --font-sansserif: 'Work Sans', system-ui, -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+  --font-sansserif:
+    "Work Sans",
+    system-ui,
+    -apple-system,
+    "BlinkMacSystemFont",
+    "Segoe UI",
+    "Roboto",
+    "Helvetica Neue",
+    "Arial",
+    sans-serif;
   --font-normal: 400;
   --font-bold: 600;
   --font-lineheight-sm: 1.1;
@@ -40,7 +49,7 @@
 /* stylelint-disable */
 @media (prefers-reduced-data: reduce) {
   :root {
-    --font-sansserif: system-ui, -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+    --font-sansserif: system-ui, -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif;
   }
 }
 /* stylelint-enable */

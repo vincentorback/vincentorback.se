@@ -4,9 +4,15 @@ import LazyLoad from 'vanilla-lazyload'
 import Macy from 'macy'
 import { PaperScope, Point } from 'paper'
 
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches === true
-const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection
-const saveData = connection && (connection.saveData || (connection.effectiveType && ['slow-2g', '2g', '3g'].includes(connection.effectiveType)))
+const prefersReducedMotion =
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches === true
+const connection =
+  navigator.connection || navigator.mozConnection || navigator.webkitConnection
+const saveData =
+  connection &&
+  (connection.saveData ||
+    (connection.effectiveType &&
+      ['slow-2g', '2g', '3g'].includes(connection.effectiveType)))
 
 function getViewportWidth () {
   return Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
@@ -22,12 +28,14 @@ function debounce (fn, wait) {
     clearTimeout(timeout)
     timeout = setTimeout(function () {
       fn.apply(this, arguments)
-    }, (wait || 1))
+    }, wait || 1)
   }
 }
 
 function getStyleProperty (property, el) {
-  return window.getComputedStyle(document.documentElement).getPropertyValue(property)
+  return window
+    .getComputedStyle(document.documentElement)
+    .getPropertyValue(property)
 }
 
 const vincent = {
@@ -98,10 +106,15 @@ const vincent = {
             y: 1,
             scale: 0.4
           },
+          360: {
+            x: 1,
+            y: 1,
+            scale: 0.43
+          },
           380: {
             x: 1,
             y: 1,
-            scale: 0.45
+            scale: 0.435
           },
           450: {
             x: 1,
@@ -212,7 +225,9 @@ const vincent = {
 
     function initializeBlob (options, canvas, scope) {
       const paths = []
-      const currentPosition = Object.keys(options.breakpoints).find(function (key) {
+      const currentPosition = Object.keys(options.breakpoints).find(function (
+        key
+      ) {
         return viewportWidth < key
       })
 
@@ -245,26 +260,31 @@ const vincent = {
 
       let pauseTimeout
       let pauseAnimation = false
+      let pauses = 0
 
       if (!saveData && !prefersReducedMotion) {
         const nPaths = paths.length
 
         scope.view.onFrame = function (event) {
-          if (pauseAnimation) return
+          if (pauseAnimation || pauses > 3) return
 
-          if (event.delta > 0.6) {
+          if (event.delta > 0.03) {
             pauseAnimation = true
-            clearTimeout(pauseTimeout)
+
+            if (pauseTimeout) clearTimeout(pauseTimeout)
             pauseTimeout = setTimeout(() => {
+              pauses += 1
               pauseAnimation = false
             }, 200)
             return
           }
 
           for (let i = 0; i < nPaths; i += 1) {
-            paths[i].rotate(i % 2 === 0
-              ? ((options.rotationSpeed) * (1 + event.delta))
-              : ((options.rotationSpeed) * (1 + event.delta)) * -1)
+            paths[i].rotate(
+              i % 2 === 0
+                ? options.rotationSpeed * (1 + event.delta)
+                : options.rotationSpeed * (1 + event.delta) * -1
+            )
           }
         }
       }
@@ -297,14 +317,17 @@ const vincent = {
 
     initializeBlobs()
 
-    window.addEventListener('resize', debounce(function () {
-      const newViewportWidth = getViewportWidth()
+    window.addEventListener(
+      'resize',
+      debounce(function () {
+        const newViewportWidth = getViewportWidth()
 
-      if (viewportWidth !== newViewportWidth) {
-        viewportWidth = newViewportWidth
-        initializeBlobs()
-      }
-    }, 300))
+        if (viewportWidth !== newViewportWidth) {
+          viewportWidth = newViewportWidth
+          initializeBlobs()
+        }
+      }, 300)
+    )
   },
 
   grid: function () {
@@ -349,7 +372,7 @@ const vincent = {
         container: el,
         trueOrder: false,
         waitForImages: false,
-        columns: 3,
+        columns: 2,
         margin: {
           x: gridGutter,
           y: gridGutter
@@ -361,29 +384,35 @@ const vincent = {
     if (gridEl) {
       let grid = newMacy(gridEl)
 
-      window.addEventListener('resize', debounce(function () {
-        const newViewportWidth = getViewportWidth()
+      window.addEventListener(
+        'resize',
+        debounce(function () {
+          const newViewportWidth = getViewportWidth()
 
-        if (viewportWidth !== newViewportWidth) {
-          grid = newMacy(gridEl)
-        }
-      }, 500))
+          if (viewportWidth !== newViewportWidth) {
+            grid = newMacy(gridEl)
+          }
+        }, 500)
+      )
 
-      grid.on(grid.constants.EVENT_RECALCULATED, debounce(function () {
-        let yMargin = grid.options.margin.y
+      grid.on(
+        grid.constants.EVENT_RECALCULATED,
+        debounce(function () {
+          let yMargin = grid.options.margin.y
 
-        Object.keys(grid.options.breakAt)
-          .sort(function (a, b) {
-            return parseFloat(a) - parseFloat(b)
-          })
-          .forEach(function (breakpoint) {
-            if (viewportWidth > parseFloat(breakpoint)) {
-              yMargin = grid.options.breakAt[breakpoint].margin.y
-            }
-          })
+          Object.keys(grid.options.breakAt)
+            .sort(function (a, b) {
+              return parseFloat(a) - parseFloat(b)
+            })
+            .forEach(function (breakpoint) {
+              if (viewportWidth > parseFloat(breakpoint)) {
+                yMargin = grid.options.breakAt[breakpoint].margin.y
+              }
+            })
 
-        gridEl.style.marginBottom = `${yMargin * -1}px`
-      }, 700))
+          gridEl.style.marginBottom = `${yMargin * -1}px`
+        }, 700)
+      )
 
       grid.runOnImageLoad(function () {
         grid = newMacy(gridEl)
@@ -404,14 +433,18 @@ const vincent = {
       const image = el.querySelector('picture')
 
       if (image) {
-        el.parentNode.appendChild(image.parentNode.childNodes[0])
-        el.parentNode.removeChild(el)
+        if (image.parentNode.childNodes[0]) {
+          el.parentNode.appendChild(image.parentNode.childNodes[0])
+          el.parentNode.removeChild(el)
+        }
 
-        LazyLoad({
-          container: image.parentNode,
-          elements_selector: lazySelector,
-          class_loaded: loadedClass
-        })
+        if (image.parentNode) {
+          LazyLoad({
+            container: image.parentNode,
+            elements_selector: lazySelector,
+            class_loaded: loadedClass
+          })
+        }
       }
     }
 
@@ -426,7 +459,12 @@ const vincent = {
     }
 
     const videoObserver = new IntersectionObserver((entries, observer) => {
-      for (const entry of entries) (entry.isIntersecting && !entry.target.classList.contains(manuallyPausedClass)) ? entry.target.play() : entry.target.pause()
+      for (const entry of entries) {
+        entry.isIntersecting &&
+        !entry.target.classList.contains(manuallyPausedClass)
+          ? entry.target.play()
+          : entry.target.pause()
+      }
     })
 
     return new LazyLoad({
@@ -441,7 +479,8 @@ const vincent = {
               togglePlay(el)
             })
 
-            const togglePlayButton = el.parentNode.querySelector('.js-togglePlay')
+            const togglePlayButton =
+              el.parentNode.querySelector('.js-togglePlay')
             if (togglePlayButton) {
               togglePlayButton.addEventListener('click', function () {
                 togglePlay(el)
@@ -450,10 +489,9 @@ const vincent = {
 
             videoObserver.observe(el)
 
-            startPlayPromise
-              .catch(function () {
-                replaceVideoWithImage(el)
-              })
+            startPlayPromise.catch(function () {
+              replaceVideoWithImage(el)
+            })
           } else {
             replaceVideoWithImage(el)
           }
@@ -466,7 +504,9 @@ const vincent = {
   },
 
   splitLetters: function () {
-    Array.from(document.querySelectorAll('.js-splitLetters')).forEach(function (cycleEl) {
+    Array.from(document.querySelectorAll('.js-splitLetters')).forEach(function (
+      cycleEl
+    ) {
       const letters = cycleEl.innerText.split('')
       cycleEl.innerHTML = ''
       letters.forEach(function (letter) {

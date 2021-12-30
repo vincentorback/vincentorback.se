@@ -125,7 +125,38 @@
   height: 500px;
   backface-visibility: hidden;
   transition: opacity 500ms ease 300ms, transform 2000ms ease;
+  transform: translate3d(5%, -5%, 0);
 }
+
+/*
+.Intro-blobCover {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  width: 200px;
+  height: 500px;
+  backface-visibility: hidden;
+  background-image: url('/assets/images/noise.png');
+  background-size: auto;
+  background-repeat: repeat;
+  mix-blend-mode: overlay;
+  opacity: 0.1;
+  transform: scale(1.25) translate3d(5%, -5%, 0);
+  transform-origin: 55% 45%;
+  animation: rotate 50s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: scale(1.25) translate3d(5%, -5%, 0) rotateZ(0deg);
+  }
+
+  100% {
+    transform: scale(1.25) translate3d(5%, -5%, 0) rotateZ(360deg);
+  }
+}
+*/
 
 .Intro-blob:not(.is-active) {
   opacity: 0;
@@ -133,21 +164,24 @@
 }
 
 @media (min-width: 800px) {
-  .Intro-blob {
+  .Intro-blob,
+  .Intro-blobCover {
     width: 50%;
     height: 100vmax;
   }
 }
 
 @media (min-width: 1000px) {
-  .Intro-blob {
-    width: 55%;
-    height: 100vmax;
+  .Intro-blob,
+  .Intro-blobCover {
+    width: 100%;
+    height: 120vmax;
   }
 }
 
 @media (min-width: 1600px) {
-  .Intro-blob {
+  .Intro-blob,
+  .Intro-blobCover {
     width: 50%;
     height: 1200px;
   }

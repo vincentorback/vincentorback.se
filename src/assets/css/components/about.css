@@ -94,6 +94,24 @@
   }
 }
 
+/*
+.About-imageBlob .mask-path {
+  transform: rotate(10deg);
+  transform-origin: 50% 50%;
+  animation: rotate 50s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+*/
+
 
 .About-canvasBlob {
   position: absolute;

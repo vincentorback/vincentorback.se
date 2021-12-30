@@ -1,25 +1,25 @@
 /* https://github.com/weiweihuanghuang/Work-Sans */
 
 @font-face {
-  font-family: 'Work Sans';
+  font-family: "Work Sans";
   font-style: normal;
   font-weight: 400;
   font-display: fallback;
   src:
-    local('Work Sans'),
-    local('WorkSans-Regular'),
-    url('/assets/fonts/WorkSans-Regular.woff2') format('woff2'),
-    url('/assets/fonts/WorkSans-Regular.woff') format('woff');
+    local("Work Sans"),
+    local("WorkSans-Regular"),
+    url("/assets/fonts/WorkSans-Regular.woff2") format("woff2"),
+    url("/assets/fonts/WorkSans-Regular.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'Work Sans';
+  font-family: "Work Sans";
   font-style: normal;
   font-weight: 600;
   font-display: fallback;
   src:
-    local('Work Sans SemiBold'),
-    local('WorkSans-SemiBold'),
-    url('/assets/fonts/WorkSans-SemiBold.woff2') format('woff2'),
-    url('/assets/fonts/WorkSans-SemiBold.woff') format('woff');
+    local("Work Sans SemiBold"),
+    local("WorkSans-SemiBold"),
+    url("/assets/fonts/WorkSans-SemiBold.woff2") format("woff2"),
+    url("/assets/fonts/WorkSans-SemiBold.woff") format("woff");
 }

@@ -2,20 +2,22 @@
 <!-- htmlmin:ignore -->
 <!-- Code available at: https://github.com/vincentorback/vincentorback.se -->
 <!-- htmlmin:ignore -->
-<html lang="en" itemscope itemtype="http://schema.org/WebSite">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-  <link href="/assets/css/style.css" rel="stylesheet">
+  <link href="/assets/css/style.css?v=8.5" rel="stylesheet">
 
   <title>Vincent Orback - Freelancing web developer and designer</title>
   <meta name="description" content="Freelancing web developer and designer living in Stockholm, Sweden. Get in touch if you want to work together!">
   <meta name="keywords" content="front-end developer, web developer, web designer, frilansande, webbutvecklare, webbdesigner">
-  <meta itemprop="image" content="https://www.vincentorback.se/assets/images/share.jpg">
 
   <script>
     document.documentElement.classList.add('has-js')
+    /*window.onerror = function (err) {
+      document.documentElement.classList.remove('has-js');
+    }*/
   </script>
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -23,12 +25,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0e004e">
-  <meta name="msapplication-TileColor" content="#ffdfcb">
-  <meta name="theme-color" content="#ffdfcb" media="(prefers-color-scheme: light)">
+  <meta name="msapplication-TileColor" content="#ffe3d1">
+  <meta name="theme-color" content="#ffe3d1" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#3c304e" media="(prefers-color-scheme: dark)">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
+<body>
 
   <div class="Container Container--site">
 
@@ -53,6 +55,7 @@
         </div>
 
         <canvas class="Intro-blob js-blobCanvas" id="blob-intro"></canvas>
+        <!-- <div class="Intro-blobCover"></div> -->
       </div>
     </div>
 
@@ -61,7 +64,7 @@
 
         <div class="Work-grid js-grid">
 
-          <article class="Work-item Work-item--video" aria-label="Hyper Human" itemscope itemtype="http://schema.org/CreativeWork">
+          <article class="Work-item Work-item--video" aria-label="Hyper Human">
             <div class="Work-itemInner">
               <div class="Work-mediaWrap">
                 <video
@@ -69,7 +72,7 @@
                   playsinline
                   muted
                   loop
-                  disablePictureInPicture
+                  disablepictureinpicture
                   data-loading="lazy"
                   data-src="/assets/video/hyperhuman.mp4"
                   id="video-hyperhuman"
@@ -95,27 +98,117 @@
                 <button class="u-hiddenVisually js-togglePlay" aria-controls="video-hyperhuman">Pause or resume video</button>
               </div>
               <div class="Work-info">
-                <div class="Work-infoText Type" itemprop="about">
-                  <p><strong itemprop="name">Hyper Human</strong> is an exhibition at the National Museum of Science and Technology <span class="u-textTruncate">in Stockholm</span>.</p>
+                <div class="Work-infoText Type">
+                  <p><strong>Hyper Human</strong> is an exhibition at the National Museum of Science and Technology <span class="u-textTruncate">in Stockholm</span>.</p>
                   <p>Visitors are challenged by a range of ethical questions about technical and medical development at three stations. I helped develop these in collaboration with <a class="ColorLink js-splitLetters" href="https://spektradesign.se/">Spektra</a>.</p>
-                  <p>The graphical effects for the transparent touch screens were made with WebGL using PixiJS as <span class="u-textTruncate">a framework</span>.</p>
+                  <p>The graphical effects for the transparent touchscreens were made with WebGL using PixiJS as <span class="u-textTruncate">a framework</span>.</p>
                 </div>
                 <p class="Work-role">Front-end developer</p>
-                <a class="Work-infoLink" href="https://www.tekniskamuseet.se/en/discover/exhibitions/hyper-human/" aria-label="Read more about the Hyper Human exhibition">
-                  <svg width="8px" height="7px" aria-hidden="true">
-                    <use xlink:href="#arrow"></use>
-                  </svg>
-                  <span itemprop="url">https://tekniskamuseet.se</span>
-                </a>
+                <div class="Work-links">
+                  <a class="Work-link" href="https://www.tekniskamuseet.se/en/discover/exhibitions/hyper-human/" aria-label="Read more about the Hyper Human exhibition">
+                    <svg width="8px" height="7px" aria-hidden="true">
+                      <use xlink:href="#arrow"></use>
+                    </svg>
+                    <span>https://tekniskamuseet.se</span>
+                  </a>
+                </div>
               </div>
             </div>
-            <meta itemprop="author creator" itemscope itemtype="http://schema.org/Organization" itemref="organization">
-            <meta itemprop="image" content="/assets/images/hyper-human@2x.jpg">
           </article>
 
-          <article class="Work-item" aria-label="Välj att sluta" itemscope itemtype="http://schema.org/CreativeWork">
+          <article class="Work-item" aria-label="WWF Matguiden">
             <div class="Work-itemInner">
-              <div class="Work-mediaWrap" style="background-color:#02208c;">
+              <div class="Work-mediaWrap" style="background-color:#fff;">
+                <svg class="Work-media" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="Work-media" viewBox="0 0 1200 900">
+                  <g fill="none" fill-rule="evenodd">
+                  <path fill="#FFF" d="M0 0h1200v900H0z"/>
+                  <g fill-rule="nonzero">
+                  <path fill="#E5A29A" d="M-31-130h373v1160H-31z"/>
+                  <path fill="#C9DAA4" d="M358-130h432v1160H358z"/>
+                  <path fill="#478B9E" d="M806-130h394v1160H806z"/>
+                </g>
+                  <path fill="#000" fill-opacity=".5" fill-rule="nonzero" d="M153 248h922v435H153z"/>
+                  <path fill="#FFF" fill-rule="nonzero" d="M125 218h922v435H125z"/>
+                  <path fill="#000" fill-rule="nonzero" d="M290.3 540a4.6 4.6 0 0 0-4.3 3.1l-8.8 23.2-.8 2.6-.8-2.6-6.8-22.5v-.2c-.7-2-2.4-3.3-4.4-3.3h-11.2a4.7 4.7 0 0 0-4.4 4.8c0 .9.3 1.7.5 2.5l1.5 4.7-5.5 14-.8 2.6-.7-2.6-6.8-22.5v-.3a4.7 4.7 0 0 0-4.4-3.2h-11.1a4.8 4.8 0 0 0-4.5 4.8c0 .9.3 1.7.6 2.5l16.4 50.8c.5 2 2.2 3.5 4.3 3.6 2.1 0 4-1.3 4.6-3.4l11.6-30.2.8-2.7.7 2.7 9.9 30a4.6 4.6 0 0 0 9 .2l19.6-51.6c.3-.6.5-1.3.5-2a5 5 0 0 0-1.3-3.5c-.9-1-2.1-1.5-3.4-1.5m83.9 1c-2 0-3.8 1.2-4.5 3l-8.9 22.9-.8 2.6-.7-2.7-7-22.1v-.2a4.7 4.7 0 0 0-4.5-3.2h-11.1a4.7 4.7 0 0 0-4.5 4.7c0 .9.2 1.7.5 2.5l1.5 4.6-5.5 13.8-1 2.5-.6-2.6-6.9-22.1v-.3a4.6 4.6 0 0 0-4.4-3.1h-11.3a4.7 4.7 0 0 0-4.5 4.7c0 .8.3 1.6.5 2.4l16.8 50a4.6 4.6 0 0 0 4.6 3.6c2 0 3.8-1.4 4.4-3.3l11.8-29.7.8-2.7.7 2.6 10 29.5a4.7 4.7 0 0 0 9.1 0l20-50.7a4.8 4.8 0 0 0-4.3-6.7m52.3.1H388a4 4 0 0 0-2.8 1.3c-.8.7-1.2 1.8-1.2 2.9v52.4c.1 2.4 2 4.2 4.3 4.3h11c2.4 0 4.3-2 4.3-4.5v-24.4h15.7c2.4 0 4.3-2 4.3-4.3 0-2.4-2-4.4-4.3-4.4h-15.7v-14.1h23.3a4.6 4.6 0 0 0 4.1-4.8c0-2.4-2-4.4-4.3-4.5m-59.3-165.6c7.2 8 8 31.9 26 22.4 10.8-5.7 10.6-29.8-3.8-38.5-11.7-7-18 2.4-22.3 13.8-.4.7-.4 1.5 0 2.2m-28.1-3.2c-7.5 6.3-12.6 23.5-26.3 17.6-11-5.7-12-28 7-38.1 13.2-6.2 20 6 20.1 19-.1.6-.4 1.1-.8 1.5m18.8 41.7c7.5-.8 5.8-7.8 0-9.5a70 70 0 0 0-18.2-2.4c-9.6.2-9.4 7.6-4.4 8.8 3.8.8 7.2 3 9.5 6 3 5.8 1.7-1.7 13-3M393.6 293c9.1-15.4 25-12.4 33-4.7 8.7 8.5 10 18 6.7 24.8-4.5 9.1-16.3 20.2-23.8 9.5-3.9-5-8.8-9.1-14.3-12-6-2.6-7.2-8-1.6-17.5"/>
+                  <path fill="#000" fill-rule="nonzero" d="M359 430.6c-4 10.7-24.8 7-25.5-3.3 0-.4.5-.3.8-.3 7.9 2 16 3.1 24.1 3.4.3 0 .8 0 .7.4m71-70.8c-1-2.8-2.3-2.6-2.2-.4.7 28.2-16 58.5-51.8 58.6-9.2 0-6.5 14.8-23.2 7.4-12-8.2-19 8-27.5-9.4-1.2-4-4.4-7-8.5-8-35.4-8.7-46.6-57.7-15.5-97.2 6.2 3.7 8.5 4.3 15-1.8a45 45 0 0 1 12.4-7.9c7.5-2.9 11.5-6 5-20.4-8.3-18.7-25.3-13.3-33-7-8.8 7.3-15 19-3.6 33a76.1 76.1 0 0 0-36.4 70.7c.7 24.4-5.5 22.4 2.3 47.2.7 2.2-.9 2.1-2 1.4-33.1-21.2-51-86 .6-121.8 1.1-1 .7-2.4-3.6 0C213.7 328 209.6 374 217 404.9c3.7 15-1.9 17.7 4 37.4 13 41 24.3 44.3 40.5 45.5 29 0 9.3-16.1 10.4-36.5 0-1.2 1.4-1.8 2.2.7 16 36 27.4 68.9 69.5 65.8 24.3-3.3 10.8-15.4 9.3-22.2-17.9-59.9 25.6-73.9 13.3-15.6-8.1 33.2 17.5 29.9 35.6 18 18.5-12.1 41.7-93.3 28.3-138"/>
+                  <path fill="#000" fill-rule="nonzero" d="M257 493a10 10 0 1 0 0 20 10 10 0 0 0 0-20m8.5 10a8.3 8.3 0 1 1-16.7.1 8.3 8.3 0 0 1 16.7-.1"/>
+                  <path fill="#000" fill-rule="nonzero" d="M259.8 504.9a2.2 2.2 0 0 1-2.5 2 3 3 0 0 1-2.8-3.3 2.8 2.8 0 0 1 2.8-3.2c1.1 0 2.1.7 2.4 1.8h1.2a3.5 3.5 0 0 0-3.6-3.2 4.1 4.1 0 0 0-4.3 4.6 4.2 4.2 0 0 0 4.3 4.4c1.9 0 3.5-1.4 3.7-3.2h-1.2ZM422.5 516a9.5 9.5 0 1 0 0 19 9.5 9.5 0 0 0 0-19m8 9.5a8 8 0 1 1-16 0 8 8 0 0 1 16 0"/>
+                  <path fill="#000" fill-rule="nonzero" d="M419.4 525v-3h1.9c1 0 2 .3 2 1.4 0 1-1 1.4-2.3 1.4h-1.6Zm0 1.1h1.6l2.5 3.9h1.5l-2.7-4c.7 0 1.3-.3 1.8-.7.4-.5.7-1 .7-1.7 0-1.8-1.1-2.6-3.3-2.6H418v9h1.5l-.1-3.9Zm274 17.9V370.4L658.5 544h-28.3l-34.9-173.6V544H568V318h45.2l32.1 164.2L677.4 318H722v226zm127.2 0-8.2-53h-38.7l-7.8 53H734l39-226h39.1L854 544h-33.4ZM792 365l-14 94.2h29L792 365Zm121.1-15.9V544h-31.2V349.1H839V318h117v31.1z"/>
+                  <path stroke="#000" stroke-width=".7" d="M503.5 610V256"/>
+                </g>
+                </svg>
+                <!-- <picture>
+                  <source
+                    data-srcset="/assets/images/wwf-matguiden.avif 1x, /assets/images/wwf-matguiden@2x.avif 2x"
+                    type="image/avif"
+                  >
+                  <source
+                    data-srcset="/assets/images/wwf-matguiden.webp 1x, /assets/images/wwf-matguiden@2x.webp 2x"
+                    type="image/webp"
+                  >
+                  <img
+                    class="Work-media"
+                    data-loading="lazy"
+                    data-srcset="/assets/images/wwf-matguiden.jpg 1x, /assets/images/wwf-matguiden@2x.jpg 2x"
+                    data-src="/assets/images/wwf-matguiden.jpg"
+                    width="1024"
+                    height="512"
+                    alt="WWF Matguiden">
+                </picture>
+                <noscript>
+                  <picture>
+                    <source
+                      data-srcset="/assets/images/wwf-matguiden.avif 1x, /assets/images/wwf-matguiden@2x.avif 2x"
+                      type="image/avif"
+                    >
+                    <source
+                      srcset="/assets/images/wwf-matguiden.webp 1x, /assets/images/wwf-matguiden@2x.webp 2x"
+                      type="image/webp"
+                    >
+                    <img
+                      class="Work-media"
+                      data-loading="lazy"
+                      srcset="/assets/images/wwf-matguiden.jpg 1x, /assets/images/wwf-matguiden@2x.jpg 2x"
+                      src="/assets/images/wwf-matguiden.jpg"
+                      width="1024"
+                      height="512"
+                      alt="WWF Matguiden">
+                  </picture>
+                </noscript> -->
+              </div>
+              <div class="Work-info">
+                <div class="Work-infoText Type">
+                  <p><strong>WWF Matguiden</strong> is a mobile app combining WWF's three consumer guides: The Fish Guide, the Meat Guide and the Vego Guide. The guides let you as a consumer make more informed choices when <span class="u-textTruncate">buying food.</span></p>
+                  <p>The app is built using <span class="u-textTruncate">React Native.</span></p>
+                </div>
+                <p class="Work-role">Developer, designer</p>
+                <div class="Work-links">
+                  <div><a class="Work-link" href="https://apps.apple.com/app/id1585806572">
+                    <svg width="8px" height="7px" aria-hidden="true">
+                      <use xlink:href="#arrow"></use>
+                    </svg>
+                    <span>Apple App Store</span>
+                  </a></div>
+                  <div><a class="Work-link" href="http://play.google.com/store/apps/details?id=se.wwf.matguiden">
+                    <svg width="8px" height="7px" aria-hidden="true">
+                      <use xlink:href="#arrow"></use>
+                    </svg>
+                    <span>Google Play Store</span>
+                  </a></div>
+                  <div><a class="Work-link" href="https://www.wwf.se/matguiden">
+                    <svg width="8px" height="7px" aria-hidden="true">
+                      <use xlink:href="#arrow"></use>
+                    </svg>
+                    <span>https://www.wwf.se/matguiden</span>
+                  </a></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="Work-item" aria-label="Välj att sluta">
+            <div class="Work-itemInner">
+              <div class="Work-mediaWrap" style="background-color: #02208c;">
                 <picture>
                   <source
                     data-srcset="/assets/images/valjattsluta.avif 1x, /assets/images/valjattsluta@2x.avif 2x"
@@ -156,112 +249,27 @@
                 </noscript>
               </div>
               <div class="Work-info">
-                <div class="Work-infoText Type" itemprop="about">
-                  <p><strong itemprop="name">Välj Att Sluta</strong> (Choose to stop) is a helpline offering advice to those who seek help to change a controlling or violent behavior. Callers talk anonymously to a therapist or other professional who then suggest <span class="u-textTruncate">further treatment</span>.</p>
+                <div class="Work-infoText Type">
+                  <p><strong>Välj Att Sluta</strong> (Choose to stop) is a helpline offering advice to those who seek help to change a controlling or violent behavior. Callers talk anonymously to a therapist or other professional who then suggest <span class="u-textTruncate">further treatment</span>.</p>
                   <p>I help by continuously develop the interface used by the operators <span class="u-textTruncate">taking calls</span> since the launch in 2019.</p>
+                  <p>The operating services are built using NodeJS and React.</p>
                 </div>
                 <p class="Work-role">Developer, designer</p>
                 <!--
-                <a class="Work-infoLink" href="http://valjattsluta.se">
-                  <svg width="8px" height="7px" aria-hidden="true">
-                    <use xlink:href="#arrow"></use>
-                  </svg>
-                  <span itemprop="url">http://valjattsluta.se</span>
-                </a>
+                <div class="Work-links">
+                  <a class="Work-link" href="http://valjattsluta.se">
+                    <svg width="8px" height="7px" aria-hidden="true">
+                      <use xlink:href="#arrow"></use>
+                    </svg>
+                    <span>http://valjattsluta.se</span>
+                  </a>
+                </div>
                 -->
               </div>
             </div>
-            <meta itemprop="author creator" itemscope itemtype="http://schema.org/Organization" itemref="organization">
-            <meta itemprop="image" content="/assets/images/valjattsluta@2x.jpg">
-            <meta itemprop="datePublished" content="2018">
           </article>
 
-          <article class="Work-item Work-item--medium Work-item--saqmi" aria-label="SAQMI" itemscope itemtype="http://schema.org/CreativeWork">
-            <div class="Work-itemInner">
-              <div class="Work-mediaWrap">
-              <svg class="Work-media is-loaded" viewBox="0 0 1502 480" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path fill="#111" fill-rule="evenodd" d="M787 1h3c1-1 3 0 4 1l2-1 1 1h17l2 1h4l6 1 3 1 3 1 4 1h7l3 1h6l2 3 1-1 4 1v1l6 2 6 2 3 2 3 1 1 2 1-1c1 1 3 1 3 3h2l6 5 4 2 3 4 4 2 4 4h1v1h2v1c2 0 2 2 3 3l3 2 1 1 2 1 1 2h1c1 1 1 2 3 2l1 2 1 1 2 1v1l6 6c-1 1 0 2 1 2l1 1 2 2a67 67 0 015 7l1 1 4 6 3 4 3 6 1 2 2 2 2 4 2 3 1 3 1 2 2 4v1l2 3 2 5 1 3 2 2v2l1 1v1l1 2v2l1 3v3l1 2 1 3v6l1 2v5l1 4 1 4v1l1 4v1l1 1v4l1 2v7h-1l2 6 1 10v2l-1 6c1 0 0 0 0 0v4l-1 1h1l-1 5v9l-1 2v2l-1 4v1l-1 3v2l-2 2v3c0 2-2 2-3 3l1 3-1 3-1 2-1 3v1l-1 3-1 1-1 1v3l-1 3-2 2 1 4-2 1h1l-2 3v2l-1 1v1l-2 4-2 2v1l-3 6-2 2-1 2v2l-1 1v1l-2 1v1l-3 4-1 2-1 2-2 1-1 1-1 2-4 5h-1c0 2-2 3-3 5l-2 2-3 2v1l-4 3-2 3-2 1-2 2h-1l-2 2-1 1c-2 1-3 3-6 3l-1 2h-1c-1 1-1 3-3 3l-2 2c-2 0-3 1-3 2l-3 3-4 1c0 2-2 2-3 3l-2 1-1 1-3 1-2 2c-1-2-2 0-4-1l-1 2h-2l-3 3h-7l-1 1h-1l-3 1-1 1h-2v6l-1 3v1l1 4h-1l2 4v3l-1 1v6l-1 1v3l1 2-1 2-1 5v1l1 1v1l1 1-1 3v7l1 8v4l-1 4 1 2c-2 2 0 4 0 5l-2 3-1 3v4h-1l-1 4-1 1-4 1h-4l-4-2-1 2-1-1-1 1h-2v1h-3l-1-1h-5v1h-1l-1 1-1-1-5 1h-6l-2 1h-5l-3 1h-6l-1-1-1 1-4-1h-45l-5-1h-2a497 497 0 01-8-7l1-2-1-2 1-2-1-7v-4l-1-2 1-2-1-3v-5l-1-9 1-2-1-2v-33l1-2v-1l-1-1 1-2-1-2v-1l1-1-2-1h-3l-2-1-5-2-1-1h-2c-2 0-5 0-7-2l-2-1h-2l-4-2-6-3-4-2-5-4-4-3-2-1-2-2-1-1h-1l-2-2-6-5-2-2-3-3-3-3-4-4v-1l-2-1-2-2-2-3-2-2-6-8-2-3-1-3-1-1-4-5v-1l-3-4-1-2-4-5-1-2-1-2-3-4v-1l-3-5h1l-2-2-1-2-2-6-1-3-1-2-1-1v-4l-2-4-2-3-1-3-1-4-1-3v-2l-1-4v-2l-1-1-1-6v-6h-1l-1-7v-9l-1-11 1-1-1-1 1-7v-10h1v-1l1-5 1-1-1-3 1-1v-2l1-5 1-4 1-2 1-4 2-3c-1-4 1-6 2-9l1-2 1-3 1-2 2-4 1-3 1-1v-2l2-1v-5l2-1v-2c1-1 3-2 2-5h1v-2l1-1h-1l2-2v-2l1-3 2-4 1-1 1-3c2-1 1-2 2-3l1-2 2-5h1v-1l2-1 1-3 2-2 1-1 1-2 6-8 2-2 1-1 1-2 1-1 1-1 1-1 2-2 1-2 2-2h1l4-4 2-2 2-2 1-1h1l1-2 2-1 7-4 4-3h2c2-4 6-6 8-7 1-2 4-2 5-3h1l3-2 3-1v-1h2l3-2 5-2 1-1h1l2-1h3l1-1 2-1 7-2 5-1 4-1h2l2-1h3l2-1h4l3-1h4V2h7l3-1h18m226 357v-6l1-3v-19h1l-1-4 1-2v-1l-1-1v-20l1-1v-4l-1-1v-8l1-1-1-3v-10l-1-2 1-2 1-2h-2v-5c2-1 1-3 0-5h-1l1-1v-13l-1-2 1-3-1-2v-10l1-3v-9l1-2v-2l-1-3v-13l1-5 1-3v-3l-1-12 1-10v-6l1-3v-7c1 0 1 0 0 0v-12l1-2v-17l1-5v-9l1-2 1-4h-1V84h1l-1-7V67l1-2 1-5v-1l-1-4 1-3v-1l1-1v-5l2-4v-2l1-3v-3l2-4v-5l1-1h1l1-3 2-2 1-1 6-3 2-1h3l1 2 2 2h2l1 1h2l1 1h1c0 1 0 2 2 2v1l2 3h3c0 1 2 1 2 3l1 1 1 1 2 2 1 1 1 1v1c0 1 2 2 1 3l3 3 2 3 2 2 2 4 3 2 1 1v1l3 4-1 1 2 1v3h1l2 4h1l2 3 2 3 1 1 1 2 1 2 1 2v2l4 3 2 2 1 3 1 2h1l1 3 1 1 1 3 1 1 1 1h2v2l2 2c1 1 2 1 2 3h2l-1 3 2 1 1 1 2 2-1 1 2 2 3 2v3h1v2l1 1 1-1 3 4v3l2 2 1 1 3 4 1 1 3 3 2 4 1 1h-1l1 2a252 252 0 013 3v2l2 2 2 2h-1l2 1v1h2v2l2 2h2l1 2v2l1 1v2l4 4v1l2 2 3 2 2 2 2 3h-1l2 1 3-6 3-4 3-4 1-2 2-3 1-2 1-3 2-2 4-5 5-7 3-3 2-3 1-2 4-5 3-4 2-2 1-2 2-2 2-3 2-3 1-3 4-5 2-3 1-1v-2l3-3 3-4 3-3 1-2 1-2 3-4 3-4 2-2 2-3 3-3 2-2 2-1 1-2 1-2 4-4v-1l1-2 2-3 4-4 2-3 1-1 1-2 4-4 1-1 1-1 3-3 2-3 1-1 1-2 1-2 2-3 2-2 2-2 3-3 2-2 2-3 1-1 1-3 2-1c1-1 2-2 4-1l3-1h2l4 1 6 3 2 2v1l2 2v1l-1 4 2 2v2l-2 2v4h-1v2l1 1v2l-1 1v1l1 1-1 1 2 2h-2v4a451 451 0 011 3v4l-1 4v15l1 1-1 3h1l-1 2h1v5l1 3v2c-1 2-2 3-1 4v4l1 2c-1 1-2 2-1 3v2h-1v2l2 3v2l-2 2 1 3 1 1v4l-1 3 1 2v11c-1 3-1 6 1 9l-1 1c0 2-1 3 1 4l-1 2v3l1 1-1 2v2l1 4 1 1v2l-2 1 1 2v3l1 3v1l-1 2c1 2 1 4-1 6l1 5v6l-1 8v2l1 1v11l-1 2v1l1 3v6l-1 2 1 5v6l1 5c-1 1-2 2-1 4l-1 5 1 5-1 1v21l-1 5-1 2v2l1 1v5l-1 3v6s-1 0 0 0v7l1 1-1 1 1 2v2l-1 2v6h1v1l-1 2 1 3v2l1 3-2 2 1 2h1c0 1-2 2 0 4l-1 3h1v1l-1 2 1 2v6l-1 1 1 3v1l-1 1v4h-1v1l2 1 1 1-3 4-3-2h-1l-2 1h-2c-2 2-5 2-7 2v-1h-4l-2 3-3-1-1 1-4-1h-12l-3 1h-4l-2 1-2-1h-4l-3 1h-4v-1h-12l-4 1-1-1h-2l-4 1-2 1-5-2v1c-2 0-4 1-6-1h-8l-1 1-4-1-5-1h-5l-1 1h-1l-1-1h-2l-1 1h-4l-1 1h-2l-2-1h-2l-3 1-4-1-1 1h-1l-1-1-5 2h-8l-8-1h-5l-1-1h-1l-4 1-2-1h-7v1l-4-1h-13l-4 1c-4-1-4-2-9 0l-5-1-2 1-4-1h-6l-3-1h-4l-1 1-1-1h-7l-4-2-2 2-8 1v-1l-2 1-4-1h-3l-5-1-1 2h-12l-5 1h-2l-3 1h-3l-1-2h-1l-1-1-1-1-3-1-2-2-1-3-2-3 1-1h1v-15m-809 30l-2 2-4 1h-7l-1 1h-5l-3 1h-5l-7 1-2 1v-1h-2l-1 1h-10l-4-1h-5l-3-1v-1l-1-1-1 2-4-1-1 1a570 570 0 00-5-2h-3l-2-1-4-1h-3l-3-1-2-1-1-1-2 1-1-1c-2 1-3 0-4-2h-4l-2 1c-1-1-1-2-3-2l-1-1-3-1h-1v-1l-5-1h-4l-4-2-2-2h-6l-1-2h-2l-1-2h-1l-1 1c-1 1-2-1-3-1l-1-1-3-1h-1l-2-3h-1l-2-1v-1l-1-1h-2c-1 1-2 0-3-1l-4-3-4-1-2-3-2-3h-3c-2 0-2-2-4-3l-2-1-2-1-1-2h-1l-1-2h-2l-2-4h-1l-1-1-2-1-5-6c-2 0-3 0-5-2l1-2H2l1-1-1-2H1l-1-1 4-2 2-3 4-4 1-2 1-1 1-3 2-2 3-5 2-2 1-2 2-2v-1h1v-1l5-5-1-1h1c2 0 3-2 4-3v-1l2-2 1-2 3-4v-1l3-3 1-2 1-1v-2l2-2 2-2v-2l2-3a866 866 0 004 0v-2l3 1h3l2 1 2 2 6 3c2 0 3 2 4 3 1-1 2 1 3 1l2 2 2 1 5 2 5 3 2 2 3 1 3 2 3 2h2l2 1h1c0 2 2 2 3 2l7 4 2 2 5 1 1 1h2l9 3 5 1 1 1 2-1 1 1h18l4-1 6-1 5-2 3-1 3-2 1-1 2-2h1v-3l2-2v-3l2-3v-2l1-2-3-4-1-5-1-2-1-1-4-4h-1l-5-5-1-1-10-3-5-2h-2l-3-2h-3l-3-1-1-1c-1 1-2 0-4-1l-3-1h-2l-1-1h-2v-1l-3-1-3-1-3-1v-1h-3l-6-2h-2v-1h-1l-2-1-1 1-1-2h-2l-3-1-2-1-3-1-4-2-5-2-2-2h-2l1-2h-3l-2-2h-2l-4-2-2-1-2-1-3-2-2-1-1-2-3-2-2-3-1-1-2-2-1-1-3-3c-1-1-3-2-3-4l-2-1-1-2-4-5-2-3-4-5-1-2-1-3-2-3 1-1-2-2-2-4-1-1v-2l-2-7v-2h-1l-1-5v-2l-1-7 1-2-1-6 1-3 1-1-1-4v-3l1-3 1-2v-3l1-2v-4l1-1v-3l1-3 1-1c-1-1 0-3 1-4v-3l3-6 2-5 1-1v-1a25 25 0 014-6l5-5 1-1 1-3 2-2 3-4 1-1 2-2 2-3 3-2 3-3 2-1 2-1 3-3 6-5h1l2-2 3-2 3-2 3-1h1l1-1v-1l5-2 1-1 3-1 4-2 1 1v-1h2v-1h4l2-1 5-1 5-2h1l3 1c1-1 1-2 3-2h4l1-1h3l1 1h1l4-1 3-1h5l6-1 2 1 2-1h8l2 1 2-1 3 1h9l3 1h4l5 1 4 1 6 2 4 2v-1l1 2h2l2 1h2l1 2 3 1 1 1 3 1 3 1 3 2 3 1 6 4 1 1h2l1 1c1 1 1 2 2 1 1 0 1 2 2 1l1 1 1 1 2 1 1 1 1 1h1l2 2 4 3 3 3 2 3c2 0 3 2 5 3l5 4 1 1 1 1 3 3 2 3v2l2 1 1 1v1l2 1h1l1 2h2l1 1v2l-1 1-2 2-2 1v2h1l-1 3c-1 2-3 3-3 6l-2 2v1h-1l-1 4-1 1-1 3-1 1-1 2-1 1v1l-2 1v2l-3 3-2 5-1 2-2 2-1 1-1 2-3 3-4 5-3 4-1 2-2 2-3 3h-5c-2-1 0-2-1-3l-1-1-4-1-1-2h-2v-1h-1l-2-1-2-1-6-3-1-1h-1v-1l-4-2-3-1-1-2-5-1-5-3h-1l-2-1-3-2-2-1-3-2-2-2h-1l-5-2-2-1-5-2-2-1-1-1-4-2-3-1-1-1h-14c-1 2-3 2-4 2l-1 1-2-1-3 1-2 2-6 4-1 2c0 1-2 1-2 3v1l-1 2h-1l-1 5 1 1v6l2 3 1 3h1l3 4 2 3 3 3h2l1 1 2 1 5 2v1l4 2 5 2 5 1 2 2v-1l2 2 3 1 4 1 1 1h2l2 1h4l1 1h1l3 1 2 1c0 1 2 1 1 2l4 1 3 2 5 1 1 1 2 1h2l1 2 7 2h2l1 1 3 1h-1 2l4 3 7 3 3 3h1l2 1 2 1 1 1 3 1 2 3c0 1 1 2 3 2l2 2 1 2v1l3 2 1 2 2 1 1 2v2l2 1 4 4 3 4v1l2 2h1l1 2 1 2 2 1 1 3h1l1 3 2 3v1c3 2 3 5 3 8l2 2v3h1l1 5 1 3 1 5v2l1 1v4l1 1v4l1 1v14l-1 2-1 6-1 1v9l-2 5v3l-2 3-1 1c0 2 0 3-2 4v4l-2 2-1 1-6 7-4 6-2 3-3 3-1 2-3 2-6 6h-1l-3 3-4 4h-1l-2 1-4 2-4 2-4 2c-2 0-2 1-3 2l-2 1-4 2-4 1-7 3h-1l-1 1h-4l-3 1-1 1c-3 0-5 2-8 1M483 42h1l1 2v1l2 2 1 1v3l1 1v1l1 2 2 2 1 4v2l1 2-1 1c1 5 1 4 3 6l1 6 2 3v3l1 1v3l1 5 1 1 2 4h-1l1 1v2c1 1 2 3 1 5l1 1 2 5v3h1v1l1 1v2l1 1 2 5-1 1 2 2 2 5 1 1v3l2 1h-1l1 2v2l2 1v3l1 1 3 6v5l2 1 2 6 1 3v1l1 2 1 2v2l2 5v1l1 1-2 1 2 1c1 1 1 4 3 5v2l1 4v2l3 3v2c2 2 3 3 2 5l1 1v4l2 1 1 5 1 1 2 3c0 2 1 4 3 5l1 3v3c2 0 2 2 3 3l1 2 2 4 1 3 2 7 1 6 1 1 1 3 1 1 1 6h1v3l1 5 1 1-1 5 1 1 3 2v3c2 2 2 3 2 6l2 2 2 6v2l1 3 1 2v2h1l2 3h-1l1 1v1l1 1 2 5 1 2 1 1v3l1 4 1 2v1l2 1 1 2v3c2 1 1 2 2 3l1 2 1 1v3l1 2 1 1 1 2 1 1 1 4 1 1-1 2 2 2 3 4 1 1 1 1c-1 1-2 2-1 4l2 3-1 3c-1 1-1 2-3 2h-2l-2 1h-7l-1-1-1 1h-17l-1-1v1l-7 1-7-1-3 1h-10l-4 1-3-1v1c-1-1-3-2-4-1h-4l-3-1h-6l-2-1v1h-8c-1-1-2 1-2 1l-4-1h-3l-1-1-1 1c-1 1-2-1-4 1l-2-2-1 1h-5l-1-1h-1l-2 1h-13l-3-1h-31l-3 1-1-1-3 1h-4l-3-1h-16l-2 1-6-1-2 1h-5l-1-1v1l-1-1h-3l-2 1h-4l-4-1h-25l-2-1h-3l-1 1h-6l-6-1-4 1h-13l-4-1h-3l-2-1h-1l-2-2-1 1v-1l-1-2c-2 0-3-1-3-2-1-2 0-3 1-5l1-1 2-2v-3l3-2-1-1 1-2 2-3-1-1 2-3 1-1 1-3 1-4 3-4v-4l2-2v-2l2-5v-1l3-4-1-2 3-3v-2l1-6 1-2 2-5 3-6v-2l1-4v-1c1-1 2-2 1-3 2-1 3-3 3-5v-1c1-2 1-4 3-5l1-2v-1l3-10v-1c2-1 2-3 2-4l2-5v-2h1l2-5v-1l2-4v-1h2v-2l1-2c0-3 1-5 3-7v-2l2-4 2-5 1-1c-1-1 0-3 1-4v-1l1-2v-2l2-1 1-4 1-2v-2l2-3 2-4v-1l1-2 1-4h1v-3l1-1v-2l2-4 2-3v-1l1-3 1-3 1-1v-2l2-4 1-2h1v-3l1-2v-2l1-1v-2l2-2 1-2 1-5 2-1c0-2 1-5 3-6l-1-1 1-2h1v-1l2-7 2-4v-1l1-3v-2h1v-2c2-1 2-3 2-6h1l1-4 3-3 1-3v-2l1-4 2-1-1-1 1-2 3-5v-1l3-6v-1l2-5v-1l2-4 1-2 1-2 2-3v-4l2-1-1-1 3-5 1-2 1-3 1-3 1-2 1-2 1-1v-2l3-4v-1l1-1 3-1h3l1-1c0-2 1-2 2-2h2l2-1 3 1h1l1 1 2 2v2l1 1 1 2 1 3 2 2c0 2 1 2 2 3v3h1v1c2 2 3 4 3 7m1014-30l2 2v2l2 1-1 3v1l-1 10v2l-1 3v15l-1 3v17l-1 1v7l1 1h-1v13l-1 1-1 1h-2c-2-1-3-1-5 1l-2-1h-2l-3 1h-7l-1-1h-4l-1 1h-14l-1-1h-15l-1 1h-7l-1 1h-14l-2-1-1 2-2-1h-4l-4 1-1-1-3 1h-6l-4-3-1-1v-4l-1-5-1-1h1v-8l-1-1 1-1-1-3-1-1 1-5v-5l1-6-1-4 1-1 1-3-2-4 1-3v-3h1l-1-4v-6l2-3h1v-2l-2-1v-7l1-1h1l1-1 3-1h4l1 1h1v-1h15l2-1 3 1h5l4-1 3 1 1 1h1l1-1h1a290 290 0 012-1c1-1 2 0 2 1h2l3-1 2 1 1-1 3-1v1h4l3-1h5l2 1h11l4 1 3-1h7v1l6 2h3m-18 288l2 3h3l2-1 4-1v-1h5l1 2v4l1 1-1 2v6l1 3v3l1 5-1 5 1 2-1 1v2l1 2v2l-1 1 1 2v1l1 9v6l-1 3 1 2v2l1 3v1l-1 1v4l-1 1v3l-1 1-1 6-5-1-2 1h-21l-2-1-2 1h-7l-2 1h-4l-1-1h-27l-1-1-4 1h-1l-5-1-2-1h-3l-2-1-1 1h-8l-2-1-1 1v-1h-2l-1-1v-4l-2-2v-2c1 0 0 0 0 0l1-2v-9h-1v-13l1-1-1-1h1v-8l1-1v-16l-1-3v-2l1-2-1-1-1-3 1-5v-4h11l3-1h4l1-1 2 1 2-1h7l7-1h11l1 1h38l3-1m-92-94l4-1v-1 1l5-2h16l3 1h4l6-1h16c0 1 0 1 0 0h20l3 1h10l3-1 2 2 2 1h13l2 1-2 2 1 3v3l1 5v4l1 2-1 2 1 2v5c-1 1-2 2-1 4v8h-1v2l1 2-1 3 1 3 1 2v3l-1 3v4h1v2l1 3v3l-1 5v3l-1 2h-4l-4 1h-25l-3-1h-9l-3-1h-11l-2-1-3 1-3-1-1 1h-4c0 1 0 0 0 0l-2 1h-10l-1-1v2l-5-1v-1h-1v1h-13l-2-2-2-1 1-6h-1v-10l1-3v-5l-1-7-1-1 2-3v-5l-1-1-1-4v-3l1-1-1-3v-17h1l-1-5v-4m49-95l1-1 4 1 2-1h4l1 1c1-1 3 0 4 1h13l1 1 2-1 5 1h3l2-1h5c2-1 4 0 5 2h7l1 1 1 2v8l-1 7 1 3v17l1 2-1 1 1 2v9l-2 3v14l-1 3-1 1v1l-2 3-2 1-7 1h-14l-4 1h-8l-2-1h-11l-4-1h-29l-1-1-2 1-2-1h-11l-2-2c-2 0-3-1-4-3v-1l-2-2-1-5v-9l-1-3 1-4-1-1h1v-4l-1-2v-12l1-3-1-2 1-1v-3c-1-1-2-2-1-3v-2l1-1v-2l-1-2 1-5 1-1-1-2c0-1 2-2 0-3l2-1h2l3-1h9l9-1h14l5 1h6"></path>
-              </svg>
-              </div>
-              <div class="Work-info">
-                <div class="Work-infoText Type" itemprop="about">
-                  <p><strong>The Swedish Archive for Queer Moving Images</strong> is a platform and a digital archive for queer moving images. The site is full of news, events, videos, podcasts, and more all about the queer film world.</p>
-                  <p>With design by <a class="ColorLink u-textTruncate js-splitLetters" href="https://sakaria.se/">Sakaria Studio</a>, I continue to develop on this playful website.</p>
-                </div>
-                <p class="Work-role">Developer</p>
-                <a class="Work-infoLink" href="https://saqmi.se">
-                  <svg width="8px" height="7px" aria-hidden="true">
-                    <use xlink:href="#arrow"></use>
-                  </svg>
-                  <span itemprop="url">https://saqmi.se</span>
-                </a>
-              </div>
-            </div>
-            <meta itemprop="author creator" itemscope itemtype="http://schema.org/Organization" itemref="organization">
-            <meta itemprop="image" content="/assets/images/saqmi@2x.jpg">
-          </article>
-
-          <article class="Work-item Work-item--tall" aria-label="ME Skolan" itemscope itemtype="http://schema.org/CreativeWork">
-            <div class="Work-itemInner">
-              <div class="Work-mediaWrap">
-                <picture>
-                  <source
-                    data-srcset="/assets/images/meskolan.avif 1x, /assets/images/meskolan@2x.avif 2x"
-                    type="image/avif"
-                  >
-                  <source
-                    data-srcset="/assets/images/meskolan.webp 1x, /assets/images/meskolan@2x.webp 2x"
-                    type="image/webp"
-                  >
-                  <img
-                    class="Work-media"
-                    data-loading="lazy"
-                    data-srcset="/assets/images/meskolan.jpg 1x, /assets/images/meskolan@2x.jpg 2x"
-                    data-src="/assets/images/meskolan.jpg"
-                    width="1200"
-                    height="1200"
-                    alt="ME Skolan">
-                </picture>
-                <noscript>
-                  <picture>
-                    <source
-                      data-srcset="/assets/images/meskolan.avif 1x, /assets/images/meskolan@2x.avif 2x"
-                      type="image/avif"
-                    >
-                    <source
-                      srcset="/assets/images/meskolan.webp 1x, /assets/images/meskolan@2x.webp 2x"
-                      type="image/webp"
-                    >
-                    <img
-                      class="Work-media"
-                      data-loading="lazy"
-                      srcset="/assets/images/meskolan.jpg 1x, /assets/images/meskolan@2x.jpg 2x"
-                      src="/assets/images/meskolan.jpg"
-                      width="1200"
-                      height="1200"
-                      alt="ME Skolan">
-                  </picture>
-                </noscript>
-              </div>
-              <div class="Work-info">
-                <div class="Work-infoText Type" itemprop="about">
-                  <p><strong itemprop="name">ME Skolan</strong> offers high school education on nine different locations with machine operator training.</p>
-                  <p>The website is built with WordPress and was made in collaboration with <a class="ColorLink js-splitLetters" href="https://spektradesign.se/">Spektra</a> who provided the design.</p>
-                </div>
-                <p class="Work-role">Developer</p>
-                <a class="Work-infoLink" href="https://meskolan.se">
-                  <svg width="8px" height="7px" aria-hidden="true">
-                    <use xlink:href="#arrow"></use>
-                  </svg>
-                  <span itemprop="url">https://meskolan.se</span>
-                </a>
-              </div>
-            </div>
-            <meta itemprop="author creator" itemscope itemtype="http://schema.org/Organization" itemref="organization">
-            <meta itemprop="image" content="/assets/images/meskolan@2x.jpg">
-          </article>
-
-          <article class="Work-item Work-item--tall" aria-label="Arkitektur Förlag" itemscope itemtype="http://schema.org/CreativeWork">
+          <article class="Work-item Work-item--tall" aria-label="Arkitektur Förlag">
             <div class="Work-itemInner">
               <div class="Work-mediaWrap">
                 <picture>
@@ -304,47 +312,217 @@
                 </noscript>
               </div>
               <div class="Work-info">
-                <div class="Work-infoText Type" itemprop="about">
-                  <p><strong itemprop="name">Arkitektur Förlag</strong> publishes the Swedish magazine Arkitektur and a variety of books on architecture, urban planning and design.</p>
+                <div class="Work-infoText Type">
+                  <p><strong>Arkitektur Förlag</strong> publishes the Swedish magazine Arkitektur and a variety of books on architecture, urban planning and design.</p>
                   <p>The website is built using WordPress and WooCommerce to sell books, subscriptions, posters <span class="u-textTruncate">and more</span>.</p>
                 </div>
                 <p class="Work-role">Front-end developer</p>
-                <a class="Work-infoLink" href="https://arkitektur.se">
-                  <svg width="8px" height="7px" aria-hidden="true">
-                    <use xlink:href="#arrow"></use>
-                  </svg>
-                  <span itemprop="url">https://arkitektur.se</span>
-                </a>
+                <div class="Work-links">
+                  <a class="Work-link" href="https://arkitektur.se">
+                    <svg width="8px" height="7px" aria-hidden="true">
+                      <use xlink:href="#arrow"></use>
+                    </svg>
+                    <span>https://arkitektur.se</span>
+                  </a>
+                </div>
               </div>
             </div>
-            <meta itemprop="author creator" itemscope itemtype="http://schema.org/Organization" itemref="organization">
-            <meta itemprop="image" content="/assets/images/arkitektur@2x.jpg">
           </article>
 
-          <article class="Work-item Work-item--medium Work-item--forfattaren" aria-label="Författaren" itemscope itemtype="http://schema.org/CreativeWork">
+          <article class="Work-item Work-item--forfattaren" aria-label="Författaren">
             <div class="Work-itemInner">
               <div class="Work-mediaWrap">
-                <svg class="Work-media is-loaded" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 947 197">
-                  <path fill="#111" fill-rule="nonzero" d="M56.2 146v-2c-13-5-14.3-8.8-14.4-13.4v-.6-.6-74h22V46h-22l-.9-5.6-.2-1.3c-1.1-6.6-2.3-13.4-2.3-17.7 0-4.6 2.4-7 6.4-7 5.4 0 13.2 4 22.2 8.8l1-.6V0C28.6 0 13.4 21.6 13.4 44.8V46L3 53.4v2h10.4v74.4c0 5-.4 8.8-10.4 14.2v2h53.2zM94.5 36c8.2 0 14.8-5 14.8-13.2 0-8.4-6.6-13.4-14.8-13.4-8.4 0-15 5-15 13.4 0 8.2 6.6 13.2 15 13.2zm38.6 0c8.2 0 14.8-5 14.8-13.2 0-8.4-6.6-13.4-14.8-13.4-8.4 0-15 5-15 13.4 0 8.2 6.6 13.2 15 13.2zm-19.4 112c34.2 0 49.6-20.6 49.6-52S148 44 113.7 44c-34.4 0-49.6 20.6-49.6 52s15.2 52 49.6 52zm0-10.8c-13.8 0-19.4-15.4-19.4-43 0-29.2 5.6-39.4 19.4-39.4 13.6 0 19.4 15.4 19.4 43 0 29.2-5.6 39.4-19.4 39.4zm108.6 8.8v-2c-12.4-4.8-14.1-8.4-14.4-12.6v-.3-.6-.5-52.2a31 31 0 0120.2-7c4.2 0 8.6.8 10.4 1.2l9.2-26.2c-2.8-1-8.6-1.8-12.4-1.8-6.2 0-11.2 1.6-15.8 4.8l-11.2 21.4h-.4V46h-39v2c9.6 4.8 10.3 11.5 10.4 17.2v65.4c-.1 4.5-1 8.3-10.4 13.4v2h53.4zm78.5 0v-2c-13-5-14.3-8.8-14.4-13.4v-.6-.6-74h22V46h-22l-.9-5.6-.2-1.3c-1.1-6.6-2.3-13.4-2.3-17.7 0-4.6 2.4-7 6.4-7 5.4 0 13.2 4 22.2 8.8l1-.6V0C273.2 0 258 21.6 258 44.8V46l-10.4 7.4v2H258v74.4c0 5-.4 8.8-10.4 14.2v2h53.2zm35.1 2c9.6 0 14.4-2.6 17.8-4.8l12.2-13.8 1 16.6h37.8v-2c-9.6-5.2-10.3-9-10.4-13.3v-.4-55.1c0-23-16.4-31.2-40.2-31.2-10 0-22.4 2.4-31.2 5.6l-7.2 19.2.8.8c12.4-4.6 21.2-6 32.4-6 10 0 17 4.4 17 16.8v8.2l-33.4 6.8c-14.8 3.2-23.4 12.4-23.4 25.4 0 15.2 9.6 27.2 26.8 27.2zm16.4-20.4c-9.4 0-13-6.2-13-14 0-5.2 2-9.6 6.6-11.2l20-7.2v27.7a24.5 24.5 0 01-13.6 4.8zm86.8 20.4c9.8 0 18.4-2.6 27.8-7.2v-2c-18 .4-23.2-1-23.2-14V55.4h23V46h-23V26h-2l-22 18.2-14 9.2v2h9.6v69.4c0 17 9.2 23.2 23.8 23.2zm61.3 0c9.8 0 18.4-2.6 27.8-7.2v-2c-18 .4-23.2-1-23.2-14V55.4h23V46h-23V26h-2l-22 18.2-14 9.2v2h9.6v69.4c0 17 9.2 23.2 23.8 23.2zm56 0c9.5 0 14.3-2.6 17.7-4.8l12.2-13.8 1 16.6h37.8v-2c-9.6-5.2-10.3-9-10.4-13.3v-.4-55.1c0-23-16.4-31.2-40.2-31.2-10 0-22.4 2.4-31.2 5.6l-7.2 19.2.8.8c12.4-4.6 21.2-6 32.4-6 10 0 17 4.4 17 16.8v8.2L553 95.4c-14.8 3.2-23.4 12.4-23.4 25.4 0 15.2 9.6 27.2 26.8 27.2zm16.3-20.4c-9.4 0-13-6.2-13-14 0-5.2 2-9.6 6.6-11.2l20-7.2v27.7a24.5 24.5 0 01-13.6 4.8zM680.5 146v-2c-12.4-4.8-14.1-8.4-14.4-12.6v-.3-.6-.5-52.2a31 31 0 0120.2-7c4.2 0 8.6.8 10.4 1.2l9.2-26.2c-2.8-1-8.6-1.8-12.4-1.8-6.2 0-11.2 1.6-15.8 4.8l-11.2 21.4h-.4V46h-39v2c9.6 4.8 10.3 11.5 10.4 17.2v65.4c-.1 4.5-1 8.3-10.4 13.4v2h53.4zm72.3 2c20.8 0 34.2-9.6 38.8-25.6v-2c-6.4 4.4-15 8.8-25.8 8.8-20.4 0-30.4-15.2-31.6-35l60 .2c.6-4.6 1-9 1-12.8 0-30-21.2-37.7-38.2-37.7-37.4 0-53 25.8-53 52.4 0 31.4 17.8 51.6 48.8 51.6zm-18.6-61.6c1-23 9-31.6 20.4-31.6 9.2 0 15.6 7.2 15.6 20.8 0 2.4-.2 4.6-.6 7.2l-35.4 3.6zM849.3 146v-2c-9.6-5.2-10.3-9-10.4-13.3v-.4-56.5c4.4-3 11-6.6 21-6.6 8 0 13.2 3.6 13.2 12V130c0 4.6-.2 8.6-8.4 14v2H912v-2c-9.6-5.2-10.3-9-10.4-13.3v-.4-57.1c0-19.6-11-29.2-28.6-29.2-7.2 0-13 2.4-16.8 4.6l-16.8 17.7h-.4V46h-39v2c10.2 5 10.4 12.2 10.4 18.1v65c0 4.1-1 8-10.4 12.9v2h49.4zm84.2 2c7.4 0 13.4-6 13.4-13.6 0-7.4-6-13.6-13.4-13.6s-13.6 6.2-13.6 13.6c0 7.7 6.2 13.6 13.6 13.6zM4.7 196.2c3.3 0 5.6-1.6 5.6-4.5 0-5-7.7-4.7-7.7-8.7 0-1.5 1-2.6 2.7-2.6 1.7 0 2.6.8 3.7 3h.5v-3.2c-1.6-.5-2.4-.8-4.2-.8-3.2 0-5 1.9-5 4.3 0 5.2 7.4 4.5 7.4 8.8 0 1.6-1 2.7-3.2 2.7-1.6 0-2.8-.7-3.8-2.9H.2v3.2c1.7.5 2.8.7 4.5.7zm15.3 0l4.4-13.8c.4-1.2.7-1.6 2-2.2v-.5h-4.5v.5c1.8.3 1.8.9 1.5 1.7l-3.7 12-4.4-12c-.2-.8-.1-1.5 1.1-1.7v-.5h-5.1v.5c1 .3 1.2.8 1.5 1.7L18 196h2zm18.7-.2l.3-3.6h-.5c-1.2 2-1.4 2.6-2.1 2.6h-5v-6.8H34c1.2 0 1.5 0 2 1.7h.4v-4.4h-.5c-.3 1.6-.7 1.7-1.6 1.7h-2.8v-6.5h4.9c.7 0 .8.5 1.8 2.6h.5v-3.6H27.4v.5c1.6.2 1.6.8 1.6 1.9v11.5c0 1.1 0 1.7-1.6 1.9v.5h11.3zm8 0v-.5c-1.5-.2-1.6-.7-1.6-1.6v-5.2H47c1.8 0 2 1.4 2.4 2.2l1.7 5.1h3.6v-.5c-1.2-.2-1.4-.9-1.6-1.4l-1-2.7a4.6 4.6 0 00-2.8-3c2.2-.5 3.8-2 3.8-4.3 0-3-1.8-4.4-5.3-4.4H41v.5c1.7.2 1.7.8 1.7 1.9v11.5c0 1.1 0 1.7-1.7 1.9v.5h5.7zm.4-8.3h-2v-7h2c2.7 0 3.5 1 3.5 3.4 0 2.3-.8 3.6-3.5 3.6zm14.5 8.3v-.5c-1.5-.2-1.6-.7-1.6-1.6v-12c0-1 .1-1.5 1.6-1.7v-.5H56v.5c1.6.2 1.6.8 1.6 1.9v11.5c0 1.1 0 1.7-1.6 1.9v.5h5.6zm9.7.2c1.9 0 3.3 0 5.1-.4v-5.2c0-1 .1-1.4 1.4-1.6v-.5h-5.6v.5c1.8.3 1.8.8 1.8 2v3.7c-.7.3-1.6.5-2.7.5-3.1 0-5-2.3-5-7.4 0-5 1.9-7.4 5-7.4 2.1 0 3.2.8 4.2 3h.5v-3.5c-1.8-.3-2.8-.5-4.7-.5-4.1 0-7.7 2.6-7.7 8.4 0 5.8 3.5 8.4 7.7 8.4zm19.5-.2l.2-3.6h-.5c-1.2 2-1.4 2.6-2.1 2.6h-5v-6.8H86c1 0 1.4 0 1.8 1.7h.6v-4.4h-.6c-.3 1.6-.7 1.7-1.6 1.7h-2.7v-6.5h4.8c.7 0 .8.5 1.9 2.6h.5v-3.6H79.4v.5c1.7.2 1.7.8 1.7 1.9v11.5c0 1.1 0 1.7-1.7 1.9v.5h11.4zm7 .2c3.2 0 5.5-1.6 5.5-4.5 0-5-7.7-4.7-7.7-8.7 0-1.5 1-2.6 2.7-2.6 1.7 0 2.6.8 3.7 3h.5v-3.2c-1.6-.5-2.4-.8-4.2-.8-3.2 0-5 1.9-5 4.3 0 5.2 7.4 4.5 7.4 8.8 0 1.6-1 2.7-3.1 2.7-1.7 0-2.8-.7-4-2.9h-.4v3.2c1.6.5 2.8.7 4.5.7zm19.5-.2c3.3 0 5.7-1.2 5.7-4.5 0-2.1-1.4-3.8-4.4-4v-.1c2.6-.4 3.7-1.8 3.7-3.7 0-3-2.1-4-5.3-4H111v.5c1.6.2 1.6.8 1.6 1.9v11.5c0 1.1 0 1.7-1.6 1.9v.5h6.4zm-1-9h-1.4v-6.3h1.4c2.3 0 3.4.6 3.4 3.1 0 2.6-1 3.2-3.4 3.2zm.4 8H115v-7h1.6c2.6 0 4 .7 4 3.5 0 2.7-1.4 3.5-3.8 3.5zm12.5-16.5c.6 0 1.2-.5 1.2-1.2s-.6-1.2-1.2-1.2c-.7 0-1.3.5-1.3 1.2s.6 1.2 1.3 1.2zm4.3 0c.7 0 1.3-.5 1.3-1.2s-.6-1.2-1.3-1.2c-.7 0-1.2.5-1.2 1.2s.5 1.2 1.2 1.2zm-5 17.5v-.5c-1.7-.4-1.7-1-1.5-1.7l1.1-3.5h5.3l1.2 3.5c.2.8.1 1.5-1 1.7v.5h5v-.5c-.9-.3-1.2-.8-1.5-1.7l-4.7-14.2h-2l-4.3 13.7c-.4 1.2-.8 1.6-2 2.2v.5h4.5zm4.6-6.7h-4.7l2.3-7.4 2.4 7.4zm11.5 7c3.2 0 5.5-1.7 5.5-4.6 0-5-7.7-4.7-7.7-8.7 0-1.5 1-2.6 2.8-2.6 1.6 0 2.5.8 3.6 3h.5v-3.2c-1.6-.5-2.3-.8-4.2-.8-3.2 0-5 1.9-5 4.3 0 5.2 7.4 4.5 7.4 8.8 0 1.6-1 2.7-3.1 2.7-1.7 0-2.8-.7-3.9-2.9h-.5v3.2c1.6.5 2.8.7 4.5.7zm16.2-.3v-.5c-1.5-.2-1.6-.7-1.6-1.6v-13.2h2.4c.7 0 .8.5 1.8 2.6h.5v-3.6h-12v3.6h.6c1-2 1.1-2.6 1.9-2.6h2.4V194c0 1-.2 1.4-1.7 1.6v.5h5.7zm8.5 0v-.5c-1.8-.4-1.8-1-1.6-1.7l1.1-3.5h5.4l1.1 3.5c.3.8.2 1.5-1 1.7v.5h5.1v-.5c-1-.3-1.2-.8-1.5-1.7l-4.8-14.2h-2l-4.3 13.7c-.4 1.2-.8 1.6-2 2.2v.5h4.5zm4.5-6.7h-4.6l2.2-7.4 2.4 7.4zm21 6.7v-.5c-1.5-.2-1.6-.7-1.6-1.6v-13.2h2.4c.8 0 .8.5 1.9 2.6h.5v-3.6h-12v3.6h.5c1-2 1.2-2.6 2-2.6h2.3v12.9c0 1.1 0 1.7-1.6 1.9v.5h5.6zm10.7 0v-.5c-1.5-.2-1.6-.7-1.6-1.6v-12c0-1 .1-1.5 1.6-1.7v-.5h-5.6v.5c1.6.2 1.6.8 1.6 1.9v11.5c0 1.1 0 1.7-1.6 1.9v.5h5.6zm9.2 0c4.2 0 7.5-2.4 7.5-8.2 0-5.7-3.3-8.1-7.5-8.1h-7.2v.5c1.6.2 1.6.8 1.6 1.9v11.5c0 1.1 0 1.7-1.6 1.9v.5h7.2zm0-1h-3.2v-14.3h3.2c3 0 5 1.7 5 7.1 0 5.5-2 7.2-5 7.2zm14.6 1v-.5c-2-.2-2.2-.7-2.2-1.7v-10.7l9.6 12.9h.6v-14.2c0-1 .2-1.4 1.7-1.6v-.5h-5v.5c2.2.2 2.2.7 2.2 1.9v8.9l-8.5-11.3h-3.4v.5c1.6.2 1.6.8 1.6 1.9v11.5c0 1.2 0 1.6-1.6 1.9v.5h5zm17.3 0v-.5c-1.5-.2-1.6-.7-1.6-1.6v-12c0-1 0-1.5 1.6-1.7v-.5h-5.7v.5c1.7.2 1.7.8 1.7 1.9v11.5c0 1.1 0 1.7-1.7 1.9v.5h5.7zm7 0v-.5c-2-.2-2.2-.7-2.2-1.7v-10.7L261 196h.6v-14.2c0-1 .1-1.4 1.7-1.6v-.5h-5v.5c2.2.2 2.2.7 2.2 1.9v8.9l-8.6-11.3h-3.3v.5c1.6.2 1.6.8 1.6 1.9v11.5c0 1.2 0 1.6-1.6 1.9v.5h5zm19.3.2c1.9 0 3.3 0 5.1-.4v-5.2c0-1 .1-1.4 1.4-1.6v-.5h-5.7v.5c1.9.3 1.9.8 1.9 2v3.7c-.7.3-1.6.5-2.7.5-3.1 0-5-2.3-5-7.4 0-5 1.9-7.4 5-7.4 2.1 0 3.2.8 4.2 3h.5v-3.5c-1.8-.3-2.8-.5-4.7-.5-4.2 0-7.7 2.6-7.7 8.4 0 5.8 3.4 8.4 7.7 8.4zm20-.2v-.5c-2.1-.2-2.3-.7-2.3-1.7v-5.3h2.5c1.1 0 1.5 0 2 1.7h.4v-4.4h-.5c-.4 1.6-.8 1.6-1.9 1.6h-2.5v-6.7h4.8c.8 0 .9.5 2 2.6h.4v-3.6h-11.2v.5c1.6.2 1.6.8 1.6 1.9v11.5c0 1.1 0 1.7-1.6 1.9v.5h6.4zm12.3-17.5c.7 0 1.2-.5 1.2-1.2s-.5-1.2-1.2-1.2-1.3.5-1.3 1.2.6 1.2 1.3 1.2zm4.4 0c.7 0 1.2-.5 1.2-1.2s-.5-1.2-1.2-1.2-1.2.5-1.2 1.2.5 1.2 1.2 1.2zm-2.3 17.7c4.1 0 7.4-2.6 7.4-8.4 0-5.7-3.3-8.4-7.4-8.4-4.2 0-7.5 2.7-7.5 8.4 0 5.8 3.3 8.4 7.5 8.4zm0-1c-3 0-5-2-5-7.4s2-7.4 5-7.4 4.9 2 4.9 7.4c0 5.5-2 7.4-5 7.4zm15.2.8v-.5c-1.5-.2-1.6-.7-1.6-1.6v-5.2h2c1.7 0 2 1.4 2.3 2.2l1.7 5.1h3.6v-.5c-1.2-.2-1.4-.9-1.6-1.4l-1-2.7a4.6 4.6 0 00-2.8-3c2.2-.5 3.8-2 3.8-4.3 0-3-1.8-4.4-5.3-4.4h-6.8v.5c1.7.2 1.7.8 1.7 1.9v11.5c0 1.1 0 1.7-1.7 1.9v.5h5.7zm.4-8.3h-2v-7h2c2.7 0 3.5 1 3.5 3.4 0 2.3-.8 3.6-3.5 3.6zm23.6 8.3v-.5c-1.5-.2-1.6-.7-1.7-1.6v-4.6l3.6-7c.5-1 1-1.5 2.3-2.1v-.5h-4.5v.5c1.8.3 1.6.9 1.2 1.7l-3.1 6.2-3-6.2c-.5-.8-.6-1.5.6-1.7v-.5h-5.5v.5c1 .3 1.6.9 2 1.7l4 8v3.8c0 1.1 0 1.7-1.6 1.9v.5h5.7zm11 0v-.5c-1.5-.2-1.7-.7-1.7-1.6v-5.2h2c1.7 0 2 1.4 2.4 2.2l1.7 5.1h3.6v-.5c-1.1-.2-1.4-.8-1.6-1.2v-.2l-1-2.7a4.6 4.6 0 00-2.8-3c2.2-.5 3.8-2 3.8-4.3 0-3-1.8-4.4-5.4-4.4h-6.7v.5c1.5.2 1.6.7 1.6 1.6v12c0 1-.1 1.5-1.6 1.7v.5h5.6zm.4-8.3h-2v-7h2c2.6 0 3.5 1 3.5 3.4 0 2.3-.9 3.6-3.5 3.6zm14.5 8.3v-.5c-1.5-.2-1.6-.7-1.6-1.6v-4.3l1.4-1.4 4 5.6c.4.7.7 1.5-.5 1.7v.5h5.7v-.5c-.8-.3-1.5-.7-2-1.5l-5.4-7.7 4.2-4a10 10 0 013-2.2v-.5h-4.6v.5c1.6.3 1.2 1 .6 1.7l-6.4 6.3v-6.4c0-1 0-1.4 1.6-1.6v-.5h-5.7v.5c1.5.2 1.6.7 1.7 1.6v12c0 1-.2 1.5-1.7 1.7v.5h5.7zm21.4 0l.2-3.6h-.5c-1.2 2-1.3 2.6-2 2.6h-5v-6.8h2.5c1.1 0 1.5 0 1.9 1.7h.5v-4.4h-.5c-.4 1.6-.7 1.7-1.7 1.7h-2.7v-6.5h4.8c.8 0 .8.5 1.9 2.6h.5v-3.6h-11.2v.5c1.5.2 1.6.7 1.6 1.6v12c0 1-.1 1.5-1.6 1.7v.5h11.3zm7 .2c3.2 0 5.5-1.6 5.5-4.5 0-5-7.5-4.7-7.5-8.7 0-1.5 1-2.6 2.7-2.6 1.6 0 2.5.8 3.6 3h.5v-3.2c-1.6-.5-2.3-.8-4.1-.8-3.2 0-5.1 1.9-5.1 4.3 0 5.2 7.4 4.5 7.4 8.8 0 1.6-1 2.7-3 2.7-1.7 0-2.9-.7-4-2.9h-.5v3.2c1.6.5 2.8.7 4.5.7zm15.3 0l4.4-13.8c.4-1.2.7-1.6 2-2.2v-.5h-4.6v.5c1.8.3 1.8.9 1.6 1.7l-3.8 12-4.3-12c-.3-.8-.1-1.5 1-1.7v-.5h-5v.5c1 .3 1.2.8 1.5 1.7L414 196h2zm18.7-.2l.3-3.6h-.5c-1.2 2-1.4 2.6-2.1 2.6h-5v-6.8h2.5c1.1 0 1.5 0 2 1.7h.4v-4.4h-.5c-.4 1.6-.7 1.7-1.6 1.7h-2.8v-6.5h4.8c.8 0 .9.5 2 2.6h.4v-3.6h-11.2v.5c1.5.2 1.6.7 1.6 1.6v12c0 1-.1 1.5-1.6 1.7v.5h11.3zm8 0v-.5c-1.5-.2-1.7-.7-1.7-1.6v-5.2h2c1.7 0 2 1.4 2.4 2.2l1.7 5.1h3.6v-.5c-1.1-.2-1.4-.8-1.6-1.2v-.2l-1-2.7a4.6 4.6 0 00-2.8-3c2.2-.5 3.8-2 3.8-4.3 0-3-1.8-4.4-5.4-4.4h-6.7v.5c1.5.2 1.6.7 1.6 1.6v12c0 1-.1 1.5-1.6 1.7v.5h5.6zm.4-8.3h-2v-7h2c2.6 0 3.5 1 3.5 3.4 0 2.3-.9 3.6-3.5 3.6zm14.5 8.3v-.5c-1.5-.2-1.6-.7-1.6-1.6v-4.3l1.4-1.4 4 5.6c.4.7.7 1.5-.5 1.7v.5h5.7v-.5c-.9-.3-1.5-.7-2-1.5l-5.4-7.7 4.2-4a10 10 0 013-2.2v-.5h-4.6v.5c1.6.3 1.2 1 .6 1.7l-6.4 6.3v-6.4c0-1 0-1.4 1.6-1.6v-.5H452v.5c1.5.2 1.6.7 1.7 1.6v12c0 1-.2 1.5-1.7 1.7v.5h5.7zm14.8.2c3.2 0 5.5-1.6 5.5-4.5 0-5-7.5-4.7-7.5-8.7 0-1.5 1-2.6 2.7-2.6 1.6 0 2.5.8 3.6 3h.5v-3.2c-1.6-.5-2.3-.8-4.2-.8-3.1 0-5 1.9-5 4.3 0 5.2 7.4 4.5 7.4 8.8 0 1.6-1 2.7-3.1 2.7-1.7 0-2.8-.7-3.9-2.9h-.5v3.2c1.6.5 2.8.7 4.5.7zm11-.2v-.5c-1.8-.4-1.8-1-1.5-1.7l1-3.5h5.4l1.2 3.5c.2.8.1 1.5-1 1.7v.5h5v-.5c-1-.3-1.2-.8-1.5-1.7l-4.7-14.2h-2l-4.4 13.7c-.4 1.2-.7 1.6-2 2.2v.5h4.5zm4.6-6.7h-4.7l2.3-7.4 2.4 7.4zM503 196l5-14.7v12.2c0 1.1 0 1.7-1.7 1.9v.5h5.7v-.5c-1.5-.2-1.7-.7-1.7-1.6v-12c0-1 .2-1.5 1.7-1.7v-.5h-4.5l-4.2 12.4-4.7-12.4h-3.8v.5c1.6.2 1.6.8 1.6 1.9v11.5c0 1.2 0 1.6-1.6 1.9v.5h4.8v-.5c-2-.2-2.1-.7-2.1-1.7v-10.5l4.9 12.8h.6zm19.1 0l5-14.7v12.2c0 1.1 0 1.7-1.6 1.9v.5h5.6v-.5c-1.5-.2-1.6-.7-1.6-1.6v-12c0-1 .1-1.5 1.6-1.7v-.5h-4.4l-4.3 12.4-4.7-12.4H514v.5c1.6.2 1.6.8 1.6 1.9v11.5c0 1.2 0 1.6-1.7 1.9v.5h4.9v-.5c-2-.2-2.2-.7-2.2-1.7v-10.5l4.9 12.8h.6zm14.5-.1v-.5c-1.8-.4-1.8-1-1.5-1.7l1-3.5h5.4l1.1 3.5c.3.8.2 1.5-1 1.7v.5h5.1v-.5c-1-.3-1.2-.8-1.5-1.7l-4.7-14.2h-2l-4.4 13.7c-.4 1.2-.7 1.6-2 2.2v.5h4.5zm4.6-6.7h-4.7l2.3-7.4 2.4 7.4zm18.7 6.7v-.5c-2.2-.2-2.4-.7-2.4-1.7v-5.3h2.5c1.2 0 1.5 0 2 1.7h.4v-4.4h-.5c-.4 1.6-.7 1.6-1.9 1.6h-2.5v-6.7h4.9c.7 0 .8.5 1.8 2.6h.5v-3.6h-11.2v.5c1.6.2 1.6.8 1.6 1.9v11.5c0 1.1 0 1.7-1.6 1.9v.5h6.4zm12.2-17.5c.7 0 1.2-.5 1.2-1.2s-.5-1.2-1.2-1.2-1.3.5-1.3 1.2.6 1.2 1.3 1.2zm4.4 0c.7 0 1.2-.5 1.2-1.2s-.5-1.2-1.2-1.2-1.2.5-1.2 1.2.5 1.2 1.2 1.2zm-2.3 17.7c4.1 0 7.4-2.6 7.4-8.4 0-5.7-3.3-8.4-7.4-8.4-4.2 0-7.5 2.7-7.5 8.4 0 5.8 3.3 8.4 7.5 8.4zm0-1c-3 0-5-2-5-7.4s2-7.4 5-7.4 4.9 2 4.9 7.4c0 5.5-2 7.4-5 7.4zm15.2.8v-.5c-1.5-.2-1.6-.7-1.6-1.6v-5.2h2c1.7 0 2 1.4 2.3 2.2l1.7 5.1h3.6v-.5c-1.2-.2-1.4-.9-1.6-1.4l-1-2.7a4.6 4.6 0 00-2.8-3c2.2-.5 3.8-2 3.8-4.3 0-3-1.8-4.4-5.3-4.4h-6.8v.5c1.7.2 1.7.8 1.7 1.9v11.5c0 1.1 0 1.7-1.7 1.9v.5h5.7zm.4-8.3h-2v-7h2c2.7 0 3.5 1 3.5 3.4 0 2.3-.8 3.6-3.5 3.6zM605 196v-.5c-2.1-.2-2.3-.7-2.3-1.7v-5.3h2.5c1.1 0 1.5 0 1.9 1.7h.5v-4.4h-.5c-.4 1.6-.8 1.6-2 1.6h-2.4v-6.7h4.8c.8 0 .8.5 1.9 2.6h.5v-3.6h-11.2v.5c1.6.2 1.6.8 1.6 1.9v11.5c0 1.1 0 1.7-1.6 1.9v.5h6.3zm10.3 0v-.5c-1.8-.4-1.8-1-1.6-1.7l1.1-3.5h5.4l1.1 3.5c.3.8.2 1.5-1 1.7v.5h5.1v-.5c-1-.3-1.2-.8-1.5-1.7l-4.8-14.2h-2l-4.3 13.7c-.4 1.2-.8 1.6-2 2.2v.5h4.5zm4.5-6.7h-4.6l2.2-7.4 2.4 7.4zm15.4 6.7v-.5c-1.5-.2-1.6-.7-1.6-1.6v-13.2h2.4c.8 0 .8.5 1.9 2.6h.5v-3.6h-12v3.6h.5c1-2 1.2-2.6 2-2.6h2.3v12.9c0 1.1 0 1.7-1.6 1.9v.5h5.6zm13.7 0v-.5c-1.5-.2-1.6-.7-1.6-1.6v-13.2h2.4c.7 0 .8.5 1.9 2.6h.5v-3.6h-12v3.6h.5c1-2 1.1-2.6 1.9-2.6h2.4v12.9c0 1.1 0 1.7-1.6 1.9v.5h5.6zm8.5 0v-.5c-1.8-.4-1.8-1-1.5-1.7l1-3.5h5.4l1.2 3.5c.2.8.1 1.5-1 1.7v.5h5v-.5c-1-.3-1.2-.8-1.5-1.7l-4.7-14.2h-2l-4.4 13.7c-.4 1.2-.7 1.6-2 2.2v.5h4.5zm4.6-6.7h-4.7l2.3-7.4 2.4 7.4zm12.4 6.7v-.5c-1.5-.2-1.6-.7-1.6-1.6v-5.2h1.9c1.7 0 2 1.4 2.4 2.2l1.7 5.1h3.6v-.5c-1.2-.2-1.4-.9-1.6-1.4l-1-2.7a4.6 4.6 0 00-2.8-3c2.2-.5 3.8-2 3.8-4.3 0-3-1.8-4.4-5.3-4.4h-6.8v.5c1.7.2 1.7.8 1.7 1.9v11.5c0 1.1 0 1.7-1.7 1.9v.5h5.7zm.4-8.3h-2v-7h2c2.7 0 3.5 1 3.5 3.4 0 2.3-.8 3.6-3.5 3.6zM695 196l.2-3.6h-.5c-1.2 2-1.4 2.6-2 2.6h-5v-6.8h2.5c1.1 0 1.5 0 1.9 1.7h.5v-4.4h-.5c-.4 1.6-.7 1.7-1.7 1.7h-2.7v-6.5h4.8c.7 0 .8.5 1.9 2.6h.5v-3.6h-11.3v.5c1.7.2 1.7.8 1.7 1.9v11.5c0 1.1 0 1.7-1.7 1.9v.5H695zm15.4.2c4.2 0 7.4-2.6 7.4-8.4 0-5.7-3.2-8.4-7.4-8.4s-7.4 2.7-7.4 8.4c0 5.8 3.2 8.4 7.4 8.4zm0-1c-3 0-5-2-5-7.4s2-7.4 5-7.4 4.9 2 4.9 7.4c0 5.5-1.9 7.4-5 7.4zm17.3 1c1.8 0 2.8 0 4.7-.4l.2-3.4h-.5c-1 2.1-2.3 2.8-4.4 2.8-3.2 0-5.1-2.3-5.1-7.4 0-5 2-7.4 5-7.4 2.2 0 3.2.8 4.3 3h.5v-3.5c-1.9-.3-2.9-.5-4.7-.5-4.2 0-7.7 2.6-7.7 8.4 0 5.8 3.4 8.4 7.7 8.4zm12.5-.2v-.5c-1.6-.2-1.6-.8-1.6-1.9v-5.4h7.2v5.7c0 1-.2 1.4-1.7 1.6v.5h5.7v-.5c-1.6-.2-1.6-.8-1.6-1.9v-11.5c0-1.1 0-1.7 1.6-2v-.4H744v.5c1.5.2 1.6.7 1.7 1.6v5.4h-7.2V182c0-1.1 0-1.7 1.6-2v-.4h-5.6v.5c1.5.2 1.6.7 1.6 1.6v12c0 1-.1 1.5-1.6 1.7v.5h5.6zm22.6-17.5c.7 0 1.2-.5 1.2-1.2s-.5-1.2-1.2-1.2c-.6 0-1.2.5-1.2 1.2s.6 1.2 1.2 1.2zm4.4 0c.7 0 1.3-.5 1.3-1.2s-.6-1.2-1.3-1.2c-.7 0-1.2.5-1.2 1.2s.5 1.2 1.2 1.2zm-2.3 17.7c4.2 0 7.5-2.6 7.5-8.4 0-5.7-3.3-8.4-7.5-8.4s-7.4 2.7-7.4 8.4c0 5.8 3.2 8.4 7.4 8.4zm0-1c-3 0-4.9-2-4.9-7.4s1.9-7.4 5-7.4c3 0 4.8 2 4.8 7.4 0 5.5-1.9 7.4-4.9 7.4zm17.3 1l4.4-13.8c.4-1.2.7-1.6 2-2.2v-.5H784v.5c1.8.3 1.8.9 1.5 1.7l-3.7 12-4.3-12c-.3-.8-.2-1.5 1-1.7v-.5h-5.1v.5c1 .3 1.2.8 1.5 1.7l5.2 14.2h2zm18.8-.2l.2-3.6h-.5c-1.2 2-1.4 2.6-2 2.6h-5v-6.8h2.5c1 0 1.4 0 1.9 1.7h.5v-4.4h-.5c-.4 1.6-.8 1.7-1.7 1.7h-2.7v-6.5h4.8c.7 0 .8.5 1.9 2.6h.5v-3.6h-11.3v.5c1.5.2 1.7.7 1.7 1.6v12c0 1-.2 1.5-1.7 1.7v.5H801zm8 0v-.5c-1.6-.2-1.6-.8-1.6-1.9v-4.9h2c1.7 0 2 1.4 2.3 2.2l1.7 5.1h3.6v-.5c-1-.2-1.3-.8-1.5-1.2v-.2l-1-2.7a4.6 4.6 0 00-2.9-3c2.2-.5 3.8-2 3.8-4.3 0-3-1.8-4.4-5.3-4.4h-6.8v.5c1.5.2 1.7.7 1.7 1.6v12c0 1-.2 1.5-1.7 1.7v.5h5.7zm.4-8.3h-2v-7h2c2.7 0 3.5 1 3.5 3.4 0 2.3-.8 3.6-3.5 3.6zm13.6 8.5c3.2 0 5.5-1.6 5.5-4.5 0-5-7.5-4.7-7.5-8.7 0-1.5 1-2.6 2.7-2.6 1.6 0 2.5.8 3.6 3h.5v-3.2c-1.6-.5-2.3-.8-4.2-.8-3.1 0-5 1.9-5 4.3 0 5.2 7.4 4.5 7.4 8.8 0 1.6-1 2.7-3.1 2.7-1.7 0-2.8-.7-3.9-2.9h-.5v3.2c1.6.5 2.8.7 4.5.7zm11.6-17.7c.7 0 1.2-.5 1.2-1.2s-.5-1.2-1.2-1.2-1.2.5-1.2 1.2.5 1.2 1.2 1.2zm4.4 0c.7 0 1.2-.5 1.2-1.2s-.5-1.2-1.2-1.2-1.2.5-1.2 1.2.5 1.2 1.2 1.2zm-5 17.5v-.5c-1.8-.4-1.8-1-1.5-1.7l1-3.5h5.4l1.2 3.5c.2.8.1 1.5-1.1 1.7v.5h5.1v-.5c-1-.3-1.2-.8-1.5-1.7l-4.7-14.2h-2l-4.4 13.7c-.4 1.2-.7 1.6-2 2.2v.5h4.5zm4.6-6.7h-4.7l2.3-7.4 2.4 7.4zm15.4 6.7v-.5c-1.7-.2-1.7-.8-1.7-1.9v-12.9h2.5c.7 0 .8.5 1.8 2.6h.5v-3.6h-12v3.6h.6c1-2 1.1-2.6 1.8-2.6h2.4V194c0 1 0 1.4-1.6 1.6v.5h5.7zm13.7 0v-.5c-1.7-.2-1.7-.8-1.7-1.9v-12.9h2.5c.7 0 .7.5 1.8 2.6h.5v-3.6h-12v3.6h.6c1-2 1-2.6 1.8-2.6h2.4V194c0 1-.1 1.4-1.6 1.6v.5h5.7zm8.5 0v-.5c-1.8-.4-1.8-1-1.6-1.7l1.1-3.5h5.4l1.1 3.5c.3.8.2 1.5-1 1.7v.5h5v-.5c-.9-.3-1.2-.8-1.4-1.7l-4.8-14.2h-2l-4.4 13.7c-.3 1.2-.7 1.6-2 2.2v.5h4.6zm4.5-6.7H876l2.3-7.4 2.4 7.4zM893 196v-.5c-1.6-.2-1.6-.8-1.6-1.9v-4.9h2c1.7 0 2 1.4 2.3 2.2l1.8 5.1h3.6v-.5c-1.1-.2-1.4-.8-1.6-1.2v-.2l-1-2.7a4.6 4.6 0 00-2.9-3c2.2-.5 3.9-2 3.9-4.3 0-3-1.9-4.4-5.4-4.4h-6.7v.5c1.5.2 1.6.7 1.6 1.6v12c0 1-.1 1.5-1.6 1.7v.5h5.6zm.5-8.3h-2.1v-7h2c2.7 0 3.5 1 3.5 3.4 0 2.3-.8 3.6-3.4 3.6zm20.1 8.3l.3-3.6h-.5c-1.2 2-1.4 2.6-2.1 2.6h-5v-6.8h2.5c1.1 0 1.5 0 2 1.7h.4v-4.4h-.5c-.4 1.6-.7 1.7-1.6 1.7h-2.8v-6.5h4.8c.8 0 .9.5 2 2.6h.4v-3.6h-11.2v.5c1.5.2 1.6.7 1.6 1.6v12c0 1-.1 1.5-1.6 1.7v.5h11.3z"></path>
+                <picture>
+                  <source
+                    data-srcset="/assets/images/forfattaren2.avif 1x, /assets/images/forfattaren2@2x.avif 2x"
+                    type="image/avif"
+                  >
+                  <source
+                    data-srcset="/assets/images/forfattaren2.webp 1x, /assets/images/forfattaren2@2x.webp 2x"
+                    type="image/webp"
+                  >
+                  <img
+                    class="Work-media"
+                    data-loading="lazy"
+                    data-srcset="/assets/images/forfattaren2.jpg 1x, /assets/images/forfattaren2@2x.jpg 2x"
+                    data-src="/assets/images/forfattaren2.jpg"
+                    width="1200"
+                    height="1200"
+                    alt="ME Skolan">
+                </picture>
+                <noscript>
+                  <picture>
+                    <source
+                      data-srcset="/assets/images/forfattaren2.avif 1x, /assets/images/forfattaren2@2x.avif 2x"
+                      type="image/avif"
+                    >
+                    <source
+                      srcset="/assets/images/forfattaren2.webp 1x, /assets/images/forfattaren2@2x.webp 2x"
+                      type="image/webp"
+                    >
+                    <img
+                      class="Work-media"
+                      data-loading="lazy"
+                      srcset="/assets/images/forfattaren2.jpg 1x, /assets/images/forfattaren2@2x.jpg 2x"
+                      src="/assets/images/forfattaren2.jpg"
+                      width="1200"
+                      height="1200"
+                      alt="ME Skolan">
+                  </picture>
+                </noscript>
+                <!-- <svg class="Work-media" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 947 197">
+                  <path fill="#fff" fill-rule="nonzero" d="M56.2 146v-2c-13-5-14.3-8.8-14.4-13.4v-.6-.6-74h22V46h-22l-.9-5.6-.2-1.3c-1.1-6.6-2.3-13.4-2.3-17.7 0-4.6 2.4-7 6.4-7 5.4 0 13.2 4 22.2 8.8l1-.6V0C28.6 0 13.4 21.6 13.4 44.8V46L3 53.4v2h10.4v74.4c0 5-.4 8.8-10.4 14.2v2h53.2zM94.5 36c8.2 0 14.8-5 14.8-13.2 0-8.5-6.6-13.4-14.8-13.4-8.5 0-15 5-15 13.4 0 8.2 6.6 13.2 15 13.2zm38.6 0c8.2 0 14.8-5 14.8-13.2 0-8.5-6.6-13.4-14.8-13.4-8.5 0-15 5-15 13.4 0 8.2 6.6 13.2 15 13.2zm-19.4 112c34.2 0 49.6-20.6 49.6-52S148 44 113.7 44c-34.4 0-49.6 20.6-49.6 52s15.2 52 49.6 52zm0-10.8c-13.8 0-19.4-15.4-19.4-43 0-29.2 5.6-39.4 19.4-39.4 13.6 0 19.4 15.4 19.4 43 0 29.2-5.6 39.4-19.4 39.4zm108.6 8.8v-2c-12.4-4.8-14.1-8.5-14.4-12.6v-.3-.6-.5-52.2a31 31 0 0120.2-7c4.2 0 8.6.8 10.4 1.2l9.2-26.2c-2.8-1-8.6-1.8-12.4-1.8-6.2 0-11.2 1.6-15.8 4.8l-11.2 21.4h-.4V46h-39v2c9.6 4.8 10.3 11.5 10.4 17.2v65.4c-.1 4.5-1 8.3-10.4 13.4v2h53.4zm78.5 0v-2c-13-5-14.3-8.8-14.4-13.4v-.6-.6-74h22V46h-22l-.9-5.6-.2-1.3c-1.1-6.6-2.3-13.4-2.3-17.7 0-4.6 2.4-7 6.4-7 5.4 0 13.2 4 22.2 8.8l1-.6V0C273.2 0 258 21.6 258 44.8V46l-10.4 7.4v2H258v74.4c0 5-.4 8.8-10.4 14.2v2h53.2zm35.1 2c9.6 0 14.4-2.6 17.8-4.8l12.2-13.8 1 16.6h37.8v-2c-9.6-5.2-10.3-9-10.4-13.3v-.4-55.1c0-23-16.4-31.2-40.2-31.2-10 0-22.4 2.4-31.2 5.6l-7.2 19.2.8.8c12.4-4.6 21.2-6 32.4-6 10 0 17 4.4 17 16.8v8.2l-33.4 6.8c-14.8 3.2-23.4 12.4-23.4 25.4 0 15.2 9.6 27.2 26.8 27.2zm16.4-20.4c-9.4 0-13-6.2-13-14 0-5.2 2-9.6 6.6-11.2l20-7.2v27.7a24.5 24.5 0 01-13.6 4.8zm86.8 20.4c9.8 0 18.5-2.6 27.8-7.2v-2c-18 .4-23.2-1-23.2-14V55.4h23V46h-23V26h-2l-22 18.2-14 9.2v2h9.6v69.4c0 17 9.2 23.2 23.8 23.2zm61.3 0c9.8 0 18.5-2.6 27.8-7.2v-2c-18 .4-23.2-1-23.2-14V55.4h23V46h-23V26h-2l-22 18.2-14 9.2v2h9.6v69.4c0 17 9.2 23.2 23.8 23.2zm56 0c9.5 0 14.3-2.6 17.7-4.8l12.2-13.8 1 16.6h37.8v-2c-9.6-5.2-10.3-9-10.4-13.3v-.4-55.1c0-23-16.4-31.2-40.2-31.2-10 0-22.4 2.4-31.2 5.6l-7.2 19.2.8.8c12.4-4.6 21.2-6 32.4-6 10 0 17 4.4 17 16.8v8.2L553 95.4c-14.8 3.2-23.4 12.4-23.4 25.4 0 15.2 9.6 27.2 26.8 27.2zm16.3-20.4c-9.4 0-13-6.2-13-14 0-5.2 2-9.6 6.6-11.2l20-7.2v27.7a24.5 24.5 0 01-13.6 4.8zM680.5 146v-2c-12.4-4.8-14.1-8.5-14.4-12.6v-.3-.6-.5-52.2a31 31 0 0120.2-7c4.2 0 8.6.8 10.4 1.2l9.2-26.2c-2.8-1-8.6-1.8-12.4-1.8-6.2 0-11.2 1.6-15.8 4.8l-11.2 21.4h-.4V46h-39v2c9.6 4.8 10.3 11.5 10.4 17.2v65.4c-.1 4.5-1 8.3-10.4 13.4v2h53.4zm72.3 2c20.8 0 34.2-9.6 38.8-25.6v-2c-6.4 4.4-15 8.8-25.8 8.8-20.4 0-30.4-15.2-31.6-35l60 .2c.6-4.6 1-9 1-12.8 0-30-21.2-37.7-38.2-37.7-37.4 0-53 25.8-53 52.4 0 31.4 17.8 51.6 48.8 51.6zm-18.6-61.6c1-23 9-31.6 20.4-31.6 9.2 0 15.6 7.2 15.6 20.8 0 2.4-.2 4.6-.6 7.2l-35.4 3.6zM849.3 146v-2c-9.6-5.2-10.3-9-10.4-13.3v-.4-56.5c4.4-3 11-6.6 21-6.6 8 0 13.2 3.6 13.2 12V130c0 4.6-.2 8.6-8.5 14v2H912v-2c-9.6-5.2-10.3-9-10.4-13.3v-.4-57.1c0-19.6-11-29.2-28.6-29.2-7.2 0-13 2.4-16.8 4.6l-16.8 17.7h-.4V46h-39v2c10.2 5 10.4 12.2 10.4 18.2v65c0 4.1-1 8-10.4 12.9v2h49.4zm84.2 2c7.4 0 13.4-6 13.4-13.6 0-7.4-6-13.6-13.4-13.6s-13.6 6.2-13.6 13.6c0 7.7 6.2 13.6 13.6 13.6zM4.7 196.2c3.3 0 5.6-1.6 5.6-4.5 0-5-7.7-4.7-7.7-8.7 0-1.5 1-2.6 2.7-2.6 1.7 0 2.6.8 3.7 3h.5v-3.2c-1.6-.5-2.4-.8-4.2-.8-3.2 0-5 1.9-5 4.3 0 5.2 7.4 4.5 7.4 8.8 0 1.6-1 2.7-3.2 2.7-1.6 0-2.8-.7-3.8-2.9H.2v3.2c1.7.5 2.8.7 4.5.7zm15.3 0l4.4-13.8c.4-1.2.7-1.6 2-2.2v-.5h-4.5v.5c1.8.3 1.8.9 1.5 1.7l-3.7 12-4.4-12c-.2-.8-.1-1.5 1.1-1.7v-.5h-5.1v.5c1 .3 1.2.8 1.5 1.7L18 196h2zm18.7-.2l.3-3.6h-.5c-1.2 2-1.4 2.6-2.1 2.6h-5v-6.8H34c1.2 0 1.5 0 2 1.7h.4v-4.4h-.5c-.3 1.6-.7 1.7-1.6 1.7h-2.8v-6.5h4.9c.7 0 .8.5 1.8 2.6h.5v-3.6H27.4v.5c1.6.2 1.6.8 1.6 1.9v11.5c0 1.1 0 1.7-1.6 1.9v.5h11.3zm8 0v-.5c-1.5-.2-1.6-.7-1.6-1.6v-5.2H47c1.8 0 2 1.4 2.4 2.2l1.7 5.1h3.6v-.5c-1.2-.2-1.4-.9-1.6-1.4l-1-2.7a4.6 4.6 0 00-2.8-3c2.2-.5 3.8-2 3.8-4.3 0-3-1.8-4.4-5.3-4.4H41v.5c1.7.2 1.7.8 1.7 1.9v11.5c0 1.1 0 1.7-1.7 1.9v.5h5.7zm.4-8.3h-2v-7h2c2.7 0 3.5 1 3.5 3.4 0 2.3-.8 3.6-3.5 3.6zm14.5 8.3v-.5c-1.5-.2-1.6-.7-1.6-1.6v-12c0-1 .1-1.5 1.6-1.7v-.5H56v.5c1.6.2 1.6.8 1.6 1.9v11.5c0 1.1 0 1.7-1.6 1.9v.5h5.6zm9.7.2c1.9 0 3.3 0 5.1-.4v-5.2c0-1 .1-1.4 1.4-1.6v-.5h-5.6v.5c1.8.3 1.8.8 1.8 2v3.7c-.7.3-1.6.5-2.7.5-3.1 0-5-2.3-5-7.4 0-5 1.9-7.4 5-7.4 2.1 0 3.2.8 4.2 3h.5v-3.5c-1.8-.3-2.8-.5-4.7-.5-4.1 0-7.7 2.6-7.7 8.5 0 5.8 3.5 8.5 7.7 8.5zm19.5-.2l.2-3.6h-.5c-1.2 2-1.4 2.6-2.1 2.6h-5v-6.8H86c1 0 1.4 0 1.8 1.7h.6v-4.4h-.6c-.3 1.6-.7 1.7-1.6 1.7h-2.7v-6.5h4.8c.7 0 .8.5 1.9 2.6h.5v-3.6H79.4v.5c1.7.2 1.7.8 1.7 1.9v11.5c0 1.1 0 1.7-1.7 1.9v.5h11.4zm7 .2c3.2 0 5.5-1.6 5.5-4.5 0-5-7.7-4.7-7.7-8.7 0-1.5 1-2.6 2.7-2.6 1.7 0 2.6.8 3.7 3h.5v-3.2c-1.6-.5-2.4-.8-4.2-.8-3.2 0-5 1.9-5 4.3 0 5.2 7.4 4.5 7.4 8.8 0 1.6-1 2.7-3.1 2.7-1.7 0-2.8-.7-4-2.9h-.4v3.2c1.6.5 2.8.7 4.5.7zm19.5-.2c3.3 0 5.7-1.2 5.7-4.5 0-2.1-1.4-3.8-4.4-4v-.1c2.6-.4 3.7-1.8 3.7-3.7 0-3-2.1-4-5.3-4H111v.5c1.6.2 1.6.8 1.6 1.9v11.5c0 1.1 0 1.7-1.6 1.9v.5h6.4zm-1-9h-1.4v-6.3h1.4c2.3 0 3.4.6 3.4 3.1 0 2.6-1 3.2-3.4 3.2zm.4 8H115v-7h1.6c2.6 0 4 .7 4 3.5 0 2.7-1.4 3.5-3.8 3.5zm12.5-16.5c.6 0 1.2-.5 1.2-1.2s-.6-1.2-1.2-1.2c-.7 0-1.3.5-1.3 1.2s.6 1.2 1.3 1.2zm4.3 0c.7 0 1.3-.5 1.3-1.2s-.6-1.2-1.3-1.2c-.7 0-1.2.5-1.2 1.2s.5 1.2 1.2 1.2zm-5 17.5v-.5c-1.7-.4-1.7-1-1.5-1.7l1.1-3.5h5.3l1.2 3.5c.2.8.2 1.5-1 1.7v.5h5v-.5c-.9-.3-1.2-.8-1.5-1.7l-4.7-14.2h-2l-4.3 13.7c-.4 1.2-.8 1.6-2 2.2v.5h4.5zm4.6-6.7h-4.7l2.3-7.4 2.4 7.4zm11.5 7c3.2 0 5.5-1.7 5.5-4.6 0-5-7.7-4.7-7.7-8.7 0-1.5 1-2.6 2.8-2.6 1.6 0 2.5.8 3.6 3h.5v-3.2c-1.6-.5-2.3-.8-4.2-.8-3.2 0-5 1.9-5 4.3 0 5.2 7.4 4.5 7.4 8.8 0 1.6-1 2.7-3.1 2.7-1.7 0-2.8-.7-3.9-2.9h-.5v3.2c1.6.5 2.8.7 4.5.7zm16.2-.3v-.5c-1.5-.2-1.6-.7-1.6-1.6v-13.2h2.4c.7 0 .8.5 1.8 2.6h.5v-3.6h-12v3.6h.6c1-2 1.1-2.6 1.9-2.6h2.4V194c0 1-.2 1.4-1.7 1.6v.5h5.7zm8.5 0v-.5c-1.8-.4-1.8-1-1.6-1.7l1.1-3.5h5.4l1.1 3.5c.3.8.2 1.5-1 1.7v.5h5.1v-.5c-1-.3-1.2-.8-1.5-1.7l-4.8-14.2h-2l-4.3 13.7c-.4 1.2-.8 1.6-2 2.2v.5h4.5zm4.5-6.7h-4.6l2.2-7.4 2.4 7.4zm21 6.7v-.5c-1.5-.2-1.6-.7-1.6-1.6v-13.2h2.4c.8 0 .8.5 1.9 2.6h.5v-3.6h-12v3.6h.5c1-2 1.2-2.6 2-2.6h2.3v12.9c0 1.1 0 1.7-1.6 1.9v.5h5.6zm10.7 0v-.5c-1.5-.2-1.6-.7-1.6-1.6v-12c0-1 .1-1.5 1.6-1.7v-.5h-5.6v.5c1.6.2 1.6.8 1.6 1.9v11.5c0 1.1 0 1.7-1.6 1.9v.5h5.6zm9.2 0c4.2 0 7.5-2.4 7.5-8.2 0-5.7-3.3-8.2-7.5-8.2h-7.2v.5c1.6.2 1.6.8 1.6 1.9v11.5c0 1.1 0 1.7-1.6 1.9v.5h7.2zm0-1h-3.2v-14.3h3.2c3 0 5 1.7 5 7.1 0 5.5-2 7.2-5 7.2zm14.6 1v-.5c-2-.2-2.2-.7-2.2-1.7v-10.7l9.6 12.9h.6v-14.2c0-1 .2-1.4 1.7-1.6v-.5h-5v.5c2.2.2 2.2.7 2.2 1.9v8.9l-8.5-11.3h-3.4v.5c1.6.2 1.6.8 1.6 1.9v11.5c0 1.2 0 1.6-1.6 1.9v.5h5zm17.3 0v-.5c-1.5-.2-1.6-.7-1.6-1.6v-12c0-1 0-1.5 1.6-1.7v-.5h-5.7v.5c1.7.2 1.7.8 1.7 1.9v11.5c0 1.1 0 1.7-1.7 1.9v.5h5.7zm7 0v-.5c-2-.2-2.2-.7-2.2-1.7v-10.7L261 196h.6v-14.2c0-1 .1-1.4 1.7-1.6v-.5h-5v.5c2.2.2 2.2.7 2.2 1.9v8.9l-8.6-11.3h-3.3v.5c1.6.2 1.6.8 1.6 1.9v11.5c0 1.2 0 1.6-1.6 1.9v.5h5zm19.3.2c1.9 0 3.3 0 5.1-.4v-5.2c0-1 .1-1.4 1.4-1.6v-.5h-5.7v.5c1.9.3 1.9.8 1.9 2v3.7c-.7.3-1.6.5-2.7.5-3.1 0-5-2.3-5-7.4 0-5 1.9-7.4 5-7.4 2.1 0 3.2.8 4.2 3h.5v-3.5c-1.8-.3-2.8-.5-4.7-.5-4.2 0-7.7 2.6-7.7 8.5 0 5.8 3.4 8.5 7.7 8.5zm20-.2v-.5c-2.1-.2-2.3-.7-2.3-1.7v-5.3h2.5c1.1 0 1.5 0 2 1.7h.4v-4.4h-.5c-.4 1.6-.8 1.6-1.9 1.6h-2.5v-6.7h4.8c.8 0 .9.5 2 2.6h.4v-3.6h-11.2v.5c1.6.2 1.6.8 1.6 1.9v11.5c0 1.1 0 1.7-1.6 1.9v.5h6.4zm12.3-17.5c.7 0 1.2-.5 1.2-1.2s-.5-1.2-1.2-1.2-1.3.5-1.3 1.2.6 1.2 1.3 1.2zm4.4 0c.7 0 1.2-.5 1.2-1.2s-.5-1.2-1.2-1.2-1.2.5-1.2 1.2.5 1.2 1.2 1.2zm-2.3 17.7c4.1 0 7.4-2.6 7.4-8.5 0-5.7-3.3-8.5-7.4-8.5-4.2 0-7.5 2.7-7.5 8.5 0 5.8 3.3 8.5 7.5 8.5zm0-1c-3 0-5-2-5-7.4s2-7.4 5-7.4 4.9 2 4.9 7.4c0 5.5-2 7.4-5 7.4zm15.2.8v-.5c-1.5-.2-1.6-.7-1.6-1.6v-5.2h2c1.7 0 2 1.4 2.3 2.2l1.7 5.1h3.6v-.5c-1.2-.2-1.4-.9-1.6-1.4l-1-2.7a4.6 4.6 0 00-2.8-3c2.2-.5 3.8-2 3.8-4.3 0-3-1.8-4.4-5.3-4.4h-6.8v.5c1.7.2 1.7.8 1.7 1.9v11.5c0 1.1 0 1.7-1.7 1.9v.5h5.7zm.4-8.3h-2v-7h2c2.7 0 3.5 1 3.5 3.4 0 2.3-.8 3.6-3.5 3.6zm23.6 8.3v-.5c-1.5-.2-1.6-.7-1.7-1.6v-4.6l3.6-7c.5-1 1-1.5 2.3-2.1v-.5h-4.5v.5c1.8.3 1.6.9 1.2 1.7l-3.1 6.2-3-6.2c-.5-.8-.6-1.5.6-1.7v-.5h-5.5v.5c1 .3 1.6.9 2 1.7l4 8v3.8c0 1.1 0 1.7-1.6 1.9v.5h5.7zm11 0v-.5c-1.5-.2-1.7-.7-1.7-1.6v-5.2h2c1.7 0 2 1.4 2.4 2.2l1.7 5.1h3.6v-.5c-1.1-.2-1.4-.8-1.6-1.2v-.2l-1-2.7a4.6 4.6 0 00-2.8-3c2.2-.5 3.8-2 3.8-4.3 0-3-1.8-4.4-5.4-4.4h-6.7v.5c1.5.2 1.6.7 1.6 1.6v12c0 1-.1 1.5-1.6 1.7v.5h5.6zm.4-8.3h-2v-7h2c2.6 0 3.5 1 3.5 3.4 0 2.3-.9 3.6-3.5 3.6zm14.5 8.3v-.5c-1.5-.2-1.6-.7-1.6-1.6v-4.3l1.4-1.4 4 5.6c.4.7.7 1.5-.5 1.7v.5h5.7v-.5c-.8-.3-1.5-.7-2-1.5l-5.4-7.7 4.2-4a10 10 0 013-2.2v-.5h-4.6v.5c1.6.3 1.2 1 .6 1.7l-6.4 6.3v-6.4c0-1 0-1.4 1.6-1.6v-.5h-5.7v.5c1.5.2 1.6.7 1.7 1.6v12c0 1-.2 1.5-1.7 1.7v.5h5.7zm21.4 0l.2-3.6h-.5c-1.2 2-1.3 2.6-2 2.6h-5v-6.8h2.5c1.1 0 1.5 0 1.9 1.7h.5v-4.4h-.5c-.4 1.6-.7 1.7-1.7 1.7h-2.7v-6.5h4.8c.8 0 .8.5 1.9 2.6h.5v-3.6h-11.2v.5c1.5.2 1.6.7 1.6 1.6v12c0 1-.1 1.5-1.6 1.7v.5h11.3zm7 .2c3.2 0 5.5-1.6 5.5-4.5 0-5-7.5-4.7-7.5-8.7 0-1.5 1-2.6 2.7-2.6 1.6 0 2.5.8 3.6 3h.5v-3.2c-1.6-.5-2.3-.8-4.1-.8-3.2 0-5.1 1.9-5.1 4.3 0 5.2 7.4 4.5 7.4 8.8 0 1.6-1 2.7-3 2.7-1.7 0-2.9-.7-4-2.9h-.5v3.2c1.6.5 2.8.7 4.5.7zm15.3 0l4.4-13.8c.4-1.2.7-1.6 2-2.2v-.5h-4.6v.5c1.8.3 1.8.9 1.6 1.7l-3.8 12-4.3-12c-.3-.8-.1-1.5 1-1.7v-.5h-5v.5c1 .3 1.2.8 1.5 1.7L414 196h2zm18.7-.2l.3-3.6h-.5c-1.2 2-1.4 2.6-2.1 2.6h-5v-6.8h2.5c1.1 0 1.5 0 2 1.7h.4v-4.4h-.5c-.4 1.6-.7 1.7-1.6 1.7h-2.8v-6.5h4.8c.8 0 .9.5 2 2.6h.4v-3.6h-11.2v.5c1.5.2 1.6.7 1.6 1.6v12c0 1-.1 1.5-1.6 1.7v.5h11.3zm8 0v-.5c-1.5-.2-1.7-.7-1.7-1.6v-5.2h2c1.7 0 2 1.4 2.4 2.2l1.7 5.1h3.6v-.5c-1.1-.2-1.4-.8-1.6-1.2v-.2l-1-2.7a4.6 4.6 0 00-2.8-3c2.2-.5 3.8-2 3.8-4.3 0-3-1.8-4.4-5.4-4.4h-6.7v.5c1.5.2 1.6.7 1.6 1.6v12c0 1-.1 1.5-1.6 1.7v.5h5.6zm.4-8.3h-2v-7h2c2.6 0 3.5 1 3.5 3.4 0 2.3-.9 3.6-3.5 3.6zm14.5 8.3v-.5c-1.5-.2-1.6-.7-1.6-1.6v-4.3l1.4-1.4 4 5.6c.4.7.7 1.5-.5 1.7v.5h5.7v-.5c-.9-.3-1.5-.7-2-1.5l-5.4-7.7 4.2-4a10 10 0 013-2.2v-.5h-4.6v.5c1.6.3 1.2 1 .6 1.7l-6.4 6.3v-6.4c0-1 0-1.4 1.6-1.6v-.5H452v.5c1.5.2 1.6.7 1.7 1.6v12c0 1-.2 1.5-1.7 1.7v.5h5.7zm14.8.2c3.2 0 5.5-1.6 5.5-4.5 0-5-7.5-4.7-7.5-8.7 0-1.5 1-2.6 2.7-2.6 1.6 0 2.5.8 3.6 3h.5v-3.2c-1.6-.5-2.3-.8-4.2-.8-3.1 0-5 1.9-5 4.3 0 5.2 7.4 4.5 7.4 8.8 0 1.6-1 2.7-3.1 2.7-1.7 0-2.8-.7-3.9-2.9h-.5v3.2c1.6.5 2.8.7 4.5.7zm11-.2v-.5c-1.8-.4-1.8-1-1.5-1.7l1-3.5h5.4l1.2 3.5c.2.8.2 1.5-1 1.7v.5h5v-.5c-1-.3-1.2-.8-1.5-1.7l-4.7-14.2h-2l-4.4 13.7c-.4 1.2-.7 1.6-2 2.2v.5h4.5zm4.6-6.7h-4.7l2.3-7.4 2.4 7.4zM503 196l5-14.7v12.2c0 1.1 0 1.7-1.7 1.9v.5h5.7v-.5c-1.5-.2-1.7-.7-1.7-1.6v-12c0-1 .2-1.5 1.7-1.7v-.5h-4.5l-4.2 12.4-4.7-12.4h-3.8v.5c1.6.2 1.6.8 1.6 1.9v11.5c0 1.2 0 1.6-1.6 1.9v.5h4.8v-.5c-2-.2-2.1-.7-2.1-1.7v-10.5l4.9 12.8h.6zm19.1 0l5-14.7v12.2c0 1.1 0 1.7-1.6 1.9v.5h5.6v-.5c-1.5-.2-1.6-.7-1.6-1.6v-12c0-1 .1-1.5 1.6-1.7v-.5h-4.4l-4.3 12.4-4.7-12.4H514v.5c1.6.2 1.6.8 1.6 1.9v11.5c0 1.2 0 1.6-1.7 1.9v.5h4.9v-.5c-2-.2-2.2-.7-2.2-1.7v-10.5l4.9 12.8h.6zm14.5-.1v-.5c-1.8-.4-1.8-1-1.5-1.7l1-3.5h5.4l1.1 3.5c.3.8.2 1.5-1 1.7v.5h5.1v-.5c-1-.3-1.2-.8-1.5-1.7l-4.7-14.2h-2l-4.4 13.7c-.4 1.2-.7 1.6-2 2.2v.5h4.5zm4.6-6.7h-4.7l2.3-7.4 2.4 7.4zm18.7 6.7v-.5c-2.2-.2-2.4-.7-2.4-1.7v-5.3h2.5c1.2 0 1.5 0 2 1.7h.4v-4.4h-.5c-.4 1.6-.7 1.6-1.9 1.6h-2.5v-6.7h4.9c.7 0 .8.5 1.8 2.6h.5v-3.6h-11.2v.5c1.6.2 1.6.8 1.6 1.9v11.5c0 1.1 0 1.7-1.6 1.9v.5h6.4zm12.2-17.5c.7 0 1.2-.5 1.2-1.2s-.5-1.2-1.2-1.2-1.3.5-1.3 1.2.6 1.2 1.3 1.2zm4.4 0c.7 0 1.2-.5 1.2-1.2s-.5-1.2-1.2-1.2-1.2.5-1.2 1.2.5 1.2 1.2 1.2zm-2.3 17.7c4.1 0 7.4-2.6 7.4-8.5 0-5.7-3.3-8.5-7.4-8.5-4.2 0-7.5 2.7-7.5 8.5 0 5.8 3.3 8.5 7.5 8.5zm0-1c-3 0-5-2-5-7.4s2-7.4 5-7.4 4.9 2 4.9 7.4c0 5.5-2 7.4-5 7.4zm15.2.8v-.5c-1.5-.2-1.6-.7-1.6-1.6v-5.2h2c1.7 0 2 1.4 2.3 2.2l1.7 5.1h3.6v-.5c-1.2-.2-1.4-.9-1.6-1.4l-1-2.7a4.6 4.6 0 00-2.8-3c2.2-.5 3.8-2 3.8-4.3 0-3-1.8-4.4-5.3-4.4h-6.8v.5c1.7.2 1.7.8 1.7 1.9v11.5c0 1.1 0 1.7-1.7 1.9v.5h5.7zm.4-8.3h-2v-7h2c2.7 0 3.5 1 3.5 3.4 0 2.3-.8 3.6-3.5 3.6zM605 196v-.5c-2.1-.2-2.3-.7-2.3-1.7v-5.3h2.5c1.1 0 1.5 0 1.9 1.7h.5v-4.4h-.5c-.4 1.6-.8 1.6-2 1.6h-2.4v-6.7h4.8c.8 0 .8.5 1.9 2.6h.5v-3.6h-11.2v.5c1.6.2 1.6.8 1.6 1.9v11.5c0 1.1 0 1.7-1.6 1.9v.5h6.3zm10.3 0v-.5c-1.8-.4-1.8-1-1.6-1.7l1.1-3.5h5.4l1.1 3.5c.3.8.2 1.5-1 1.7v.5h5.1v-.5c-1-.3-1.2-.8-1.5-1.7l-4.8-14.2h-2l-4.3 13.7c-.4 1.2-.8 1.6-2 2.2v.5h4.5zm4.5-6.7h-4.6l2.2-7.4 2.4 7.4zm15.4 6.7v-.5c-1.5-.2-1.6-.7-1.6-1.6v-13.2h2.4c.8 0 .8.5 1.9 2.6h.5v-3.6h-12v3.6h.5c1-2 1.2-2.6 2-2.6h2.3v12.9c0 1.1 0 1.7-1.6 1.9v.5h5.6zm13.7 0v-.5c-1.5-.2-1.6-.7-1.6-1.6v-13.2h2.4c.7 0 .8.5 1.9 2.6h.5v-3.6h-12v3.6h.5c1-2 1.1-2.6 1.9-2.6h2.4v12.9c0 1.1 0 1.7-1.6 1.9v.5h5.6zm8.5 0v-.5c-1.8-.4-1.8-1-1.5-1.7l1-3.5h5.4l1.2 3.5c.2.8.2 1.5-1 1.7v.5h5v-.5c-1-.3-1.2-.8-1.5-1.7l-4.7-14.2h-2l-4.4 13.7c-.4 1.2-.7 1.6-2 2.2v.5h4.5zm4.6-6.7h-4.7l2.3-7.4 2.4 7.4zm12.4 6.7v-.5c-1.5-.2-1.6-.7-1.6-1.6v-5.2h1.9c1.7 0 2 1.4 2.4 2.2l1.7 5.1h3.6v-.5c-1.2-.2-1.4-.9-1.6-1.4l-1-2.7a4.6 4.6 0 00-2.8-3c2.2-.5 3.8-2 3.8-4.3 0-3-1.8-4.4-5.3-4.4h-6.8v.5c1.7.2 1.7.8 1.7 1.9v11.5c0 1.1 0 1.7-1.7 1.9v.5h5.7zm.4-8.3h-2v-7h2c2.7 0 3.5 1 3.5 3.4 0 2.3-.8 3.6-3.5 3.6zM695 196l.2-3.6h-.5c-1.2 2-1.4 2.6-2 2.6h-5v-6.8h2.5c1.1 0 1.5 0 1.9 1.7h.5v-4.4h-.5c-.4 1.6-.7 1.7-1.7 1.7h-2.7v-6.5h4.8c.7 0 .8.5 1.9 2.6h.5v-3.6h-11.3v.5c1.7.2 1.7.8 1.7 1.9v11.5c0 1.1 0 1.7-1.7 1.9v.5H695zm15.4.2c4.2 0 7.4-2.6 7.4-8.5 0-5.7-3.2-8.5-7.4-8.5s-7.4 2.7-7.4 8.5c0 5.8 3.2 8.5 7.4 8.5zm0-1c-3 0-5-2-5-7.4s2-7.4 5-7.4 4.9 2 4.9 7.4c0 5.5-1.9 7.4-5 7.4zm17.3 1c1.8 0 2.8 0 4.7-.4l.2-3.4h-.5c-1 2.1-2.3 2.8-4.4 2.8-3.2 0-5.1-2.3-5.1-7.4 0-5 2-7.4 5-7.4 2.2 0 3.2.8 4.3 3h.5v-3.5c-1.9-.3-2.9-.5-4.7-.5-4.2 0-7.7 2.6-7.7 8.5 0 5.8 3.4 8.5 7.7 8.5zm12.5-.2v-.5c-1.6-.2-1.6-.8-1.6-1.9v-5.4h7.2v5.7c0 1-.2 1.4-1.7 1.6v.5h5.7v-.5c-1.6-.2-1.6-.8-1.6-1.9v-11.5c0-1.1 0-1.7 1.6-2v-.4H744v.5c1.5.2 1.6.7 1.7 1.6v5.4h-7.2V182c0-1.1 0-1.7 1.6-2v-.4h-5.6v.5c1.5.2 1.6.7 1.6 1.6v12c0 1-.1 1.5-1.6 1.7v.5h5.6zm22.6-17.5c.7 0 1.2-.5 1.2-1.2s-.5-1.2-1.2-1.2c-.6 0-1.2.5-1.2 1.2s.6 1.2 1.2 1.2zm4.4 0c.7 0 1.3-.5 1.3-1.2s-.6-1.2-1.3-1.2c-.7 0-1.2.5-1.2 1.2s.5 1.2 1.2 1.2zm-2.3 17.7c4.2 0 7.5-2.6 7.5-8.5 0-5.7-3.3-8.5-7.5-8.5s-7.4 2.7-7.4 8.5c0 5.8 3.2 8.5 7.4 8.5zm0-1c-3 0-4.9-2-4.9-7.4s1.9-7.4 5-7.4c3 0 4.8 2 4.8 7.4 0 5.5-1.9 7.4-4.9 7.4zm17.3 1l4.4-13.8c.4-1.2.7-1.6 2-2.2v-.5H784v.5c1.8.3 1.8.9 1.5 1.7l-3.7 12-4.3-12c-.3-.8-.2-1.5 1-1.7v-.5h-5.1v.5c1 .3 1.2.8 1.5 1.7l5.2 14.2h2zm18.8-.2l.2-3.6h-.5c-1.2 2-1.4 2.6-2 2.6h-5v-6.8h2.5c1 0 1.4 0 1.9 1.7h.5v-4.4h-.5c-.4 1.6-.8 1.7-1.7 1.7h-2.7v-6.5h4.8c.7 0 .8.5 1.9 2.6h.5v-3.6h-11.3v.5c1.5.2 1.7.7 1.7 1.6v12c0 1-.2 1.5-1.7 1.7v.5H801zm8 0v-.5c-1.6-.2-1.6-.8-1.6-1.9v-4.9h2c1.7 0 2 1.4 2.3 2.2l1.7 5.1h3.6v-.5c-1-.2-1.3-.8-1.5-1.2v-.2l-1-2.7a4.6 4.6 0 00-2.9-3c2.2-.5 3.8-2 3.8-4.3 0-3-1.8-4.4-5.3-4.4h-6.8v.5c1.5.2 1.7.7 1.7 1.6v12c0 1-.2 1.5-1.7 1.7v.5h5.7zm.4-8.3h-2v-7h2c2.7 0 3.5 1 3.5 3.4 0 2.3-.8 3.6-3.5 3.6zm13.6 8.5c3.2 0 5.5-1.6 5.5-4.5 0-5-7.5-4.7-7.5-8.7 0-1.5 1-2.6 2.7-2.6 1.6 0 2.5.8 3.6 3h.5v-3.2c-1.6-.5-2.3-.8-4.2-.8-3.1 0-5 1.9-5 4.3 0 5.2 7.4 4.5 7.4 8.8 0 1.6-1 2.7-3.1 2.7-1.7 0-2.8-.7-3.9-2.9h-.5v3.2c1.6.5 2.8.7 4.5.7zm11.6-17.7c.7 0 1.2-.5 1.2-1.2s-.5-1.2-1.2-1.2-1.2.5-1.2 1.2.5 1.2 1.2 1.2zm4.4 0c.7 0 1.2-.5 1.2-1.2s-.5-1.2-1.2-1.2-1.2.5-1.2 1.2.5 1.2 1.2 1.2zm-5 17.5v-.5c-1.8-.4-1.8-1-1.5-1.7l1-3.5h5.4l1.2 3.5c.2.8.2 1.5-1.1 1.7v.5h5.1v-.5c-1-.3-1.2-.8-1.5-1.7l-4.7-14.2h-2l-4.4 13.7c-.4 1.2-.7 1.6-2 2.2v.5h4.5zm4.6-6.7h-4.7l2.3-7.4 2.4 7.4zm15.4 6.7v-.5c-1.7-.2-1.7-.8-1.7-1.9v-12.9h2.5c.7 0 .8.5 1.8 2.6h.5v-3.6h-12v3.6h.6c1-2 1.1-2.6 1.8-2.6h2.4V194c0 1 0 1.4-1.6 1.6v.5h5.7zm13.7 0v-.5c-1.7-.2-1.7-.8-1.7-1.9v-12.9h2.5c.7 0 .7.5 1.8 2.6h.5v-3.6h-12v3.6h.6c1-2 1-2.6 1.8-2.6h2.4V194c0 1-.1 1.4-1.6 1.6v.5h5.7zm8.5 0v-.5c-1.8-.4-1.8-1-1.6-1.7l1.1-3.5h5.4l1.1 3.5c.3.8.2 1.5-1 1.7v.5h5v-.5c-.9-.3-1.2-.8-1.4-1.7l-4.8-14.2h-2l-4.4 13.7c-.3 1.2-.7 1.6-2 2.2v.5h4.6zm4.5-6.7H876l2.3-7.4 2.4 7.4zM893 196v-.5c-1.6-.2-1.6-.8-1.6-1.9v-4.9h2c1.7 0 2 1.4 2.3 2.2l1.8 5.1h3.6v-.5c-1.1-.2-1.4-.8-1.6-1.2v-.2l-1-2.7a4.6 4.6 0 00-2.9-3c2.2-.5 3.9-2 3.9-4.3 0-3-1.9-4.4-5.4-4.4h-6.7v.5c1.5.2 1.6.7 1.6 1.6v12c0 1-.1 1.5-1.6 1.7v.5h5.6zm.5-8.3h-2.1v-7h2c2.7 0 3.5 1 3.5 3.4 0 2.3-.8 3.6-3.4 3.6zm20.1 8.3l.3-3.6h-.5c-1.2 2-1.4 2.6-2.1 2.6h-5v-6.8h2.5c1.1 0 1.5 0 2 1.7h.4v-4.4h-.5c-.4 1.6-.7 1.7-1.6 1.7h-2.8v-6.5h4.8c.8 0 .9.5 2 2.6h.4v-3.6h-11.2v.5c1.5.2 1.6.7 1.6 1.6v12c0 1-.1 1.5-1.6 1.7v.5h11.3z"></path>
+                </svg> -->
+              </div>
+              <div class="Work-info">
+                <div class="Work-infoText Type">
+                  <p><strong>Författaren</strong> is a magazine for members of The Swedish Writers’ Union. Författaren monitors author conditions both inside and outside of the country, copyright, freedom of the press, cultural policy, book industry and library issues.</p>
+                  <p>I designed and built the new website inspired by the print magazine's graphic elements.</p>
+                </div>
+                <p class="Work-role">Developer, designer</p>
+                <div class="Work-links">
+                  <a class="Work-link" href="https://www.forfattaren.se">
+                    <svg width="8px" height="7px" aria-hidden="true">
+                      <use xlink:href="#arrow"></use>
+                    </svg>
+                    <span>https://www.forfattaren.se</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="Work-item Work-item--small Work-item--saqmi" aria-label="SAQMI">
+            <div class="Work-itemInner">
+              <div class="Work-mediaWrap">
+                <svg class="Work-media" viewBox="0 0 1502 480" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path fill="#111" fill-rule="evenodd" d="M787 1h3c1-1 3 0 4 1l2-1 1 1h17l2 1h4l6 1 3 1 3 1 4 1h7l3 1h6l2 3 1-1 4 1v1l6 2 6 2 3 2 3 1 1 2 1-1c1 1 3 1 3 3h2l6 5 4 2 3 4 4 2 4 4h1v1h2v1c2 0 2 2 3 3l3 2 1 1 2 1 1 2h1c1 1 1 2 3 2l1 2 1 1 2 1v1l6 6c-1 1 0 2 1 2l1 1 2 2a67 67 0 015 7l1 1 4 6 3 4 3 6 1 2 2 2 2 4 2 3 1 3 1 2 2 4v1l2 3 2 5 1 3 2 2v2l1 1v1l1 2v2l1 3v3l1 2 1 3v6l1 2v5l1 4 1 4v1l1 4v1l1 1v4l1 2v7h-1l2 6 1 10v2l-1 6c1 0 0 0 0 0v4l-1 1h1l-1 5v9l-1 2v2l-1 4v1l-1 3v2l-2 2v3c0 2-2 2-3 3l1 3-1 3-1 2-1 3v1l-1 3-1 1-1 1v3l-1 3-2 2 1 4-2 1h1l-2 3v2l-1 1v1l-2 4-2 2v1l-3 6-2 2-1 2v2l-1 1v1l-2 1v1l-3 4-1 2-1 2-2 1-1 1-1 2-4 5h-1c0 2-2 3-3 5l-2 2-3 2v1l-4 3-2 3-2 1-2 2h-1l-2 2-1 1c-2 1-3 3-6 3l-1 2h-1c-1 1-1 3-3 3l-2 2c-2 0-3 1-3 2l-3 3-4 1c0 2-2 2-3 3l-2 1-1 1-3 1-2 2c-1-2-2 0-4-1l-1 2h-2l-3 3h-7l-1 1h-1l-3 1-1 1h-2v6l-1 3v1l1 4h-1l2 4v3l-1 1v6l-1 1v3l1 2-1 2-1 5v1l1 1v1l1 1-1 3v7l1 8v4l-1 4 1 2c-2 2 0 4 0 5l-2 3-1 3v4h-1l-1 4-1 1-4 1h-4l-4-2-1 2-1-1-1 1h-2v1h-3l-1-1h-5v1h-1l-1 1-1-1-5 1h-6l-2 1h-5l-3 1h-6l-1-1-1 1-4-1h-45l-5-1h-2a497 497 0 01-8-7l1-2-1-2 1-2-1-7v-4l-1-2 1-2-1-3v-5l-1-9 1-2-1-2v-33l1-2v-1l-1-1 1-2-1-2v-1l1-1-2-1h-3l-2-1-5-2-1-1h-2c-2 0-5 0-7-2l-2-1h-2l-4-2-6-3-4-2-5-4-4-3-2-1-2-2-1-1h-1l-2-2-6-5-2-2-3-3-3-3-4-4v-1l-2-1-2-2-2-3-2-2-6-8-2-3-1-3-1-1-4-5v-1l-3-4-1-2-4-5-1-2-1-2-3-4v-1l-3-5h1l-2-2-1-2-2-6-1-3-1-2-1-1v-4l-2-4-2-3-1-3-1-4-1-3v-2l-1-4v-2l-1-1-1-6v-6h-1l-1-7v-9l-1-11 1-1-1-1 1-7v-10h1v-1l1-5 1-1-1-3 1-1v-2l1-5 1-4 1-2 1-4 2-3c-1-4 1-6 2-9l1-2 1-3 1-2 2-4 1-3 1-1v-2l2-1v-5l2-1v-2c1-1 3-2 2-5h1v-2l1-1h-1l2-2v-2l1-3 2-4 1-1 1-3c2-1 1-2 2-3l1-2 2-5h1v-1l2-1 1-3 2-2 1-1 1-2 6-8 2-2 1-1 1-2 1-1 1-1 1-1 2-2 1-2 2-2h1l4-4 2-2 2-2 1-1h1l1-2 2-1 7-4 4-3h2c2-4 6-6 8-7 1-2 4-2 5-3h1l3-2 3-1v-1h2l3-2 5-2 1-1h1l2-1h3l1-1 2-1 7-2 5-1 4-1h2l2-1h3l2-1h4l3-1h4V2h7l3-1h18m226 357v-6l1-3v-19h1l-1-4 1-2v-1l-1-1v-20l1-1v-4l-1-1v-8l1-1-1-3v-10l-1-2 1-2 1-2h-2v-5c2-1 1-3 0-5h-1l1-1v-13l-1-2 1-3-1-2v-10l1-3v-9l1-2v-2l-1-3v-13l1-5 1-3v-3l-1-12 1-10v-6l1-3v-7c1 0 1 0 0 0v-12l1-2v-17l1-5v-9l1-2 1-4h-1V84h1l-1-7V67l1-2 1-5v-1l-1-4 1-3v-1l1-1v-5l2-4v-2l1-3v-3l2-4v-5l1-1h1l1-3 2-2 1-1 6-3 2-1h3l1 2 2 2h2l1 1h2l1 1h1c0 1 0 2 2 2v1l2 3h3c0 1 2 1 2 3l1 1 1 1 2 2 1 1 1 1v1c0 1 2 2 1 3l3 3 2 3 2 2 2 4 3 2 1 1v1l3 4-1 1 2 1v3h1l2 4h1l2 3 2 3 1 1 1 2 1 2 1 2v2l4 3 2 2 1 3 1 2h1l1 3 1 1 1 3 1 1 1 1h2v2l2 2c1 1 2 1 2 3h2l-1 3 2 1 1 1 2 2-1 1 2 2 3 2v3h1v2l1 1 1-1 3 4v3l2 2 1 1 3 4 1 1 3 3 2 4 1 1h-1l1 2a252 252 0 013 3v2l2 2 2 2h-1l2 1v1h2v2l2 2h2l1 2v2l1 1v2l4 4v1l2 2 3 2 2 2 2 3h-1l2 1 3-6 3-4 3-4 1-2 2-3 1-2 1-3 2-2 4-5 5-7 3-3 2-3 1-2 4-5 3-4 2-2 1-2 2-2 2-3 2-3 1-3 4-5 2-3 1-1v-2l3-3 3-4 3-3 1-2 1-2 3-4 3-4 2-2 2-3 3-3 2-2 2-1 1-2 1-2 4-4v-1l1-2 2-3 4-4 2-3 1-1 1-2 4-4 1-1 1-1 3-3 2-3 1-1 1-2 1-2 2-3 2-2 2-2 3-3 2-2 2-3 1-1 1-3 2-1c1-1 2-2 4-1l3-1h2l4 1 6 3 2 2v1l2 2v1l-1 4 2 2v2l-2 2v4h-1v2l1 1v2l-1 1v1l1 1-1 1 2 2h-2v4a451 451 0 011 3v4l-1 4v15l1 1-1 3h1l-1 2h1v5l1 3v2c-1 2-2 3-1 4v4l1 2c-1 1-2 2-1 3v2h-1v2l2 3v2l-2 2 1 3 1 1v4l-1 3 1 2v11c-1 3-1 6 1 9l-1 1c0 2-1 3 1 4l-1 2v3l1 1-1 2v2l1 4 1 1v2l-2 1 1 2v3l1 3v1l-1 2c1 2 1 4-1 6l1 5v6l-1 8v2l1 1v11l-1 2v1l1 3v6l-1 2 1 5v6l1 5c-1 1-2 2-1 4l-1 5 1 5-1 1v21l-1 5-1 2v2l1 1v5l-1 3v6s-1 0 0 0v7l1 1-1 1 1 2v2l-1 2v6h1v1l-1 2 1 3v2l1 3-2 2 1 2h1c0 1-2 2 0 4l-1 3h1v1l-1 2 1 2v6l-1 1 1 3v1l-1 1v4h-1v1l2 1 1 1-3 4-3-2h-1l-2 1h-2c-2 2-5 2-7 2v-1h-4l-2 3-3-1-1 1-4-1h-12l-3 1h-4l-2 1-2-1h-4l-3 1h-4v-1h-12l-4 1-1-1h-2l-4 1-2 1-5-2v1c-2 0-4 1-6-1h-8l-1 1-4-1-5-1h-5l-1 1h-1l-1-1h-2l-1 1h-4l-1 1h-2l-2-1h-2l-3 1-4-1-1 1h-1l-1-1-5 2h-8l-8-1h-5l-1-1h-1l-4 1-2-1h-7v1l-4-1h-13l-4 1c-4-1-4-2-9 0l-5-1-2 1-4-1h-6l-3-1h-4l-1 1-1-1h-7l-4-2-2 2-8 1v-1l-2 1-4-1h-3l-5-1-1 2h-12l-5 1h-2l-3 1h-3l-1-2h-1l-1-1-1-1-3-1-2-2-1-3-2-3 1-1h1v-15m-809 30l-2 2-4 1h-7l-1 1h-5l-3 1h-5l-7 1-2 1v-1h-2l-1 1h-10l-4-1h-5l-3-1v-1l-1-1-1 2-4-1-1 1a570 570 0 00-5-2h-3l-2-1-4-1h-3l-3-1-2-1-1-1-2 1-1-1c-2 1-3 0-4-2h-4l-2 1c-1-1-1-2-3-2l-1-1-3-1h-1v-1l-5-1h-4l-4-2-2-2h-6l-1-2h-2l-1-2h-1l-1 1c-1 1-2-1-3-1l-1-1-3-1h-1l-2-3h-1l-2-1v-1l-1-1h-2c-1 1-2 0-3-1l-4-3-4-1-2-3-2-3h-3c-2 0-2-2-4-3l-2-1-2-1-1-2h-1l-1-2h-2l-2-4h-1l-1-1-2-1-5-6c-2 0-3 0-5-2l1-2H2l1-1-1-2H1l-1-1 4-2 2-3 4-4 1-2 1-1 1-3 2-2 3-5 2-2 1-2 2-2v-1h1v-1l5-5-1-1h1c2 0 3-2 4-3v-1l2-2 1-2 3-4v-1l3-3 1-2 1-1v-2l2-2 2-2v-2l2-3a866 866 0 004 0v-2l3 1h3l2 1 2 2 6 3c2 0 3 2 4 3 1-1 2 1 3 1l2 2 2 1 5 2 5 3 2 2 3 1 3 2 3 2h2l2 1h1c0 2 2 2 3 2l7 4 2 2 5 1 1 1h2l9 3 5 1 1 1 2-1 1 1h18l4-1 6-1 5-2 3-1 3-2 1-1 2-2h1v-3l2-2v-3l2-3v-2l1-2-3-4-1-5-1-2-1-1-4-4h-1l-5-5-1-1-10-3-5-2h-2l-3-2h-3l-3-1-1-1c-1 1-2 0-4-1l-3-1h-2l-1-1h-2v-1l-3-1-3-1-3-1v-1h-3l-6-2h-2v-1h-1l-2-1-1 1-1-2h-2l-3-1-2-1-3-1-4-2-5-2-2-2h-2l1-2h-3l-2-2h-2l-4-2-2-1-2-1-3-2-2-1-1-2-3-2-2-3-1-1-2-2-1-1-3-3c-1-1-3-2-3-4l-2-1-1-2-4-5-2-3-4-5-1-2-1-3-2-3 1-1-2-2-2-4-1-1v-2l-2-7v-2h-1l-1-5v-2l-1-7 1-2-1-6 1-3 1-1-1-4v-3l1-3 1-2v-3l1-2v-4l1-1v-3l1-3 1-1c-1-1 0-3 1-4v-3l3-6 2-5 1-1v-1a25 25 0 014-6l5-5 1-1 1-3 2-2 3-4 1-1 2-2 2-3 3-2 3-3 2-1 2-1 3-3 6-5h1l2-2 3-2 3-2 3-1h1l1-1v-1l5-2 1-1 3-1 4-2 1 1v-1h2v-1h4l2-1 5-1 5-2h1l3 1c1-1 1-2 3-2h4l1-1h3l1 1h1l4-1 3-1h5l6-1 2 1 2-1h8l2 1 2-1 3 1h9l3 1h4l5 1 4 1 6 2 4 2v-1l1 2h2l2 1h2l1 2 3 1 1 1 3 1 3 1 3 2 3 1 6 4 1 1h2l1 1c1 1 1 2 2 1 1 0 1 2 2 1l1 1 1 1 2 1 1 1 1 1h1l2 2 4 3 3 3 2 3c2 0 3 2 5 3l5 4 1 1 1 1 3 3 2 3v2l2 1 1 1v1l2 1h1l1 2h2l1 1v2l-1 1-2 2-2 1v2h1l-1 3c-1 2-3 3-3 6l-2 2v1h-1l-1 4-1 1-1 3-1 1-1 2-1 1v1l-2 1v2l-3 3-2 5-1 2-2 2-1 1-1 2-3 3-4 5-3 4-1 2-2 2-3 3h-5c-2-1 0-2-1-3l-1-1-4-1-1-2h-2v-1h-1l-2-1-2-1-6-3-1-1h-1v-1l-4-2-3-1-1-2-5-1-5-3h-1l-2-1-3-2-2-1-3-2-2-2h-1l-5-2-2-1-5-2-2-1-1-1-4-2-3-1-1-1h-14c-1 2-3 2-4 2l-1 1-2-1-3 1-2 2-6 4-1 2c0 1-2 1-2 3v1l-1 2h-1l-1 5 1 1v6l2 3 1 3h1l3 4 2 3 3 3h2l1 1 2 1 5 2v1l4 2 5 2 5 1 2 2v-1l2 2 3 1 4 1 1 1h2l2 1h4l1 1h1l3 1 2 1c0 1 2 1 1 2l4 1 3 2 5 1 1 1 2 1h2l1 2 7 2h2l1 1 3 1h-1 2l4 3 7 3 3 3h1l2 1 2 1 1 1 3 1 2 3c0 1 1 2 3 2l2 2 1 2v1l3 2 1 2 2 1 1 2v2l2 1 4 4 3 4v1l2 2h1l1 2 1 2 2 1 1 3h1l1 3 2 3v1c3 2 3 5 3 8l2 2v3h1l1 5 1 3 1 5v2l1 1v4l1 1v4l1 1v14l-1 2-1 6-1 1v9l-2 5v3l-2 3-1 1c0 2 0 3-2 4v4l-2 2-1 1-6 7-4 6-2 3-3 3-1 2-3 2-6 6h-1l-3 3-4 4h-1l-2 1-4 2-4 2-4 2c-2 0-2 1-3 2l-2 1-4 2-4 1-7 3h-1l-1 1h-4l-3 1-1 1c-3 0-5 2-8 1M483 42h1l1 2v1l2 2 1 1v3l1 1v1l1 2 2 2 1 4v2l1 2-1 1c1 5 1 4 3 6l1 6 2 3v3l1 1v3l1 5 1 1 2 4h-1l1 1v2c1 1 2 3 1 5l1 1 2 5v3h1v1l1 1v2l1 1 2 5-1 1 2 2 2 5 1 1v3l2 1h-1l1 2v2l2 1v3l1 1 3 6v5l2 1 2 6 1 3v1l1 2 1 2v2l2 5v1l1 1-2 1 2 1c1 1 1 4 3 5v2l1 4v2l3 3v2c2 2 3 3 2 5l1 1v4l2 1 1 5 1 1 2 3c0 2 1 4 3 5l1 3v3c2 0 2 2 3 3l1 2 2 4 1 3 2 7 1 6 1 1 1 3 1 1 1 6h1v3l1 5 1 1-1 5 1 1 3 2v3c2 2 2 3 2 6l2 2 2 6v2l1 3 1 2v2h1l2 3h-1l1 1v1l1 1 2 5 1 2 1 1v3l1 4 1 2v1l2 1 1 2v3c2 1 1 2 2 3l1 2 1 1v3l1 2 1 1 1 2 1 1 1 4 1 1-1 2 2 2 3 4 1 1 1 1c-1 1-2 2-1 4l2 3-1 3c-1 1-1 2-3 2h-2l-2 1h-7l-1-1-1 1h-17l-1-1v1l-7 1-7-1-3 1h-10l-4 1-3-1v1c-1-1-3-2-4-1h-4l-3-1h-6l-2-1v1h-8c-1-1-2 1-2 1l-4-1h-3l-1-1-1 1c-1 1-2-1-4 1l-2-2-1 1h-5l-1-1h-1l-2 1h-13l-3-1h-31l-3 1-1-1-3 1h-4l-3-1h-16l-2 1-6-1-2 1h-5l-1-1v1l-1-1h-3l-2 1h-4l-4-1h-25l-2-1h-3l-1 1h-6l-6-1-4 1h-13l-4-1h-3l-2-1h-1l-2-2-1 1v-1l-1-2c-2 0-3-1-3-2-1-2 0-3 1-5l1-1 2-2v-3l3-2-1-1 1-2 2-3-1-1 2-3 1-1 1-3 1-4 3-4v-4l2-2v-2l2-5v-1l3-4-1-2 3-3v-2l1-6 1-2 2-5 3-6v-2l1-4v-1c1-1 2-2 1-3 2-1 3-3 3-5v-1c1-2 1-4 3-5l1-2v-1l3-10v-1c2-1 2-3 2-4l2-5v-2h1l2-5v-1l2-4v-1h2v-2l1-2c0-3 1-5 3-7v-2l2-4 2-5 1-1c-1-1 0-3 1-4v-1l1-2v-2l2-1 1-4 1-2v-2l2-3 2-4v-1l1-2 1-4h1v-3l1-1v-2l2-4 2-3v-1l1-3 1-3 1-1v-2l2-4 1-2h1v-3l1-2v-2l1-1v-2l2-2 1-2 1-5 2-1c0-2 1-5 3-6l-1-1 1-2h1v-1l2-7 2-4v-1l1-3v-2h1v-2c2-1 2-3 2-6h1l1-4 3-3 1-3v-2l1-4 2-1-1-1 1-2 3-5v-1l3-6v-1l2-5v-1l2-4 1-2 1-2 2-3v-4l2-1-1-1 3-5 1-2 1-3 1-3 1-2 1-2 1-1v-2l3-4v-1l1-1 3-1h3l1-1c0-2 1-2 2-2h2l2-1 3 1h1l1 1 2 2v2l1 1 1 2 1 3 2 2c0 2 1 2 2 3v3h1v1c2 2 3 4 3 7m1014-30l2 2v2l2 1-1 3v1l-1 10v2l-1 3v15l-1 3v17l-1 1v7l1 1h-1v13l-1 1-1 1h-2c-2-1-3-1-5 1l-2-1h-2l-3 1h-7l-1-1h-4l-1 1h-14l-1-1h-15l-1 1h-7l-1 1h-14l-2-1-1 2-2-1h-4l-4 1-1-1-3 1h-6l-4-3-1-1v-4l-1-5-1-1h1v-8l-1-1 1-1-1-3-1-1 1-5v-5l1-6-1-4 1-1 1-3-2-4 1-3v-3h1l-1-4v-6l2-3h1v-2l-2-1v-7l1-1h1l1-1 3-1h4l1 1h1v-1h15l2-1 3 1h5l4-1 3 1 1 1h1l1-1h1a290 290 0 012-1c1-1 2 0 2 1h2l3-1 2 1 1-1 3-1v1h4l3-1h5l2 1h11l4 1 3-1h7v1l6 2h3m-18 288l2 3h3l2-1 4-1v-1h5l1 2v4l1 1-1 2v6l1 3v3l1 5-1 5 1 2-1 1v2l1 2v2l-1 1 1 2v1l1 9v6l-1 3 1 2v2l1 3v1l-1 1v4l-1 1v3l-1 1-1 6-5-1-2 1h-21l-2-1-2 1h-7l-2 1h-4l-1-1h-27l-1-1-4 1h-1l-5-1-2-1h-3l-2-1-1 1h-8l-2-1-1 1v-1h-2l-1-1v-4l-2-2v-2c1 0 0 0 0 0l1-2v-9h-1v-13l1-1-1-1h1v-8l1-1v-16l-1-3v-2l1-2-1-1-1-3 1-5v-4h11l3-1h4l1-1 2 1 2-1h7l7-1h11l1 1h38l3-1m-92-94l4-1v-1 1l5-2h16l3 1h4l6-1h16c0 1 0 1 0 0h20l3 1h10l3-1 2 2 2 1h13l2 1-2 2 1 3v3l1 5v4l1 2-1 2 1 2v5c-1 1-2 2-1 4v8h-1v2l1 2-1 3 1 3 1 2v3l-1 3v4h1v2l1 3v3l-1 5v3l-1 2h-4l-4 1h-25l-3-1h-9l-3-1h-11l-2-1-3 1-3-1-1 1h-4c0 1 0 0 0 0l-2 1h-10l-1-1v2l-5-1v-1h-1v1h-13l-2-2-2-1 1-6h-1v-10l1-3v-5l-1-7-1-1 2-3v-5l-1-1-1-4v-3l1-1-1-3v-17h1l-1-5v-4m49-95l1-1 4 1 2-1h4l1 1c1-1 3 0 4 1h13l1 1 2-1 5 1h3l2-1h5c2-1 4 0 5 2h7l1 1 1 2v8l-1 7 1 3v17l1 2-1 1 1 2v9l-2 3v14l-1 3-1 1v1l-2 3-2 1-7 1h-14l-4 1h-8l-2-1h-11l-4-1h-29l-1-1-2 1-2-1h-11l-2-2c-2 0-3-1-4-3v-1l-2-2-1-5v-9l-1-3 1-4-1-1h1v-4l-1-2v-12l1-3-1-2 1-1v-3c-1-1-2-2-1-3v-2l1-1v-2l-1-2 1-5 1-1-1-2c0-1 2-2 0-3l2-1h2l3-1h9l9-1h14l5 1h6"></path>
                 </svg>
               </div>
               <div class="Work-info">
-                <div class="Work-infoText Type" itemprop="about">
-                  <p><strong itemprop="name">Författaren</strong> is a magazine for members of The Swedish Writers’ Union. Författaren monitors author conditions both inside and outside of the country, copyright, freedom of the press, cultural policy, book industry and library issues.</p>
-                  <p>I designed the website heavily inspired by the print magazine's design and then also built it using WordPress.</p>
+                <div class="Work-infoText Type">
+                  <p><strong>The Swedish Archive for Queer Moving Images</strong> is a platform and a digital archive for queer moving images. The site is full of news, events, videos, podcasts, and more all about the queer film world.</p>
+                  <p>With design by <a class="ColorLink u-textTruncate js-splitLetters" href="https://www.sakaria.se/">Sakaria Studio</a>, I continue to develop on this playful website.</p>
                 </div>
-                <p class="Work-role">Developer, designer</p>
-                <a class="Work-infoLink" href="https://www.forfattaren.se">
-                  <svg width="8px" height="7px" aria-hidden="true">
-                    <use xlink:href="#arrow"></use>
-                  </svg>
-                  <span itemprop="url">https://www.forfattaren.se</span>
-                </a>
+                <p class="Work-role">Developer</p>
+                <div class="Work-links">
+                  <a class="Work-link" href="https://saqmi.se">
+                    <svg width="8px" height="7px" aria-hidden="true">
+                      <use xlink:href="#arrow"></use>
+                    </svg>
+                    <span>https://saqmi.se</span>
+                  </a>
+                </div>
               </div>
             </div>
-            <meta itemprop="author creator" itemscope itemtype="http://schema.org/Organization" itemref="organization">
-            <meta itemprop="image" content="/assets/images/forfattaren@2x.jpg">
           </article>
+
+
+          <article class="Work-item Work-item--small Work-item--sakaria" aria-label="Sakaria Studio">
+            <div class="Work-itemInner">
+              <!-- <div class="Work-mediaWrap">
+                <img
+                  class="Work-media"
+                  data-loading="lazy"
+                  data-src="/assets/images/sakaria.gif"
+                  width="1280"
+                  height="720"
+                  alt="Sakaria Studio">
+              </div> -->
+              <div class="Work-mediaWrap">
+                <video
+                  class="Work-media js-autoplay"
+                  playsinline
+                  muted
+                  loop
+                  disablepictureinpicture
+                  data-loading="lazy"
+                  data-src="/assets/video/sakaria.mp4"
+                  id="video-sakaria"
+                ></video>
+                <button class="u-hiddenVisually js-togglePlay" aria-controls="video-sakaria">Pause or resume video</button>
+                <!-- <img class="Work-media" src="/assets/images/sakaria.gif" alt=""> -->
+              </div>
+              <div class="Work-info">
+                <div class="Work-infoText Type">
+                  <p>Minna Sakaria is a senior graphic designer and design educator. Under the name <strong>Sakaria Studio</strong> she designs artistic visual identities for brands, exhibitions and individuals.</p>
+                  <p>Minna provided the design and I developed this website.</p>
+                </div>
+                <p class="Work-role">Developer</p>
+                <div class="Work-links">
+                  <a class="Work-link" href="https://www.sakaria.se">
+                    <svg width="8px" height="7px" aria-hidden="true">
+                      <use xlink:href="#arrow"></use>
+                    </svg>
+                    <span>https://www.sakaria.se</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="Work-item Work-item--tall" aria-label="ME Skolan">
+            <div class="Work-itemInner">
+              <div class="Work-mediaWrap">
+                <picture>
+                  <source
+                    data-srcset="/assets/images/meskolan.avif 1x, /assets/images/meskolan@2x.avif 2x"
+                    type="image/avif"
+                  >
+                  <source
+                    data-srcset="/assets/images/meskolan.webp 1x, /assets/images/meskolan@2x.webp 2x"
+                    type="image/webp"
+                  >
+                  <img
+                    class="Work-media"
+                    data-loading="lazy"
+                    data-srcset="/assets/images/meskolan.jpg 1x, /assets/images/meskolan@2x.jpg 2x"
+                    data-src="/assets/images/meskolan.jpg"
+                    width="1200"
+                    height="1200"
+                    alt="ME Skolan">
+                </picture>
+                <noscript>
+                  <picture>
+                    <source
+                      data-srcset="/assets/images/meskolan.avif 1x, /assets/images/meskolan@2x.avif 2x"
+                      type="image/avif"
+                    >
+                    <source
+                      srcset="/assets/images/meskolan.webp 1x, /assets/images/meskolan@2x.webp 2x"
+                      type="image/webp"
+                    >
+                    <img
+                      class="Work-media"
+                      data-loading="lazy"
+                      srcset="/assets/images/meskolan.jpg 1x, /assets/images/meskolan@2x.jpg 2x"
+                      src="/assets/images/meskolan.jpg"
+                      width="1200"
+                      height="1200"
+                      alt="ME Skolan">
+                  </picture>
+                </noscript>
+              </div>
+              <div class="Work-info">
+                <div class="Work-infoText Type">
+                  <p><strong>ME Skolan</strong> offers high school education on nine different locations with machine operator training.</p>
+                  <p>The website is built with WordPress and was made in collaboration with <a class="ColorLink js-splitLetters" href="https://spektradesign.se/">Spektra</a> who provided the design.</p>
+                </div>
+                <p class="Work-role">Developer</p>
+                <div class="Work-links">
+                  <a class="Work-link" href="https://meskolan.se">
+                    <svg width="8px" height="7px" aria-hidden="true">
+                      <use xlink:href="#arrow"></use>
+                    </svg>
+                    <span>https://meskolan.se</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+
+
         </div>
 
       </div>
@@ -358,7 +536,7 @@
               <svg class="About-imageBlob u-printHide" aria-hidden="true" viewBox="0 0 800 800">
                 <defs>
                   <mask id="mask-path" x="0" y="0" width="1" height="1">
-                    <path transform="translate(40 0)" id="mask-path" fill="#fff" d="M316 40c66-14 150-3 212 26 61 29 124 87 156 147s49 149 35 212-73 117-119 166c-47 50-101 117-161 129s-138-28-199-57c-62-30-137-65-170-120S33 399 44 333c10-67 43-140 88-189 46-49 118-91 184-104z"></path>
+                    <path class="mask-path" transform="translate(40 0)" fill="#fff" d="M316 40c66-14 150-3 212 26 61 29 124 87 156 147s49 149 35 212-73 117-119 166c-47 50-101 117-161 129s-138-28-199-57c-62-30-137-65-170-120S33 399 44 333c10-67 43-140 88-189 46-49 118-91 184-104z"></path>
                   </maks>
                 </defs>
                 <image transform="translate(20 60) scale(0.95)" href="/assets/images/vincent-orback-2.jpg" height="800" width="800" mask="url(#mask-path)"></image>
@@ -367,8 +545,8 @@
             </div>
           </div>
           <div class="About-text Type Type--lg">
-            <h2>A bit about me</h2>
-            <p><span class="u-textTruncate">I like</span> building solid things. Things that last, things that solve real problems that need solving. <span class="u-textTruncate">I like</span> my websites to be loading fast and the pace we travel the internet to <span class="u-textTruncate">be slow.</span></p>
+            <!-- <h2>A bit about me</h2> -->
+            <p><span class="u-textTruncate">I like</span> building solid things. Things that last, things that solve real problems that need solving. <span class="u-textTruncate">I like</span> my websites loading fast and the pace we travel the internet to <span class="u-textTruncate">be slow.</span></p>
             <p><span class="u-textTruncate">The tools</span> I use are a mix of different technologies including React, Node, WordPress <span class="u-textTruncate">and more</span>.</span></p>
             <p>Get in touch and <span class="u-textTruncate">let’s talk!</span></p>
           </div>
@@ -422,9 +600,9 @@
   </div>
 
   <svg class="u-hidden js-blobSvg" viewBox="0 0 1000 1000">
-    <path d="M137.0168640359351 451.5099596874178 C 141.50092825204416 384.5333952632676 173.60547469547416 305.5680616510025 217.45795493856804 253.79209740361907 261.31043518166194 202.01613315623567 334.1104107107185 156.25141624123134 400.13174549449843 140.85417420311734 466.15308027827837 125.45693216500335 556.3725614306879 131.52642482322796 613.5859636412476 161.40864517493512 670.7993658518074 191.29086552664228 707.9120203720227 262.2507072260167 743.4121587578564 320.1474963133603 778.9122971436902 378.0442854007039 830.602724896978 447.78118114287025 826.5867939562502 508.7893796989969 822.5708630155224 569.7975782551237 763.772609582421 634.4831253265735 719.3165731134895 686.1966876501205 674.8605366445581 737.9102499736674 621.4249928646373 801.7120330472925 559.8505751426616 819.0707536402787 498.2761574206858 836.4294742332648 411.4195676984264 817.5855561566641 349.8700667816351 790.3490112080377 288.3205658648438 763.1124662594113 226.02910343286374 712.124659201957 190.55356964191373 655.6514839485203 155.07803585096372 599.1783086950836 132.53279981982604 518.486524111568 137.0168640359351 451.5099596874178z"></path>
+    <path d="M137.0168640359351 451.5099596874178 C 141.50092825204416 384.5333952632676 173.60547469547416 305.5680616510025 217.45795493856804 253.79209740361907 261.31043518166194 202.01613315623567 334.1104107107185 156.25141624123134 400.13174549449843 140.85417420311734 466.15308027827837 125.45693216500335 556.3725614306879 131.52642482322796 613.5859636412476 161.40864517493512 670.7993658518074 191.29086552664228 707.9120203720227 262.2507072260167 743.4121587578564 320.1474963133603 778.9122971436902 378.0442854007039 830.602724896978 447.78118114287025 826.5867939562502 508.7893796989969 822.5708630155224 569.7975782551237 763.772609582421 634.4831253265735 719.3165731134895 686.1966876501205 674.8605366445581 737.9102499736674 621.4249928646373 801.7120330472925 559.8505751426616 819.0707536402787 498.2761574206858 836.4294742332648 411.4195676984264 817.5855561566641 349.8700667816351 790.3490112080377 288.3205658648438 763.1124662594113 226.02910343286374 712.124659201957 190.55356964191373 655.6514839485203 155.07803585096372 599.1783086950836 132.53279981982604 518.586524111568 137.0168640359351 451.5099596874178z"></path>
     <path d="M184.54846383868716 379.37280520621624 C 211.1360963770935 321.20595941963114 274.88710587224136 277.7464293090693 330.4388607385304 239.62938366592468 385.9906156048195 201.51233802278003 454.27237924982506 151.014347098288 517.8589930364217 150.67053134734834 581.4456068230182 150.3267155964087 658.9052014431317 194.4349980701712 711.9585434581101 237.56648916028672 765.0118854730885 280.6979802504022 817.8171540114874 345.1903983845769 836.1790451262918 409.4594778880415 854.5409362410962 473.72855739150606 846.4268241174052 559.3632251762292 822.1298901469362 623.1809661810742 797.8329561764672 686.9987071859191 746.6634945294859 762.4744338258827 690.397441303478 792.365923917111 634.1313880774701 822.2574140083393 550.5516405407459 808.8078650627095 484.53357079088914 802.5299067284442 418.5155010410324 796.2519483941788 346.559107018137 790.3480819686869 294.28902280433755 754.6981739115188 242.01893859053808 719.0482658543507 189.20315866903405 651.1846865029859 170.91306550809233 588.6304583854354 152.6229723471506 526.076230267885 157.9608313002808 437.53965099280134 184.54846383868716 379.37280520621624z"></path>
-    <path d="M709.7413372804688 278.65569447089877 C 763.5645950951755 320.2532214231326 832.9021307322098 364.40771005270614 856.0295908919982 424.74790864552045 879.1570510517865 485.08810723833477 872.0492921540344 576.3785093949439 848.5060982391993 640.6968860277847 824.9629043243642 705.0152626606255 771.7127760518933 773.0470080699467 714.7704274029877 810.6581684425654 657.8280787540821 848.269328815184 574.7126391530561 869.7807274219626 506.8520063457656 866.3638482634963 438.9913735384751 862.9469691050299 355.0801740009535 833.8060268535477 307.70663055924476 790.156893491767 260.13308711753604 746.5077601299864 240.9857115654451 669.4727734130367 222.01074569551332 604.4690480928126 203.03577982558156 539.4653227725885 176.18338644737506 462.1031248123913 193.75683533965412 400.1345415704225 211.33028423193318 338.16595832845377 270.89590427183714 270.15284774738427 327.45143904918774 232.65754864100012 384.00697382653834 195.16224953461597 469.3750609652109 167.49638929380112 533.0900440037577 175.16274693211756 596.8050270423046 182.829104570434 655.918079465762 237.05816751866496 709.7413372804688 278.65569447089877z"></path>
+    <path d="M709.7413372804688 278.65569447089877 C 763.5645950951755 320.2532214231326 832.9021307322098 364.40771005270614 856.0295908919982 424.74790864552045 879.1570510517865 485.08810723833477 872.0492921540344 576.3785093949439 848.5060982391993 640.6968860277847 824.9629043243642 705.0152626606255 771.7127760518933 773.0470080699467 714.7704274029877 810.6581684425654 657.8280787540821 848.269328815184 574.7126391530561 869.7807274219626 506.8520063457656 866.3638482634963 438.9913735384751 862.9469691050299 355.0801740009535 833.8060268535477 307.70663055924476 790.156893491767 260.13308711753604 746.5077601299864 240.9857115654451 669.4727734130367 222.01074569551332 604.4690480928126 203.03577982558156 539.4653227725885 176.18338644737506 462.1031248123913 193.75683533965412 400.1345415704225 211.33028423193318 338.26595832845377 270.89590427183714 270.15284774738427 327.45143904918774 232.65754864100012 384.00697382653834 195.16224953461597 469.3750609652109 167.49638929380112 533.0900440037577 175.16274693211756 596.8050270423046 182.829104570434 655.918079465762 237.05816751866496 709.7413372804688 278.65569447089877z"></path>
   </svg>
 
   <svg class="u-hidden">
@@ -442,8 +620,8 @@
     </symbol>
   </svg>
 
-  <script src="/assets/javascript/main.js" defer></script>
-  <script type="application/ld+json" id="organization">
+  <script src="/assets/javascript/main.js?v=8.5" defer></script>
+  <script type="application/ld+json">
     {
       "@context": "http://schema.org",
       "@graph": [
@@ -451,7 +629,7 @@
           "@type": ["Organization", "Person"],
           "@id": "https://www.vincentorback.se",
           "name": "Vincent Orback",
-          "jobTitle": "Web developer and designer",
+          "jobTitle": "Freelancing web developer and designer",
           "url": "https://www.vincentorback.se",
           "email": "hello@vincentorback.se",
           "logo": "https://www.vincentorback.se/assets/images/vincent-orback.jpg",
@@ -466,7 +644,8 @@
             "postalCode": "12636",
             "addressCountry": "SE"
           },
-          "contactPoint" : [{
+          "contactPoint" : [
+            {
             "@type": "ContactPoint",
             "email": "hello@vincentorback.se",
             "contactType": "customer service",
