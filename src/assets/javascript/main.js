@@ -460,10 +460,13 @@ const vincent = {
 
     const videoObserver = new IntersectionObserver((entries, observer) => {
       for (const entry of entries) {
-        entry.isIntersecting &&
-        !entry.target.classList.contains(manuallyPausedClass)
-          ? entry.target.play()
-          : entry.target.pause()
+        const shouldPlay = entry.isIntersecting && !entry.target.classList.contains(manuallyPausedClass)
+
+        if (shouldPlay) {
+          entry.target.play().then(() => entry.target.play())
+        } else if (entry.isIntersecting) {
+          entry.target.pause()
+        }
       }
     })
 
