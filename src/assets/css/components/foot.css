@@ -274,7 +274,7 @@ html.has-js .Foot-list {
   position: absolute;
   left: 0;
   bottom: 0.2em;
-  transform: translateX(-99%);
+  transform: translateX(-100%);
   opacity: 0;
   visibility: hidden;
   transition: transform 200ms ease, opacity 200ms ease, visibility 0ms linear 200ms;
@@ -282,7 +282,8 @@ html.has-js .Foot-list {
 
 @media (max-width: 500px) {
   .Foot-menuListItem > ul {
-    transform: translateY(0);
+    transform: translate(1px, -1px);
+    bottom: 100%;
     right: 0;
     left: auto;
     max-width: calc(100vw - 2em);
@@ -292,7 +293,6 @@ html.has-js .Foot-list {
 
 .Foot-menuListItem:focus-within > ul,
 .Foot-menuListItem:hover > ul {
-  transform: translateX(-100%);
   opacity: 1;
   visibility: visible;
   transition: transform 200ms ease, opacity 200ms ease, visibility 0ms linear;
@@ -301,7 +301,7 @@ html.has-js .Foot-list {
 @media (max-width: 500px) {
   .Foot-menuListItem:focus-within > ul,
   .Foot-menuListItem:hover > ul {
-    transform: translateY(-2em);
+    transform: translate(1px, -1px);
   }
 }
 
