@@ -87,10 +87,10 @@ const vincent = {
           2000: {
             x: 1.4,
             y: 0.6,
-            scale: 1.4
+            scale: 1.3
           },
           30000: {
-            x: 1,
+            x: 1.4,
             y: 0.8,
             scale: 1.5
           }
@@ -266,7 +266,7 @@ const vincent = {
         const nPaths = paths.length
 
         scope.view.onFrame = function (event) {
-          if (pauseAnimation || pauses > 3) return
+          if (pauseAnimation || pauses > 10) return
 
           if (event.delta > 0.03) {
             pauseAnimation = true
@@ -377,7 +377,7 @@ const vincent = {
           x: gridGutter,
           y: gridGutter
         },
-        breakAt: breakAt
+        breakAt
       })
     }
 
@@ -430,7 +430,7 @@ const vincent = {
     const lazySelector = '[data-loading="lazy"]'
 
     function replaceVideoWithImage (el) {
-      const image = el.querySelector('picture')
+      const image = el.querySelector('picture') ?? el.querySelector('img')
 
       if (image) {
         if (image.parentNode.childNodes[0]) {
@@ -478,7 +478,15 @@ const vincent = {
           const startPlayPromise = el.play()
 
           if (startPlayPromise !== undefined) {
+            const timer = setTimeout(() => {
+              if (el.paused) {
+                videoObserver.unobserve(el)
+                replaceVideoWithImage(el)
+              }
+            }, 3000)
+
             el.addEventListener('click', function () {
+              clearTimeout(timer)
               togglePlay(el)
             })
 
@@ -486,6 +494,7 @@ const vincent = {
               el.parentNode.querySelector('.js-togglePlay')
             if (togglePlayButton) {
               togglePlayButton.addEventListener('click', function () {
+                clearTimeout(timer)
                 togglePlay(el)
               })
             }
@@ -493,6 +502,8 @@ const vincent = {
             videoObserver.observe(el)
 
             startPlayPromise.catch(function () {
+              clearTimeout(timer)
+              videoObserver.unobserve(el)
               replaceVideoWithImage(el)
             })
           } else {

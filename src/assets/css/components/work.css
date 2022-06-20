@@ -84,6 +84,14 @@ html:not(.has-js) .Work-grid {
   background-color: #111;
 }
 
+.Work-item--ascape .Work-mediaWrap {
+  padding-bottom: calc(900 / 1200 * 100%);
+}
+
+.Work-item--beckmans .Work-mediaWrap {
+  padding-bottom: calc(1400 / 1200 * 100%);
+}
+
 .Work-media {
   position: absolute;
   top: 0;
@@ -209,7 +217,6 @@ video.Work-media {
 
 .Work-link {
   display: inline-block;
-  user-select: all;
 }
 
 @media (min-width: 900px) {

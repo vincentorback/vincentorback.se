@@ -35,6 +35,7 @@
   }
 }
 
+/*
 @media (min-width: 1800px) {
   .Type {
     font-size: 1.4rem;
@@ -53,7 +54,7 @@
   .Type--lg {
     font-size: 2.6rem;
   }
-}
+} */
 
 .Type h1,
 .Type h2,
