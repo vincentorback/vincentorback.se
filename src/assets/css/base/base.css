@@ -11,12 +11,12 @@
   line-height: var(--font-lineheight-sm);
   font-family: var(--font-sansserif);
   color: var(--color-text);
-  background-color: var(--color-background);
 }
 
 html,
 body {
   overflow-x: hidden;
+  background-color: var(--color-background);
 }
 
 body {

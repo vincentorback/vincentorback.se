@@ -17,7 +17,7 @@
     "start": "if [ ! -d dist ]; then npm run build; fi && npm-run-all --parallel serve watch",
     "build:js": "esbuild src/assets/javascript/main.js --outfile=dist/assets/javascript/main.js --bundle --minify --sourcemap",
     "build:css": "postcss src/assets/css/style.css -o dist/assets/css/style.css",
-    "build:html": "html-minifier --remove-comments --sort-attributes --sort-class-name --collapse-whitespace --process-scripts 'application/ld+json' --minify-js true --output-dir dist --input-dir src --file-ext html",
+    "build:html": "html-minifier --remove-comments --case-sensitive --sort-attributes --sort-class-name --collapse-whitespace --process-scripts 'application/ld+json' --minify-js true --output-dir dist --input-dir src --file-ext html",
     "build:light": "npm-run-all test:js test:css build:html build:js build:css compress",
     "build": "rm -rf dist && npm-run-all build:light move:images move:video move:fonts move:icons move:fonts",
     "move:images": "copyfiles -u 2 -f src/assets/images/* src/assets/images/**/* dist/assets/images",
@@ -33,40 +33,38 @@
     "serve": "serve dist -l 3000",
     "compress": "gzip dist/**/*.{css,js,html} --extension=gz --extension=br",
     "compress:images": "imageoptim dist/* && imagemin ./dist/assets/images/*.{jpg,png} --plugin.webp.quality=75 -o=./dist/assets/images",
-    "compress:images:avif": "squoosh-cli --avif true --max-optimizer-rounds 1 -d dist/assets/images dist/assets/images/*.png",
+    "compress:images:avif": "squoosh-cli --avif true --max-optimizer-rounds 1 -d dist/assets/images dist/assets/images/*.jpg",
     "deploy:light": "npm run build:light && copyfiles -u 1 src/sitemap.xml dist && copyfiles -u 1 src/.htaccess dist && copyfiles -u 1 src/robots.txt dist",
     "deploy": "npm run build && copyfiles -u 1 src/sitemap.xml dist && copyfiles -u 1 src/.htaccess dist && copyfiles -u 1 src/robots.txt dist"
   },
   "dependencies": {
-    "@squoosh/cli": "^0.7.2",
-    "macy": "^2.5.1",
-    "paper": "0.12.15",
-    "vanilla-lazyload": "^17.8.2"
+    "colcade": "^0.2.0",
+    "paper": "^0.12.17"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.7",
+    "@squoosh/cli": "^0.7.3",
+    "autoprefixer": "^10.4.13",
     "chokidar": "^3.5.3",
     "chokidar-cli": "^3.0.0",
     "copyfiles": "^2.4.1",
-    "esbuild": "^0.14.46",
+    "esbuild": "^0.17.8",
     "gzip-cli": "^1.2.0",
     "html-minifier": "^4.0.0",
     "imagemin-cli": "^7.0.0",
-    "imagemin-webp": "^7.0.0",
+    "imagemin-webp": "^8.0.0",
     "imageoptim-cli": "^3.0.7",
     "inline-source-cli": "^2.0.0",
     "npm-run-all": "^4.1.5",
-    "parcel-bundler": "^1.12.4",
-    "postcss": "^8.4.14",
+    "postcss": "^8.4.21",
     "postcss-calc": "^8.2.4",
-    "postcss-cli": "^9.1.0",
-    "postcss-csso": "^6.0.0",
-    "postcss-custom-properties": "^12.1.8",
-    "postcss-import": "^14.1.0",
-    "serve": "^13.0.2",
+    "postcss-cli": "^10.1.0",
+    "postcss-csso": "^6.0.1",
+    "postcss-custom-properties": "^13.1.3",
+    "postcss-import": "^15.1.0",
+    "serve": "^14.2.0",
     "standard": "^17.0.0",
-    "stylelint": "^14.9.1",
-    "stylelint-config-standard": "^26.0.0",
+    "stylelint": "^15.1.0",
+    "stylelint-config-standard": "^30.0.1",
     "uglify-es": "^3.3.10"
   },
   "browserslist": [
@@ -85,7 +83,7 @@
         "grid": true
       },
       "postcss-calc": {
-        "preserve": false
+        "preserve": true
       },
       "postcss-csso": {
         "comments": false
@@ -95,12 +93,12 @@
   "stylelint": {
     "extends": "stylelint-config-standard",
     "rules": {
-      "max-empty-lines": 2,
-      "number-leading-zero": "always",
       "unit-no-unknown": [
         true,
         {
-          "ignoreUnits": "x"
+          "ignoreUnits": [
+            "x"
+          ]
         }
       ],
       "selector-class-pattern": null,
@@ -113,6 +111,9 @@
   "standard": {
     "ignore": [
       "src/assets/javascript/vendor/"
-    ]
+    ],
+    "rules": {
+      "no-unused-vars": null
+    }
   }
 }

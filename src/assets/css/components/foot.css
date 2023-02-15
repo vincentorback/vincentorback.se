@@ -33,15 +33,15 @@
   }
 }
 
-html.has-js .Foot-list {
+html.has-blobs .Foot-list {
   color: #fff;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html.has-js .Foot-list {
     color: rgba(255, 255, 255, 0.87);
   }
-}
+} */
 
 @media (min-width: 900px) {
   .Foot-list {
@@ -98,11 +98,11 @@ html.has-js .Foot-list {
   }
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .Foot-blob {
     filter: brightness(60%);
   }
-}
+} */
 
 
 .Foot-menu {
@@ -119,11 +119,11 @@ html.has-js .Foot-list {
   }
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .Foot-menu {
     color: rgba(255, 255, 255, 0.87);
   }
-}
+} */
 
 
 .Foot-menuToggle {
@@ -231,13 +231,13 @@ html.has-js .Foot-list {
   white-space: nowrap;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .Foot-menuListItem {
     background-color: var(--color-dark);
     color: var(--color-text);
     border-color: var(--color-text);
   }
-}
+} */
 
 
 .Foot-menuList a {
@@ -262,13 +262,13 @@ html.has-js .Foot-list {
   color: #fff;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .Foot-menuListItem:hover,
   .Foot-menuListItem:focus {
     background-color: #eee;
     color: var(--color-dark);
   }
-}
+} */
 
 .Foot-menuListItem > ul {
   position: absolute;

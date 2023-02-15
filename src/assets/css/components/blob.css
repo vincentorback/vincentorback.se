@@ -1,17 +1,10 @@
 .Blob {
   display: block;
+  pointer-events: none;
 }
 
 .Blob path {
   mix-blend-mode: multiply;
-}
-
-.Blob--scroll path {
-  transform-origin: center;
-  transform: rotate(calc(360deg * var(--Blob-scroll))) translateZ(0);
-  transition: transform 3000ms ease;
-  will-change: transform;
-  backface-visibility: hidden;
 }
 
 .Blob--animate path {

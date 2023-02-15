@@ -25,37 +25,6 @@
   }
 }
 
-@media (min-width: 1600px) {
-  .Type {
-    font-size: 1.4rem;
-  }
-
-  .Type--lg {
-    font-size: 1.6rem;
-  }
-}
-
-/*
-@media (min-width: 1800px) {
-  .Type {
-    font-size: 1.4rem;
-  }
-
-  .Type--lg {
-    font-size: 1.6rem;
-  }
-}
-
-@media (min-width: 2400px) {
-  .Type {
-    font-size: 2rem;
-  }
-
-  .Type--lg {
-    font-size: 2.6rem;
-  }
-} */
-
 .Type h1,
 .Type h2,
 .Type h3,

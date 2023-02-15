@@ -56,3 +56,9 @@ html:not(.has-js) .u-noJsHide {
   position: absolute;
   width: 1px;
 }
+
+@media (max-width: 500px) {
+  .u-hideSmall {
+    display: none;
+  }
+}

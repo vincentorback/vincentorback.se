@@ -1,7 +1,11 @@
 .Work {
+  --Work-gutter: var(--spacing-sm);
+
   position: relative;
   z-index: 1;
   margin: calc(var(--spacing-lg) * 1.5) 0;
+  opacity: 0;
+  animation: fadeIn 800ms 500ms ease forwards;
 }
 
 @media (min-width: 800px) {
@@ -10,25 +14,41 @@
   }
 }
 
-html:not(.has-js) .Work-grid {
-  display: grid;
-  grid-gap: var(--spacing-lg);
-}
-
-@media (min-width: 1400px) {
-  html:not(.has-js) .Work-grid {
-    grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr);
-  }
-}
-
-@media (min-width: 1800px) {
-  html:not(.has-js) .Work-grid {
-    grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr) minmax(300px, 1fr);
-  }
-}
-
 .Work-item {
   overflow: hidden;
+  margin-bottom: var(--Work-gutter);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.03);
+}
+
+.Work-grid {
+  margin-bottom: calc(var(--Work-gutter) * -1);
+}
+
+@media (min-width: 600px) {
+  .Work {
+    --Work-gutter: calc(var(--spacing-sm) * 0.5);
+  }
+
+  .Work-grid::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+
+  .Work-gridColumn {
+    float: left;
+    width: calc((100% / 2) - calc(var(--Work-gutter) * 0.5) - 1px);
+  }
+
+  .Work-gridColumn:first-child {
+    margin-right: var(--Work-gutter);
+  }
+}
+
+@media (min-width: 900px) {
+  .Work {
+    --Work-gutter: var(--spacing-sm);
+  }
 }
 
 .Work-mediaWrap {
@@ -38,17 +58,6 @@ html:not(.has-js) .Work-grid {
   height: 0;
   overflow: hidden;
   border-radius: 3px 3px 0 0;
-}
-
-@media (prefers-color-scheme: dark) {
-  .Work-mediaWrap {
-    filter: brightness(75%);
-    transition: filter 400ms ease;
-  }
-
-  .Work-mediaWrap:hover {
-    filter: brightness(100%);
-  }
 }
 
 .Work-mediaWrap:focus {
@@ -74,9 +83,12 @@ html:not(.has-js) .Work-grid {
 }
 
 .Work-item--forfattaren .Work-mediaWrap {
-  /* background-color: #fef9eb; */
   background-color: #5a2c2c;
   padding-bottom: calc(1376 / 1162 * 100%);
+}
+
+.Work-item--teg .Work-mediaWrap {
+  padding-bottom: calc(308 / 600 * 100%);
 }
 
 .Work-item--sakaria .Work-mediaWrap {
@@ -89,7 +101,7 @@ html:not(.has-js) .Work-grid {
 }
 
 .Work-item--beckmans .Work-mediaWrap {
-  padding-bottom: calc(1400 / 1200 * 100%);
+  padding-bottom: calc(822 / 1200 * 100%);
 }
 
 .Work-media {
@@ -106,17 +118,36 @@ html:not(.has-js) .Work-grid {
 
 video.Work-media {
   border-radius: 3px 3px 0 0;
+  opacity: 0;
+}
+
+video.Work-media.is-active {
+  animation: fadeInVideo 1000ms ease 800ms forwards;
+}
+
+@keyframes fadeInVideo {
+  100% {
+    opacity: 1;
+  }
+}
+
+.Work-item--littlejinder .Work-mediaWrap {
+  padding-bottom: calc(900 / 1200 * 100%);
 }
 
 .Work-item--video .Work-mediaWrap {
-  background-color: #050515;
   padding-bottom: calc(800 / 1200 * 100%);
+  background-color: #050515;
 }
 
 @media (min-width: 900px) {
   .Work-item--video .Work-mediaWrap {
     padding-bottom: calc(720 / 1280 * 100%);
   }
+}
+
+.Work-item--teg .Work-media {
+  object-position: 100% 0;
 }
 
 .Work-item--sakaria .Work-media {
@@ -141,10 +172,6 @@ video.Work-media {
   .Work-item:nth-child(3) .Work-media {
     transition-delay: 300ms;
   }
-}
-
-.Work-media[data-loading="lazy"]:not(.is-loaded) {
-  opacity: 0;
 }
 
 .fmf-hand {
@@ -188,12 +215,12 @@ video.Work-media {
   border-radius: 0 0 3px 3px;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .Work-info {
     background-color: rgba(0, 0, 0, 0.75);
     color: rgba(255, 255, 255, 0.75);
   }
-}
+} */
 
 @media (min-width: 600px) {
   .Work-info {
@@ -225,12 +252,6 @@ video.Work-media {
   }
 }
 
-@media (min-width: 1600px) {
-  .Work-link {
-    font-size: 1.4em;
-  }
-}
-
 .Work-link > * {
   display: inline;
   vertical-align: middle;
@@ -248,8 +269,6 @@ video.Work-media {
   opacity: 1;
   transition: opacity 100ms ease;
   border-bottom: 1.5px solid;
-
-  /* text-decoration: underline; */
 }
 
 .Work-link:focus,

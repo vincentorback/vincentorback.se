@@ -1,6 +1,6 @@
 :root {
   --color-blue: #0ebeff;
-  --color-cream: #ffe3d1;
+  --color-cream: #ffe7d0;
   --color-dark: #2e2e2e;
   --color-gray: #aaa;
   --color-green: #0e9a4e;
@@ -23,7 +23,7 @@
   --font-normal: 400;
   --font-bold: 600;
   --font-lineheight-sm: 1.1;
-  --font-lineheight-lg: 1.4;
+  --font-lineheight-lg: 1.375;
   --font-size: 1.1em;
   --font-size-lg: 1.3em;
   --spacing-sm: 5vw;
@@ -38,13 +38,13 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --color-text: rgba(255, 255, 255, 0.87);
     --color-background: #1f152e;
     --color-dark: #3c304e;
   }
-}
+} */
 
 /* stylelint-disable */
 @media (prefers-reduced-data: reduce) {
@@ -53,3 +53,25 @@
   }
 }
 /* stylelint-enable */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(4%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
