@@ -342,7 +342,6 @@ const vincent = {
 
       if (viewportWidth < 600) {
         if (colcade?.destroy) {
-          console.log('destroy')
           colcade.destroy()
         }
       } else {

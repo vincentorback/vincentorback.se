@@ -6,13 +6,13 @@
   margin: 0 auto;
 }
 
-@media (min-width: 400px) {
+@media (width >= 400px) {
   .Foot {
     padding: calc(var(--spacing-lg) * 2) 0 var(--spacing-sm);
   }
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .Foot {
     padding: calc(var(--spacing-lg) * 1) 0 var(--spacing-sm);
   }
@@ -22,12 +22,11 @@
 .Foot-list {
   position: relative;
   z-index: 1;
-  font-size: 1.1rem;
   line-height: var(--font-lineheight-lg);
   padding-left: env(safe-area-inset-left);
 }
 
-@media (max-height: 500px) and (min-width: 800px) {
+@media (height < 500px) and (width >= 800px) {
   .Foot-list {
     font-size: 0.9rem;
   }
@@ -43,13 +42,13 @@ html.has-blobs .Foot-list {
   }
 } */
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .Foot-list {
     font-size: 1.3rem;
   }
 }
 
-@media (min-width: 1600px) {
+@media (width >= 1600px) {
   .Foot-list {
     font-size: 1.5rem;
   }
@@ -67,7 +66,7 @@ html.has-blobs .Foot-list {
   user-select: all;
 }
 
-@media (min-height: 500px) and (min-width: 900px) {
+@media (height < 500px) and (width >= 900px) {
   .Foot-link--lg {
     font-size: 1.6em;
   }
@@ -83,14 +82,14 @@ html.has-blobs .Foot-list {
   height: 300px;
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .Foot-blob {
     width: 1000px;
     height: 700px;
   }
 }
 
-@media (min-width: 1800px) {
+@media (width >= 1800px) {
   .Foot-blob {
     width: 1600px;
     height: 1200px;
@@ -113,7 +112,7 @@ html.has-blobs .Foot-list {
   z-index: 2;
 }
 
-@media (max-width: 500px) {
+@media (width < 500px) {
   .Foot-menu {
     color: #fff;
   }
@@ -132,7 +131,7 @@ html.has-blobs .Foot-list {
   font-size: 1.2rem;
 }
 
-@media (min-width: 1600px) {
+@media (width >= 1600px) {
   .Foot-menuToggle {
     font-size: 1.8rem;
   }
@@ -147,13 +146,13 @@ html.has-blobs .Foot-list {
   height: 0.6em;
 }
 
-@media (min-width: 701px) {
+@media (width >= 701px) {
   .Foot-menuToggleSymbol {
     vertical-align: top;
   }
 }
 
-@media (min-width: 701px) and (max-width: 1000px) {
+@media (width >= 701px) and (width < 1000px) {
   .Foot-menuToggleSymbol {
     float: right;
     transform: translateY(0.2em) rotateZ(-90deg);
@@ -166,7 +165,7 @@ html.has-blobs .Foot-list {
   display: inline-block;
 }
 
-@media (max-width: 700px) {
+@media (width < 700px) {
   .Foot-menuToggleText {
     display: none;
   }
@@ -189,7 +188,7 @@ html.has-blobs .Foot-list {
   transition: transform 200ms ease, opacity 200ms ease, visibility 0ms linear 200ms;
 }
 
-@media (max-width: 1000px) {
+@media (width < 1000px) {
   .Foot-menuContainer {
     justify-content: flex-end;
   }
@@ -207,13 +206,13 @@ html.has-blobs .Foot-list {
   padding-bottom: 2em;
 }
 
-@media (min-width: 1100px) {
+@media (width >= 1100px) {
   .Foot-menuList {
     transform: translateX(-100px);
   }
 }
 
-@media (min-width: 1600px) {
+@media (width >= 1600px) {
   .Foot-menuList {
     padding-bottom: 3em;
     font-size: 1.3rem;
@@ -280,7 +279,7 @@ html.has-blobs .Foot-list {
   transition: transform 200ms ease, opacity 200ms ease, visibility 0ms linear 200ms;
 }
 
-@media (max-width: 500px) {
+@media (width < 500px) {
   .Foot-menuListItem > ul {
     transform: translate(1px, -1px);
     bottom: 100%;
@@ -298,7 +297,7 @@ html.has-blobs .Foot-list {
   transition: transform 200ms ease, opacity 200ms ease, visibility 0ms linear;
 }
 
-@media (max-width: 500px) {
+@media (width < 500px) {
   .Foot-menuListItem:focus-within > ul,
   .Foot-menuListItem:hover > ul {
     transform: translate(1px, -1px);

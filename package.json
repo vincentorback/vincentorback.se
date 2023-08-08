@@ -32,8 +32,8 @@
     "watch:html": "chokidar 'src/**/*.html' -c 'npm run build:html && npm run compress'",
     "serve": "serve dist -l 3000",
     "compress": "gzip dist/**/*.{css,js,html} --extension=gz --extension=br",
-    "compress:images": "imageoptim dist/* && imagemin ./dist/assets/images/*.{jpg,png} --plugin.webp.quality=75 -o=./dist/assets/images",
-    "compress:images:avif": "squoosh-cli --avif true --max-optimizer-rounds 1 -d dist/assets/images dist/assets/images/*.jpg",
+    "compress:images": "imageoptim dist/* && imagemin ./dist/assets/images/*.{jpg,png} --plugin.webp.quality=70 -o=./dist/assets/images",
+    "compress:images:avif": "npx avif --input=dist/assets/images/*.{jpg,jpeg} --output=dist/assets/images --overwrite --effort=9 --quality=70",
     "deploy:light": "npm run build:light && copyfiles -u 1 src/sitemap.xml dist && copyfiles -u 1 src/.htaccess dist && copyfiles -u 1 src/robots.txt dist",
     "deploy": "npm run build && copyfiles -u 1 src/sitemap.xml dist && copyfiles -u 1 src/.htaccess dist && copyfiles -u 1 src/robots.txt dist"
   },
@@ -42,29 +42,30 @@
     "paper": "^0.12.17"
   },
   "devDependencies": {
-    "@squoosh/cli": "^0.7.3",
-    "autoprefixer": "^10.4.13",
+    "autoprefixer": "^10.4.14",
+    "avif": "^0.4.2",
     "chokidar": "^3.5.3",
     "chokidar-cli": "^3.0.0",
     "copyfiles": "^2.4.1",
-    "esbuild": "^0.17.8",
+    "esbuild": "^0.18.17",
     "gzip-cli": "^1.2.0",
     "html-minifier": "^4.0.0",
     "imagemin-cli": "^7.0.0",
     "imagemin-webp": "^8.0.0",
-    "imageoptim-cli": "^3.0.7",
+    "imageoptim-cli": "^3.1.7",
     "inline-source-cli": "^2.0.0",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.21",
-    "postcss-calc": "^8.2.4",
+    "postcss": "^8.4.27",
+    "postcss-calc": "^9.0.1",
     "postcss-cli": "^10.1.0",
     "postcss-csso": "^6.0.1",
-    "postcss-custom-properties": "^13.1.3",
+    "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^15.1.0",
+    "postcss-preset-env": "^9.1.0",
     "serve": "^14.2.0",
-    "standard": "^17.0.0",
-    "stylelint": "^15.1.0",
-    "stylelint-config-standard": "^30.0.1",
+    "standard": "^17.1.0",
+    "stylelint": "^15.10.2",
+    "stylelint-config-standard": "^34.0.0",
     "uglify-es": "^3.3.10"
   },
   "browserslist": [
@@ -76,15 +77,20 @@
   "postcss": {
     "plugins": {
       "postcss-import": {},
-      "postcss-custom-properties": {
-        "preserve": true
-      },
-      "autoprefixer": {
-        "grid": true
+      "postcss-preset-env": {
+        "enableClientSidePolyfills": false,
+        "autoprefixer": {
+          "grid": true
+        },
+        "features": {
+          "clamp": true,
+          "text-decoration-shorthand": true
+        }
       },
       "postcss-calc": {
         "preserve": true
       },
+      "postcss-flexbugs-fixes": {},
       "postcss-csso": {
         "comments": false
       }

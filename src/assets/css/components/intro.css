@@ -7,13 +7,13 @@
   /* padding-left: env(safe-area-inset-left); */
 }
 
-@media (min-width: 1200px) {
+@media (width >= 1200px) {
   .Intro {
     padding-top: calc(var(--spacing-lg) * 2.2);
   }
 }
 
-@media (min-width: 1600px) {
+@media (width >= 1600px) {
   .Intro {
     padding-top: calc(var(--spacing-lg) * 2.8);
   }
@@ -31,25 +31,25 @@
   max-width: 550px;
 }
 
-@media (min-width: 800px) {
+@media (width >= 800px) {
   .Intro-text {
     max-width: 600px;
   }
 }
 
-@media (min-width: 1200px) {
+@media (width >= 1200px) {
   .Intro-text {
     max-width: 650px;
   }
 }
 
-@media (min-width: 1600px) {
+@media (width >= 1600px) {
   .Intro-text {
     max-width: 800px;
   }
 }
 
-@media (min-width: 2400px) {
+@media (width >= 2400px) {
   .Intro-text {
     max-width: 1000px;
   }
@@ -68,14 +68,14 @@
   animation-delay: 300ms;
 }
 
-@media (min-width: 1000px) {
+@media (width >= 1000px) {
   .Intro-contact {
     margin-top: var(--spacing-sm);
     font-size: 1.5em;
   }
 }
 
-@media (min-width: 1600px) {
+@media (width >= 1600px) {
   .Intro-contact {
     font-size: 1.9rem;
   }
@@ -151,7 +151,7 @@ html:not(.has-blobs) .Intro-blob {
   transform: translate3d(5%, 0, 0);
 }
 
-@media (min-width: 800px) {
+@media (width >= 800px) {
   .Intro-blob,
   .Intro-blobCover {
     width: 50%;
@@ -159,7 +159,7 @@ html:not(.has-blobs) .Intro-blob {
   }
 }
 
-@media (min-width: 1000px) {
+@media (width >= 1000px) {
   .Intro-blob,
   .Intro-blobCover {
     width: 100%;
@@ -167,7 +167,7 @@ html:not(.has-blobs) .Intro-blob {
   }
 }
 
-@media (min-width: 1600px) {
+@media (width >= 1600px) {
   .Intro-blob,
   .Intro-blobCover {
     width: 50%;

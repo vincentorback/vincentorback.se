@@ -7,7 +7,7 @@
   }
 
   a {
-    text-decoration: underline;
+    text-decoration: underline from-font;
   }
 
   .u-printHide {

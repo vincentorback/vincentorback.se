@@ -2,7 +2,7 @@
   margin: 0 0 var(--spacing-lg);
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .About {
     margin: 0 0 calc(var(--spacing-lg) * 1);
   }
@@ -10,6 +10,7 @@
 
 
 .About-grid {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -26,13 +27,13 @@
   padding-left: env(safe-area-inset-left);
 }
 
-@media (min-width: 800px) {
+@media (width >= 800px) {
   .About-text {
     margin: 0 var(--spacing-sm) 0 0;
   }
 }
 
-@media (min-width: 1800px) {
+@media (width >= 1800px) {
   .About-text {
     max-width: 900px;
   }
@@ -47,13 +48,13 @@
   margin: 0 auto calc(var(--spacing-lg) * 2);
 }
 
-@media (min-width: 400px) {
+@media (width >= 400px) {
   .About-imageContainer {
     margin: 0 auto var(--spacing-lg);
   }
 }
 
-@media (min-width: 600px) {
+@media (width >= 600px) {
   .About-imageContainer {
     max-width: 700px;
     max-width: min(50vw, 700px);
@@ -61,7 +62,7 @@
   }
 }
 
-@media (min-width: 600px) {
+@media (width >= 600px) {
   .About-imageContainer {
     margin: 0;
   }
@@ -77,10 +78,7 @@
 
 .About-imageBlob {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   margin: auto;
   z-index: 1;
   width: 100%;
@@ -88,7 +86,7 @@
   transform: scale(1.4);
 }
 
-@media (min-width: 600px) {
+@media (width >= 600px) {
   .About-imageBlob {
     transform: scale(1.3);
   }

@@ -26,7 +26,7 @@
   font-weight: var(--font-normal);
 }
 
-@media (min-width: 320px) {
+@media (width >= 320px) {
   .u-textTruncate {
     max-width: 100%;
     overflow: hidden;
@@ -57,7 +57,7 @@ html:not(.has-js) .u-noJsHide {
   width: 1px;
 }
 
-@media (max-width: 500px) {
+@media (width < 500px) {
   .u-hideSmall {
     display: none;
   }

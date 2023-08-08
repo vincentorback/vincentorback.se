@@ -4,7 +4,7 @@
   margin: 0 auto;
 }
 
-@media (min-width: 600px) and (max-width: 900px) {
+@media (width >= 600px) and (width < 900px) {
   .Container {
     width: calc(100% - var(--spacing-sm));
   }
