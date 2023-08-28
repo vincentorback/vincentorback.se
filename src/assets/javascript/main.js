@@ -1,7 +1,6 @@
 /* global IntersectionObserver */
 
 import Colcade from 'colcade'
-// import { PaperScope, Point } from 'paper'
 
 const prefersReducedMotion =
   window.matchMedia('(prefers-reduced-motion: reduce)').matches === true
@@ -12,8 +11,6 @@ const saveData =
   (connection.saveData ||
     (connection.effectiveType &&
       ['slow-2g', '2g', '3g'].includes(connection.effectiveType)))
-
-// const isIOS = /iPad|iPhone|iPod/.test(navigator?.platform) || (navigator?.platform === 'MacIntel' && navigator?.maxTouchPoints > 1)
 
 function getViewportWidth () {
   return Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
@@ -66,33 +63,28 @@ const vincent = {
         startRotate: randomBetween(0, 359),
         breakpoints: {
           800: {
-            x: 3.6,
-            y: 0.8,
+            x: -0.33,
+            y: -0.5,
             scale: 0.7
           },
           1000: {
-            x: 2.3,
-            y: 0.8,
+            x: 0.1,
+            y: -0.25,
             scale: 1.1
           },
           1200: {
-            x: 1.8,
-            y: 0.65,
+            x: 0.65,
+            y: 0,
             scale: 1.3
           },
-          1500: {
-            x: 1.6,
-            y: 0.65,
-            scale: 1.3
-          },
-          2000: {
-            x: 1.4,
-            y: 0.6,
+          1600: {
+            x: 0.65,
+            y: 0,
             scale: 1.3
           },
           30000: {
-            x: 1.4,
-            y: 0.8,
+            x: 0.2,
+            y: 0,
             scale: 1.5
           }
         }
@@ -102,80 +94,10 @@ const vincent = {
         startRotate: randomBetween(0, 359),
         scaleEl: document.querySelector('.js-aboutImage'),
         breakpoints: {
-          340: {
-            x: 1,
-            y: 1,
-            scale: 0.4
-          },
-          360: {
-            x: 1,
-            y: 1,
-            scale: 0.43
-          },
-          380: {
-            x: 1,
-            y: 1,
-            scale: 0.435
-          },
-          450: {
-            x: 1,
-            y: 1,
-            scale: 0.5
-          },
-          600: {
-            x: 1,
-            y: 1,
-            scale: 0.55
-          },
-          700: {
-            x: 1,
-            y: 1,
-            scale: 0.425
-          },
-          800: {
-            x: 1,
-            y: 1,
-            scale: 0.475
-          },
-          1000: {
-            x: 1,
-            y: 1,
-            scale: 0.55
-          },
-          1100: {
-            x: 1,
-            y: 1,
-            scale: 0.6
-          },
-          1200: {
-            x: 1,
-            y: 1,
-            scale: 0.65
-          },
-          1300: {
-            x: 1,
-            y: 1,
-            scale: 0.75
-          },
-          1400: {
-            x: 1,
-            y: 1,
-            scale: 0.8
-          },
-          1600: {
-            x: 1,
-            y: 1,
-            scale: 0.85
-          },
-          2000: {
-            x: 1,
-            y: 1,
-            scale: 0.9
-          },
           30000: {
-            x: 1,
-            y: 1,
-            scale: 0.9
+            x: 0,
+            y: 0,
+            scale: 1
           }
         }
       },
@@ -184,49 +106,62 @@ const vincent = {
         startRotate: 40,
         breakpoints: {
           600: {
-            x: 0.6,
-            y: 2.1,
-            scale: 0.7
-          },
-          900: {
-            x: 0.55,
-            y: 2,
-            scale: 0.8
-          },
-          1100: {
-            x: 0.5,
-            y: 2,
+            x: -0.65,
+            y: -0.3,
             scale: 1
           },
+          900: {
+            x: -0.65,
+            y: -0.3,
+            scale: 1
+          },
+          1100: {
+            x: -0.3,
+            y: 0.4,
+            scale: 1.2
+          },
           1600: {
-            x: 0.5,
-            y: 2.1,
+            x: -0.25,
+            y: 0.45,
             scale: 1.2
           },
           30000: {
-            x: 0.6,
-            y: 2,
+            x: -0.125,
+            y: 0.65,
             scale: 1.3
           }
         }
       }
     }
 
-    const windowWidth = window.innerWidth
+    function setupBlobs () {
+      const windowWidth = window.innerWidth
 
-    // console.log({ blobs, options, currentPosition })
+      // console.log({ blobs, options, currentPosition })
 
-    blobs.forEach(blobEl => {
-      // const svgEl = blobEl.querySelector('svg')
-      const currentPosition = Object.keys(options[blobEl.id].breakpoints).find(function (
-        key
-      ) {
-        return windowWidth < key
+      blobs.forEach(blobEl => {
+        // const svgEl = blobEl.querySelector('svg')
+        const currentPosition = Object.keys(options[blobEl.id].breakpoints).find(function (
+          key
+        ) {
+          return windowWidth < key
+        })
+        const blobOptions = options[blobEl.id].breakpoints[currentPosition]
+
+        // console.log({ blobEl, currentPosition })
+
+        blobEl.style.transform = `translate(${(blobOptions.x) * 100}%, ${(blobOptions.y) * 100}%) scale(${blobOptions.scale})`
       })
-      const blobOptions = options[blobEl.id].breakpoints[currentPosition]
+    }
 
-      blobEl.style.transform = `translate(${(blobOptions.x - 1) * 100}%, ${(blobOptions.y - 1) * 100}%) scale(${blobOptions.scale})`
-    })
+    window.addEventListener(
+      'resize',
+      debounce(setupBlobs, 300)
+    )
+
+    setupBlobs()
+
+    document.documentElement.classList.add('has-blobs')
   },
 
   // canvasBlob: function () {

@@ -2,20 +2,22 @@
   pointer-events: none;
 }
 
-
 @keyframes blob {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
 .Blob path {
-  animation: blob 38s var(--ease-in-out-sine) infinite;
+  animation: blob 40s linear infinite;
   backface-visibility: hidden;
   mix-blend-mode: multiply;
   transform-origin: 49% 49%;
-  will-change: transform;
+}
 
-  /* perspective: 1000px; */
+@media (prefers-reduced-motion) {
+  .Blob path {
+    animation: none;
+  }
 }
 
 .Blob path:first-child {
@@ -32,41 +34,3 @@
   color: var(--color-blue);
   animation-delay: -10s;
 }
-
-/* .Blob {
-  display: block;
-  pointer-events: none;
-}
-
-.Blob path {
-  mix-blend-mode: multiply;
-}
-
-.Blob--animate path {
-  animation: blob 40000ms var(--ease-in-out-sine) infinite;
-  transform-origin: 47% 47%;
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .Blob--animate path {
-    animation: none;
-  }
-}
-
-.Blob path:first-child {
-  color: var(--color-yellow);
-}
-
-.Blob path:nth-child(2) {
-  color: var(--color-pink);
-  animation-delay: -16000ms;
-  animation-direction: reverse;
-}
-
-.Blob path:nth-child(3) {
-  color: var(--color-blue);
-  animation-delay: -25000ms;
-}
- */

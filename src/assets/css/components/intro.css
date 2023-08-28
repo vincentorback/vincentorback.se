@@ -112,8 +112,6 @@
   width: 200px;
   height: 500px;
   backface-visibility: hidden;
-  transition: opacity 500ms ease 300ms, transform 2000ms ease;
-  transform: translate3d(5%, -5%, 0);
 }
 
 @media (width >= 800px) {

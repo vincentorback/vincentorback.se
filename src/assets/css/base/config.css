@@ -29,7 +29,6 @@
   --spacing-sm: 5vw;
   --spacing-lg: calc(var(--spacing-sm) * 2);
   --site-width: 1800px;
-  --ease-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
 @media (width >= 1200px) {
