@@ -78,11 +78,11 @@ html.has-blobs .Foot-list {
   left: 0;
   bottom: 0;
   z-index: 0;
-  width: 500px;
-  height: 300px;
+  width: clamp(300px, 50vw, 1000px);
+  height: clamp(300px, 50vw, 1000px);
 }
 
-@media (width >= 900px) {
+/* @media (width >= 900px) {
   .Foot-blob {
     width: 1000px;
     height: 700px;
@@ -93,9 +93,8 @@ html.has-blobs .Foot-list {
   .Foot-blob {
     width: 1600px;
     height: 1200px;
-    transform: translateX(-8%);
   }
-}
+} */
 
 /* @media (prefers-color-scheme: dark) {
   .Foot-blob {

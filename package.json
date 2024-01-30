@@ -39,40 +39,40 @@
   },
   "dependencies": {
     "colcade": "^0.2.0",
-    "paper": "^0.12.17"
+    "paper": "^0.12.17",
+    "pure-snow.js": "^2.1.0"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.15",
-    "avif": "^0.4.3",
+    "autoprefixer": "^10.4.16",
+    "avif": "^0.5.0",
     "chokidar": "^3.5.3",
     "chokidar-cli": "^3.0.0",
     "copyfiles": "^2.4.1",
-    "esbuild": "^0.19.2",
+    "esbuild": "^0.19.8",
     "gzip-cli": "^1.2.0",
     "html-minifier": "^4.0.0",
     "imagemin-cli": "^7.0.0",
     "imagemin-webp": "^8.0.0",
-    "imageoptim-cli": "^3.1.7",
+    "imageoptim-cli": "^3.1.9",
     "inline-source-cli": "^2.0.0",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.28",
+    "postcss": "^8.4.31",
     "postcss-calc": "^9.0.1",
     "postcss-cli": "^10.1.0",
     "postcss-csso": "^6.0.1",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^15.1.0",
-    "postcss-preset-env": "^9.1.2",
+    "postcss-preset-env": "^9.3.0",
     "serve": "^14.2.1",
     "standard": "^17.1.0",
-    "stylelint": "^15.10.3",
+    "stylelint": "^15.11.0",
     "stylelint-config-standard": "^34.0.0",
     "uglify-es": "^3.3.10"
   },
   "browserslist": [
-    "last 2 versions",
-    "not dead",
-    "> 2% in SE",
-    "not IE <= 11"
+    "> 0.5% in SE",
+    "last 3 major versions",
+    "not dead"
   ],
   "postcss": {
     "plugins": {
