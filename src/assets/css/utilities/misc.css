@@ -39,9 +39,6 @@
 
 /* Display */
 
-html:not(.has-js) .u-noJsHide {
-  display: none;
-}
 
 .u-hidden {
   display: none;

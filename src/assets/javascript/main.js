@@ -42,6 +42,8 @@ const vincent = {
 
     vincent.touchHover()
 
+    vincent.footMenu()
+
     const baseStyles = [
       'font-family: papyrus',
       'font-size: clamp(1rem, 2vw, 2rem)',
@@ -52,6 +54,26 @@ const vincent = {
       '%chttps://github.com/vincentorback/vincentorback.se',
       baseStyles
     )
+  },
+
+  footMenu: function () {
+    const isTouch = window.matchMedia('(hover: none)').matches
+
+    if (isTouch) {
+      const el = document.querySelector('.js-footMenu')
+      const toggleEl = el.querySelector('.js-footMenuToggle')
+      const subEls = el.querySelectorAll('.js-footMenuSub')
+
+      toggleEl.addEventListener('click', function () {
+        el.classList.toggle('is-active')
+      })
+
+      subEls.forEach(function (subEl) {
+        subEl.addEventListener('click', function () {
+          subEl.classList.toggle('is-active')
+        })
+      })
+    }
   },
 
   blobs: function () {

@@ -1,5 +1,5 @@
 .Type {
-  --Type-spacing: 0.7em;
+  --Type-spacing: 0.66em;
 
   line-height: var(--font-lineheight-lg);
 }

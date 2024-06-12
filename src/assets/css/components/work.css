@@ -91,6 +91,10 @@
   padding-bottom: calc((322 - 11) / 600 * 100%); /* remove 12 to match white space */
 }
 
+.Work-item--komm .Work-mediaWrap {
+  padding-bottom: calc(900 / 1500 * 100%);
+}
+
 .Work-item--sakaria .Work-mediaWrap {
   padding-bottom: calc(720 / 1280 * 100%);
   background-color: #111;
@@ -215,44 +219,27 @@ video.Work-media.is-active {
   border-radius: 0 0 3px 3px;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  .Work-info {
-    background-color: rgba(0, 0, 0, 0.75);
-    color: rgba(255, 255, 255, 0.75);
-  }
-} */
-
 @media (width >= 600px) {
   .Work-info {
     padding: 2rem 2.2rem 2.2rem;
   }
 }
 
-.Work-role,
 .Work-links {
-  margin-top: 1.8em;
-}
-
-.Work-role {
-  display: none;
-  color: var(--color-gray);
+  margin-top: 0.66em;
 }
 
 .Work-links > div + div {
-  margin-top: 0.75em;
+  margin-top: 0.1em;
 }
 
 .Work-link {
   display: inline-block;
+  font-style: normal !important;
 }
 
-@media (width >= 900px) {
-  .Work-link {
-    font-size: 1.2em;
-  }
-}
-
-.Work-link > * {
+.Work-link span,
+.Work-link svg {
   display: inline;
   vertical-align: middle;
   line-height: 1;
@@ -266,12 +253,19 @@ video.Work-media.is-active {
 }
 
 .Work-link span {
-  opacity: 1;
   transition: opacity 100ms ease;
-  border-bottom: 1.5px solid;
 }
 
-.Work-link:focus,
-.Work-link:hover span {
-  opacity: 0.7;
+.Work-link:focus-visible span {
+  text-decoration: underline;
+}
+
+@media (hover: hover) {
+  .Work-link:hover span {
+    opacity: 0.8;
+  }
+}
+
+.Work-link:active span {
+  opacity: 0.5;
 }

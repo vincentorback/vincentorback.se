@@ -36,12 +36,6 @@ html.has-blobs .Foot-list {
   color: #fff;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  html.has-js .Foot-list {
-    color: rgba(255, 255, 255, 0.87);
-  }
-} */
-
 @media (width >= 900px) {
   .Foot-list {
     font-size: 1.3rem;
@@ -82,25 +76,6 @@ html.has-blobs .Foot-list {
   height: clamp(300px, 50vw, 1000px);
 }
 
-/* @media (width >= 900px) {
-  .Foot-blob {
-    width: 1000px;
-    height: 700px;
-  }
-}
-
-@media (width >= 1800px) {
-  .Foot-blob {
-    width: 1600px;
-    height: 1200px;
-  }
-} */
-
-/* @media (prefers-color-scheme: dark) {
-  .Foot-blob {
-    filter: brightness(60%);
-  }
-} */
 
 
 .Foot-menu {
@@ -108,20 +83,15 @@ html.has-blobs .Foot-list {
   right: 0;
   bottom: 0;
   color: var(--color-dark);
-  z-index: 2;
+  z-index: 100;
 }
 
-@media (width < 500px) {
+@media (width < 380px) {
   .Foot-menu {
     color: #fff;
   }
 }
 
-/* @media (prefers-color-scheme: dark) {
-  .Foot-menu {
-    color: rgba(255, 255, 255, 0.87);
-  }
-} */
 
 
 .Foot-menuToggle {
@@ -143,6 +113,7 @@ html.has-blobs .Foot-list {
   transform: rotateZ(-135deg);
   width: 0.6em;
   height: 0.6em;
+  pointer-events: none;
 }
 
 @media (width >= 701px) {
@@ -193,6 +164,7 @@ html.has-blobs .Foot-list {
   }
 }
 
+.Foot-menu.is-active .Foot-menuContainer,
 .Foot-menu:focus-within .Foot-menuContainer,
 .Foot-menu:hover .Foot-menuContainer {
   transform: translateY(0);
@@ -289,6 +261,7 @@ html.has-blobs .Foot-list {
 }
 
 
+.Foot-menuListItem.is-active > ul,
 .Foot-menuListItem:focus-within > ul,
 .Foot-menuListItem:hover > ul {
   opacity: 1;
@@ -297,6 +270,7 @@ html.has-blobs .Foot-list {
 }
 
 @media (width < 500px) {
+  .Foot-menuListItem.is-active > ul,
   .Foot-menuListItem:focus-within > ul,
   .Foot-menuListItem:hover > ul {
     transform: translate(1px, -1px);

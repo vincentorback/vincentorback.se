@@ -1,8 +1,5 @@
 .Blob {
   pointer-events: none;
-
-  /* overflow: clip;
-  contain: paint; */
 }
 
 @keyframes blob {
