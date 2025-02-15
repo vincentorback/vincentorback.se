@@ -1,15 +1,14 @@
 :root {
   --color-blue: #0ebeff;
-  --color-cream: #ffe7d0;
+  --color-cream: #ffdab9;
   --color-dark: #2e2e2e;
-  --color-gray: #aaa;
   --color-green: #0e9a4e;
   --color-orange: #fa9227;
   --color-pink: #f0f;
   --color-red: #ff004e;
   --color-yellow: #ffcf4e;
   --color-text: var(--color-dark);
-  --color-background: var(--color-cream);
+  --color-background: #ffdab9;
   --font-sansserif:
     "Work Sans",
     system-ui,

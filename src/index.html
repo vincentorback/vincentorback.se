@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-  <link href="/assets/css/style.css?v=14" rel="stylesheet">
+  <link href="/assets/css/style.css?v=17" rel="stylesheet">
 
   <title>Vincent Orback - Freelancing web developer and designer</title>
   <meta name="description" content="Freelancing web developer and designer in Stockholm, Sweden. Get in touch if you want to work together!">
@@ -22,8 +22,8 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0e004e">
-  <meta name="msapplication-TileColor" content="#ffe3d1">
-  <meta name="theme-color" content="#ffe3d1">
+  <meta name="msapplication-TileColor" content="#ffdab9">
+  <meta name="theme-color" content="#ffdab9">
 </head>
 
 <body>
@@ -67,9 +67,55 @@
           <div class="Work-gridColumn js-gridColumn"></div>
           <div class="Work-gridColumn js-gridColumn"></div>
 
-          <article class="Work-item Work-item--teg js-gridItem" aria-label="Teg Publishing">
+          <article class="Work-item Work-item--talldungen js-gridItem" aria-label="Talldungen">
             <div class="Work-itemInner">
               <div class="Work-mediaWrap">
+                <video
+                  class="Work-media js-autoplay"
+                  playsinline
+                  muted
+                  loop
+                  disablePictureInPicture
+                  disableRemotePlayback
+                  src="/assets/video/talldungen.mp4"
+                  id="video-talldungen"
+                >
+                  <picture>
+                    <source srcset="/assets/images/talldungen.avif 600w, /assets/images/talldungen@2x.avif 1200w, /assets/images/talldungen@3x.avif 2400w" type="image/avif">
+                    <source srcset="/assets/images/talldungen.webp 600w, /assets/images/talldungen@2x.webp 1200w, /assets/images/talldungen@3x.webp 2400w" type="image/webp">
+                    <img
+                      class="Work-media"
+                      src="/assets/images/talldungen.jpg"
+                      srcset="/assets/images/talldungen.jpg 600w, /assets/images/talldungen@2x.jpg 1200w, /assets/images/talldungen@3x.jpg 2400w"
+                      sizes="(min-width: 1800px) 800px, (min-width: 800px) 40vw, 90vw"
+                      width="1200"
+                      height="864"
+                      alt="Talldungen"
+                      loading="lazy">
+                  </picture>
+                </video>
+                <button class="u-hiddenVisually js-togglePlay">Pause or resume video</button>
+              </div>
+              <div class="Work-info">
+                <div class="Work-infoText Type">
+                  <p><strong>Talldungen</strong> is a restaurant and hotel located in Brösarp, Southern Sweden. It is a warm and generous gathering place for great food and wine surrounded by <span class="u-textTruncate">breathtaking nature</span>.</p>
+                  <p>Developed in collaboration with design studio <a class="ColorLink js-splitLetters js-touchHover" href="https://malmstenhellberg.com/">Malmsten Hellberg</a>.</p>
+                </div>
+                <div class="Work-links Type">
+                  <div><a class="Work-link" href="https://talldungen.se">
+                    <svg width="8px" height="7px" aria-hidden="true">
+                      <use xlink:href="#arrow"></use>
+                    </svg>
+                    <span>https://talldungen.se</span>
+                  </a></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="Work-item Work-item--teg js-gridItem" aria-label="Teg Publishing">
+            <div class="Work-itemInner">
+              <a class="Work-mediaWrap" href="https://tegpublishing.se">
                 <picture>
                   <source srcset="/assets/images/teg-publishing.avif 600w, /assets/images/teg-publishing@2x.avif 1200w, /assets/images/teg-publishing@3x.avif 2400w" type="image/avif">
                   <source srcset="/assets/images/teg-publishing.webp 600w, /assets/images/teg-publishing@2x.webp 1200w, /assets/images/teg-publishing@3x.webp 2400w" type="image/webp">
@@ -83,7 +129,7 @@
                     alt="Teg Publishing"
                     loading="lazy">
                 </picture>
-              </div>
+              </a>
               <div class="Work-info">
                 <div class="Work-infoText Type">
                   <p><strong>Teg Publishing</strong> is a book and music publisher and media production company publishing poetry, music, documentaries <span class="u-textTruncate">and podcasts.</span></p>
@@ -103,7 +149,7 @@
 
           <article class="Work-item Work-item--komm js-gridItem" aria-label="komm">
             <div class="Work-itemInner">
-              <div class="Work-mediaWrap">
+              <a class="Work-mediaWrap" href="https://komm.se">
                 <picture>
                   <source srcset="/assets/images/komm.avif 750w, /assets/images/komm@2x.avif 1500w, /assets/images/komm@3x.avif 2250w" type="image/avif">
                   <source srcset="/assets/images/komm.webp 750w, /assets/images/komm@2x.webp 1500w, /assets/images/komm@3x.webp 2250w" type="image/webp">
@@ -117,11 +163,11 @@
                     alt="Komm"
                     loading="lazy">
                 </picture>
-              </div>
+              </a>
               <div class="Work-info">
                 <div class="Work-infoText Type">
                   <p><strong>Komm</strong>, The Swedish Association of Communication Agencies, is a trade association for companies that work with marketing and communication in Sweden.</p>
-                  <p>The websites is built using WordPress sprinkled with some SolidJS. Web design by <a class="ColorLink js-splitLetters" href="https://www.asso.gd/">Asso</a>, identity by <a class="ColorLink js-splitLetters" href="https://openstudiostockholm.com">Open Studio</a>, and development by me.</p>
+                  <p>The website is built using WordPress, sprinkled with some SolidJS. Web design by <a class="ColorLink js-splitLetters" href="https://www.asso.gd/">Asso</a>, identity by <a class="ColorLink js-splitLetters" href="https://openstudiostockholm.com">Open Studio</a>, and development by me.</p>
                 </div>
                 <div class="Work-links Type">
                   <div><a class="Work-link" href="https://komm.se">
@@ -135,34 +181,51 @@
             </div>
           </article>
 
-          <article class="Work-item Work-item--beckmans js-gridItem" aria-label="beckmans">
+          <article class="Work-item js-gridItem" aria-label="WWF Matguiden">
             <div class="Work-itemInner">
               <div class="Work-mediaWrap">
-                <picture>
-                  <source srcset="/assets/images/beckmans.avif 750w, /assets/images/beckmans@2x.avif 1500w" type="image/avif">
-                  <source srcset="/assets/images/beckmans.webp 750w, /assets/images/beckmans@2x.webp 1500w" type="image/webp">
-                  <img
-                    class="Work-media"
-                    src="/assets/images/beckmans.jpg"
-                    srcset="/assets/images/beckmans.avif 750w, /assets/images/beckmans@2x.avif 1500w"
-                    sizes="(min-width: 1800px) 800px, (min-width: 800px) 40vw, 90vw"
-                    width="1200"
-                    height="822"
-                    alt="Beckmans Formation 2022"
-                    loading="lazy">
-                </picture>
+                <svg class="Work-media" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 1200 900">
+                  <g fill="none" fill-rule="evenodd">
+                    <path fill="#FFF" d="M0 0h1200v900H0z"/>
+                    <g fill-rule="nonzero">
+                      <path fill="#E5A29A" d="M-31-130h373v1160H-31z"/>
+                      <path fill="#C9DAA4" d="M358-130h432v1160H358z"/>
+                      <path fill="#478B9E" d="M806-130h394v1160H806z"/>
+                    </g>
+                    <path fill="#000" fill-opacity=".5" fill-rule="nonzero" d="M153 248h922v435H153z"/>
+                    <path fill="#FFF" fill-rule="nonzero" d="M125 218h922v435H125z"/>
+                    <path fill="#000" fill-rule="nonzero" d="M290.3 540a4.6 4.6 0 0 0-4.3 3.1l-8.8 23.2-.8 2.6-.8-2.6-6.8-22.5v-.2c-.7-2-2.4-3.3-4.4-3.3h-11.2a4.7 4.7 0 0 0-4.4 4.8c0 .9.11 1.7.5 2.5l1.5 4.7-5.5 14-.8 2.6-.7-2.6-6.8-22.5v-.3a4.7 4.7 0 0 0-4.4-3.2h-11.1a4.8 4.8 0 0 0-4.5 4.8c0 .9.11 1.7.6 2.5l16.4 50.8c.5 2 2.2 3.5 4.3 3.6 2.1 0 4-1.3 4.6-3.4l11.6-30.2.8-2.7.7 2.7 9.11 30a4.6 4.6 0 0 0 9 .2l19.11-51.6c.3-.6.5-1.3.5-2a5 5 0 0 0-1.3-3.5c-.9-1-2.1-1.5-3.4-1.5m83.9 1c-2 0-3.8 1.2-4.5 3l-8.9 22.9-.8 2.6-.7-2.7-7-22.1v-.2a4.7 4.7 0 0 0-4.5-3.2h-11.1a4.7 4.7 0 0 0-4.5 4.7c0 .9.11 1.7.5 2.5l1.5 4.6-5.5 13.8-1 2.5-.6-2.6-6.9-22.1v-.3a4.6 4.6 0 0 0-4.4-3.1h-11.3a4.7 4.7 0 0 0-4.5 4.7c0 .8.3 1.6.5 2.4l16.8 50a4.6 4.6 0 0 0 4.6 3.6c2 0 3.8-1.4 4.4-3.3l11.8-29.11.8-2.7.7 2.6 10 29.11a4.7 4.7 0 0 0 9.1 0l20-50.7a4.8 4.8 0 0 0-4.3-6.7m52.3.1H388a4 4 0 0 0-2.8 1.3c-.8.7-1.2 1.8-1.2 2.9v52.4c.1 2.4 2 4.2 4.3 4.3h11c2.4 0 4.3-2 4.3-4.5v-24.4h15.7c2.4 0 4.3-2 4.3-4.3 0-2.4-2-4.4-4.3-4.4h-15.7v-14.1h23.3a4.6 4.6 0 0 0 4.1-4.8c0-2.4-2-4.4-4.3-4.5m-59.11-165.6c7.2 8 8 31.9 26 22.4 10.8-5.7 10.6-29.11-3.8-38.5-11.7-7-18 2.4-22.3 13.8-.4.7-.4 1.5 0 2.2m-28.1-3.2c-7.5 6.3-12.6 23.5-26.3 17.6-11-5.7-12-28 7-38.1 13.2-6.2 20 6 20.1 19-.1.6-.4 1.1-.8 1.5m18.8 41.7c7.5-.8 5.8-7.8 0-9.11a70 70 0 0 0-18.2-2.4c-9.11.2-9.11 7.6-4.4 8.8 3.8.8 7.2 3 9.11 6 3 5.8 1.7-1.7 13-3M393.6 293c9.1-15.4 25-12.4 33-4.7 8.7 8.5 10 18 6.7 24.8-4.5 9.1-16.3 20.2-23.8 9.11-3.9-5-8.8-9.1-14.3-12-6-2.6-7.2-8-1.6-17.5"/>
+                    <path fill="#000" fill-rule="nonzero" d="M359 430.6c-4 10.7-24.8 7-25.5-3.3 0-.4.5-.3.8-.3 7.9 2 16 3.1 24.1 3.4.3 0 .8 0 .7.4m71-70.8c-1-2.8-2.3-2.6-2.2-.4.7 28.2-16 58.5-51.8 58.6-9.11 0-6.5 14.8-23.2 7.4-12-8.2-19 8-27.5-9.11-1.2-4-4.4-7-8.5-8-35.4-8.7-46.6-57.7-15.5-97.2 6.2 3.7 8.5 4.3 15-1.8a45 45 0 0 1 12.4-7.9c7.5-2.9 11.5-6 5-20.4-8.3-18.7-25.3-13.3-33-7-8.8 7.3-15 19-3.6 33a76.1 76.1 0 0 0-36.4 70.7c.7 24.4-5.5 22.4 2.3 47.2.7 2.2-.9 2.1-2 1.4-33.1-21.2-51-86 .6-121.8 1.1-1 .7-2.4-3.6 0C213.7 328 209.11 374 217 404.9c3.7 15-1.9 17.7 4 37.4 13 41 24.3 44.3 40.5 45.5 29 0 9.11-16.1 10.4-36.5 0-1.2 1.4-1.8 2.2.7 16 36 27.4 68.9 69.11 65.8 24.3-3.3 10.8-15.4 9.11-22.2-17.9-59.11 25.6-73.9 13.3-15.6-8.1 33.2 17.5 29.11 35.6 18 18.5-12.1 41.7-93.3 28.3-138"/>
+                    <path fill="#000" fill-rule="nonzero" d="M257 493a10 10 0 1 0 0 20 10 10 0 0 0 0-20m8.5 10a8.3 8.3 0 1 1-16.7.1 8.3 8.3 0 0 1 16.7-.1"/>
+                    <path fill="#000" fill-rule="nonzero" d="M259.11 504.9a2.2 2.2 0 0 1-2.5 2 3 3 0 0 1-2.8-3.3 2.8 2.8 0 0 1 2.8-3.2c1.1 0 2.1.7 2.4 1.8h1.2a3.5 3.5 0 0 0-3.6-3.2 4.1 4.1 0 0 0-4.3 4.6 4.2 4.2 0 0 0 4.3 4.4c1.9 0 3.5-1.4 3.7-3.2h-1.2ZM422.5 516a9.11 9.11 0 1 0 0 19 9.11 9.11 0 0 0 0-19m8 9.11a8 8 0 1 1-16 0 8 8 0 0 1 16 0"/>
+                    <path fill="#000" fill-rule="nonzero" d="M419.11 525v-3h1.9c1 0 2 .3 2 1.4 0 1-1 1.4-2.3 1.4h-1.6Zm0 1.1h1.6l2.5 3.9h1.5l-2.7-4c.7 0 1.3-.3 1.8-.7.4-.5.7-1 .7-1.7 0-1.8-1.1-2.6-3.3-2.6H418v9h1.5l-.1-3.9Zm274 17.9V370.4L658.5 544h-28.3l-34.9-173.6V544H568V318h45.2l32.1 164.2L677.4 318H722v226zm127.2 0-8.2-53h-38.7l-7.8 53H734l39-226h39.1L854 544h-33.4ZM792 365l-14 94.2h29L792 365Zm121.1-15.9V544h-31.2V349.1H839V318h117v31.1z"/>
+                    <path stroke="#000" stroke-width=".7" d="M503.5 610V256"/>
+                  </g>
+                </svg>
               </div>
               <div class="Work-info">
                 <div class="Work-infoText Type">
-                  <p><strong>Beckmans College of Design’s</strong> degree exhibition show Formation with projects made by the graduating students from the classes of 2022.</p>
-                  <p>Design by <a class="ColorLink js-splitLetters" href="https://ericrosmark.com">Eric Rösmark</a>. Built using Next.js and Prismic.</p>
+                  <p><strong>WWF Matguiden</strong> is a mobile app combining the three WWF consumer guides: The Fish Guide, the Meat Guide and the Vego Guide. The guides let you as a consumer make more informed choices when <span class="u-textTruncate">buying food.</span></p>
+                  <p>The app is built using <span class="u-textTruncate">React Native.</span></p>
                 </div>
                 <div class="Work-links Type">
-                  <div><a class="Work-link" href="https://2022.beckmans.college">
+                  <div><a class="Work-link" href="https://apps.apple.com/se/app/wwf-matguiden/id1585806572">
                     <svg width="8px" height="7px" aria-hidden="true">
                       <use xlink:href="#arrow"></use>
                     </svg>
-                    <span>https://2022.beckmans.college</span>
+                    <span>Apple App Store</span>
+                  </a></div>
+                  <div><a class="Work-link" href="https://play.google.com/store/apps/details?id=se.wwf.matguiden">
+                    <svg width="8px" height="7px" aria-hidden="true">
+                      <use xlink:href="#arrow"></use>
+                    </svg>
+                    <span>Google Play Store</span>
+                  </a></div>
+                  <div><a class="Work-link" href="https://www.wwf.se/mat-och-jordbruk/matguiden/">
+                    <svg width="8px" height="7px" aria-hidden="true">
+                      <use xlink:href="#arrow"></use>
+                    </svg>
+                    <span>https://www.wwf.se/matguiden</span>
                   </a></div>
                 </div>
               </div>
@@ -220,51 +283,34 @@
             </div>
           </article>
 
-          <article class="Work-item js-gridItem" aria-label="WWF Matguiden">
+          <article class="Work-item Work-item--beckmans js-gridItem" aria-label="beckmans">
             <div class="Work-itemInner">
-              <div class="Work-mediaWrap" style="background-color:#fff;">
-                <svg class="Work-media" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 1200 900">
-                  <g fill="none" fill-rule="evenodd">
-                    <path fill="#FFF" d="M0 0h1200v900H0z"/>
-                    <g fill-rule="nonzero">
-                      <path fill="#E5A29A" d="M-31-130h373v1160H-31z"/>
-                      <path fill="#C9DAA4" d="M358-130h432v1160H358z"/>
-                      <path fill="#478B9E" d="M806-130h394v1160H806z"/>
-                    </g>
-                    <path fill="#000" fill-opacity=".5" fill-rule="nonzero" d="M153 248h922v435H153z"/>
-                    <path fill="#FFF" fill-rule="nonzero" d="M125 218h922v435H125z"/>
-                    <path fill="#000" fill-rule="nonzero" d="M290.3 540a4.6 4.6 0 0 0-4.3 3.1l-8.8 23.2-.8 2.6-.8-2.6-6.8-22.5v-.2c-.7-2-2.4-3.3-4.4-3.3h-11.2a4.7 4.7 0 0 0-4.4 4.8c0 .9.11 1.7.5 2.5l1.5 4.7-5.5 14-.8 2.6-.7-2.6-6.8-22.5v-.3a4.7 4.7 0 0 0-4.4-3.2h-11.1a4.8 4.8 0 0 0-4.5 4.8c0 .9.11 1.7.6 2.5l16.4 50.8c.5 2 2.2 3.5 4.3 3.6 2.1 0 4-1.3 4.6-3.4l11.6-30.2.8-2.7.7 2.7 9.11 30a4.6 4.6 0 0 0 9 .2l19.11-51.6c.3-.6.5-1.3.5-2a5 5 0 0 0-1.3-3.5c-.9-1-2.1-1.5-3.4-1.5m83.9 1c-2 0-3.8 1.2-4.5 3l-8.9 22.9-.8 2.6-.7-2.7-7-22.1v-.2a4.7 4.7 0 0 0-4.5-3.2h-11.1a4.7 4.7 0 0 0-4.5 4.7c0 .9.11 1.7.5 2.5l1.5 4.6-5.5 13.8-1 2.5-.6-2.6-6.9-22.1v-.3a4.6 4.6 0 0 0-4.4-3.1h-11.3a4.7 4.7 0 0 0-4.5 4.7c0 .8.3 1.6.5 2.4l16.8 50a4.6 4.6 0 0 0 4.6 3.6c2 0 3.8-1.4 4.4-3.3l11.8-29.11.8-2.7.7 2.6 10 29.11a4.7 4.7 0 0 0 9.1 0l20-50.7a4.8 4.8 0 0 0-4.3-6.7m52.3.1H388a4 4 0 0 0-2.8 1.3c-.8.7-1.2 1.8-1.2 2.9v52.4c.1 2.4 2 4.2 4.3 4.3h11c2.4 0 4.3-2 4.3-4.5v-24.4h15.7c2.4 0 4.3-2 4.3-4.3 0-2.4-2-4.4-4.3-4.4h-15.7v-14.1h23.3a4.6 4.6 0 0 0 4.1-4.8c0-2.4-2-4.4-4.3-4.5m-59.11-165.6c7.2 8 8 31.9 26 22.4 10.8-5.7 10.6-29.11-3.8-38.5-11.7-7-18 2.4-22.3 13.8-.4.7-.4 1.5 0 2.2m-28.1-3.2c-7.5 6.3-12.6 23.5-26.3 17.6-11-5.7-12-28 7-38.1 13.2-6.2 20 6 20.1 19-.1.6-.4 1.1-.8 1.5m18.8 41.7c7.5-.8 5.8-7.8 0-9.11a70 70 0 0 0-18.2-2.4c-9.11.2-9.11 7.6-4.4 8.8 3.8.8 7.2 3 9.11 6 3 5.8 1.7-1.7 13-3M393.6 293c9.1-15.4 25-12.4 33-4.7 8.7 8.5 10 18 6.7 24.8-4.5 9.1-16.3 20.2-23.8 9.11-3.9-5-8.8-9.1-14.3-12-6-2.6-7.2-8-1.6-17.5"/>
-                    <path fill="#000" fill-rule="nonzero" d="M359 430.6c-4 10.7-24.8 7-25.5-3.3 0-.4.5-.3.8-.3 7.9 2 16 3.1 24.1 3.4.3 0 .8 0 .7.4m71-70.8c-1-2.8-2.3-2.6-2.2-.4.7 28.2-16 58.5-51.8 58.6-9.11 0-6.5 14.8-23.2 7.4-12-8.2-19 8-27.5-9.11-1.2-4-4.4-7-8.5-8-35.4-8.7-46.6-57.7-15.5-97.2 6.2 3.7 8.5 4.3 15-1.8a45 45 0 0 1 12.4-7.9c7.5-2.9 11.5-6 5-20.4-8.3-18.7-25.3-13.3-33-7-8.8 7.3-15 19-3.6 33a76.1 76.1 0 0 0-36.4 70.7c.7 24.4-5.5 22.4 2.3 47.2.7 2.2-.9 2.1-2 1.4-33.1-21.2-51-86 .6-121.8 1.1-1 .7-2.4-3.6 0C213.7 328 209.11 374 217 404.9c3.7 15-1.9 17.7 4 37.4 13 41 24.3 44.3 40.5 45.5 29 0 9.11-16.1 10.4-36.5 0-1.2 1.4-1.8 2.2.7 16 36 27.4 68.9 69.11 65.8 24.3-3.3 10.8-15.4 9.11-22.2-17.9-59.11 25.6-73.9 13.3-15.6-8.1 33.2 17.5 29.11 35.6 18 18.5-12.1 41.7-93.3 28.3-138"/>
-                    <path fill="#000" fill-rule="nonzero" d="M257 493a10 10 0 1 0 0 20 10 10 0 0 0 0-20m8.5 10a8.3 8.3 0 1 1-16.7.1 8.3 8.3 0 0 1 16.7-.1"/>
-                    <path fill="#000" fill-rule="nonzero" d="M259.11 504.9a2.2 2.2 0 0 1-2.5 2 3 3 0 0 1-2.8-3.3 2.8 2.8 0 0 1 2.8-3.2c1.1 0 2.1.7 2.4 1.8h1.2a3.5 3.5 0 0 0-3.6-3.2 4.1 4.1 0 0 0-4.3 4.6 4.2 4.2 0 0 0 4.3 4.4c1.9 0 3.5-1.4 3.7-3.2h-1.2ZM422.5 516a9.11 9.11 0 1 0 0 19 9.11 9.11 0 0 0 0-19m8 9.11a8 8 0 1 1-16 0 8 8 0 0 1 16 0"/>
-                    <path fill="#000" fill-rule="nonzero" d="M419.11 525v-3h1.9c1 0 2 .3 2 1.4 0 1-1 1.4-2.3 1.4h-1.6Zm0 1.1h1.6l2.5 3.9h1.5l-2.7-4c.7 0 1.3-.3 1.8-.7.4-.5.7-1 .7-1.7 0-1.8-1.1-2.6-3.3-2.6H418v9h1.5l-.1-3.9Zm274 17.9V370.4L658.5 544h-28.3l-34.9-173.6V544H568V318h45.2l32.1 164.2L677.4 318H722v226zm127.2 0-8.2-53h-38.7l-7.8 53H734l39-226h39.1L854 544h-33.4ZM792 365l-14 94.2h29L792 365Zm121.1-15.9V544h-31.2V349.1H839V318h117v31.1z"/>
-                    <path stroke="#000" stroke-width=".7" d="M503.5 610V256"/>
-                  </g>
-                </svg>
-              </div>
+              <a class="Work-mediaWrap" href="https://2022.beckmans.college">
+                <picture>
+                  <source srcset="/assets/images/beckmans.avif 750w, /assets/images/beckmans@2x.avif 1500w" type="image/avif">
+                  <source srcset="/assets/images/beckmans.webp 750w, /assets/images/beckmans@2x.webp 1500w" type="image/webp">
+                  <img
+                    class="Work-media"
+                    src="/assets/images/beckmans.jpg"
+                    srcset="/assets/images/beckmans.avif 750w, /assets/images/beckmans@2x.avif 1500w"
+                    sizes="(min-width: 1800px) 800px, (min-width: 800px) 40vw, 90vw"
+                    width="1200"
+                    height="822"
+                    alt="Beckmans Formation 2022"
+                    loading="lazy">
+                </picture>
+              </a>
               <div class="Work-info">
                 <div class="Work-infoText Type">
-                  <p><strong>WWF Matguiden</strong> is a mobile app combining the three WWF consumer guides: The Fish Guide, the Meat Guide and the Vego Guide. The guides let you as a consumer make more informed choices when <span class="u-textTruncate">buying food.</span></p>
-                  <p>The app is built using <span class="u-textTruncate">React Native.</span></p>
+                  <p><strong>Beckmans College of Design’s</strong> degree exhibition show Formation with projects made by the graduating students from the classes of 2022.</p>
+                  <p>Design by <a class="ColorLink js-splitLetters" href="https://ericrosmark.com">Eric Rösmark</a>. Built using Next.js and Prismic.</p>
                 </div>
                 <div class="Work-links Type">
-                  <div><a class="Work-link" href="https://apps.apple.com/se/app/wwf-matguiden/id1585806572">
+                  <div><a class="Work-link" href="https://2022.beckmans.college">
                     <svg width="8px" height="7px" aria-hidden="true">
                       <use xlink:href="#arrow"></use>
                     </svg>
-                    <span>Apple App Store</span>
-                  </a></div>
-                  <div><a class="Work-link" href="https://play.google.com/store/apps/details?id=se.wwf.matguiden">
-                    <svg width="8px" height="7px" aria-hidden="true">
-                      <use xlink:href="#arrow"></use>
-                    </svg>
-                    <span>Google Play Store</span>
-                  </a></div>
-                  <div><a class="Work-link" href="https://www.wwf.se/mat-och-jordbruk/matguiden/">
-                    <svg width="8px" height="7px" aria-hidden="true">
-                      <use xlink:href="#arrow"></use>
-                    </svg>
-                    <span>https://www.wwf.se/matguiden</span>
+                    <span>https://2022.beckmans.college</span>
                   </a></div>
                 </div>
               </div>
@@ -273,11 +319,12 @@
 
           <article class="Work-item Work-item--small Work-item--saqmi js-gridItem" aria-label="SAQMI">
             <div class="Work-itemInner">
-              <div class="Work-mediaWrap">
-                <svg class="Work-media" viewBox="0 0 1502 480" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <a class="Work-mediaWrap" href="https://saqmi.se">
+                <svg class="Work-media" viewBox="0 0 1502 480" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" aria-labelledby="saqmiTitle">
+                  <title id="saqmiTitle">SAQMI</title>
                   <path fill="#111" fill-rule="evenodd" d="M787 1h3c1-1 3 0 4 1l2-1 1 1h17l2 1h4l6 1 3 1 3 1 4 1h7l3 1h6l2 3 1-1 4 1v1l6 2 6 2 3 2 3 1 1 2 1-1c1 1 3 1 3 3h2l6 5 4 2 3 4 4 2 4 4h1v1h2v1c2 0 2 2 3 3l3 2 1 1 2 1 1 2h1c1 1 1 2 3 2l1 2 1 1 2 1v1l6 6c-1 1 0 2 1 2l1 1 2 2a67 67 0 015 7l1 1 4 6 3 4 3 6 1 2 2 2 2 4 2 3 1 3 1 2 2 4v1l2 3 2 5 1 3 2 2v2l1 1v1l1 2v2l1 3v3l1 2 1 3v6l1 2v5l1 4 1 4v1l1 4v1l1 1v4l1 2v7h-1l2 6 1 10v2l-1 6c1 0 0 0 0 0v4l-1 1h1l-1 5v9l-1 2v2l-1 4v1l-1 3v2l-2 2v3c0 2-2 2-3 3l1 3-1 3-1 2-1 3v1l-1 3-1 1-1 1v3l-1 3-2 2 1 4-2 1h1l-2 3v2l-1 1v1l-2 4-2 2v1l-3 6-2 2-1 2v2l-1 1v1l-2 1v1l-3 4-1 2-1 2-2 1-1 1-1 2-4 5h-1c0 2-2 3-3 5l-2 2-3 2v1l-4 3-2 3-2 1-2 2h-1l-2 2-1 1c-2 1-3 3-6 3l-1 2h-1c-1 1-1 3-3 3l-2 2c-2 0-3 1-3 2l-3 3-4 1c0 2-2 2-3 3l-2 1-1 1-3 1-2 2c-1-2-2 0-4-1l-1 2h-2l-3 3h-7l-1 1h-1l-3 1-1 1h-2v6l-1 3v1l1 4h-1l2 4v3l-1 1v6l-1 1v3l1 2-1 2-1 5v1l1 1v1l1 1-1 3v7l1 8v4l-1 4 1 2c-2 2 0 4 0 5l-2 3-1 3v4h-1l-1 4-1 1-4 1h-4l-4-2-1 2-1-1-1 1h-2v1h-3l-1-1h-5v1h-1l-1 1-1-1-5 1h-6l-2 1h-5l-3 1h-6l-1-1-1 1-4-1h-45l-5-1h-2a497 497 0 01-8-7l1-2-1-2 1-2-1-7v-4l-1-2 1-2-1-3v-5l-1-9 1-2-1-2v-33l1-2v-1l-1-1 1-2-1-2v-1l1-1-2-1h-3l-2-1-5-2-1-1h-2c-2 0-5 0-7-2l-2-1h-2l-4-2-6-3-4-2-5-4-4-3-2-1-2-2-1-1h-1l-2-2-6-5-2-2-3-3-3-3-4-4v-1l-2-1-2-2-2-3-2-2-6-8-2-3-1-3-1-1-4-5v-1l-3-4-1-2-4-5-1-2-1-2-3-4v-1l-3-5h1l-2-2-1-2-2-6-1-3-1-2-1-1v-4l-2-4-2-3-1-3-1-4-1-3v-2l-1-4v-2l-1-1-1-6v-6h-1l-1-7v-9l-1-11 1-1-1-1 1-7v-10h1v-1l1-5 1-1-1-3 1-1v-2l1-5 1-4 1-2 1-4 2-3c-1-4 1-6 2-9l1-2 1-3 1-2 2-4 1-3 1-1v-2l2-1v-5l2-1v-2c1-1 3-2 2-5h1v-2l1-1h-1l2-2v-2l1-3 2-4 1-1 1-3c2-1 1-2 2-3l1-2 2-5h1v-1l2-1 1-3 2-2 1-1 1-2 6-8 2-2 1-1 1-2 1-1 1-1 1-1 2-2 1-2 2-2h1l4-4 2-2 2-2 1-1h1l1-2 2-1 7-4 4-3h2c2-4 6-6 8-7 1-2 4-2 5-3h1l3-2 3-1v-1h2l3-2 5-2 1-1h1l2-1h3l1-1 2-1 7-2 5-1 4-1h2l2-1h3l2-1h4l3-1h4V2h7l3-1h18m226 357v-6l1-3v-19h1l-1-4 1-2v-1l-1-1v-20l1-1v-4l-1-1v-8l1-1-1-3v-10l-1-2 1-2 1-2h-2v-5c2-1 1-3 0-5h-1l1-1v-13l-1-2 1-3-1-2v-10l1-3v-9l1-2v-2l-1-3v-13l1-5 1-3v-3l-1-12 1-10v-6l1-3v-7c1 0 1 0 0 0v-12l1-2v-17l1-5v-9l1-2 1-4h-1V84h1l-1-7V67l1-2 1-5v-1l-1-4 1-3v-1l1-1v-5l2-4v-2l1-3v-3l2-4v-5l1-1h1l1-3 2-2 1-1 6-3 2-1h3l1 2 2 2h2l1 1h2l1 1h1c0 1 0 2 2 2v1l2 3h3c0 1 2 1 2 3l1 1 1 1 2 2 1 1 1 1v1c0 1 2 2 1 3l3 3 2 3 2 2 2 4 3 2 1 1v1l3 4-1 1 2 1v3h1l2 4h1l2 3 2 3 1 1 1 2 1 2 1 2v2l4 3 2 2 1 3 1 2h1l1 3 1 1 1 3 1 1 1 1h2v2l2 2c1 1 2 1 2 3h2l-1 3 2 1 1 1 2 2-1 1 2 2 3 2v3h1v2l1 1 1-1 3 4v3l2 2 1 1 3 4 1 1 3 3 2 4 1 1h-1l1 2a252 252 0 013 3v2l2 2 2 2h-1l2 1v1h2v2l2 2h2l1 2v2l1 1v2l4 4v1l2 2 3 2 2 2 2 3h-1l2 1 3-6 3-4 3-4 1-2 2-3 1-2 1-3 2-2 4-5 5-7 3-3 2-3 1-2 4-5 3-4 2-2 1-2 2-2 2-3 2-3 1-3 4-5 2-3 1-1v-2l3-3 3-4 3-3 1-2 1-2 3-4 3-4 2-2 2-3 3-3 2-2 2-1 1-2 1-2 4-4v-1l1-2 2-3 4-4 2-3 1-1 1-2 4-4 1-1 1-1 3-3 2-3 1-1 1-2 1-2 2-3 2-2 2-2 3-3 2-2 2-3 1-1 1-3 2-1c1-1 2-2 4-1l3-1h2l4 1 6 3 2 2v1l2 2v1l-1 4 2 2v2l-2 2v4h-1v2l1 1v2l-1 1v1l1 1-1 1 2 2h-2v4a451 451 0 011 3v4l-1 4v15l1 1-1 3h1l-1 2h1v5l1 3v2c-1 2-2 3-1 4v4l1 2c-1 1-2 2-1 3v2h-1v2l2 3v2l-2 2 1 3 1 1v4l-1 3 1 2v11c-1 3-1 6 1 9l-1 1c0 2-1 3 1 4l-1 2v3l1 1-1 2v2l1 4 1 1v2l-2 1 1 2v3l1 3v1l-1 2c1 2 1 4-1 6l1 5v6l-1 8v2l1 1v11l-1 2v1l1 3v6l-1 2 1 5v6l1 5c-1 1-2 2-1 4l-1 5 1 5-1 1v21l-1 5-1 2v2l1 1v5l-1 3v6s-1 0 0 0v7l1 1-1 1 1 2v2l-1 2v6h1v1l-1 2 1 3v2l1 3-2 2 1 2h1c0 1-2 2 0 4l-1 3h1v1l-1 2 1 2v6l-1 1 1 3v1l-1 1v4h-1v1l2 1 1 1-3 4-3-2h-1l-2 1h-2c-2 2-5 2-7 2v-1h-4l-2 3-3-1-1 1-4-1h-12l-3 1h-4l-2 1-2-1h-4l-3 1h-4v-1h-12l-4 1-1-1h-2l-4 1-2 1-5-2v1c-2 0-4 1-6-1h-8l-1 1-4-1-5-1h-5l-1 1h-1l-1-1h-2l-1 1h-4l-1 1h-2l-2-1h-2l-3 1-4-1-1 1h-1l-1-1-5 2h-8l-8-1h-5l-1-1h-1l-4 1-2-1h-7v1l-4-1h-13l-4 1c-4-1-4-2-9 0l-5-1-2 1-4-1h-6l-3-1h-4l-1 1-1-1h-7l-4-2-2 2-8 1v-1l-2 1-4-1h-3l-5-1-1 2h-12l-5 1h-2l-3 1h-3l-1-2h-1l-1-1-1-1-3-1-2-2-1-3-2-3 1-1h1v-15m-809 30l-2 2-4 1h-7l-1 1h-5l-3 1h-5l-7 1-2 1v-1h-2l-1 1h-10l-4-1h-5l-3-1v-1l-1-1-1 2-4-1-1 1a570 570 0 00-5-2h-3l-2-1-4-1h-3l-3-1-2-1-1-1-2 1-1-1c-2 1-3 0-4-2h-4l-2 1c-1-1-1-2-3-2l-1-1-3-1h-1v-1l-5-1h-4l-4-2-2-2h-6l-1-2h-2l-1-2h-1l-1 1c-1 1-2-1-3-1l-1-1-3-1h-1l-2-3h-1l-2-1v-1l-1-1h-2c-1 1-2 0-3-1l-4-3-4-1-2-3-2-3h-3c-2 0-2-2-4-3l-2-1-2-1-1-2h-1l-1-2h-2l-2-4h-1l-1-1-2-1-5-6c-2 0-3 0-5-2l1-2H2l1-1-1-2H1l-1-1 4-2 2-3 4-4 1-2 1-1 1-3 2-2 3-5 2-2 1-2 2-2v-1h1v-1l5-5-1-1h1c2 0 3-2 4-3v-1l2-2 1-2 3-4v-1l3-3 1-2 1-1v-2l2-2 2-2v-2l2-3a866 866 0 004 0v-2l3 1h3l2 1 2 2 6 3c2 0 3 2 4 3 1-1 2 1 3 1l2 2 2 1 5 2 5 3 2 2 3 1 3 2 3 2h2l2 1h1c0 2 2 2 3 2l7 4 2 2 5 1 1 1h2l9 3 5 1 1 1 2-1 1 1h18l4-1 6-1 5-2 3-1 3-2 1-1 2-2h1v-3l2-2v-3l2-3v-2l1-2-3-4-1-5-1-2-1-1-4-4h-1l-5-5-1-1-10-3-5-2h-2l-3-2h-3l-3-1-1-1c-1 1-2 0-4-1l-3-1h-2l-1-1h-2v-1l-3-1-3-1-3-1v-1h-3l-6-2h-2v-1h-1l-2-1-1 1-1-2h-2l-3-1-2-1-3-1-4-2-5-2-2-2h-2l1-2h-3l-2-2h-2l-4-2-2-1-2-1-3-2-2-1-1-2-3-2-2-3-1-1-2-2-1-1-3-3c-1-1-3-2-3-4l-2-1-1-2-4-5-2-3-4-5-1-2-1-3-2-3 1-1-2-2-2-4-1-1v-2l-2-7v-2h-1l-1-5v-2l-1-7 1-2-1-6 1-3 1-1-1-4v-3l1-3 1-2v-3l1-2v-4l1-1v-3l1-3 1-1c-1-1 0-3 1-4v-3l3-6 2-5 1-1v-1a25 25 0 014-6l5-5 1-1 1-3 2-2 3-4 1-1 2-2 2-3 3-2 3-3 2-1 2-1 3-3 6-5h1l2-2 3-2 3-2 3-1h1l1-1v-1l5-2 1-1 3-1 4-2 1 1v-1h2v-1h4l2-1 5-1 5-2h1l3 1c1-1 1-2 3-2h4l1-1h3l1 1h1l4-1 3-1h5l6-1 2 1 2-1h8l2 1 2-1 3 1h9l3 1h4l5 1 4 1 6 2 4 2v-1l1 2h2l2 1h2l1 2 3 1 1 1 3 1 3 1 3 2 3 1 6 4 1 1h2l1 1c1 1 1 2 2 1 1 0 1 2 2 1l1 1 1 1 2 1 1 1 1 1h1l2 2 4 3 3 3 2 3c2 0 3 2 5 3l5 4 1 1 1 1 3 3 2 3v2l2 1 1 1v1l2 1h1l1 2h2l1 1v2l-1 1-2 2-2 1v2h1l-1 3c-1 2-3 3-3 6l-2 2v1h-1l-1 4-1 1-1 3-1 1-1 2-1 1v1l-2 1v2l-3 3-2 5-1 2-2 2-1 1-1 2-3 3-4 5-3 4-1 2-2 2-3 3h-5c-2-1 0-2-1-3l-1-1-4-1-1-2h-2v-1h-1l-2-1-2-1-6-3-1-1h-1v-1l-4-2-3-1-1-2-5-1-5-3h-1l-2-1-3-2-2-1-3-2-2-2h-1l-5-2-2-1-5-2-2-1-1-1-4-2-3-1-1-1h-14c-1 2-3 2-4 2l-1 1-2-1-3 1-2 2-6 4-1 2c0 1-2 1-2 3v1l-1 2h-1l-1 5 1 1v6l2 3 1 3h1l3 4 2 3 3 3h2l1 1 2 1 5 2v1l4 2 5 2 5 1 2 2v-1l2 2 3 1 4 1 1 1h2l2 1h4l1 1h1l3 1 2 1c0 1 2 1 1 2l4 1 3 2 5 1 1 1 2 1h2l1 2 7 2h2l1 1 3 1h-1 2l4 3 7 3 3 3h1l2 1 2 1 1 1 3 1 2 3c0 1 1 2 3 2l2 2 1 2v1l3 2 1 2 2 1 1 2v2l2 1 4 4 3 4v1l2 2h1l1 2 1 2 2 1 1 3h1l1 3 2 3v1c3 2 3 5 3 8l2 2v3h1l1 5 1 3 1 5v2l1 1v4l1 1v4l1 1v14l-1 2-1 6-1 1v9l-2 5v3l-2 3-1 1c0 2 0 3-2 4v4l-2 2-1 1-6 7-4 6-2 3-3 3-1 2-3 2-6 6h-1l-3 3-4 4h-1l-2 1-4 2-4 2-4 2c-2 0-2 1-3 2l-2 1-4 2-4 1-7 3h-1l-1 1h-4l-3 1-1 1c-3 0-5 2-8 1M483 42h1l1 2v1l2 2 1 1v3l1 1v1l1 2 2 2 1 4v2l1 2-1 1c1 5 1 4 3 6l1 6 2 3v3l1 1v3l1 5 1 1 2 4h-1l1 1v2c1 1 2 3 1 5l1 1 2 5v3h1v1l1 1v2l1 1 2 5-1 1 2 2 2 5 1 1v3l2 1h-1l1 2v2l2 1v3l1 1 3 6v5l2 1 2 6 1 3v1l1 2 1 2v2l2 5v1l1 1-2 1 2 1c1 1 1 4 3 5v2l1 4v2l3 3v2c2 2 3 3 2 5l1 1v4l2 1 1 5 1 1 2 3c0 2 1 4 3 5l1 3v3c2 0 2 2 3 3l1 2 2 4 1 3 2 7 1 6 1 1 1 3 1 1 1 6h1v3l1 5 1 1-1 5 1 1 3 2v3c2 2 2 3 2 6l2 2 2 6v2l1 3 1 2v2h1l2 3h-1l1 1v1l1 1 2 5 1 2 1 1v3l1 4 1 2v1l2 1 1 2v3c2 1 1 2 2 3l1 2 1 1v3l1 2 1 1 1 2 1 1 1 4 1 1-1 2 2 2 3 4 1 1 1 1c-1 1-2 2-1 4l2 3-1 3c-1 1-1 2-3 2h-2l-2 1h-7l-1-1-1 1h-17l-1-1v1l-7 1-7-1-3 1h-10l-4 1-3-1v1c-1-1-3-2-4-1h-4l-3-1h-6l-2-1v1h-8c-1-1-2 1-2 1l-4-1h-3l-1-1-1 1c-1 1-2-1-4 1l-2-2-1 1h-5l-1-1h-1l-2 1h-13l-3-1h-31l-3 1-1-1-3 1h-4l-3-1h-16l-2 1-6-1-2 1h-5l-1-1v1l-1-1h-3l-2 1h-4l-4-1h-25l-2-1h-3l-1 1h-6l-6-1-4 1h-13l-4-1h-3l-2-1h-1l-2-2-1 1v-1l-1-2c-2 0-3-1-3-2-1-2 0-3 1-5l1-1 2-2v-3l3-2-1-1 1-2 2-3-1-1 2-3 1-1 1-3 1-4 3-4v-4l2-2v-2l2-5v-1l3-4-1-2 3-3v-2l1-6 1-2 2-5 3-6v-2l1-4v-1c1-1 2-2 1-3 2-1 3-3 3-5v-1c1-2 1-4 3-5l1-2v-1l3-10v-1c2-1 2-3 2-4l2-5v-2h1l2-5v-1l2-4v-1h2v-2l1-2c0-3 1-5 3-7v-2l2-4 2-5 1-1c-1-1 0-3 1-4v-1l1-2v-2l2-1 1-4 1-2v-2l2-3 2-4v-1l1-2 1-4h1v-3l1-1v-2l2-4 2-3v-1l1-3 1-3 1-1v-2l2-4 1-2h1v-3l1-2v-2l1-1v-2l2-2 1-2 1-5 2-1c0-2 1-5 3-6l-1-1 1-2h1v-1l2-7 2-4v-1l1-3v-2h1v-2c2-1 2-3 2-6h1l1-4 3-3 1-3v-2l1-4 2-1-1-1 1-2 3-5v-1l3-6v-1l2-5v-1l2-4 1-2 1-2 2-3v-4l2-1-1-1 3-5 1-2 1-3 1-3 1-2 1-2 1-1v-2l3-4v-1l1-1 3-1h3l1-1c0-2 1-2 2-2h2l2-1 3 1h1l1 1 2 2v2l1 1 1 2 1 3 2 2c0 2 1 2 2 3v3h1v1c2 2 3 4 3 7m1014-30l2 2v2l2 1-1 3v1l-1 10v2l-1 3v15l-1 3v17l-1 1v7l1 1h-1v13l-1 1-1 1h-2c-2-1-3-1-5 1l-2-1h-2l-3 1h-7l-1-1h-4l-1 1h-14l-1-1h-15l-1 1h-7l-1 1h-14l-2-1-1 2-2-1h-4l-4 1-1-1-3 1h-6l-4-3-1-1v-4l-1-5-1-1h1v-8l-1-1 1-1-1-3-1-1 1-5v-5l1-6-1-4 1-1 1-3-2-4 1-3v-3h1l-1-4v-6l2-3h1v-2l-2-1v-7l1-1h1l1-1 3-1h4l1 1h1v-1h15l2-1 3 1h5l4-1 3 1 1 1h1l1-1h1a290 290 0 012-1c1-1 2 0 2 1h2l3-1 2 1 1-1 3-1v1h4l3-1h5l2 1h11l4 1 3-1h7v1l6 2h3m-18 288l2 3h3l2-1 4-1v-1h5l1 2v4l1 1-1 2v6l1 3v3l1 5-1 5 1 2-1 1v2l1 2v2l-1 1 1 2v1l1 9v6l-1 3 1 2v2l1 3v1l-1 1v4l-1 1v3l-1 1-1 6-5-1-2 1h-21l-2-1-2 1h-7l-2 1h-4l-1-1h-27l-1-1-4 1h-1l-5-1-2-1h-3l-2-1-1 1h-8l-2-1-1 1v-1h-2l-1-1v-4l-2-2v-2c1 0 0 0 0 0l1-2v-9h-1v-13l1-1-1-1h1v-8l1-1v-16l-1-3v-2l1-2-1-1-1-3 1-5v-4h11l3-1h4l1-1 2 1 2-1h7l7-1h11l1 1h38l3-1m-92-94l4-1v-1 1l5-2h16l3 1h4l6-1h16c0 1 0 1 0 0h20l3 1h10l3-1 2 2 2 1h13l2 1-2 2 1 3v3l1 5v4l1 2-1 2 1 2v5c-1 1-2 2-1 4v8h-1v2l1 2-1 3 1 3 1 2v3l-1 3v4h1v2l1 3v3l-1 5v3l-1 2h-4l-4 1h-25l-3-1h-9l-3-1h-11l-2-1-3 1-3-1-1 1h-4c0 1 0 0 0 0l-2 1h-10l-1-1v2l-5-1v-1h-1v1h-13l-2-2-2-1 1-6h-1v-10l1-3v-5l-1-7-1-1 2-3v-5l-1-1-1-4v-3l1-1-1-3v-17h1l-1-5v-4m49-95l1-1 4 1 2-1h4l1 1c1-1 3 0 4 1h13l1 1 2-1 5 1h3l2-1h5c2-1 4 0 5 2h7l1 1 1 2v8l-1 7 1 3v17l1 2-1 1 1 2v9l-2 3v14l-1 3-1 1v1l-2 3-2 1-7 1h-14l-4 1h-8l-2-1h-11l-4-1h-29l-1-1-2 1-2-1h-11l-2-2c-2 0-3-1-4-3v-1l-2-2-1-5v-9l-1-3 1-4-1-1h1v-4l-1-2v-12l1-3-1-2 1-1v-3c-1-1-2-2-1-3v-2l1-1v-2l-1-2 1-5 1-1-1-2c0-1 2-2 0-3l2-1h2l3-1h9l9-1h14l5 1h6"></path>
                 </svg>
-              </div>
+              </a>
               <div class="Work-info">
                 <div class="Work-infoText Type">
                   <p><strong>The Swedish Archive for Queer Moving Images</strong> is a platform and a digital archive for queer moving images. The site is full of news, events, videos, podcasts and more about the queer film world.</p>
@@ -297,24 +344,21 @@
 
           <article class="Work-item Work-item--littlejinder js-gridItem" aria-label="Little Jinder">
             <div class="Work-itemInner">
-              <div class="Work-mediaWrap">
+              <a class="Work-mediaWrap" href="https://littlejinder.se">
                 <picture>
-                  <source media="(min-width: 800px)" srcset="/assets/images/littlejinder2@2x.avif" width="1200" height="900" type="image/avif">
-                  <source srcset="/assets/images/littlejinder2.avif 1x, /assets/images/littlejinder2@2x.avif 2x" width="1200" height="900" type="image/avif">
-                  <source media="(min-width: 800px)" srcset="/assets/images/littlejinder2@2x.webp" width="1200" height="900" type="image/webp">
-                  <source srcset="/assets/images/littlejinder2.webp 1x, /assets/images/littlejinder2@2x.webp 2x" width="1200" height="900" type="image/webp">
-                  <source media="(min-width: 800px)" srcset="/assets/images/littlejinder2@2x.jpg" width="1200" height="900" type="image/jpeg">
-                  <source srcset="/assets/images/littlejinder2.jpg 1x, /assets/images/littlejinder2@2x.jpg 2x" width="1200" height="900" type="image/jpeg">
+                  <source srcset="/assets/images/littlejinder.avif 600w, /assets/images/littlejinder@2x.avif 1200w, /assets/images/littlejinder@3x.avif 1800w" type="image/avif">
+                  <source srcset="/assets/images/littlejinder.webp 600w, /assets/images/littlejinder@2x.webp 1200w, /assets/images/littlejinder@3x.webp 1800w" type="image/webp">
                   <img
                     class="Work-media"
-                    srcset="/assets/images/littlejinder2.jpg 1x, /assets/images/littlejinder2@2x.jpg 2x"
-                    src="/assets/images/littlejinder2.jpg"
+                    src="/assets/images/littlejinder.jpg"
+                    srcset="/assets/images/littlejinder.jpg 600w, /assets/images/littlejinder@2x.jpg 1200w, /assets/images/littlejinder@3x.jpg 1800w"
+                    sizes="(min-width: 1800px) 800px, (min-width: 800px) 40vw, 90vw"
                     width="1200"
                     height="900"
                     alt="Little Jinder"
                     loading="lazy">
                 </picture>
-              </div>
+              </a>
               <div class="Work-info">
                 <div class="Work-infoText Type">
                   <p><strong>Little Jinder</strong> is Little Jinder, not much more to say. On her website you can see tour dates, read her blog, read song lyrics and buy merch.</p>
@@ -334,24 +378,21 @@
 
           <article class="Work-item Work-item--ascape js-gridItem" aria-label="Ascape">
             <div class="Work-itemInner">
-              <div class="Work-mediaWrap">
+              <a class="Work-mediaWrap" href="https://www.ascape.se">
                 <picture>
-                  <source media="(min-width: 800px)" srcset="/assets/images/ascape@2x.avif" width="1200" height="900" type="image/avif">
-                  <source srcset="/assets/images/ascape.avif 1x, /assets/images/ascape@2x.avif 2x" width="1200" height="900" type="image/avif">
-                  <source media="(min-width: 800px)" srcset="/assets/images/ascape@2x.webp" width="1200" height="900" type="image/webp">
-                  <source srcset="/assets/images/ascape.webp 1x, /assets/images/ascape@2x.webp 2x" width="1200" height="900" type="image/webp">
-                  <source media="(min-width: 800px)" srcset="/assets/images/ascape@2x.jpg" width="1200" height="900" type="image/jpeg">
-                  <source srcset="/assets/images/ascape.jpg 1x, /assets/images/ascape@2x.jpg 2x" width="1200" height="900" type="image/jpeg">
+                  <source srcset="/assets/images/ascape.avif 600w, /assets/images/ascape@2x.avif 1200w" type="image/avif">
+                  <source srcset="/assets/images/ascape.webp 600w, /assets/images/ascape@2x.webp 1200w" type="image/webp">
                   <img
                     class="Work-media"
-                    srcset="/assets/images/ascape.jpg 1x, /assets/images/ascape@2x.jpg 2x"
                     src="/assets/images/ascape.jpg"
+                    srcset="/assets/images/ascape.jpg 600w, /assets/images/ascape@2x.jpg 1200w"
+                    sizes="(min-width: 1800px) 800px, (min-width: 800px) 40vw, 90vw"
                     width="1200"
                     height="900"
                     alt="Ascape"
                     loading="lazy">
                 </picture>
-              </div>
+              </a>
               <div class="Work-info">
                 <div class="Work-infoText Type">
                   <p><strong>Ascape</strong> is a small but great architecture office in Stockholm.</p>
@@ -368,28 +409,23 @@
             </div>
           </article>
 
-
-
           <article class="Work-item js-gridItem" aria-label="Välj att sluta">
             <div class="Work-itemInner">
-              <div class="Work-mediaWrap" style="background-color: #02208c;">
+              <a class="Work-mediaWrap">
                 <picture>
-                  <source media="(min-width: 800px)" srcset="/assets/images/valjattsluta@2x.avif" width="1200" height="900" type="image/avif">
-                  <source srcset="/assets/images/valjattsluta.avif 1x, /assets/images/valjattsluta@2x.avif 2x" width="1200" height="900" type="image/avif">
-                  <source media="(min-width: 800px)" srcset="/assets/images/valjattsluta@2x.webp" width="1200" height="900" type="image/webp">
-                  <source srcset="/assets/images/valjattsluta.webp 1x, /assets/images/valjattsluta@2x.webp 2x" width="1200" height="900" type="image/webp">
-                  <source media="(min-width: 800px)" srcset="/assets/images/valjattsluta@2x.jpg" width="1200" height="900" type="image/jpeg">
-                  <source srcset="/assets/images/valjattsluta.jpg 1x, /assets/images/valjattsluta@2x.jpg 2x" width="1200" height="900" type="image/jpeg">
+                  <source srcset="/assets/images/valjattsluta.avif 600w, /assets/images/valjattsluta@2x.avif 1200w" type="image/avif">
+                  <source srcset="/assets/images/valjattsluta.webp 600w, /assets/images/valjattsluta@2x.webp 1200w" type="image/webp">
                   <img
                     class="Work-media"
-                    srcset="/assets/images/valjattsluta.jpg 1x, /assets/images/valjattsluta@2x.jpg 2x"
                     src="/assets/images/valjattsluta.jpg"
+                    srcset="/assets/images/valjattsluta.jpg 600w, /assets/images/valjattsluta@2x.jpg 1200w"
+                    sizes="(min-width: 1800px) 800px, (min-width: 800px) 40vw, 90vw"
                     width="1200"
                     height="900"
                     alt="Välj att sluta"
                     loading="lazy">
                 </picture>
-              </div>
+              </a>
               <div class="Work-info">
                 <div class="Work-infoText Type">
                   <p><strong>Välj Att Sluta</strong> (Choose to stop) is a helpline offering advice to those who seek help to change a controlling or violent behavior. Callers talk anonymously to a therapist or other professional who then suggests <span class="u-textTruncate">further treatment</span>.</p>
@@ -402,7 +438,7 @@
 
           <article class="Work-item Work-item--small Work-item--sakaria js-gridItem" aria-label="Sakaria Studio">
             <div class="Work-itemInner">
-              <div class="Work-mediaWrap">
+              <a class="Work-mediaWrap" href="https://www.sakaria.se">
                 <video
                   class="Work-media js-autoplay"
                   playsinline
@@ -424,7 +460,7 @@
                   >
               </video>
               <button class="u-hiddenVisually js-togglePlay">Pause or resume video</button>
-              </div>
+              </a>
               <div class="Work-info Type">
                 <div class="Work-infoText">
                   <p>Minna Sakaria is a senior graphic designer and design educator. Under the name <strong>Sakaria Studio</strong> she designs artistic visual identities for brands, exhibitions and individuals.</p>
@@ -461,20 +497,19 @@
                 <!-- <image x="26" y="26" transform="translate(20 60) scale(0.95)" href="/assets/images/vincent-orback@2x.jpg" height="746" width="746" mask="url(#mask-path)"></image> -->
                 <foreignObject height="746" width="746" x="26" y="26" transform="translate(20 60) scale(0.95)" mask="url(#mask-path)">
                   <picture>
-                    <source media="(min-width: 800px)" srcset="/assets/images/vincent-orback@2x.avif" width="746" height="746" type="image/avif">
-                    <source srcset="/assets/images/vincent-orback.avif 1x, /assets/images/vincent-orback@2x.avif 2x" width="746" height="746" type="image/avif">
-                    <source media="(min-width: 800px)" srcset="/assets/images/vincent-orback@2x.webp" width="746" height="746" type="image/webp">
-                    <source srcset="/assets/images/vincent-orback.webp 1x, /assets/images/vincent-orback@2x.webp 2x" width="746" height="746" type="image/webp">
-                    <source media="(min-width: 800px)" srcset="/assets/images/vincent-orback@2x.jpg" width="746" height="746" type="image/jpeg">
-                    <source srcset="/assets/images/vincent-orback.jpg 1x, /assets/images/vincent-orback@2x.jpg 2x" width="746" height="746" type="image/jpeg">
+                    <source srcset="/assets/images/vincent-orback.avif 373w, /assets/images/vincent-orback@2x.avif 746w" type="image/avif">
+                    <source srcset="/assets/images/vincent-orback.webp 373w, /assets/images/vincent-orback@2x.webp 746w" type="image/webp">
                     <img
                       style="width:100%;height:100%;max-width:none;display:block;"
-                      srcset="/assets/images/vincent-orback.jpg 1x, /assets/images/vincent-orback@2x.jpg 2x"
                       src="/assets/images/vincent-orback.jpg"
+                      srcset="/assets/images/vincent-orback.jpg 373w, /assets/images/vincent-orback@2x.jpg 746w"
+                      sizes="800px"
+                      sizes="(min-width: 1800px) 800px, (min-width: 600px) 45vw, (min-width: 400px) 400px, 90vw"
                       width="746"
                       height="746"
                       alt="Vincent Orback"
-                      loading="lazy">
+                      loading="lazy"
+                    >
                   </picture>
                   <!-- <picture>
                     <source
@@ -510,7 +545,7 @@
           </div>
           <div class="About-text Type Type--lg">
             <p><span class="u-textTruncate">I like</span> building solid things. Things that last, things that solve real problems that need solving. <span class="u-textTruncate">I like</span> my websites loading fast and the pace we travel the internet to <span class="u-textTruncate">be slow.</span></p>
-            <p>The tools I use are a mix of different technologies. Right now I’m mostly using React, <span class="u-textTruncate">React Native</span>, Next.js, Node, MongoDB and Prismic, but I’m also used to working with Vue, PHP, WordPress, <span class="u-textTruncate">and more.</span></p>
+            <p>The tools I use most at the moment are React, <span class="u-textTruncate">React Native</span>, Next.js, Node, MongoDB, Sanity and Wordpress but I’m used to working with just about anything to <span class="u-textTruncate">make websites.</span></p>
             <p>Get in touch and <span class="u-textTruncate">let’s talk!</span></p>
           </div>
         </div>
@@ -534,7 +569,7 @@
             <div class="Foot-menuList">
               <ul>
                 <li class="Foot-menuListItem js-footMenuSub">
-                  <span>Food for thougth</span>
+                  <span>Food for thought</span>
                   <ul>
                     <li class="Foot-menuListItem"><a href="https://maekan.com/the-modern-creators-paradigm-reasons-for-more-critique-and-accountability/">The modern creator’s paradigm</a></li>
                     <li class="Foot-menuListItem"><a href="https://subpixel.space/entries/diminishing-marginal-aesthetic-value/">The diminishing marginal value of aesthetics</a></li>
@@ -548,7 +583,6 @@
                   <ul>
                     <li class="Foot-menuListItem"><a href="https://www.asso.gd/">Asso</a></li>
                     <li class="Foot-menuListItem"><a href="https://malmstenhellberg.com/">Malmsten Hellberg</a></li>
-                    <li class="Foot-menuListItem"><a href="https://www.sakaria.se/">Sakaria Studio</a></li>
                   </ul>
                 </li>
                 <li class="Foot-menuListItem">
@@ -588,7 +622,7 @@
     </symbol>
   </svg>
 
-  <script src="/assets/javascript/main.js?v=14" defer></script>
+  <script src="/assets/javascript/main.js?v=16" defer></script>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",

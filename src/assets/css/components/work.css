@@ -87,8 +87,16 @@
   padding-bottom: calc(1376 / 1162 * 100%);
 }
 
+.Work-item--wwf .Work-mediaWrap {
+  background-color: #fff;
+}
+
 .Work-item--teg .Work-mediaWrap {
   padding-bottom: calc((322 - 11) / 600 * 100%); /* remove 12 to match white space */
+}
+
+.Work-item--talldungen .Work-mediaWrap {
+  padding-bottom: calc(450/ 800 * 100%); /* remove 12 to match white space */
 }
 
 .Work-item--komm .Work-mediaWrap {
@@ -126,7 +134,7 @@ video.Work-media {
 }
 
 video.Work-media.is-active {
-  animation: fadeInVideo 1000ms ease 800ms forwards;
+  animation: fadeInVideo 200ms ease 600ms forwards;
 }
 
 @keyframes fadeInVideo {
@@ -257,15 +265,17 @@ video.Work-media.is-active {
 }
 
 .Work-link:focus-visible span {
-  text-decoration: underline;
+  text-decoration: underline from-font;
 }
 
 @media (hover: hover) {
   .Work-link:hover span {
     opacity: 0.8;
+    text-decoration: underline from-font;
   }
 }
 
 .Work-link:active span {
   opacity: 0.5;
+  text-decoration: underline from-font;
 }
