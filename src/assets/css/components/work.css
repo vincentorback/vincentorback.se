@@ -17,7 +17,8 @@
 .Work-item {
   overflow: hidden;
   margin-bottom: var(--Work-gutter);
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.03);
+
+  /* box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.03); */
 }
 
 .Work-grid {
@@ -82,21 +83,20 @@
   background-color: #fff8dc;
 }
 
-.Work-item--forfattaren .Work-mediaWrap {
-  background-color: #5a2c2c;
-  padding-bottom: calc(1376 / 1162 * 100%);
-}
-
 .Work-item--wwf .Work-mediaWrap {
   background-color: #fff;
 }
 
+.Work-item--3rd-cycle .Work-mediaWrap {
+  padding-bottom: calc((833 / 1500) * 100%);
+}
+
 .Work-item--teg .Work-mediaWrap {
-  padding-bottom: calc((322 - 11) / 600 * 100%); /* remove 12 to match white space */
+  padding-bottom: calc((322 - 11) / 600 * 100%); /* remove 11 to match white space */
 }
 
 .Work-item--talldungen .Work-mediaWrap {
-  padding-bottom: calc(450/ 800 * 100%); /* remove 12 to match white space */
+  padding-bottom: calc(450/ 800 * 100%);
 }
 
 .Work-item--komm .Work-mediaWrap {
@@ -246,7 +246,7 @@ video.Work-media.is-active {
   font-style: normal !important;
 }
 
-.Work-link span,
+.Work-link > span,
 .Work-link svg {
   display: inline;
   vertical-align: middle;
@@ -260,22 +260,22 @@ video.Work-media.is-active {
   transform: translateY(1px);
 }
 
-.Work-link span {
+.Work-link > span {
   transition: opacity 100ms ease;
 }
 
-.Work-link:focus-visible span {
+.Work-link:focus-visible > span {
   text-decoration: underline from-font;
 }
 
 @media (hover: hover) {
-  .Work-link:hover span {
+  .Work-link:hover > span {
     opacity: 0.8;
     text-decoration: underline from-font;
   }
 }
 
-.Work-link:active span {
+.Work-link:active > span {
   opacity: 0.5;
   text-decoration: underline from-font;
 }

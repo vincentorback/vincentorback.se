@@ -8,17 +8,23 @@
 }
 
 .Blob path {
-  animation: blob 40s linear infinite;
+  /* animation: blob 40s linear infinite; */
   backface-visibility: hidden;
   mix-blend-mode: multiply;
   transform-origin: 49% 49%;
 }
 
-@media (prefers-reduced-motion) {
+/* @media (prefers-reduced-motion) {
   .Blob path {
     animation: none;
   }
 }
+
+@media (update: slow) {
+  .Blob path {
+    animation: none;
+  }
+} */
 
 .Blob path:first-child {
   color: var(--color-yellow);

@@ -32,7 +32,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    word-wrap: normal;
+    overflow-wrap: normal;
   }
 }
 
@@ -46,7 +46,7 @@
 
 .u-hiddenVisually {
   border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: rect(1px 1px 1px 1px);
   height: 0;
   overflow: hidden;
   padding: 0;
