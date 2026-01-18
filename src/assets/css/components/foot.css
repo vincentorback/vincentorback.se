@@ -57,7 +57,6 @@ html.has-blobs .Foot-list {
 .Foot-link--lg {
   display: inline-block;
   font-size: 1.2em;
-  user-select: all;
 }
 
 @media (height < 500px) and (width >= 900px) {
@@ -155,7 +154,7 @@ html.has-blobs .Foot-list {
   transform: translateY(10px);
   opacity: 0;
   visibility: hidden;
-  transition: transform 200ms ease, opacity 200ms ease, visibility 0ms linear 200ms;
+  transition: transform 200ms ease 100ms, opacity 200ms ease 100ms, visibility 0ms linear 300ms;
 }
 
 @media (width < 1000px) {
@@ -250,7 +249,7 @@ html.has-blobs .Foot-list {
   transition: transform 200ms ease, opacity 200ms ease, visibility 0ms linear 200ms;
 }
 
-@media (width < 500px) {
+@media (width < 580px) {
   .Foot-menuListItem > ul {
     transform: translate(1px, -1px);
     bottom: 100%;
@@ -269,7 +268,7 @@ html.has-blobs .Foot-list {
   transition: transform 200ms ease, opacity 200ms ease, visibility 0ms linear;
 }
 
-@media (width < 500px) {
+@media (width < 580px) {
   .Foot-menuListItem.is-active > ul,
   .Foot-menuListItem:focus-within > ul,
   .Foot-menuListItem:hover > ul {

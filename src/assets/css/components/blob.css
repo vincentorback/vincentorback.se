@@ -1,30 +1,18 @@
-.Blob {
-  pointer-events: none;
-}
-
 @keyframes blob {
   0% { transform: rotateZ(0deg); }
   100% { transform: rotateZ(360deg); }
 }
 
 .Blob path {
-  /* animation: blob 40s linear infinite; */
   backface-visibility: hidden;
   mix-blend-mode: multiply;
   transform-origin: 49% 49%;
 }
 
-/* @media (prefers-reduced-motion) {
-  .Blob path {
-    animation: none;
-  }
+.mask-path {
+  animation: blob 80s linear infinite;
+  transform-origin: 49% 49%;
 }
-
-@media (update: slow) {
-  .Blob path {
-    animation: none;
-  }
-} */
 
 .Blob path:first-child {
   color: var(--color-yellow);
@@ -39,4 +27,14 @@
 .Blob path:nth-child(3) {
   color: var(--color-blue);
   animation-delay: -10s;
+}
+
+.Blob-canvas {
+  display: block;
+  width: 1000px;
+  height: 1000px;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: contents;
+  contain: layout style paint;
 }

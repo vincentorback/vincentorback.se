@@ -27,7 +27,7 @@
     "test:js": "standard src/assets/javascript --verbose --fix",
     "test:css": "stylelint src/assets/css/**/*.css",
     "watch": "npm-run-all --parallel watch:js watch:css watch:html",
-    "watch:js": "chokidar 'src/assets/javascript/**/*.js' -c 'npm run test:js && npm run build:js && npm run compress'",
+    "watch:js": "chokidar 'src/assets/javascript/**/*.js' -c 'npm run build:js && npm run compress'",
     "watch:css": "chokidar 'src/assets/css/**/*.css' -c 'npm run test:css && npm run build:css && npm run compress'",
     "watch:html": "chokidar 'src/**/*.html' -c 'npm run build:html && npm run compress'",
     "serve": "serve dist -l 3000",
@@ -42,12 +42,12 @@
     "paper": "^0.12.18"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.22",
+    "autoprefixer": "^10.4.23",
     "avif": "^0.5.3",
     "chokidar": "^5.0.0",
     "chokidar-cli": "^3.0.0",
     "copyfiles": "^2.4.1",
-    "esbuild": "^0.27.0",
+    "esbuild": "^0.27.2",
     "gzip-cli": "^1.2.0",
     "html-minifier": "^4.0.0",
     "imagemin-cli": "^8.0.0",
@@ -61,16 +61,15 @@
     "postcss-csso": "^6.0.1",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^16.1.1",
-    "postcss-preset-env": "^10.4.0",
+    "postcss-preset-env": "^11.1.1",
     "serve": "^14.2.5",
     "standard": "^17.1.2",
-    "stylelint": "^16.26.1",
-    "stylelint-config-standard": "^39.0.1",
+    "stylelint": "^17.0.0",
+    "stylelint-config-standard": "^40.0.0",
     "uglify-es": "^3.3.10"
   },
   "browserslist": [
     "> 0.5% in SE",
-    "IE 11",
     "not dead",
     "last 3 major versions"
   ],

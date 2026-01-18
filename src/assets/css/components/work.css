@@ -1,6 +1,4 @@
 .Work {
-  --Work-gutter: var(--spacing-sm);
-
   position: relative;
   z-index: 1;
   margin: calc(var(--spacing-lg) * 1.25) 0;
@@ -8,48 +6,22 @@
   animation: fadeIn 800ms 500ms ease forwards;
 }
 
+.Work-grid {
+  display: grid;
+  column-gap: var(--spacing-sm);
+  grid-auto-flow: dense;
+}
+
 @media (width >= 800px) {
-  .Work {
-    margin-top: var(--spacing-lg);
+  .Work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 .Work-item {
   overflow: hidden;
-  margin-bottom: var(--Work-gutter);
-
-  /* box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.03); */
-}
-
-.Work-grid {
-  margin-bottom: calc(var(--Work-gutter) * -1);
-}
-
-@media (width >= 600px) {
-  .Work {
-    --Work-gutter: calc(var(--spacing-sm) * 0.5);
-  }
-
-  .Work-grid::after {
-    display: block;
-    content: "";
-    clear: both;
-  }
-
-  .Work-gridColumn {
-    float: left;
-    width: calc((100% / 2) - calc(var(--Work-gutter) * 0.5) - 1px);
-  }
-
-  .Work-gridColumn:first-child {
-    margin-right: var(--Work-gutter);
-  }
-}
-
-@media (width >= 900px) {
-  .Work {
-    --Work-gutter: var(--spacing-sm);
-  }
+  align-self: start;
+  margin-bottom: var(--spacing-sm);
 }
 
 .Work-mediaWrap {
@@ -92,7 +64,7 @@
 }
 
 .Work-item--teg .Work-mediaWrap {
-  padding-bottom: calc((322 - 11) / 600 * 100%); /* remove 11 to match white space */
+  padding-bottom: calc((322 - 11) / 600 * 100%); /* remove 11 to match white space in image */
 }
 
 .Work-item--talldungen .Work-mediaWrap {

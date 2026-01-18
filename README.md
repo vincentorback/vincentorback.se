@@ -2,7 +2,7 @@
 My personal portfolio [vincentorback.se](https://www.vincentorback.se).
 
 ## Scripts
-- Install dependencies: `npm install`
-- Build and serve: `npm start`
-- Build, minify, compress assets: `npm run build`
-- Build assets and : `npm run deploy`
+- Install dependencies: `pnpm install`
+- Build and serve: `pnpm start`
+- Build, minify, compress assets: `pnpm run build`
+- Build assets and : `pnpm run deploy`

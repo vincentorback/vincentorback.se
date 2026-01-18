@@ -89,7 +89,6 @@
 }
 
 .Intro-contactLinkText {
-  user-select: all;
   transition: opacity 200ms ease;
 }
 
