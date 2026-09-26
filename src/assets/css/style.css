@@ -1,25 +1,14 @@
-/* Fonts */
-@import "base/fonts";
-
-/* Variables */
-@import "base/config";
-
-/* Resetting styles */
-@import "base/base";
-
-/* Components */
-@import "components/about";
-@import "components/blob";
-@import "components/color-link";
-@import "components/container";
-@import "components/foot";
-@import "components/intro";
-@import "components/section";
-@import "components/type";
-@import "components/work";
-
-/* Utilities */
-@import "utilities/misc";
-
-/* Print */
-@import "base/print";
+@import url("base/fonts.css");
+@import url("base/config.css");
+@import url("base/base.css");
+@import url("components/about.css");
+@import url("components/blob.css");
+@import url("components/color-link.css");
+@import url("components/container.css");
+@import url("components/foot.css");
+@import url("components/intro.css");
+@import url("components/section.css");
+@import url("components/type.css");
+@import url("components/work.css");
+@import url("utilities/misc.css");
+@import url("base/print.css");

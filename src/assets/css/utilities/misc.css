@@ -2,12 +2,12 @@
 
 @supports (mix-blend-mode: exclusion) {
   .u-textMixBlend {
-    color: #fff;
+    color: var(--color-white);
     mix-blend-mode: exclusion;
   }
 
   .u-textMixBlend *::selection {
-    background-color: var(--color-background);
+    background-color: var(--color-cream);
     color: var(--color-text);
   }
 }

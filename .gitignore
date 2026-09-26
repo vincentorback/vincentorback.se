@@ -3,7 +3,3 @@ node_modules
 dist
 Underlag
 .htaccess
-sitemap.xml
-robots.txt
-*.woff
-*.woff2

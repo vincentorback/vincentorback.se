@@ -1,0 +1,8 @@
+allowBuilds:
+  cwebp-bin: true
+  esbuild: true
+  gifsicle: true
+  jpegtran-bin: true
+  lightningcss-cli: true
+  optipng-bin: true
+  sharp: true

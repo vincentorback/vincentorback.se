@@ -22,7 +22,7 @@
   position: relative;
   z-index: 1;
   flex: 1 0 300px;
-  max-width: 700px;
+  max-width: 900px;
   margin: var(--spacing-sm) 0 0;
   padding-left: env(safe-area-inset-left);
 }
@@ -30,12 +30,6 @@
 @media (width >= 800px) {
   .About-text {
     margin: 0 var(--spacing-sm) 0 0;
-  }
-}
-
-@media (width >= 1800px) {
-  .About-text {
-    max-width: 900px;
   }
 }
 
@@ -95,11 +89,10 @@
 .About-blob {
   position: absolute;
   inset: 0;
+  transform: scale(1.6);
 }
 
-.About-blob svg,
 .About-blob canvas {
   width: 100% !important;
   height: 100% !important;
-  transform: scale(1.6) translateZ(0);
 }

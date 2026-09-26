@@ -1,32 +1,49 @@
-@keyframes blob {
-  0% { transform: rotateZ(0deg); }
-  100% { transform: rotateZ(360deg); }
+@keyframes blob-spin {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.Blob path {
-  backface-visibility: hidden;
+.Blob-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  transform: scale(2);
+  transform-origin: 0 0;
+}
+
+.About-blob .Blob-shapes {
+  width: 100%;
+  height: 100%;
+  transform: none;
+}
+
+.Blob svg {
+  position: absolute;
+  display: block;
   mix-blend-mode: multiply;
-  transform-origin: 49% 49%;
+  animation: blob-spin 40s linear infinite;
 }
 
-.mask-path {
-  animation: blob 80s linear infinite;
-  transform-origin: 49% 49%;
-}
-
-.Blob path:first-child {
-  color: var(--color-yellow);
-}
-
-.Blob path:nth-child(2) {
-  color: var(--color-pink);
+.Blob svg:nth-child(2) {
   animation-delay: -20s;
   animation-direction: reverse;
 }
 
-.Blob path:nth-child(3) {
-  color: var(--color-blue);
+.Blob svg:nth-child(3) {
   animation-delay: -10s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .Blob svg {
+    animation: none;
+  }
+}
+
+html.is-lowFps .Blob svg {
+  animation: none;
 }
 
 .Blob-canvas {

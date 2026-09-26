@@ -1,4 +1,5 @@
 :root {
+  --color-white: #fff;
   --color-blue: #0ebeff;
   --color-cream: #ffdab9;
   --color-dark: #2e2e2e;
@@ -8,17 +9,7 @@
   --color-red: #ff004e;
   --color-yellow: #ffcf4e;
   --color-text: var(--color-dark);
-  --color-background: #ffdab9;
-  --font-sansserif:
-    "Work Sans",
-    system-ui,
-    -apple-system,
-    "BlinkMacSystemFont",
-    "Segoe UI",
-    "Roboto",
-    "Helvetica Neue",
-    "Arial",
-    sans-serif;
+  --font-sansserif: "Work Sans", system-ui, sans-serif;
   --font-normal: 400;
   --font-bold: 600;
   --font-lineheight-sm: 1.1;
@@ -36,18 +27,10 @@
   }
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --color-text: rgba(255, 255, 255, 0.87);
-    --color-background: #1f152e;
-    --color-dark: #3c304e;
-  }
-} */
-
 /* stylelint-disable */
 @media (prefers-reduced-data: reduce) {
   :root {
-    --font-sansserif: system-ui, -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif;
+    --font-sansserif: system-ui, sans-serif;
   }
 }
 /* stylelint-enable */

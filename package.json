@@ -16,10 +16,10 @@
   "scripts": {
     "start": "if [ ! -d dist ]; then npm run build; fi && npm-run-all --parallel serve watch",
     "build:js": "esbuild src/assets/javascript/main.js --outfile=dist/assets/javascript/main.js --bundle --minify --sourcemap",
-    "build:css": "postcss src/assets/css/style.css -o dist/assets/css/style.css",
+    "build:css": "mkdir -p dist/assets/css && lightningcss --minify --bundle --browserslist src/assets/css/style.css -o dist/assets/css/style.css",
     "build:html": "html-minifier --remove-comments --case-sensitive --sort-attributes --sort-class-name --collapse-whitespace --process-scripts 'application/ld+json' --minify-js true --output-dir dist --input-dir src --file-ext html",
     "build:light": "npm-run-all test:js test:css build:html build:js build:css compress",
-    "build": "rm -rf dist && npm-run-all build:light move:images move:video move:fonts move:icons move:fonts",
+    "build": "rm -rf dist && npm-run-all build:light move:images images:webp images:avif move:video move:fonts move:icons move:fonts",
     "move:images": "copyfiles -u 2 -f src/assets/images/* src/assets/images/**/* dist/assets/images",
     "move:video": "copyfiles -u 2 -f src/assets/video/* dist/assets/video",
     "move:icons": "copyfiles -u 2 -f src/assets/icons/* dist",
@@ -32,70 +32,35 @@
     "watch:html": "chokidar 'src/**/*.html' -c 'npm run build:html && npm run compress'",
     "serve": "serve dist -l 3000",
     "compress": "gzip dist/**/*.{css,js,html} --extension=gz --extension=br",
-    "compress:images": "imageoptim dist/* && imagemin ./dist/assets/images/*.{jpg,png} --plugin.webp.quality=70 -o=./dist/assets/images",
-    "compress:images:avif": "npx avif --input=dist/assets/images/*.jpg --output=dist/assets/images --overwrite --effort=9 --quality=70",
+    "images:webp": "imagemin ./dist/assets/images/*.{jpg,png} --plugin.webp.quality=70 -o=./dist/assets/images",
+    "images:avif": "npx avif --input=dist/assets/images/*.jpg --output=dist/assets/images --overwrite --effort=9 --quality=70",
+    "compress:images": "imageoptim dist/* && npm run images:webp",
+    "compress:images:avif": "npm run images:avif",
     "deploy:light": "npm run build:light && copyfiles -u 1 src/sitemap.xml dist && copyfiles -u 1 src/.htaccess dist && copyfiles -u 1 src/robots.txt dist",
     "deploy": "npm run build && copyfiles -u 1 src/sitemap.xml dist && copyfiles -u 1 src/.htaccess dist && copyfiles -u 1 src/robots.txt dist"
   },
-  "dependencies": {
-    "colcade": "^0.2.0",
-    "paper": "^0.12.18"
-  },
   "devDependencies": {
-    "autoprefixer": "^10.4.23",
-    "avif": "^0.5.3",
-    "chokidar": "^5.0.0",
+    "avif": "^0.6.0",
     "chokidar-cli": "^3.0.0",
     "copyfiles": "^2.4.1",
-    "esbuild": "^0.27.2",
+    "esbuild": "^0.28.2",
     "gzip-cli": "^1.2.0",
     "html-minifier": "^4.0.0",
     "imagemin-cli": "^8.0.0",
     "imagemin-webp": "^8.0.0",
-    "imageoptim-cli": "^3.1.9",
+    "imageoptim-cli": "^4.0.0",
     "inline-source-cli": "^2.0.0",
+    "lightningcss-cli": "^1.33.0",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.5.6",
-    "postcss-calc": "^10.1.1",
-    "postcss-cli": "^11.0.1",
-    "postcss-csso": "^6.0.1",
-    "postcss-flexbugs-fixes": "^5.0.2",
-    "postcss-import": "^16.1.1",
-    "postcss-preset-env": "^11.1.1",
-    "serve": "^14.2.5",
+    "serve": "^14.2.6",
     "standard": "^17.1.2",
-    "stylelint": "^17.0.0",
-    "stylelint-config-standard": "^40.0.0",
-    "uglify-es": "^3.3.10"
+    "stylelint": "^17.15.0",
+    "stylelint-config-standard": "^40.0.0"
   },
   "browserslist": [
-    "> 0.5% in SE",
-    "not dead",
-    "last 3 major versions"
+    "> 1% in SE",
+    "not dead"
   ],
-  "postcss": {
-    "plugins": {
-      "postcss-import": {},
-      "postcss-preset-env": {
-        "enableClientSidePolyfills": false,
-        "autoprefixer": {
-          "grid": true
-        },
-        "features": {
-          "clamp": true,
-          "text-decoration-shorthand": true
-        }
-      },
-      "postcss-calc": {
-        "preserve": true
-      },
-      "postcss-flexbugs-fixes": {},
-      "postcss-csso": {
-        "comments": "first-exclamation",
-        "restructure": false
-      }
-    }
-  },
   "stylelint": {
     "extends": "stylelint-config-standard",
     "rules": {
@@ -115,9 +80,6 @@
     }
   },
   "standard": {
-    "ignore": [
-      "src/assets/javascript/vendor/"
-    ],
     "rules": {
       "no-unused-vars": null
     }

@@ -33,7 +33,7 @@
 }
 
 html.has-blobs .Foot-list {
-  color: #fff;
+  color: var(--color-white);
 }
 
 @media (width >= 900px) {
@@ -73,6 +73,31 @@ html.has-blobs .Foot-list {
   z-index: 0;
   width: clamp(300px, 50vw, 1000px);
   height: clamp(300px, 50vw, 1000px);
+  transform: translate(-90%, -20%) scale(0.7);
+}
+
+@media (width >= 700px) {
+  .Foot-blob {
+    transform: translate(-85%, 0) scale(1);
+  }
+}
+
+@media (width >= 900px) {
+  .Foot-blob {
+    transform: translate(-55%, 5%) scale(1);
+  }
+}
+
+@media (width >= 1200px) {
+  .Foot-blob {
+    transform: translate(-45%, 27%) scale(1);
+  }
+}
+
+@media (width >= 1500px) {
+  .Foot-blob {
+    transform: translate(-25%, 40%) scale(1.1);
+  }
 }
 
 
@@ -85,13 +110,26 @@ html.has-blobs .Foot-list {
   z-index: 100;
 }
 
-@media (width < 380px) {
+@media (width < 580px) {
   .Foot-menu {
-    color: #fff;
+    mix-blend-mode: exclusion;
+    color: var(--color-white);
   }
 }
 
 
+
+.Foot-menuToggle,
+.Foot-menuSubToggle {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  cursor: pointer;
+}
 
 .Foot-menuToggle {
   display: block;
@@ -136,7 +174,7 @@ html.has-blobs .Foot-list {
 
 @media (width < 700px) {
   .Foot-menuToggleText {
-    display: none;
+    /* display: none; */
   }
 }
 
@@ -163,9 +201,11 @@ html.has-blobs .Foot-list {
   }
 }
 
-.Foot-menu.is-active .Foot-menuContainer,
-.Foot-menu:focus-within .Foot-menuContainer,
-.Foot-menu:hover .Foot-menuContainer {
+.Foot-menu.is-active .Foot-menuToggleSymbol {
+  transform: rotateZ(45deg);
+}
+
+.Foot-menu.is-active .Foot-menuContainer {
   transform: translateY(0);
   opacity: 1;
   visibility: visible;
@@ -192,7 +232,7 @@ html.has-blobs .Foot-list {
 .Foot-menuListItem {
   position: relative;
   display: block;
-  background-color: #fff;
+  background-color: var(--color-white);
   color: var(--color-dark);
   border: 1px solid var(--color-dark);
   border-width: 1px 1px 0;
@@ -214,8 +254,10 @@ html.has-blobs .Foot-list {
 }
 
 .Foot-menuListItem > span,
-.Foot-menuListItem > a {
+.Foot-menuListItem > a,
+.Foot-menuSubToggle {
   display: block;
+  width: 100%;
   padding: 0.5em 0.8em;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -226,9 +268,9 @@ html.has-blobs .Foot-list {
 }
 
 .Foot-menuListItem:hover,
-.Foot-menuListItem:focus {
+.Foot-menuListItem:focus-within {
   background-color: var(--color-dark);
-  color: #fff;
+  color: var(--color-white);
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -260,18 +302,14 @@ html.has-blobs .Foot-list {
 }
 
 
-.Foot-menuListItem.is-active > ul,
-.Foot-menuListItem:focus-within > ul,
-.Foot-menuListItem:hover > ul {
+.Foot-menuListItem.is-active > ul {
   opacity: 1;
   visibility: visible;
   transition: transform 200ms ease, opacity 200ms ease, visibility 0ms linear;
 }
 
 @media (width < 580px) {
-  .Foot-menuListItem.is-active > ul,
-  .Foot-menuListItem:focus-within > ul,
-  .Foot-menuListItem:hover > ul {
+  .Foot-menuListItem.is-active > ul {
     transform: translate(1px, -1px);
   }
 }

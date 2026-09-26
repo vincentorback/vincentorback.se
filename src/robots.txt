@@ -1,0 +1,5 @@
+# All robots allowed
+User-agent: *
+
+# Sitemap files
+Sitemap: https://vincentorback.se/sitemap.xml
