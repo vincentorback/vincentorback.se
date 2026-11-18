@@ -24,16 +24,13 @@
   z-index: 1;
   line-height: var(--font-lineheight-lg);
   padding-left: env(safe-area-inset-left);
+  color: var(--color-white);
 }
 
 @media (height < 500px) and (width >= 800px) {
   .Foot-list {
     font-size: 0.9rem;
   }
-}
-
-html.has-blobs .Foot-list {
-  color: var(--color-white);
 }
 
 @media (width >= 900px) {
