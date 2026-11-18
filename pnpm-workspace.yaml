@@ -6,3 +6,5 @@ allowBuilds:
   lightningcss-cli: true
   optipng-bin: true
   sharp: true
+minimumReleaseAgeExclude:
+  - html-minifier@5.3.0
